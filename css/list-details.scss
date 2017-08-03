@@ -230,6 +230,7 @@ $sc:25;
                                 height: 20/$sc+rem;
                                 h3 {
                                     height: 20/$sc+rem;
+                                    text-align: left;
                                     .position {
                                         font-size: 16/$sc+rem;
                                         float: left;
@@ -244,6 +245,7 @@ $sc:25;
                                     }
                                 }
                                 .address {
+                                    text-align: left;
                                     display: block;
                                     font-size: 12/$sc+rem;
                                     color: #9B9B9B;
@@ -251,6 +253,7 @@ $sc:25;
                                     line-height: 20/$sc+rem;
                                 }
                                 .openprice {
+                                    text-align: left;
                                     display: block;
                                     font-size: 12/$sc+rem;
                                     color: #9B9B9B;
@@ -258,6 +261,7 @@ $sc:25;
                                     line-height: 20/$sc+rem;
                                 }
                                 .averageprice {
+                                    text-align: left;
                                     display: block;
                                     height: 20/$sc+rem;
                                     .averag {

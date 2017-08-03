@@ -261,6 +261,7 @@ li {
 
 .container .section .section-wrapper .section-listhouse .listhouse-data-ul .listhouse-data-li .dataDetail .listhouse-txt h3 {
   height: 0.8rem;
+  text-align: left;
 }
 
 .container .section .section-wrapper .section-listhouse .listhouse-data-ul .listhouse-data-li .dataDetail .listhouse-txt h3 .position {
@@ -278,6 +279,7 @@ li {
 }
 
 .container .section .section-wrapper .section-listhouse .listhouse-data-ul .listhouse-data-li .dataDetail .listhouse-txt .address {
+  text-align: left;
   display: block;
   font-size: 0.48rem;
   color: #9B9B9B;
@@ -286,6 +288,7 @@ li {
 }
 
 .container .section .section-wrapper .section-listhouse .listhouse-data-ul .listhouse-data-li .dataDetail .listhouse-txt .openprice {
+  text-align: left;
   display: block;
   font-size: 0.48rem;
   color: #9B9B9B;
@@ -294,6 +297,7 @@ li {
 }
 
 .container .section .section-wrapper .section-listhouse .listhouse-data-ul .listhouse-data-li .dataDetail .listhouse-txt .averageprice {
+  text-align: left;
   display: block;
   height: 0.8rem;
 }
