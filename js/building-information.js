@@ -13,10 +13,12 @@ $(function(){
 	$(".article-push").css("left",metaw)
 	$(".section-content-massage .pri-li").tap(function(){
 		$(".article-push").css("left","0")
+		atPushS.refresh()
 	})
 	
 	$(".article-push-header-wrapper .return").tap(function(){
 		$(".article-push").css("left",metaw)
+		atPushS.refresh()
 	})
 	
 	
@@ -45,6 +47,20 @@ $(function(){
 		$(".writing-box").css("height","0")
 		$(".text-box").val("")
 	})
+	
+	
+	$(".showall-wrapper").tap(function(){
+		$(".user-say").removeClass("showmore")
+		$(".showall").css("display","none")
+		atPushS.refresh()
+	})
+	
+	
+	
+	
+	
+	
+	
 	
 	var navS = new IScroll('.content-nav', {
 		scrollbars: false,

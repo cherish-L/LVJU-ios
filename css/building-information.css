@@ -807,41 +807,6 @@ li {
 
 .article-push .article-push-box .article-push-body .article-push-wrapper .article-push-hotThread .hotThread-ul .hotThread-li .styleone .user-comments .showall {
   display: none;
-  height: 0.96rem;
-  width: 100%;
-  margin-top: 0.64rem;
-}
-
-.article-push .article-push-box .article-push-body .article-push-wrapper .article-push-hotThread .hotThread-ul .hotThread-li .styleone .user-comments .showall .showall-wrapper {
-  float: right;
-  width: 3.08rem;
-  height: 0.96rem;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  background: #ECF4F9;
-  border: 1px solid #0099EB;
-  border-radius: 0.48rem;
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.article-push .article-push-box .article-push-body .article-push-wrapper .article-push-hotThread .hotThread-ul .hotThread-li .styleone .user-comments .showall .showall-wrapper .showall-wrapper-txt {
-  display: inline-block;
-  height: 0.48rem;
-  width: 2rem;
-  font-size: 0.48rem;
-  color: #0099EB;
-}
-
-.article-push .article-push-box .article-push-body .article-push-wrapper .article-push-hotThread .hotThread-ul .hotThread-li .styleone .user-comments .showall .showall-wrapper .showall-wrapper-img {
-  display: inline-block;
-  width: 0.32rem;
-  height: 0.16rem;
-  background: url(../img/bottom.png) no-repeat;
-  background-size: 0.32rem 0.16rem;
 }
 
 .article-push .article-push-box .article-push-body .article-push-wrapper .article-push-hotThread .hotThread-ul .hotThread-li .styleone .user-comments .otheruser {
@@ -968,41 +933,6 @@ li {
 
 .article-push .article-push-box .article-push-body .article-push-wrapper .article-push-hotThread .hotThread-ul .hotThread-li .styletwo .user-comments .showall {
   display: none;
-  height: 0.96rem;
-  width: 100%;
-  margin-top: 0.64rem;
-}
-
-.article-push .article-push-box .article-push-body .article-push-wrapper .article-push-hotThread .hotThread-ul .hotThread-li .styletwo .user-comments .showall .showall-wrapper {
-  float: right;
-  width: 3.08rem;
-  height: 0.96rem;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  background: #ECF4F9;
-  border: 1px solid #0099EB;
-  border-radius: 0.48rem;
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.article-push .article-push-box .article-push-body .article-push-wrapper .article-push-hotThread .hotThread-ul .hotThread-li .styletwo .user-comments .showall .showall-wrapper .showall-wrapper-txt {
-  display: inline-block;
-  height: 0.48rem;
-  width: 2rem;
-  font-size: 0.48rem;
-  color: #0099EB;
-}
-
-.article-push .article-push-box .article-push-body .article-push-wrapper .article-push-hotThread .hotThread-ul .hotThread-li .styletwo .user-comments .showall .showall-wrapper .showall-wrapper-img {
-  display: inline-block;
-  width: 0.32rem;
-  height: 0.16rem;
-  background: url(../img/bottom.png) no-repeat;
-  background-size: 0.32rem 0.16rem;
 }
 
 .article-push .article-push-box .article-push-body .article-push-wrapper .article-push-hotThread .hotThread-ul .hotThread-li .styletwo .user-comments .otheruser {
@@ -1145,6 +1075,7 @@ li {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
 }
 
 .article-push .article-push-box .article-push-body .article-push-wrapper .article-push-hotThread .hotThread-ul .hotThread-li .stylethree .user-comments .showall .showall-wrapper .showall-wrapper-txt {
@@ -1153,14 +1084,11 @@ li {
   width: 2rem;
   font-size: 0.48rem;
   color: #0099EB;
-}
-
-.article-push .article-push-box .article-push-body .article-push-wrapper .article-push-hotThread .hotThread-ul .hotThread-li .stylethree .user-comments .showall .showall-wrapper .showall-wrapper-img {
-  display: inline-block;
-  width: 0.32rem;
-  height: 0.16rem;
+  padding-right: 0.4rem;
   background: url(../img/bottom.png) no-repeat;
   background-size: 0.32rem 0.16rem;
+  background-position-x: right;
+  background-position-y: 0.16rem;
 }
 
 .article-push .article-push-box .article-push-body .article-push-wrapper .article-push-hotThread .hotThread-ul .hotThread-li .stylethree .user-comments .otheruser {
