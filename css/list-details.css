@@ -113,7 +113,7 @@ li {
   position: absolute;
   top: 0.4rem;
   right: 0.64rem;
-  background: url(../img/location1.png) no-repeat;
+  background: url(../img/location2.png) no-repeat;
   background-size: 0.88rem 0.88rem;
 }
 
@@ -279,6 +279,7 @@ li {
 }
 
 .container .section .section-wrapper .section-listhouse .listhouse-data-ul .listhouse-data-li .dataDetail .listhouse-txt .address {
+  float: left;
   display: block;
   font-size: 0.48rem;
   color: #9B9B9B;
