@@ -848,21 +848,14 @@ $sc:25;
                                             border-radius: 12/$sc+rem;
                                             position: relative;
                                             .showall-wrapper-txt {
+                                                display: block;
                                                 font-size: 12/$sc+rem;
                                                 color: #0099EB;
-                                                position: absolute;
-                                                top: 4/$sc+rem;
-                                                left: 10/$sc+rem;
-                                            }
-                                            .showall-wrapper-img {
-                                                display: block;
-                                                width: 10/$sc+rem;
-                                                height: 10/$sc+rem;
-                                                position: absolute;
-                                                top: 9/$sc+rem;
-                                                right: 4/$sc+rem;
+                                                padding-right:10/$sc+rem ;
                                                 background: url(../img/bottom.png) no-repeat;
                                                 background-size: 8/$sc+rem 4/$sc+rem;
+                                                background-position-x:right ;
+                                                margin: 0 auto;
                                             }
                                         }
                                     }
@@ -983,21 +976,14 @@ $sc:25;
                                             border-radius: 12/$sc+rem;
                                             position: relative;
                                             .showall-wrapper-txt {
+                                                display: block;
                                                 font-size: 12/$sc+rem;
                                                 color: #0099EB;
-                                                position: absolute;
-                                                top: 4/$sc+rem;
-                                                left: 10/$sc+rem;
-                                            }
-                                            .showall-wrapper-img {
-                                                display: block;
-                                                width: 10/$sc+rem;
-                                                height: 10/$sc+rem;
-                                                position: absolute;
-                                                top: 9/$sc+rem;
-                                                right: 4/$sc+rem;
+                                                padding-right:10/$sc+rem ;
                                                 background: url(../img/bottom.png) no-repeat;
                                                 background-size: 8/$sc+rem 4/$sc+rem;
+                                                background-position-x:right ;
+                                                margin: 0 auto;
                                             }
                                         }
                                     }
