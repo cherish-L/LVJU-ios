@@ -28,26 +28,26 @@ $(function(){
 		$(".zhezhao").css("z-index","50")
 		$(".zhezhao").css("opacity","1")
 		$(".text-box").focus()
-		$(".writing-box").css("height",panelw)
+		$(".writing-box").css("bottom","0")
 		atPushS.refresh()
 		
 	})
-	$(".zhezhao").tap(function(){
+	$('.zhezhao').bind("touchstart",function(event){
 		$(".zhezhao").css("z-index","-1")
 		$(".zhezhao").css("opacity","0")
-		$(".writing-box").css("height","0")
+		$(".writing-box").css("bottom",-panelw)
 		atPushS.refresh()
-	})
+  });
 	$(".cancel").tap(function(){
 		$(".zhezhao").css("z-index","-1")
 		$(".zhezhao").css("opacity","0")
-		$(".writing-box").css("height","0")
+		$(".writing-box").css("bottom",-panelw)
 		atPushS.refresh()
 	})
 	$(".send").tap(function(){
 		$(".zhezhao").css("z-index","-1")
 		$(".zhezhao").css("opacity","0")
-		$(".writing-box").css("height","0")
+		$(".writing-box").css("bottom",-panelw)
 		$(".text-box").val("")
 		atPushS.refresh()
 	})
