@@ -824,22 +824,14 @@ li {
 }
 
 .article-push .article-push-box .article-push-body .article-push-wrapper .article-push-hotThread .hotThread-ul .hotThread-li .styleone .user-comments .showall .showall-wrapper .showall-wrapper-txt {
+  display: block;
   font-size: 0.48rem;
   color: #0099EB;
-  position: absolute;
-  top: 0.16rem;
-  left: 0.4rem;
-}
-
-.article-push .article-push-box .article-push-body .article-push-wrapper .article-push-hotThread .hotThread-ul .hotThread-li .styleone .user-comments .showall .showall-wrapper .showall-wrapper-img {
-  display: block;
-  width: 0.4rem;
-  height: 0.4rem;
-  position: absolute;
-  top: 0.36rem;
-  right: 0.16rem;
+  padding-right: 0.4rem;
   background: url(../img/bottom.png) no-repeat;
   background-size: 0.32rem 0.16rem;
+  background-position-x: right;
+  margin: 0 auto;
 }
 
 .article-push .article-push-box .article-push-body .article-push-wrapper .article-push-hotThread .hotThread-ul .hotThread-li .styleone .user-comments .otheruser {
