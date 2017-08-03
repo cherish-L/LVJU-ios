@@ -1145,7 +1145,6 @@ li {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
 }
 
 .article-push .article-push-box .article-push-body .article-push-wrapper .article-push-hotThread .hotThread-ul .hotThread-li .stylethree .user-comments .showall .showall-wrapper .showall-wrapper-txt {
