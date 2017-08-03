@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>首页</title>
+		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/Home-page.css" />
+		<script type="text/javascript" src="plugins/zepto.min.js"></script>
+		<script type="text/javascript" src="plugins/iscroll-master/build/iscroll-probe.js"></script>
+		<script src="plugins/swiper-3.4.2.min.js"></script>
+		<script type="text/javascript" src="vue/vue.js"></script>
+		<script type="text/javascript" src="js/Home-page.js"></script>
+		<script>
+			//适配
+			document.documentElement.style.fontSize = innerWidth / 15 + "px";
+		</script>
+	</head>
+
+	<body>
+		<div class="container" v-cloak>
+			<header class="header">
+				<div class="header-box">
+					<div class="signal_bar"></div>
+					<div class="Search_bar">
+						<form class="Search-form" action="">
+							<a class="current-location" href="javascript:;">海口</a>
+							<input class="Search-frame" type="text" placeholder="输入楼盘名或楼盘地址" />
+							<a class="current-map" href="javascript:;"></a>
+						</form>
+					</div>
+				</div>
+			</header>
+			<section class="section">
+				<div class="section-wrapper">
+					<div class="section-banner">
+						<ul class="banner-ul swiper-wrapper">
+							<li class="banner-li swiper-slide" style="background: darkcyan;"></li>
+							<li class="banner-li swiper-slide" style="background: darkgrey;"></li>
+							<li class="banner-li swiper-slide" style="background: cyan;"></li>
+						</ul>
+						<div class="swiper-pagination"></div>
+					</div>
+					<div class="section-nav">
+						<ul class="section-nav-ul">
+							<li>
+								<i><img src="img/Group1.png" alt="" /></i>
+								<span>楼盘大全</span>
+							</li>
+							<li>
+								<i><img src="img/Group2.png" alt="" /></i>
+								<span>楼市资讯</span>
+							</li>
+							<li>
+								<i><img src="img/Group3.png" alt="" /></i>
+								<span>购房联盟</span>
+							</li>
+							<li>
+								<i><img src="img/Group4.png" alt="" /></i>
+								<span>公益接机</span>
+							</li>
+							<li>
+								<i><img src="img/Group5.png" alt="" /></i>
+								<span>地图找房</span>
+							</li>
+							<li>
+								<i><img src="img/Group6.png" alt="" /></i>
+								<span>房贷计算</span>
+							</li>
+							<li>
+								<i><img src="img/Group7.png" alt="" /></i>
+								<span>在线咨询</span>
+							</li>
+							<li>
+								<i><img src="img/Group8.png" alt="" /></i>
+								<span>购房需求</span>
+							</li>
+						</ul>
+						<div class="section-nav-push">
+							<div class="push-logo"></div>
+							<div class="push-content">
+								<p>相识即是有缘 甄姐夸赞顾问小陈服务好相识即是有缘</p>
+								<p>谢女士想海景房 小梁助其满意购下荣盛谢女士想海景房</p>
+							</div>
+						</div>
+					</div>
+					<div class="section-historicalprice">
+						<div class="historicalprice-title">
+							历史房价
+							<span>查看更多</span>
+						</div>
+						<div class="historicalprice-data"></div>
+					</div>
+					<div class="section-groomhouse">
+						<div class="groomhouse-title">
+							推荐房源
+							<span>查看更多</span>
+						</div>
+						<div class="groomhouse-data">
+							<ul class="groomhouse-data-ul">
+								<li class="groomhouse-data-li" v-for="list in groomhouse">
+									<div class="dataDetail">
+										<div class="groomhouse-img">
+											<img :src="list.img" />
+											<span class="biaoqian"></span>
+											<span class="ghtxt" v-text="list.sell"></span>
+										</div>
+										<div class="groomhouse-txt">
+											<h3>
+												<span class="position" v-text="list.positions"></span>
+												<span class="region" v-text="list.region"></span>
+											</h3>
+											<span class="address" v-text="list.address"></span>
+											<span class="openprice" v-text="list.openprice"></span>
+											<span class="averageprice">
+												<span class="averag" v-text="list.averag"></span>
+											<span class="price" v-text="list.price"></span>
+											</span>
+										</div>
+									</div>
+									<div class="dataBrowse">
+										<div class="Browsecount">877451</div>
+										<div class="classification" :class="list.className">
+											<span class="style">住宅</span>
+											<span class="style">养生社区</span>
+											<span class="style">海景房</span>
+											<span class="style">别墅</span>
+											<span class="style">公寓</span>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="section-load">
+						下拉加载更多
+					</div>
+				</div>
+			</section>
+			<footer class="footer">
+				<ul class="footer-nav">
+					<li class="footer-nav-li">
+						<a href="javascript:;">
+							<i><img src="img/home_page1.png"/></i>
+							<span class="current">首页</span>
+						</a>
+					</li>
+					<li class="footer-nav-li">
+						<a href="javascript:;">
+							<i><img src="img/Properties.png"/></i>
+							<span>楼盘</span>
+						</a>
+					</li>
+					<li class="footer-nav-li">
+						<a href="javascript:;">
+							<i><img src="img/zixun1.png"/></i>
+							<span>资讯</span>
+						</a>
+					</li>
+					<li class="footer-nav-li">
+						<a href="javascript:;">
+							<i><img src="img/Pick_airport.png"/></i>
+							<span>公益接机</span>
+						</a>
+					</li>
+					<li class="footer-nav-li">
+						<a href="javascript:;">
+							<i><img src="img/my.png"/></i>
+							<span>我的</span>
+						</a>
+					</li>
+				</ul>
+			</footer>
+		</div>
+
+		<div class="houseprice-trend">
+			<div class="trend-wrapper">
+				<header class="trend-header">
+					<div class="signal_bar"></div>
+					<div class="title_bar">
+						<h3 class="title_txt">房价走势</h3>
+						<a class="return" href="javascript:;"></a>
+					</div>
+				</header>
+				<section class="trend-section">
+					<div class="trend-section-wrapper">
+						<div class="loading-fail">
+							<img src="img/fail.png" />
+							<div class="failalert">
+								<p class="failtxt">加载失败</p>
+								<p class="inspect">请检查您的网络是否连接</p>
+							</div>
+						</div>
+						<div class="trend-content">
+							<div class="content-banner">
+								<div class="left">
+									<span class="leftlocation">海口</span>
+									<span class="leftpinyin">HaiKou</span>
+								</div>
+								<div class="right">
+									<span>切换城市</span>
+								</div>
+							</div>
+							<div class="content-data">
+								<div class="content-data-header">
+									<div class="this month-average">
+										<span>本月均价</span>
+										<span>16000</span>
+									</div>
+									<div class="this month-volume">
+										<span>本月销售套数</span>
+										<span>743</span>
+									</div>
+								</div>
+								<div class="content-data-pic"></div>
+								<div class="content-data-more">左右滑动可查看更多月份价格</div>
+							</div>
+							<div class="content-contrast">
+								<h3>海南城市房价对比</h3>
+								<div class="content-contrast-top">
+									<ul>
+										<li>
+											<span>城市</span>
+											<span>名称</span>
+										</li>
+										<li>
+											<span>上月</span>
+											<span>均价/销售套数</span>
+										</li>
+										<li>
+											<span>本月</span>
+											<span>均价/销售套数</span>
+										</li>
+									</ul>
+								</div>
+								<div class="content-contrast-body">
+									<ul class="pri-ul">
+										<li class="pri-li" v-for="list in contrastdata">
+											<div class="allregion" v-text="list.city"></div>
+											<div class="lastdata">
+												<span v-text="list.lastprice"></span>
+												<span>/</span>
+												<span v-text="list.lastnum"></span>
+											</div>
+											<div class="thisdata" :class="list.className">
+												<span v-text="list.thisprice"></span>
+												<span>/</span>
+												<span v-text="list.thisnum"></span>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var mySwiper = new Swiper('.section-banner', {
+				autoplay: 2000,
+				pagination: '.swiper-pagination',
+			})
+		</script>
+		<script type="text/javascript">
+			var myVue = new Vue({
+				el: ".container",
+				data: {
+					groomhouse: [{
+							img: 'img/massage-subject3.png',
+							sell: '在售',
+							positions: '滨海博鳌小',
+							region: '[琼海]',
+							address: '琼海市博鳌滨海大道（潭门桥旁）',
+							openprice: '开盘：8000元/㎡',
+							averag: '均价：',
+							price: '12000元/㎡',
+							className: {
+								five: true
+							}
+						},
+						{
+							img: 'img/massage-subject3.png',
+							sell: '在售',
+							positions: '滨海博鳌小',
+							region: '[琼海]',
+							address: '琼海市博鳌滨海大道（潭门桥旁）',
+							openprice: '开盘：8000元/㎡',
+							averag: '均价：',
+							price: '12000元/㎡',
+							className: {
+								four: true
+							}
+						},
+						{
+							img: 'img/massage-subject3.png',
+							sell: '在售',
+							positions: '滨海博鳌小',
+							region: '[琼海]',
+							address: '琼海市博鳌滨海大道（潭门桥旁）',
+							openprice: '开盘：8000元/㎡',
+							averag: '均价：',
+							price: '12000元/㎡',
+							className: {
+								three: true
+							}
+						},
+						{
+							img: 'img/massage-subject3.png',
+							sell: '在售',
+							positions: '滨海博鳌小',
+							region: '[琼海]',
+							address: '琼海市博鳌滨海大道（潭门桥旁）',
+							openprice: '开盘：8000元/㎡',
+							averag: '均价：',
+							price: '12000元/㎡',
+							className: {
+								two: true
+							}
+						},
+						{
+							img: 'img/massage-subject3.png',
+							sell: '在售',
+							positions: '滨海博鳌小',
+							region: '[琼海]',
+							address: '琼海市博鳌滨海大道（潭门桥旁）',
+							openprice: '开盘：8000元/㎡',
+							averag: '均价：',
+							price: '12000元/㎡',
+							className: {
+								five: true
+							}
+						},
+						{
+							img: 'img/massage-subject3.png',
+							sell: '在售',
+							positions: '滨海博鳌小',
+							region: '[琼海]',
+							address: '琼海市博鳌滨海大道（潭门桥旁）',
+							openprice: '开盘：8000元/㎡',
+							averag: '均价：',
+							price: '12000元/㎡',
+							className: {
+								four: true
+							}
+						}
+					]
+				}
+			})
+		</script>
+		<script type="text/javascript">
+			var myVue = new Vue({
+				el: ".houseprice-trend",
+				data: {
+					contrastdata: [{
+							city: '海口',
+							lastprice: '13.5k',
+							lastnum: '447',
+							thisprice: '15k',
+							thisnum: '341',
+							className: {
+								styleone: true
+							}
+						},
+						{
+							city: '三亚',
+							lastprice: '13.5k',
+							lastnum: '447',
+							thisprice: '15k',
+							thisnum: '341',
+							className: {
+								styletwo: true
+							}
+						},
+						{
+							city: '五指山',
+							lastprice: '13.5k',
+							lastnum: '447',
+							thisprice: '15k',
+							thisnum: '341',
+							className: {
+								styleone: true
+							}
+						},
+						{
+							city: '陵水',
+							lastprice: '13.5k',
+							lastnum: '447',
+							thisprice: '15k',
+							thisnum: '341',
+							className: {
+								styleone: true
+							}
+						},
+						{
+							city: '琼海',
+							lastprice: '13.5k',
+							lastnum: '447',
+							thisprice: '15k',
+							thisnum: '341',
+							className: {
+								styleone: true
+							}
+						}
+					]
+				}
+			})
+		</script>
+	</body>
+
+</html>
