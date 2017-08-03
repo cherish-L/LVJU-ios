@@ -703,35 +703,6 @@ $sc:25;
                                         overflow: hidden;
                                         -webkit-box-orient: vertical;
                                     }
-                                    .showall {
-                                        display: none;
-                                        height: 24/$sc+rem;
-                                        width: 100%;
-                                        margin-top: 16/$sc+rem;
-                                        .showall-wrapper {
-                                            float: right;
-                                            width: 77/$sc+rem;
-                                            height: 24/$sc+rem;
-                                            box-sizing: border-box;
-                                            -webkit-box-sizing: border-box;
-                                            background: #ECF4F9;
-                                            border: 1px solid #0099EB;
-                                            border-radius: 12/$sc+rem;
-                                            position: relative;
-                                            display: flex;
-                                            justify-content: center;
-                                            align-content: center;
-                                            .showall-wrapper-txt {
-                                                display: inline-block;
-                                                font-size: 12/$sc+rem;
-                                                color: #0099EB;
-                                                padding-right:10/$sc+rem ;
-                                                background: url(../img/bottom.png) no-repeat;
-                                                background-size: 8/$sc+rem 4/$sc+rem;
-                                                background-position-x:right ;
-                                            }
-                                        }
-                                    }
                                     .otheruser {
                                         display: none;
                                         background: #F0F0F0;
@@ -834,35 +805,6 @@ $sc:25;
                                         display: -webkit-box;
                                         overflow: hidden;
                                         -webkit-box-orient: vertical;
-                                    }
-                                    .showall {
-                                        display: none;
-                                        height: 24/$sc+rem;
-                                        width: 100%;
-                                        margin-top: 16/$sc+rem;
-                                        .showall-wrapper {
-                                            float: right;
-                                            width: 77/$sc+rem;
-                                            height: 24/$sc+rem;
-                                            box-sizing: border-box;
-                                            -webkit-box-sizing: border-box;
-                                            background: #ECF4F9;
-                                            border: 1px solid #0099EB;
-                                            border-radius: 12/$sc+rem;
-                                            position: relative;
-                                            display: flex;
-                                            justify-content: center;
-                                            align-content: center;
-                                            .showall-wrapper-txt {
-                                                display: inline-block;
-                                                font-size: 12/$sc+rem;
-                                                color: #0099EB;
-                                                padding-right:10/$sc+rem ;
-                                                background: url(../img/bottom.png) no-repeat;
-                                                background-size: 8/$sc+rem 4/$sc+rem;
-                                                background-position-x:right ;
-                                            }
-                                        }
                                     }
                                     .otheruser {
                                         background: #F0F0F0;

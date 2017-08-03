@@ -805,38 +805,6 @@ li {
   -webkit-box-orient: vertical;
 }
 
-.article-push .article-push-box .article-push-body .article-push-wrapper .article-push-hotThread .hotThread-ul .hotThread-li .styleone .user-comments .showall {
-  display: none;
-  height: 0.96rem;
-  width: 100%;
-  margin-top: 0.64rem;
-}
-
-.article-push .article-push-box .article-push-body .article-push-wrapper .article-push-hotThread .hotThread-ul .hotThread-li .styleone .user-comments .showall .showall-wrapper {
-  float: right;
-  width: 3.08rem;
-  height: 0.96rem;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  background: #ECF4F9;
-  border: 1px solid #0099EB;
-  border-radius: 0.48rem;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-}
-
-.article-push .article-push-box .article-push-body .article-push-wrapper .article-push-hotThread .hotThread-ul .hotThread-li .styleone .user-comments .showall .showall-wrapper .showall-wrapper-txt {
-  display: inline-block;
-  font-size: 0.48rem;
-  color: #0099EB;
-  padding-right: 0.4rem;
-  background: url(../img/bottom.png) no-repeat;
-  background-size: 0.32rem 0.16rem;
-  background-position-x: right;
-}
-
 .article-push .article-push-box .article-push-body .article-push-wrapper .article-push-hotThread .hotThread-ul .hotThread-li .styleone .user-comments .otheruser {
   display: none;
   background: #F0F0F0;
@@ -957,38 +925,6 @@ li {
   display: -webkit-box;
   overflow: hidden;
   -webkit-box-orient: vertical;
-}
-
-.article-push .article-push-box .article-push-body .article-push-wrapper .article-push-hotThread .hotThread-ul .hotThread-li .styletwo .user-comments .showall {
-  display: none;
-  height: 0.96rem;
-  width: 100%;
-  margin-top: 0.64rem;
-}
-
-.article-push .article-push-box .article-push-body .article-push-wrapper .article-push-hotThread .hotThread-ul .hotThread-li .styletwo .user-comments .showall .showall-wrapper {
-  float: right;
-  width: 3.08rem;
-  height: 0.96rem;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  background: #ECF4F9;
-  border: 1px solid #0099EB;
-  border-radius: 0.48rem;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-}
-
-.article-push .article-push-box .article-push-body .article-push-wrapper .article-push-hotThread .hotThread-ul .hotThread-li .styletwo .user-comments .showall .showall-wrapper .showall-wrapper-txt {
-  display: inline-block;
-  font-size: 0.48rem;
-  color: #0099EB;
-  padding-right: 0.4rem;
-  background: url(../img/bottom.png) no-repeat;
-  background-size: 0.32rem 0.16rem;
-  background-position-x: right;
 }
 
 .article-push .article-push-box .article-push-body .article-push-wrapper .article-push-hotThread .hotThread-ul .hotThread-li .styletwo .user-comments .otheruser {
