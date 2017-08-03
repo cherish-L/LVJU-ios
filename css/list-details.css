@@ -46,7 +46,6 @@ li {
 .container {
   width: 100%;
   height: 100%;
-  overflow: hidden;
   background: #f4f4f4;
   display: flex;
   display: -webkit-flex;
@@ -183,7 +182,7 @@ li {
 .container .section {
   flex: 1;
   -webkit-flex: 1;
-  overflow: hidden;
+  overflow: auto;
   background: #F4F4F4;
 }
 
