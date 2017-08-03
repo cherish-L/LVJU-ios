@@ -29,23 +29,27 @@ $(function(){
 		$(".zhezhao").css("opacity","1")
 		$(".text-box").focus()
 		$(".writing-box").css("height",panelw)
+		atPushS.refresh()
 		
 	})
 	$(".zhezhao").tap(function(){
 		$(".zhezhao").css("z-index","-1")
 		$(".zhezhao").css("opacity","0")
 		$(".writing-box").css("height","0")
+		atPushS.refresh()
 	})
 	$(".cancel").tap(function(){
 		$(".zhezhao").css("z-index","-1")
 		$(".zhezhao").css("opacity","0")
 		$(".writing-box").css("height","0")
+		atPushS.refresh()
 	})
 	$(".send").tap(function(){
 		$(".zhezhao").css("z-index","-1")
 		$(".zhezhao").css("opacity","0")
 		$(".writing-box").css("height","0")
 		$(".text-box").val("")
+		atPushS.refresh()
 	})
 	
 	
