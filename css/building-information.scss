@@ -378,7 +378,7 @@ $sc:25;
                         display: block;
                         width: 22/$sc+rem;
                         height: 22/$sc+rem;
-                        margin: 7/$sc+rem auto 4/$sc+rem;
+                        margin: 7/$sc+rem auto 0;
                         img {
                             width: 22/$sc+rem;
                             height: 22/$sc+rem;
@@ -386,6 +386,7 @@ $sc:25;
                     }
                     span {
                         display: block;
+                        margin-top: 4/$sc+rem;
                         text-align: center;
                         line-height: 14/$sc+rem;
                         font-size: 10/$sc+rem;
