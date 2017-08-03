@@ -370,6 +370,9 @@ $sc:25;
             display: -webkit-flex;
             .footer-nav-li {
                 height: 100%;
+                padding-top: 7/$sc+rem;
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
                 flex: 1;
                 a {
                     height: 100%;

@@ -420,6 +420,9 @@ li {
 
 .container .footer .footer-nav .footer-nav-li {
   height: 100%;
+  padding-top: 0.28rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   flex: 1;
 }
 
