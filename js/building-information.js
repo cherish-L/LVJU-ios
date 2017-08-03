@@ -10,6 +10,7 @@ $(function(){
 	
 	//article-push
 	var metaw=$(".section-content-body").width()
+	$(".article-push").css("left",metaw)
 	$(".section-content-massage .pri-li").tap(function(){
 		$(".article-push").css("left","0")
 	})
