@@ -718,15 +718,17 @@ $sc:25;
                                             border: 1px solid #0099EB;
                                             border-radius: 12/$sc+rem;
                                             position: relative;
+                                            display: flex;
+                                            justify-content: center;
+                                            align-content: center;
                                             .showall-wrapper-txt {
-                                                display: block;
+                                                display: inline-block;
                                                 font-size: 12/$sc+rem;
                                                 color: #0099EB;
                                                 padding-right:10/$sc+rem ;
                                                 background: url(../img/bottom.png) no-repeat;
                                                 background-size: 8/$sc+rem 4/$sc+rem;
                                                 background-position-x:right ;
-                                                margin: 0 auto;
                                             }
                                         }
                                     }
@@ -848,15 +850,17 @@ $sc:25;
                                             border: 1px solid #0099EB;
                                             border-radius: 12/$sc+rem;
                                             position: relative;
+                                            display: flex;
+                                            justify-content: center;
+                                            align-content: center;
                                             .showall-wrapper-txt {
-                                                display: block;
+                                                display: inline-block;
                                                 font-size: 12/$sc+rem;
                                                 color: #0099EB;
                                                 padding-right:10/$sc+rem ;
                                                 background: url(../img/bottom.png) no-repeat;
                                                 background-size: 8/$sc+rem 4/$sc+rem;
                                                 background-position-x:right ;
-                                                margin: 0 auto;
                                             }
                                         }
                                     }
@@ -976,14 +980,17 @@ $sc:25;
                                             border: 1px solid #0099EB;
                                             border-radius: 12/$sc+rem;
                                             position: relative;
+                                            display: flex;
+                                            flex-direction: row;
+                                            justify-content: center;
+                                            align-items: center;
                                             .showall-wrapper-txt {
-                                                position: absolute;
-                                                top: 25%;
-                                                left: 10%;
                                                 display: inline-block;
+                                                height: 12/$sc+rem;
+                                                width: 50/$sc+rem;
                                                 font-size: 12/$sc+rem;
                                                 color: #0099EB;
-                                                padding-right:12/$sc+rem ;
+                                                padding-right:10/$sc+rem ;
                                                 background: url(../img/bottom.png) no-repeat;
                                                 background-size: 8/$sc+rem 4/$sc+rem;
                                                 background-position-x:right ;
