@@ -436,6 +436,7 @@ li {
 }
 
 .container .footer .footer-nav .footer-nav-li a i img {
+  float: left;
   width: 0.88rem;
   height: 0.88rem;
 }
