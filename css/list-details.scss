@@ -170,6 +170,8 @@ $sc:25;
         flex: 1;
         -webkit-flex: 1;
         overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        overflow-scrolling: touch;
         background: #F4F4F4;
         .section-wrapper {
             width: 100%;
