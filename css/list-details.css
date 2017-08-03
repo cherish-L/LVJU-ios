@@ -265,6 +265,7 @@ li {
 }
 
 .container .section .section-wrapper .section-listhouse .listhouse-data-ul .listhouse-data-li .dataDetail .listhouse-txt h3 .position {
+  height: 100%;
   font-size: 0.64rem;
   float: left;
   color: #394043;
