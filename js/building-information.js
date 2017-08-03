@@ -25,6 +25,7 @@ $(function(){
 	$(".article-push-footer .write-reviews").tap(function(){
 		$(".zhezhao").css("z-index","50")
 		$(".zhezhao").css("opacity","1")
+		$(".text-box").focus()
 		$(".writing-box").css("height",panelw)
 		
 	})
