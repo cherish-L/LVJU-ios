@@ -370,9 +370,6 @@ $sc:25;
             display: -webkit-flex;
             .footer-nav-li {
                 height: 100%;
-                padding-top: 7/$sc+rem;
-                box-sizing: border-box;
-                -webkit-box-sizing: border-box;
                 flex: 1;
                 a {
                     height: 100%;
@@ -381,7 +378,7 @@ $sc:25;
                         display: block;
                         width: 22/$sc+rem;
                         height: 22/$sc+rem;
-                        margin: 0 auto;
+                        margin: 7/$sc+rem auto 0;
                         img {
                             width: 22/$sc+rem;
                             height: 22/$sc+rem;

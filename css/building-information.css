@@ -420,9 +420,6 @@ li {
 
 .container .footer .footer-nav .footer-nav-li {
   height: 100%;
-  padding-top: 0.28rem;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   flex: 1;
 }
 
@@ -435,7 +432,7 @@ li {
   display: block;
   width: 0.88rem;
   height: 0.88rem;
-  margin: 0 auto;
+  margin: 0.28rem auto 0;
 }
 
 .container .footer .footer-nav .footer-nav-li a i img {
