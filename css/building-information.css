@@ -1076,11 +1076,14 @@ li {
   width: 2rem;
   font-size: 0.48rem;
   color: #0099EB;
-  padding-right: 0.4rem;
+}
+
+.article-push .article-push-box .article-push-body .article-push-wrapper .article-push-hotThread .hotThread-ul .hotThread-li .stylethree .user-comments .showall .showall-wrapper .showall-wrapper-img {
+  display: inline-block;
+  width: 0.32rem;
+  height: 0.16rem;
   background: url(../img/bottom.png) no-repeat;
   background-size: 0.32rem 0.16rem;
-  background-position-x: right;
-  background-position-y: 0.16rem;
 }
 
 .article-push .article-push-box .article-push-body .article-push-wrapper .article-push-hotThread .hotThread-ul .hotThread-li .stylethree .user-comments .otheruser {
