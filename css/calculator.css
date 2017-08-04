@@ -281,13 +281,11 @@ li {
   float: right;
   font-size: 0.56rem;
   color: #6C7072;
-  letter-spacing: 0;
   text-align: right;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   border: none;
   background: none;
-  outline: none;
 }
 
 .container .section .AF-money .AF-type .AF-type-li .returnright {
