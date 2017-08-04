@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>楼盘资讯</title>
+		<link rel="stylesheet" type="text/css" href="css/building-information.css" />
+		<script type="text/javascript" src="plugins/zepto.min.js"></script>
+		<script type="text/javascript" src="plugins/iscroll-master/build/iscroll-probe.js"></script>
+		<script type="text/javascript" src="vue/vue.js"></script>
+		<script type="text/javascript" src="js/building-information.js"></script>
+		<script>
+			//适配
+			document.documentElement.style.fontSize = innerWidth / 15 + "px";
+		</script>
+	</head>
+
+	<body>
+		<div class="container" v-cloak>
+			<header class="header">
+				<div class="signal_bar"></div>
+				<div class="property-information">
+					<h3 class="property-information-title">楼市资讯</h3>
+				</div>
+				<div class="content-nav">
+					<ul class="navsub-ul">
+						<li class="navsub-ul-active"><strong>热门资讯</strong></li>
+						<li><strong>海南资讯</strong></li>
+						<li><strong>楼盘热点</strong></li>
+						<li><strong>新盘速递</strong></li>
+						<li><strong>楼盘导购</strong></li>
+					</ul>
+				</div>
+			</header>
+			<section class="section">
+				<div class="section-content-body">
+					<div class="section-content-massage">
+						<ul class="pri-ul">
+							<li class="pri-li" v-for="item in items">
+								<div class="style" :class="item.className">
+									<div class="style-left">
+										<img v-bind:src="item.img" />
+									</div>
+									<div class="style-right">
+										<div class="style-title">
+											<p>
+												<span class="title-txt" v-text='item.title'></span>
+												<span class="title-content" v-text='item.content'></span>
+											</p>
+										</div>
+										<div class="style-img">
+											<img v-bind:src="item.detailed.imgone" />
+											<img v-bind:src="item.detailed.imgtwo" />
+											<img v-bind:src="item.detailed.imgthird" />
+										</div>
+										<div class="style-info">
+											<span class="style-copyright" v-text='item.from'></span>
+											<span class="style-time" v-text='item.time'></span>
+										</div>
+									</div>
+
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<footer class="footer">
+				<ul class="footer-nav">
+					<li class="footer-nav-li">
+						<a href="javascript:;">
+							<i><img src="img/home_page.png"/></i>
+							<span>首页</span>
+						</a>
+					</li>
+					<li class="footer-nav-li">
+						<a href="javascript:;">
+							<i><img src="img/Properties.png"/></i>
+							<span>楼盘</span>
+						</a>
+					</li>
+					<li class="footer-nav-li">
+						<a href="javascript:;">
+							<i><img src="img/zixun.png"/></i>
+							<span class="current">资讯</span>
+						</a>
+					</li>
+					<li class="footer-nav-li">
+						<a href="javascript:;">
+							<i><img src="img/Pick_airport.png"/></i>
+							<span>公益接机</span>
+						</a>
+					</li>
+					<li class="footer-nav-li">
+						<a href="javascript:;">
+							<i><img src="img/my.png"/></i>
+							<span>我的</span>
+						</a>
+					</li>
+				</ul>
+			</footer>
+		</div>
+		<div class="zhezhao"></div>
+		<div class="article-push">
+			<div class="article-push-box">
+				<header class="article-push-header">
+					<div class="signal_bar"></div>
+					<div class="article-push-header-wrapper">
+						<a class="return" href="javascript:;"></a>
+						<span class="comment">8742点评</span>
+					</div>
+				</header>
+				<div class="article-push-body">
+					<div class="article-push-wrapper">
+						<div class="article-push-content">
+							<div class="article-push-content-header">
+								<p><span class="title">[鲁能山海天]</span>客户看中四季康城二期高性价比小苏助力连签四房</p>
+								<div class="article-push-article-info">
+									<span class="copyright">旅居网</span>
+									<span class="time">2017-06-20</span>
+								</div>
+							</div>
+							<div class="article-push-content-body">
+								<p>在经过一月到五月的集中放量和各大节日的优惠活动后，海南楼市迎来了暂时的间隙期，不少开发商暂时冷却下来，减少了楼盘的各种暖场营销活动。那么这个时候购房者来海南买房会不会没办法买到优惠的房源呢？当然不会！本期旅居网小编就来盘点一下6月初儋州楼盘推出的特价房优惠活动，为近期想来海南买优惠房源的购房者提供一份置业参考。</p>
+								<img src="img/massage-subject3.png" alt="" />
+								<p>在经过一月到五月的集中放量和各大节日的优惠活动后，海南楼市迎来了暂时的间隙期，不少开发商暂时冷却下来，减少了楼盘的各种暖场营销活动。那么这个时候购房者来海南买房会不会没办法买到优惠的房源呢？当然不会！本期旅居网小编就来盘点一下6月初儋州楼盘推出的特价房优惠活动，为近期想来海南买优惠房源的购房者提供一份置业参考。</p>
+								<p>在经过一月到五月的集中放量和各大节日的优惠活动后，海南楼市迎来了暂时的间隙期，不少开发商暂时冷却下来，减少了楼盘的各种暖场营销活动。那么这个时候购房者来海南买房会不会没办法买到优惠的房源呢？当然不会！本期旅居网小编就来盘点一下6月初儋州楼盘推出的特价房优惠活动，为近期想来海南买优惠房源的购房者提供一份置业参考。</p>
+								<p class="indent"><span>我是小标题</span>在经过一月到五月的集中放量和各大节日的优惠活动后，海南楼市迎来了暂时的间隙期，不少开发商暂时冷却下来，减少了楼盘的各种暖场营销活动。那么这个时候购房者来海南买房会不会没办法买到优惠的房源呢？当然不会！本期旅居网小编就来盘点一下6月初儋州楼盘推出的特价房优惠活动，为近期想来海南买优惠房源的购房者提供一份置业参考。</p>
+								<div class="edit">编辑：卤鸭卤鸭</div>
+								<div class="share">
+									<span>分享到</span>
+								</div>
+								<div class="shareway">
+									<div class="way weixin">
+										<i></i>
+										<span>微信好友</span>
+									</div>
+									<div class="way friendcircle">
+										<i></i>
+										<span>朋友圈</span>
+									</div>
+									<div class="way xinlang">
+										<i></i>
+										<span>新浪微博</span>
+									</div>
+								</div>
+								<div class="jumpPage">
+									<span class="previous">上一篇</span>
+									<span class="next">下一篇</span>
+								</div>
+							</div>
+						</div>
+						<div class="article-push-hotThread">
+							<h3 class="hotThread-header">热门跟帖</h3>
+							<ul class="hotThread-ul">
+								<li class="hotThread-li" v-for="user in commention">
+									<div class="hotThread-li-box" :class="user.className">
+										<div class="user-avatar">
+											<img class="user-avatar-img" v-bind:src="user.avatar"></img>
+										</div>
+										<div class="user-comments">
+											<div class="user-name" v-text='user.name'></div>
+											<div class="user-info">
+												<span class="user-info-from" v-text='user.from'></span>
+												<span class="user-info-time" v-text='user.time'></span>
+											</div>
+											<p class="user-say showmore" v-text='user.say'></p>
+											<div class="showall">
+												<div class="showall-wrapper">
+													<span class="showall-wrapper-txt">显示全部</span>
+													<i class="showall-wrapper-img"></i>
+												</div>
+											</div>
+											<div class="otheruser">
+												<div class="otheruser-name" v-text='user.other.name'></div>
+												<div class="otheruser-info">
+													<span class="otheruser-info-from" v-text='user.other.from'></span>
+													<span class="otheruser-info-time" v-text='user.other.time'></span>
+												</div>
+												<div class="otheruser-phone" v-text='user.other.phone'></div>
+												<p class="otheruser-say" v-text='user.other.say'></p>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="article-push-moreAbout">
+							<h3 class="moreAbout-header">更多关于“海滨国际”的资讯</h3>
+							<ul class="moreAbout-ul">
+								<li class="moreAbout-li" v-for="link in moreAbout">
+									<p v-text='link.txt'></p>
+									<span v-text='link.time'></span>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+				<footer class="article-push-footer">
+					<div class="write-reviews">
+						<span>写点评咨询</span>
+					</div>
+					<div class="show-reviews">
+						<i></i>
+						<span>8742</span>
+					</div>
+				</footer>
+			</div>
+		</div>
+		<div class="writing-box">
+			<div class="writing-panel">
+				<div class="writing-panel-header">
+					<span class="cancel">取消</span>
+					<span class="hader-txt">写点评咨询</span>
+					<span class="send">发送</span>
+				</div>
+				<textarea class="text-box" autofocus name=""></textarea>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var myVue = new Vue({
+				el: ".container",
+				data: {
+					items: [{
+							img: 'img/imgbox.png',
+							title: '[鲁能山海天]',
+							content: '客户看中四季康城二期高性价比小苏助力连签四房 客户看中四季康城二期高性价比小苏助力连签四房',
+							from: "海南资讯",
+							time: "2017-06-20",
+							detailed: {
+								imgone: 'img/massage-subject1.png',
+								imgtwo: 'img/massage-subject2.png',
+								imgthird: 'img/massage-subject3.png'
+							},
+							className: {
+								firststyle: true
+							}
+						},
+						{
+							img: 'img/imgbox.png',
+							title: '[鲁能山海天]',
+							content: '客户看中四季康城二期高性价比小苏助力连签四房 客户看中四季康城二期高性价比小苏助力连签四房',
+							from: "新盘速递",
+							time: "2017-06-20",
+							detailed: {
+								imgone: 'img/massage-subject1.png',
+								imgtwo: 'img/massage-subject2.png',
+								imgthird: 'img/massage-subject3.png'
+							},
+							className: {
+								secondstyle: true
+							}
+						},
+						{
+							img: 'img/imgbox.png',
+							title: '[鲁能山海天]',
+							content: '客户看中四季康城二期高性价比小苏助力连签四房 客户看中四季康城二期高性价比小苏助力连签四房',
+							from: "海南资讯",
+							time: "2017-06-20",
+							detailed: {
+								imgone: 'img/massage-subject1.png',
+								imgtwo: 'img/massage-subject2.png',
+								imgthird: 'img/massage-subject3.png'
+							},
+							className: {
+								thirdstyle: true
+							}
+						},
+						{
+							img: 'img/imgbox.png',
+							title: '[鲁能山海天]',
+							content: '客户看中四季康城二期高性价比小苏助力连签四房 客户看中四季康城二期高性价比小苏助力连签四房',
+							from: "楼盘导购",
+							time: "2017-06-20",
+							detailed: {
+								imgone: 'img/massage-subject1.png',
+								imgtwo: 'img/massage-subject2.png',
+								imgthird: 'img/massage-subject3.png'
+							},
+							className: {
+								fourthstyle: true
+							}
+						},
+						{
+							img: 'img/imgbox.png',
+							title: '[鲁能山海天]',
+							content: '客户看中四季康城二期高性价比小苏助力连签四房 客户看中四季康城二期高性价比小苏助力连签四房',
+							from: "海南资讯",
+							time: "2017-06-20",
+							detailed: {
+								imgone: 'img/massage-subject1.png',
+								imgtwo: 'img/massage-subject2.png',
+								imgthird: 'img/massage-subject3.png'
+							},
+							className: {
+								firststyle: true
+							}
+						},
+						{
+							img: 'img/imgbox.png',
+							title: '[鲁能山海天]',
+							content: '客户看中四季康城二期高性价比小苏助力连签四房 客户看中四季康城二期高性价比小苏助力连签四房',
+							from: "新盘速递",
+							time: "2017-06-20",
+							detailed: {
+								imgone: 'img/massage-subject1.png',
+								imgtwo: 'img/massage-subject2.png',
+								imgthird: 'img/massage-subject3.png'
+							},
+							className: {
+								secondstyle: true
+							}
+						},
+						{
+							img: 'img/imgbox.png',
+							title: '[鲁能山海天]',
+							content: '客户看中四季康城二期高性价比小苏助力连签四房 客户看中四季康城二期高性价比小苏助力连签四房',
+							from: "海南资讯",
+							time: "2017-06-20",
+							detailed: {
+								imgone: 'img/massage-subject1.png',
+								imgtwo: 'img/massage-subject2.png',
+								imgthird: 'img/massage-subject3.png'
+							},
+							className: {
+								thirdstyle: true
+							}
+						},
+						{
+							img: 'img/imgbox.png',
+							title: '[鲁能山海天]',
+							content: '客户看中四季康城二期高性价比小苏助力连签四房 客户看中四季康城二期高性价比小苏助力连签四房',
+							from: "楼盘导购",
+							time: "2017-06-20",
+							detailed: {
+								imgone: 'img/massage-subject1.png',
+								imgtwo: 'img/massage-subject2.png',
+								imgthird: 'img/massage-subject3.png'
+							},
+							className: {
+								fourthstyle: true
+							}
+						}
+					]
+				}
+			})
+		</script>
+		<script type="text/javascript">
+			var myVues = new Vue({
+				el: ".article-push",
+				data: {
+					moreAbout: [{
+							txt: '文昌度假两房户型推假两房户型推假两房户型推假两房户型推荐 雅居乐月亮湾两居室度假宜居雅居乐月亮湾两居室度假宜居',
+							time: '2017-06-21'
+						},
+						{
+							txt: '文昌度假两房户型推假两房户型推假两房户型',
+							time: '2017-06-20'
+						},
+						{
+							txt: '文昌度假两房户型推假两房户型推假两房户型推假两房户型推荐 雅居乐月亮湾两居室度假宜居雅居乐月亮湾两居室度假宜居',
+							time: '2017-06-19'
+						}
+					],
+					commention: [{
+							avatar: 'img/head_portrait.png',
+							name: '张三',
+							from: '来自：辽宁省本溪市',
+							time: '2017-06-20',
+							say: '现在有在售房吗？户型？价格？',
+							other: {
+								name: '李四',
+								from: '来自：辽宁省本溪市',
+								time: '2017-06-20',
+								phone: '13878745747',
+								say: '您好，很高兴为您服务。房源不是很多，折后均价13500毛坯。'
+							},
+							className: {
+								styleone: true
+							}
+						},
+						{
+							avatar: 'img/head_portrait.png',
+							name: '李四',
+							from: '来自：浙江省杭州市',
+							time: '2017-06-20',
+							say: '现在5号楼还有房吗？95平的那种户型多少钱？比如中间层的？',
+							other: {
+								name: '李四',
+								from: '来自：辽宁省本溪市',
+								time: '2017-06-20',
+								phone: '13878745747',
+								say: '您好，很高兴为您服务。房源不是很多，折后均价13500毛坯。'
+							},
+							className: {
+								styletwo: true
+							}
+						},
+						{
+							avatar: 'img/head_portrait.png',
+							name: '王五',
+							from: '来自：辽宁省本溪市',
+							time: '2017-06-20',
+							say: '帮我查一下美高梅7期3房166平米共5套，4房205平米共3套的15，16，17，19，2O，25，26，29楼层共8户的价格及现在5号楼还有房吗？95平的那种户型多少钱？比如中间层的？',
+							other: {
+								name: '李四',
+								from: '来自：辽宁省本溪市',
+								time: '2017-06-20',
+								phone: '13878745747',
+								say: '您好，很高兴为您服务。房源不是很多，折后均价13500毛坯。'
+							},
+							className: {
+								stylethree: true
+							}
+						}
+					]
+				}
+			})
+		</script>
+	</body>
+
+</html>
