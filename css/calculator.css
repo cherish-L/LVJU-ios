@@ -273,8 +273,10 @@ li {
 }
 
 .container .section .AF-money .AF-type .AF-type-li .name {
+  width: 8rem;
   height: 1.8rem;
-  line-height: 1.8rem;
+  padding: 0.48rem 0;
+  line-height: 0.84rem;
   margin-right: 0.64rem;
   float: right;
   font-size: 0.56rem;
@@ -1432,7 +1434,7 @@ li {
   background: #f4f4f4;
   transition: all .3s;
   position: fixed;
-  left: 0;
+  left: 15.2rem;
   top: 0;
 }
 

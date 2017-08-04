@@ -238,8 +238,10 @@ $sc:25;
                         }
                     }
                     .name {
+                        width: 200/$sc+rem;
                         height: 45/$sc+rem;
-                        line-height: 45/$sc+rem;
+                        padding: 12/$sc+rem 0;
+                        line-height: 21/$sc+rem;
                         margin-right: 16/$sc+rem;
                         float: right;
                         font-size: 14/$sc+rem;
@@ -1248,7 +1250,7 @@ $sc:25;
     background: #f4f4f4;
     transition: all .3s;
     position: fixed;
-    left: 0; //------------------------
+    left: 380/$sc+rem; //------------------------
     top: 0;
     .details-wrapper {
         width: 100%;
