@@ -26,6 +26,7 @@ body {
 input {
     outline: none;
     border: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 li {
