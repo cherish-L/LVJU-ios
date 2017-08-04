@@ -52,8 +52,7 @@ li {
 .container .header {
   width: 100%;
   background: #f6f6f6;
-  box-shadow: 0 1px 0 0 #CCCCCC;
-  -webkit-box-shadow: 0 1px 0 0 #CCCCCC;
+  border-bottom: 1px solid #CCCCCC;
 }
 
 .container .header .signal_bar {
@@ -1449,7 +1448,7 @@ li {
   background: #f6f6f6;
   box-shadow: 0 1px 0 0 #CCCCCC;
   -webkit-box-shadow: 0 1px 0 0 #CCCCCC;
-  z-index: 10;
+  z-index: 30;
 }
 
 .R-details .details-wrapper .details-wrapper-header .signal_bar {
