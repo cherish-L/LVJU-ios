@@ -238,7 +238,9 @@ $(function(){
 		$(".zhezhao").css("opacity","0")
 	})
 	
-	
+	var sectionS = new IScroll('.section', {
+		scrollbars: false
+	});
 	var detailS = new IScroll('.details-wrapper-body', {
 		scrollbars: false
 	});

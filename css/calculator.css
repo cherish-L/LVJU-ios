@@ -3,7 +3,7 @@
   padding: 0;
 }
 
-a {
+a, input {
   outline: none;
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
