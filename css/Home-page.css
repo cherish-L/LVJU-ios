@@ -429,7 +429,7 @@ li {
   flex: 1;
   -webkit-flex: 1;
   padding-left: 0.64rem;
-  height: 0.8rem;
+  height: 100%;
 }
 
 .container .section .section-wrapper .section-groomhouse .groomhouse-data .groomhouse-data-ul .groomhouse-data-li .dataDetail .groomhouse-txt h3 {
