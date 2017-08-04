@@ -17,6 +17,7 @@ $(function(){
 	})
 	$(".R-details .details-calculate-select span").tap(function(){
 		$(this).addClass("select").siblings().removeClass("select")
+		detailS.refresh()
 	})
 	
 	//input获得焦点是光标始终在内容后面
@@ -31,11 +32,13 @@ $(function(){
 	$(".push").tap(function(){
 		$(".push").css("color","#999999")
 		$(".R-details").css("left","0")
+		detailS.refresh()
 	})
 	
 	$(".R-details .return").tap(function(){
 		$(".push").css("color","#0099eb")
 		$(".R-details").css("left",metaw)
+		detailS.refresh()
 	})
 	
 	
