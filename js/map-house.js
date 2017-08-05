@@ -67,8 +67,8 @@ $(function(){
 		var len=$(".selected").length
 		$(".screen-push").css("bottom",-htmlh)
 		$(".screenli .num").css("display","block")
-		$(".screenli .num-txt").text(len)
-		if($(".screenli .num-txt").text()=="0"){
+		$(".screenli .num").text(len)
+		if($(".screenli .num").text()=="0"){
 			$(".screenli .num").css("display","none")
 		}
 	})
@@ -137,8 +137,8 @@ $(function(){
 		$(".maphouse-push").css("height","0")
 		$(".regionli .num").css("display","block")
 		var len=$(".confirmthree").length
-		$(".regionli .num-txt").text(len)
-		if($(".regionli .num-txt").text()=="0"){
+		$(".regionli .num").text(len)
+		if($(".regionli .num").text()=="0"){
 			$(".regionli .num").css("display","none")
 		}
 	})
