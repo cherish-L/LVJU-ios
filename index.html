@@ -4,10 +4,11 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>购房需求</title>
-		<link rel="stylesheet" type="text/css" href="css/housing-demand.css" />
+		<title>地图看房</title>
+		<link rel="stylesheet" type="text/css" href="css/map-house.css" />
 		<script type="text/javascript" src="plugins/zepto.min.js"></script>
 		<script type="text/javascript" src="plugins/iscroll-master/build/iscroll-probe.js"></script>
+		<script type="text/javascript" src="vue/vue.js"></script>
 		<script>
 			document.documentElement.style.fontSize = innerWidth / 15 + "px";
 		</script>
@@ -18,231 +19,333 @@
 			<header class="header">
 				<div class="signal_bar"></div>
 				<div class="title_bar">
-					<h3 class="title_txt">购房需求</h3>
+					<h3 class="title_txt">地图看房</h3>
 					<a class="return" href="javascript:;"></a>
+					<a class="Showing" href="javascript:;"></a>
 				</div>
 			</header>
 			<section class="section">
-				<div class="section-wrapper">
-
-					<div class="banner">
-						<img class="banner_img" src="img/banner.png" alt="" />
+				<div class="section-map"></div>
+				<div class="section-map-list">
+					<div class="map-list-wrapper">
+						<ul class="map-list-btn">
+							<li class="regionli">
+								<span class="btn pregion">区域</span>
+								<span class="num"></span>
+							</li>
+							<li class="screenli">
+								<span class="btn pscreen">筛选</span>
+								<span class="num"></span>
+							</li>
+							<li class="listli">
+								<span class="btn plist">列表</span>
+							</li>
+						</ul>
+						<div class="map-list-location"></div>
+						<div class="map-list-trand"></div>
+						<div class="map-list-tranddata">
+							<span class="regional">海口均价</span>
+							<span class="price">12000元/㎡</span>
+							<span class="rose">40.1%</span>
+						</div>
 					</div>
-					<ul class="information_wrap">
-						<li class="int">
-							<div class="information">
-								<span class="information_title">你的昵称</span>
-								<span class="required">(必填)</span>
-							</div>
-							<input class="name" id="name" type="text" placeholder="输入你的称呼" />
-						</li>
-						<li class="int">
-							<div class="information">
-								<span class="information_title">联系电话</span>
-								<span class="required">(必填)</span>
-							</div>
-							<input class="name" id="phone" type="text" placeholder="输入手机号码" />
-						</li>
-						<li class="other">
-							<div class="information">
-								<span class="information_title">意向城市</span>
-								<span class="required">(必填)</span>
-							</div>
-							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
-							<div class="returnright">
-								<div class="txt_wrap">
-									<div style="clear: both;"></div>
-								</div>
-							</div>
-						</li>
-						<li class="other">
-							<div class="information">
-								<span class="information_title">房屋类型</span>
-								<span class="required">(必填)</span>
-							</div>
-							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
-							<div class="returnright">
-								<div class="txt_wrap">
-									<div style="clear: both;"></div>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="information">
-								<span class="information_title">意向户型</span>
-								<span class="required">(必填)</span>
-							</div>
-							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
-							<div class="returnright">
-							</div>
-						</li>
-						<li>
-							<div class="information">
-								<span class="information_title">置业面积</span>
-							</div>
-							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
-							<div class="returnright"></div>
-						</li>
-						<li>
-							<div class="information">
-								<span class="information_title">预算总价</span>
-							</div>
-							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
-							<div class="returnright">
-							</div>
-						</li>
-						<li>
-							<div class="information">
-								<span class="information_title">装修要求</span>
-							</div>
-							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
-							<div class="returnright">
-							</div>
-						</li>
-						<li class="int">
-							<div class="information">
-								<span class="information_title">附加要求</span>
-							</div>
-							<input class="name" id="nead" type="text" placeholder="输入要求内容" />
-						</li>
-					</ul>
+				</div>
+				<div class="section-map-peripheral">
+					<div class="map-peripheral-wrapper">
+						<ul class="peripheral-ul">
+							<li class="peripheral-li">
+								<i></i>
+								<span>公交</span>
+							</li>
+							<li class="peripheral-li">
+								<i></i>
+								<span>医院</span>
+							</li>
+							<li class="peripheral-li">
+								<i></i>
+								<span>银行</span>
+							</li>
+							<li class="peripheral-li">
+								<i></i>
+								<span>超市</span>
+							</li>
+							<li class="peripheral-li">
+								<i></i>
+								<span>学校</span>
+							</li>
+						</ul>
+						<div class="peripheral-return"></div>
+					</div>
 				</div>
 			</section>
-			<footer class="footer">
-				<input class="submit" id="submit" type="submit" value="提交购房需求" />
-			</footer>
 		</div>
-		<div class="bomb_box"></div>
+		<div class="maphouse-push">
+			<div class="region-push">
+				<header class="region-push-header">
+					<div class="signal_bar"></div>
+					<div class="title_bar">
+						<h3 class="title_txt">区域</h3>
+						<a class="return" href="javascript:;"></a>
+					</div>
+				</header>
+				<section class="region-push-section">
+					<div class="region-push-section-wrapper">
+						<div class="regionlist">
+							<ul class="regionlist-ul">
+								<li class="regionlist-li confirmone">区域</li>
+								<li class="regionlist-li">附近</li>
+							</ul>
+						</div>
 
-		<div class="click_sub">
-			<div class="success">
-				<img class="success_logo" src="img/success.png" alt="" />
-				<p class="congratulations">恭喜您，提交成功</p>
-				<p class="success_txt">专业置业顾问将会尽快与您联系</p>
-				<p class="success_txt">为您提供最佳的房产导购服务</p>
-				<div class="know">我知道了</div>
-			</div>
-			<div class="fail">
-				<img class="fail_logo" src="img/fail.png" alt="" />
-				<p class="failsay">报名失败</p>
-				<p class="fail_txt">请检查您的网络是否连接</p>
-				<div class="again">重新提交</div>
+						<div class="municipality">
+							<ul class="municipality-ul">
+								<li class="municipality-li" v-for="list in municipalitydata" v-text="list.city"></li>
+							</ul>
+						</div>
 
+						<div class="district">
+							<ul class="district-ul">
+								<li class="district-li" v-for="list in districtdata1">
+									<span v-text="list.district"></span>
+									<span class="check"></span>
+								</li>
+							</ul>
+
+							<ul class="district-ul">
+								<li class="district-li" v-for="list in districtdata2">
+									<span v-text="list.district"></span>
+									<span class="check"></span>
+								</li>
+							</ul>
+
+							<ul class="district-ul">
+								<li class="district-li" v-for="list in districtdata3">
+									<span v-text="list.district"></span>
+									<span class="check"></span>
+								</li>
+							</ul>
+
+							<ul class="district-ul">
+								<li class="district-li" v-for="list in districtdata4">
+									<span v-text="list.district"></span>
+									<span class="check"></span>
+								</li>
+							</ul>
+
+							<ul class="district-ul">
+								<li class="district-li" v-for="list in districtdata5">
+									<span v-text="list.district"></span>
+									<span class="check"></span>
+								</li>
+							</ul>
+
+							<ul class="district-ul">
+								<li class="district-li" v-for="list in districtdata6">
+									<span v-text="list.district"></span>
+									<span class="check"></span>
+								</li>
+							</ul>
+
+							<ul class="district-ul">
+								<li class="district-li" v-for="list in districtdata7">
+									<span v-text="list.district"></span>
+									<span class="check"></span>
+								</li>
+							</ul>
+						</div>
+						<p style="clear: both;"></p>
+					</div>
+
+				</section>
+				<footer class="region-push-footer">
+					<span class="empty">清空条件</span>
+					<span class="determine">确定</span>
+				</footer>
+			</div>
+
+			<div class="screen-push">
+				<header class="screen-push-header">
+					<div class="signal_bar"></div>
+					<div class="title_bar">
+						<h3 class="title_txt">筛选</h3>
+						<a class="return" href="javascript:;"></a>
+					</div>
+				</header>
+				<section class="screen-push-section">
+					<div class="screen-push-section-wrapper">
+						<div class="average-price">
+							<h3 class="average-price-title">均价</h3>
+							<div class="average-price-num">
+								<span class="select">1万以下</span>
+								<span class="select">1-1.5万</span>
+								<span class="select">1.5-2万</span>
+								<span class="none select">2万以上</span>
+								<div style="clear: both;"></div>
+							</div>
+							<div class="average-price-input">
+								<input class="minprice" type="text" placeholder="最低价格" />
+								<span></span>
+								<input class="maxprice" type="text" placeholder="最高价格" />
+							</div>
+						</div>
+						<div class="house-style">
+							<h3 class="house-style-title">户型</h3>
+							<div class="house-style-content">
+								<span class="select">一室</span>
+								<span class="select">二室</span>
+								<span class="select">三室</span>
+								<span class="select">四室</span>
+								<span class="select">五室以上</span>
+								<span class="select">别墅</span>
+								<div style="clear: both;"></div>
+							</div>
+						</div>
+						<div class="open-time">
+							<h3 class="open-time-title">开盘时间</h3>
+							<div class="open-time-content">
+								<span class="select">本月开盘</span>
+								<span class="select">下月开盘</span>
+								<span class="select">三个月内开盘</span>
+								<span class="select">六个月内开盘</span>
+								<span class="select">已开盘三个月</span>
+								<span class="select">已开票六个月</span>
+								<div style="clear: both;"></div>
+							</div>
+						</div>
+						<div class="characteristic">
+							<h3 class="characteristic-title">特色</h3>
+							<div class="characteristic-content">
+								<span class="select">打折优惠</span>
+								<span class="select">住宅</span>
+								<span class="select">养生社区</span>
+								<span class="select">花园洋房</span>
+								<span class="select">海景房</span>
+								<span class="select">河(江)景房</span>
+								<span class="select">温泉社区</span>
+								<span class="select">酒店式公寓</span>
+								<span class="select">商铺</span>
+								<span class="select">别墅</span>
+								<span class="select">公寓</span>
+								<span class="select">社区</span>
+								<span class="select">学区房</span>
+								<span class="select">湖景房</span>
+								<span class="select">写字楼</span>
+								<div style="clear: both;"></div>
+							</div>
+						</div>
+					</div>
+
+				</section>
+				<footer class="screen-push-footer">
+					<span class="empty">清空条件</span>
+					<span class="determine">确定</span>
+				</footer>
 			</div>
 		</div>
-		<div class="bomb_wrap">
-			<div class="bomb"></div>
-			<div class="bomb"></div>
-			<div class="bomb d_requirement">
-				<div class="d_content">
-					<div class="b_tltle">
-						<h3>房屋类型</h3>
-						<span>(可多选)</span>
-					</div>
-					<div class="selectmore">
-						<span>海口</span>
-						<span>三亚</span>
-						<span>琼海</span>
-						<span>文昌</span>
-						<span>儋州</span>
-						<span>澄迈</span>
-						<span>万宁</span>
-						<span>陵水</span>
-						<span>临高</span>
-						<span>定安</span>
-						<span>保亭</span>
-						<span>五指山</span>
-						<span>东方</span>
-						<span>琼中</span>
-						<span>昌江</span>
-						<span>白沙</span>
-						<span>乐东</span>
-						<span>屯昌</span>
-					</div>
-					<div class="btns">
-						<span class="reset">重置</span>
-						<span class="determine">确实</span>
-					</div>
-				</div>
-			</div>
-			<div class="bomb d_requirement">
-				<div class="d_content">
-					<div class="b_tltle">
-						<h3>房屋类型</h3>
-						<span>(可多选)</span>
-					</div>
-					<div class="selectmore">
-						<span>住宅</span>
-						<span>养生社区</span>
-						<span>花园洋房</span>
-						<span>海景房</span>
-						<span>河(江)景房</span>
-						<span>温泉社区</span>
-						<span>酒店式公寓</span>
-						<span>商铺</span>
-						<span>别墅</span>
-						<span>公寓</span>
-						<span>社区</span>
-						<span>学区房</span>
-						<span>湖景房</span>
-						<span>写字楼</span>
-					</div>
-					<div class="btns">
-						<span class="reset">重置</span>
-						<span class="determine">确实</span>
-					</div>
-				</div>
-			</div>
-			<div class="bomb d_requirement">
-				<ul class="d_content">
-					<li>一房户型</li>
-					<li>二房户型</li>
-					<li>三房户型</li>
-					<li>四房户型</li>
-					<li>五房户型</li>
-					<li>别墅</li>
-					<li>其他</li>
-				</ul>
-			</div>
-			<div class="bomb d_requirement">
-				<ul class="d_content">
-					<li>不限</li>
-					<li>50m<sup>2</sup> 以内</li>
-					<li>50-70m<sup>2</sup></li>
-					<li>70-100m<sup>2</sup></li>
-					<li>100-130m<sup>2</sup></li>
-					<li>130-160m<sup>2</sup></li>
-					<li>160-200m<sup>2</sup></li>
-					<li>200m<sup>2</sup> 以上</li>
-				</ul>
-			</div>
-			<div class="bomb d_requirement">
-				<ul class="d_content">
-					<li>不限</li>
-					<li>30万以下</li>
-					<li>30-50万</li>
-					<li>50-80万</li>
-					<li>80-120万</li>
-					<li>120-160万</li>
-					<li>160-200万</li>
-					<li>200-300万</li>
-					<li>300-500万</li>
-					<li>500-1000万</li>
-					<li>1000万以上</li>
-				</ul>
-			</div>
-			<div class="bomb d_requirement">
-				<ul class="d_content">
-					<li>不限</li>
-					<li>毛坯</li>
-					<li>简单装修</li>
-					<li>中档装修</li>
-					<li>精装修</li>
-				</ul>
-			</div>
-			<div class="bomb"></div>
-		</div>
+		<script type="text/javascript">
+			var myVue = new Vue({
+				el: ".maphouse-push",
+				data: {
+					municipalitydata: [{
+							city: '不限'
+						},
+						{
+							city: '海口'
+
+						},
+						{
+							city: '三亚'
+
+						},
+						{
+							city: '儋州'
+
+						},
+						{
+							city: '文昌'
+
+						},
+						{
+							city: '陵水'
+
+						},
+						{
+							city: '琼海'
+
+						}
+					],
+					districtdata1: [{
+							district: '不限',
+						},
+						{
+							district: '美兰区',
+						},
+						{
+							district: '秀英区',
+						},
+						{
+							district: '龙华区',
+						},
+						{
+							district: '琼山区',
+						},
+						{
+							district: '西海岸'
+						}
+					],
+					districtdata2: [{
+							district: '不限',
+						},
+						{
+							district: '美兰区',
+						},
+						{
+							district: '秀英区',
+						},
+						{
+							district: '龙华区',
+						},
+						{
+							district: '琼山区'
+						}
+					],
+					districtdata3: [{
+							district: '不限',
+						},
+						{
+							district: '美兰区',
+						},
+						{
+							district: '秀英区',
+						},
+						{
+							district: '龙华区'
+						}
+					],
+					districtdata4: [{
+							district: '不限',
+						},
+						{
+							district: '美兰区'
+						},
+						{
+							district: '秀英区'
+						}
+					],
+					districtdata5: [{
+							district: '不限',
+						},
+						{
+							district: '美兰区',
+						}
+					],
+					districtdata6: [{
+						district: '不限',
+					}]
+				}
+			})
+		</script>
 	</body>
-	<script type="text/javascript" src="js/housing-demand.js"></script>
-
+	
+		<script type="text/javascript" src="js/map-house.js"></script>
 </html>
