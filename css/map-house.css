@@ -32,6 +32,11 @@ body {
   background: #f4f4f4;
 }
 
+input {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
 li {
   list-style: none;
 }
