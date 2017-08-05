@@ -79,172 +79,172 @@
 				</div>
 			</div>
 		</div>
-		<div class="maphouse-push">
-			<div class="region-push">
-				<header class="region-push-header">
-					<div class="signal_bar"></div>
-					<div class="title_bar">
-						<h3 class="title_txt">区域</h3>
-						<a class="return" href="javascript:;"></a>
-					</div>
-				</header>
-				<section class="region-push-section">
-					<div class="region-push-section-wrapper">
-						<div class="regionlist">
-							<ul class="regionlist-ul">
-								<li class="regionlist-li confirmone">区域</li>
-								<li class="regionlist-li">附近</li>
-							</ul>
-						</div>
 
-						<div class="municipality">
-							<ul class="municipality-ul">
-								<li class="municipality-li" v-for="list in municipalitydata" v-text="list.city"></li>
-							</ul>
-						</div>
-
-						<div class="district">
-							<ul class="district-ul">
-								<li class="district-li" v-for="list in districtdata1">
-									<span v-text="list.district"></span>
-									<span class="check"></span>
-								</li>
-							</ul>
-
-							<ul class="district-ul">
-								<li class="district-li" v-for="list in districtdata2">
-									<span v-text="list.district"></span>
-									<span class="check"></span>
-								</li>
-							</ul>
-
-							<ul class="district-ul">
-								<li class="district-li" v-for="list in districtdata3">
-									<span v-text="list.district"></span>
-									<span class="check"></span>
-								</li>
-							</ul>
-
-							<ul class="district-ul">
-								<li class="district-li" v-for="list in districtdata4">
-									<span v-text="list.district"></span>
-									<span class="check"></span>
-								</li>
-							</ul>
-
-							<ul class="district-ul">
-								<li class="district-li" v-for="list in districtdata5">
-									<span v-text="list.district"></span>
-									<span class="check"></span>
-								</li>
-							</ul>
-
-							<ul class="district-ul">
-								<li class="district-li" v-for="list in districtdata6">
-									<span v-text="list.district"></span>
-									<span class="check"></span>
-								</li>
-							</ul>
-
-							<ul class="district-ul">
-								<li class="district-li" v-for="list in districtdata7">
-									<span v-text="list.district"></span>
-									<span class="check"></span>
-								</li>
-							</ul>
-						</div>
-						<p style="clear: both;"></p>
+		<div class="region-push">
+			<header class="region-push-header">
+				<div class="signal_bar"></div>
+				<div class="title_bar">
+					<h3 class="title_txt">区域</h3>
+					<a class="return" href="javascript:;"></a>
+				</div>
+			</header>
+			<section class="region-push-section">
+				<div class="region-push-section-wrapper">
+					<div class="regionlist">
+						<ul class="regionlist-ul">
+							<li class="regionlist-li confirmone">区域</li>
+							<li class="regionlist-li">附近</li>
+						</ul>
 					</div>
 
-				</section>
-				<footer class="region-push-footer">
-					<span class="empty">清空条件</span>
-					<span class="determine">确定</span>
-				</footer>
-			</div>
-
-			<div class="screen-push">
-				<header class="screen-push-header">
-					<div class="signal_bar"></div>
-					<div class="title_bar">
-						<h3 class="title_txt">筛选</h3>
-						<a class="return" href="javascript:;"></a>
-					</div>
-				</header>
-				<section class="screen-push-section">
-					<div class="screen-push-section-wrapper">
-						<div class="average-price">
-							<h3 class="average-price-title">均价</h3>
-							<div class="average-price-num">
-								<span class="select">1万以下</span>
-								<span class="select">1-1.5万</span>
-								<span class="select">1.5-2万</span>
-								<span class="none select">2万以上</span>
-								<div style="clear: both;"></div>
-							</div>
-							<div class="average-price-input">
-								<input class="minprice" type="text" placeholder="最低价格" />
-								<span></span>
-								<input class="maxprice" type="text" placeholder="最高价格" />
-							</div>
-						</div>
-						<div class="house-style">
-							<h3 class="house-style-title">户型</h3>
-							<div class="house-style-content">
-								<span class="select">一室</span>
-								<span class="select">二室</span>
-								<span class="select">三室</span>
-								<span class="select">四室</span>
-								<span class="select">五室以上</span>
-								<span class="select">别墅</span>
-								<div style="clear: both;"></div>
-							</div>
-						</div>
-						<div class="open-time">
-							<h3 class="open-time-title">开盘时间</h3>
-							<div class="open-time-content">
-								<span class="select">本月开盘</span>
-								<span class="select">下月开盘</span>
-								<span class="select">三个月内开盘</span>
-								<span class="select">六个月内开盘</span>
-								<span class="select">已开盘三个月</span>
-								<span class="select">已开票六个月</span>
-								<div style="clear: both;"></div>
-							</div>
-						</div>
-						<div class="characteristic">
-							<h3 class="characteristic-title">特色</h3>
-							<div class="characteristic-content">
-								<span class="select">打折优惠</span>
-								<span class="select">住宅</span>
-								<span class="select">养生社区</span>
-								<span class="select">花园洋房</span>
-								<span class="select">海景房</span>
-								<span class="select">河(江)景房</span>
-								<span class="select">温泉社区</span>
-								<span class="select">酒店式公寓</span>
-								<span class="select">商铺</span>
-								<span class="select">别墅</span>
-								<span class="select">公寓</span>
-								<span class="select">社区</span>
-								<span class="select">学区房</span>
-								<span class="select">湖景房</span>
-								<span class="select">写字楼</span>
-								<div style="clear: both;"></div>
-							</div>
-						</div>
+					<div class="municipality">
+						<ul class="municipality-ul">
+							<li class="municipality-li" v-for="list in municipalitydata" v-text="list.city"></li>
+						</ul>
 					</div>
 
-				</section>
-				<footer class="screen-push-footer">
-					<span class="empty">清空条件</span>
-					<span class="determine">确定</span>
-				</footer>
-			</div>
+					<div class="district">
+						<ul class="district-ul">
+							<li class="district-li" v-for="list in districtdata1">
+								<span v-text="list.district"></span>
+								<span class="check"></span>
+							</li>
+						</ul>
+
+						<ul class="district-ul">
+							<li class="district-li" v-for="list in districtdata2">
+								<span v-text="list.district"></span>
+								<span class="check"></span>
+							</li>
+						</ul>
+
+						<ul class="district-ul">
+							<li class="district-li" v-for="list in districtdata3">
+								<span v-text="list.district"></span>
+								<span class="check"></span>
+							</li>
+						</ul>
+
+						<ul class="district-ul">
+							<li class="district-li" v-for="list in districtdata4">
+								<span v-text="list.district"></span>
+								<span class="check"></span>
+							</li>
+						</ul>
+
+						<ul class="district-ul">
+							<li class="district-li" v-for="list in districtdata5">
+								<span v-text="list.district"></span>
+								<span class="check"></span>
+							</li>
+						</ul>
+
+						<ul class="district-ul">
+							<li class="district-li" v-for="list in districtdata6">
+								<span v-text="list.district"></span>
+								<span class="check"></span>
+							</li>
+						</ul>
+
+						<ul class="district-ul">
+							<li class="district-li" v-for="list in districtdata7">
+								<span v-text="list.district"></span>
+								<span class="check"></span>
+							</li>
+						</ul>
+					</div>
+					<p style="clear: both;"></p>
+				</div>
+
+			</section>
+			<footer class="region-push-footer">
+				<span class="empty">清空条件</span>
+				<span class="determine">确定</span>
+			</footer>
 		</div>
+
+		<div class="screen-push">
+			<header class="screen-push-header">
+				<div class="signal_bar"></div>
+				<div class="title_bar">
+					<h3 class="title_txt">筛选</h3>
+					<a class="return" href="javascript:;"></a>
+				</div>
+			</header>
+			<section class="screen-push-section">
+				<div class="screen-push-section-wrapper">
+					<div class="average-price">
+						<h3 class="average-price-title">均价</h3>
+						<div class="average-price-num">
+							<span class="select">1万以下</span>
+							<span class="select">1-1.5万</span>
+							<span class="select">1.5-2万</span>
+							<span class="none select">2万以上</span>
+							<div style="clear: both;"></div>
+						</div>
+						<div class="average-price-input">
+							<input class="minprice" type="text" placeholder="最低价格" />
+							<span></span>
+							<input class="maxprice" type="text" placeholder="最高价格" />
+						</div>
+					</div>
+					<div class="house-style">
+						<h3 class="house-style-title">户型</h3>
+						<div class="house-style-content">
+							<span class="select">一室</span>
+							<span class="select">二室</span>
+							<span class="select">三室</span>
+							<span class="select">四室</span>
+							<span class="select">五室以上</span>
+							<span class="select">别墅</span>
+							<div style="clear: both;"></div>
+						</div>
+					</div>
+					<div class="open-time">
+						<h3 class="open-time-title">开盘时间</h3>
+						<div class="open-time-content">
+							<span class="select">本月开盘</span>
+							<span class="select">下月开盘</span>
+							<span class="select">三个月内开盘</span>
+							<span class="select">六个月内开盘</span>
+							<span class="select">已开盘三个月</span>
+							<span class="select">已开票六个月</span>
+							<div style="clear: both;"></div>
+						</div>
+					</div>
+					<div class="characteristic">
+						<h3 class="characteristic-title">特色</h3>
+						<div class="characteristic-content">
+							<span class="select">打折优惠</span>
+							<span class="select">住宅</span>
+							<span class="select">养生社区</span>
+							<span class="select">花园洋房</span>
+							<span class="select">海景房</span>
+							<span class="select">河(江)景房</span>
+							<span class="select">温泉社区</span>
+							<span class="select">酒店式公寓</span>
+							<span class="select">商铺</span>
+							<span class="select">别墅</span>
+							<span class="select">公寓</span>
+							<span class="select">社区</span>
+							<span class="select">学区房</span>
+							<span class="select">湖景房</span>
+							<span class="select">写字楼</span>
+							<div style="clear: both;"></div>
+						</div>
+					</div>
+				</div>
+
+			</section>
+			<footer class="screen-push-footer">
+				<span class="empty">清空条件</span>
+				<span class="determine">确定</span>
+			</footer>
+		</div>
+
 		<script type="text/javascript">
 			var myVue = new Vue({
-				el: ".maphouse-push",
+				el: ".region-push",
 				data: {
 					municipalitydata: [{
 							city: '不限'

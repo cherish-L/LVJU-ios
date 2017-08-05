@@ -395,30 +395,20 @@ li {
   bottom: -2.24rem;
 }
 
-.maphouse-push {
+.screen-push {
   width: 100%;
-  height: 0;
-  z-index: 20;
-  overflow: hidden;
+  height: 100%;
   transition: all .3s;
-  position: absolute;
-  bottom: 0;
+  overflow: hidden;
+  z-index: 30;
+  position: fixed;
   left: 0;
-  background: #FFFFFF;
-}
-
-.maphouse-push .screen-push {
-  width: 100%;
-  height: 0;
-  transition: all .3s;
-  overflow: hidden;
-  position: relative;
   display: flex;
   display: -webkit-flex;
   flex-direction: column;
 }
 
-.maphouse-push .screen-push .screen-push-header {
+.screen-push .screen-push-header {
   width: 100%;
   background: #f6f6f6;
   box-shadow: 0 1px 0 0 #CCCCCC;
@@ -426,19 +416,19 @@ li {
   z-index: 10;
 }
 
-.maphouse-push .screen-push .screen-push-header .signal_bar {
+.screen-push .screen-push-header .signal_bar {
   width: 100%;
   height: 0.8rem;
 }
 
-.maphouse-push .screen-push .screen-push-header .title_bar {
+.screen-push .screen-push-header .title_bar {
   width: 100%;
   height: 1.76rem;
   line-height: 1.76rem;
   position: relative;
 }
 
-.maphouse-push .screen-push .screen-push-header .title_bar .title_txt {
+.screen-push .screen-push-header .title_bar .title_txt {
   font-size: 0.72rem;
   color: #394043;
   letter-spacing: 0;
@@ -446,7 +436,7 @@ li {
   font-weight: normal;
 }
 
-.maphouse-push .screen-push .screen-push-header .title_bar .return {
+.screen-push .screen-push-header .title_bar .return {
   display: block;
   height: 0.88rem;
   width: 0.88rem;
@@ -457,7 +447,7 @@ li {
   left: 0.64rem;
 }
 
-.maphouse-push .screen-push .screen-push-section {
+.screen-push .screen-push-section {
   flex: 1;
   -webkit-flex: 1;
   overflow: hidden;
@@ -465,16 +455,16 @@ li {
   position: relative;
 }
 
-.maphouse-push .screen-push .screen-push-section .screen-push-section-wrapper {
+.screen-push .screen-push-section .screen-push-section-wrapper {
   padding: 0.32rem 0.6rem 1.84rem 0.64rem;
   padding-bottom: 1.84rem;
 }
 
-.maphouse-push .screen-push .screen-push-section .screen-push-section-wrapper .average-price {
+.screen-push .screen-push-section .screen-push-section-wrapper .average-price {
   margin-bottom: 0.64rem;
 }
 
-.maphouse-push .screen-push .screen-push-section .screen-push-section-wrapper .average-price .average-price-title {
+.screen-push .screen-push-section .screen-push-section-wrapper .average-price .average-price-title {
   height: 2.16rem;
   line-height: 0.88rem;
   padding: 0.64rem 0;
@@ -486,7 +476,7 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.maphouse-push .screen-push .screen-push-section .screen-push-section-wrapper .average-price .average-price-num .select {
+.screen-push .screen-push-section .screen-push-section-wrapper .average-price .average-price-num .select {
   display: block;
   float: left;
   margin-right: 0.64rem;
@@ -504,24 +494,24 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.maphouse-push .screen-push .screen-push-section .screen-push-section-wrapper .average-price .average-price-num .select.selected {
+.screen-push .screen-push-section .screen-push-section-wrapper .average-price .average-price-num .select.selected {
   background: #ECF4F9;
   color: #0099eb;
   border: 0.04rem solid #0099eb;
 }
 
-.maphouse-push .screen-push .screen-push-section .screen-push-section-wrapper .average-price .average-price-num .none {
+.screen-push .screen-push-section .screen-push-section-wrapper .average-price .average-price-num .none {
   margin-right: 0;
 }
 
-.maphouse-push .screen-push .screen-push-section .screen-push-section-wrapper .average-price .average-price-input {
+.screen-push .screen-push-section .screen-push-section-wrapper .average-price .average-price-input {
   margin-top: 0.96rem;
   display: flex;
   display: -webkit-flex;
   justify-content: space-between;
 }
 
-.maphouse-push .screen-push .screen-push-section .screen-push-section-wrapper .average-price .average-price-input input {
+.screen-push .screen-push-section .screen-push-section-wrapper .average-price .average-price-input input {
   border: none;
   outline: none;
   background: #F0F0F0;
@@ -537,18 +527,18 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.maphouse-push .screen-push .screen-push-section .screen-push-section-wrapper .average-price .average-price-input span {
+.screen-push .screen-push-section .screen-push-section-wrapper .average-price .average-price-input span {
   display: block;
   width: 0.32rem;
   height: 0.72rem;
   border-bottom: 0.04rem solid #d8d8d8;
 }
 
-.maphouse-push .screen-push .screen-push-section .screen-push-section-wrapper .house-style {
+.screen-push .screen-push-section .screen-push-section-wrapper .house-style {
   margin: 0.32rem 0 0.64rem 0;
 }
 
-.maphouse-push .screen-push .screen-push-section .screen-push-section-wrapper .house-style .house-style-title {
+.screen-push .screen-push-section .screen-push-section-wrapper .house-style .house-style-title {
   height: 2.16rem;
   line-height: 0.88rem;
   padding: 0.64rem 0;
@@ -560,7 +550,7 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.maphouse-push .screen-push .screen-push-section .screen-push-section-wrapper .house-style .house-style-content .select {
+.screen-push .screen-push-section .screen-push-section-wrapper .house-style .house-style-content .select {
   display: block;
   float: left;
   background: #F0F0F0;
@@ -578,29 +568,29 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.maphouse-push .screen-push .screen-push-section .screen-push-section-wrapper .house-style .house-style-content .select.selected {
+.screen-push .screen-push-section .screen-push-section-wrapper .house-style .house-style-content .select.selected {
   background: #ECF4F9;
   color: #0099eb;
   border: 0.04rem solid #0099eb;
 }
 
-.maphouse-push .screen-push .screen-push-section .screen-push-section-wrapper .house-style .house-style-content span:nth-child(4) {
+.screen-push .screen-push-section .screen-push-section-wrapper .house-style .house-style-content span:nth-child(4) {
   margin-right: 0;
 }
 
-.maphouse-push .screen-push .screen-push-section .screen-push-section-wrapper .house-style .house-style-content span:nth-child(5) {
+.screen-push .screen-push-section .screen-push-section-wrapper .house-style .house-style-content span:nth-child(5) {
   margin-top: 0.64rem;
 }
 
-.maphouse-push .screen-push .screen-push-section .screen-push-section-wrapper .house-style .house-style-content span:nth-child(6) {
+.screen-push .screen-push-section .screen-push-section-wrapper .house-style .house-style-content span:nth-child(6) {
   margin-top: 0.64rem;
 }
 
-.maphouse-push .screen-push .screen-push-section .screen-push-section-wrapper .open-time {
+.screen-push .screen-push-section .screen-push-section-wrapper .open-time {
   margin: 0.32rem 0 0.64rem 0;
 }
 
-.maphouse-push .screen-push .screen-push-section .screen-push-section-wrapper .open-time .open-time-title {
+.screen-push .screen-push-section .screen-push-section-wrapper .open-time .open-time-title {
   height: 2.16rem;
   line-height: 0.88rem;
   padding: 0.64rem 0;
@@ -612,7 +602,7 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.maphouse-push .screen-push .screen-push-section .screen-push-section-wrapper .open-time .open-time-content .select {
+.screen-push .screen-push-section .screen-push-section-wrapper .open-time .open-time-content .select {
   display: block;
   float: left;
   background: #F0F0F0;
@@ -630,25 +620,25 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.maphouse-push .screen-push .screen-push-section .screen-push-section-wrapper .open-time .open-time-content .select.selected {
+.screen-push .screen-push-section .screen-push-section-wrapper .open-time .open-time-content .select.selected {
   background: #ECF4F9;
   color: #0099eb;
   border: 0.04rem solid #0099eb;
 }
 
-.maphouse-push .screen-push .screen-push-section .screen-push-section-wrapper .open-time .open-time-content span:nth-child(3n) {
+.screen-push .screen-push-section .screen-push-section-wrapper .open-time .open-time-content span:nth-child(3n) {
   margin-right: 0;
 }
 
-.maphouse-push .screen-push .screen-push-section .screen-push-section-wrapper .open-time .open-time-content span:nth-child(n+4) {
+.screen-push .screen-push-section .screen-push-section-wrapper .open-time .open-time-content span:nth-child(n+4) {
   margin-top: 0.64rem;
 }
 
-.maphouse-push .screen-push .screen-push-section .screen-push-section-wrapper .characteristic {
+.screen-push .screen-push-section .screen-push-section-wrapper .characteristic {
   margin: 0.32rem 0 0 0;
 }
 
-.maphouse-push .screen-push .screen-push-section .screen-push-section-wrapper .characteristic .characteristic-title {
+.screen-push .screen-push-section .screen-push-section-wrapper .characteristic .characteristic-title {
   height: 2.16rem;
   line-height: 0.88rem;
   padding: 0.64rem 0;
@@ -660,7 +650,7 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.maphouse-push .screen-push .screen-push-section .screen-push-section-wrapper .characteristic .characteristic-content .select {
+.screen-push .screen-push-section .screen-push-section-wrapper .characteristic .characteristic-content .select {
   display: block;
   float: left;
   background: #F0F0F0;
@@ -678,21 +668,21 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.maphouse-push .screen-push .screen-push-section .screen-push-section-wrapper .characteristic .characteristic-content .select.selected {
+.screen-push .screen-push-section .screen-push-section-wrapper .characteristic .characteristic-content .select.selected {
   background: #ECF4F9;
   color: #0099eb;
   border: 0.04rem solid #0099eb;
 }
 
-.maphouse-push .screen-push .screen-push-section .screen-push-section-wrapper .characteristic .characteristic-content span:nth-child(4n) {
+.screen-push .screen-push-section .screen-push-section-wrapper .characteristic .characteristic-content span:nth-child(4n) {
   margin-right: 0;
 }
 
-.maphouse-push .screen-push .screen-push-section .screen-push-section-wrapper .characteristic .characteristic-content span:nth-child(n+5) {
+.screen-push .screen-push-section .screen-push-section-wrapper .characteristic .characteristic-content span:nth-child(n+5) {
   margin-top: 0.64rem;
 }
 
-.maphouse-push .screen-push .screen-push-footer {
+.screen-push .screen-push-footer {
   width: 100%;
   height: 2.24rem;
   z-index: 1;
@@ -701,7 +691,7 @@ li {
   -webkit-box-shadow: inset 0 0.04rem 0 0 #CCCCCC;
 }
 
-.maphouse-push .screen-push .screen-push-footer span {
+.screen-push .screen-push-footer span {
   display: block;
   float: left;
   width: 6.56rem;
@@ -715,28 +705,30 @@ li {
   margin-left: 0.64rem;
 }
 
-.maphouse-push .screen-push .screen-push-footer .empty {
+.screen-push .screen-push-footer .empty {
   background: #E6F7FF;
   color: #59A7D1;
 }
 
-.maphouse-push .screen-push .screen-push-footer .determine {
+.screen-push .screen-push-footer .determine {
   background: #0099EB;
   color: #FFFFFF;
 }
 
-.maphouse-push .region-push {
+.region-push {
   width: 100%;
-  height: 0;
+  height: 100%;
   transition: all .3s;
+  z-index: 30;
   overflow: hidden;
-  position: relative;
+  position: fixed;
+  left: 0;
   display: flex;
   display: -webkit-flex;
   flex-direction: column;
 }
 
-.maphouse-push .region-push .region-push-header {
+.region-push .region-push-header {
   width: 100%;
   background: #f6f6f6;
   box-shadow: 0 1px 0 0 #CCCCCC;
@@ -744,19 +736,19 @@ li {
   z-index: 1;
 }
 
-.maphouse-push .region-push .region-push-header .signal_bar {
+.region-push .region-push-header .signal_bar {
   width: 100%;
   height: 0.8rem;
 }
 
-.maphouse-push .region-push .region-push-header .title_bar {
+.region-push .region-push-header .title_bar {
   width: 100%;
   height: 1.76rem;
   line-height: 1.76rem;
   position: relative;
 }
 
-.maphouse-push .region-push .region-push-header .title_bar .title_txt {
+.region-push .region-push-header .title_bar .title_txt {
   font-size: 0.72rem;
   color: #394043;
   letter-spacing: 0;
@@ -764,7 +756,7 @@ li {
   font-weight: normal;
 }
 
-.maphouse-push .region-push .region-push-header .title_bar .return {
+.region-push .region-push-header .title_bar .return {
   display: block;
   height: 0.88rem;
   width: 0.88rem;
@@ -775,7 +767,7 @@ li {
   left: 0.64rem;
 }
 
-.maphouse-push .region-push .region-push-section {
+.region-push .region-push-section {
   flex: 1;
   -webkit-flex: 1;
   overflow: hidden;
@@ -785,11 +777,11 @@ li {
   position: relative;
 }
 
-.maphouse-push .region-push .region-push-section .region-push-section-wrapper {
+.region-push .region-push-section .region-push-section-wrapper {
   height: 100%;
 }
 
-.maphouse-push .region-push .region-push-section .region-push-section-wrapper div {
+.region-push .region-push-section .region-push-section-wrapper div {
   height: 100%;
   float: left;
   padding-left: 0.64rem;
@@ -797,12 +789,12 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.maphouse-push .region-push .region-push-section .region-push-section-wrapper .regionlist {
+.region-push .region-push-section .region-push-section-wrapper .regionlist {
   width: 29%;
   background: #FFFFFF;
 }
 
-.maphouse-push .region-push .region-push-section .region-push-section-wrapper .regionlist .regionlist-ul .regionlist-li {
+.region-push .region-push-section .region-push-section-wrapper .regionlist .regionlist-ul .regionlist-li {
   width: 100%;
   height: 1.92rem;
   line-height: 1.92rem;
@@ -811,16 +803,16 @@ li {
   box-shadow: inset 0 -1px 0 0 #EEEEEE;
 }
 
-.maphouse-push .region-push .region-push-section .region-push-section-wrapper .regionlist .regionlist-ul .regionlist-li.confirmone {
+.region-push .region-push-section .region-push-section-wrapper .regionlist .regionlist-ul .regionlist-li.confirmone {
   color: #0099EB;
 }
 
-.maphouse-push .region-push .region-push-section .region-push-section-wrapper .municipality {
+.region-push .region-push-section .region-push-section-wrapper .municipality {
   width: 33%;
   background: #F6F6F6;
 }
 
-.maphouse-push .region-push .region-push-section .region-push-section-wrapper .municipality .municipality-ul .municipality-li {
+.region-push .region-push-section .region-push-section-wrapper .municipality .municipality-ul .municipality-li {
   width: 100%;
   height: 1.92rem;
   line-height: 1.92rem;
@@ -829,16 +821,16 @@ li {
   box-shadow: inset 0 -1px 0 0 #EEEEEE;
 }
 
-.maphouse-push .region-push .region-push-section .region-push-section-wrapper .municipality .municipality-ul .municipality-li.confirmtwo {
+.region-push .region-push-section .region-push-section-wrapper .municipality .municipality-ul .municipality-li.confirmtwo {
   color: #0099EB;
 }
 
-.maphouse-push .region-push .region-push-section .region-push-section-wrapper .district {
+.region-push .region-push-section .region-push-section-wrapper .district {
   width: 38%;
   background: #ECF4F9;
 }
 
-.maphouse-push .region-push .region-push-section .region-push-section-wrapper .district .district-ul .district-li {
+.region-push .region-push-section .region-push-section-wrapper .district .district-ul .district-li {
   width: 100%;
   height: 1.92rem;
   line-height: 1.92rem;
@@ -847,7 +839,7 @@ li {
   box-shadow: inset 0 -1px 0 0 #EEEEEE;
 }
 
-.maphouse-push .region-push .region-push-section .region-push-section-wrapper .district .district-ul .district-li .check {
+.region-push .region-push-section .region-push-section-wrapper .district .district-ul .district-li .check {
   display: block;
   float: right;
   width: 0.6rem;
@@ -859,17 +851,17 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.maphouse-push .region-push .region-push-section .region-push-section-wrapper .district .district-ul .district-li.confirmthree {
+.region-push .region-push-section .region-push-section-wrapper .district .district-ul .district-li.confirmthree {
   color: #0099EB;
 }
 
-.maphouse-push .region-push .region-push-section .region-push-section-wrapper .district .district-ul .district-li.confirmthree .check {
+.region-push .region-push-section .region-push-section-wrapper .district .district-ul .district-li.confirmthree .check {
   background: url(../img/select.png);
   background-size: 0.6rem 0.6rem;
   border: none;
 }
 
-.maphouse-push .region-push .region-push-footer {
+.region-push .region-push-footer {
   width: 100%;
   height: 2.24rem;
   z-index: 1;
@@ -878,7 +870,7 @@ li {
   -webkit-box-shadow: inset 0 0.04rem 0 0 #CCCCCC;
 }
 
-.maphouse-push .region-push .region-push-footer span {
+.region-push .region-push-footer span {
   display: block;
   float: left;
   width: 6.56rem;
@@ -892,12 +884,12 @@ li {
   margin-left: 0.64rem;
 }
 
-.maphouse-push .region-push .region-push-footer .empty {
+.region-push .region-push-footer .empty {
   background: #E6F7FF;
   color: #59A7D1;
 }
 
-.maphouse-push .region-push .region-push-footer .determine {
+.region-push .region-push-footer .determine {
   background: #0099EB;
   color: #FFFFFF;
 }

@@ -50,11 +50,9 @@ $(function(){
 	})
 	
 //筛选弹框
-
-	
-
 	var htmlh=$("html").height()
-	
+	$(".screen-push").css("bottom",-htmlh)
+	$(".region-push").css("bottom",-htmlh)
 	$(".select").tap(function(){
 		$(this).addClass("selected")
 	})
@@ -62,13 +60,12 @@ $(function(){
 	$(".screen-push-footer .empty").tap(function(){
 		$(".select").removeClass("selected")
 		$(".screenli .num").css("display","none")
+		screenS.refresh()
 	})
 	
 	$(".screen-push-footer .determine").tap(function(){
 		var len=$(".selected").length
-		$(".maphouse-push").css("height","0")
-		$(".screen-push").css("height","0")
-		$(".region-push").css("height","0")
+		$(".screen-push").css("bottom",-htmlh)
 		$(".screenli .num").css("display","block")
 		$(".screenli .num").text(len)
 		if($(".screenli .num").text()=="0"){
@@ -76,36 +73,26 @@ $(function(){
 		}
 	})
 	$(".screen-push-header .return").tap(function(){
-		$(".maphouse-push").css("height","0")
-		$(".screen-push").css("height","0")
-		$(".region-push").css("height","0")
+		$(".screen-push").css("bottom",-htmlh)
 	})
 	
 	$(".pscreen").tap(function(){
-		$(".maphouse-push").css("height",htmlh)
-		$(".screen-push").css("height",htmlh)
-		$(".region-push").css("height","0")
+		$(".screen-push").css("bottom","0")
 	})
 	
 	
 //区域弹框
 	$(".region-push-footer .determine").tap(function(){
-		$(".maphouse-push").css("height","0")
-		$(".screen-push").css("height","0")
-		$(".region-push").css("height","0")
+		$(".region-push").css("bottom",-htmlh)
 	})
 	
 	$(".region-push-header .return").tap(function(){
-		$(".maphouse-push").css("height","0")
-		$(".screen-push").css("height","0")
-		$(".region-push").css("height","0")
+		$(".region-push").css("bottom",-htmlh)
 	})
 	
 	
 	$(".pregion").tap(function(){
-		$(".maphouse-push").css("height",htmlh)
-		$(".region-push").css("height",htmlh)
-		$(".screen-push").css("height","0")
+		$(".region-push").css("bottom","0")
 	})
 	
 	
@@ -160,6 +147,7 @@ $(function(){
 		$(".select").removeClass("selected")
 		$(".municipality-ul .municipality-li").removeClass("confirmtwo")
 		$(".district-ul .district-li").removeClass("confirmthree")
+		
 	})
 	
 	//筛选滚动监听事件
