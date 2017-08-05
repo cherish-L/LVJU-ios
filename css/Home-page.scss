@@ -373,11 +373,13 @@ $sc:25;
                                     flex: 1;
                                     -webkit-flex: 1;
                                     padding-left: 16/$sc+rem;
-                                    height: 100%;
-                                    h3 {
+                                    .title {
+                                        display: block;
                                         height: 20/$sc+rem;
+                                        line-height: 20/$sc+rem;
                                         .position {
                                             font-size: 16/$sc+rem;
+                                            line-height: 20/$sc+rem;
                                             float: left;
                                             color: #394043;
                                             margin-right: 5/$sc+rem;
