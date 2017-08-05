@@ -7,15 +7,15 @@ $(function(){
 	});
 	sectionS.on('scroll',function(){
 		if(sectionS.y < 0){
-			var Scrolly=-(sectionS.y/180)
+			var Scrolly=-(sectionS.y/116)
 			$(".container .header").css("background","rgba(246, 246, 246,"+Scrolly+")")
 			$(".container .header").css("box-shadow","0 1px 0 0 rgba(204,204,204,"+Scrolly+")")
-			if(sectionS.y < -120){
+			if(sectionS.y < -116){
 				$(".current-location").addClass("state")
 				$(".Search-frame").addClass("state")
 				$(".current-map").addClass("state")
 			}
-			if(sectionS.y >= -120){
+			if(sectionS.y >= -116){
 				$(".current-location").removeClass("state")
 				$(".Search-frame").removeClass("state")
 				$(".current-map").removeClass("state")
