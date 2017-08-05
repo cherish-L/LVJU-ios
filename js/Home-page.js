@@ -7,7 +7,7 @@ $(function(){
 	});
 	sectionS.on('scroll',function(){
 		if(sectionS.y < 0){
-			var Scrolly=-(sectionS.y/116)
+			var Scrolly=-(sectionS.y/180)
 			$(".container .header").css("background","rgba(246, 246, 246,"+Scrolly+")")
 			$(".container .header").css("box-shadow","0 1px 0 0 rgba(204,204,204,"+Scrolly+")")
 			if(sectionS.y < -116){
