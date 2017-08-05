@@ -162,10 +162,6 @@ $(function(){
 		$(".district-ul .district-li").removeClass("confirmthree")
 	})
 	
-	//区域滚动监听事件
-	var regionS = new IScroll('.region-push-section', {
-		scrollbars: false
-	});
 	//筛选滚动监听事件
 	var screenS = new IScroll('.screen-push-section', {
 		scrollbars: false
