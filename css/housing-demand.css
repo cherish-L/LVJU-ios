@@ -54,7 +54,7 @@ li {
   background: #f6f6f6;
   box-shadow: 0 1px 0 0 #CCCCCC;
   -webkit-box-shadow: 0 1px 0 0 #CCCCCC;
-  z-index: 10;
+  z-index: 1;
 }
 
 .container .header .signal_bar {
