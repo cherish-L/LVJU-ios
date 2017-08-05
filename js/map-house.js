@@ -93,14 +93,12 @@ $(function(){
 		$(".maphouse-push").css("height","0")
 		$(".screen-push").css("height","0")
 		$(".region-push").css("height","0")
-		regionS.refresh()
 	})
 	
 	$(".region-push-header .return").tap(function(){
 		$(".maphouse-push").css("height","0")
 		$(".screen-push").css("height","0")
 		$(".region-push").css("height","0")
-		regionS.refresh()
 	})
 	
 	
@@ -108,8 +106,6 @@ $(function(){
 		$(".maphouse-push").css("height",htmlh)
 		$(".region-push").css("height",htmlh)
 		$(".screen-push").css("height","0")
-		
-		regionS.refresh()
 	})
 	
 	
@@ -127,7 +123,6 @@ $(function(){
 		else{
 			$(".municipality-ul").css("display","block")
 		}
-		regionS.refresh()
 	})
 
 
@@ -149,7 +144,6 @@ $(function(){
 				selectclick.eq(ind).addClass("confirmthree")
 			}
 		})
-		regionS.refresh()
 	})
 
 	$(".region-push-footer .determine").tap(function(){
@@ -160,14 +154,12 @@ $(function(){
 		if($(".regionli .num").text()=="0"){
 			$(".regionli .num").css("display","none")
 		}
-		regionS.refresh()
 	})
 
 	$(".region-push-footer .empty").tap(function(){
 		$(".select").removeClass("selected")
 		$(".municipality-ul .municipality-li").removeClass("confirmtwo")
 		$(".district-ul .district-li").removeClass("confirmthree")
-		regionS.refresh()
 	})
 	
 	//区域滚动监听事件
