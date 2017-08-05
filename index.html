@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title>购房需求</title>
-		<link rel="stylesheet" type="text/css" href="css/housing-demand.css"/>
+		<link rel="stylesheet" type="text/css" href="css/housing-demand.css" />
 		<script type="text/javascript" src="plugins/zepto.min.js"></script>
+		<script type="text/javascript" src="plugins/iscroll-master/build/iscroll-probe.js"></script>
 		<script>
-			 document.documentElement.style.fontSize=innerWidth/15+"px";
+			document.documentElement.style.fontSize = innerWidth / 15 + "px";
 		</script>
 	</head>
+
 	<body>
 		<div class="container">
 			<header class="header">
@@ -19,112 +22,114 @@
 					<a class="return" href="javascript:;"></a>
 				</div>
 			</header>
-			<div class="partition"></div>
 			<section class="section">
-				<div class="banner">
-					<img class="banner_img" src="img/banner.png" alt="" />
+				<div class="section-wrapper">
+
+					<div class="banner">
+						<img class="banner_img" src="img/banner.png" alt="" />
+					</div>
+					<ul class="information_wrap">
+						<li class="int">
+							<div class="information">
+								<span class="information_title">你的昵称</span>
+								<span class="required">(必填)</span>
+							</div>
+							<input class="name" id="name" type="text" placeholder="输入你的称呼" />
+						</li>
+						<li class="int">
+							<div class="information">
+								<span class="information_title">联系电话</span>
+								<span class="required">(必填)</span>
+							</div>
+							<input class="name" id="phone" type="text" placeholder="输入手机号码" />
+						</li>
+						<li class="other">
+							<div class="information">
+								<span class="information_title">意向城市</span>
+								<span class="required">(必填)</span>
+							</div>
+							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+							<div class="returnright">
+								<div class="txt_wrap">
+									<div style="clear: both;"></div>
+								</div>
+							</div>
+						</li>
+						<li class="other">
+							<div class="information">
+								<span class="information_title">房屋类型</span>
+								<span class="required">(必填)</span>
+							</div>
+							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+							<div class="returnright">
+								<div class="txt_wrap">
+									<div style="clear: both;"></div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="information">
+								<span class="information_title">意向户型</span>
+								<span class="required">(必填)</span>
+							</div>
+							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+							<div class="returnright">
+							</div>
+						</li>
+						<li>
+							<div class="information">
+								<span class="information_title">置业面积</span>
+							</div>
+							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+							<div class="returnright"></div>
+						</li>
+						<li>
+							<div class="information">
+								<span class="information_title">预算总价</span>
+							</div>
+							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+							<div class="returnright">
+							</div>
+						</li>
+						<li>
+							<div class="information">
+								<span class="information_title">装修要求</span>
+							</div>
+							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+							<div class="returnright">
+							</div>
+						</li>
+						<li class="int">
+							<div class="information">
+								<span class="information_title">附加要求</span>
+							</div>
+							<input class="name" id="nead" type="text" placeholder="输入要求内容" />
+						</li>
+					</ul>
 				</div>
-				<ul class="information_wrap">
-					<li class="int">
-						<div class="information">
-							 <span class="information_title">你的昵称</span>
-							 <span class="required">(必填)</span>
-						</div>
-						<input class="name" id="name" type="text" placeholder="输入你的称呼"/>
-					</li>
-					<li class="int">
-						<div class="information">
-							 <span class="information_title">联系电话</span>
-							 <span class="required">(必填)</span>
-						</div>
-						<input class="name" id="phone" type="text" placeholder="输入手机号码"/>
-					</li>
-					<li class="other">
-						<div class="information">
-							 <span class="information_title">意向城市</span>
-							 <span class="required">(必填)</span>
-						</div>
-						<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
-						<div class="returnright">
-							<div class="txt_wrap">
-								<div style="clear: both;"></div>
-							</div>
-						</div>
-					</li>
-					<li class="other">
-						<div class="information">
-							 <span class="information_title">房屋类型</span>
-							 <span class="required">(必填)</span>
-						</div>
-						<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
-						<div class="returnright">
-							<div class="txt_wrap">
-								<div style="clear: both;"></div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="information">
-							 <span class="information_title">意向户型</span>
-							 <span class="required">(必填)</span>
-						</div>
-						<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
-						<div class="returnright">
-						</div>
-					</li>
-					<li>
-						<div class="information">
-							 <span class="information_title">置业面积</span>
-						</div>
-						<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
-						<div class="returnright"></div>
-					</li>
-					<li>
-						<div class="information">
-							 <span class="information_title">预算总价</span>
-						</div>
-						<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
-						<div class="returnright">
-						</div>
-					</li>
-					<li>
-						<div class="information">
-							 <span class="information_title">装修要求</span>
-						</div>
-						<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
-						<div class="returnright">
-						</div>
-					</li>
-					<li class="int">
-						<div class="information">
-							 <span class="information_title">附加要求</span>
-						</div>
-						<input class="name" id="nead" type="text" placeholder="输入要求内容"/>
-					</li>
-				</ul>
 			</section>
 			<footer class="footer">
-				<input class="submit" id="submit" type="submit" value="提交购房需求"/>
+				<input class="submit" id="submit" type="submit" value="提交购房需求" />
 			</footer>
 		</div>
 		<div class="bomb_box"></div>
-		
-				<div class="click_sub">
-					<div class="success">
-						<img class="success_logo" src="img/success.png" alt="" />
-						<p class="congratulations">恭喜您，提交成功</p>
-						<p class="success_txt">专业置业顾问将会尽快与您联系</p>
-						<p class="success_txt">为您提供最佳的房产导购服务</p>
-						<div class="know">我知道了</div>
-					</div>
-					<div class="fail">
-						<img class="fail_logo" src="img/fail.png" alt="" />
-						<p class="failsay">报名失败</p>
-						<p class="fail_txt">请检查您的网络是否连接</p>
-						<div class="again">重新提交</div>
-						
-					</div>
-				</div>
+
+		<div class="click_sub">
+			<div class="success">
+				<img class="success_logo" src="img/success.png" alt="" />
+				<p class="congratulations">恭喜您，提交成功</p>
+				<p class="success_txt">专业置业顾问将会尽快与您联系</p>
+				<p class="success_txt">为您提供最佳的房产导购服务</p>
+				<div class="know">我知道了</div>
+			</div>
+			<div class="fail">
+				<img class="fail_logo" src="img/fail.png" alt="" />
+				<p class="failsay">报名失败</p>
+				<p class="fail_txt">请检查您的网络是否连接</p>
+				<div class="again">重新提交</div>
+
+			</div>
+		</div>
 		<div class="bomb_wrap">
 			<div class="bomb"></div>
 			<div class="bomb"></div>
@@ -239,4 +244,5 @@
 		</div>
 	</body>
 	<script type="text/javascript" src="js/housing-demand.js"></script>
+
 </html>

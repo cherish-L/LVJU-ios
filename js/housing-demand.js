@@ -22,6 +22,7 @@ $(function(){
 				$(".information_wrap li").eq(index).find(".returnright").prepend("<span class='selecttxt'>"+txt+"</span>")
 			}
 			index=null;
+			sectionS.refresh()
 		})
 		
 		
@@ -34,7 +35,7 @@ $(function(){
 			var hhh=$(".information_wrap li").eq(index).find(".returnright .txt_wrap").height()
 			$(".information_wrap li").eq(index).height(hhh)
 			$(".information_wrap li").eq(index).find(".returnright i").height(hhh)
-			
+			sectionS.refresh()
 		})
 		
 		
@@ -46,11 +47,13 @@ $(function(){
 			$(".information_wrap li").eq(index).find(".returnright .txt_wrap").prepend("<div style='clear: both;'></div>");
 			var liheight=$(".information_wrap li").eq(0).height()
 			$(".information_wrap li").eq(index).height(liheight)
+			sectionS.refresh()
 		})
 		
 		$(".determine").tap(function(){
 			$(".bomb_box").removeClass("show")
 			bomb.css("height","0");
+			sectionS.refresh()
 		})
 		
 		
@@ -62,6 +65,7 @@ $(function(){
 			bomb.css("height","0");
 			$(".click_sub").children().css("display","none");
 			index=null;
+			sectionS.refresh()
 		})
 	})
 	
@@ -69,6 +73,7 @@ $(function(){
 			$(this).css("color","#6C7072")
 			var t=$(this).val(); 
 			$(this).val("").focus().val(t); 
+			sectionS.refresh()
 	})
 	
 	//提交按钮（随时改动）
@@ -82,7 +87,13 @@ $(function(){
 			$(".success").hide()
 			$(".bomb_box").removeClass("show")
 		})
+		sectionS.refresh()
 	})
+	
+	
+	var sectionS = new IScroll('.section', {
+		scrollbars: false
+	});
 })
 
 	
