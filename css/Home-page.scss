@@ -143,7 +143,14 @@ $sc:25;
                         background-size: 22/$sc+rem 22/$sc+rem;
                     }
                     .current-map.state {
-                        background: url(../img/location2.png) no-repeat;
+                        display: inline-block;
+                        width: 22/$sc+rem;
+                        height: 22/$sc+rem;
+                        font-size: 16/$sc+rem;
+                        position: absolute;
+                        top: 10/$sc+rem;
+                        right: 16/$sc+rem;
+                        background: url(../img/Location2.png) no-repeat;
                         background-size: 22/$sc+rem 22/$sc+rem;
                     }
                 }
