@@ -32,10 +32,11 @@ body {
   background: #f4f4f4;
 }
 
-input {
+input[type="text"] {
   outline: none;
   border: none;
   -webkit-appearance: none;
+  background: #F5F5F5;
   -webkit-tap-highlight-color: transparent;
 }
 
