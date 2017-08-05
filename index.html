@@ -1,412 +1,242 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>首页</title>
-		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/Home-page.css" />
+		<title>购房需求</title>
+		<link rel="stylesheet" type="text/css" href="css/housing-demand.css"/>
 		<script type="text/javascript" src="plugins/zepto.min.js"></script>
-		<script type="text/javascript" src="plugins/iscroll-master/build/iscroll-probe.js"></script>
-		<script src="plugins/swiper-3.4.2.min.js"></script>
-		<script type="text/javascript" src="vue/vue.js"></script>
-		<script type="text/javascript" src="js/Home-page.js"></script>
 		<script>
-			//适配
-			document.documentElement.style.fontSize = innerWidth / 15 + "px";
+			 document.documentElement.style.fontSize=innerWidth/15+"px";
 		</script>
 	</head>
-
 	<body>
-		<div class="container" v-cloak>
+		<div class="container">
 			<header class="header">
-				<div class="header-box">
-					<div class="signal_bar"></div>
-					<div class="Search_bar">
-						<form class="Search-form" action="">
-							<a class="current-location" href="javascript:;">海口</a>
-							<input class="Search-frame" type="text" placeholder="输入楼盘名或楼盘地址" />
-							<a class="current-map" href="javascript:;"></a>
-						</form>
-					</div>
+				<div class="signal_bar"></div>
+				<div class="title_bar">
+					<h3 class="title_txt">购房需求</h3>
+					<a class="return" href="javascript:;"></a>
 				</div>
 			</header>
+			<div class="partition"></div>
 			<section class="section">
-				<div class="section-wrapper">
-					<div class="section-banner">
-						<ul class="banner-ul swiper-wrapper">
-							<li class="banner-li swiper-slide" style="background: darkcyan;"></li>
-							<li class="banner-li swiper-slide" style="background: darkgrey;"></li>
-							<li class="banner-li swiper-slide" style="background: cyan;"></li>
-						</ul>
-						<div class="swiper-pagination"></div>
-					</div>
-					<div class="section-nav">
-						<ul class="section-nav-ul">
-							<li>
-								<i><img src="img/Group1.png" alt="" /></i>
-								<span>楼盘大全</span>
-							</li>
-							<li>
-								<i><img src="img/Group2.png" alt="" /></i>
-								<span>楼市资讯</span>
-							</li>
-							<li>
-								<i><img src="img/Group3.png" alt="" /></i>
-								<span>购房联盟</span>
-							</li>
-							<li>
-								<i><img src="img/Group4.png" alt="" /></i>
-								<span>公益接机</span>
-							</li>
-							<li>
-								<i><img src="img/Group5.png" alt="" /></i>
-								<span>地图找房</span>
-							</li>
-							<li>
-								<i><img src="img/Group6.png" alt="" /></i>
-								<span>房贷计算</span>
-							</li>
-							<li>
-								<i><img src="img/Group7.png" alt="" /></i>
-								<span>在线咨询</span>
-							</li>
-							<li>
-								<i><img src="img/Group8.png" alt="" /></i>
-								<span>购房需求</span>
-							</li>
-						</ul>
-						<div class="section-nav-push">
-							<div class="push-logo"></div>
-							<div class="push-content">
-								<p>相识即是有缘 甄姐夸赞顾问小陈服务好相识即是有缘</p>
-								<p>谢女士想海景房 小梁助其满意购下荣盛谢女士想海景房</p>
+				<div class="banner">
+					<img class="banner_img" src="img/banner.png" alt="" />
+				</div>
+				<ul class="information_wrap">
+					<li class="int">
+						<div class="information">
+							 <span class="information_title">你的昵称</span>
+							 <span class="required">(必填)</span>
+						</div>
+						<input class="name" id="name" type="text" placeholder="输入你的称呼"/>
+					</li>
+					<li class="int">
+						<div class="information">
+							 <span class="information_title">联系电话</span>
+							 <span class="required">(必填)</span>
+						</div>
+						<input class="name" id="phone" type="text" placeholder="输入手机号码"/>
+					</li>
+					<li class="other">
+						<div class="information">
+							 <span class="information_title">意向城市</span>
+							 <span class="required">(必填)</span>
+						</div>
+						<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+						<div class="returnright">
+							<div class="txt_wrap">
+								<div style="clear: both;"></div>
 							</div>
 						</div>
-					</div>
-					<div class="section-historicalprice">
-						<div class="historicalprice-title">
-							历史房价
-							<span>查看更多</span>
+					</li>
+					<li class="other">
+						<div class="information">
+							 <span class="information_title">房屋类型</span>
+							 <span class="required">(必填)</span>
 						</div>
-						<div class="historicalprice-data"></div>
-					</div>
-					<div class="section-groomhouse">
-						<div class="groomhouse-title">
-							推荐房源
-							<span>查看更多</span>
+						<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+						<div class="returnright">
+							<div class="txt_wrap">
+								<div style="clear: both;"></div>
+							</div>
 						</div>
-						<div class="groomhouse-data">
-							<ul class="groomhouse-data-ul">
-								<li class="groomhouse-data-li" v-for="list in groomhouse">
-									<div class="dataDetail">
-										<div class="groomhouse-img">
-											<img :src="list.img" />
-											<span class="biaoqian"></span>
-											<span class="ghtxt" v-text="list.sell"></span>
-										</div>
-										<div class="groomhouse-txt">
-											<span class="title">
-												<span class="position" v-text="list.positions"></span>
-												<span class="region" v-text="list.region"></span>
-											</span>
-											<span class="address" v-text="list.address"></span>
-											<span class="openprice" v-text="list.openprice"></span>
-											<span class="averageprice">
-												<span class="averag" v-text="list.averag"></span>
-											<span class="price" v-text="list.price"></span>
-											</span>
-										</div>
-									</div>
-									<div class="dataBrowse">
-										<div class="Browsecount">877451</div>
-										<div class="classification" :class="list.className">
-											<span class="style">住宅</span>
-											<span class="style">养生社区</span>
-											<span class="style">海景房</span>
-											<span class="style">别墅</span>
-											<span class="style">公寓</span>
-										</div>
-									</div>
-								</li>
-							</ul>
+					</li>
+					<li>
+						<div class="information">
+							 <span class="information_title">意向户型</span>
+							 <span class="required">(必填)</span>
 						</div>
-					</div>
-					<div class="section-load">
-						下拉加载更多
-					</div>
-				</div>
-			</section>
-			<footer class="footer">
-				<ul class="footer-nav">
-					<li class="footer-nav-li">
-						<a href="javascript:;">
-							<i><img src="img/home_page1.png"/></i>
-							<span class="current">首页</span>
-						</a>
+						<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+						<div class="returnright">
+						</div>
 					</li>
-					<li class="footer-nav-li">
-						<a href="javascript:;">
-							<i><img src="img/Properties.png"/></i>
-							<span>楼盘</span>
-						</a>
+					<li>
+						<div class="information">
+							 <span class="information_title">置业面积</span>
+						</div>
+						<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+						<div class="returnright"></div>
 					</li>
-					<li class="footer-nav-li">
-						<a href="javascript:;">
-							<i><img src="img/zixun1.png"/></i>
-							<span>资讯</span>
-						</a>
+					<li>
+						<div class="information">
+							 <span class="information_title">预算总价</span>
+						</div>
+						<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+						<div class="returnright">
+						</div>
 					</li>
-					<li class="footer-nav-li">
-						<a href="javascript:;">
-							<i><img src="img/Pick_airport.png"/></i>
-							<span>公益接机</span>
-						</a>
+					<li>
+						<div class="information">
+							 <span class="information_title">装修要求</span>
+						</div>
+						<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+						<div class="returnright">
+						</div>
 					</li>
-					<li class="footer-nav-li">
-						<a href="javascript:;">
-							<i><img src="img/my.png"/></i>
-							<span>我的</span>
-						</a>
+					<li class="int">
+						<div class="information">
+							 <span class="information_title">附加要求</span>
+						</div>
+						<input class="name" id="nead" type="text" placeholder="输入要求内容"/>
 					</li>
 				</ul>
+			</section>
+			<footer class="footer">
+				<input class="submit" id="submit" type="submit" value="提交购房需求"/>
 			</footer>
 		</div>
-
-		<div class="houseprice-trend">
-			<div class="trend-wrapper">
-				<header class="trend-header">
-					<div class="signal_bar"></div>
-					<div class="title_bar">
-						<h3 class="title_txt">房价走势</h3>
-						<a class="return" href="javascript:;"></a>
+		<div class="bomb_box"></div>
+		
+				<div class="click_sub">
+					<div class="success">
+						<img class="success_logo" src="img/success.png" alt="" />
+						<p class="congratulations">恭喜您，提交成功</p>
+						<p class="success_txt">专业置业顾问将会尽快与您联系</p>
+						<p class="success_txt">为您提供最佳的房产导购服务</p>
+						<div class="know">我知道了</div>
 					</div>
-				</header>
-				<section class="trend-section">
-					<div class="trend-section-wrapper">
-						<div class="loading-fail">
-							<img src="img/fail.png" />
-							<div class="failalert">
-								<p class="failtxt">加载失败</p>
-								<p class="inspect">请检查您的网络是否连接</p>
-							</div>
-						</div>
-						<div class="trend-content">
-							<div class="content-banner">
-								<div class="left">
-									<span class="leftlocation">海口</span>
-									<span class="leftpinyin">HaiKou</span>
-								</div>
-								<div class="right">
-									<span>切换城市</span>
-								</div>
-							</div>
-							<div class="content-data">
-								<div class="content-data-header">
-									<div class="this month-average">
-										<span>本月均价</span>
-										<span>16000</span>
-									</div>
-									<div class="this month-volume">
-										<span>本月销售套数</span>
-										<span>743</span>
-									</div>
-								</div>
-								<div class="content-data-pic"></div>
-								<div class="content-data-more">左右滑动可查看更多月份价格</div>
-							</div>
-							<div class="content-contrast">
-								<h3>海南城市房价对比</h3>
-								<div class="content-contrast-top">
-									<ul>
-										<li>
-											<span>城市</span>
-											<span>名称</span>
-										</li>
-										<li>
-											<span>上月</span>
-											<span>均价/销售套数</span>
-										</li>
-										<li>
-											<span>本月</span>
-											<span>均价/销售套数</span>
-										</li>
-									</ul>
-								</div>
-								<div class="content-contrast-body">
-									<ul class="pri-ul">
-										<li class="pri-li" v-for="list in contrastdata">
-											<div class="allregion" v-text="list.city"></div>
-											<div class="lastdata">
-												<span v-text="list.lastprice"></span>
-												<span>/</span>
-												<span v-text="list.lastnum"></span>
-											</div>
-											<div class="thisdata" :class="list.className">
-												<span v-text="list.thisprice"></span>
-												<span>/</span>
-												<span v-text="list.thisnum"></span>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
+					<div class="fail">
+						<img class="fail_logo" src="img/fail.png" alt="" />
+						<p class="failsay">报名失败</p>
+						<p class="fail_txt">请检查您的网络是否连接</p>
+						<div class="again">重新提交</div>
+						
 					</div>
-				</section>
+				</div>
+		<div class="bomb_wrap">
+			<div class="bomb"></div>
+			<div class="bomb"></div>
+			<div class="bomb d_requirement">
+				<div class="d_content">
+					<div class="b_tltle">
+						<h3>房屋类型</h3>
+						<span>(可多选)</span>
+					</div>
+					<div class="selectmore">
+						<span>海口</span>
+						<span>三亚</span>
+						<span>琼海</span>
+						<span>文昌</span>
+						<span>儋州</span>
+						<span>澄迈</span>
+						<span>万宁</span>
+						<span>陵水</span>
+						<span>临高</span>
+						<span>定安</span>
+						<span>保亭</span>
+						<span>五指山</span>
+						<span>东方</span>
+						<span>琼中</span>
+						<span>昌江</span>
+						<span>白沙</span>
+						<span>乐东</span>
+						<span>屯昌</span>
+					</div>
+					<div class="btns">
+						<span class="reset">重置</span>
+						<span class="determine">确实</span>
+					</div>
+				</div>
 			</div>
+			<div class="bomb d_requirement">
+				<div class="d_content">
+					<div class="b_tltle">
+						<h3>房屋类型</h3>
+						<span>(可多选)</span>
+					</div>
+					<div class="selectmore">
+						<span>住宅</span>
+						<span>养生社区</span>
+						<span>花园洋房</span>
+						<span>海景房</span>
+						<span>河(江)景房</span>
+						<span>温泉社区</span>
+						<span>酒店式公寓</span>
+						<span>商铺</span>
+						<span>别墅</span>
+						<span>公寓</span>
+						<span>社区</span>
+						<span>学区房</span>
+						<span>湖景房</span>
+						<span>写字楼</span>
+					</div>
+					<div class="btns">
+						<span class="reset">重置</span>
+						<span class="determine">确实</span>
+					</div>
+				</div>
+			</div>
+			<div class="bomb d_requirement">
+				<ul class="d_content">
+					<li>一房户型</li>
+					<li>二房户型</li>
+					<li>三房户型</li>
+					<li>四房户型</li>
+					<li>五房户型</li>
+					<li>别墅</li>
+					<li>其他</li>
+				</ul>
+			</div>
+			<div class="bomb d_requirement">
+				<ul class="d_content">
+					<li>不限</li>
+					<li>50m<sup>2</sup> 以内</li>
+					<li>50-70m<sup>2</sup></li>
+					<li>70-100m<sup>2</sup></li>
+					<li>100-130m<sup>2</sup></li>
+					<li>130-160m<sup>2</sup></li>
+					<li>160-200m<sup>2</sup></li>
+					<li>200m<sup>2</sup> 以上</li>
+				</ul>
+			</div>
+			<div class="bomb d_requirement">
+				<ul class="d_content">
+					<li>不限</li>
+					<li>30万以下</li>
+					<li>30-50万</li>
+					<li>50-80万</li>
+					<li>80-120万</li>
+					<li>120-160万</li>
+					<li>160-200万</li>
+					<li>200-300万</li>
+					<li>300-500万</li>
+					<li>500-1000万</li>
+					<li>1000万以上</li>
+				</ul>
+			</div>
+			<div class="bomb d_requirement">
+				<ul class="d_content">
+					<li>不限</li>
+					<li>毛坯</li>
+					<li>简单装修</li>
+					<li>中档装修</li>
+					<li>精装修</li>
+				</ul>
+			</div>
+			<div class="bomb"></div>
 		</div>
-		<script type="text/javascript">
-			var mySwiper = new Swiper('.section-banner', {
-				autoplay: 2000,
-				pagination: '.swiper-pagination',
-			})
-		</script>
-		<script type="text/javascript">
-			var myVue = new Vue({
-				el: ".container",
-				data: {
-					groomhouse: [{
-							img: 'img/massage-subject3.png',
-							sell: '在售',
-							positions: '滨海博鳌小',
-							region: '[琼海]',
-							address: '琼海市博鳌滨海大道（潭门桥旁）',
-							openprice: '开盘：8000元/㎡',
-							averag: '均价：',
-							price: '12000元/㎡',
-							className: {
-								five: true
-							}
-						},
-						{
-							img: 'img/massage-subject3.png',
-							sell: '在售',
-							positions: '滨海博鳌小',
-							region: '[琼海]',
-							address: '琼海市博鳌滨海大道（潭门桥旁）',
-							openprice: '开盘：8000元/㎡',
-							averag: '均价：',
-							price: '12000元/㎡',
-							className: {
-								four: true
-							}
-						},
-						{
-							img: 'img/massage-subject3.png',
-							sell: '在售',
-							positions: '滨海博鳌小',
-							region: '[琼海]',
-							address: '琼海市博鳌滨海大道（潭门桥旁）',
-							openprice: '开盘：8000元/㎡',
-							averag: '均价：',
-							price: '12000元/㎡',
-							className: {
-								three: true
-							}
-						},
-						{
-							img: 'img/massage-subject3.png',
-							sell: '在售',
-							positions: '滨海博鳌小',
-							region: '[琼海]',
-							address: '琼海市博鳌滨海大道（潭门桥旁）',
-							openprice: '开盘：8000元/㎡',
-							averag: '均价：',
-							price: '12000元/㎡',
-							className: {
-								two: true
-							}
-						},
-						{
-							img: 'img/massage-subject3.png',
-							sell: '在售',
-							positions: '滨海博鳌小',
-							region: '[琼海]',
-							address: '琼海市博鳌滨海大道（潭门桥旁）',
-							openprice: '开盘：8000元/㎡',
-							averag: '均价：',
-							price: '12000元/㎡',
-							className: {
-								five: true
-							}
-						},
-						{
-							img: 'img/massage-subject3.png',
-							sell: '在售',
-							positions: '滨海博鳌小',
-							region: '[琼海]',
-							address: '琼海市博鳌滨海大道（潭门桥旁）',
-							openprice: '开盘：8000元/㎡',
-							averag: '均价：',
-							price: '12000元/㎡',
-							className: {
-								four: true
-							}
-						}
-					]
-				}
-			})
-		</script>
-		<script type="text/javascript">
-			var myVue = new Vue({
-				el: ".houseprice-trend",
-				data: {
-					contrastdata: [{
-							city: '海口',
-							lastprice: '13.5k',
-							lastnum: '447',
-							thisprice: '15k',
-							thisnum: '341',
-							className: {
-								styleone: true
-							}
-						},
-						{
-							city: '三亚',
-							lastprice: '13.5k',
-							lastnum: '447',
-							thisprice: '15k',
-							thisnum: '341',
-							className: {
-								styletwo: true
-							}
-						},
-						{
-							city: '五指山',
-							lastprice: '13.5k',
-							lastnum: '447',
-							thisprice: '15k',
-							thisnum: '341',
-							className: {
-								styleone: true
-							}
-						},
-						{
-							city: '陵水',
-							lastprice: '13.5k',
-							lastnum: '447',
-							thisprice: '15k',
-							thisnum: '341',
-							className: {
-								styleone: true
-							}
-						},
-						{
-							city: '琼海',
-							lastprice: '13.5k',
-							lastnum: '447',
-							thisprice: '15k',
-							thisnum: '341',
-							className: {
-								styleone: true
-							}
-						}
-					]
-				}
-			})
-		</script>
 	</body>
-
+	<script type="text/javascript" src="js/housing-demand.js"></script>
 </html>
