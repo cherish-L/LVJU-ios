@@ -82,6 +82,11 @@ $(function(){
 	
 	
 //区域弹框
+	var regionp=$(".region-push-section").height()
+	$(".regionlist").css("height",regionp)
+	$(".municipality").css("height",regionp)
+	$(".district").css("height",regionp)
+	
 	$(".region-push-footer .determine").tap(function(){
 		$(".region-push").css("bottom",-htmlh)
 	})
