@@ -40,6 +40,7 @@ $sc:25;
     width: 100%;
     height: 100%;
     display: flex;
+    position: relative;
     display: -webkit-flex;
     flex-direction: column;
     background-color: #f4f4f4;
@@ -97,276 +98,275 @@ $sc:25;
         box-sizing: border-box;
         -webkit-box-sizing: border-box;
         position: relative;
-        z-index: 1;
         .section-map {
             height: 100%;
             width: 100%;
-            background: url(../img/map.png);
+            background: url(../img/map.png) no-repeat;
             background-size: cover;
         }
-        .section-map-list {
+    }
+    .section-map-list {
+        width: 100%;
+        transition: all .3s;
+        opacity: 1;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        .map-list-wrapper {
             width: 100%;
-            transition: all .3s;
-            opacity: 1;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            .map-list-wrapper {
+            position: relative;
+            z-index: 1;
+            .map-list-btn {
+                transition: all .3s;
+                opacity: 1;
+                z-index: 10;
                 width: 100%;
-                position: relative;
-                z-index: 1;
-                .map-list-btn {
-                    transition: all .3s;
-                    opacity: 1;
-                    z-index: 10;
-                    width: 100%;
-                    background: #FFFFFF;
-                    overflow: hidden;
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    li {
-                        width: 33.33%;
-                        height: 44/$sc+rem;
-                        float: left;
+                background: #FFFFFF;
+                overflow: hidden;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                li {
+                    width: 33.33%;
+                    height: 44/$sc+rem;
+                    float: left;
+                    text-align: center;
+                    position: relative;
+                    .btn {
+                        display: inline-block;
+                        line-height: 44/$sc+rem;
+                        padding-left: 20/$sc+rem;
+                        font-family: PingFang-SC-Medium;
+                        font-size: 14/$sc+rem;
+                        color: #394043;
+                    }
+                    .num {
+                        display: none;
+                        width: 16/$sc+rem;
+                        height: 16/$sc+rem;
+                        line-height: 16/$sc+rem;
                         text-align: center;
-                        position: relative;
-                        .btn {
-                            display: inline-block;
-                            line-height: 44/$sc+rem;
-                            padding-left: 20/$sc+rem;
-                            font-family: PingFang-SC-Medium;
-                            font-size: 14/$sc+rem;
-                            color: #394043;
-                        }
-                        .num {
-                            display: none;
-                            width: 16/$sc+rem;
-                            height: 16/$sc+rem;
-                            line-height: 16/$sc+rem;
-                            text-align: center;
-                            background: #0099EB;
-                            font-family: PingFang-SC-Medium;
-                            font-size: 10/$sc+rem;
-                            color: #F6F6F6;
-                            border-radius: 50%;
-                            position: absolute;
-                            top: 10%;
-                            left: 70%;
-                            padding-right: 1/$sc+rem;
-                            box-sizing: border-box;
-                            -webkit-box-sizing: border-box;
-                        }
-                    }
-                    li:nth-child(1) {
-                        .btn {
-                            background: url(../img/region.png) no-repeat;
-                            background-size: 16/$sc+rem 16/$sc+rem;
-                            background-position: 0 14/$sc+rem;
-                        }
-                    }
-                    li:nth-child(2) {
-                        .btn {
-                            background: url(../img/screen.png) no-repeat;
-                            background-size: 16/$sc+rem 16/$sc+rem;
-                            background-position: 0 14/$sc+rem;
-                        }
-                    }
-                    li:nth-child(3) {
-                        .btn {
-                            background: url(../img/list.png) no-repeat;
-                            background-size: 16/$sc+rem 16/$sc+rem;
-                            background-position: 0 14/$sc+rem;
-                        }
+                        background: #0099EB;
+                        font-family: PingFang-SC-Medium;
+                        font-size: 10/$sc+rem;
+                        color: #F6F6F6;
+                        border-radius: 50%;
+                        position: absolute;
+                        top: 10%;
+                        left: 70%;
+                        padding-right: 1/$sc+rem;
+                        box-sizing: border-box;
+                        -webkit-box-sizing: border-box;
                     }
                 }
-                .map-list-btn.listhide {
-                    z-index: -10;
-                    opacity: 0;
-                    bottom: -44/$sc+rem;
+                li:nth-child(1) {
+                    .btn {
+                        background: url(../img/region.png) no-repeat;
+                        background-size: 16/$sc+rem 16/$sc+rem;
+                        background-position: 0 14/$sc+rem;
+                    }
                 }
-                .map-list-location {
-                    transition: all .3s;
-                    width: 40/$sc+rem;
-                    height: 40/$sc+rem;
-                    box-shadow: 0 2/$sc+rem 4/$sc+rem 0 rgba(0, 0, 0, 0.30);
-                    border-radius: 2/$sc+rem;
-                    position: absolute;
-                    bottom: 60/$sc+rem;
-                    left: 16/$sc+rem;
-                    background: url(../img/current-location.png) no-repeat #FFFFFF;
-                    background-size: 22/$sc+rem 22/$sc+rem;
-                    background-position: 9/$sc+rem 9/$sc+rem;
+                li:nth-child(2) {
+                    .btn {
+                        background: url(../img/screen.png) no-repeat;
+                        background-size: 16/$sc+rem 16/$sc+rem;
+                        background-position: 0 14/$sc+rem;
+                    }
                 }
-                .map-list-location.locationhide {
-                    bottom: 16/$sc+rem;
+                li:nth-child(3) {
+                    .btn {
+                        background: url(../img/list.png) no-repeat;
+                        background-size: 16/$sc+rem 16/$sc+rem;
+                        background-position: 0 14/$sc+rem;
+                    }
                 }
-                .map-list-trand {
-                    transition: all .3s;
-                    opacity: 1;
-                    z-index: 10;
-                    width: 40/$sc+rem;
-                    height: 40/$sc+rem;
-                    box-shadow: 0 2/$sc+rem 4/$sc+rem 0 rgba(0, 0, 0, 0.30);
-                    border-radius: 2/$sc+rem;
-                    position: absolute;
-                    bottom: 116/$sc+rem;
-                    left: 16/$sc+rem;
-                    background: url(../img/trand1.png) no-repeat #FFFFFF;
-                    background-size: 22/$sc+rem 22/$sc+rem;
-                    background-position: 9/$sc+rem 9/$sc+rem;
+            }
+            .map-list-btn.listhide {
+                z-index: -10;
+                opacity: 0;
+                bottom: -44/$sc+rem;
+            }
+            .map-list-location {
+                transition: all .3s;
+                width: 40/$sc+rem;
+                height: 40/$sc+rem;
+                box-shadow: 0 2/$sc+rem 4/$sc+rem 0 rgba(0, 0, 0, 0.30);
+                border-radius: 2/$sc+rem;
+                position: absolute;
+                bottom: 60/$sc+rem;
+                left: 16/$sc+rem;
+                background: url(../img/current-location.png) no-repeat #FFFFFF;
+                background-size: 22/$sc+rem 22/$sc+rem;
+                background-position: 9/$sc+rem 9/$sc+rem;
+            }
+            .map-list-location.locationhide {
+                bottom: 16/$sc+rem;
+            }
+            .map-list-trand {
+                transition: all .3s;
+                opacity: 1;
+                z-index: 10;
+                width: 40/$sc+rem;
+                height: 40/$sc+rem;
+                box-shadow: 0 2/$sc+rem 4/$sc+rem 0 rgba(0, 0, 0, 0.30);
+                border-radius: 2/$sc+rem;
+                position: absolute;
+                bottom: 116/$sc+rem;
+                left: 16/$sc+rem;
+                background: url(../img/trand1.png) no-repeat #FFFFFF;
+                background-size: 22/$sc+rem 22/$sc+rem;
+                background-position: 9/$sc+rem 9/$sc+rem;
+            }
+            .map-list-trand.trandhide {
+                z-index: -10;
+                opacity: 0;
+                bottom: 72/$sc+rem;
+            }
+            .map-list-trand.click {
+                background: url(../img/trand2.png) no-repeat #FFFFFF;
+                background-size: 22/$sc+rem 22/$sc+rem;
+                background-position: 9/$sc+rem 9/$sc+rem;
+            }
+            .map-list-tranddata {
+                transition: all .3s;
+                opacity: 0;
+                z-index: -10;
+                width: 287/$sc+rem;
+                height: 40/$sc+rem;
+                background: #FFFFFF;
+                box-shadow: 0 2/$sc+rem 4/$sc+rem 0 rgba(0, 0, 0, 0.30);
+                border-radius: 2/$sc+rem;
+                position: absolute;
+                bottom: 60/$sc+rem;
+                left: 72/$sc+rem;
+                padding: 10/$sc+rem 16/$sc+rem;
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                span {
+                    display: block;
+                    font-family: PingFang-SC-Medium;
+                    color: #0099EB;
+                    line-height: 20/$sc+rem;
                 }
-                .map-list-trand.trandhide {
-                    z-index: -10;
-                    opacity: 0;
-                    bottom: 72/$sc+rem;
+                .regional {
+                    font-size: 14/$sc+rem;
+                    float: left;
+                    margin-right: 5/$sc+rem;
                 }
-                .map-list-trand.click {
-                    background: url(../img/trand2.png) no-repeat #FFFFFF;
-                    background-size: 22/$sc+rem 22/$sc+rem;
-                    background-position: 9/$sc+rem 9/$sc+rem;
+                .price {
+                    font-size: 14/$sc+rem;
+                    float: left;
                 }
-                .map-list-tranddata {
-                    transition: all .3s;
-                    opacity: 0;
-                    z-index: -10;
-                    width: 287/$sc+rem;
-                    height: 40/$sc+rem;
+                .rose {
+                    font-size: 12/$sc+rem;
+                    float: right;
+                }
+            }
+            .map-list-tranddata.hide {
+                opacity: 1;
+                z-index: 10;
+            }
+            .map-list-tranddata.tranddatahide {
+                z-index: -10;
+                opacity: 0;
+                bottom: 16/$sc+rem;
+            }
+        }
+    }
+    .section-map-peripheral {
+        transition: all .3s;
+        z-index: 10;
+        opacity: 1;
+        width: 100%;
+        height: 56/$sc+rem;
+        position: fixed;
+        bottom: 0;
+        left: 375/$sc+rem;
+        .map-peripheral-wrapper {
+            width: 100%;
+            position: relative;
+            .peripheral-ul {
+                width: 100%;
+                height: 56/$sc+rem;
+                .peripheral-li {
                     background: #FFFFFF;
-                    box-shadow: 0 2/$sc+rem 4/$sc+rem 0 rgba(0, 0, 0, 0.30);
-                    border-radius: 2/$sc+rem;
-                    position: absolute;
-                    bottom: 60/$sc+rem;
-                    left: 72/$sc+rem;
-                    padding: 10/$sc+rem 16/$sc+rem;
-                    box-sizing: border-box;
-                    -webkit-box-sizing: border-box;
+                    width: 20%;
+                    height: 56/$sc+rem;
+                    float: left;
+                    i {
+                        display: block;
+                        margin: 12/$sc+rem auto 0;
+                        width: 18/$sc+rem;
+                        height: 18/$sc+rem;
+                        background: url(../img/icon.png);
+                        background-size: 100/$sc+rem 60/$sc+rem;
+                    }
                     span {
                         display: block;
+                        margin-top: 4/$sc+rem;
+                        line-height: 16/$sc+rem;
                         font-family: PingFang-SC-Medium;
-                        color: #0099EB;
-                        line-height: 20/$sc+rem;
-                    }
-                    .regional {
-                        font-size: 14/$sc+rem;
-                        float: left;
-                        margin-right: 5/$sc+rem;
-                    }
-                    .price {
-                        font-size: 14/$sc+rem;
-                        float: left;
-                    }
-                    .rose {
                         font-size: 12/$sc+rem;
-                        float: right;
+                        color: #6C7072;
+                        text-align: center;
                     }
                 }
-                .map-list-tranddata.hide {
-                    opacity: 1;
-                    z-index: 10;
-                }
-                .map-list-tranddata.tranddatahide {
-                    z-index: -10;
-                    opacity: 0;
-                    bottom: 16/$sc+rem;
-                }
-            }
-        }
-        .section-map-peripheral {
-            transition: all .3s;
-            z-index: 10;
-            opacity: 1;
-            width: 100%;
-            height: 56/$sc+rem;
-            position: absolute;
-            bottom: 0;
-            left: 375/$sc+rem;
-            .map-peripheral-wrapper {
-                width: 100%;
-                position: relative;
-                .peripheral-ul {
-                    width: 100%;
-                    height: 56/$sc+rem;
-                    .peripheral-li {
-                        background: #FFFFFF;
-                        width: 20%;
-                        height: 56/$sc+rem;
-                        float: left;
-                        i {
-                            display: block;
-                            margin: 12/$sc+rem auto 0;
-                            width: 18/$sc+rem;
-                            height: 18/$sc+rem;
-                            background: url(../img/icon.png);
-                            background-size: 100/$sc+rem 60/$sc+rem;
-                        }
-                        span {
-                            display: block;
-                            margin-top: 4/$sc+rem;
-                            line-height: 16/$sc+rem;
-                            font-family: PingFang-SC-Medium;
-                            font-size: 12/$sc+rem;
-                            color: #6C7072;
-                            text-align: center;
-                        }
-                    }
-                    .peripheral-li:nth-child(1) {
-                        i {
-                            background-position-x: -1/$sc+rem;
-                            background-position-y: -1/$sc+rem;
-                        }
-                    }
-                    .peripheral-li:nth-child(2) {
-                        i {
-                            background-position-x: -21/$sc+rem;
-                            background-position-y: -1/$sc+rem;
-                        }
-                    }
-                    .peripheral-li:nth-child(3) {
-                        i {
-                            background-position-x: -41/$sc+rem;
-                            background-position-y: -1/$sc+rem;
-                        }
-                    }
-                    .peripheral-li:nth-child(4) {
-                        i {
-                            background-position-x: -61/$sc+rem;
-                            background-position-y: -1/$sc+rem;
-                        }
-                    }
-                    .peripheral-li:nth-child(5) {
-                        i {
-                            background-position-x: -81/$sc+rem;
-                            background-position-y: -1/$sc+rem;
-                        }
-                    }
-                    .peripheral-li.on {
-                        i {
-                            background-position-y: -41/$sc+rem;
-                        }
-                        span {
-                            color: #00A9EB;
-                        }
+                .peripheral-li:nth-child(1) {
+                    i {
+                        background-position-x: -1/$sc+rem;
+                        background-position-y: -1/$sc+rem;
                     }
                 }
-                .peripheral-return {
-                    transition: all .3s;
-                    width: 20/$sc+rem;
-                    height: 20/$sc+rem;
-                    opacity: 0;
-                    background: url(../img/turnleft.png);
-                    background-size: 20/$sc+rem 20/$sc+rem;
-                    position: absolute;
-                    bottom: 64/$sc+rem;
-                    left: 8/$sc+rem;
+                .peripheral-li:nth-child(2) {
+                    i {
+                        background-position-x: -21/$sc+rem;
+                        background-position-y: -1/$sc+rem;
+                    }
+                }
+                .peripheral-li:nth-child(3) {
+                    i {
+                        background-position-x: -41/$sc+rem;
+                        background-position-y: -1/$sc+rem;
+                    }
+                }
+                .peripheral-li:nth-child(4) {
+                    i {
+                        background-position-x: -61/$sc+rem;
+                        background-position-y: -1/$sc+rem;
+                    }
+                }
+                .peripheral-li:nth-child(5) {
+                    i {
+                        background-position-x: -81/$sc+rem;
+                        background-position-y: -1/$sc+rem;
+                    }
+                }
+                .peripheral-li.on {
+                    i {
+                        background-position-y: -41/$sc+rem;
+                    }
+                    span {
+                        color: #00A9EB;
+                    }
                 }
             }
+            .peripheral-return {
+                transition: all .3s;
+                width: 20/$sc+rem;
+                height: 20/$sc+rem;
+                opacity: 0;
+                background: url(../img/turnleft.png);
+                background-size: 20/$sc+rem 20/$sc+rem;
+                position: absolute;
+                bottom: 64/$sc+rem;
+                left: 8/$sc+rem;
+            }
         }
-        .section-map-peripheral.peripheralhide {
-            z-index: 1;
-            opacity: 0;
-            bottom: -56/$sc+rem;
-        }
+    }
+    .section-map-peripheral.peripheralhide {
+        z-index: 1;
+        opacity: 0;
+        bottom: -56/$sc+rem;
     }
 }
 

@@ -39,6 +39,7 @@ li {
   width: 100%;
   height: 100%;
   display: flex;
+  position: relative;
   display: -webkit-flex;
   flex-direction: column;
   background-color: #f4f4f4;
@@ -102,32 +103,31 @@ li {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   position: relative;
-  z-index: 1;
 }
 
 .container .section .section-map {
   height: 100%;
   width: 100%;
-  background: url(../img/map.png);
+  background: url(../img/map.png) no-repeat;
   background-size: cover;
 }
 
-.container .section .section-map-list {
+.container .section-map-list {
   width: 100%;
   transition: all .3s;
   opacity: 1;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
 }
 
-.container .section .section-map-list .map-list-wrapper {
+.container .section-map-list .map-list-wrapper {
   width: 100%;
   position: relative;
   z-index: 1;
 }
 
-.container .section .section-map-list .map-list-wrapper .map-list-btn {
+.container .section-map-list .map-list-wrapper .map-list-btn {
   transition: all .3s;
   opacity: 1;
   z-index: 10;
@@ -139,7 +139,7 @@ li {
   left: 0;
 }
 
-.container .section .section-map-list .map-list-wrapper .map-list-btn li {
+.container .section-map-list .map-list-wrapper .map-list-btn li {
   width: 33.33%;
   height: 1.76rem;
   float: left;
@@ -147,7 +147,7 @@ li {
   position: relative;
 }
 
-.container .section .section-map-list .map-list-wrapper .map-list-btn li .btn {
+.container .section-map-list .map-list-wrapper .map-list-btn li .btn {
   display: inline-block;
   line-height: 1.76rem;
   padding-left: 0.8rem;
@@ -156,7 +156,7 @@ li {
   color: #394043;
 }
 
-.container .section .section-map-list .map-list-wrapper .map-list-btn li .num {
+.container .section-map-list .map-list-wrapper .map-list-btn li .num {
   display: none;
   width: 0.64rem;
   height: 0.64rem;
@@ -175,31 +175,31 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.container .section .section-map-list .map-list-wrapper .map-list-btn li:nth-child(1) .btn {
+.container .section-map-list .map-list-wrapper .map-list-btn li:nth-child(1) .btn {
   background: url(../img/region.png) no-repeat;
   background-size: 0.64rem 0.64rem;
   background-position: 0 0.56rem;
 }
 
-.container .section .section-map-list .map-list-wrapper .map-list-btn li:nth-child(2) .btn {
+.container .section-map-list .map-list-wrapper .map-list-btn li:nth-child(2) .btn {
   background: url(../img/screen.png) no-repeat;
   background-size: 0.64rem 0.64rem;
   background-position: 0 0.56rem;
 }
 
-.container .section .section-map-list .map-list-wrapper .map-list-btn li:nth-child(3) .btn {
+.container .section-map-list .map-list-wrapper .map-list-btn li:nth-child(3) .btn {
   background: url(../img/list.png) no-repeat;
   background-size: 0.64rem 0.64rem;
   background-position: 0 0.56rem;
 }
 
-.container .section .section-map-list .map-list-wrapper .map-list-btn.listhide {
+.container .section-map-list .map-list-wrapper .map-list-btn.listhide {
   z-index: -10;
   opacity: 0;
   bottom: -1.76rem;
 }
 
-.container .section .section-map-list .map-list-wrapper .map-list-location {
+.container .section-map-list .map-list-wrapper .map-list-location {
   transition: all .3s;
   width: 1.6rem;
   height: 1.6rem;
@@ -213,11 +213,11 @@ li {
   background-position: 0.36rem 0.36rem;
 }
 
-.container .section .section-map-list .map-list-wrapper .map-list-location.locationhide {
+.container .section-map-list .map-list-wrapper .map-list-location.locationhide {
   bottom: 0.64rem;
 }
 
-.container .section .section-map-list .map-list-wrapper .map-list-trand {
+.container .section-map-list .map-list-wrapper .map-list-trand {
   transition: all .3s;
   opacity: 1;
   z-index: 10;
@@ -233,19 +233,19 @@ li {
   background-position: 0.36rem 0.36rem;
 }
 
-.container .section .section-map-list .map-list-wrapper .map-list-trand.trandhide {
+.container .section-map-list .map-list-wrapper .map-list-trand.trandhide {
   z-index: -10;
   opacity: 0;
   bottom: 2.88rem;
 }
 
-.container .section .section-map-list .map-list-wrapper .map-list-trand.click {
+.container .section-map-list .map-list-wrapper .map-list-trand.click {
   background: url(../img/trand2.png) no-repeat #FFFFFF;
   background-size: 0.88rem 0.88rem;
   background-position: 0.36rem 0.36rem;
 }
 
-.container .section .section-map-list .map-list-wrapper .map-list-tranddata {
+.container .section-map-list .map-list-wrapper .map-list-tranddata {
   transition: all .3s;
   opacity: 0;
   z-index: -10;
@@ -262,69 +262,69 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.container .section .section-map-list .map-list-wrapper .map-list-tranddata span {
+.container .section-map-list .map-list-wrapper .map-list-tranddata span {
   display: block;
   font-family: PingFang-SC-Medium;
   color: #0099EB;
   line-height: 0.8rem;
 }
 
-.container .section .section-map-list .map-list-wrapper .map-list-tranddata .regional {
+.container .section-map-list .map-list-wrapper .map-list-tranddata .regional {
   font-size: 0.56rem;
   float: left;
   margin-right: 0.2rem;
 }
 
-.container .section .section-map-list .map-list-wrapper .map-list-tranddata .price {
+.container .section-map-list .map-list-wrapper .map-list-tranddata .price {
   font-size: 0.56rem;
   float: left;
 }
 
-.container .section .section-map-list .map-list-wrapper .map-list-tranddata .rose {
+.container .section-map-list .map-list-wrapper .map-list-tranddata .rose {
   font-size: 0.48rem;
   float: right;
 }
 
-.container .section .section-map-list .map-list-wrapper .map-list-tranddata.hide {
+.container .section-map-list .map-list-wrapper .map-list-tranddata.hide {
   opacity: 1;
   z-index: 10;
 }
 
-.container .section .section-map-list .map-list-wrapper .map-list-tranddata.tranddatahide {
+.container .section-map-list .map-list-wrapper .map-list-tranddata.tranddatahide {
   z-index: -10;
   opacity: 0;
   bottom: 0.64rem;
 }
 
-.container .section .section-map-peripheral {
+.container .section-map-peripheral {
   transition: all .3s;
   z-index: 10;
   opacity: 1;
   width: 100%;
   height: 2.24rem;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 15rem;
 }
 
-.container .section .section-map-peripheral .map-peripheral-wrapper {
+.container .section-map-peripheral .map-peripheral-wrapper {
   width: 100%;
   position: relative;
 }
 
-.container .section .section-map-peripheral .map-peripheral-wrapper .peripheral-ul {
+.container .section-map-peripheral .map-peripheral-wrapper .peripheral-ul {
   width: 100%;
   height: 2.24rem;
 }
 
-.container .section .section-map-peripheral .map-peripheral-wrapper .peripheral-ul .peripheral-li {
+.container .section-map-peripheral .map-peripheral-wrapper .peripheral-ul .peripheral-li {
   background: #FFFFFF;
   width: 20%;
   height: 2.24rem;
   float: left;
 }
 
-.container .section .section-map-peripheral .map-peripheral-wrapper .peripheral-ul .peripheral-li i {
+.container .section-map-peripheral .map-peripheral-wrapper .peripheral-ul .peripheral-li i {
   display: block;
   margin: 0.48rem auto 0;
   width: 0.72rem;
@@ -333,7 +333,7 @@ li {
   background-size: 4rem 2.4rem;
 }
 
-.container .section .section-map-peripheral .map-peripheral-wrapper .peripheral-ul .peripheral-li span {
+.container .section-map-peripheral .map-peripheral-wrapper .peripheral-ul .peripheral-li span {
   display: block;
   margin-top: 0.16rem;
   line-height: 0.64rem;
@@ -343,40 +343,40 @@ li {
   text-align: center;
 }
 
-.container .section .section-map-peripheral .map-peripheral-wrapper .peripheral-ul .peripheral-li:nth-child(1) i {
+.container .section-map-peripheral .map-peripheral-wrapper .peripheral-ul .peripheral-li:nth-child(1) i {
   background-position-x: -0.04rem;
   background-position-y: -0.04rem;
 }
 
-.container .section .section-map-peripheral .map-peripheral-wrapper .peripheral-ul .peripheral-li:nth-child(2) i {
+.container .section-map-peripheral .map-peripheral-wrapper .peripheral-ul .peripheral-li:nth-child(2) i {
   background-position-x: -0.84rem;
   background-position-y: -0.04rem;
 }
 
-.container .section .section-map-peripheral .map-peripheral-wrapper .peripheral-ul .peripheral-li:nth-child(3) i {
+.container .section-map-peripheral .map-peripheral-wrapper .peripheral-ul .peripheral-li:nth-child(3) i {
   background-position-x: -1.64rem;
   background-position-y: -0.04rem;
 }
 
-.container .section .section-map-peripheral .map-peripheral-wrapper .peripheral-ul .peripheral-li:nth-child(4) i {
+.container .section-map-peripheral .map-peripheral-wrapper .peripheral-ul .peripheral-li:nth-child(4) i {
   background-position-x: -2.44rem;
   background-position-y: -0.04rem;
 }
 
-.container .section .section-map-peripheral .map-peripheral-wrapper .peripheral-ul .peripheral-li:nth-child(5) i {
+.container .section-map-peripheral .map-peripheral-wrapper .peripheral-ul .peripheral-li:nth-child(5) i {
   background-position-x: -3.24rem;
   background-position-y: -0.04rem;
 }
 
-.container .section .section-map-peripheral .map-peripheral-wrapper .peripheral-ul .peripheral-li.on i {
+.container .section-map-peripheral .map-peripheral-wrapper .peripheral-ul .peripheral-li.on i {
   background-position-y: -1.64rem;
 }
 
-.container .section .section-map-peripheral .map-peripheral-wrapper .peripheral-ul .peripheral-li.on span {
+.container .section-map-peripheral .map-peripheral-wrapper .peripheral-ul .peripheral-li.on span {
   color: #00A9EB;
 }
 
-.container .section .section-map-peripheral .map-peripheral-wrapper .peripheral-return {
+.container .section-map-peripheral .map-peripheral-wrapper .peripheral-return {
   transition: all .3s;
   width: 0.8rem;
   height: 0.8rem;
@@ -388,7 +388,7 @@ li {
   left: 0.32rem;
 }
 
-.container .section .section-map-peripheral.peripheralhide {
+.container .section-map-peripheral.peripheralhide {
   z-index: 1;
   opacity: 0;
   bottom: -2.24rem;
