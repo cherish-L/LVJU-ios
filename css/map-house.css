@@ -166,18 +166,34 @@ li {
   display: none;
   width: 0.64rem;
   height: 0.64rem;
-  line-height: 0.64rem;
-  text-align: center;
   background: #0099EB;
-  font-family: PingFang-SC-Medium;
-  font-size: 0.4rem;
-  color: #F6F6F6;
   border-radius: 50%;
   position: absolute;
   top: 10%;
   left: 70%;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
+}
+
+.container .section-map-list .map-list-wrapper .map-list-btn li .num .num-box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.container .section-map-list .map-list-wrapper .map-list-btn li .num .num-box .num-txt {
+  display: inline-block;
+  height: 0.4rem;
+  width: auto;
+  font-family: PingFang-SC-Medium;
+  font-size: 0.4rem;
+  position: absolute;
+  color: #F6F6F6;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 .container .section-map-list .map-list-wrapper .map-list-btn li:nth-child(1) .btn {

@@ -146,22 +146,36 @@ $sc:25;
                         font-size: 14/$sc+rem;
                         color: #394043;
                     }
-                    .num {
+                    .num{
                         display: none;
                         width: 16/$sc+rem;
                         height: 16/$sc+rem;
-                        line-height: 16/$sc+rem;
-                        text-align: center;
                         background: #0099EB;
-                        font-family: PingFang-SC-Medium;
-                        font-size: 10/$sc+rem;
-                        color: #F6F6F6;
                         border-radius: 50%;
                         position: absolute;
                         top: 10%;
                         left: 70%;
                         box-sizing: border-box;
                         -webkit-box-sizing: border-box;
+                        .num-box{
+                            width: 100%;
+                            height: 100%;
+                            position: relative;
+                            .num-txt{
+                                display: inline-block;
+                                height: 10/$sc+rem;
+                                width: auto;
+                                font-family: PingFang-SC-Medium;
+                                font-size: 10/$sc+rem;
+                                position: absolute;
+                                color: #F6F6F6;
+                                top: 0;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                margin: auto;
+                            }
+                        }
                     }
                 }
                 li:nth-child(1) {
