@@ -798,8 +798,6 @@ li {
 
 .maphouse-push .region-push .region-push-section .region-push-section-wrapper .regionlist {
   width: 29%;
-  height: 100%;
-  overflow: auto;
   background: #FFFFFF;
 }
 
@@ -818,8 +816,6 @@ li {
 
 .maphouse-push .region-push .region-push-section .region-push-section-wrapper .municipality {
   width: 33%;
-  height: 100%;
-  overflow: auto;
   background: #F6F6F6;
 }
 
@@ -838,8 +834,6 @@ li {
 
 .maphouse-push .region-push .region-push-section .region-push-section-wrapper .district {
   width: 38%;
-  height: 100%;
-  overflow: auto;
   background: #ECF4F9;
 }
 
