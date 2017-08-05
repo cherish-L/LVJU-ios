@@ -12,7 +12,7 @@ $(function(){
 	
 	var btnw=$(".map-list-btn").width()
 	var index=0;
-	$(".section-map").tap(function(){
+	$(".section").tap(function(){
 		index++;
 		if(index%2==1){
 			$(".map-list-btn").addClass("listhide")
@@ -50,6 +50,11 @@ $(function(){
 	})
 	
 //筛选弹框
+
+	//sectionS.refresh()
+
+	var htmlh=$("html").height()
+	
 	$(".select").tap(function(){
 		$(this).addClass("selected")
 	})
@@ -60,9 +65,11 @@ $(function(){
 	})
 	
 	$(".screen-push-footer .determine").tap(function(){
-		$(".maphouse-push").css("height","0")
-		$(".screenli .num").css("display","block")
 		var len=$(".selected").length
+		$(".maphouse-push").css("height","0")
+		$(".screen-push").css("height","0")
+		$(".region-push").css("height","0")
+		$(".screenli .num").css("display","block")
 		$(".screenli .num").text(len)
 		if($(".screenli .num").text()=="0"){
 			$(".screenli .num").css("display","none")
@@ -70,28 +77,35 @@ $(function(){
 	})
 	$(".screen-push-header .return").tap(function(){
 		$(".maphouse-push").css("height","0")
+		$(".screen-push").css("height","0")
+		$(".region-push").css("height","0")
 	})
 	
-	var hhh=$(".container").height()
 	$(".pscreen").tap(function(){
-		$(".maphouse-push").css("height",hhh)
+		$(".maphouse-push").css("height",htmlh)
+		$(".screen-push").css("height",htmlh)
+		$(".region-push").css("height","0")
 	})
 	
 	
 //区域弹框
 	$(".region-push-footer .determine").tap(function(){
 		$(".maphouse-push").css("height","0")
+		$(".screen-push").css("height","0")
 		$(".region-push").css("height","0")
 	})
 	
 	$(".region-push-header .return").tap(function(){
 		$(".maphouse-push").css("height","0")
+		$(".screen-push").css("height","0")
 		$(".region-push").css("height","0")
 	})
 	
 	
 	$(".pregion").tap(function(){
-		$(".maphouse-push").css("height",hhh)
+		$(".maphouse-push").css("height",htmlh)
+		$(".region-push").css("height",htmlh)
+		$(".screen-push").css("height","0")
 	})
 	
 	

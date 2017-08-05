@@ -372,7 +372,7 @@ $sc:25;
 
 .maphouse-push {
     width: 100%;
-    height: 0;
+    height: 568px;
     z-index: 20;
     overflow: hidden;
     transition: all .3s;
@@ -382,7 +382,8 @@ $sc:25;
     background: #FFFFFF;
     .screen-push {
         width: 100%;
-        height: 667/$sc+rem;
+        height: 568px;
+        transition: all .3s;
         overflow: hidden;
         position: relative;
         display: flex;
@@ -426,13 +427,13 @@ $sc:25;
             flex: 1;
             -webkit-flex: 1;
             overflow: hidden;
-            background: #FFFFFF;
-            padding: 0 15/$sc+rem 0 16/$sc+rem;
+            background: #FFFFFF;           
             position: relative;
             .screen-push-section-wrapper {
+                padding: 8/$sc+rem 15/$sc+rem 46/$sc+rem 16/$sc+rem;
                 padding-bottom: 46/$sc+rem;
                 .average-price {
-                    margin: 8/$sc+rem 0 16/$sc+rem 0;
+                    margin-bottom: 16/$sc+rem;
                     .average-price-title {
                         height: 54/$sc+rem;
                         line-height: 22/$sc+rem;
@@ -668,7 +669,7 @@ $sc:25;
     }
     .region-push {
         width: 100%;
-        height: 667/$sc+rem;
+        height: 0;
         transition: all .3s;
         overflow: hidden;
         position: relative;
