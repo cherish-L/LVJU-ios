@@ -428,14 +428,14 @@ li {
 }
 
 .container .search-section .search-section-state {
-  display: none;
+  width: 100%;
   height: 100%;
+  padding-top: 0.4rem;
+  display: none;
 }
 
 .container .search-section .search-section-state .hot-search {
-  height: 6.08rem;
   background: #FFFFFF;
-  margin-top: 0.4rem;
 }
 
 .container .search-section .search-section-state .hot-search .hot-search-title {
@@ -504,7 +504,6 @@ li {
 }
 
 .container .search-section .search-section-state .history-search {
-  height: 6.08rem;
   background: #FFFFFF;
   margin-top: 0.4rem;
 }
