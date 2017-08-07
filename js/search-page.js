@@ -33,7 +33,7 @@ $(function(){
 		clearTimeout(timer2)
 		clearTimeout(timer3)
 		$(".Search-inpt-wrapper .delete").css("display","block")
-		$(".search-section-state").css("display","block").siblings().css("display","none")
+		$(".search-section-state").addClass("switch").siblings(".page").removeClass("switch")
 		stateS.refresh()
 	})
 	$(".Search-form .Search-inpt").blur(function(){
@@ -52,26 +52,26 @@ $(function(){
 		if(!inpttxt==""){
 			var datatxt="<li class='history-search-li'><span>"+inpttxt+"</span><span>/</span><span>楼盘</span></li>"
 			$(".history-search-ul").prepend(datatxt)
-			$(".search-section-state").css("display","none")
-			$(".search-section-waiting").css("display","block")
+			$(".search-section-state").removeClass("switch")
+			$(".search-section-waiting").addClass("switch")
 			timer1=setTimeout(function () {
-				$(".search-section-waiting").css("display","none")
-				$(".search-section-fail").css("display","block")
+				$(".search-section-waiting").removeClass("switch")
+				$(".search-section-fail").addClass("switch")
 			}, 1500)
 			$(".search-section-fail").tap(function(){
-				$(".search-section-waiting").css("display","block")
-				$(".search-section-fail").css("display","none")
+				$(".search-section-waiting").addClass("switch")
+				$(".search-section-fail").removeClass("switch")
 				timer2=setTimeout(function () {
-					$(".search-section-waiting").css("display","none")
-					$(".search-section-none").css("display","block")
+					$(".search-section-waiting").removeClass("switch")
+					$(".search-section-none").addClass("switch")
 				}, 1500)
 			})
 			$(".search-section-none").tap(function(){
-				$(".search-section-waiting").css("display","block")
-				$(".search-section-none").css("display","none")
+				$(".search-section-waiting").addClass("switch")
+				$(".search-section-none").removeClass("switch")
 				timer3=setTimeout(function () {
-					$(".search-section-waiting").css("display","none")
-					$(".search-section-wrapper").css("display","block")
+					$(".search-section-waiting").removeClass("switch")
+					$(".search-section-wrapper").addClass("switch")
 				}, 1500)
 				
 			})
@@ -81,10 +81,7 @@ $(function(){
 				$(".history-search-no").css("display","none")
 			}
 		}
-		stateS.refresh()	
 	})
-	
-	
 	
 //历史记录
 	$(".title-Trash").tap(function(){
@@ -102,7 +99,7 @@ $(function(){
 	
 	
 	//搜索页面滚动监听事件
-	var searchS = new IScroll('.search-section', {
+	var searchS = new IScroll('.search-section-wrapper', {
 		scrollbars: false
 	});
 	var stateS = new IScroll('.search-section-state', {
