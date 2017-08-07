@@ -33,7 +33,7 @@ $(function(){
 		clearTimeout(timer2)
 		clearTimeout(timer3)
 		$(".Search-inpt-wrapper .delect").css("display","block")
-		$(".search-section-state").css("display","block").siblings().css("display","none")
+		$(".search-section-state").css("display","block").siblings("page").css("display","none")
 		
 	})
 	$(".Search-form .Search-inpt").blur(function(){
