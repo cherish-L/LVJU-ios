@@ -34,15 +34,16 @@ $(function(){
 		clearTimeout(timer3)
 		$(".Search-inpt-wrapper .delete").css("display","block")
 		$(".search-section-state").css("display","block").siblings().css("display","none")
-		
+		stateS.refresh()
 	})
 	$(".Search-form .Search-inpt").blur(function(){
 		$(".Search-inpt-wrapper .delete").css("display","none")
-		
+		stateS.refresh()
 	})
 	$(".Search-inpt-wrapper .delete").tap(function(){
 		$(".Search-form .Search-inpt").val("")
 		$(".Search-form .Search-inpt").focus()
+		stateS.refresh()
 	})
 	
 	
@@ -80,7 +81,7 @@ $(function(){
 				$(".history-search-no").css("display","none")
 			}
 		}
-				
+		stateS.refresh()	
 	})
 	
 	
@@ -104,5 +105,7 @@ $(function(){
 	var searchS = new IScroll('.search-section', {
 		scrollbars: false
 	});
-	
+	var stateS = new IScroll('.search-section-state', {
+		scrollbars: false
+	});
 })
