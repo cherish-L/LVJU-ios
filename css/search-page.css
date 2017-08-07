@@ -554,9 +554,8 @@ li {
 .container .search-section .search-section-state .section-state-box .history-search .history-search-body {
   flex: 1;
   -webkit-flex: 1;
-  overflow: auto;
+  overflow: hidden;
   background: #FFFFFF;
-  -webkit-overflow-scrolling: touch;
 }
 
 .container .search-section .search-section-state .section-state-box .history-search .history-search-body .history-search-ul {

@@ -490,9 +490,8 @@ $sc:25;
                     .history-search-body {
                         flex: 1;
                         -webkit-flex: 1;
-                        overflow: auto;
+                        overflow: hidden;
                         background: #FFFFFF;
-                        -webkit-overflow-scrolling: touch;
                         .history-search-ul {
                             width: 100%;
                             .history-search-li {

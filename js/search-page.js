@@ -110,6 +110,8 @@ $(function(){
 	var searchS = new IScroll('.search-section-wrapper', {
 		scrollbars: false
 	});
-	
+	var historyS = new IScroll('.history-search-body', {
+		scrollbars: false
+	});
 	
 })
