@@ -14,12 +14,16 @@ a {
 html,
 body {
   width: 100%;
+  height: 100%;
+  overflow: hidden;
   font-family: PingFangSC-Regular;
+  background: #f4f4f4;
 }
 
 input {
   outline: none;
-  border: none;
+  border: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
 li {
@@ -28,16 +32,17 @@ li {
 
 .container {
   width: 100%;
+  height: 100%;
   position: relative;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
   background-color: #f4f4f4;
 }
 
 .container .header {
   width: 100%;
   background: #F6F6F6;
-  position: fixed;
-  top: 0;
-  left: 0;
   z-index: 10;
   box-shadow: 0 1px 0 0 #CCCCCC;
   -webkit-box-shadow: 0 1px 0 0 #CCCCCC;
@@ -139,13 +144,11 @@ li {
   background-size: 0.88rem 0.88rem;
 }
 
-.container .partition {
-  width: 100%;
-  height: 2.56rem;
-}
-
 .container .search-section {
-  background: #f4f4f4;
+  flex: 1;
+  -webkit-flex: 1;
+  overflow: hidden;
+  background: #F4F4F4;
 }
 
 .container .search-section .search-section-wrapper {

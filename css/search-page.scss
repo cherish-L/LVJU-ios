@@ -14,12 +14,16 @@ a {
 html,
 body {
     width: 100%;
+    height: 100%;
+    overflow: hidden;
     font-family: PingFangSC-Regular;
+    background: #f4f4f4;
 }
 
 input {
     outline: none;
-    border: none;
+    border: 0;
+    -webkit-tap-highlight-color: transparent;
 }
 
 li {
@@ -29,14 +33,15 @@ li {
 $sc:25;
 .container {
     width: 100%;
+    height: 100%;
     position: relative;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
     background-color: #f4f4f4;
     .header {
         width: 100%;
         background: #F6F6F6;
-        position: fixed;
-        top: 0;
-        left: 0;
         z-index: 10;
         box-shadow: 0 1px 0 0 #CCCCCC;
         -webkit-box-shadow: 0 1px 0 0 #CCCCCC;
@@ -125,13 +130,12 @@ $sc:25;
             }
         }
     }
-    .partition {
-        width: 100%;
-        height: 64/$sc+rem;
-    }
     //-----------------内    容----------------------
     .search-section {
-        background: #f4f4f4;
+        flex: 1;
+        -webkit-flex: 1;
+        overflow: hidden;
+        background: #F4F4F4;
         .search-section-wrapper{
             width: 100%;
             padding-bottom: 32/$sc+rem;
