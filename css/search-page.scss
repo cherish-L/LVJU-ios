@@ -329,7 +329,7 @@ $sc:25;
             height: 100%;
             background: #FFFFFF;
             position: relative;
-            .section-fail-box{
+            .section-fail-box {
                 width: 100%;
                 position: absolute;
                 top: 33%;
@@ -357,7 +357,7 @@ $sc:25;
             height: 100%;
             background: #FFFFFF;
             position: relative;
-            .section-none-box{
+            .section-none-box {
                 width: 100%;
                 position: absolute;
                 top: 33%;
@@ -383,149 +383,148 @@ $sc:25;
             display: none;
             width: 100%;
             height: 100%;
-            overflow: auto;
-            -webkit-overflow-scrolling: touch;
+            overflow: hidden;
             background: #FFFFFF;
-            display: flex;
-            display: -webkit-flex;
-            flex-direction: column;
-            .hot-search {
-                background: #FFFFFF;
-                border-top: 10/$sc+rem solid #F4F4F4;
-                .hot-search-title {
-                    width: 100%;
-                    height: 44/$sc+rem;
-                    padding: 12/$sc+rem 16/$sc+rem;
+            .history-search-box {
+                width: 100%;
+                .hot-search {
                     background: #FFFFFF;
-                    box-shadow: inset 0 -1px 0 0 #EEEEEE;
-                    -webkit-box-shadow: inset 0 -1px 0 0 #EEEEEE;
-                    box-sizing: border-box;
-                    -webkit-box-sizing: border-box;
-                    .title-txt {
-                        display: block;
-                        float: left;
-                        font-size: 14/$sc+rem;
-                        margin-right: 5/$sc+rem;
-                        line-height: 20/$sc+rem;
-                        color: #999999;
-                    }
-                    .title-hot {
-                        display: block;
-                        float: left;
-                        width: 27/$sc+rem;
-                        height: 20/$sc+rem;
-                        background: url(../img/hot.png) no-repeat;
-                        background-size: 27/$sc+rem 12/$sc+rem;
-                        background-position-y: 4/$sc+rem;
-                    }
-                    .title-load {
-                        display: block;
-                        float: right;
-                        width: 22/$sc+rem;
-                        height: 22/$sc+rem;
-                        transform-origin: center center;
-                        background: url(../img/git.png) no-repeat;
-                        background-size: 22/$sc+rem 22/$sc+rem;
-                    }
-                }
-                .hot-search-label {
-                    width: 100%;
-                    padding: 10/$sc+rem 10/$sc+rem;
-                    background: #FFFFFF;
-                    box-sizing: border-box;
-                    -webkit-box-sizing: border-box;
-                    span {
-                        display: inline-block;
-                        float: left;
-                        padding: 0 12/$sc+rem;
-                        font-size: 14/$sc+rem;
-                        height: 32/$sc+rem;
-                        line-height: 32/$sc+rem;
-                        border-radius: 2/$sc+rem;
-                        margin: 6/$sc+rem;
-                        opacity: 0.6;
-                        background: #E6F7FF;
-                        color: #0099EB;
-                        border: 1px solid rgba(0, 153, 235, .6);
-                        box-sizing: border-box;
-                        -webkit-box-sizing: border-box;
-                    }
-                }
-            }
-            .history-search {
-                border-top: 10/$sc+rem solid #F4F4F4;
-                background: #FFFFFF;
-                .history-search-title {
-                    width: 100%;
-                    height: 44/$sc+rem;
-                    padding: 12/$sc+rem 16/$sc+rem;
-                    background: #FFFFFF;
-                    box-shadow: inset 0 -1px 0 0 #EEEEEE;
-                    -webkit-box-shadow: inset 0 -1px 0 0 #EEEEEE;
-                    box-sizing: border-box;
-                    -webkit-box-sizing: border-box;
-                    .title-txt {
-                        display: block;
-                        float: left;
-                        font-size: 14/$sc+rem;
-                        margin-right: 5/$sc+rem;
-                        line-height: 20/$sc+rem;
-                        color: #999999;
-                    }
-                    .title-Trash {
-                        display: block;
-                        float: right;
-                        width: 22/$sc+rem;
-                        height: 22/$sc+rem;
-                        transform-origin: center center;
-                        background: url(../img/Trash.png) no-repeat;
-                        background-size: 22/$sc+rem 22/$sc+rem;
-                    }
-                }
-                .history-search-no {
-                    display: none;
-                    height: 52/$sc+rem;
-                    line-height: 20/$sc+rem;
-                    padding: 16/$sc+rem;
-                    font-size: 14/$sc+rem;
-                    color: #6C7072;
-                    text-align: center;
-                    box-sizing: border-box;
-                    -webkit-box-sizing: border-box;
-                }
-                .history-search-ul {
-                    width: 100%;
-                    .history-search-li {
-                        height: 48/$sc+rem;
-                        padding: 14/$sc+rem 38/$sc+rem;
-                        background: url(../img/time.png) no-repeat;
-                        background-size: 14/$sc+rem 14/$sc+rem;
-                        background-position: 17/$sc+rem 17/$sc+rem;
+                    border-top: 10/$sc+rem solid #F4F4F4;
+                    .hot-search-title {
+                        width: 100%;
+                        height: 44/$sc+rem;
+                        padding: 12/$sc+rem 16/$sc+rem;
+                        background: #FFFFFF;
                         box-shadow: inset 0 -1px 0 0 #EEEEEE;
                         -webkit-box-shadow: inset 0 -1px 0 0 #EEEEEE;
                         box-sizing: border-box;
                         -webkit-box-sizing: border-box;
-                        span:nth-child(1) {
+                        .title-txt {
                             display: block;
                             float: left;
-                            line-height: 20/$sc+rem;
                             font-size: 14/$sc+rem;
-                            color: #6C7072;
+                            margin-right: 5/$sc+rem;
+                            line-height: 20/$sc+rem;
+                            color: #999999;
                         }
-                        span:nth-child(2) {
+                        .title-hot {
                             display: block;
                             float: left;
-                            margin: 1/$sc+rem 5/$sc+rem 0;
-                            line-height: 20/$sc+rem;
-                            font-size: 13/$sc+rem;
-                            color: #CCCCCC;
+                            width: 27/$sc+rem;
+                            height: 20/$sc+rem;
+                            background: url(../img/hot.png) no-repeat;
+                            background-size: 27/$sc+rem 12/$sc+rem;
+                            background-position-y: 4/$sc+rem;
                         }
-                        span:nth-child(3) {
+                        .title-load {
+                            display: block;
+                            float: right;
+                            width: 22/$sc+rem;
+                            height: 22/$sc+rem;
+                            transform-origin: center center;
+                            background: url(../img/git.png) no-repeat;
+                            background-size: 22/$sc+rem 22/$sc+rem;
+                        }
+                    }
+                    .hot-search-label {
+                        width: 100%;
+                        padding: 10/$sc+rem 10/$sc+rem;
+                        background: #FFFFFF;
+                        box-sizing: border-box;
+                        -webkit-box-sizing: border-box;
+                        span {
+                            display: inline-block;
+                            float: left;
+                            padding: 0 12/$sc+rem;
+                            font-size: 14/$sc+rem;
+                            height: 32/$sc+rem;
+                            line-height: 32/$sc+rem;
+                            border-radius: 2/$sc+rem;
+                            margin: 6/$sc+rem;
+                            opacity: 0.6;
+                            background: #E6F7FF;
+                            color: #0099EB;
+                            border: 1px solid rgba(0, 153, 235, .6);
+                            box-sizing: border-box;
+                            -webkit-box-sizing: border-box;
+                        }
+                    }
+                }
+                .history-search {
+                    border-top: 10/$sc+rem solid #F4F4F4;
+                    background: #FFFFFF;
+                    .history-search-title {
+                        width: 100%;
+                        height: 44/$sc+rem;
+                        padding: 12/$sc+rem 16/$sc+rem;
+                        background: #FFFFFF;
+                        box-shadow: inset 0 -1px 0 0 #EEEEEE;
+                        -webkit-box-shadow: inset 0 -1px 0 0 #EEEEEE;
+                        box-sizing: border-box;
+                        -webkit-box-sizing: border-box;
+                        .title-txt {
                             display: block;
                             float: left;
+                            font-size: 14/$sc+rem;
+                            margin-right: 5/$sc+rem;
                             line-height: 20/$sc+rem;
-                            font-size: 12/$sc+rem;
-                            color: #CCCCCC;
+                            color: #999999;
+                        }
+                        .title-Trash {
+                            display: block;
+                            float: right;
+                            width: 22/$sc+rem;
+                            height: 22/$sc+rem;
+                            transform-origin: center center;
+                            background: url(../img/Trash.png) no-repeat;
+                            background-size: 22/$sc+rem 22/$sc+rem;
+                        }
+                    }
+                    .history-search-no {
+                        display: none;
+                        height: 52/$sc+rem;
+                        line-height: 20/$sc+rem;
+                        padding: 16/$sc+rem;
+                        font-size: 14/$sc+rem;
+                        color: #6C7072;
+                        text-align: center;
+                        box-sizing: border-box;
+                        -webkit-box-sizing: border-box;
+                    }
+                    .history-search-ul {
+                        width: 100%;
+                        .history-search-li {
+                            height: 48/$sc+rem;
+                            padding: 14/$sc+rem 38/$sc+rem;
+                            background: url(../img/time.png) no-repeat;
+                            background-size: 14/$sc+rem 14/$sc+rem;
+                            background-position: 17/$sc+rem 17/$sc+rem;
+                            box-shadow: inset 0 -1px 0 0 #EEEEEE;
+                            -webkit-box-shadow: inset 0 -1px 0 0 #EEEEEE;
+                            box-sizing: border-box;
+                            -webkit-box-sizing: border-box;
+                            span:nth-child(1) {
+                                display: block;
+                                float: left;
+                                line-height: 20/$sc+rem;
+                                font-size: 14/$sc+rem;
+                                color: #6C7072;
+                            }
+                            span:nth-child(2) {
+                                display: block;
+                                float: left;
+                                margin: 1/$sc+rem 5/$sc+rem 0;
+                                line-height: 20/$sc+rem;
+                                font-size: 13/$sc+rem;
+                                color: #CCCCCC;
+                            }
+                            span:nth-child(3) {
+                                display: block;
+                                float: left;
+                                line-height: 20/$sc+rem;
+                                font-size: 12/$sc+rem;
+                                color: #CCCCCC;
+                            }
                         }
                     }
                 }
