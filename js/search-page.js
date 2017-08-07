@@ -111,8 +111,5 @@ $(function(){
 		scrollbars: false
 	});
 	
-//	var stateS = new IScroll('.search-section-state', {
-//		scrollbars: false
-//	});
 	
 })

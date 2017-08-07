@@ -152,7 +152,7 @@ li {
 .container .search-section .search-section-wrapper {
   width: 100%;
   height: 100%;
-  display: none;
+  display: block;
 }
 
 .container .search-section .search-section-wrapper .search-section-box {
@@ -414,7 +414,7 @@ li {
 }
 
 .container .search-section .search-section-state {
-  display: block;
+  display: none;
   width: 100%;
   height: 100%;
   padding-top: 0.4rem;
@@ -555,6 +555,7 @@ li {
   flex: 1;
   -webkit-flex: 1;
   overflow: auto;
+  background: #FFFFFF;
   -webkit-overflow-scrolling: touch;
 }
 
