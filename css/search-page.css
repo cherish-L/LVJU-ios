@@ -222,18 +222,21 @@ li {
   height: 0.8rem;
 }
 
-.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt h3 {
+.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt .title {
+  display: block;
   height: 0.8rem;
+  line-height: 0.8rem;
 }
 
-.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt h3 .position {
+.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt .title .position {
   font-size: 0.64rem;
+  line-height: 0.8rem;
   float: left;
   color: #394043;
   margin-right: 0.2rem;
 }
 
-.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt h3 .region {
+.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt .title .region {
   font-size: 0.48rem;
   line-height: 0.8rem;
   float: left;
