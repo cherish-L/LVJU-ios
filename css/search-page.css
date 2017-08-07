@@ -153,6 +153,7 @@ li {
 .container .search-section .search-section-wrapper {
   width: 100%;
   height: 100%;
+  overflow: hidden;
   display: block;
 }
 
@@ -286,7 +287,7 @@ li {
 }
 
 .container .search-section .search-section-wrapper .search-section-box .section-load {
-  margin: 0.64rem auto 1.28rem;
+  margin: 0.64rem auto 0;
   width: 13.72rem;
   height: 1.76rem;
   background: #FFFFFF;
@@ -301,7 +302,7 @@ li {
 }
 
 .container .search-section .search-section-wrapper .search-section-box .section-loading {
-  margin: 0.64rem auto 1.28rem;
+  margin: 0.64rem auto 0;
   width: 13.72rem;
   height: 1.76rem;
   background: #FFFFFF;
@@ -336,7 +337,7 @@ li {
 }
 
 .container .search-section .search-section-wrapper .search-section-box .section-loadnone {
-  margin: 0.64rem auto 1.28rem;
+  margin: 0.64rem auto 0;
   width: 13.72rem;
   height: 1.76rem;
   background: #FFFFFF;
