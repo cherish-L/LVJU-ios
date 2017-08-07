@@ -387,6 +387,9 @@ $sc:25;
             background: #FFFFFF;
             .history-search-box {
                 width: 100%;
+                height: 100%;
+                overflow: hidden;
+                background: #FFFFFF;
                 .hot-search {
                     background: #FFFFFF;
                     border-top: 10/$sc+rem solid #F4F4F4;
