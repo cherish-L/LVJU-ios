@@ -5,9 +5,10 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title>搜索页面</title>
+		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/search-page.css" />
 		<script type="text/javascript" src="plugins/zepto.min.js"></script>
-		<script type="text/javascript" src="plugins/iscroll-master/build/iscroll-probe.js"></script>
+		<script src="plugins/swiper-3.4.2.min.js"></script>
 		<script type="text/javascript" src="vue/vue.js"></script>
 		<script type="text/javascript" src="js/search-page.js"></script>
 		<script>
@@ -33,8 +34,9 @@
 					</form>
 				</div>
 			</header>
-			<section class="page search-section-wrapper">
-				<div class="search-section-box">
+			<div class="partition"></div>
+			<section class="search-section">
+				<div class="search-section-wrapper">
 					<div class="search-section-info">
 						<ul class="section-info-data-ul">
 							<li class="section-info-data-li" v-for="list in sectioninfo">
@@ -45,14 +47,14 @@
 										<span class="ghtxt" v-text="list.sell"></span>
 									</div>
 									<div class="section-info-txt">
-										<span class="title">
-											<span class="position" v-text="list.positions"></span>
+										<h3>
+										<span class="position" v-text="list.positions"></span>
 										<span class="region" v-text="list.region"></span>
-										</span>
+									</h3>
 										<span class="address" v-text="list.address"></span>
 										<span class="openprice" v-text="list.openprice"></span>
 										<span class="averageprice">
-											<span class="averag" v-text="list.averag"></span>
+												<span class="averag" v-text="list.averag"></span>
 										<span class="price" v-text="list.price"></span>
 										</span>
 									</div>
@@ -71,24 +73,18 @@
 						没有更多内容
 					</div>
 				</div>
-			</section>
-			<div class="page search-section-waiting">
-				<i></i>
-			</div>
-			<div class="page search-section-fail">
-				<div class="section-fail-box">
+				<div class="search-section-waiting">
+					<i></i>
+				</div>
+				<div class="search-section-fail">
 					<i></i>
 					<p>搜索失败，请检查网络连接</p>
 				</div>
-			</div>
-			<div class="page search-section-none">
-				<div class="section-none-box">
+				<div class="search-section-none">
 					<i></i>
 					<p>搜索暂无结果</p>
-				</div>
-			</div>
-			<div class="page search-section-state">
-				<div class="section-state-box">
+				</div>	
+				<div class="search-section-state">
 					<div class="hot-search">
 						<h3 class="hot-search-title">
 							<span class="title-txt">热门搜索</span>
@@ -102,127 +98,35 @@
 							<span>热门海景房</span>
 							<span>热门海滨社区</span>
 							<span>热门小区</span>
-							<div style="clear: both;"></div>
 						</div>
 					</div>
 					<div class="history-search">
 						<h3 class="history-search-title">
-								<span class="title-txt">历史记录</span>
-								<i class="title-Trash"></i>
-							</h3>
+							<span class="title-txt">历史记录</span>
+							<i class="title-Trash"></i>
+						</h3>
 						<div class="history-search-no">当前暂无历史记录</div>
-						<div class="history-search-body">
-							<ul class="history-search-ul">
-								<li class="history-search-li">
-									<span>富力红树湾</span>
-									<span>/</span>
-									<span>楼盘</span>
-								</li>
-								<li class="history-search-li">
-									<span>富力盈溪谷</span>
-									<span>/</span>
-									<span>二手房</span>
-								</li>
-								<li class="history-search-li">
-									<span>养生社区</span>
-									<span>/</span>
-									<span>资讯</span>
-								</li>
-								<li class="history-search-li">
-									<span>富力红树湾</span>
-									<span>/</span>
-									<span>楼盘</span>
-								</li>
-								<li class="history-search-li">
-									<span>富力盈溪谷</span>
-									<span>/</span>
-									<span>二手房</span>
-								</li>
-								<li class="history-search-li">
-									<span>养生社区</span>
-									<span>/</span>
-									<span>资讯</span>
-								</li>
-								<li class="history-search-li">
-									<span>富力红树湾</span>
-									<span>/</span>
-									<span>楼盘</span>
-								</li>
-								<li class="history-search-li">
-									<span>富力盈溪谷</span>
-									<span>/</span>
-									<span>二手房</span>
-								</li>
-								<li class="history-search-li">
-									<span>养生社区</span>
-									<span>/</span>
-									<span>资讯</span>
-								</li>
-								<li class="history-search-li">
-									<span>富力红树湾</span>
-									<span>/</span>
-									<span>楼盘</span>
-								</li>
-								<li class="history-search-li">
-									<span>富力盈溪谷</span>
-									<span>/</span>
-									<span>二手房</span>
-								</li>
-								<li class="history-search-li">
-									<span>养生社区</span>
-									<span>/</span>
-									<span>资讯</span>
-								</li>
-								<li class="history-search-li">
-									<span>富力红树湾</span>
-									<span>/</span>
-									<span>楼盘</span>
-								</li>
-								<li class="history-search-li">
-									<span>富力盈溪谷</span>
-									<span>/</span>
-									<span>二手房</span>
-								</li>
-								<li class="history-search-li">
-									<span>养生社区</span>
-									<span>/</span>
-									<span>资讯</span>
-								</li>
-								<li class="history-search-li">
-									<span>富力红树湾</span>
-									<span>/</span>
-									<span>楼盘</span>
-								</li>
-								<li class="history-search-li">
-									<span>富力盈溪谷</span>
-									<span>/</span>
-									<span>二手房</span>
-								</li>
-								<li class="history-search-li">
-									<span>养生社区</span>
-									<span>/</span>
-									<span>资讯</span>
-								</li>
-								<li class="history-search-li">
-									<span>富力红树湾</span>
-									<span>/</span>
-									<span>楼盘</span>
-								</li>
-								<li class="history-search-li">
-									<span>富力盈溪谷</span>
-									<span>/</span>
-									<span>二手房</span>
-								</li>
-								<li class="history-search-li">
-									<span>养生社区</span>
-									<span>/</span>
-									<span>资讯</span>
-								</li>
-							</ul>
-						</div>
+						<ul class="history-search-ul">
+							<li class="history-search-li">
+								<span>富力红树湾</span>
+								<span>/</span>
+								<span>楼盘</span>
+							</li>
+							<li class="history-search-li">
+								<span>富力盈溪谷</span>
+								<span>/</span>
+								<span>二手房</span>
+							</li>
+							<li class="history-search-li">
+								<span>养生社区</span>
+								<span>/</span>
+								<span>资讯</span>
+							</li>
+						</ul>
 					</div>
 				</div>
-			</div>
+				
+			</section>
 		</div>
 		<script type="text/javascript">
 			var myVue = new Vue({

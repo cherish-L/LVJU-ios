@@ -14,15 +14,12 @@ a {
 html,
 body {
   width: 100%;
-  height: 100%;
   font-family: PingFangSC-Regular;
-  background: #f4f4f4;
 }
 
 input {
   outline: none;
-  border: 0;
-  -webkit-tap-highlight-color: transparent;
+  border: none;
 }
 
 li {
@@ -31,17 +28,16 @@ li {
 
 .container {
   width: 100%;
-  height: 100%;
   position: relative;
-  display: flex;
-  display: -webkit-flex;
-  flex-direction: column;
   background-color: #f4f4f4;
 }
 
 .container .header {
   width: 100%;
   background: #F6F6F6;
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: 10;
   box-shadow: 0 1px 0 0 #CCCCCC;
   -webkit-box-shadow: 0 1px 0 0 #CCCCCC;
@@ -143,29 +139,30 @@ li {
   background-size: 0.88rem 0.88rem;
 }
 
-.container .search-section-wrapper {
-  display: none;
-  flex: 1;
-  -webkit-flex: 1;
-  overflow: hidden;
+.container .partition {
+  width: 100%;
+  height: 2.56rem;
+}
+
+.container .search-section {
   background: #f4f4f4;
 }
 
-.container .search-section-wrapper .search-section-box {
+.container .search-section .search-section-wrapper {
   width: 100%;
   padding-bottom: 1.28rem;
 }
 
-.container .search-section-wrapper .search-section-box .search-section-info {
+.container .search-section .search-section-wrapper .search-section-info {
   width: 100%;
   background: #FFFFFF;
 }
 
-.container .search-section-wrapper .search-section-box .search-section-info .section-info-data-ul {
+.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul {
   width: 100%;
 }
 
-.container .search-section-wrapper .search-section-box .search-section-info .section-info-data-ul .section-info-data-li {
+.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li {
   width: 100%;
   padding: 0.64rem;
   box-sizing: border-box;
@@ -174,7 +171,7 @@ li {
   -webkit-box-shadow: inset 0 -0.04rem 0 0 #EEEEEE;
 }
 
-.container .search-section-wrapper .search-section-box .search-section-info .section-info-data-ul .section-info-data-li .datasearch {
+.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch {
   width: 100%;
   height: 3.2rem;
   display: flex;
@@ -182,19 +179,19 @@ li {
   flex-direction: row;
 }
 
-.container .search-section-wrapper .search-section-box .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-img {
+.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-img {
   width: 4.32rem;
   height: 100%;
   position: relative;
 }
 
-.container .search-section-wrapper .search-section-box .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-img img {
+.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-img img {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-.container .search-section-wrapper .search-section-box .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-img .biaoqian {
+.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-img .biaoqian {
   display: block;
   width: 1.2rem;
   height: 0.88rem;
@@ -205,7 +202,7 @@ li {
   background-size: 1.2rem 0.88rem;
 }
 
-.container .search-section-wrapper .search-section-box .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-img .ghtxt {
+.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-img .ghtxt {
   display: inline-block;
   font-size: 0.4rem;
   line-height: 0.56rem;
@@ -215,35 +212,32 @@ li {
   right: 0.16rem;
 }
 
-.container .search-section-wrapper .search-section-box .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt {
+.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt {
   flex: 1;
   -webkit-flex: 1;
   padding-left: 0.64rem;
   height: 0.8rem;
 }
 
-.container .search-section-wrapper .search-section-box .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt .title {
-  display: block;
+.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt h3 {
   height: 0.8rem;
-  line-height: 0.8rem;
 }
 
-.container .search-section-wrapper .search-section-box .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt .title .position {
+.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt h3 .position {
   font-size: 0.64rem;
-  line-height: 0.8rem;
   float: left;
   color: #394043;
   margin-right: 0.2rem;
 }
 
-.container .search-section-wrapper .search-section-box .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt .title .region {
+.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt h3 .region {
   font-size: 0.48rem;
   line-height: 0.8rem;
   float: left;
   color: #0099EB;
 }
 
-.container .search-section-wrapper .search-section-box .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt .address {
+.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt .address {
   display: block;
   font-size: 0.48rem;
   color: #9B9B9B;
@@ -251,7 +245,7 @@ li {
   line-height: 0.8rem;
 }
 
-.container .search-section-wrapper .search-section-box .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt .openprice {
+.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt .openprice {
   display: block;
   font-size: 0.48rem;
   color: #9B9B9B;
@@ -259,12 +253,12 @@ li {
   line-height: 0.8rem;
 }
 
-.container .search-section-wrapper .search-section-box .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt .averageprice {
+.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt .averageprice {
   display: block;
   height: 0.8rem;
 }
 
-.container .search-section-wrapper .search-section-box .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt .averageprice .averag {
+.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt .averageprice .averag {
   display: block;
   line-height: 0.8rem;
   font-size: 0.48rem;
@@ -272,7 +266,7 @@ li {
   color: #9B9B9B;
 }
 
-.container .search-section-wrapper .search-section-box .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt .averageprice .price {
+.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt .averageprice .price {
   line-height: 0.8rem;
   display: block;
   float: left;
@@ -280,8 +274,8 @@ li {
   color: #EE5C44;
 }
 
-.container .search-section-wrapper .search-section-box .section-load {
-  margin: 0.64rem auto 0;
+.container .search-section .search-section-wrapper .section-load {
+  margin: 0.64rem auto 1.28rem;
   width: 13.72rem;
   height: 1.76rem;
   background: #FFFFFF;
@@ -295,8 +289,8 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.container .search-section-wrapper .search-section-box .section-loading {
-  margin: 0.64rem auto 0;
+.container .search-section .search-section-wrapper .section-loading {
+  margin: 0.64rem auto 1.28rem;
   width: 13.72rem;
   height: 1.76rem;
   background: #FFFFFF;
@@ -311,7 +305,7 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.container .search-section-wrapper .search-section-box .section-loading i {
+.container .search-section .search-section-wrapper .section-loading i {
   display: inline-block;
   width: 0.64rem;
   height: 0.64rem;
@@ -323,15 +317,15 @@ li {
   background-size: 0.64rem 0.64rem;
 }
 
-.container .search-section-wrapper .search-section-box .section-loading span {
+.container .search-section .search-section-wrapper .section-loading span {
   line-height: 0.8rem;
   position: absolute;
   top: 0.44rem;
   left: 40%;
 }
 
-.container .search-section-wrapper .search-section-box .section-loadnone {
-  margin: 0.64rem auto 0;
+.container .search-section .search-section-wrapper .section-loadnone {
+  margin: 0.64rem auto 1.28rem;
   width: 13.72rem;
   height: 1.76rem;
   background: #FFFFFF;
@@ -345,113 +339,82 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.container .search-section-waiting {
-  flex: 1;
-  -webkit-flex: 1;
-  overflow: hidden;
+.container .search-section .search-section-waiting {
   display: none;
   background: #FFFFFF;
   position: relative;
 }
 
-.container .search-section-waiting i {
+.container .search-section .search-section-waiting i {
   display: block;
   width: 1.28rem;
   height: 1.28rem;
   position: absolute;
   top: 40%;
-  left: 45%;
+  left: 48%;
   background: url(../img/waiting.png) no-repeat;
 }
 
-.container .search-section-fail {
-  flex: 1;
-  -webkit-flex: 1;
-  overflow: hidden;
+.container .search-section .search-section-fail {
   display: none;
   background: #FFFFFF;
   position: relative;
 }
 
-.container .search-section-fail .section-fail-box {
-  width: 100%;
-  position: absolute;
-  top: 33%;
-}
-
-.container .search-section-fail .section-fail-box i {
+.container .search-section .search-section-fail i {
   display: block;
   width: 3.84rem;
   height: 3.84rem;
   margin: 0 auto;
+  padding-top: 8rem;
   background: url(../img/fail.png) no-repeat;
   background-position-y: bottom;
   background-size: 3.84rem 3.84rem;
 }
 
-.container .search-section-fail .section-fail-box p {
+.container .search-section .search-section-fail p {
   font-size: 0.64rem;
   margin-top: 0.64rem;
   text-align: center;
   color: #6C7072;
 }
 
-.container .search-section-none {
-  flex: 1;
-  -webkit-flex: 1;
-  overflow: hidden;
+.container .search-section .search-section-none {
   display: none;
   background: #FFFFFF;
   position: relative;
 }
 
-.container .search-section-none .section-none-box {
-  width: 100%;
-  position: absolute;
-  top: 33%;
-}
-
-.container .search-section-none .section-none-box i {
+.container .search-section .search-section-none i {
   display: block;
   width: 3.84rem;
   height: 3.84rem;
   margin: 0 auto;
+  padding-top: 8rem;
   background: url(../img/fail.png) no-repeat;
   background-position-y: bottom;
   background-size: 3.84rem 3.84rem;
 }
 
-.container .search-section-none .section-none-box p {
+.container .search-section .search-section-none p {
   font-size: 0.64rem;
   margin-top: 0.64rem;
   text-align: center;
   color: #6C7072;
 }
 
-.container .search-section-state {
-  flex: 1;
-  -webkit-flex: 1;
-  overflow: hidden;
-  display: block;
-  position: relative;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-}
-
-.container .search-section-state .section-state-box {
-  width: 100%;
+.container .search-section .search-section-state {
+  display: none;
   height: 100%;
-  display: flex;
-  display: -webkit-flex;
-  flex-direction: column;
 }
 
-.container .search-section-state .section-state-box .hot-search {
+.container .search-section .search-section-state .hot-search {
+  height: 6.08rem;
   background: #FFFFFF;
   margin-top: 0.4rem;
 }
 
-.container .search-section-state .section-state-box .hot-search .hot-search-title {
+.container .search-section .search-section-state .hot-search .hot-search-title {
   width: 100%;
   height: 1.76rem;
   padding: 0.48rem 0.64rem;
@@ -462,7 +425,7 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.container .search-section-state .section-state-box .hot-search .hot-search-title .title-txt {
+.container .search-section .search-section-state .hot-search .hot-search-title .title-txt {
   display: block;
   float: left;
   font-size: 0.56rem;
@@ -471,7 +434,7 @@ li {
   color: #999999;
 }
 
-.container .search-section-state .section-state-box .hot-search .hot-search-title .title-hot {
+.container .search-section .search-section-state .hot-search .hot-search-title .title-hot {
   display: block;
   float: left;
   width: 1.08rem;
@@ -481,7 +444,7 @@ li {
   background-position-y: 0.16rem;
 }
 
-.container .search-section-state .section-state-box .hot-search .hot-search-title .title-load {
+.container .search-section .search-section-state .hot-search .hot-search-title .title-load {
   display: block;
   float: right;
   width: 0.88rem;
@@ -491,7 +454,7 @@ li {
   background-size: 0.88rem 0.88rem;
 }
 
-.container .search-section-state .section-state-box .hot-search .hot-search-label {
+.container .search-section .search-section-state .hot-search .hot-search-label {
   width: 100%;
   padding: 0.4rem 0.4rem;
   background: #FFFFFF;
@@ -499,7 +462,7 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.container .search-section-state .section-state-box .hot-search .hot-search-label span {
+.container .search-section .search-section-state .hot-search .hot-search-label span {
   display: inline-block;
   float: left;
   padding: 0 0.48rem;
@@ -516,17 +479,13 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.container .search-section-state .section-state-box .history-search {
-  flex: 1;
-  -webkit-flex: 1;
-  margin-top: 0.4rem;
+.container .search-section .search-section-state .history-search {
+  height: 6.08rem;
   background: #FFFFFF;
-  display: flex;
-  display: -webkit-flex;
-  flex-direction: column;
+  margin-top: 0.4rem;
 }
 
-.container .search-section-state .section-state-box .history-search .history-search-title {
+.container .search-section .search-section-state .history-search .history-search-title {
   width: 100%;
   height: 1.76rem;
   padding: 0.48rem 0.64rem;
@@ -537,7 +496,7 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.container .search-section-state .section-state-box .history-search .history-search-title .title-txt {
+.container .search-section .search-section-state .history-search .history-search-title .title-txt {
   display: block;
   float: left;
   font-size: 0.56rem;
@@ -546,7 +505,7 @@ li {
   color: #999999;
 }
 
-.container .search-section-state .section-state-box .history-search .history-search-title .title-Trash {
+.container .search-section .search-section-state .history-search .history-search-title .title-Trash {
   display: block;
   float: right;
   width: 0.88rem;
@@ -556,7 +515,7 @@ li {
   background-size: 0.88rem 0.88rem;
 }
 
-.container .search-section-state .section-state-box .history-search .history-search-no {
+.container .search-section .search-section-state .history-search .history-search-no {
   display: none;
   height: 2.08rem;
   line-height: 0.8rem;
@@ -568,18 +527,11 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.container .search-section-state .section-state-box .history-search .history-search-body {
-  flex: 1;
-  -webkit-flex: 1;
-  overflow: hidden;
-  background: #FFFFFF;
-}
-
-.container .search-section-state .section-state-box .history-search .history-search-body .history-search-ul {
+.container .search-section .search-section-state .history-search .history-search-ul {
   width: 100%;
 }
 
-.container .search-section-state .section-state-box .history-search .history-search-body .history-search-ul .history-search-li {
+.container .search-section .search-section-state .history-search .history-search-ul .history-search-li {
   height: 1.92rem;
   padding: 0.56rem 1.52rem;
   background: url(../img/time.png) no-repeat;
@@ -591,7 +543,7 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.container .search-section-state .section-state-box .history-search .history-search-body .history-search-ul .history-search-li span:nth-child(1) {
+.container .search-section .search-section-state .history-search .history-search-ul .history-search-li span:nth-child(1) {
   display: block;
   float: left;
   line-height: 0.8rem;
@@ -599,7 +551,7 @@ li {
   color: #6C7072;
 }
 
-.container .search-section-state .section-state-box .history-search .history-search-body .history-search-ul .history-search-li span:nth-child(2) {
+.container .search-section .search-section-state .history-search .history-search-ul .history-search-li span:nth-child(2) {
   display: block;
   float: left;
   margin: 0.04rem 0.2rem 0;
@@ -608,7 +560,7 @@ li {
   color: #CCCCCC;
 }
 
-.container .search-section-state .section-state-box .history-search .history-search-body .history-search-ul .history-search-li span:nth-child(3) {
+.container .search-section .search-section-state .history-search .history-search-ul .history-search-li span:nth-child(3) {
   display: block;
   float: left;
   line-height: 0.8rem;

@@ -33,7 +33,7 @@ $(function(){
 		clearTimeout(timer2)
 		clearTimeout(timer3)
 		$(".Search-inpt-wrapper .delect").css("display","block")
-		$(".search-section-state").css("display","block").siblings("page").css("display","none")
+		$(".search-section-state").css("display","block").siblings().css("display","none")
 		
 	})
 	$(".Search-form .Search-inpt").blur(function(){
@@ -104,14 +104,4 @@ $(function(){
 	$(".search-section-waiting").height(widh-headerh)
 	$(".search-section-fail").height(widh-headerh)
 	$(".search-section-none").height(widh-headerh)
-	
-	
-	//搜索页面滚动监听事件
-	var searchS = new IScroll('.search-section-wrapper', {
-		scrollbars: false
-	});
-	var historyS = new IScroll('.history-search-body', {
-		scrollbars: false
-	});
-	
 })
