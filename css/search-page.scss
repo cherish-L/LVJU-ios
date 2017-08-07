@@ -260,6 +260,7 @@ $sc:25;
                 -webkit-box-sizing: border-box;
             }
             .section-loading {
+                display: none;
                 margin: 16/$sc+rem auto 0;
                 width: 343/$sc+rem;
                 height: 44/$sc+rem;
@@ -292,6 +293,7 @@ $sc:25;
                 }
             }
             .section-loadnone {
+                display: none;
                 margin: 16/$sc+rem auto 0;
                 width: 343/$sc+rem;
                 height: 44/$sc+rem;

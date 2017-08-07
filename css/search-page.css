@@ -295,6 +295,7 @@ li {
 }
 
 .container .search-section-wrapper .search-section-box .section-loading {
+  display: none;
   margin: 0.64rem auto 0;
   width: 13.72rem;
   height: 1.76rem;
@@ -330,6 +331,7 @@ li {
 }
 
 .container .search-section-wrapper .search-section-box .section-loadnone {
+  display: none;
   margin: 0.64rem auto 0;
   width: 13.72rem;
   height: 1.76rem;

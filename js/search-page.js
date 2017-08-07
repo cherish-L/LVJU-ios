@@ -97,9 +97,76 @@ $(function() {
 
 	//搜索页面滚动监听事件
 	var searchS = new IScroll('.search-section-wrapper', {
-		scrollbars: false
+		scrollbars: false,
+		probeType: 3
 	});
 	var stateS = new IScroll('.search-section-state', {
 		scrollbars: false
 	});
+
+	searchS.on("scroll", function() {
+		maxY = this.maxScrollY - this.y
+		if(maxY >= 40) {
+			$(".search-section-box").on("touchstart", function(e) {
+				if(e.cancelable) {
+					if(!e.defaultPrevented) {
+						e.preventDefault();
+					}
+				}
+			})
+			$(".search-section-box").on("touchmove", function(e) {
+				if(e.cancelable) {
+					if(!e.defaultPrevented) {
+						e.preventDefault();
+					}
+				}
+				if(maxY >= 40) {
+					$(".section-load").css("display", "block")
+					$(".section-load").text("松开加载更多...")
+					$(".section-loadnone").css("display", "none")
+				}
+			})
+			$(".search-section-box").on("touchend", function(e) {
+				if(e.cancelable) {
+					if(!e.defaultPrevented) {
+						e.preventDefault();
+					}
+				}
+				$(".section-load").css("display", "none")
+				$(".section-load").text("上拉加载更多")
+				$(".section-loading").css("display", "block")
+				setTimeout(function() {
+					$(".section-loading").css("display", "none")
+					$(".section-loadnone").css("display", "block")
+				}, 3000)
+			});
+		}
+
+		//		if(maxY >= 40) {
+		//			$(".section-load").text("松开加载更多...")
+		//			$(".section-load").css("display","block")
+		//			$(".section-loadnone").css("display","none")
+		//			
+		//			$(".search-section-box").on("touchend", function(e) {
+		//				if (e.cancelable) {
+		//			    		if (!e.defaultPrevented) {
+		//			        		e.preventDefault();
+		//			        }
+		//			    }
+		//				$(".section-load").text("上拉加载更多")
+		//				$(".section-load").css("display","none")
+		//				$(".section-loading").css("display","block")
+		//			    setTimeout(function() {
+		//					$(".section-loading").css("display","none")
+		//					$(".section-loadnone").css("display","block")
+		//				}, 1500)
+		//			 });
+		//		} 
+		//		else if(maxY < 40 && maxY > 0) {
+		//			$(".section-load").css("display","none")
+		//			$(".section-load").css("display","none")
+		//			$(".section-load").css("display","none")
+		//		}
+	});
+
 })
