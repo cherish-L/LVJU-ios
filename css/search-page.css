@@ -281,7 +281,7 @@ li {
 }
 
 .container .search-section .search-section-wrapper .section-load {
-  margin: 0.64rem auto 1.28rem;
+  margin: 0.64rem auto 0;
   width: 13.72rem;
   height: 1.76rem;
   background: #FFFFFF;
@@ -296,7 +296,7 @@ li {
 }
 
 .container .search-section .search-section-wrapper .section-loading {
-  margin: 0.64rem auto 1.28rem;
+  margin: 0.64rem auto 0;
   width: 13.72rem;
   height: 1.76rem;
   background: #FFFFFF;
@@ -331,7 +331,7 @@ li {
 }
 
 .container .search-section .search-section-wrapper .section-loadnone {
-  margin: 0.64rem auto 1.28rem;
+  margin: 0.64rem auto 0;
   width: 13.72rem;
   height: 1.76rem;
   background: #FFFFFF;

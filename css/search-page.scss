@@ -247,7 +247,7 @@ $sc:25;
                 }
             }
             .section-load {
-                margin: 16/$sc+rem auto 32/$sc+rem;
+                margin: 16/$sc+rem auto 0;
                 width: 343/$sc+rem;
                 height: 44/$sc+rem;
                 background: #FFFFFF;
@@ -261,7 +261,7 @@ $sc:25;
                 -webkit-box-sizing: border-box;
             }
             .section-loading {
-                margin: 16/$sc+rem auto 32/$sc+rem;
+                margin: 16/$sc+rem auto 0;
                 width: 343/$sc+rem;
                 height: 44/$sc+rem;
                 background: #FFFFFF;
@@ -293,7 +293,7 @@ $sc:25;
                 }
             }
             .section-loadnone {
-                margin: 16/$sc+rem auto 32/$sc+rem;
+                margin: 16/$sc+rem auto 0;
                 width: 343/$sc+rem;
                 height: 44/$sc+rem;
                 background: #FFFFFF;
