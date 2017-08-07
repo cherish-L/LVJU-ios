@@ -139,9 +139,10 @@ $(function() {
 					setTimeout(function() {
 						$(".section-loading").css("display", "none")
 						$(".section-loadnone").css("display", "block")
-					}, 3000)
+					}, 1500)
 				}
 			})
 		}
+		stateS.refresh()
 	});
 })
