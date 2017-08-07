@@ -309,6 +309,8 @@ $sc:25;
         }
         .search-section-waiting {
             display: none;
+            width: 100%;
+            height: 100%;
             background: #FFFFFF;
             position: relative;
             i {
@@ -317,50 +319,64 @@ $sc:25;
                 height: 32/$sc+rem;
                 position: absolute;
                 top: 40%;
-                left: 48%;
+                left: 45%;
                 background: url(../img/waiting.png) no-repeat;
             }
         }
         .search-section-fail {
             display: none;
+            width: 100%;
+            height: 100%;
             background: #FFFFFF;
             position: relative;
-            i {
-                display: block;
-                width: 96/$sc+rem;
-                height: 96/$sc+rem;
-                margin: 0 auto;
-                padding-top: 200/$sc+rem;
-                background: url(../img/fail.png) no-repeat;
-                background-position-y: bottom;
-                background-size: 96/$sc+rem 96/$sc+rem;
-            }
-            p {
-                font-size: 16/$sc+rem;
-                margin-top: 16/$sc+rem;
-                text-align: center;
-                color: #6C7072;
+            .section-fail-box{
+                width: 100%;
+                position: absolute;
+                top: 33%;
+                left: 0;
+                i {
+                    display: block;
+                    width: 96/$sc+rem;
+                    height: 96/$sc+rem;
+                    margin: 0 auto;
+                    background: url(../img/fail.png) no-repeat;
+                    background-position-y: bottom;
+                    background-size: 96/$sc+rem 96/$sc+rem;
+                }
+                p {
+                    font-size: 16/$sc+rem;
+                    margin-top: 16/$sc+rem;
+                    text-align: center;
+                    color: #6C7072;
+                }
             }
         }
         .search-section-none {
             display: none;
+            width: 100%;
+            height: 100%;
             background: #FFFFFF;
             position: relative;
-            i {
-                display: block;
-                width: 96/$sc+rem;
-                height: 96/$sc+rem;
-                margin: 0 auto;
-                padding-top: 200/$sc+rem;
-                background: url(../img/fail.png) no-repeat;
-                background-position-y: bottom;
-                background-size: 96/$sc+rem 96/$sc+rem;
-            }
-            p {
-                font-size: 16/$sc+rem;
-                margin-top: 16/$sc+rem;
-                text-align: center;
-                color: #6C7072;
+            .section-none-box{
+                width: 100%;
+                position: absolute;
+                top: 33%;
+                left: 0;
+                i {
+                    display: block;
+                    width: 96/$sc+rem;
+                    height: 96/$sc+rem;
+                    margin: 0 auto;
+                    background: url(../img/fail.png) no-repeat;
+                    background-position-y: bottom;
+                    background-size: 96/$sc+rem 96/$sc+rem;
+                }
+                p {
+                    font-size: 16/$sc+rem;
+                    margin-top: 16/$sc+rem;
+                    text-align: center;
+                    color: #6C7072;
+                }
             }
         }
         .search-section-state {

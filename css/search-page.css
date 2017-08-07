@@ -347,6 +347,8 @@ li {
 
 .container .search-section .search-section-waiting {
   display: none;
+  width: 100%;
+  height: 100%;
   background: #FFFFFF;
   position: relative;
 }
@@ -357,28 +359,36 @@ li {
   height: 1.28rem;
   position: absolute;
   top: 40%;
-  left: 48%;
+  left: 45%;
   background: url(../img/waiting.png) no-repeat;
 }
 
 .container .search-section .search-section-fail {
   display: none;
+  width: 100%;
+  height: 100%;
   background: #FFFFFF;
   position: relative;
 }
 
-.container .search-section .search-section-fail i {
+.container .search-section .search-section-fail .section-fail-box {
+  width: 100%;
+  position: absolute;
+  top: 33%;
+  left: 0;
+}
+
+.container .search-section .search-section-fail .section-fail-box i {
   display: block;
   width: 3.84rem;
   height: 3.84rem;
   margin: 0 auto;
-  padding-top: 8rem;
   background: url(../img/fail.png) no-repeat;
   background-position-y: bottom;
   background-size: 3.84rem 3.84rem;
 }
 
-.container .search-section .search-section-fail p {
+.container .search-section .search-section-fail .section-fail-box p {
   font-size: 0.64rem;
   margin-top: 0.64rem;
   text-align: center;
@@ -387,22 +397,30 @@ li {
 
 .container .search-section .search-section-none {
   display: none;
+  width: 100%;
+  height: 100%;
   background: #FFFFFF;
   position: relative;
 }
 
-.container .search-section .search-section-none i {
+.container .search-section .search-section-none .section-none-box {
+  width: 100%;
+  position: absolute;
+  top: 33%;
+  left: 0;
+}
+
+.container .search-section .search-section-none .section-none-box i {
   display: block;
   width: 3.84rem;
   height: 3.84rem;
   margin: 0 auto;
-  padding-top: 8rem;
   background: url(../img/fail.png) no-repeat;
   background-position-y: bottom;
   background-size: 3.84rem 3.84rem;
 }
 
-.container .search-section .search-section-none p {
+.container .search-section .search-section-none .section-none-box p {
   font-size: 0.64rem;
   margin-top: 0.64rem;
   text-align: center;
