@@ -32,15 +32,15 @@ $(function(){
 		clearTimeout(timer1)
 		clearTimeout(timer2)
 		clearTimeout(timer3)
-		$(".Search-inpt-wrapper .delect").css("display","block")
+		$(".Search-inpt-wrapper .delete").css("display","block")
 		$(".search-section-state").css("display","block").siblings().css("display","none")
 		
 	})
 	$(".Search-form .Search-inpt").blur(function(){
-		$(".Search-inpt-wrapper .delect").css("display","none")
+		$(".Search-inpt-wrapper .delete").css("display","none")
 		
 	})
-	$(".Search-inpt-wrapper .delect").tap(function(){
+	$(".Search-inpt-wrapper .delete").tap(function(){
 		$(".Search-form .Search-inpt").val("")
 		$(".Search-form .Search-inpt").focus()
 	})
