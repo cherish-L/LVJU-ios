@@ -14,12 +14,14 @@ a {
 html,
 body {
   width: 100%;
+  height: 100%;
   font-family: PingFangSC-Regular;
+  background: #f4f4f4;
 }
 
 input {
   outline: none;
-  border: none;
+  border: 0;
 }
 
 li {
@@ -28,16 +30,17 @@ li {
 
 .container {
   width: 100%;
+  height: 100%;
   position: relative;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
   background-color: #f4f4f4;
 }
 
 .container .header {
   width: 100%;
   background: #F6F6F6;
-  position: fixed;
-  top: 0;
-  left: 0;
   z-index: 10;
   box-shadow: 0 1px 0 0 #CCCCCC;
   -webkit-box-shadow: 0 1px 0 0 #CCCCCC;
@@ -139,30 +142,34 @@ li {
   background-size: 0.88rem 0.88rem;
 }
 
-.container .partition {
-  width: 100%;
-  height: 2.56rem;
-}
-
 .container .search-section {
+  flex: 1;
+  -webkit-flex: 1;
+  overflow: hidden;
   background: #f4f4f4;
 }
 
 .container .search-section .search-section-wrapper {
   width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.container .search-section .search-section-wrapper .search-section-box {
+  width: 100%;
   padding-bottom: 1.28rem;
 }
 
-.container .search-section .search-section-wrapper .search-section-info {
+.container .search-section .search-section-wrapper .search-section-box .search-section-info {
   width: 100%;
   background: #FFFFFF;
 }
 
-.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul {
+.container .search-section .search-section-wrapper .search-section-box .search-section-info .section-info-data-ul {
   width: 100%;
 }
 
-.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li {
+.container .search-section .search-section-wrapper .search-section-box .search-section-info .section-info-data-ul .section-info-data-li {
   width: 100%;
   padding: 0.64rem;
   box-sizing: border-box;
@@ -171,7 +178,7 @@ li {
   -webkit-box-shadow: inset 0 -0.04rem 0 0 #EEEEEE;
 }
 
-.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch {
+.container .search-section .search-section-wrapper .search-section-box .search-section-info .section-info-data-ul .section-info-data-li .datasearch {
   width: 100%;
   height: 3.2rem;
   display: flex;
@@ -179,19 +186,19 @@ li {
   flex-direction: row;
 }
 
-.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-img {
+.container .search-section .search-section-wrapper .search-section-box .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-img {
   width: 4.32rem;
   height: 100%;
   position: relative;
 }
 
-.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-img img {
+.container .search-section .search-section-wrapper .search-section-box .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-img img {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-img .biaoqian {
+.container .search-section .search-section-wrapper .search-section-box .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-img .biaoqian {
   display: block;
   width: 1.2rem;
   height: 0.88rem;
@@ -202,7 +209,7 @@ li {
   background-size: 1.2rem 0.88rem;
 }
 
-.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-img .ghtxt {
+.container .search-section .search-section-wrapper .search-section-box .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-img .ghtxt {
   display: inline-block;
   font-size: 0.4rem;
   line-height: 0.56rem;
@@ -212,32 +219,35 @@ li {
   right: 0.16rem;
 }
 
-.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt {
+.container .search-section .search-section-wrapper .search-section-box .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt {
   flex: 1;
   -webkit-flex: 1;
   padding-left: 0.64rem;
   height: 0.8rem;
 }
 
-.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt h3 {
+.container .search-section .search-section-wrapper .search-section-box .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt .title {
+  display: block;
   height: 0.8rem;
+  line-height: 0.8rem;
 }
 
-.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt h3 .position {
+.container .search-section .search-section-wrapper .search-section-box .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt .title .position {
   font-size: 0.64rem;
+  line-height: 0.8rem;
   float: left;
   color: #394043;
   margin-right: 0.2rem;
 }
 
-.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt h3 .region {
+.container .search-section .search-section-wrapper .search-section-box .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt .title .region {
   font-size: 0.48rem;
   line-height: 0.8rem;
   float: left;
   color: #0099EB;
 }
 
-.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt .address {
+.container .search-section .search-section-wrapper .search-section-box .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt .address {
   display: block;
   font-size: 0.48rem;
   color: #9B9B9B;
@@ -245,7 +255,7 @@ li {
   line-height: 0.8rem;
 }
 
-.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt .openprice {
+.container .search-section .search-section-wrapper .search-section-box .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt .openprice {
   display: block;
   font-size: 0.48rem;
   color: #9B9B9B;
@@ -253,12 +263,12 @@ li {
   line-height: 0.8rem;
 }
 
-.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt .averageprice {
+.container .search-section .search-section-wrapper .search-section-box .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt .averageprice {
   display: block;
   height: 0.8rem;
 }
 
-.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt .averageprice .averag {
+.container .search-section .search-section-wrapper .search-section-box .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt .averageprice .averag {
   display: block;
   line-height: 0.8rem;
   font-size: 0.48rem;
@@ -266,7 +276,7 @@ li {
   color: #9B9B9B;
 }
 
-.container .search-section .search-section-wrapper .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt .averageprice .price {
+.container .search-section .search-section-wrapper .search-section-box .search-section-info .section-info-data-ul .section-info-data-li .datasearch .section-info-txt .averageprice .price {
   line-height: 0.8rem;
   display: block;
   float: left;
@@ -274,7 +284,7 @@ li {
   color: #EE5C44;
 }
 
-.container .search-section .search-section-wrapper .section-load {
+.container .search-section .search-section-wrapper .search-section-box .section-load {
   margin: 0.64rem auto 1.28rem;
   width: 13.72rem;
   height: 1.76rem;
@@ -289,7 +299,7 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.container .search-section .search-section-wrapper .section-loading {
+.container .search-section .search-section-wrapper .search-section-box .section-loading {
   margin: 0.64rem auto 1.28rem;
   width: 13.72rem;
   height: 1.76rem;
@@ -305,7 +315,7 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.container .search-section .search-section-wrapper .section-loading i {
+.container .search-section .search-section-wrapper .search-section-box .section-loading i {
   display: inline-block;
   width: 0.64rem;
   height: 0.64rem;
@@ -317,14 +327,14 @@ li {
   background-size: 0.64rem 0.64rem;
 }
 
-.container .search-section .search-section-wrapper .section-loading span {
+.container .search-section .search-section-wrapper .search-section-box .section-loading span {
   line-height: 0.8rem;
   position: absolute;
   top: 0.44rem;
   left: 40%;
 }
 
-.container .search-section .search-section-wrapper .section-loadnone {
+.container .search-section .search-section-wrapper .search-section-box .section-loadnone {
   margin: 0.64rem auto 1.28rem;
   width: 13.72rem;
   height: 1.76rem;
@@ -404,17 +414,28 @@ li {
 }
 
 .container .search-section .search-section-state {
-  display: none;
+  display: block;
+  width: 100%;
   height: 100%;
+  padding-top: 0.4rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
-.container .search-section .search-section-state .hot-search {
-  height: 6.08rem;
+.container .search-section .search-section-state .section-state-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+}
+
+.container .search-section .search-section-state .section-state-box .hot-search {
   background: #FFFFFF;
-  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
 }
 
-.container .search-section .search-section-state .hot-search .hot-search-title {
+.container .search-section .search-section-state .section-state-box .hot-search .hot-search-title {
   width: 100%;
   height: 1.76rem;
   padding: 0.48rem 0.64rem;
@@ -425,7 +446,7 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.container .search-section .search-section-state .hot-search .hot-search-title .title-txt {
+.container .search-section .search-section-state .section-state-box .hot-search .hot-search-title .title-txt {
   display: block;
   float: left;
   font-size: 0.56rem;
@@ -434,7 +455,7 @@ li {
   color: #999999;
 }
 
-.container .search-section .search-section-state .hot-search .hot-search-title .title-hot {
+.container .search-section .search-section-state .section-state-box .hot-search .hot-search-title .title-hot {
   display: block;
   float: left;
   width: 1.08rem;
@@ -444,7 +465,7 @@ li {
   background-position-y: 0.16rem;
 }
 
-.container .search-section .search-section-state .hot-search .hot-search-title .title-load {
+.container .search-section .search-section-state .section-state-box .hot-search .hot-search-title .title-load {
   display: block;
   float: right;
   width: 0.88rem;
@@ -454,7 +475,7 @@ li {
   background-size: 0.88rem 0.88rem;
 }
 
-.container .search-section .search-section-state .hot-search .hot-search-label {
+.container .search-section .search-section-state .section-state-box .hot-search .hot-search-label {
   width: 100%;
   padding: 0.4rem 0.4rem;
   background: #FFFFFF;
@@ -462,7 +483,7 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.container .search-section .search-section-state .hot-search .hot-search-label span {
+.container .search-section .search-section-state .section-state-box .hot-search .hot-search-label span {
   display: inline-block;
   float: left;
   padding: 0 0.48rem;
@@ -479,13 +500,16 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.container .search-section .search-section-state .history-search {
-  height: 6.08rem;
+.container .search-section .search-section-state .section-state-box .history-search {
+  flex: 1;
+  -webkit-flex: 1;
   background: #FFFFFF;
-  margin-top: 0.4rem;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
 }
 
-.container .search-section .search-section-state .history-search .history-search-title {
+.container .search-section .search-section-state .section-state-box .history-search .history-search-title {
   width: 100%;
   height: 1.76rem;
   padding: 0.48rem 0.64rem;
@@ -496,7 +520,7 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.container .search-section .search-section-state .history-search .history-search-title .title-txt {
+.container .search-section .search-section-state .section-state-box .history-search .history-search-title .title-txt {
   display: block;
   float: left;
   font-size: 0.56rem;
@@ -505,7 +529,7 @@ li {
   color: #999999;
 }
 
-.container .search-section .search-section-state .history-search .history-search-title .title-Trash {
+.container .search-section .search-section-state .section-state-box .history-search .history-search-title .title-Trash {
   display: block;
   float: right;
   width: 0.88rem;
@@ -515,7 +539,7 @@ li {
   background-size: 0.88rem 0.88rem;
 }
 
-.container .search-section .search-section-state .history-search .history-search-no {
+.container .search-section .search-section-state .section-state-box .history-search .history-search-no {
   display: none;
   height: 2.08rem;
   line-height: 0.8rem;
@@ -527,11 +551,18 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.container .search-section .search-section-state .history-search .history-search-ul {
+.container .search-section .search-section-state .section-state-box .history-search .history-search-body {
+  flex: 1;
+  -webkit-flex: 1;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.container .search-section .search-section-state .section-state-box .history-search .history-search-body .history-search-ul {
   width: 100%;
 }
 
-.container .search-section .search-section-state .history-search .history-search-ul .history-search-li {
+.container .search-section .search-section-state .section-state-box .history-search .history-search-body .history-search-ul .history-search-li {
   height: 1.92rem;
   padding: 0.56rem 1.52rem;
   background: url(../img/time.png) no-repeat;
@@ -543,7 +574,7 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.container .search-section .search-section-state .history-search .history-search-ul .history-search-li span:nth-child(1) {
+.container .search-section .search-section-state .section-state-box .history-search .history-search-body .history-search-ul .history-search-li span:nth-child(1) {
   display: block;
   float: left;
   line-height: 0.8rem;
@@ -551,7 +582,7 @@ li {
   color: #6C7072;
 }
 
-.container .search-section .search-section-state .history-search .history-search-ul .history-search-li span:nth-child(2) {
+.container .search-section .search-section-state .section-state-box .history-search .history-search-body .history-search-ul .history-search-li span:nth-child(2) {
   display: block;
   float: left;
   margin: 0.04rem 0.2rem 0;
@@ -560,7 +591,7 @@ li {
   color: #CCCCCC;
 }
 
-.container .search-section .search-section-state .history-search .history-search-ul .history-search-li span:nth-child(3) {
+.container .search-section .search-section-state .section-state-box .history-search .history-search-body .history-search-ul .history-search-li span:nth-child(3) {
   display: block;
   float: left;
   line-height: 0.8rem;

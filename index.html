@@ -5,10 +5,9 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title>搜索页面</title>
-		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/search-page.css" />
 		<script type="text/javascript" src="plugins/zepto.min.js"></script>
-		<script src="plugins/swiper-3.4.2.min.js"></script>
+		<script type="text/javascript" src="plugins/iscroll-master/build/iscroll-probe.js"></script>
 		<script type="text/javascript" src="vue/vue.js"></script>
 		<script type="text/javascript" src="js/search-page.js"></script>
 		<script>
@@ -34,43 +33,44 @@
 					</form>
 				</div>
 			</header>
-			<div class="partition"></div>
 			<section class="search-section">
 				<div class="search-section-wrapper">
-					<div class="search-section-info">
-						<ul class="section-info-data-ul">
-							<li class="section-info-data-li" v-for="list in sectioninfo">
-								<div class="datasearch">
-									<div class="section-info-img">
-										<img :src="list.img" />
-										<span class="biaoqian"></span>
-										<span class="ghtxt" v-text="list.sell"></span>
+					<div class="search-section-box">
+						<div class="search-section-info">
+							<ul class="section-info-data-ul">
+								<li class="section-info-data-li" v-for="list in sectioninfo">
+									<div class="datasearch">
+										<div class="section-info-img">
+											<img :src="list.img" />
+											<span class="biaoqian"></span>
+											<span class="ghtxt" v-text="list.sell"></span>
+										</div>
+										<div class="section-info-txt">
+											<span class="title">
+											<span class="position" v-text="list.positions"></span>
+											<span class="region" v-text="list.region"></span>
+											</span>
+											<span class="address" v-text="list.address"></span>
+											<span class="openprice" v-text="list.openprice"></span>
+											<span class="averageprice">
+											<span class="averag" v-text="list.averag"></span>
+											<span class="price" v-text="list.price"></span>
+											</span>
+										</div>
 									</div>
-									<div class="section-info-txt">
-										<h3>
-										<span class="position" v-text="list.positions"></span>
-										<span class="region" v-text="list.region"></span>
-									</h3>
-										<span class="address" v-text="list.address"></span>
-										<span class="openprice" v-text="list.openprice"></span>
-										<span class="averageprice">
-												<span class="averag" v-text="list.averag"></span>
-										<span class="price" v-text="list.price"></span>
-										</span>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="section-load">
-						下拉加载更多
-					</div>
-					<div class="section-loading">
-						<i></i>
-						<span>正在加载更多</span>
-					</div>
-					<div class="section-loadnone">
-						没有更多内容
+								</li>
+							</ul>
+						</div>
+						<div class="section-load">
+							下拉加载更多
+						</div>
+						<div class="section-loading">
+							<i></i>
+							<span>正在加载更多</span>
+						</div>
+						<div class="section-loadnone">
+							没有更多内容
+						</div>
 					</div>
 				</div>
 				<div class="search-section-waiting">
@@ -83,49 +83,53 @@
 				<div class="search-section-none">
 					<i></i>
 					<p>搜索暂无结果</p>
-				</div>	
+				</div>
 				<div class="search-section-state">
-					<div class="hot-search">
-						<h3 class="hot-search-title">
+					<div class="section-state-box">
+						<div class="hot-search">
+							<h3 class="hot-search-title">
 							<span class="title-txt">热门搜索</span>
 							<i class="title-hot"></i>
 							<i class="title-load"></i>
 						</h3>
-						<div class="hot-search-label">
-							<span>热门住宅</span>
-							<span>热门养生社区</span>
-							<span>热门别墅</span>
-							<span>热门海景房</span>
-							<span>热门海滨社区</span>
-							<span>热门小区</span>
+							<div class="hot-search-label">
+								<span>热门住宅</span>
+								<span>热门养生社区</span>
+								<span>热门别墅</span>
+								<span>热门海景房</span>
+								<span>热门海滨社区</span>
+								<span>热门小区</span>
+								<div style="clear: both;"></div>
+							</div>
+						</div>
+						<div class="history-search">
+							<h3 class="history-search-title">
+								<span class="title-txt">历史记录</span>
+								<i class="title-Trash"></i>
+							</h3>
+							<div class="history-search-no">当前暂无历史记录</div>
+							<div class="history-search-body">
+								<ul class="history-search-ul">
+									<li class="history-search-li">
+										<span>富力红树湾</span>
+										<span>/</span>
+										<span>楼盘</span>
+									</li>
+									<li class="history-search-li">
+										<span>富力盈溪谷</span>
+										<span>/</span>
+										<span>二手房</span>
+									</li>
+									<li class="history-search-li">
+										<span>养生社区</span>
+										<span>/</span>
+										<span>资讯</span>
+									</li>
+								</ul>
+							</div>
 						</div>
 					</div>
-					<div class="history-search">
-						<h3 class="history-search-title">
-							<span class="title-txt">历史记录</span>
-							<i class="title-Trash"></i>
-						</h3>
-						<div class="history-search-no">当前暂无历史记录</div>
-						<ul class="history-search-ul">
-							<li class="history-search-li">
-								<span>富力红树湾</span>
-								<span>/</span>
-								<span>楼盘</span>
-							</li>
-							<li class="history-search-li">
-								<span>富力盈溪谷</span>
-								<span>/</span>
-								<span>二手房</span>
-							</li>
-							<li class="history-search-li">
-								<span>养生社区</span>
-								<span>/</span>
-								<span>资讯</span>
-							</li>
-						</ul>
-					</div>
 				</div>
-				
 			</section>
 		</div>
 		<script type="text/javascript">

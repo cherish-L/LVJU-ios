@@ -104,4 +104,15 @@ $(function(){
 	$(".search-section-waiting").height(widh-headerh)
 	$(".search-section-fail").height(widh-headerh)
 	$(".search-section-none").height(widh-headerh)
+	
+	
+	//搜索页面滚动监听事件
+	var searchS = new IScroll('.search-section-wrapper', {
+		scrollbars: false
+	});
+	
+//	var stateS = new IScroll('.search-section-state', {
+//		scrollbars: false
+//	});
+	
 })
