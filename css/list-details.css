@@ -387,7 +387,59 @@ li {
 }
 
 .container .section .section-wrapper .section-load {
-  margin: 0.64rem 0.64rem 0 0.64rem;
+  margin: 0.64rem auto 0;
+  width: 13.72rem;
+  height: 1.76rem;
+  background: #FFFFFF;
+  border: 0.04rem solid #EEEEEE;
+  border-radius: 0.08rem;
+  text-align: center;
+  line-height: 1.68rem;
+  font-size: 0.56rem;
+  color: #999999;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.container .section .section-wrapper .section-loading {
+  display: none;
+  margin: 0.64rem auto 0;
+  width: 13.72rem;
+  height: 1.76rem;
+  background: #FFFFFF;
+  border: 0.04rem solid #EEEEEE;
+  border-radius: 0.08rem;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 1.68rem;
+  font-size: 0.56rem;
+  color: #999999;
+  position: relative;
+  -webkit-box-sizing: border-box;
+}
+
+.container .section .section-wrapper .section-loading i {
+  display: inline-block;
+  width: 0.64rem;
+  height: 0.64rem;
+  transform-origin: center center;
+  position: absolute;
+  top: 0.52rem;
+  left: 34%;
+  background: url(../img/waiting.png) no-repeat;
+  background-size: 0.64rem 0.64rem;
+}
+
+.container .section .section-wrapper .section-loading span {
+  line-height: 0.8rem;
+  position: absolute;
+  top: 0.44rem;
+  left: 40%;
+}
+
+.container .section .section-wrapper .section-loadnone {
+  display: none;
+  margin: 0.64rem auto 0;
   width: 13.72rem;
   height: 1.76rem;
   background: #FFFFFF;
