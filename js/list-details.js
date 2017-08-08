@@ -35,7 +35,7 @@ $(function() {
 		probeType: 3
 	})
 	
-			
+	var updated;
 	sectionS.on("scroll", function() {
 		maxY = this.maxScrollY - this.y
 		if(maxY >= 40) {
@@ -45,13 +45,13 @@ $(function() {
 						e.preventDefault();
 					}
 				}
+				clearTimeout(updated)
 			})
 			$(".section-wrapper").on("touchmove", function(e) {
-				if(e.cancelable) {
-					if(!e.defaultPrevented) {
-						e.preventDefault();
-					}
-				}
+//				clearTimeout(updated)
+				$(".section-load").css("display", "block")
+				$(".section-loading").css("display", "none")
+				$(".section-loadnone").css("display", "none")
 				if(maxY >= 40) {
 					$(".section-load").text("松开加载更多...")
 					$(".section-load").css("display", "block")
@@ -59,16 +59,11 @@ $(function() {
 				}
 			})
 			$(".section-wrapper").on("touchend", function(e) {
-				if(e.cancelable) {
-					if(!e.defaultPrevented) {
-						e.preventDefault();
-					}
-				}
 				if(maxY >= 40) {
 					$(".section-load").css("display", "none")
 					$(".section-load").text("上拉加载更多")
 					$(".section-loading").css("display", "block")
-					setTimeout(function() {
+				 	updated=setTimeout(function() {
 						$(".section-loading").css("display", "none")
 						$(".section-loadnone").css("display", "block")
 					}, 1500)

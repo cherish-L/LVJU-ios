@@ -37,7 +37,8 @@ body {
 
 input {
     outline: none;
-    border: none;
+    border: 0;
+    -webkit-tap-highlight-color: transparent;
 }
 
 li {
@@ -91,7 +92,7 @@ $sc:25;
                     line-height: 16/$sc+rem;
                     background: url(../img/fdj1.png) no-repeat #FFFFFF;
                     background-size: 12/$sc+rem 12/$sc+rem;
-                    background-position: 12/$sc+rem 11/$sc+rem;
+                    background-position: 12/$sc+rem 10/$sc+rem;
                     border-radius: 2/$sc+rem;
                     color: #394043;
                     box-sizing: border-box;
@@ -1153,37 +1154,6 @@ $sc:25;
                                     }
                                     .showall {
                                         display: none;
-                                        height: 24/$sc+rem;
-                                        width: 100%;
-                                        margin-top: 16/$sc+rem;
-                                        .showall-wrapper {
-                                            float: right;
-                                            width: 77/$sc+rem;
-                                            height: 24/$sc+rem;
-                                            box-sizing: border-box;
-                                            -webkit-box-sizing: border-box;
-                                            background: #ECF4F9;
-                                            border: 1px solid #0099EB;
-                                            border-radius: 12/$sc+rem;
-                                            position: relative;
-                                            .showall-wrapper-txt {
-                                                font-size: 12/$sc+rem;
-                                                color: #0099EB;
-                                                position: absolute;
-                                                top: 4/$sc+rem;
-                                                left: 10/$sc+rem;
-                                            }
-                                            .showall-wrapper-img {
-                                                display: block;
-                                                width: 10/$sc+rem;
-                                                height: 10/$sc+rem;
-                                                position: absolute;
-                                                top: 9/$sc+rem;
-                                                right: 4/$sc+rem;
-                                                background: url(../img/bottom.png) no-repeat;
-                                                background-size: 8/$sc+rem 4/$sc+rem;
-                                            }
-                                        }
                                     }
                                     .otheruser {
                                         display: none;
@@ -1290,37 +1260,6 @@ $sc:25;
                                     }
                                     .showall {
                                         display: none;
-                                        height: 24/$sc+rem;
-                                        width: 100%;
-                                        margin-top: 16/$sc+rem;
-                                        .showall-wrapper {
-                                            float: right;
-                                            width: 77/$sc+rem;
-                                            height: 24/$sc+rem;
-                                            box-sizing: border-box;
-                                            -webkit-box-sizing: border-box;
-                                            background: #ECF4F9;
-                                            border: 1px solid #0099EB;
-                                            border-radius: 12/$sc+rem;
-                                            position: relative;
-                                            .showall-wrapper-txt {
-                                                font-size: 12/$sc+rem;
-                                                color: #0099EB;
-                                                position: absolute;
-                                                top: 4/$sc+rem;
-                                                left: 10/$sc+rem;
-                                            }
-                                            .showall-wrapper-img {
-                                                display: block;
-                                                width: 10/$sc+rem;
-                                                height: 10/$sc+rem;
-                                                position: absolute;
-                                                top: 9/$sc+rem;
-                                                right: 4/$sc+rem;
-                                                background: url(../img/bottom.png) no-repeat;
-                                                background-size: 8/$sc+rem 4/$sc+rem;
-                                            }
-                                        }
                                     }
                                     .otheruser {
                                         background: #F0F0F0;
@@ -1438,21 +1377,18 @@ $sc:25;
                                             border: 1px solid #0099EB;
                                             border-radius: 12/$sc+rem;
                                             position: relative;
+                                            display: flex;
+                                            flex-direction: row;
+                                            justify-content: center;
+                                            align-items: center;
                                             .showall-wrapper-txt {
+                                                display: inline-block;
+                                                height: 12/$sc+rem;
+                                                width: 50/$sc+rem;
                                                 font-size: 12/$sc+rem;
                                                 color: #0099EB;
-                                                position: absolute;
-                                                top: 4/$sc+rem;
-                                                left: 10/$sc+rem;
-                                            }
-                                            .showall-wrapper-img {
-                                                display: block;
-                                                width: 10/$sc+rem;
-                                                height: 10/$sc+rem;
-                                                position: absolute;
-                                                top: 9/$sc+rem;
-                                                right: 4/$sc+rem;
-                                                background: url(../img/bottom.png) no-repeat;
+                                                padding-right: 10/$sc+rem ;
+                                                background: url(../img/bottom.png) right 4/$sc+rem no-repeat;
                                                 background-size: 8/$sc+rem 4/$sc+rem;
                                             }
                                         }
