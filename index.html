@@ -17,6 +17,7 @@
 			document.documentElement.style.fontSize = innerWidth / 15 + "px";
 		</script>
 	</head>
+
 	<body>
 		<div class="container" v-cloak>
 			<header class="header">
@@ -61,15 +62,15 @@
 										<span class="ghtxt" v-text="list.sell"></span>
 									</div>
 									<div class="listhouse-txt">
-										<h3>
-												<span class="position" v-text="list.positions"></span>
-												<span class="region" v-text="list.region"></span>
-											</h3>
+										<span class="title">
+											<span class="position" v-text="list.positions"></span>
+											<span class="region" v-text="list.region"></span>
+										</span>
 										<span class="address" v-text="list.address"></span>
 										<span class="openprice" v-text="list.openprice"></span>
 										<span class="averageprice">
-												<span class="averag" v-text="list.averag"></span>
-										<span class="price" v-text="list.price"></span>
+											<span class="averag" v-text="list.averag"></span>
+											<span class="price" v-text="list.price"></span>
 										</span>
 									</div>
 								</div>

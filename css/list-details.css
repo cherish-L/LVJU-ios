@@ -27,7 +27,8 @@ a {
   display: none;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
   font-family: PingFangSC-Regular;
@@ -46,7 +47,6 @@ li {
 .container {
   width: 100%;
   height: 100%;
-  overflow: hidden;
   background: #f4f4f4;
   display: flex;
   display: -webkit-flex;
@@ -260,18 +260,21 @@ li {
   height: 0.8rem;
 }
 
-.container .section .section-wrapper .section-listhouse .listhouse-data-ul .listhouse-data-li .dataDetail .listhouse-txt h3 {
+.container .section .section-wrapper .section-listhouse .listhouse-data-ul .listhouse-data-li .dataDetail .listhouse-txt .title {
+  display: block;
   height: 0.8rem;
+  line-height: 0.8rem;
 }
 
-.container .section .section-wrapper .section-listhouse .listhouse-data-ul .listhouse-data-li .dataDetail .listhouse-txt h3 .position {
+.container .section .section-wrapper .section-listhouse .listhouse-data-ul .listhouse-data-li .dataDetail .listhouse-txt .title .position {
   font-size: 0.64rem;
+  line-height: 0.8rem;
   float: left;
   color: #394043;
   margin-right: 0.2rem;
 }
 
-.container .section .section-wrapper .section-listhouse .listhouse-data-ul .listhouse-data-li .dataDetail .listhouse-txt h3 .region {
+.container .section .section-wrapper .section-listhouse .listhouse-data-ul .listhouse-data-li .dataDetail .listhouse-txt .title .region {
   font-size: 0.48rem;
   line-height: 0.8rem;
   float: left;
@@ -430,6 +433,7 @@ li {
 }
 
 .container .footer .footer-nav .footer-nav-li a i img {
+  float: left;
   width: 0.88rem;
   height: 0.88rem;
 }
