@@ -130,23 +130,16 @@ $sc:25;
                     span {
                         padding-right: 14/$sc+rem;
                         position: relative;
-                        &::after {
-                            content: "";
-                            border: 4/$sc+rem solid;
-                            position: absolute;
-                            right: 0;
-                            top: 38%;
-                            border-color: #999999 transparent transparent transparent;
-                        }
+                        
                     }
-                    span.touch {
-                        &::after {
-                            position: absolute;
-                            right: 0;
-                            top: 10%;
-                            border-color: transparent transparent #999999 transparent;
-                        }
-                    }
+//                  span.touch {
+//                      &::after {
+//                          position: absolute;
+//                          right: 0;
+//                          top: 10%;
+//                          border-color: transparent transparent #999999 transparent;
+//                      }
+//                  }
                 }
                 .list-nav-liimg {
                     width: 16%;
