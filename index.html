@@ -11,7 +11,6 @@
 		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>
 		<script src="plugins/swiper-3.4.2.min.js"></script>
 		<script type="text/javascript" src="vue/vue.js"></script>
-		<script type="text/javascript" src="js/list-details.js"></script>
 		<script>
 			//适配
 			document.documentElement.style.fontSize = innerWidth / 15 + "px";
@@ -47,9 +46,221 @@
 							<span></span>
 						</li>
 					</ul>
+					<ul class="list-nav-pushul">
+						<li class="list-nav-pushli region">
+							<div class="list-nav-pushli-wrapper">
+								<div class="region-body">
+									<div class="region-body-box">
+										<div class="regionlist">
+											<ul class="regionlist-ul">
+												<li class="regionlist-li confirmone">区域</li>
+												<li class="regionlist-li">附近</li>
+											</ul>
+										</div>
+										<div class="municipality">
+											<ul class="municipality-ul">
+												<li class="municipality-li" v-for="list in municipalitydata" v-text="list.city"></li>
+											</ul>
+										</div>
+										<div class="district">
+											<div class="district-wrapper">
+												<ul class="district-ul">
+													<li class="district-li" v-for="list in districtdata1">
+														<span v-text="list.district"></span>
+														<span class="check"></span>
+													</li>
+												</ul>
+
+												<ul class="district-ul">
+													<li class="district-li" v-for="list in districtdata2">
+														<span v-text="list.district"></span>
+														<span class="check"></span>
+													</li>
+												</ul>
+
+												<ul class="district-ul">
+													<li class="district-li" v-for="list in districtdata3">
+														<span v-text="list.district"></span>
+														<span class="check"></span>
+													</li>
+												</ul>
+
+												<ul class="district-ul">
+													<li class="district-li" v-for="list in districtdata4">
+														<span v-text="list.district"></span>
+														<span class="check"></span>
+													</li>
+												</ul>
+
+												<ul class="district-ul">
+													<li class="district-li" v-for="list in districtdata5">
+														<span v-text="list.district"></span>
+														<span class="check"></span>
+													</li>
+												</ul>
+
+												<ul class="district-ul">
+													<li class="district-li" v-for="list in districtdata6">
+														<span v-text="list.district"></span>
+														<span class="check"></span>
+													</li>
+												</ul>
+
+												<ul class="district-ul">
+													<li class="district-li" v-for="list in districtdata7">
+														<span v-text="list.district"></span>
+														<span class="check"></span>
+													</li>
+												</ul>
+
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="region-footer">
+									<span class="empty">重置</span>
+									<span class="determine">确定</span>
+								</div>
+							</div>
+						</li>
+						<li class="list-nav-pushli averagePrice">
+							<div class="list-nav-pushli-wrapper">
+								<div class="averagePrice-body">
+									<ul class="averagePrice-body-ul">
+										<li class="select">
+											<span>不限</span>
+											<i></i>
+										</li>
+										<li>
+											<span>1万以下</span>
+											<i></i>
+										</li>
+										<li>
+											<span>1-1.5万</span>
+											<i></i>
+										</li>
+										<li>
+											<span>1.5-2万</span>
+											<i></i>
+										</li>
+										<li>
+											<span>2万以上</span>
+											<i></i>
+										</li>
+									</ul>
+								</div>
+								<div class="averagePrice-footer">
+									<div class="price-input">
+										<input class="minprice" type="text" placeholder="最低价格" />
+										<span></span>
+										<input class="maxprice" type="text" placeholder="最高价格" />
+									</div>
+									<div class="determine">确定</div>
+								</div>
+							</div>
+						</li>
+						<li class="list-nav-pushli houseType">
+							<div class="list-nav-pushli-wrapper">
+								<div class="houseType-body">
+									<ul class="houseType-body-ul">
+										<li class="select">
+											<span>不限</span>
+											<i></i>
+										</li>
+										<li>
+											<span>一室</span>
+											<i></i>
+										</li>
+										<li>
+											<span>二室</span>
+											<i></i>
+										</li>
+										<li>
+											<span>三室</span>
+											<i></i>
+										</li>
+										<li>
+											<span>四室</span>
+											<i></i>
+										</li>
+										<li>
+											<span>五室以上</span>
+											<i></i>
+										</li>
+										<li>
+											<span>别墅</span>
+											<i></i>
+										</li>
+									</ul>
+								</div>
+								<div class="houseType-footer">
+									<span class="empty">重置</span>
+									<span class="determine">确定</span>
+								</div>
+							</div>
+						</li>
+						<li class="list-nav-pushli more">
+							<div class="list-nav-pushli-wrapper">
+								<div class="more-body">
+									<div class="more-body-wrapper">
+										<div class="open-time">
+											<h3 class="open-time-title">开盘时间</h3>
+											<div class="open-time-content">
+												<span class="select">本月开盘</span>
+												<span class="select">下月开盘</span>
+												<span class="select">三个月内开盘</span>
+												<span class="select">六个月内开盘</span>
+												<span class="select">已开盘三个月</span>
+												<span class="select">已开票六个月</span>
+												<div style="clear: both;"></div>
+											</div>
+										</div>
+										<div class="characteristic">
+											<h3 class="characteristic-title">特色</h3>
+											<div class="characteristic-content">
+												<span class="select">打折优惠</span>
+												<span class="select">住宅</span>
+												<span class="select">养生社区</span>
+												<span class="select">花园洋房</span>
+												<span class="select">海景房</span>
+												<span class="select">河(江)景房</span>
+												<span class="select">温泉社区</span>
+												<span class="select">酒店式公寓</span>
+												<span class="select">商铺</span>
+												<span class="select">别墅</span>
+												<span class="select">公寓</span>
+												<span class="select">社区</span>
+												<span class="select">学区房</span>
+												<span class="select">湖景房</span>
+												<span class="select">写字楼</span>
+												<div style="clear: both;"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="more-footer">
+									<span class="empty">重置</span>
+									<span class="determine">确定</span>
+								</div>
+							</div>
+						</li>
+						<li class="list-nav-pushli screen">
+							<div class="list-nav-pushli-wrapper">
+								<div class="screen-body">
+									<ul class="screen-body-ul">
+										<li class="select">默认排序</li>
+										<li>开盘价从高到低</li>
+										<li>开盘价从低到高</li>
+										<li>均价从高到低</li>
+										<li>均价从低到高</li>
+										<li>人气从高到低</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+					</ul>
 				</div>
 			</header>
-			<div class="partition"></div>
 			<section class="section">
 				<div class="section-wrapper">
 					<div class="section-listhouse">
@@ -64,13 +275,13 @@
 									<div class="listhouse-txt">
 										<span class="title">
 											<span class="position" v-text="list.positions"></span>
-											<span class="region" v-text="list.region"></span>
+										<span class="region" v-text="list.region"></span>
 										</span>
 										<span class="address" v-text="list.address"></span>
 										<span class="openprice" v-text="list.openprice"></span>
 										<span class="averageprice">
 											<span class="averag" v-text="list.averag"></span>
-											<span class="price" v-text="list.price"></span>
+										<span class="price" v-text="list.price"></span>
 										</span>
 									</div>
 								</div>
@@ -134,6 +345,7 @@
 				</ul>
 			</footer>
 		</div>
+		<div class="Mask"></div>
 		<div class="list-details-push">
 			<header class="list-details-pushheader">
 				<div class="signal_bar"></div>
@@ -477,7 +689,195 @@
 			</footer>
 		</div>
 		<script type="text/javascript">
-			var myVue = new Vue({
+			var myVue1 = new Vue({
+				el: ".region",
+				data: {
+					municipalitydata: [{
+							city: '不限'
+						},
+						{
+							city: '海口'
+
+						},
+						{
+							city: '三亚'
+
+						},
+						{
+							city: '儋州'
+
+						},
+						{
+							city: '文昌'
+
+						},
+						{
+							city: '陵水'
+
+						},
+						{
+							city: '琼海'
+
+						}
+					],
+					districtdata1: [{
+							district: '不限',
+						},
+						{
+							district: '美兰区',
+						},
+						{
+							district: '秀英区',
+						},
+						{
+							district: '龙华区',
+						},
+						{
+							district: '琼山区',
+						},
+						{
+							district: '西海岸'
+						},
+						{
+							district: '西海岸'
+						},
+						{
+							district: '西海岸'
+						}
+					],
+					districtdata2: [{
+							district: '不限',
+						},
+						{
+							district: '美兰区',
+						},
+						{
+							district: '秀英区',
+						},
+						{
+							district: '龙华区',
+						},
+						{
+							district: '琼山区'
+						},
+						{
+							district: '西海岸'
+						}
+					],
+					districtdata3: [{
+							district: '不限',
+						},
+						{
+							district: '美兰区',
+						},
+						{
+							district: '秀英区',
+						},
+						{
+							district: '龙华区'
+						},
+						{
+							district: '西海岸'
+						},
+						{
+							district: '龙华区',
+						},
+						{
+							district: '琼山区',
+						},
+						{
+							district: '西海岸'
+						},
+						{
+							district: '琼山区',
+						},
+						{
+							district: '西海岸'
+						}
+					],
+					districtdata4: [{
+							district: '不限',
+						},
+						{
+							district: '美兰区'
+						},
+						{
+							district: '秀英区'
+						},
+						{
+							district: '西海岸'
+						},
+						{
+							district: '龙华区',
+						},
+						{
+							district: '琼山区',
+						},
+						{
+							district: '西海岸'
+						},
+						{
+							district: '琼山区',
+						},
+						{
+							district: '西海岸'
+						}
+					],
+					districtdata5: [{
+							district: '不限',
+						},
+						{
+							district: '美兰区',
+						},
+						{
+							district: '西海岸'
+						},
+						{
+							district: '龙华区',
+						},
+						{
+							district: '琼山区',
+						},
+						{
+							district: '西海岸'
+						},
+						{
+							district: '琼山区',
+						},
+						{
+							district: '西海岸'
+						}
+					],
+					districtdata6: [{
+							district: '不限',
+						},
+						{
+							district: '美兰区',
+						},
+						{
+							district: '秀英区',
+						},
+						{
+							district: '龙华区'
+						},
+						{
+							district: '西海岸'
+						},
+						{
+							district: '西海岸'
+						},
+						{
+							district: '琼山区',
+						},
+						{
+							district: '西海岸'
+						}
+					]
+				}
+			})
+		</script>
+		<script type="text/javascript">
+			var myVue2 = new Vue({
 				el: ".container",
 				data: {
 					listdetails: [{
@@ -563,7 +963,7 @@
 			})
 		</script>
 		<script type="text/javascript">
-			var myVue = new Vue({
+			var myVue3 = new Vue({
 				el: ".list-details-push",
 				data: {
 					commention: [{
@@ -621,6 +1021,8 @@
 				}
 			})
 		</script>
+
 	</body>
+	<script type="text/javascript" src="js/list-details.js"></script>
 
 </html>
