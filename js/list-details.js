@@ -123,10 +123,10 @@ $(function() {
 
 //头部筛选功能明细
 	//区域
-	var regionh=$(".region-body-box").height()
-	$(".regionlist").height(regionh)
-	$(".municipality").height(regionh)
-	$(".district").height(regionh)
+//	var regionh=$(".region-body-box").height()
+//	$(".regionlist").height(regionh)
+//	$(".municipality").height(regionh)
+//	$(".district").height(regionh)
 	$(".district-ul").css("display","none")
 	$(".municipality-ul .municipality-li:first-child").addClass("confirmtwo")
 	$(".district-ul .district-li:first-child").addClass("confirmthree")

@@ -183,20 +183,16 @@ $sc:25;
                         height: 378/$sc+rem;
                         overflow: hidden;
                         background: #FFFFFF;
-                        display: flex;
-                        display: -webkit-flex;
-                        flex-direction: column;
                         .region-body {
-                            flex: 1;
-                            -webkit-flex: 1;
+                            height: 322/$sc+rem;
                             overflow: hidden;
                             background: #FFFFFF;
                             .region-body-box {
                                 width: 100%;
-                                height: 100%;
+                                height: 322/$sc+rem;
                                 overflow: hidden;
                                 .regionlist {
-                                    height: 100%;
+                                    height: 322/$sc+rem;
                                     float: left;
                                     padding-left: 16/$sc+rem;
                                     box-sizing: border-box;
@@ -219,7 +215,7 @@ $sc:25;
                                     }
                                 }
                                 .municipality {
-                                    height: 100%;
+                                    height: 322/$sc+rem;
                                     float: left;
                                     padding-left: 16/$sc+rem;
                                     box-sizing: border-box;
@@ -242,7 +238,7 @@ $sc:25;
                                     }
                                 }
                                 .district {
-                                    height: 100%;
+                                    height: 322/$sc+rem;
                                     float: left;
                                     padding-left: 16/$sc+rem;
                                     box-sizing: border-box;
@@ -551,8 +547,8 @@ $sc:25;
                             -webkit-box-sizing: border-box;
                             .more-body-wrapper {
                                 width: 100%;
-                                height: 100%;
-                                border-bottom: 1px solid transparent;
+                                    height: 100%;
+                                    border-bottom: 1px solid transparent;
                                 .open-time {
                                     margin-bottom: 16/$sc+rem ;
                                     .open-time-title {
