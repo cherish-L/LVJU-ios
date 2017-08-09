@@ -203,7 +203,6 @@ $(function() {
 		var index=$(this).index()
 		$(".screen-body-ul li").eq(index).addClass("select").siblings().removeClass("select")
 	})
-
 //筛选主要功能
 	var num = 0;
 	var pushlih = 0;
@@ -213,7 +212,6 @@ $(function() {
 		$(".list-nav-pushul .list-nav-pushli").eq(num).css("transition","all .3s").siblings().css("transition","none")
 		$(".list-nav-pushul .list-nav-pushli").eq(num).siblings().height("0")
 		$(".list-nav-pushul .list-nav-pushli").eq(num).height(pushlih)
-		
 		if($(this).hasClass("touch")){
 			$(".list-nav-pushul .list-nav-pushli").eq(num).css("transition","all .3s")
 			$(".list-nav-pushul .list-nav-pushli").eq(num).height(pushlih)
@@ -241,11 +239,6 @@ $(function() {
 		})
 		
 	})
-
-
-
-
-
 
 
 	var municipalityS = new IScroll('.municipality', {
