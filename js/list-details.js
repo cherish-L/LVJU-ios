@@ -211,7 +211,8 @@ $(function() {
 		$(this).addClass("selected").siblings().removeClass("selected")
 	})
 	$(".more-footer .empty").tap(function(){
-		$(".more .select").removeClass("selected")
+		$(".characteristic-content .select").removeClass("selected")
+		$(".open-time-content span").removeClass("selected")
 //		$(".municipality-ul .municipality-li").removeClass("confirmtwo")
 //		$(".municipality-ul .municipality-li:first-child").addClass("confirmtwo")
 //		$(".district-ul .district-li").removeClass("confirmthree")
@@ -236,24 +237,28 @@ $(function() {
 			$(".list-nav-pushul .list-nav-pushli").eq(num).css("transition","all .3s")
 			$(".list-nav-pushul .list-nav-pushli").eq(num).height(pushlih)
 			$(".Mask").addClass("show")
-			
+			moreS.refresh()
 		}
 		else if(!$(this).hasClass("touch")){
 			$(".list-nav-pushul .list-nav-pushli").eq(num).css("transition","none")
 			$(".list-nav-pushul .list-nav-pushli").eq(num).height("0")
 			$(".Mask").removeClass("show")
+			moreS.refresh()
 		}
 		$(".determine").tap(function(){
 			$(".list-nav-pushul .list-nav-pushli").height("0")
 			$(".Mask").removeClass("show")
 			$(".list-nav-ul li").removeClass("touch")
+			moreS.refresh()
 		})
 		$(".Mask").tap(function(){
 			$(".list-nav-pushul .list-nav-pushli").css("transition","none")
 			$(".list-nav-pushul .list-nav-pushli").height("0")
 			$(".Mask").removeClass("show")
 			$(".list-nav-ul li").removeClass("touch")
+			moreS.refresh()
 		})
+		
 	})
 
 

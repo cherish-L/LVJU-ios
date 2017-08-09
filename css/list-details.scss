@@ -389,6 +389,7 @@ $sc:25;
                                 height: 100%;
                                 float: left;
                                 .minprice {
+                                    float: left;
                                     background: #f5f5f5;
                                     border-radius: 2/$sc+rem;
                                     width: 110/$sc+rem;
@@ -401,14 +402,17 @@ $sc:25;
                                     -webkit-box-sizing: border-box;
                                 }
                                 span {
+                                    float: left;
                                     display: inline-block;
                                     width: 8/$sc+rem;
                                     height: 18/$sc+rem;
+                                    margin: 0 4/$sc+rem;
                                     border-bottom: 1/$sc+rem solid #d8d8d8;
                                     box-sizing: border-box;
                                     -webkit-box-sizing: border-box;
                                 }
                                 .maxprice {
+                                    float: left;
                                     background: #f5f5f5;
                                     border-radius: 2/$sc+rem;
                                     width: 110/$sc+rem;
@@ -548,9 +552,9 @@ $sc:25;
                             .more-body-wrapper {
                                 width: 100%;
                                 height: 100%;
-                                border: 1px solid transparent;
+                                border-bottom: 1px solid transparent;
                                 .open-time {
-                                    margin: 8/$sc+rem 0 16/$sc+rem 0;
+                                    margin-bottom: 16/$sc+rem ;
                                     .open-time-title {
                                         height: 54/$sc+rem;
                                         line-height: 22/$sc+rem;
