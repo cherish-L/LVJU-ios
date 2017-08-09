@@ -636,7 +636,7 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.container .header .list-nav .list-nav-pushul .more .list-nav-pushli-wrapper .more-body .more-body-wrapper .open-time .open-time-content .select {
+.container .header .list-nav .list-nav-pushul .more .list-nav-pushli-wrapper .more-body .more-body-wrapper .open-time .open-time-content span {
   display: block;
   float: left;
   background: #F0F0F0;
@@ -654,7 +654,7 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.container .header .list-nav .list-nav-pushul .more .list-nav-pushli-wrapper .more-body .more-body-wrapper .open-time .open-time-content .select.selected {
+.container .header .list-nav .list-nav-pushul .more .list-nav-pushli-wrapper .more-body .more-body-wrapper .open-time .open-time-content span.selected {
   background: #ECF4F9;
   color: #0099eb;
   border: 0.04rem solid #0099eb;

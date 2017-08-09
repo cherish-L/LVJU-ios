@@ -563,7 +563,7 @@ $sc:25;
                                         -webkit-box-sizing: border-box;
                                     }
                                     .open-time-content {
-                                        .select {
+                                        span {
                                             display: block;
                                             float: left;
                                             background: #F0F0F0;
@@ -580,7 +580,7 @@ $sc:25;
                                             box-sizing: border-box;
                                             -webkit-box-sizing: border-box;
                                         }
-                                        .select.selected {
+                                        span.selected {
                                             background: #ECF4F9;
                                             color: #0099eb;
                                             border: 1/$sc+rem solid #0099eb;

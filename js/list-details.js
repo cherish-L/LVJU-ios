@@ -202,8 +202,11 @@ $(function() {
 	var sectionh=$(".section").height()
 	var footerh=$(".footer").height()
 	$(".more .list-nav-pushli-wrapper").height(sectionh+footerh)
-	$(".more .select").tap(function(){
+	$(".characteristic-content .select").tap(function(){
 		$(this).addClass("selected")
+	})
+	$(".open-time-content span").tap(function(){
+		$(this).addClass("selected").siblings().removeClass("selected")
 	})
 	$(".more-footer .empty").tap(function(){
 		$(".more .select").removeClass("selected")
