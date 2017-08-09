@@ -237,11 +237,13 @@ $(function() {
 		$(".determine").tap(function(){
 			$(".list-nav-pushul .list-nav-pushli").height("0")
 			$(".Mask").removeClass("show")
+			$(".list-nav-ul li").removeClass("touch")
 		})
 		$(".Mask").tap(function(){
 			$(".list-nav-pushul .list-nav-pushli").css("transition","none")
 			$(".list-nav-pushul .list-nav-pushli").height("0")
 			$(".Mask").removeClass("show")
+			$(".list-nav-ul li").removeClass("touch")
 		})
 	})
 
