@@ -266,6 +266,7 @@ $(function() {
 		$(".demand-condition-wrapper").width(sNew+20)
 		if($(".demand-condition-wrapper li").length==0){	
 			$(".demand-condition").css("height","0")
+			sectionS.refresh()
 		}
 		else if(!$(".demand-condition-wrapper li").length==0){
 			$(".demand-condition").css("height",demandh)

@@ -189,6 +189,7 @@ li {
   left: 0;
   background: #FFFFFF;
   width: 100%;
+  z-index: 30;
 }
 
 .container .header .list-nav .list-nav-pushul .region {
@@ -847,7 +848,8 @@ li {
 
 .container .demand-condition .iScrollLoneScrollbar {
   height: 0.16rem !important;
-  bottom: 2px !important;
+  bottom: 1px !important;
+  z-index: 20 !important;
 }
 
 .container .demand-condition .iScrollLoneScrollbar .iScrollIndicator {
