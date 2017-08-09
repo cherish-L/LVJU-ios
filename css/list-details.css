@@ -415,7 +415,7 @@ li {
 
 .container .header .list-nav .list-nav-pushul .averagePrice .list-nav-pushli-wrapper .averagePrice-body .averagePrice-body-ul li:last-child {
   box-shadow: none;
-  border: 1px solid transparent;
+  border-bottom: 1px solid transparent;
 }
 
 .container .header .list-nav .list-nav-pushul .averagePrice .list-nav-pushli-wrapper .averagePrice-footer {
@@ -553,7 +553,7 @@ li {
 
 .container .header .list-nav .list-nav-pushul .houseType .list-nav-pushli-wrapper .houseType-body .houseType-body-ul li:last-child {
   box-shadow: none;
-  border: 1px solid transparent;
+  border-bottom: 1px solid transparent;
 }
 
 .container .header .list-nav .list-nav-pushul .houseType .list-nav-pushli-wrapper .houseType-footer {
@@ -617,7 +617,7 @@ li {
 .container .header .list-nav .list-nav-pushul .more .list-nav-pushli-wrapper .more-body .more-body-wrapper {
   width: 100%;
   height: 100%;
-  padding-bottom: 20px;
+  padding-bottom: 50px;
 }
 
 .container .header .list-nav .list-nav-pushul .more .list-nav-pushli-wrapper .more-body .more-body-wrapper .open-time {
