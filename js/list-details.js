@@ -185,9 +185,10 @@ $(function() {
 		$(".houseType-body-ul li").eq(index).addClass("select").siblings().removeClass("select")
 	})
 //头部更多功能明细
+	var conditionh=$(".demand-condition").height()
 	var sectionh=$(".section").height()
 	var footerh=$(".footer").height()
-	$(".more .list-nav-pushli-wrapper").height(sectionh+footerh)
+	$(".more .list-nav-pushli-wrapper").height(sectionh+footerh+conditionh)
 	$(".characteristic-content .select").tap(function(){
 		$(this).addClass("selected")
 	})
