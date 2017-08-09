@@ -197,9 +197,6 @@ $(function() {
 	$(".more-footer .empty").tap(function(){
 		$(".characteristic-content .select").removeClass("selected")
 		$(".open-time-content span").removeClass("selected")
-//		$(".municipality-ul .municipality-li").removeClass("confirmtwo")
-//		$(".municipality-ul .municipality-li:first-child").addClass("confirmtwo")
-//		$(".district-ul .district-li").removeClass("confirmthree")
 	})
 //头部排序功能明细
 	$(".screen-body-ul li").tap(function(){
