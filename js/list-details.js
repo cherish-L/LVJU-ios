@@ -123,10 +123,6 @@ $(function() {
 
 //头部筛选功能明细
 	//区域
-//	var regionh=$(".region-body-box").height()
-//	$(".regionlist").height(regionh)
-//	$(".municipality").height(regionh)
-//	$(".district").height(regionh)
 	$(".district-ul").css("display","none")
 	$(".municipality-ul .municipality-li:first-child").addClass("confirmtwo")
 	$(".district-ul .district-li:first-child").addClass("confirmthree")
@@ -167,27 +163,13 @@ $(function() {
 		municipalityS.refresh()
 		districtS.refresh()
 	})
-
-//	$(".region-footer .determine").tap(function(){
-//		$(".maphouse-push").css("height","0")
-//		$(".regionli .num").css("display","block")
-//		districtS.refresh()
-//	})
-//
-//	$(".region-footer .empty").tap(function(){
-//		$(".select").removeClass("selected")
-//		$(".municipality-ul .municipality-li").removeClass("confirmtwo")
-//		$(".municipality-ul .municipality-li:first-child").addClass("confirmtwo")
-//		$(".district-ul .district-li").removeClass("confirmthree")
-//		districtS.refresh()
-//	})
-	
-	
-	
-	
-	
-	
-	
+	$(".region-footer .empty").tap(function(){
+		$(".select").removeClass("selected")
+		$(".municipality-ul .municipality-li").removeClass("confirmtwo")
+		$(".municipality-ul .municipality-li:first-child").addClass("confirmtwo")
+		$(".district-ul .district-li").removeClass("confirmthree")
+		districtS.refresh()
+	})
 	
 //头部均价功能明细
 	$(".averagePrice-body-ul li").tap(function(){
