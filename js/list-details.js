@@ -142,12 +142,13 @@ $(function() {
 		municipalityS.refresh()
 		districtS.refresh()
 	})
-
+	
 	$(".municipality-ul .municipality-li").tap(function(){
 		var index=$(this).index()
 		var selectclick=$(".district-ul").eq(index-1).find(".district-li")
 		selectclick.removeClass("confirmthree")
 		$(".district-ul").eq(index-1).css("display","block").siblings().css("display","none")
+		$(".regionlist-ul .regionlist-li").eq(0).addClass("confirmone").siblings().removeClass("confirmone")
 		$(".municipality-ul .municipality-li").eq(index).addClass("confirmtwo").siblings().removeClass("confirmtwo")
 		$(".district-ul").find(".district-li").removeClass("confirmthree")
 		selectclick.tap(function(){
@@ -168,6 +169,7 @@ $(function() {
 		$(".municipality-ul .municipality-li").removeClass("confirmtwo")
 		$(".municipality-ul .municipality-li:first-child").addClass("confirmtwo")
 		$(".district-ul .district-li").removeClass("confirmthree")
+		$(".regionlist-ul .regionlist-li").eq(0).addClass("confirmone").siblings().removeClass("confirmone")
 		districtS.refresh()
 	})
 	
