@@ -241,6 +241,46 @@ $(function() {
 	})
 
 
+
+
+//需求水平滚动栏
+	//遍历当前以后的需求
+	var s=0;
+	var demandh=$(".demand-condition-wrapper").height()
+	var demandlen=$(".demand-condition-wrapper li").length
+	for(var i=0;i<demandlen;i++){
+		var liw=$(".demand-condition-wrapper li").eq(i).width()+12
+		s=s+liw
+	}
+	$(".demand-condition-wrapper").width(s+16)
+	
+	//删除单个需求，刷新demand-condition-wrapper盒子的宽度
+	$(".demand-condition-wrapper li i").tap(function(){
+		var sNew=0;
+		$(this).parent().remove()
+		var demandlenNew=$(".demand-condition-wrapper li").length
+		for(var iNew=0;iNew<demandlenNew;iNew++){
+			var liwNew=$(".demand-condition-wrapper li").eq(iNew).width()+12
+			sNew=sNew+liwNew
+		}
+		$(".demand-condition-wrapper").width(sNew+20)
+		if($(".demand-condition-wrapper li").length==0){	
+			$(".demand-condition").css("height","0")
+		}
+		else if(!$(".demand-condition-wrapper li").length==0){
+			$(".demand-condition").css("height",demandh)
+		}
+		sectionS.refresh()
+		demandS.refresh()
+	})
+	
+	
+
+
+
+
+
+
 	var municipalityS = new IScroll('.municipality', {
 		scrollbars: false
 	})
@@ -258,6 +298,11 @@ $(function() {
 	})
 	var screenS = new IScroll('.screen-body', {
 		scrollbars: false
+	})
+	var demandS = new IScroll('.demand-condition', {
+		scrollbars: true,
+		scrollX: true,
+		scrollY: false
 	})
 
 })

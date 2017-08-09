@@ -548,8 +548,7 @@ $sc:25;
                             .more-body-wrapper {
                                 width: 100%;
                                 height: 100%;
-//                              border-bottom: 2px solid transparent;
-                                padding-bottom: 20px;
+                                border-bottom: 2px solid transparent;
                                 .open-time {
                                     margin-bottom: 16/$sc+rem ;
                                     .open-time-title {
@@ -712,6 +711,56 @@ $sc:25;
                         }
                     }
                 }
+            }
+        }
+    }
+    .demand-condition{
+        width: 100%;
+        overflow: hidden;
+        height: 46/$sc+rem;
+        background: #F6F6F6;
+        position: relative;
+        .demand-condition-wrapper{
+            display: inline-block;
+            height: 46/$sc+rem;
+            padding: 9/$sc+rem 0 9/$sc+rem 16/$sc+rem;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            li{
+                height: 100%;
+                float: left;
+                background: #EEEEEE;
+                padding: 7/$sc+rem 4/$sc+rem;
+                margin-right: 12/$sc+rem;
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                span{
+                    display: block;
+                    float: left;
+                    line-height: 14/$sc+rem;
+                    font-size: 12/$sc+rem;
+                    margin-right: 4/$sc+rem;
+                    color: #999999;
+                }
+                i{
+                    display: block;
+                    float: left;
+                    width: 14/$sc+rem;
+                    height: 14/$sc+rem;
+                    background: url(../img/delete.png) no-repeat ;
+                    background-size:14/$sc+rem 14/$sc+rem ;
+                }
+            }
+            li:last-child{
+                margin-right: 0;
+            }
+        }
+        .iScrollLoneScrollbar{
+            height: 4/$sc+rem!important;
+            bottom: 2px!important;
+            .iScrollIndicator{
+                background: #999999!important;
+                border-radius: 2/$sc+rem!important;
             }
         }
     }

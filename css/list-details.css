@@ -617,7 +617,7 @@ li {
 .container .header .list-nav .list-nav-pushul .more .list-nav-pushli-wrapper .more-body .more-body-wrapper {
   width: 100%;
   height: 100%;
-  padding-bottom: 20px;
+  border-bottom: 2px solid transparent;
 }
 
 .container .header .list-nav .list-nav-pushul .more .list-nav-pushli-wrapper .more-body .more-body-wrapper .open-time {
@@ -795,6 +795,64 @@ li {
 .container .header .list-nav .list-nav-pushul .screen .list-nav-pushli-wrapper .screen-body .screen-body-ul li:last-child {
   box-shadow: none;
   border: 1px solid transparent;
+}
+
+.container .demand-condition {
+  width: 100%;
+  overflow: hidden;
+  height: 1.84rem;
+  background: #F6F6F6;
+  position: relative;
+}
+
+.container .demand-condition .demand-condition-wrapper {
+  display: inline-block;
+  height: 1.84rem;
+  padding: 0.36rem 0 0.36rem 0.64rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.container .demand-condition .demand-condition-wrapper li {
+  height: 100%;
+  float: left;
+  background: #EEEEEE;
+  padding: 0.28rem 0.16rem;
+  margin-right: 0.48rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.container .demand-condition .demand-condition-wrapper li span {
+  display: block;
+  float: left;
+  line-height: 0.56rem;
+  font-size: 0.48rem;
+  margin-right: 0.16rem;
+  color: #999999;
+}
+
+.container .demand-condition .demand-condition-wrapper li i {
+  display: block;
+  float: left;
+  width: 0.56rem;
+  height: 0.56rem;
+  background: url(../img/delete.png) no-repeat;
+  background-size: 0.56rem 0.56rem;
+}
+
+.container .demand-condition .demand-condition-wrapper li:last-child {
+  margin-right: 0;
+}
+
+.container .demand-condition .iScrollLoneScrollbar {
+  height: 0.16rem !important;
+  bottom: 2px !important;
+}
+
+.container .demand-condition .iScrollLoneScrollbar .iScrollIndicator {
+  background: #999999 !important;
+  border-radius: 0.08rem !important;
 }
 
 .container .section {
