@@ -143,6 +143,7 @@ $(function() {
 			$(".municipality-ul").css("display","block")
 			$(".municipality-ul .municipality-li:first-child").addClass("confirmtwo")
 		}
+		municipalityS.refresh()
 		districtS.refresh()
 	})
 
@@ -163,6 +164,7 @@ $(function() {
 				selectclick.eq(ind).addClass("confirmthree")
 			}
 		})
+		municipalityS.refresh()
 		districtS.refresh()
 	})
 
