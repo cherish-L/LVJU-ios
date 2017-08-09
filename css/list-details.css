@@ -842,10 +842,6 @@ li {
   background-size: 0.56rem 0.56rem;
 }
 
-.container .demand-condition .demand-condition-wrapper li:last-child {
-  margin-right: 0;
-}
-
 .container .demand-condition .iScrollLoneScrollbar {
   height: 0.16rem !important;
   bottom: 1px !important;

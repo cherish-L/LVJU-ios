@@ -121,11 +121,12 @@ $(function() {
 
 	});
 
-//头部筛选功能明细
-	//区域
+//头部区域功能明细
 	$(".district-ul").css("display","none")
 	$(".municipality-ul .municipality-li:first-child").addClass("confirmtwo")
 	$(".district-ul .district-li:first-child").addClass("confirmthree")
+	
+	
 	$(".regionlist-ul .regionlist-li").tap(function(){
 		var index=$(this).index()
 		$(".regionlist-ul .regionlist-li").eq(index).addClass("confirmone").siblings().removeClass("confirmone")
@@ -143,13 +144,14 @@ $(function() {
 		districtS.refresh()
 	})
 	
+	var municipalityindex=0
 	$(".municipality-ul .municipality-li").tap(function(){
-		var index=$(this).index()
-		var selectclick=$(".district-ul").eq(index-1).find(".district-li")
+		municipalityindex=$(this).index()
+		var selectclick=$(".district-ul").eq(municipalityindex-1).find(".district-li")
 		selectclick.removeClass("confirmthree")
-		$(".district-ul").eq(index-1).css("display","block").siblings().css("display","none")
+		$(".district-ul").eq(municipalityindex-1).css("display","block").siblings().css("display","none")
 		$(".regionlist-ul .regionlist-li").eq(0).addClass("confirmone").siblings().removeClass("confirmone")
-		$(".municipality-ul .municipality-li").eq(index).addClass("confirmtwo").siblings().removeClass("confirmtwo")
+		$(".municipality-ul .municipality-li").eq(municipalityindex).addClass("confirmtwo").siblings().removeClass("confirmtwo")
 		$(".district-ul").find(".district-li").removeClass("confirmthree")
 		selectclick.tap(function(){
 			var ind=$(this).index()
@@ -161,17 +163,71 @@ $(function() {
 				selectclick.eq(ind).addClass("confirmthree")
 			}
 		})
+		
+		
+		$(".districtbox").remove()
+		$(".municipality-ul .municipality-li").dynamic()
+		
 		municipalityS.refresh()
 		districtS.refresh()
 	})
+	
+	
 	$(".region-footer .empty").tap(function(){
 		$(".select").removeClass("selected")
 		$(".municipality-ul .municipality-li").removeClass("confirmtwo")
 		$(".municipality-ul .municipality-li:first-child").addClass("confirmtwo")
 		$(".district-ul .district-li").removeClass("confirmthree")
 		$(".regionlist-ul .regionlist-li").eq(0).addClass("confirmone").siblings().removeClass("confirmone")
+		$(".districtbox").remove()
+		$(".region-footer .empty").dynamic()
 		districtS.refresh()
 	})
+	
+	//添加需求并显示在需求项目栏中
+	var districtTxt=null;
+	var municipalityTxt=null;
+	var districtboxtxt=null;
+	$(".district-li").tap(function(){
+		if(!$(this).hasClass("confirmthree")){
+			districtTxt=$(this).find(".district-li-txt").text()
+			municipalityTxt=$(".confirmtwo").text()
+			if(districtTxt!=="不限"){
+				$(".demand-condition-wrapper").append("<li class='districtbox'><span>"+districtTxt+"</span><i></i></li>")
+			}
+			else if(districtTxt=="不限"){
+				$(".demand-condition-wrapper").append("<li class='districtbox'><span>"+municipalityTxt+"</span><i></i></li>")
+			}
+			$(".district-li").dynamic()
+		}
+		$(".district-li").dynamic()
+		
+		$(".demand-condition-wrapper .districtbox i").tap(function(){
+			districtboxtxt=$(this).siblings("span").text()
+			$(".district-ul").eq(municipalityindex-1).find(".district-li").lenght
+//			for(var i=0;i<=)
+		})
+	
+	
+	
+	
+		$(".demand-condition-wrapper li i").tap(function(){
+			$(this).parent().remove()
+			$(".demand-condition-wrapper li i").dynamic()
+		})
+			
+	})
+	
+
+
+	
+	
+	
+	
+	
+	
+	
+	
 	
 //头部均价功能明细
 	$(".averagePrice-body-ul li").tap(function(){
@@ -253,18 +309,37 @@ $(function() {
 		var liw=$(".demand-condition-wrapper li").eq(i).width()+12
 		s=s+liw
 	}
-	$(".demand-condition-wrapper").width(s+16)
+	$(".demand-condition-wrapper").width(s+20)
 	
 	//删除单个需求，刷新demand-condition-wrapper盒子的宽度
 	$(".demand-condition-wrapper li i").tap(function(){
-		var sNew=0;
 		$(this).parent().remove()
+		$(".demand-condition-wrapper li i").dynamic()
+	})
+	
+
+
+
+
+
+
+
+
+
+//
+	$.fn.dynamic = function () {
+		var sNew=0;
 		var demandlenNew=$(".demand-condition-wrapper li").length
 		for(var iNew=0;iNew<demandlenNew;iNew++){
 			var liwNew=$(".demand-condition-wrapper li").eq(iNew).width()+12
 			sNew=sNew+liwNew
 		}
-		$(".demand-condition-wrapper").width(sNew+20)
+		if($(".demand-condition-wrapper li").length<=3){
+			$(".demand-condition-wrapper").width(sNew+36)
+		}
+		else if($(".demand-condition-wrapper li").length>3){
+			$(".demand-condition-wrapper").width(sNew+20)
+		}
 		if($(".demand-condition-wrapper li").length==0){	
 			$(".demand-condition").css("height","0")
 			sectionS.refresh()
@@ -274,9 +349,9 @@ $(function() {
 		}
 		sectionS.refresh()
 		demandS.refresh()
-	})
+	}
 	
-	
+
 
 
 
