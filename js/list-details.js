@@ -187,8 +187,8 @@ $(function() {
 	//添加需求并显示在需求项目栏中
 	var districtTxt=null;
 	var municipalityTxt=null;
-	var districtboxtxt=null;
 	$(".district-li").tap(function(){
+//		var districtboxtxt=null;
 		if(!$(this).hasClass("confirmthree")){
 			districtTxt=$(this).find(".district-li-txt").text()
 			municipalityTxt=$(".confirmtwo").text()
@@ -202,13 +202,25 @@ $(function() {
 		}
 		$(".district-li").dynamic()
 		
+		
 		$(".demand-condition-wrapper .districtbox i").tap(function(){
-			districtboxtxt=$(this).siblings("span").text()
-			$(".district-ul").eq(municipalityindex-1).find(".district-li").lenght
-//			for(var i=0;i<=)
+			var districtboxtxt=$(this).siblings("span").text()
+//			var lenul=$(".district-ul").eq(municipalityindex-1).find(".district-li").length
+			var model=$(".district-ul").eq(municipalityindex-1).find(".district-li")
+			//遍历后存放到数组中。。要用的时候再根据需要取.
+			var arr = new Array();
+			model.each(function(index){
+			    arr.push(model.eq(index).text());
+			})
+			 console.log(arr)
+			//调用..---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//			for(var i in arr){
+//			    console.log(arr[i]);
+//			    if(arr[i]===districtboxtxt){
+//			    		alert(i)
+//			    }
+//			}
 		})
-	
-	
 	
 	
 		$(".demand-condition-wrapper li i").tap(function(){
@@ -223,38 +235,159 @@ $(function() {
 	
 	
 	
-	
-	
-	
-	
-	
-	
 //头部均价功能明细
+	var PriceTxt=0;
 	$(".averagePrice-body-ul li").tap(function(){
 		var index=$(this).index()
-		$(".averagePrice-body-ul li").eq(index).addClass("select").siblings().removeClass("select")
+		$(".demand-condition-wrapper .Pricebox").remove()
+		//均价添加需求并显示在需求项目栏中
+		if(!$(this).hasClass("select")){
+			$(".averagePrice-body-ul li").eq(index).addClass("select").siblings().removeClass("select")
+			PriceTxt=$(this).find("span").text()
+			if(PriceTxt!=="不限"){
+				$(".demand-condition-wrapper").append("<li class='Pricebox'><span>"+PriceTxt+"</span><i></i></li>")
+			}
+			$(".averagePrice-body-ul li").dynamic()
+		}
+		$(".averagePrice-body-ul li").dynamic()
+		
+		$(".demand-condition-wrapper .Pricebox i").tap(function(){
+			$(this).parent().remove()
+			$(this).dynamic()
+			$(".averagePrice-body-ul li").eq(0).addClass("select").siblings().removeClass("select")
+		})
 	})
-
+	$(".averagePrice-footer .determine").tap(function(){
+		if($(".minprice").val()!=="" && $(".maxprice").val()!==""){
+			var minpricetxt=$(".minprice").val()
+			var maxpricetxt=$(".maxprice").val()
+			$(".demand-condition-wrapper .Pricebox").remove()
+			$(".averagePrice-body-ul li").removeClass("select")
+			$(".demand-condition-wrapper").append("<li class='Pricebox'><span>"+minpricetxt+"-"+maxpricetxt+"万"+"</span><i></i></li>")
+			$(".minprice").val("")
+			$(".maxprice").val("")
+		}
+		$(".averagePrice-footer .determine").dynamic()
+		
+		$(".demand-condition-wrapper .Pricebox i").tap(function(){
+			$(this).parent().remove()
+			$(this).dynamic()
+			$(".averagePrice-body-ul li").eq(0).addClass("select").siblings().removeClass("select")
+		})
+		
+	})
+	
+	
 //头部户型功能明细
+	var houseTypeTxt=0;
 	$(".houseType-body-ul li").tap(function(){
-		var index=$(this).index()
-		$(".houseType-body-ul li").eq(index).addClass("select").siblings().removeClass("select")
+		$(".demand-condition-wrapper .houseTypebox").remove()
+		//均价添加需求并显示在需求项目栏中
+		if(!$(this).hasClass("select")){
+			$(this).addClass("select").siblings().removeClass("select")
+			houseTypeTxt=$(this).find("span").text()
+			if(houseTypeTxt!=="不限"){
+				$(".demand-condition-wrapper").append("<li class='houseTypebox'><span>"+houseTypeTxt+"</span><i></i></li>")
+			}
+			$(".houseType-body-ul li").dynamic()
+		}
+		$(".houseType-body-ul li").dynamic()
+		
+		$(".demand-condition-wrapper .houseTypebox i").tap(function(){
+			$(this).parent().remove()
+			$(this).dynamic()
+			$(".houseType-body-ul li").eq(0).addClass("select").siblings().removeClass("select")
+		})
+		
 	})
+	$(".houseType-footer .empty").tap(function(){
+		$(".houseTypebox").remove()
+		$(".houseType-body-ul li").eq(0).addClass("select").siblings().removeClass("select")
+		$(".houseType-footer .empty").dynamic()
+		districtS.refresh()
+	})
+	
 //头部更多功能明细
+	var opentimeTxt=0;
 	var conditionh=$(".demand-condition").height()
 	var sectionh=$(".section").height()
 	var footerh=$(".footer").height()
 	$(".more .list-nav-pushli-wrapper").height(sectionh+footerh+conditionh)
-	$(".characteristic-content .select").tap(function(){
-		$(this).addClass("selected")
-	})
+	
+	//开盘时间
 	$(".open-time-content span").tap(function(){
-		$(this).addClass("selected").siblings().removeClass("selected")
+		$(".demand-condition-wrapper .opentimebox").remove()
+		//均价添加需求并显示在需求项目栏中
+		if(!$(this).hasClass("selected")){
+			$(this).addClass("selected").siblings().removeClass("selected")
+			opentimeTxt=$(this).text()
+			if(opentimeTxt!=="不限"){
+				$(".demand-condition-wrapper").append("<li class='opentimebox'><span>"+opentimeTxt+"</span><i></i></li>")
+			}
+			$(".open-time-content span").dynamic()
+		}
+		$(".open-time-content span").dynamic()
+		
+		$(".demand-condition-wrapper .opentimebox i").tap(function(){
+			$(this).parent().remove()
+			$(this).dynamic()
+			$(".open-time-content span").removeClass("selected")
+		})
+		
 	})
+	
+	//特色
+	var characteristicTxt=null;
+	$(".characteristic-content .select").tap(function(){
+		if(!$(this).hasClass("selected")){
+			$(this).addClass("selected")
+			characteristicTxt=$(this).text()
+			$(".demand-condition-wrapper").append("<li class='characteristicbox'><span>"+characteristicTxt+"</span><i></i></li>")
+			$(".characteristic-content .select").dynamic()
+		}
+		$(".characteristic-content .select").dynamic()
+		
+		
+		
+		
+		//		$(".demand-condition-wrapper .districtbox i").tap(function(){
+//			var districtboxtxt=$(this).siblings("span").text()
+////			var lenul=$(".district-ul").eq(municipalityindex-1).find(".district-li").length
+//			var model=$(".district-ul").eq(municipalityindex-1).find(".district-li")
+//			//遍历后存放到数组中。。要用的时候再根据需要取.
+//			var arr = new Array();
+//			model.each(function(index){
+//			    arr.push(model.eq(index).text());
+//			})
+//			 console.log(arr)
+//			//调用..---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+////			for(var i in arr){
+////			    console.log(arr[i]);
+////			    if(arr[i]===districtboxtxt){
+////			    		alert(i)
+////			    }
+////			}
+//		})
+		
+		
+		
+		
+		$(".demand-condition-wrapper .characteristicbox i").tap(function(){
+			$(this).parent().remove()
+			$(this).dynamic()
+		})
+		
+	})
+	
+	
 	$(".more-footer .empty").tap(function(){
 		$(".characteristic-content .select").removeClass("selected")
 		$(".open-time-content span").removeClass("selected")
+		$(".demand-condition-wrapper .opentimebox").remove()
+		$(".demand-condition-wrapper .characteristicbox").remove()
+		$(this).dynamic()
 	})
+	
 //头部排序功能明细
 	$(".screen-body-ul li").tap(function(){
 		var index=$(this).index()
@@ -334,10 +467,10 @@ $(function() {
 			var liwNew=$(".demand-condition-wrapper li").eq(iNew).width()+12
 			sNew=sNew+liwNew
 		}
-		if($(".demand-condition-wrapper li").length<=3){
-			$(".demand-condition-wrapper").width(sNew+36)
+		if($(".demand-condition-wrapper li").length<=1){
+			$(".demand-condition-wrapper").width(sNew+55)
 		}
-		else if($(".demand-condition-wrapper li").length>3){
+		else if($(".demand-condition-wrapper li").length>1){
 			$(".demand-condition-wrapper").width(sNew+20)
 		}
 		if($(".demand-condition-wrapper li").length==0){	
@@ -351,10 +484,6 @@ $(function() {
 		demandS.refresh()
 	}
 	
-
-
-
-
 
 
 
