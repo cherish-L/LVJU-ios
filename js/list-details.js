@@ -120,6 +120,39 @@ $(function() {
 		}
 
 	});
+	
+	//收藏成功、取消收藏弹框代码
+	var Suctime=null;
+	var canceltime=null;
+	$('.list-details-pushheader .collection').tap(function(){
+		if(!$(this).hasClass("collectionState")){
+			$(this).addClass("collectionState")
+			clearTimeout(canceltime)
+			$(".collection-cancel").css("display","none")
+			$(".collection-succeed").css("display","block")
+			$(".collection-succeed").css("opacity","1")
+			Suctime=setTimeout(function(){
+				$(".collection-succeed").fadeOut(500)
+			}, 1500)
+		}
+		else if($(this).hasClass("collectionState")){
+			$(this).removeClass("collectionState")
+			clearTimeout(Suctime)
+			$(".collection-succeed").css("display","none")
+			$(".collection-cancel").css("display","block")
+			$(".collection-cancel").css("opacity","1")
+			canceltime=setTimeout(function(){
+				$(".collection-cancel").fadeOut(500)
+			}, 1500)
+		}
+	})
+	
+	
+	
+	
+	
+	
+	
 
 //头部区域功能明细
 	$(".district-ul").css("display","none")
@@ -485,6 +518,29 @@ $(function() {
 	}
 	
 
+	//楼盘位置
+	$(".house-position-pushperipheral .peripheral-li").tap(function(){
+		$(this).addClass("on").siblings().removeClass("on")
+	})
+	
+	$(".pushsection-basicInfo .position").tap(function() {
+		$(".house-position-push").css("left", "0")
+	})
+	
+	$(".house-position-pushheader .return").tap(function(){
+		$(".house-position-push").css("left", wrapw)
+	})
+
+
+
+
+
+
+	
+
+
+
+
 
 
 	var municipalityS = new IScroll('.municipality', {
@@ -510,5 +566,4 @@ $(function() {
 		scrollX: true,
 		scrollY: false
 	})
-
 })
