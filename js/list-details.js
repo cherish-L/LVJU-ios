@@ -47,8 +47,9 @@ $(function() {
 		probeType: 3
 	})
 	
-	var updated;
+	var updated=null;
 	sectionS.on("scroll", function() {
+		clearTimeout(updated)
 		maxY = this.maxScrollY - this.y
 		if(maxY >= 40) {
 			$(".section-wrapper").on("touchstart", function(e) {
@@ -57,10 +58,9 @@ $(function() {
 						e.preventDefault();
 					}
 				}
-				clearTimeout(updated)
 			})
 			$(".section-wrapper").on("touchmove", function(e) {
-//				clearTimeout(updated)
+				clearTimeout(updated)
 				$(".section-load").css("display", "block")
 				$(".section-loading").css("display", "none")
 				$(".section-loadnone").css("display", "none")
@@ -124,9 +124,13 @@ $(function() {
 	//收藏成功、取消收藏弹框代码
 	var Suctime=null;
 	var canceltime=null;
-	$('.list-details-pushheader .collection').tap(function(){
-		if(!$(this).hasClass("collectionState")){
-			$(this).addClass("collectionState")
+	$('.collection').tap(function(){
+		$(this).collection()
+	})
+	
+	$.fn.collection = function () {
+		if(!$('.collection').hasClass("collectionState")){
+			$('.collection').addClass("collectionState")
 			clearTimeout(canceltime)
 			$(".collection-cancel").css("display","none")
 			$(".collection-succeed").css("display","block")
@@ -135,8 +139,8 @@ $(function() {
 				$(".collection-succeed").fadeOut(500)
 			}, 1500)
 		}
-		else if($(this).hasClass("collectionState")){
-			$(this).removeClass("collectionState")
+		else if($('.collection').hasClass("collectionState")){
+			$('.collection').removeClass("collectionState")
 			clearTimeout(Suctime)
 			$(".collection-succeed").css("display","none")
 			$(".collection-cancel").css("display","block")
@@ -145,10 +149,7 @@ $(function() {
 				$(".collection-cancel").fadeOut(500)
 			}, 1500)
 		}
-	})
-	
-	
-	
+	}
 	
 	
 	
@@ -487,11 +488,6 @@ $(function() {
 
 
 
-
-
-
-
-
 //
 	$.fn.dynamic = function () {
 		var sNew=0;
@@ -518,7 +514,7 @@ $(function() {
 	}
 	
 
-	//楼盘位置
+//楼盘位置
 	$(".house-position-pushperipheral .peripheral-li").tap(function(){
 		$(this).addClass("on").siblings().removeClass("on")
 	})
@@ -530,16 +526,60 @@ $(function() {
 	$(".house-position-pushheader .return").tap(function(){
 		$(".house-position-push").css("left", wrapw)
 	})
-
-
-
-
-
-
+//降价通知
+	$(".pushsection-basicInfo .notice").tap(function(){
+		$(".list-details-pushMask").addClass("show")
+		$(".reducePrice-notice").addClass("show")
+	})
 	
+	$(".list-details-pushMask").tap(function(){
+		$(".list-details-pushMask").removeClass("show")
+		$(".reducePrice-notice").removeClass("show")
+	})
+	
+	$(".notice-delete-box i").tap(function(){
+		$(".list-details-pushMask").removeClass("show")
+		$(".reducePrice-notice").removeClass("show")
+	})
+//input内容改变执行函数
+	$(".notice-user input").bind('input propertychange', function() {
+		if($(".notice-user input").val()!==""){
+			$(".notice-user a").css("display","block")
+		}
+		else if($(this).val()==""){
+			$(".notice-user a").css("display","none")
+		}
+	});
+	
+	
+	$(".notice-user a").tap(function(){
+		$(".notice-user input").val("").focus()
+		$(".notice-user a").css("display","none")
+	})
 
-
-
+//楼盘参数弹框
+	$(".peculiarity-content .openMore span").tap(function(){
+		if(!$(this).hasClass("click")){
+			$(this).text("收起")
+			$(this).addClass("click")
+			$(".peculiarity-content p").removeClass("open")
+		}
+		else if($(this).hasClass("click")){
+			$(this).text("展开更多")
+			$(this).removeClass("click")
+			$(".peculiarity-content p").addClass("open")
+		}
+	})
+	$(".ParameterDetails").tap(function(){
+		$(".Property-parameter-push").css("left", "0")
+		$(".collection-cancel").css("display","none")
+		$(".collection-succeed").css("display","none")
+	})
+	$(".Property-parameter-pushheader .return").tap(function() {
+		$(".Property-parameter-push").css("left", wrapw)
+		$(".collection-cancel").css("display","none")
+		$(".collection-succeed").css("display","none")
+	})
 
 
 
@@ -564,6 +604,10 @@ $(function() {
 	var demandS = new IScroll('.demand-condition', {
 		scrollbars: true,
 		scrollX: true,
-		scrollY: false
+		scrollY: false,
+		fadeScrollbars: true
+	})
+	var parameterS = new IScroll('.Property-parameter-pushsection', {
+		scrollbars: false
 	})
 })
