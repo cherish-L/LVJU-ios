@@ -563,11 +563,13 @@ $(function() {
 			$(this).text("收起")
 			$(this).addClass("click")
 			$(".peculiarity-content p").removeClass("open")
+			parameterS.refresh()
 		}
 		else if($(this).hasClass("click")){
 			$(this).text("展开更多")
 			$(this).removeClass("click")
 			$(".peculiarity-content p").addClass("open")
+			parameterS.refresh()
 		}
 	})
 	$(".ParameterDetails").tap(function(){
@@ -610,4 +612,68 @@ $(function() {
 	var parameterS = new IScroll('.Property-parameter-pushsection', {
 		scrollbars: false
 	})
+	var houseS = new IScroll('.house-type-pushsection', {
+		scrollbars: false
+	})
+	
+	
+
+//楼盘户型
+	var screenlisth=$(".screenlist-ul").height()
+	$(".house-type-pushfooter span").tap(function(){
+		$(".screenlist").css("height",screenlisth)
+		$('.house-type-pushMask').addClass("show")
+		
+		$(".screenlist .screenlist-li").tap(function(){
+			var screenlistTxt=$(this).text()
+			$(".house-type-pushfooter span").text(screenlistTxt)
+			$(".house-type-pushfooter span").addClass("screen")
+			$(this).addClass("select").siblings().removeClass("select")
+			$(".screenlist").css("height","0")
+			$('.house-type-pushMask').removeClass("show")
+		})
+		
+		$(".house-type-pushMask").tap(function(){
+			$(".screenlist").css("height","0")
+			$('.house-type-pushMask').removeClass("show")
+		})
+	})
+	
+	var typeDetailS = new IScroll('.house-typeDetail-pushsection', {
+		scrollbars: false
+	})
+	var prompttime=null;
+	$(".house-typeDetail-info .Prompt").tap(function(){
+		clearTimeout(prompttime)
+		$(".house-typeDetail-Prompt").css("display","block")
+		$(".house-typeDetail-Prompt").css("opacity","1")
+		prompttime=setTimeout(function(){
+			$(".house-typeDetail-Prompt").fadeOut(300)
+		}, 1700)
+	})
+
+	$(".list-details-pushsection .allstyle").tap(function(){
+		$(".house-type-push").css("left","0")
+	})
+	
+	$(".house-type-pushheader .return").tap(function(){
+		$(".house-type-push").css("left",wrapw)
+	})
+	
+	$(".house-type-push .pushsection-li").tap(function(){
+		$(".house-typeDetail-push").css("left","0")
+	})
+	
+	$(".house-typeDetail-pushheader .return").tap(function(){
+		$(".house-typeDetail-push").css("left",wrapw)
+	})
+
+	var buildingInfolen=$(".buildingInfo-content-ul li").length
+	$(".buildingInfo-title .num").text("（共"+buildingInfolen+"栋）")
+
+
+
+
+
+
 })

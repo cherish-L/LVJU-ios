@@ -437,140 +437,19 @@
 						<h3 class="houseStyle-title">
 							<span>主力户型</span>
 							<span class="num"></span>
-							<span>全部户型</span>
+							<span class="allstyle">全部户型</span>
 						</h3>
 						<div class="houseStyle-content">
 							<ul class="houseStyle-content-ul">
-								<li>
+								<li v-for="style in houseStyle">
 									<div class="imgbox">
-										<img src="img/drawing.png" />
-										<span>在售</span>
+										<img :src="style.src" />
+										<span v-text="style.sale"></span>
 									</div>
 									<div class="textbox">
-										<p>二期A1户</p>
-										<p>1房1厅1厨1卫1阳台</p>
-										<p>53.60㎡</p>
-									</div>
-								</li>
-								<li>
-									<div class="imgbox">
-										<img src="img/drawing.png" />
-										<span>在售</span>
-									</div>
-									<div class="textbox">
-										<p>二期A1户E12楼A单元</p>
-										<p>1房1厅1厨1卫1阳台</p>
-										<p>53.60㎡</p>
-									</div>
-								</li>
-								<li>
-									<div class="imgbox">
-										<img src="img/drawing.png" />
-										<span>在售</span>
-									</div>
-									<div class="textbox">
-										<p>二期A1户</p>
-										<p>1房1厅1厨1卫1阳台</p>
-										<p>53.60㎡</p>
-									</div>
-								</li>
-								<li>
-									<div class="imgbox">
-										<img src="img/drawing.png" />
-										<span>在售</span>
-									</div>
-									<div class="textbox">
-										<p>二期A1户E12楼A单元</p>
-										<p>1房1厅1厨1卫1阳台</p>
-										<p>53.60㎡</p>
-									</div>
-								</li>
-								<li>
-									<div class="imgbox">
-										<img src="img/drawing.png" />
-										<span>在售</span>
-									</div>
-									<div class="textbox">
-										<p>二期A1户</p>
-										<p>1房1厅1厨1卫1阳台</p>
-										<p>53.60㎡</p>
-									</div>
-								</li>
-								<li>
-									<div class="imgbox">
-										<img src="img/drawing.png" />
-										<span>在售</span>
-									</div>
-									<div class="textbox">
-										<p>二期A1户E12楼A单元</p>
-										<p>1房1厅1厨1卫1阳台</p>
-										<p>53.60㎡</p>
-									</div>
-								</li>
-								<li>
-									<div class="imgbox">
-										<img src="img/drawing.png" />
-										<span>在售</span>
-									</div>
-									<div class="textbox">
-										<p>二期A1户</p>
-										<p>1房1厅1厨1卫1阳台</p>
-										<p>53.60㎡</p>
-									</div>
-								</li>
-								<li>
-									<div class="imgbox">
-										<img src="img/drawing.png" />
-										<span>在售</span>
-									</div>
-									<div class="textbox">
-										<p>二期A1户E12楼A单元</p>
-										<p>1房1厅1厨1卫1阳台</p>
-										<p>53.60㎡</p>
-									</div>
-								</li>
-								<li>
-									<div class="imgbox">
-										<img src="img/drawing.png" />
-										<span>在售</span>
-									</div>
-									<div class="textbox">
-										<p>二期A1户</p>
-										<p>1房1厅1厨1卫1阳台</p>
-										<p>53.60㎡</p>
-									</div>
-								</li>
-								<li>
-									<div class="imgbox">
-										<img src="img/drawing.png" />
-										<span>在售</span>
-									</div>
-									<div class="textbox">
-										<p>二期A1户E12楼A单元</p>
-										<p>1房1厅1厨1卫1阳台</p>
-										<p>53.60㎡</p>
-									</div>
-								</li>
-								<li>
-									<div class="imgbox">
-										<img src="img/drawing.png" />
-										<span>在售</span>
-									</div>
-									<div class="textbox">
-										<p>二期A1户</p>
-										<p>1房1厅1厨1卫1阳台</p>
-										<p>53.60㎡</p>
-									</div>
-								</li>
-								<li>
-									<div class="imgbox">
-										<img src="img/drawing.png" />
-										<span>在售</span>
-									</div>
-									<div class="textbox">
-										<p>二期A1户E12楼A单元</p>
-										<p>1房1厅1厨1卫1阳台</p>
-										<p>53.60㎡</p>
+										<p v-text="style.styles">二期A1户</p>
+										<p v-text="style.parts">1房1厅1厨1卫1阳台</p>
+										<p v-text="style.areas">53.60㎡</p>
 									</div>
 								</li>
 							</ul>
@@ -579,11 +458,36 @@
 					<div class="pushsection-buildingInfo">
 						<h3 class="buildingInfo-title">
 							<span>楼栋信息</span>
-							<span class="num">（共6栋）</span>
+							<span class="num"></span>
 							<span>楼栋详情</span>
 						</h3>
 						<div class="buildingInfo-content">
-
+							<ul class="buildingInfo-content-ul">
+								<li>
+									<span>1#</span>
+									<span>即将上市</span>
+								</li>
+								<li>
+									<span>2#</span>
+									<span>在售</span>
+								</li>
+								<li>
+									<span>3#</span>
+									<span>新地块</span>
+								</li>
+								<li>
+									<span>4#</span>
+									<span>在售</span>
+								</li>
+								<li>
+									<span>5#</span>
+									<span>即将上市</span>
+								</li>
+								<li>
+									<span>6#</span>
+									<span>尾盘</span>
+								</li>
+							</ul>
 						</div>
 					</div>
 					<div class="pushsection-discountActivity">
@@ -704,6 +608,46 @@
 				<div class="contact">联系置业顾问</div>
 			</footer>
 			<div class="list-details-pushMask"></div>
+			<div class="house-position-push">
+				<header class="house-position-pushheader">
+					<div class="signal_bar"></div>
+					<div class="title_bar">
+						<h3 class="title_txt">楼盘位置</h3>
+						<a class="return" href="javascript:;"></a>
+					</div>
+				</header>
+				<section class="house-position-pushsection">
+					<div class="house-position-pushsection-map">
+						<img src="img/map.png" alt="" />
+					</div>
+				</section>
+				<div class="house-position-pushperipheral">
+					<div class="map-peripheral-wrapper">
+						<ul class="peripheral-ul">
+							<li class="peripheral-li">
+								<i></i>
+								<span>公交</span>
+							</li>
+							<li class="peripheral-li">
+								<i></i>
+								<span>医院</span>
+							</li>
+							<li class="peripheral-li">
+								<i></i>
+								<span>银行</span>
+							</li>
+							<li class="peripheral-li">
+								<i></i>
+								<span>超市</span>
+							</li>
+							<li class="peripheral-li">
+								<i></i>
+								<span>学校</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
 			<div class="Property-parameter-push">
 				<header class="Property-parameter-pushheader">
 					<div class="signal_bar"></div>
@@ -853,6 +797,109 @@
 					</div>
 				</section>
 			</div>
+			<div class="house-type-push">
+				<header class="house-type-pushheader">
+					<div class="signal_bar"></div>
+					<div class="title_bar">
+						<h3 class="title_txt">楼盘户型</h3>
+						<a class="return" href="javascript:;"></a>
+						<a class="collectionType" href="javascript:;"></a>
+						<a class="share" href="javascript:;"></a>
+					</div>
+				</header>
+				<section class="house-type-pushsection">
+					<ul class="pushsection-ul">
+						<li class="pushsection-li" v-for="style in houseStyle">
+							<div class="imgbox">
+								<img :src="style.src" />
+								<span v-text="style.sale"></span>
+							</div>
+							<div class="textbox">
+								<p v-text="style.styles">二期A1户</p>
+								<p v-text="style.parts">1房1厅1厨1卫1阳台</p>
+								<p v-text="style.areas">53.60㎡</p>
+								<p v-text="style.price">12000㎡</p>
+							</div>
+						</li>
+					</ul>
+				</section>
+				<footer class="house-type-pushfooter">
+					<span>户型筛选</span>
+				</footer>
+				<div class="house-type-pushMask"></div>
+				<div class="screenlist">
+					<ul class="screenlist-ul">
+						<li class="screenlist-li">全部户型</li>
+						<li class="screenlist-li">一房户型（7）</li>
+						<li class="screenlist-li">二房户型（7）</li>
+						<li class="screenlist-li">三房户型（7）</li>
+						<li class="screenlist-li">四房户型（7）</li>
+						<li class="screenlist-li">五房户型（7）</li>
+						<li class="screenlist-li">别墅（7）</li>
+						<li class="screenlist-li">其他（7）</li>
+					</ul>
+				</div>
+				<div class="house-typeDetail-push">
+					<header class="house-typeDetail-pushheader">
+						<div class="signal_bar"></div>
+						<div class="title_bar">
+							<h3 class="title_txt">户型详情</h3>
+							<a class="return" href="javascript:;"></a>
+							<a class="share" href="javascript:;"></a>
+						</div>
+					</header>
+					<section class="house-typeDetail-pushsection">
+						<div class="pushsection-wrapper">
+							<div class="swiper-container house-typeDetail-banner">
+								<ul class="swiper-wrapper typeDetail-banner-ul"> 
+									<li class="swiper-slide"><img src="img/style.png"/></li>
+									<li class="swiper-slide"><img src="img/style.png"/></li>
+									<li class="swiper-slide"><img src="img/style.png"/></li>
+									<li class="swiper-slide"><img src="img/style.png"/></li>
+								</ul>
+								<div class="swiper-pagination"></div>
+							</div>
+							<div class="house-typeDetail-info">
+								<div class="info-title">
+									<span>二期A1户型</span>
+									<span>在售</span>
+								</div>
+								<div class="member">
+									<span class="infoLable">户型：</span>
+									<div class="specific">1房2厅1卫1厨</div>
+								</div>
+								<div class="member">
+									<span class="infoLable">建筑面积：</span>
+									<div class="specific">56.70㎡</div>
+								</div>
+								<div class="member">
+									<span class="infoLable">参考均价：</span>
+									<div class="specific">18000元/㎡</div>
+									<i class="Prompt"></i>
+								</div>
+								<div class="member">
+									<span class="infoLable">参考总价：</span>
+									<div class="specific">1020600.00</div>
+								</div>
+								<div class="formula">参考总价=参考均价*建筑面积</div>
+							</div>
+							<div class="house-typeDetail-discount">
+								<h3>
+									<span>优惠信息</span>
+									<span>查看详情</span>
+								</h3>
+								<div>
+									<p>项目目前洋房33、34号楼在售中，一梯六户，7层高，其主推户型面积约为63平、73平，购房全款可享9折优惠，按揭则享93折，折后均价约12000元/平，含1800元/平精装修。</p>
+								</div>
+							</div>
+						</div>
+					</section>
+					<div class="house-typeDetail-Prompt">
+						<p>此价格为该楼盘均价</p>
+						<p>不作为具体户型和房号参考价格</p>
+					</div>
+				</div>
+			</div>
 			<div class="push-bombBox">
 				<div class="collection-succeed">
 					<div class="succeed-img">
@@ -882,46 +929,12 @@
 				</div>
 			</div>
 		</div>
-		<div class="house-position-push">
-			<header class="house-position-pushheader">
-				<div class="signal_bar"></div>
-				<div class="title_bar">
-					<h3 class="title_txt">楼盘位置</h3>
-					<a class="return" href="javascript:;"></a>
-				</div>
-			</header>
-			<section class="house-position-pushsection">
-				<div class="house-position-pushsection-map">
-					<img src="img/map.png" alt="" />
-				</div>
-			</section>
-			<div class="house-position-pushperipheral">
-				<div class="map-peripheral-wrapper">
-					<ul class="peripheral-ul">
-						<li class="peripheral-li">
-							<i></i>
-							<span>公交</span>
-						</li>
-						<li class="peripheral-li">
-							<i></i>
-							<span>医院</span>
-						</li>
-						<li class="peripheral-li">
-							<i></i>
-							<span>银行</span>
-						</li>
-						<li class="peripheral-li">
-							<i></i>
-							<span>超市</span>
-						</li>
-						<li class="peripheral-li">
-							<i></i>
-							<span>学校</span>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
+		<script type="text/javascript">
+			var typeDetail = new Swiper(".swiper-container",{
+				pagination : '.swiper-pagination',
+				paginationType : 'fraction'
+			})
+		</script>
 		<script type="text/javascript">
 			var myVue1 = new Vue({
 				el: ".region",
@@ -1250,6 +1263,88 @@
 							className: {
 								stylethree: true
 							}
+						}
+					],
+					houseStyle:[
+						{
+							src: 'img/drawing.png',
+							sale: '在售',
+							styles: '二期A1户',
+							parts: '1房1厅1厨1卫1阳台',
+							areas: '53.60㎡',
+							price: '12000㎡'
+						},
+						{
+							src: 'img/drawing.png',
+							sale: '在售',
+							styles: '二期A1户',
+							parts: '1房1厅1厨1卫1阳台',
+							areas: '53.60㎡',
+							price: '12000㎡'
+						},
+						{
+							src: 'img/drawing.png',
+							sale: '在售',
+							styles: '二期A1户',
+							parts: '1房1厅1厨1卫1阳台',
+							areas: '53.60㎡',
+							price: '12000㎡'
+						},
+						{
+							src: 'img/drawing.png',
+							sale: '在售',
+							styles: '二期A1户',
+							parts: '1房1厅1厨1卫1阳台',
+							areas: '53.60㎡',
+							price: '12000㎡'
+						},
+						{
+							src: 'img/drawing.png',
+							sale: '在售',
+							styles: '二期A1户',
+							parts: '1房1厅1厨1卫1阳台',
+							areas: '53.60㎡',
+							price: '12000㎡'
+						},
+						{
+							src: 'img/drawing.png',
+							sale: '在售',
+							styles: '二期A1户',
+							parts: '1房1厅1厨1卫1阳台',
+							areas: '53.60㎡',
+							price: '12000㎡'
+						},
+						{
+							src: 'img/drawing.png',
+							sale: '在售',
+							styles: '二期A1户',
+							parts: '1房1厅1厨1卫1阳台',
+							areas: '53.60㎡',
+							price: '12000㎡'
+						},
+						{
+							src: 'img/drawing.png',
+							sale: '在售',
+							styles: '二期A1户',
+							parts: '1房1厅1厨1卫1阳台',
+							areas: '53.60㎡',
+							price: '12000㎡'
+						},
+						{
+							src: 'img/drawing.png',
+							sale: '在售',
+							styles: '二期A1户',
+							parts: '1房1厅1厨1卫1阳台',
+							areas: '53.60㎡',
+							price: '12000㎡'
+						},
+						{
+							src: 'img/drawing.png',
+							sale: '在售',
+							styles: '二期A1户',
+							parts: '1房1厅1厨1卫1阳台',
+							areas: '53.60㎡',
+							price: '12000㎡'
 						}
 					]
 				}
