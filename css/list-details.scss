@@ -2325,7 +2325,7 @@ $sc:25;
         position: absolute;
         left: 380/$sc+rem;
         top: 0;
-        z-index: 50;
+        z-index: 20;
         display: flex;
         display: -webkit-flex;
         flex-direction: column;
@@ -2956,7 +2956,6 @@ $sc:25;
                     right: 16/$sc+rem;
                 }
             }
-            
         }
         .house-type-pushsection{
             flex: 1;
@@ -3106,7 +3105,7 @@ $sc:25;
             height: 100%;
             transition: all .3s;
             background: #f4f4f4;
-            position: absolute;
+            position: fixed;
             left: 380/$sc+rem;
             top: 0;
             z-index: 35;
@@ -3352,6 +3351,311 @@ $sc:25;
                     color: #F6F6F6;
                     text-align: center;
                     line-height: 22/$sc+rem;
+                }
+            }
+        }
+    }
+    .building-info-push{
+        width: 100%;
+        height: 100%;
+        transition: all .3s;
+        background: #f4f4f4;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 20;
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: column;
+        .building-info-pushheader{
+            width: 100%;
+            background-color: #f6f6f6;
+            box-shadow: 0 1px 0 0 #cccccc;
+            z-index: 1;
+            .signal_bar {
+                width: 100%;
+                height: 20/$sc+rem;
+            }
+            .title_bar {
+                width: 100%;
+                height: 44/$sc+rem;
+                line-height: 44/$sc+rem;
+                position: relative;
+                .title_txt {
+                    font-size: 18/$sc+rem;
+                    color: #394043!important;
+                    text-align: center;
+                    font-weight: normal;
+                }
+                .return {
+                    display: block;
+                    height: 22/$sc+rem;
+                    width: 22/$sc+rem;
+                    background: url(../img/returnleft.png);
+                    background-size: 22/$sc+rem 22/$sc+rem;
+                    position: absolute;
+                    top: 11/$sc+rem;
+                    left: 16/$sc+rem;
+                }
+            }
+        }
+        .building-info-pushsection{
+            flex: 1;
+            -webkit-flex: 1;
+            overflow: hidden;
+            background: #F4F4F4;
+            .pushsection-wrapper{
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                border-bottom: 1px solid transparent;
+                .building-info-banner{
+                    width: 100%;
+                    height: 417/$sc+rem;
+                    background: lightblue;
+                    .buildingInfo-content-ul{
+                        width: 100%;
+                        height: 100%;
+                        position: relative;
+                        li{
+                            display: inline-block;
+                            height: 20/$sc+rem;
+                            span:first-child{
+                                display: block;
+                                float: left;
+                                width: 23/$sc+rem;
+                                height: 24/$sc+rem;
+                                line-height: 20/$sc+rem;
+                                background: url(../img/sffsdrtsefw3f.png) no-repeat;
+                                background-size: 23/$sc+rem 24/$sc+rem;
+                                text-align: center;
+                                font-size: 12/$sc+rem;
+                                color: #FFFFFF;
+                                
+                            }
+                            span:last-child{
+                                display: block;
+                                float: left;
+                                height: 20/$sc+rem;
+                                line-height: 20/$sc+rem;
+                                padding: 0 4/$sc+rem;
+                                background: #FFFFFF;
+                                font-size: 12/$sc+rem;
+                                color: #394043;
+                            }
+                        }
+                        li:nth-child(1){
+                            position: absolute;
+                            top: 200/$sc+rem;
+                            left: 30/$sc+rem;
+                        }
+                        li:nth-child(2){
+                            position: absolute;
+                            top: 250/$sc+rem;
+                            left: 120/$sc+rem;
+                        }
+                        li:nth-child(3){
+                            position: absolute;
+                            top: 100/$sc+rem;
+                            left: 100/$sc+rem;
+                        }
+                        li:nth-child(4){
+                            position: absolute;
+                            top: 220/$sc+rem;
+                            left: 200/$sc+rem;
+                        }
+                        li:nth-child(5){
+                            position: absolute;
+                            top: 180/$sc+rem;
+                            left: 280/$sc+rem;
+                        }
+                        li:nth-child(6){
+                            position: absolute;
+                            top: 120/$sc+rem;
+                            left: 200/$sc+rem;
+                        }
+                    }
+                }
+                .building-info-switch{
+                    width: 100%;
+                    height: 186/$sc+rem;
+                    padding: 16/$sc+rem 25/$sc+rem;
+                    box-sizing: border-box;
+                    -webkit-box-sizing: border-box;
+                    .building-info-switchBox{
+                        width: 100%;
+                        height: 100%;
+                        .building-info-switch-ul{
+                            width: 100%;
+                            height: 100%;
+                            display: -webkit-flex;
+                            .swiper-slide{
+                                width: 100%;
+                                height: 100%;
+                                -webkit-flex-shrink: 0;
+                                .switch-li-box{
+                                    height: 100%;
+                                    width: 309/$sc+rem;
+                                    margin: 0 8/$sc+rem;
+                                    padding: 16/$sc+rem;
+                                    background: #FFFFFF;
+                                    box-shadow: 0 0 4/$sc+rem 0 rgba(0,0,0,0.10);
+                                    border-radius: 2/$sc+rem;
+                                    box-sizing: border-box;
+                                    -webkit-box-sizing: border-box;
+                                    .switch-li-box-title{
+                                        width: 100%;
+                                        height: 25/$sc+rem;
+                                        .title{
+                                            display: block;
+                                            float: left;
+                                            line-height: 25/$sc+rem;
+                                            font-family: PingFang-SC-Medium;
+                                            font-size: 18/$sc+rem;
+                                            color: #394043;
+                                        }
+                                        .text{
+                                            display: block;
+                                            float: right;
+                                            width: 40/$sc+rem;
+                                            height: 20/$sc+rem;
+                                            line-height: 20/$sc+rem;
+                                            background: #0099EB;
+                                            text-align: center;
+                                            font-size: 12/$sc+rem;
+                                            color: #FFFFFF;
+                                        }
+                                    }
+                                    .switch-li-box-info{
+                                        width: 100%;
+                                        margin-top: 8/$sc+rem;
+                                        display: flex;
+                                        display: -webkit-flex;
+                                        flex-direction: row;
+                                        .switch-li-box-infoleft{
+                                            flex: 1;
+                                            -webkit-flex: 1;
+                                            height: 100%;
+                                            .infoleft-top{
+                                                width: 100%;
+                                                height: 24/$sc+rem;
+                                                line-height: 24/$sc+rem;
+                                                span:first-child{
+                                                    display: block;
+                                                    float: left;
+                                                    width: 60/$sc+rem;
+                                                    font-size: 12/$sc+rem;
+                                                    color: #999999;
+                                                    line-height: 24/$sc+rem;
+                                                }
+                                                span:last-child{
+                                                    display: block;
+                                                    float: left;
+                                                    color: #394043;
+                                                    font-size: 12/$sc+rem;
+                                                    line-height: 24/$sc+rem;
+                                                }
+                                            }
+                                            .infoleft-bottom{
+                                                width: 100%;
+                                                height: 24/$sc+rem;
+                                                line-height: 24/$sc+rem;
+                                                span:first-child{
+                                                    display: block;
+                                                    float: left;
+                                                    width: 60/$sc+rem;
+                                                    font-size: 12/$sc+rem;
+                                                    color: #999999;
+                                                    line-height: 24/$sc+rem;
+                                                }
+                                                span:last-child{
+                                                    display: block;
+                                                    float: left;
+                                                    color: #394043;
+                                                    font-size: 12/$sc+rem;
+                                                    line-height: 24/$sc+rem;
+                                                }
+                                            }
+                                        }
+                                        .switch-li-box-inforight{
+                                            flex: 1;
+                                            -webkit-flex: 1;
+                                            height: 100%;
+                                            .inforight-top{
+                                                width: 100%;
+                                                height: 24/$sc+rem;
+                                                line-height: 24/$sc+rem;
+                                                span:first-child{
+                                                    display: block;
+                                                    float: left;
+                                                    width: 60/$sc+rem;
+                                                    font-size: 12/$sc+rem;
+                                                    color: #999999;
+                                                    line-height: 24/$sc+rem;
+                                                }
+                                                span:last-child{
+                                                    display: block;
+                                                    float: left;
+                                                    color: #394043;
+                                                    font-size: 12/$sc+rem;
+                                                    line-height: 24/$sc+rem;
+                                                }
+                                            }
+                                            .inforight-bottom{
+                                                width: 100%;
+                                                height: 24/$sc+rem;
+                                                line-height: 24/$sc+rem;
+                                                span:first-child{
+                                                    display: block;
+                                                    float: left;
+                                                    width: 60/$sc+rem;
+                                                    font-size: 12/$sc+rem;
+                                                    color: #999999;
+                                                    line-height: 24/$sc+rem;
+                                                }
+                                                span:last-child{
+                                                    display: block;
+                                                    float: left;
+                                                    color: #394043;
+                                                    font-size: 12/$sc+rem;
+                                                    line-height: 24/$sc+rem;
+                                                }
+                                            }
+                                            flex: 1;
+                                            -webkit-flex: 1;
+                                            
+                                        }
+                                    }
+                                    .switch-li-box-line{
+                                        width: 100%;
+                                        height: 1/$sc+rem;
+                                        margin: 8/$sc+rem 0;
+                                        background: #EEEEEE;
+                                    }
+                                    .switch-li-box-permit{
+                                        width: 100%;
+                                        height: 24/$sc+rem;
+                                        line-height: 24/$sc+rem;
+                                        span:first-child{
+                                            display: block;
+                                            float: left;
+                                            width: 60/$sc+rem;
+                                            font-size: 12/$sc+rem;
+                                            color: #999999;
+                                            line-height: 24/$sc+rem;
+                                            }
+                                         span:last-child{
+                                            display: block;
+                                            float: left;
+                                            color: #394043;
+                                            font-size: 12/$sc+rem;
+                                            line-height: 24/$sc+rem;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

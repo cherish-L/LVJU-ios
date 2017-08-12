@@ -31,7 +31,7 @@ $(function() {
 	$(".houseStyle-title .num").text('（' + lilen + '）')
 
 	//点击弹框
-	var wrapw = $(".container").width()
+	var wrapw = $(".container").width()+5
 	$(".listhouse-data-li").tap(function() {
 		$(".list-details-push").css("left", "0")
 	})
@@ -668,12 +668,22 @@ $(function() {
 		$(".house-typeDetail-push").css("left",wrapw)
 	})
 
+	$(".pushsection-houseStyle .houseStyle-content-ul li").tap(function(){
+		$(".house-typeDetail-push").css("left","0")
+	})
+	
+	$(".house-typeDetail-pushheader .return").tap(function(){
+		$(".house-typeDetail-push").css("left",wrapw)
+	})
 	var buildingInfolen=$(".buildingInfo-content-ul li").length
 	$(".buildingInfo-title .num").text("（共"+buildingInfolen+"栋）")
 
 
+	var buildingS = new IScroll('.building-info-pushsection', {
+		scrollbars: false
+	})
 
-
-
+//	var www=$(".building-info-switch").width()
+//	alert(www)
 
 })
