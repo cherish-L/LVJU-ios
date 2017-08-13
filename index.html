@@ -459,7 +459,7 @@
 						<h3 class="buildingInfo-title">
 							<span>楼栋信息</span>
 							<span class="num"></span>
-							<span>楼栋详情</span>
+							<span class="details">楼栋详情</span>
 						</h3>
 						<div class="buildingInfo-content">
 							<ul class="buildingInfo-content-ul">
@@ -912,7 +912,7 @@
 					<div class="pushsection-wrapper">
 						<div class="building-info-banner">
 							<ul class="buildingInfo-content-ul">
-								<li>
+								<li class="switch">
 									<span>1#</span>
 									<span>即将上市</span>
 								</li>
@@ -945,7 +945,7 @@
 										<div class="switch-li-box">
 											<div class="switch-li-box-title">
 												<span class="title">1#</span>
-												<span class="text">在售</span>
+												<span class="text">即将上市</span>
 											</div>
 											<div class="switch-li-box-info">
 												<div class="switch-li-box-infoleft">
@@ -1017,7 +1017,7 @@
 										<div class="switch-li-box">
 											<div class="switch-li-box-title">
 												<span class="title">3#</span>
-												<span class="text">在售</span>
+												<span class="text">新地块</span>
 											</div>
 											<div class="switch-li-box-info">
 												<div class="switch-li-box-infoleft">
@@ -1089,7 +1089,7 @@
 										<div class="switch-li-box">
 											<div class="switch-li-box-title">
 												<span class="title">5#</span>
-												<span class="text">在售</span>
+												<span class="text">即将上市</span>
 											</div>
 											<div class="switch-li-box-info">
 												<div class="switch-li-box-infoleft">
@@ -1125,7 +1125,7 @@
 										<div class="switch-li-box">
 											<div class="switch-li-box-title">
 												<span class="title">6#</span>
-												<span class="text">在售</span>
+												<span class="text">尾盘</span>
 											</div>
 											<div class="switch-li-box-info">
 												<div class="switch-li-box-infoleft">
@@ -1159,7 +1159,6 @@
 									</li>
 								</ul>
 							</div>
-							
 						</div>
 					</div>
 				</section>
@@ -1195,13 +1194,12 @@
 		</div>
 		<script type="text/javascript">
 			var typeDetail = new Swiper(".swiper-container",{
-				
+				pagination : '.swiper-pagination',
+				paginationType : 'fraction'
 			})
 		</script>
 		<script type="text/javascript">
 			var building = new Swiper(".building-info-switchBox",{
-				pagination : '.swiper-pagination',
-				paginationType : 'fraction'
 			})
 		</script>
 		<script type="text/javascript">

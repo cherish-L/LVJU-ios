@@ -683,7 +683,18 @@ $(function() {
 		scrollbars: false
 	})
 
-//	var www=$(".building-info-switch").width()
-//	alert(www)
-
+	
+	$(".building-info-switch").bind("touchend",function(){
+		var index=building.realIndex
+		$(".building-info-pushsection .buildingInfo-content-ul li").eq(index).addClass("switch").siblings().removeClass("switch")
+	})
+	
+	$(".list-details-pushsection .pushsection-buildingInfo .details").tap(function(){
+		$(".building-info-push").css("left","0")
+	})
+	
+	$(".building-info-pushheader .return").tap(function(){
+		$(".house-type-push").css("left",wrapw)
+	})
+	
 })

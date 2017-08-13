@@ -1548,7 +1548,7 @@ $sc:25;
                                 width: 23/$sc+rem;
                                 height: 24/$sc+rem;
                                 line-height: 20/$sc+rem;
-                                background: url(../img/sffsdrtsefw3f.png) no-repeat;
+                                background: url(../img/Dialogblue.png) no-repeat;
                                 background-size: 23/$sc+rem 24/$sc+rem;
                                 text-align: center;
                                 font-size: 12/$sc+rem;
@@ -3360,8 +3360,8 @@ $sc:25;
         height: 100%;
         transition: all .3s;
         background: #f4f4f4;
-        position: fixed;
-        left: 0;
+        position: absolute;
+        left: 380/$sc+rem;
         top: 0;
         z-index: 20;
         display: flex;
@@ -3426,7 +3426,7 @@ $sc:25;
                                 width: 23/$sc+rem;
                                 height: 24/$sc+rem;
                                 line-height: 20/$sc+rem;
-                                background: url(../img/sffsdrtsefw3f.png) no-repeat;
+                                background: url(../img/Dialogblue.png) no-repeat;
                                 background-size: 23/$sc+rem 24/$sc+rem;
                                 text-align: center;
                                 font-size: 12/$sc+rem;
@@ -3442,6 +3442,12 @@ $sc:25;
                                 background: #FFFFFF;
                                 font-size: 12/$sc+rem;
                                 color: #394043;
+                            }
+                        }
+                        li.switch{
+                            span:first-child{
+                                background: url(../img/Dialogred.png) no-repeat;
+                                background-size: 23/$sc+rem 24/$sc+rem;
                             }
                         }
                         li:nth-child(1){
@@ -3517,7 +3523,7 @@ $sc:25;
                                         .text{
                                             display: block;
                                             float: right;
-                                            width: 40/$sc+rem;
+                                            padding: 0 4/$sc+rem;
                                             height: 20/$sc+rem;
                                             line-height: 20/$sc+rem;
                                             background: #0099EB;
