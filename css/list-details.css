@@ -1614,7 +1614,7 @@ li {
   float: left;
   width: 4.8rem;
   height: 100%;
-  margin-right: 0.64rem;
+  margin-right: 16px;
 }
 
 .list-details-push .list-details-pushsection .pushsection-wrapper .pushsection-houseStyle .houseStyle-content .houseStyle-content-ul li .imgbox {
@@ -4146,6 +4146,148 @@ li {
   line-height: 0.96rem;
 }
 
+.list-details-push .historical-price-push {
+  width: 100%;
+  height: 100%;
+  transition: all .3s;
+  background: #f4f4f4;
+  position: absolute;
+  left: 15.2rem;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+}
+
+.list-details-push .historical-price-push .historical-price-pushheader {
+  width: 100%;
+  background-color: #f6f6f6;
+  box-shadow: 0 1px 0 0 #cccccc;
+  z-index: 1;
+}
+
+.list-details-push .historical-price-push .historical-price-pushheader .signal_bar {
+  width: 100%;
+  height: 0.8rem;
+}
+
+.list-details-push .historical-price-push .historical-price-pushheader .title_bar {
+  width: 100%;
+  height: 1.76rem;
+  line-height: 1.76rem;
+  position: relative;
+}
+
+.list-details-push .historical-price-push .historical-price-pushheader .title_bar .title_txt {
+  font-size: 0.72rem;
+  color: #394043 !important;
+  text-align: center;
+  font-weight: normal;
+}
+
+.list-details-push .historical-price-push .historical-price-pushheader .title_bar .return {
+  display: block;
+  height: 0.88rem;
+  width: 0.88rem;
+  background: url(../img/returnleft.png);
+  background-size: 0.88rem 0.88rem;
+  position: absolute;
+  top: 0.44rem;
+  left: 0.64rem;
+}
+
+.list-details-push .historical-price-push .historical-price-pushsection {
+  flex: 1;
+  -webkit-flex: 1;
+  overflow: hidden;
+  background: #F4F4F4;
+}
+
+.list-details-push .historical-price-push .historical-price-pushsection .pushsection-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-bottom: 1px solid transparent;
+}
+
+.list-details-push .historical-price-push .historical-price-pushsection .pushsection-wrapper .historical-price-current {
+  height: 6.12rem;
+  padding-top: 0.96rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.list-details-push .historical-price-push .historical-price-pushsection .pushsection-wrapper .historical-price-current p:first-child {
+  font-family: PingFang-SC-Medium;
+  font-size: 0.64rem;
+  color: #394043;
+  text-align: center;
+  letter-spacing: 0.0108rem;
+}
+
+.list-details-push .historical-price-push .historical-price-pushsection .pushsection-wrapper .historical-price-current p:last-child {
+  text-align: center;
+  margin-top: 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-details-push .historical-price-push .historical-price-pushsection .pushsection-wrapper .historical-price-current p:last-child span:first-child {
+  display: block;
+  font-size: 1.28rem;
+  color: #0099EB;
+}
+
+.list-details-push .historical-price-push .historical-price-pushsection .pushsection-wrapper .historical-price-current p:last-child span:last-child {
+  display: block;
+  margin-left: 0.2rem;
+  font-family: PingFang-SC-Medium;
+  font-size: 0.56rem;
+  margin-top: 0.2rem;
+  color: #9B9B9B;
+  letter-spacing: 0.0096rem;
+}
+
+.list-details-push .historical-price-push .historical-price-pushsection .pushsection-wrapper .historical-price-graph {
+  width: 100%;
+}
+
+.list-details-push .historical-price-push .historical-price-pushsection .pushsection-wrapper .historical-price-graph .graph-data {
+  width: 100%;
+  height: 11.12rem;
+  background: #FFFFFF;
+}
+
+.list-details-push .historical-price-push .historical-price-pushsection .pushsection-wrapper .historical-price-graph .graph-txt {
+  font-size: 0.48rem;
+  text-align: center;
+  margin-top: 0.64rem;
+  color: #0099EB;
+  letter-spacing: 0.0084rem;
+}
+
+.list-details-push .historical-price-push .historical-price-pushfooter {
+  width: 100%;
+  height: 2.08rem;
+  background: #0099EB;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-details-push .historical-price-push .historical-price-pushfooter span {
+  display: block;
+  padding-left: 1.2rem;
+  font-size: 0.64rem;
+  line-height: 0.88rem;
+  color: #FFFFFF;
+  background: url(../img/NoticeReductionwhite.png) no-repeat;
+  background-size: 0.88rem 0.88rem;
+  background-position-x: left;
+}
+
 .list-details-push .push-bombBox .collection-succeed {
   display: none;
   width: 11.2rem;
@@ -4291,7 +4433,6 @@ li {
   line-height: 1.84rem;
   text-align: center;
   background: #0099EB;
-  border: 1px solid #0099EB;
   border-radius: 0.08rem;
   font-size: 0.64rem;
   color: #FFFFFF;
@@ -4326,4 +4467,464 @@ li {
 .list-details-push .push-bombBox .reducePrice-notice.show {
   opacity: 1;
   z-index: 30;
+}
+
+.list-details-push .push-bombBox .discount-info {
+  width: 12.8rem;
+  height: 12.16rem;
+  padding: 0.96rem 1.2rem 1.6rem;
+  background: #FFFFFF;
+  transition: all .3s;
+  opacity: 0;
+  z-index: -1;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  position: absolute;
+  top: 11%;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.list-details-push .push-bombBox .discount-info .discount-txt .writetext {
+  text-align: center;
+  height: 1.12rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-details-push .push-bombBox .discount-info .discount-txt .writetext span {
+  display: block;
+  height: 0.72rem;
+  padding-left: 0.96rem;
+  font-size: 0.64rem;
+  font-family: PingFang-SC-Medium;
+  color: #0099EB;
+  background: url(../img/flag.png) no-repeat;
+  background-size: 0.64rem 0.72rem;
+  background-position-x: left;
+}
+
+.list-details-push .push-bombBox .discount-info .discount-txt .writenum {
+  font-size: 0.56rem;
+  color: #394043;
+  text-align: center;
+  line-height: 1.12rem;
+}
+
+.list-details-push .push-bombBox .discount-info .discount-txt .writenum span {
+  font-size: 0.56rem;
+  color: #0099eb;
+  line-height: 1.12rem;
+  font-family: PingFang-SC-Medium;
+  color: #F6583B;
+  margin: 0 0.16rem;
+}
+
+.list-details-push .push-bombBox .discount-info .discount-username {
+  width: 100%;
+  margin-top: 0.48rem;
+  height: 1.76rem;
+  position: relative;
+}
+
+.list-details-push .push-bombBox .discount-info .discount-username input {
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  font-size: 0.56rem;
+  line-height: 0.8rem;
+  color: #E42824;
+  caret-color: #cccccc;
+}
+
+.list-details-push .push-bombBox .discount-info .discount-username a {
+  display: none;
+  width: 1.52rem;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: url(../img/empty.png) center center no-repeat #FFFFFF;
+  background-size: 0.88rem 0.88rem;
+}
+
+.list-details-push .push-bombBox .discount-info .discount-userphone {
+  width: 100%;
+  margin-top: 0.16rem;
+  height: 1.76rem;
+  position: relative;
+}
+
+.list-details-push .push-bombBox .discount-info .discount-userphone input {
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  font-size: 0.56rem;
+  line-height: 0.8rem;
+  color: #E42824;
+  caret-color: #cccccc;
+}
+
+.list-details-push .push-bombBox .discount-info .discount-userphone a {
+  display: none;
+  width: 1.52rem;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: url(../img/empty.png) center center no-repeat #FFFFFF;
+  background-size: 0.88rem 0.88rem;
+}
+
+.list-details-push .push-bombBox .discount-info .discount-line {
+  width: 100%;
+  height: 0.04rem;
+  background: #EEEEEE;
+}
+
+.list-details-push .push-bombBox .discount-info .discount-button {
+  margin-top: 1.28rem;
+  width: 100%;
+  height: 1.84rem;
+  line-height: 1.84rem;
+  text-align: center;
+  background: #0099EB;
+  border-radius: 0.08rem;
+  font-size: 0.64rem;
+  color: #FFFFFF;
+}
+
+.list-details-push .push-bombBox .discount-info .discount-delete {
+  width: 0.08rem;
+  height: 0.64rem;
+  background: #FFFFFF;
+  position: absolute;
+  right: 0.6rem;
+  top: -0.64rem;
+}
+
+.list-details-push .push-bombBox .discount-info .discount-delete .discount-delete-box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.list-details-push .push-bombBox .discount-info .discount-delete .discount-delete-box i {
+  display: block;
+  width: 1.28rem;
+  height: 1.28rem;
+  background: url(../img/pushdel.png) no-repeat;
+  background-size: 1.28rem 1.28rem;
+  position: absolute;
+  right: -0.6rem;
+  top: -1.28rem;
+}
+
+.list-details-push .push-bombBox .discount-info.show {
+  opacity: 1;
+  z-index: 30;
+}
+
+.list-details-push .push-bombBox .enroll-success {
+  width: 12.8rem;
+  height: 11.2rem;
+  padding: 1.6rem 1.2rem 1.28rem;
+  background: #FFFFFF;
+  transition: all .3s;
+  opacity: 0;
+  z-index: -1;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.list-details-push .push-bombBox .enroll-success .imgbox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-details-push .push-bombBox .enroll-success .imgbox img {
+  display: block;
+  width: 3.84rem;
+  height: 3.84rem;
+}
+
+.list-details-push .push-bombBox .enroll-success .suc-txt {
+  width: 100%;
+  margin-top: 0.16rem;
+}
+
+.list-details-push .push-bombBox .enroll-success .suc-txt p:first-child {
+  text-align: center;
+  font-size: 0.64rem;
+  line-height: 0.88rem;
+  color: #0099EB;
+}
+
+.list-details-push .push-bombBox .enroll-success .suc-txt p:last-child {
+  text-align: center;
+  line-height: 0.64rem;
+  font-size: 0.48rem;
+  color: #6C7072;
+}
+
+.list-details-push .push-bombBox .enroll-success .suc-button {
+  width: 100%;
+  height: 1.84rem;
+  text-align: center;
+  margin-top: 1rem;
+  line-height: 1.84rem;
+  background: #0099EB;
+  border-radius: 0.08rem;
+  font-size: 0.64rem;
+  color: #FFFFFF;
+}
+
+.list-details-push .push-bombBox .enroll-success.show {
+  opacity: 1;
+  z-index: 30;
+}
+
+.list-details-push .push-bombBox .enroll-fail {
+  width: 12.8rem;
+  height: 11.2rem;
+  padding: 1.6rem 1.2rem 1.28rem;
+  background: #FFFFFF;
+  transition: all .3s;
+  opacity: 0;
+  z-index: -1;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.list-details-push .push-bombBox .enroll-fail .imgbox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-details-push .push-bombBox .enroll-fail .imgbox img {
+  display: block;
+  width: 3.84rem;
+  height: 3.84rem;
+}
+
+.list-details-push .push-bombBox .enroll-fail .fail-txt {
+  width: 100%;
+  margin-top: 0.16rem;
+}
+
+.list-details-push .push-bombBox .enroll-fail .fail-txt p:first-child {
+  text-align: center;
+  font-size: 0.64rem;
+  line-height: 0.88rem;
+  color: #0099EB;
+}
+
+.list-details-push .push-bombBox .enroll-fail .fail-txt p:last-child {
+  text-align: center;
+  line-height: 0.64rem;
+  font-size: 0.48rem;
+  color: #6C7072;
+}
+
+.list-details-push .push-bombBox .enroll-fail .fail-button {
+  width: 100%;
+  height: 1.84rem;
+  text-align: center;
+  margin-top: 1rem;
+  line-height: 1.84rem;
+  background: #0099EB;
+  border-radius: 0.08rem;
+  font-size: 0.64rem;
+  color: #FFFFFF;
+}
+
+.list-details-push .push-bombBox .enroll-fail.show {
+  opacity: 1;
+  z-index: 30;
+}
+
+.list-details-push .push-bombBox .contact-adviser {
+  width: 12.8rem;
+  height: 13.6rem;
+  padding: 0.64rem 0.64rem 1.6rem;
+  background: #FFFFFF;
+  transition: all .3s;
+  opacity: 0;
+  z-index: -1;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.list-details-push .push-bombBox .contact-adviser .portrait-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-details-push .push-bombBox .contact-adviser .portrait-box img {
+  display: block;
+  width: 2.56rem;
+  height: 2.56rem;
+  border-radius: 50%;
+}
+
+.list-details-push .push-bombBox .contact-adviser .adviser-txt {
+  margin-top: 0.32rem;
+}
+
+.list-details-push .push-bombBox .contact-adviser .adviser-txt p:first-child {
+  text-align: center;
+  line-height: 1rem;
+  font-size: 0.72rem;
+  color: #0098E9;
+}
+
+.list-details-push .push-bombBox .contact-adviser .adviser-txt p:last-child {
+  text-align: center;
+  font-size: 0.48rem;
+  line-height: 0.64rem;
+  color: #999999;
+  margin-top: 0.08rem;
+}
+
+.list-details-push .push-bombBox .contact-adviser .dial-hotline {
+  width: 100%;
+  margin-top: 1.28rem;
+  padding: 0.36rem 0 0.32rem 0.64rem;
+  background: #0099EB;
+  border-radius: 0.08rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  position: relative;
+}
+
+.list-details-push .push-bombBox .contact-adviser .dial-hotline .dial-hotline-box p:first-child {
+  font-size: 0.48rem;
+  color: #FFFFFF;
+  line-height: 0.64rem;
+}
+
+.list-details-push .push-bombBox .contact-adviser .dial-hotline .dial-hotline-box p:last-child {
+  font-family: PingFang-SC-Medium;
+  font-size: 0.64rem;
+  line-height: 0.92rem;
+  color: #FFFFFF;
+}
+
+.list-details-push .push-bombBox .contact-adviser .dial-hotline a {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.68rem;
+  height: 100%;
+  width: 2.24rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.list-details-push .push-bombBox .contact-adviser .dial-hotline a img {
+  display: block;
+  float: left;
+  width: 0.88rem;
+  height: 0.88rem;
+}
+
+.list-details-push .push-bombBox .contact-adviser .online-time {
+  width: 100%;
+  margin-top: 0.96rem;
+  padding: 0.36rem 0 0.32rem 0.64rem;
+  background: #EE5C44;
+  border-radius: 0.08rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  position: relative;
+}
+
+.list-details-push .push-bombBox .contact-adviser .online-time .online-time-box p:first-child {
+  font-size: 0.48rem;
+  color: #FFFFFF;
+  line-height: 0.64rem;
+}
+
+.list-details-push .push-bombBox .contact-adviser .online-time .online-time-box p:last-child {
+  font-family: PingFang-SC-Medium;
+  font-size: 0.64rem;
+  line-height: 0.92rem;
+  color: #FFFFFF;
+}
+
+.list-details-push .push-bombBox .contact-adviser .online-time a {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.68rem;
+  height: 100%;
+  width: 2.24rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.list-details-push .push-bombBox .contact-adviser .online-time a img {
+  display: block;
+  float: left;
+  width: 0.88rem;
+  height: 0.88rem;
+}
+
+.list-details-push .push-bombBox .contact-adviser .close-box {
+  width: 1.92rem;
+  height: 1.92rem;
+  margin-top: 0.64rem;
+  position: absolute;
+  bottom: -2.56rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-details-push .push-bombBox .contact-adviser .close-box span {
+  display: block;
+  width: 1.92rem;
+  height: 1.92rem;
+}
+
+.list-details-push .push-bombBox .contact-adviser .close-box span img {
+  display: block;
+  float: left;
+  width: 1.92rem;
+  height: 1.92rem;
+}
+
+.list-details-push .push-bombBox .contact-adviser.show {
+  opacity: 1;
+  z-index: 25;
 }

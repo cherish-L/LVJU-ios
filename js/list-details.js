@@ -1,10 +1,13 @@
 $(function() {
+	
+//楼盘页面  正在加载中...（无限自动转动）
 	var angle=0;
 	setInterval(function() {
 		angle += 4
 		$(".section-loading i").css("transform", "rotate(" + angle + "deg)");
 	}, 20)
 	
+//楼盘页面  头部导航点击效果
 	$(".list-nav-litxt").tap(function() {
 		if($(this).hasClass("touch")){
 			$(this).removeClass("touch")
@@ -24,142 +27,10 @@ $(function() {
 		}
 	})
 	
-	
-	var lilen = $(".houseStyle-content-ul li").length
-	var liw = $(".houseStyle-content-ul li").width() + 16
-	$(".houseStyle-content-ul").width(lilen * liw)
-	$(".houseStyle-title .num").text('（' + lilen + '）')
-
-	//点击弹框
-	var wrapw = $(".container").width()+5
-	$(".listhouse-data-li").tap(function() {
-		$(".list-details-push").css("left", "0")
-	})
-	$(".list-details-pushheader .return").tap(function() {
-		$(".list-details-push").css("left", wrapw)
-	})
-
-
-
-	//楼盘头部滚动监听事件
-	var sectionS = new IScroll('.section', {
-		scrollbars: false,
-		probeType: 3
-	})
-	
-	var updated=null;
-	sectionS.on("scroll", function() {
-		clearTimeout(updated)
-		maxY = this.maxScrollY - this.y
-		if(maxY >= 40) {
-			$(".section-wrapper").on("touchstart", function(e) {
-				if(e.cancelable) {
-					if(!e.defaultPrevented) {
-						e.preventDefault();
-					}
-				}
-			})
-			$(".section-wrapper").on("touchmove", function(e) {
-				clearTimeout(updated)
-				$(".section-load").css("display", "block")
-				$(".section-loading").css("display", "none")
-				$(".section-loadnone").css("display", "none")
-				if(maxY >= 40) {
-					$(".section-load").text("松开加载更多...")
-					$(".section-load").css("display", "block")
-					$(".section-loadnone").css("display", "none")
-				}
-			})
-			$(".section-wrapper").on("touchend", function(e) {
-				if(maxY >= 40) {
-					$(".section-load").css("display", "none")
-					$(".section-load").text("上拉加载更多")
-					$(".section-loading").css("display", "block")
-				 	updated=setTimeout(function() {
-						$(".section-loading").css("display", "none")
-						$(".section-loadnone").css("display", "block")
-					}, 1500)
-				}
-			})
-		}
-//		sectionS.refresh()
-	})
-
-	//弹框头部滚动监听事件
-	var pushS = new IScroll('.list-details-pushsection', {
-		scrollbars: false,
-		probeType: 3
-	});
-	var houseStyleS = new IScroll('.houseStyle-content', {
-		scrollbars: false,
-		scrollX: true,
-		scrollY: false
-	});
-
-	pushS.on('scroll', function() {
-		if(pushS.y < 0) {
-			var Scrolly = -(pushS.y / 180)
-			$(".list-details-pushheader").css("background-color", "rgba(246, 246, 246," + Scrolly + ")")
-			$(".list-details-pushheader").css("box-shadow", "0 1px 0 0 rgba(204,204,204," + Scrolly + ")")
-			$(".title_txt").css("color", "rgba(57, 64, 67," + Scrolly + ")")
-			if(pushS.y < -160) {
-				$(".return").addClass("state")
-				$(".collection").addClass("state")
-				$(".share").addClass("state")
-			}
-			if(pushS.y >= -160) {
-				$(".return").removeClass("state")
-				$(".collection").removeClass("state")
-				$(".share").removeClass("state")
-			}
-		}
-		if(pushS.y >= 0) {
-			$(".list-details-pushheader").css("background-color", "rgba(246, 246, 246,0.0)")
-			$(".list-details-pushheader").css("box-shadow", "0 1px 0 0 rgba(204,204,204,0.0)")
-			$(".title_txt").css("color", "rgba(57, 64, 67,0.0)")
-		}
-
-	});
-	
-	//收藏成功、取消收藏弹框代码
-	var Suctime=null;
-	var canceltime=null;
-	$('.collection').tap(function(){
-		$(this).collection()
-	})
-	
-	$.fn.collection = function () {
-		if(!$('.collection').hasClass("collectionState")){
-			$('.collection').addClass("collectionState")
-			clearTimeout(canceltime)
-			$(".collection-cancel").css("display","none")
-			$(".collection-succeed").css("display","block")
-			$(".collection-succeed").css("opacity","1")
-			Suctime=setTimeout(function(){
-				$(".collection-succeed").fadeOut(500)
-			}, 1500)
-		}
-		else if($('.collection').hasClass("collectionState")){
-			$('.collection').removeClass("collectionState")
-			clearTimeout(Suctime)
-			$(".collection-succeed").css("display","none")
-			$(".collection-cancel").css("display","block")
-			$(".collection-cancel").css("opacity","1")
-			canceltime=setTimeout(function(){
-				$(".collection-cancel").fadeOut(500)
-			}, 1500)
-		}
-	}
-	
-	
-	
-	
-
-//头部区域功能明细
+//楼盘页面 头部导航（区域功能明细）
 	$(".district-ul").css("display","none")
 	$(".municipality-ul .municipality-li:first-child").addClass("confirmtwo")
 	$(".district-ul .district-li:first-child").addClass("confirmthree")
-	
 	
 	$(".regionlist-ul .regionlist-li").tap(function(){
 		var index=$(this).index()
@@ -198,14 +69,12 @@ $(function() {
 			}
 		})
 		
-		
 		$(".districtbox").remove()
 		$(".municipality-ul .municipality-li").dynamic()
 		
 		municipalityS.refresh()
 		districtS.refresh()
 	})
-	
 	
 	$(".region-footer .empty").tap(function(){
 		$(".select").removeClass("selected")
@@ -222,7 +91,6 @@ $(function() {
 	var districtTxt=null;
 	var municipalityTxt=null;
 	$(".district-li").tap(function(){
-//		var districtboxtxt=null;
 		if(!$(this).hasClass("confirmthree")){
 			districtTxt=$(this).find(".district-li-txt").text()
 			municipalityTxt=$(".confirmtwo").text()
@@ -266,10 +134,7 @@ $(function() {
 	
 
 
-	
-	
-	
-//头部均价功能明细
+//楼盘页面 头部导航（均价功能明细）
 	var PriceTxt=0;
 	$(".averagePrice-body-ul li").tap(function(){
 		var index=$(this).index()
@@ -312,11 +177,11 @@ $(function() {
 	})
 	
 	
-//头部户型功能明细
+//楼盘页面 头部导航（户型功能明细）
 	var houseTypeTxt=0;
 	$(".houseType-body-ul li").tap(function(){
 		$(".demand-condition-wrapper .houseTypebox").remove()
-		//均价添加需求并显示在需求项目栏中
+		//户型添加需求并显示在需求项目栏中
 		if(!$(this).hasClass("select")){
 			$(this).addClass("select").siblings().removeClass("select")
 			houseTypeTxt=$(this).find("span").text()
@@ -341,7 +206,7 @@ $(function() {
 		districtS.refresh()
 	})
 	
-//头部更多功能明细
+//楼盘页面 头部导航（更多功能明细）
 	var opentimeTxt=0;
 	var conditionh=$(".demand-condition").height()
 	var sectionh=$(".section").height()
@@ -351,7 +216,7 @@ $(function() {
 	//开盘时间
 	$(".open-time-content span").tap(function(){
 		$(".demand-condition-wrapper .opentimebox").remove()
-		//均价添加需求并显示在需求项目栏中
+		//更多添加需求并显示在需求项目栏中
 		if(!$(this).hasClass("selected")){
 			$(this).addClass("selected").siblings().removeClass("selected")
 			opentimeTxt=$(this).text()
@@ -370,7 +235,7 @@ $(function() {
 		
 	})
 	
-	//特色
+	//楼盘页面 头部导航（特色功能明细）
 	var characteristicTxt=null;
 	$(".characteristic-content .select").tap(function(){
 		if(!$(this).hasClass("selected")){
@@ -422,7 +287,7 @@ $(function() {
 		$(this).dynamic()
 	})
 	
-//头部排序功能明细
+//楼盘页面 头部排序功能明细
 	$(".screen-body-ul li").tap(function(){
 		var index=$(this).index()
 		$(".screen-body-ul li").eq(index).addClass("select").siblings().removeClass("select")
@@ -465,9 +330,7 @@ $(function() {
 	})
 
 
-
-
-//需求水平滚动栏
+//楼盘页面 头部需求栏目水平滚动栏
 	//遍历当前以后的需求
 	var s=0;
 	var demandh=$(".demand-condition-wrapper").height()
@@ -476,7 +339,13 @@ $(function() {
 		var liw=$(".demand-condition-wrapper li").eq(i).width()+12
 		s=s+liw
 	}
-	$(".demand-condition-wrapper").width(s+20)
+
+	if($(".demand-condition-wrapper li").length<=3){
+		$(".demand-condition-wrapper").width("100%")
+	}
+	else if($(".demand-condition-wrapper li").length>3){
+		$(".demand-condition-wrapper").width(sNew+20)
+	}
 	
 	//删除单个需求，刷新demand-condition-wrapper盒子的宽度
 	$(".demand-condition-wrapper li i").tap(function(){
@@ -486,9 +355,7 @@ $(function() {
 	
 
 
-
-
-//
+//楼盘页面 头部需求栏目水平滚动栏宽度的设定
 	$.fn.dynamic = function () {
 		var sNew=0;
 		var demandlenNew=$(".demand-condition-wrapper li").length
@@ -496,10 +363,10 @@ $(function() {
 			var liwNew=$(".demand-condition-wrapper li").eq(iNew).width()+12
 			sNew=sNew+liwNew
 		}
-		if($(".demand-condition-wrapper li").length<=1){
-			$(".demand-condition-wrapper").width(sNew+55)
+		if($(".demand-condition-wrapper li").length<=3){
+			$(".demand-condition-wrapper").width("100%")
 		}
-		else if($(".demand-condition-wrapper li").length>1){
+		else if($(".demand-condition-wrapper li").length>3){
 			$(".demand-condition-wrapper").width(sNew+20)
 		}
 		if($(".demand-condition-wrapper li").length==0){	
@@ -514,7 +381,134 @@ $(function() {
 	}
 	
 
-//楼盘位置
+//楼盘页面 底部上拉加载滚动监听事件
+	var sectionS = new IScroll('.section', {
+		scrollbars: false,
+		probeType: 3
+	})
+	
+	var updated=null;
+	sectionS.on("scroll", function() {
+		clearTimeout(updated)
+		maxY = this.maxScrollY - this.y
+		if(maxY >= 40) {
+			$(".section-wrapper").on("touchstart", function(e) {
+				if(e.cancelable) {
+					if(!e.defaultPrevented) {
+						e.preventDefault();
+					}
+				}
+			})
+			$(".section-wrapper").on("touchmove", function(e) {
+				clearTimeout(updated)
+				$(".section-load").css("display", "block")
+				$(".section-loading").css("display", "none")
+				$(".section-loadnone").css("display", "none")
+				if(maxY >= 40) {
+					$(".section-load").text("松开加载更多...")
+					$(".section-load").css("display", "block")
+					$(".section-loadnone").css("display", "none")
+				}
+			})
+			$(".section-wrapper").on("touchend", function(e) {
+				if(maxY >= 40) {
+					$(".section-load").css("display", "none")
+					$(".section-load").text("上拉加载更多")
+					$(".section-loading").css("display", "block")
+				 	updated=setTimeout(function() {
+						$(".section-loading").css("display", "none")
+						$(".section-loadnone").css("display", "block")
+					}, 1500)
+				}
+			})
+		}
+	})
+	
+	
+//楼盘页面--楼盘详情 点击左滑弹框效果
+	var wrapw = $(".container").width()+5
+	$(".listhouse-data-li").tap(function() {
+		$(".list-details-push").css("left", "0")
+	})
+	$(".list-details-pushheader .return").tap(function() {
+		$(".list-details-push").css("left", wrapw)
+	})
+	
+	//楼盘页面--楼盘详情 主力户型左右滑动列表宽度
+	var lilen = $(".houseStyle-content-ul li").length
+	var liw = $(".houseStyle-content-ul li").width() + 16
+	$(".houseStyle-content-ul").width(lilen * liw)
+	$(".houseStyle-title .num").text('（' + lilen + '）')
+	
+	
+	var houseStyleS = new IScroll('.houseStyle-content', {
+		scrollbars: false,
+		scrollX: true,
+		scrollY: false
+	});
+
+	//楼盘页面--楼盘详情 头部滚动透明度渐变监听事件
+	var pushS = new IScroll('.list-details-pushsection', {
+		scrollbars: false,
+		probeType: 3
+	});
+
+	pushS.on('scroll', function() {
+		if(pushS.y < 0) {
+			var Scrolly = -(pushS.y / 180)
+			$(".list-details-pushheader").css("background-color", "rgba(246, 246, 246," + Scrolly + ")")
+			$(".list-details-pushheader").css("box-shadow", "0 1px 0 0 rgba(204,204,204," + Scrolly + ")")
+			$(".title_txt").css("color", "rgba(57, 64, 67," + Scrolly + ")")
+			if(pushS.y < -160) {
+				$(".return").addClass("state")
+				$(".collection").addClass("state")
+				$(".share").addClass("state")
+			}
+			if(pushS.y >= -160) {
+				$(".return").removeClass("state")
+				$(".collection").removeClass("state")
+				$(".share").removeClass("state")
+			}
+		}
+		if(pushS.y >= 0) {
+			$(".list-details-pushheader").css("background-color", "rgba(246, 246, 246,0.0)")
+			$(".list-details-pushheader").css("box-shadow", "0 1px 0 0 rgba(204,204,204,0.0)")
+			$(".title_txt").css("color", "rgba(57, 64, 67,0.0)")
+		}
+
+	});
+	
+	//楼盘页面--楼盘详情 头部点击 收藏成功、取消收藏弹框代码
+	var Suctime=null;
+	var canceltime=null;
+	$('.collection').tap(function(){
+		$(this).collection()
+	})
+	
+	$.fn.collection = function () {
+		if(!$('.collection').hasClass("collectionState")){
+			$('.collection').addClass("collectionState")
+			clearTimeout(canceltime)
+			$(".collection-cancel").css("display","none")
+			$(".collection-succeed").css("display","block")
+			$(".collection-succeed").css("opacity","1")
+			Suctime=setTimeout(function(){
+				$(".collection-succeed").fadeOut(500)
+			}, 1500)
+		}
+		else if($('.collection').hasClass("collectionState")){
+			$('.collection').removeClass("collectionState")
+			clearTimeout(Suctime)
+			$(".collection-succeed").css("display","none")
+			$(".collection-cancel").css("display","block")
+			$(".collection-cancel").css("opacity","1")
+			canceltime=setTimeout(function(){
+				$(".collection-cancel").fadeOut(500)
+			}, 1500)
+		}
+	}
+	
+//楼盘页面--楼盘详情--楼盘位置弹框
 	$(".house-position-pushperipheral .peripheral-li").tap(function(){
 		$(this).addClass("on").siblings().removeClass("on")
 	})
@@ -526,7 +520,7 @@ $(function() {
 	$(".house-position-pushheader .return").tap(function(){
 		$(".house-position-push").css("left", wrapw)
 	})
-//降价通知
+//楼盘页面--楼盘详情--降价通知弹框
 	$(".pushsection-basicInfo .notice").tap(function(){
 		$(".list-details-pushMask").addClass("show")
 		$(".reducePrice-notice").addClass("show")
@@ -541,7 +535,8 @@ $(function() {
 		$(".list-details-pushMask").removeClass("show")
 		$(".reducePrice-notice").removeClass("show")
 	})
-//input内容改变执行函数
+	
+	//楼盘页面--楼盘详情--降价通知弹框  input号码输入框内容改变监听事件 执行函数
 	$(".notice-user input").bind('input propertychange', function() {
 		if($(".notice-user input").val()!==""){
 			$(".notice-user a").css("display","block")
@@ -549,15 +544,26 @@ $(function() {
 		else if($(this).val()==""){
 			$(".notice-user a").css("display","none")
 		}
-	});
+	})
 	
-	
-	$(".notice-user a").tap(function(){
+	$(".reducePrice-notice .notice-user a").tap(function(){
 		$(".notice-user input").val("").focus()
 		$(".notice-user a").css("display","none")
 	})
+	
+	$(".reducePrice-notice .notice-button").tap(function(){
+		if($(".notice-user input").val()!==""){
+			$(".list-details-pushMask").removeClass("show")
+			$(".reducePrice-notice").removeClass("show")
+			$(".notice-user input").val("")
+			$(".notice-user a").css("display","none")
+		}
+		else{
+			alert("不能为空")
+		}
+	})
 
-//楼盘参数弹框
+//楼盘页面--楼盘详情--楼盘参数弹框
 	$(".peculiarity-content .openMore span").tap(function(){
 		if(!$(this).hasClass("click")){
 			$(this).text("收起")
@@ -585,40 +591,7 @@ $(function() {
 
 
 
-	var municipalityS = new IScroll('.municipality', {
-		scrollbars: false
-	})
-	var districtS = new IScroll('.district', {
-		scrollbars: false
-	})
-	var averagePriceS = new IScroll('.averagePrice-body', {
-		scrollbars: false
-	})
-	var houseTypeS = new IScroll('.houseType-body', {
-		scrollbars: false
-	})
-	var moreS = new IScroll('.more-body', {
-		scrollbars: false
-	})
-	var screenS = new IScroll('.screen-body', {
-		scrollbars: false
-	})
-	var demandS = new IScroll('.demand-condition', {
-		scrollbars: true,
-		scrollX: true,
-		scrollY: false,
-		fadeScrollbars: true
-	})
-	var parameterS = new IScroll('.Property-parameter-pushsection', {
-		scrollbars: false
-	})
-	var houseS = new IScroll('.house-type-pushsection', {
-		scrollbars: false
-	})
-	
-	
-
-//楼盘户型
+//楼盘页面--楼盘详情--楼盘户型弹框
 	var screenlisth=$(".screenlist-ul").height()
 	$(".house-type-pushfooter span").tap(function(){
 		$(".screenlist").css("height",screenlisth)
@@ -675,6 +648,9 @@ $(function() {
 	$(".house-typeDetail-pushheader .return").tap(function(){
 		$(".house-typeDetail-push").css("left",wrapw)
 	})
+	
+	
+//楼盘页面--楼盘详情--楼栋信息弹框
 	var buildingInfolen=$(".buildingInfo-content-ul li").length
 	$(".buildingInfo-title .num").text("（共"+buildingInfolen+"栋）")
 
@@ -683,7 +659,6 @@ $(function() {
 		scrollbars: false
 	})
 
-	
 	$(".building-info-switch").bind("touchend",function(){
 		var index=building.realIndex
 		$(".building-info-pushsection .buildingInfo-content-ul li").eq(index).addClass("switch").siblings().removeClass("switch")
@@ -694,7 +669,168 @@ $(function() {
 	})
 	
 	$(".building-info-pushheader .return").tap(function(){
-		$(".house-type-push").css("left",wrapw)
+		$(".building-info-push").css("left",wrapw)
 	})
 	
+//楼盘页面--楼盘详情--优惠信息弹框
+	$(".pushsection-discountActivity .partakeBox").tap(function(){
+		$(".list-details-pushMask").addClass("show")
+		$(".discount-info").addClass("show")
+	})
+	
+	$(".list-details-pushMask").tap(function(){
+		$(".list-details-pushMask").removeClass("show")
+		$(".discount-info").removeClass("show")
+		$(".enroll-success").removeClass("show")
+		$(".enroll-fail").removeClass("show")
+	})
+	
+	$(".discount-delete-box i").tap(function(){
+		$(".list-details-pushMask").removeClass("show")
+		$(".discount-info").removeClass("show")
+	})
+	
+	//楼盘页面--楼盘详情--优惠信息弹框  input姓名输入框内容改变监听事件 执行函数
+	$(".discount-username input").bind('input propertychange', function() {
+		if($(".discount-username input").val()!==""){
+			$(".discount-username a").css("display","block")
+		}
+		else if($(this).val()==""){
+			$(".discount-username a").css("display","none")
+		}
+	})
+	
+	$(".discount-username a").tap(function(){
+		$(".discount-username input").val("").focus()
+		$(".discount-username a").css("display","none")
+	})
+
+	//楼盘页面--楼盘详情--优惠信息弹框  input号码输入框内容改变监听事件 执行函数
+	$(".discount-userphone input").bind('input propertychange', function() {
+		if($(".discount-userphone input").val()!==""){
+			$(".discount-userphone a").css("display","block")
+		}
+		else if($(this).val()==""){
+			$(".discount-userphone a").css("display","none")
+		}
+	})
+	
+	$(".discount-userphone a").tap(function(){
+		$(".discount-userphone input").val("").focus()
+		$(".discount-userphone a").css("display","none")
+	})
+	
+	$(".discount-info .discount-button").tap(function(){
+		if($(".discount-username input").val()!=="" && $(".discount-userphone input").val()!==""){
+			$(".discount-info").removeClass("show")
+			$(".discount-username input").val("")
+			$(".discount-username a").css("display","none")
+			$(".discount-userphone input").val("")
+			$(".discount-userphone a").css("display","none")
+			$(".enroll-fail").addClass("show")
+			$(".enroll-fail .fail-button").tap(function(){
+				$(".enroll-fail").removeClass("show")
+				$(".enroll-success").addClass("show")
+				$(".enroll-success .suc-button").tap(function(){
+					$(".enroll-success").removeClass("show")
+					$(".list-details-pushMask").removeClass("show")
+				})
+			})
+		}
+		else{
+			alert("不能为空")
+		}
+	})
+	
+//楼盘页面--楼盘详情--历史价格弹框
+	$(".historicalPrice-content").tap(function(){
+		$(".historical-price-push").css("left","0")
+	})
+	$(".historical-price-pushheader .return").tap(function(){
+		$(".historical-price-push").css("left",wrapw)
+	})
+	
+//楼盘页面--楼盘详情--历史价格弹框 降价通知弹框  input号码输入框内容改变监听事件 执行函数
+	$(".historical-price-pushfooter span").tap(function(){
+		$(".list-details-pushMask").addClass("show")
+		$(".reducePrice-notice").addClass("show")
+	})
+	
+	$(".list-details-pushMask").tap(function(){
+		$(".list-details-pushMask").removeClass("show")
+		$(".reducePrice-notice").removeClass("show")
+	})
+	
+	$(".notice-delete-box i").tap(function(){
+		$(".list-details-pushMask").removeClass("show")
+		$(".reducePrice-notice").removeClass("show")
+	})
+
+//联系置业顾问
+	$(".list-details-pushfooter .contact").tap(function(){
+		$(".list-details-pushMask").addClass("show")
+		$(".contact-adviser").addClass("show")
+	})
+	
+	$(".list-details-pushMask").tap(function(){
+		$(".list-details-pushMask").removeClass("show")
+		$(".contact-adviser").removeClass("show")
+	})
+	
+	$(".contact-adviser .close-box span").tap(function(){
+		$(".list-details-pushMask").removeClass("show")
+		$(".contact-adviser").removeClass("show")
+	})
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//iscroll.js各各滚动回弹效果
+	var municipalityS = new IScroll('.municipality', {
+		scrollbars: false
+	})
+	var districtS = new IScroll('.district', {
+		scrollbars: false
+	})
+	var averagePriceS = new IScroll('.averagePrice-body', {
+		scrollbars: false
+	})
+	var houseTypeS = new IScroll('.houseType-body', {
+		scrollbars: false
+	})
+	var moreS = new IScroll('.more-body', {
+		scrollbars: false
+	})
+	var screenS = new IScroll('.screen-body', {
+		scrollbars: false
+	})
+	var demandS = new IScroll('.demand-condition', {
+		scrollbars: true,
+		scrollX: true,
+		scrollY: false,
+		fadeScrollbars: true
+	})
+	var parameterS = new IScroll('.Property-parameter-pushsection', {
+		scrollbars: false
+	})
+	var houseS = new IScroll('.house-type-pushsection', {
+		scrollbars: false
+	})
+	var historicalS = new IScroll('.historical-price-pushsection', {
+		scrollbars: false
+	})
 })

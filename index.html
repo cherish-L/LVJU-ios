@@ -362,6 +362,7 @@
 			</footer>
 		</div>
 		<div class="Mask"></div>
+		<!-------- 楼盘页面 楼盘详情弹框 -------->
 		<div class="list-details-push">
 			<header class="list-details-pushheader">
 				<div class="signal_bar"></div>
@@ -607,7 +608,9 @@
 				</div>
 				<div class="contact">联系置业顾问</div>
 			</footer>
+			<!-------- 楼盘页面 楼盘详情 遮罩 -------->
 			<div class="list-details-pushMask"></div>
+			<!-------- 楼盘页面 楼盘详情 楼盘位置弹框 -------->
 			<div class="house-position-push">
 				<header class="house-position-pushheader">
 					<div class="signal_bar"></div>
@@ -648,6 +651,7 @@
 					</div>
 				</div>
 			</div>
+			<!-------- 楼盘页面 楼盘详情 楼盘参数弹框 -------->
 			<div class="Property-parameter-push">
 				<header class="Property-parameter-pushheader">
 					<div class="signal_bar"></div>
@@ -797,6 +801,7 @@
 					</div>
 				</section>
 			</div>
+			<!-------- 楼盘页面 楼盘详情 主力户型弹框 -------->
 			<div class="house-type-push">
 				<header class="house-type-pushheader">
 					<div class="signal_bar"></div>
@@ -900,11 +905,12 @@
 					</div>
 				</div>
 			</div>
+			<!-------- 楼盘页面 楼盘详情 楼栋信息弹框 -------->
 			<div class="building-info-push">
 				<header class="building-info-pushheader">
 					<div class="signal_bar"></div>
 					<div class="title_bar">
-						<h3 class="title_txt">楼盘信息</h3>
+						<h3 class="title_txt">楼栋信息</h3>
 						<a class="return" href="javascript:;"></a>
 					</div>
 				</header>
@@ -1163,16 +1169,48 @@
 					</div>
 				</section>
 			</div>
+			<!-------- 楼盘页面 楼盘详情 历史价格 -------->
+			<div class="historical-price-push">
+				<header class="historical-price-pushheader">
+					<div class="signal_bar"></div>
+					<div class="title_bar">
+						<h3 class="title_txt">历史价格</h3>
+						<a class="return" href="javascript:;"></a>
+					</div>
+				</header>
+				<section class="historical-price-pushsection">
+					<div class="pushsection-wrapper">	
+						<div class="historical-price-current">
+							<p>博鳌滨海小镇&nbsp;当前售价</p>
+							<p>
+								<span>16000</span>
+								<span>元/㎡</span>
+							</p>
+						</div>
+						<div class="historical-price-graph">
+							<div class="graph-data"></div>
+							<div class="graph-txt">左右滑动可查看更多月份价格</div>
+						</div>
+					</div>
+				</section>
+				<footer class="historical-price-pushfooter">
+					<span>开启降价通知</span>
+				</footer>
+			</div>
+			<!-------- 楼盘页面 楼盘详情 小弹框 -------->
 			<div class="push-bombBox">
+				<!-------- 收藏成功 -------->
 				<div class="collection-succeed">
 					<div class="succeed-img">
 						<img src="img/CollectionedSuc.png" alt="" />
 					</div>
 					<p class="succeed-txt">楼盘收藏成功</p>
 				</div>
+				<!-------- 取消收藏 -------->
 				<div class="collection-cancel">
 					<p class="cancel-txt">取消收藏</p>
 				</div>
+				<!-------- 降价通知 -------->
 				<div class="reducePrice-notice">
 					<div class="notice-txt">
 						<p class="writeNumber">填写手机号码</p>
@@ -1188,6 +1226,84 @@
 						<div class="notice-delete-box">
 							<i></i>
 						</div>
+					</div>
+				</div>
+				<!-------- 优惠信息（立即参与） -------->
+				<div class="discount-info">
+					<div class="discount-txt">
+						<p class="writetext">
+							<span>看房·团购·独家优惠</span>
+						</p>
+						<p class="writenum">已有<span>420</span>人报名</p>
+					</div>
+					<div class="discount-username">
+						<input type="text" name="" id="" value="" placeholder="姓名/称呼" />
+						<a href="javascript:;"></a>
+					</div>
+					<div class="discount-line"></div>
+					<div class="discount-userphone">
+						<input type="text" name="" id="" value="" placeholder="您的手机号码" />
+						<a href="javascript:;"></a>
+					</div>
+					<div class="discount-line"></div>
+					<div class="discount-button">确定</div>
+					<div class="discount-delete">
+						<div class="discount-delete-box">
+							<i></i>
+						</div>
+					</div>
+				</div>
+				<!-------- 优惠信息（报名成功） -------->
+				<div class="enroll-success">
+					<div class="imgbox">
+						<img src="img/success.png"/>
+					</div>
+					<div class="suc-txt">
+						<p>恭喜您，报名成功</p>
+						<p>专业置业顾问将会尽快与您联系</p>
+					</div>
+					<div class="suc-button">
+						我知道了
+					</div>
+				</div>
+				<!-------- 优惠信息（报名成功） -------->
+				<div class="enroll-fail">
+					<div class="imgbox">
+						<img src="img/fail.png"/>
+					</div>
+					<div class="fail-txt">
+						<p>报名失败</p>
+						<p>请检查您的网络是否连接</p>
+					</div>
+					<div class="fail-button">
+						重新连接
+					</div>
+				</div>
+				<!-------- 联系置业顾问 -------->
+				<div class="contact-adviser">
+					<div class="portrait-box">
+						<img src="img/portrait.png" alt="" />
+					</div>
+					<div class="adviser-txt">
+						<p>景园悦海湾</p>
+						<p>我们将为您提供专业的置业顾问服务</p>
+					</div>
+					<div class="dial-hotline">
+						<div class="dial-hotline-box">
+							<p>拨打置业热线</p>
+							<p>400-155-3135 转 6676</p>
+						</div>
+						<a href="javascript:;"><img src="img/phone.png"/></a>
+					</div>
+					<div class="online-time">
+						<div class="online-time-box">
+							<p>在线时间 08:30-24:00</p>
+							<p>在线咨询</p>
+						</div>
+						<a href="javascript:;"><img src="img/info.png"/></a>
+					</div>
+					<div class="close-box">
+						<span><img src="img/bigdel.png"/></span>
 					</div>
 				</div>
 			</div>

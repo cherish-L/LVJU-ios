@@ -1075,7 +1075,7 @@ $sc:25;
     opacity: 1;
     z-index: 25;
 }
-
+//<!-------- 楼盘页面 楼盘详情弹框 -------->
 .list-details-push {
     width: 100%;
     height: 100%;
@@ -1439,7 +1439,7 @@ $sc:25;
                             float: left;
                             width: 120/$sc+rem;
                             height: 100%;
-                            margin-right: 16/$sc+rem;
+                            margin-right: 16px;
                             .imgbox {
                                 width: 100%;
                                 height: 120/$sc+rem;
@@ -2302,6 +2302,7 @@ $sc:25;
             background: #0099EB;
         }
     }
+    //<!-------- 楼盘页面 楼盘详情 遮罩 -------->
     .list-details-pushMask {
         width: 100%;
         height: 100%;
@@ -2317,6 +2318,7 @@ $sc:25;
         opacity: 1;
         z-index: 25;
     }
+    //<!-------- 楼盘页面 楼盘详情 楼盘位置弹框 -------->
     .house-position-push {
         width: 100%;
         height: 100%;
@@ -2462,6 +2464,7 @@ $sc:25;
             }
         }
     }
+    //<!-------- 楼盘页面 楼盘详情 楼盘参数弹框 -------->
     .Property-parameter-push {
         width: 100%;
         height: 100%;
@@ -2885,6 +2888,7 @@ $sc:25;
             }
         }
     }
+    //<!-------- 楼盘页面 楼盘详情 主力户型弹框 -------->
     .house-type-push{
         width: 100%;
         height: 100%;
@@ -3355,6 +3359,7 @@ $sc:25;
             }
         }
     }
+    //<!-------- 楼盘页面 楼盘详情 楼栋信息弹框 -------->
     .building-info-push{
         width: 100%;
         height: 100%;
@@ -3666,7 +3671,136 @@ $sc:25;
             }
         }
     }
+    //<!-------- 楼盘页面 楼盘详情 历史价格弹框 -------->
+    .historical-price-push{
+        width: 100%;
+        height: 100%;
+        transition: all .3s;
+        background: #f4f4f4;
+        position: absolute;
+        left: 380/$sc+rem;
+        top: 0;
+        z-index: 20;
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: column;
+        .historical-price-pushheader{
+            width: 100%;
+            background-color: #f6f6f6;
+            box-shadow: 0 1px 0 0 #cccccc;
+            z-index: 1;
+            .signal_bar {
+                width: 100%;
+                height: 20/$sc+rem;
+            }
+            .title_bar {
+                width: 100%;
+                height: 44/$sc+rem;
+                line-height: 44/$sc+rem;
+                position: relative;
+                .title_txt {
+                    font-size: 18/$sc+rem;
+                    color: #394043!important;
+                    text-align: center;
+                    font-weight: normal;
+                }
+                .return {
+                    display: block;
+                    height: 22/$sc+rem;
+                    width: 22/$sc+rem;
+                    background: url(../img/returnleft.png);
+                    background-size: 22/$sc+rem 22/$sc+rem;
+                    position: absolute;
+                    top: 11/$sc+rem;
+                    left: 16/$sc+rem;
+                }
+            }
+        }
+        .historical-price-pushsection{
+            flex: 1;
+            -webkit-flex: 1;
+            overflow: hidden;
+            background: #F4F4F4;
+            .pushsection-wrapper{
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                border-bottom: 1px solid transparent;
+                .historical-price-current{
+                    height: 153/$sc+rem;
+                    padding-top: 24/$sc+rem;
+                    box-sizing: border-box;
+                    -webkit-box-sizing: border-box;
+                    p:first-child{
+                        font-family: PingFang-SC-Medium;
+                        font-size: 16/$sc+rem;
+                        color: #394043;
+                        text-align: center;
+                        letter-spacing: 0.27/$sc+rem;
+                    }
+                    p:last-child{
+                        text-align: center;
+                        margin-top: 15/$sc+rem;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        span:first-child{
+                            display: block;
+                            font-size: 32/$sc+rem;
+                            color: #0099EB;
+                        }
+                        span:last-child{
+                            display: block;
+                            margin-left: 5/$sc+rem;
+                            font-family: PingFang-SC-Medium;
+                            font-size: 14/$sc+rem;
+                            margin-top: 5/$sc+rem;
+                            color: #9B9B9B;
+                            letter-spacing: 0.24/$sc+rem;
+                        }
+                    }
+                }
+                .historical-price-graph{
+                    width: 100%;
+                    .graph-data{
+                        width: 100%;
+                        height: 278/$sc+rem;
+                        background: #FFFFFF;
+                    }
+                    .graph-txt{
+                        font-size: 12/$sc+rem;
+                        text-align: center;
+                        margin-top: 16/$sc+rem;
+                        color: #0099EB;
+                        letter-spacing: 0.21/$sc+rem;
+                    }
+                }
+            }
+        }
+        .historical-price-pushfooter{
+            width: 100%;
+            height: 52/$sc+rem;
+            background: #0099EB;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            span{
+                display: block;
+                padding-left: 30/$sc+rem;
+                font-size: 16/$sc+rem;
+                line-height: 22/$sc+rem;
+                color: #FFFFFF;
+                background: url(../img/NoticeReductionwhite.png) no-repeat;
+                background-size: 22/$sc+rem 22/$sc+rem;
+                background-position-x: left;
+            }
+            
+        }
+        
+    }
+    //<!-------- 楼盘页面 楼盘详情 小弹框 -------->
     .push-bombBox {
+        //<!-------- 收藏成功 -------->
         .collection-succeed {
             display: none;
             width: 280/$sc+rem;
@@ -3704,6 +3838,7 @@ $sc:25;
                 line-height: 22/$sc+rem;
             }
         }
+        //<!-------- 取消收藏 -------->
         .collection-cancel {
             display: none;
             width: 280/$sc+rem;
@@ -3728,6 +3863,7 @@ $sc:25;
                 line-height: 22/$sc+rem;
             }
         }
+        //<!-------- 降价通知 -------->
         .reducePrice-notice {
             width: 320/$sc+rem;
             height: 270/$sc+rem;
@@ -3799,7 +3935,6 @@ $sc:25;
                 line-height: 46/$sc+rem;
                 text-align: center;
                 background: #0099EB;
-                border: 1px solid #0099EB;
                 border-radius: 2/$sc+rem;
                 font-size: 16/$sc+rem;
                 color: #FFFFFF;
@@ -3831,6 +3966,422 @@ $sc:25;
         .reducePrice-notice.show {
             opacity: 1;
             z-index: 30;
+        }
+        //<!-------- 优惠活动 -------->
+        .discount-info {
+            width: 320/$sc+rem;
+            height: 304/$sc+rem;
+            padding: 24/$sc+rem 30/$sc+rem 40/$sc+rem;
+            background: #FFFFFF;
+            transition: all .3s;
+            opacity: 0;
+            z-index: -1;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            position: absolute;
+            top: 11%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            .discount-txt {
+                .writetext {
+                    text-align: center;
+                    height: 28/$sc+rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    span{
+                        display: block;
+                        height: 18/$sc+rem;
+                        padding-left: 24/$sc+rem;
+                        font-size: 16/$sc+rem;
+                        font-family: PingFang-SC-Medium;
+                        color: #0099EB;
+                        background: url(../img/flag.png) no-repeat;
+                        background-size: 16/$sc+rem 18/$sc+rem;
+                        background-position-x: left;
+                    }
+                }
+                .writenum {
+                    font-size: 14/$sc+rem;
+                    color: #394043;
+                    text-align: center;
+                    line-height: 28/$sc+rem;
+                    span {
+                        font-size: 14/$sc+rem;
+                        color: #0099eb;
+                        line-height: 28/$sc+rem;
+                        font-family: PingFang-SC-Medium;
+                        color: #F6583B;
+                        margin: 0 4/$sc+rem;
+                    }
+                }
+            }
+            .discount-username {
+                width: 100%;
+                margin-top: 12/$sc+rem;
+                height: 44/$sc+rem;
+                position: relative;
+                input {
+                    width: 100%;
+                    height: 100%;
+                    background: #FFFFFF;
+                    font-size: 14/$sc+rem;
+                    line-height: 20/$sc+rem;
+                    color: #E42824;
+                    caret-color: #cccccc;
+                }
+                a {
+                    display: none;
+                    width: 38/$sc+rem;
+                    height: 100%;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    background: url(../img/empty.png) center center no-repeat #FFFFFF;
+                    background-size: 22/$sc+rem 22/$sc+rem;
+                }
+            }
+            .discount-userphone {
+                width: 100%;
+                margin-top: 4/$sc+rem;
+                height: 44/$sc+rem;
+                position: relative;
+                input {
+                    width: 100%;
+                    height: 100%;
+                    background: #FFFFFF;
+                    font-size: 14/$sc+rem;
+                    line-height: 20/$sc+rem;
+                    color: #E42824;
+                    caret-color: #cccccc;
+                }
+                a {
+                    display: none;
+                    width: 38/$sc+rem;
+                    height: 100%;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    background: url(../img/empty.png) center center no-repeat #FFFFFF;
+                    background-size: 22/$sc+rem 22/$sc+rem;
+                }
+            }
+            .discount-line {
+                width: 100%;
+                height: 1/$sc+rem;
+                background: #EEEEEE;
+            }
+            .discount-button {
+                margin-top: 32/$sc+rem;
+                width: 100%;
+                height: 46/$sc+rem;
+                line-height: 46/$sc+rem;
+                text-align: center;
+                background: #0099EB;
+                border-radius: 2/$sc+rem;
+                font-size: 16/$sc+rem;
+                color: #FFFFFF;
+            }
+            .discount-delete {
+                width: 2/$sc+rem;
+                height: 16/$sc+rem;
+                background: #FFFFFF;
+                position: absolute;
+                right: 15/$sc+rem;
+                top: -16/$sc+rem;
+                .discount-delete-box {
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    i {
+                        display: block;
+                        width: 32/$sc+rem;
+                        height: 32/$sc+rem;
+                        background: url(../img/pushdel.png) no-repeat;
+                        background-size: 32/$sc+rem 32/$sc+rem;
+                        position: absolute;
+                        right: -15/$sc+rem;
+                        top: -32/$sc+rem;
+                    }
+                }
+            }
+        }
+        .discount-info.show {
+            opacity: 1;
+            z-index: 30;
+        }
+        .enroll-success {
+            width: 320/$sc+rem;
+            height: 280/$sc+rem;
+            padding: 40/$sc+rem 30/$sc+rem 32/$sc+rem;
+            background: #FFFFFF;
+            transition: all .3s;
+            opacity: 0;
+            z-index: -1;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            .imgbox{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    display: block;
+                    width: 96/$sc+rem;
+                    height: 96/$sc+rem;
+                }
+            }
+            .suc-txt{
+                width: 100%;
+                margin-top: 4/$sc+rem;
+                p:first-child{
+                    text-align: center;
+                    font-size: 16/$sc+rem;
+                    line-height: 22/$sc+rem;
+                    color: #0099EB;
+                }
+                p:last-child{
+                    text-align: center;
+                    line-height: 16/$sc+rem;
+                    font-size: 12/$sc+rem;
+                    color: #6C7072;
+                    
+                }
+            }
+            .suc-button{
+                width: 100%;
+                height: 46/$sc+rem;
+                text-align: center;
+                margin-top: 25/$sc+rem;
+                line-height: 46/$sc+rem;
+                background: #0099EB;
+                border-radius: 2/$sc+rem;
+                font-size: 16/$sc+rem;
+                color: #FFFFFF;
+            }
+        }
+        .enroll-success.show {
+            opacity: 1;
+            z-index: 30;
+        }
+        .enroll-fail {
+            width: 320/$sc+rem;
+            height: 280/$sc+rem;
+            padding: 40/$sc+rem 30/$sc+rem 32/$sc+rem;
+            background: #FFFFFF;
+            transition: all .3s;
+            opacity: 0;
+            z-index: -1;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            .imgbox{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    display: block;
+                    width: 96/$sc+rem;
+                    height: 96/$sc+rem;
+                }
+            }
+            .fail-txt{
+                width: 100%;
+                margin-top: 4/$sc+rem;
+                p:first-child{
+                    text-align: center;
+                    font-size: 16/$sc+rem;
+                    line-height: 22/$sc+rem;
+                    color: #0099EB;
+                }
+                p:last-child{
+                    text-align: center;
+                    line-height: 16/$sc+rem;
+                    font-size: 12/$sc+rem;
+                    color: #6C7072;
+                    
+                }
+            }
+            .fail-button{
+                width: 100%;
+                height: 46/$sc+rem;
+                text-align: center;
+                margin-top: 25/$sc+rem;
+                line-height: 46/$sc+rem;
+                background: #0099EB;
+                border-radius: 2/$sc+rem;
+                font-size: 16/$sc+rem;
+                color: #FFFFFF;
+            }
+        }
+        .enroll-fail.show {
+            opacity: 1;
+            z-index: 30;
+        }
+        .contact-adviser{
+            width: 320/$sc+rem;
+            height: 340/$sc+rem;
+            padding: 16/$sc+rem 16/$sc+rem 40/$sc+rem;
+            background: #FFFFFF;
+            transition: all .3s;
+            opacity: 0;
+            z-index: -1;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            position: absolute;
+            top: 20%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            .portrait-box{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    display: block;
+                    width: 64/$sc+rem;
+                    height: 64/$sc+rem;
+                    border-radius: 50%;
+                }
+            }
+            .adviser-txt{
+                margin-top: 8/$sc+rem;
+                p:first-child{
+                    text-align: center; 
+                    line-height: 25/$sc+rem;
+                    font-size: 18/$sc+rem;
+                    color: #0098E9;
+                }
+                p:last-child{
+                    text-align: center;
+                    font-size: 12/$sc+rem;
+                    line-height: 16/$sc+rem;
+                    color: #999999;
+                    margin-top: 2/$sc+rem;
+                }
+            }
+            .dial-hotline{
+                width: 100%;
+                margin-top: 32/$sc+rem;
+                padding:9/$sc+rem 0 8/$sc+rem 16/$sc+rem;
+                background: #0099EB;
+                border-radius: 2/$sc+rem;
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                position: relative;
+                .dial-hotline-box{
+                    p:first-child{
+                        font-size: 12/$sc+rem;
+                        color: #FFFFFF;
+                        line-height: 16/$sc+rem;
+                    }
+                    p:last-child{
+                        font-family: PingFang-SC-Medium;
+                        font-size: 16/$sc+rem;
+                        line-height: 23/$sc+rem;
+                        color: #FFFFFF;
+                    }
+                }
+                a{
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    padding: 17/$sc+rem;
+                    height: 100%;
+                    width: 56/$sc+rem;
+                    box-sizing: border-box;
+                    -webkit-box-sizing: border-box;
+                    img{
+                        display: block;
+                        float: left;
+                        width: 22/$sc+rem;
+                        height: 22/$sc+rem;
+                    }
+                }
+            }
+            .online-time{
+                width: 100%;
+                margin-top: 24/$sc+rem;
+                padding:9/$sc+rem 0 8/$sc+rem 16/$sc+rem;
+                background: #EE5C44;
+                border-radius: 2/$sc+rem;
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                position: relative;
+                .online-time-box{
+                    p:first-child{
+                        font-size: 12/$sc+rem;
+                        color: #FFFFFF;
+                        line-height: 16/$sc+rem;
+                    }
+                    p:last-child{
+                        font-family: PingFang-SC-Medium;
+                        font-size: 16/$sc+rem;
+                        line-height: 23/$sc+rem;
+                        color: #FFFFFF;
+                    }
+                }
+                a{
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    padding: 17/$sc+rem;
+                    height: 100%;
+                    width: 56/$sc+rem;
+                    box-sizing: border-box;
+                    -webkit-box-sizing: border-box;
+                    img{
+                        display: block;
+                        float: left;
+                        width: 22/$sc+rem;
+                        height: 22/$sc+rem;
+                    }
+                }
+            }
+            .close-box{
+                width: 48/$sc+rem;
+                height: 48/$sc+rem;
+                margin-top: 16/$sc+rem;
+                position: absolute;
+                bottom: -64/$sc+rem;
+                left: 0;
+                right: 0;
+                margin: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                span{
+                    display: block;
+                    width: 48/$sc+rem;
+                    height: 48/$sc+rem;
+                    img{
+                        display: block;
+                        float: left;
+                        width: 48/$sc+rem;
+                        height: 48/$sc+rem;
+                    }
+                }
+            }
+        }
+        .contact-adviser.show{
+            opacity: 1;
+            z-index: 25;
         }
     }
 }
