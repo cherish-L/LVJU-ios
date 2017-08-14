@@ -2348,20 +2348,19 @@ li {
   border-radius: 0.48rem;
   position: relative;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 
 .list-details-push .list-details-pushsection .pushsection-wrapper .pushsection-propertyReview .propertyReview-content .propertyReview-ul .propertyReview-li .stylethree .user-comments .showall .showall-wrapper .showall-wrapper-txt {
-  display: inline-block;
-  height: 0.48rem;
-  width: 2rem;
+  display: block;
+  line-height: 0.64rem;
   font-size: 0.48rem;
   color: #0099EB;
-  padding-right: 0.4rem;
-  background: url(../img/bottom.png) right 0.16rem no-repeat;
-  background-size: 0.32rem 0.16rem;
+  padding-right: 0.52rem;
+  background: url(../img/bottom.png) no-repeat;
+  background-size: 0.36rem 0.64rem;
+  background-position-x: right;
 }
 
 .list-details-push .list-details-pushsection .pushsection-wrapper .pushsection-propertyReview .propertyReview-content .propertyReview-ul .propertyReview-li .stylethree .user-comments .otheruser {
@@ -4286,6 +4285,524 @@ li {
   background: url(../img/NoticeReductionwhite.png) no-repeat;
   background-size: 0.88rem 0.88rem;
   background-position-x: left;
+}
+
+.list-details-push .info-review-push {
+  width: 100%;
+  height: 100%;
+  transition: all .3s;
+  background: #f4f4f4;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+}
+
+.list-details-push .info-review-push .info-review-pushheader {
+  width: 100%;
+  background-color: #f6f6f6;
+  box-shadow: 0 1px 0 0 #cccccc;
+  z-index: 1;
+}
+
+.list-details-push .info-review-push .info-review-pushheader .signal_bar {
+  width: 100%;
+  height: 0.8rem;
+}
+
+.list-details-push .info-review-push .info-review-pushheader .title_bar {
+  width: 100%;
+  height: 1.76rem;
+  line-height: 1.76rem;
+  position: relative;
+}
+
+.list-details-push .info-review-push .info-review-pushheader .title_bar .title_txt {
+  font-size: 0.72rem;
+  color: #394043 !important;
+  text-align: center;
+  font-weight: normal;
+}
+
+.list-details-push .info-review-push .info-review-pushheader .title_bar .return {
+  display: block;
+  height: 0.88rem;
+  width: 0.88rem;
+  background: url(../img/returnleft.png);
+  background-size: 0.88rem 0.88rem;
+  position: absolute;
+  top: 0.44rem;
+  left: 0.64rem;
+}
+
+.list-details-push .info-review-push .info-review-pushsection {
+  flex: 1;
+  -webkit-flex: 1;
+  overflow: hidden;
+  background: #F4F4F4;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper {
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 1.28rem;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content {
+  width: 100%;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul {
+  width: 100%;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li {
+  background: #FFF;
+  padding: 0.72rem;
+  box-shadow: inset 0 1px 0 0 #EEEEEE;
+  -webkit-box-shadow: inset 0 1px 0 0 #EEEEEE;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styleone {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styleone .user-avatar {
+  width: 1.28rem;
+  height: 100%;
+  margin-right: 0.48rem;
+  position: relative;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styleone .user-avatar .user-avatar-img {
+  width: 1.28rem;
+  height: 1.28rem;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styleone .user-comments {
+  flex: 1;
+  -webkit-flex: 1;
+  width: 10.72rem;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styleone .user-comments .user-name {
+  font-size: 0.56rem;
+  color: #0099EB;
+  line-height: 0.8rem;
+  text-align: left;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styleone .user-comments .user-info {
+  width: 100%;
+  height: 0.64rem;
+  position: relative;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styleone .user-comments .user-info span {
+  font-size: 0.48rem;
+  line-height: 0.64rem;
+  color: #999999;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styleone .user-comments .user-info .user-info-from {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styleone .user-comments .user-info .user-info-time {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styleone .user-comments .user-say {
+  margin-top: 0.72rem;
+  font-size: 0.64rem;
+  color: #6C7072;
+  line-height: 1.12rem;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styleone .user-comments .user-say.showmore {
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styleone .user-comments .showall {
+  display: none;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styleone .user-comments .otheruser {
+  display: none;
+  background: #F0F0F0;
+  margin-top: 0.64rem;
+  padding: 0.64rem;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styleone .user-comments .otheruser .otheruser-name {
+  font-size: 0.56rem;
+  color: #0099EB;
+  line-height: 0.8rem;
+  text-align: left;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styleone .user-comments .otheruser .otheruser-info {
+  width: 100%;
+  height: 0.64rem;
+  position: relative;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styleone .user-comments .otheruser .otheruser-info span {
+  font-size: 0.48rem;
+  line-height: 0.64rem;
+  color: #999999;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styleone .user-comments .otheruser .otheruser-info .otheruser-info-from {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styleone .user-comments .otheruser .otheruser-info .otheruser-info-time {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styleone .user-comments .otheruser .otheruser-phone {
+  font-size: 0.48rem;
+  line-height: 0.64rem;
+  color: #999999;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styleone .user-comments .otheruser .otheruser-say {
+  margin-top: 0.72rem;
+  font-size: 0.64rem;
+  color: #6C7072;
+  line-height: 1.12rem;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styletwo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styletwo .user-avatar {
+  width: 1.28rem;
+  height: 100%;
+  margin-right: 0.48rem;
+  position: relative;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styletwo .user-avatar .user-avatar-img {
+  width: 1.28rem;
+  height: 1.28rem;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styletwo .user-comments {
+  flex: 1;
+  -webkit-flex: 1;
+  width: 10.72rem;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styletwo .user-comments .user-name {
+  font-size: 0.56rem;
+  color: #0099EB;
+  line-height: 0.8rem;
+  text-align: left;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styletwo .user-comments .user-info {
+  width: 100%;
+  height: 0.64rem;
+  position: relative;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styletwo .user-comments .user-info span {
+  font-size: 0.48rem;
+  line-height: 0.64rem;
+  color: #999999;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styletwo .user-comments .user-info .user-info-from {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styletwo .user-comments .user-info .user-info-time {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styletwo .user-comments .user-say {
+  margin-top: 0.72rem;
+  font-size: 0.64rem;
+  color: #6C7072;
+  line-height: 1.12rem;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styletwo .user-comments .user-say.showmore {
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styletwo .user-comments .showall {
+  display: none;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styletwo .user-comments .otheruser {
+  background: #F0F0F0;
+  margin-top: 0.64rem;
+  padding: 0.64rem;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styletwo .user-comments .otheruser .otheruser-name {
+  font-size: 0.56rem;
+  color: #0099EB;
+  line-height: 0.8rem;
+  text-align: left;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styletwo .user-comments .otheruser .otheruser-info {
+  width: 100%;
+  height: 0.64rem;
+  position: relative;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styletwo .user-comments .otheruser .otheruser-info span {
+  font-size: 0.48rem;
+  line-height: 0.64rem;
+  color: #999999;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styletwo .user-comments .otheruser .otheruser-info .otheruser-info-from {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styletwo .user-comments .otheruser .otheruser-info .otheruser-info-time {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styletwo .user-comments .otheruser .otheruser-phone {
+  font-size: 0.48rem;
+  line-height: 0.64rem;
+  color: #999999;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .styletwo .user-comments .otheruser .otheruser-say {
+  margin-top: 0.72rem;
+  font-size: 0.64rem;
+  color: #6C7072;
+  line-height: 1.12rem;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .stylethree {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .stylethree .user-avatar {
+  width: 1.28rem;
+  height: 100%;
+  margin-right: 0.48rem;
+  position: relative;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .stylethree .user-avatar .user-avatar-img {
+  width: 1.28rem;
+  height: 1.28rem;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .stylethree .user-comments {
+  flex: 1;
+  -webkit-flex: 1;
+  width: 10.72rem;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .stylethree .user-comments .user-name {
+  font-size: 0.56rem;
+  color: #0099EB;
+  line-height: 0.8rem;
+  text-align: left;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .stylethree .user-comments .user-info {
+  width: 100%;
+  height: 0.64rem;
+  position: relative;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .stylethree .user-comments .user-info span {
+  font-size: 0.48rem;
+  line-height: 0.64rem;
+  color: #999999;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .stylethree .user-comments .user-info .user-info-from {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .stylethree .user-comments .user-info .user-info-time {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .stylethree .user-comments .user-say {
+  margin-top: 0.72rem;
+  font-size: 0.64rem;
+  color: #6C7072;
+  line-height: 1.12rem;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .stylethree .user-comments .user-say.showmore {
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .stylethree .user-comments .showall {
+  height: 0.96rem;
+  width: 100%;
+  margin-top: 0.64rem;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .stylethree .user-comments .showall .showall-wrapper {
+  float: right;
+  width: 3.08rem;
+  height: 0.96rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  background: #ECF4F9;
+  border: 1px solid #0099EB;
+  border-radius: 0.48rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .stylethree .user-comments .showall .showall-wrapper .showall-wrapper-txt {
+  display: block;
+  line-height: 0.64rem;
+  font-size: 0.48rem;
+  color: #0099EB;
+  padding-right: 0.52rem;
+  background: url(../img/bottom.png) no-repeat;
+  background-size: 0.36rem 0.64rem;
+  background-position-x: right;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .stylethree .user-comments .otheruser {
+  display: none;
+  background: #F0F0F0;
+  margin-top: 0.64rem;
+  padding: 0.64rem;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .stylethree .user-comments .otheruser .otheruser-name {
+  font-size: 0.56rem;
+  color: #0099EB;
+  line-height: 0.8rem;
+  text-align: left;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .stylethree .user-comments .otheruser .otheruser-info {
+  width: 100%;
+  height: 0.64rem;
+  position: relative;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .stylethree .user-comments .otheruser .otheruser-info span {
+  font-size: 0.48rem;
+  line-height: 0.64rem;
+  color: #999999;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .stylethree .user-comments .otheruser .otheruser-info .otheruser-info-from {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .stylethree .user-comments .otheruser .otheruser-info .otheruser-info-time {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .stylethree .user-comments .otheruser .otheruser-phone {
+  font-size: 0.48rem;
+  line-height: 0.64rem;
+  color: #999999;
+}
+
+.list-details-push .info-review-push .info-review-pushsection .pushsection-wrapper .propertyReview-content .propertyReview-ul .propertyReview-li .stylethree .user-comments .otheruser .otheruser-say {
+  margin-top: 0.72rem;
+  font-size: 0.64rem;
+  color: #6C7072;
+  line-height: 1.12rem;
+}
+
+.list-details-push .info-review-push .info-review-pushfooter {
+  width: 100%;
+  height: 2.24rem;
+  background: #FFFFFF;
+  padding: 0.4rem 0.64rem;
+  box-shadow: inset 0 1px 0 0 #CCCCCC;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  z-index: 1;
+}
+
+.list-details-push .info-review-push .info-review-pushfooter .pushfooter-wrapper {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #EEEEEE;
+  border-radius: 0.72rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-details-push .info-review-push .info-review-pushfooter .pushfooter-wrapper span {
+  display: block;
+  padding-left: 0.88rem;
+  font-size: 0.64rem;
+  line-height: 0.64rem;
+  color: #6C7072;
+  background: url(../img/comment.png) no-repeat;
+  background-size: 0.56rem 0.56rem;
+  background-position-y: 0.04rem;
 }
 
 .list-details-push .push-bombBox .collection-succeed {

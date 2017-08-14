@@ -833,4 +833,8 @@ $(function() {
 	var historicalS = new IScroll('.historical-price-pushsection', {
 		scrollbars: false
 	})
+	var reviewS = new IScroll('.info-review-pushsection', {
+		scrollbars: false
+	})
+	
 })
