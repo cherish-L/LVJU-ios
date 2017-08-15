@@ -793,7 +793,6 @@ $(function() {
 	})
 	//input文本框
 	var panelw=$(".writing-panel").height()
-	
 	$(".info-review-pushfooter .pushfooter-wrapper").tap(function(){
 		$(".info-review-push .text-box").focus()
 		$(".info-review-pushMask").addClass("show")
