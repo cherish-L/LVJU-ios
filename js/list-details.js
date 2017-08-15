@@ -788,7 +788,7 @@ $(function() {
 		$(".info-review-push").css("left","0")
 	})
 	
-	$(".list-details-pushheader .return").tap(function(){
+	$(".info-review-pushheader .return").tap(function(){
 		$(".info-review-push").css("left",wrapw)
 	})
 	//input文本框
