@@ -795,18 +795,22 @@ $(function() {
 	var panelw=$(".writing-panel").height()
 	
 	$(".info-review-pushfooter .pushfooter-wrapper").tap(function(){
+		$(".info-review-push .text-box").focus()
 		$(".info-review-pushMask").addClass("show")
 		$(".info-review-writing").css("bottom","0")
 	})
 	$('.info-review-pushMask').bind("touchstart",function(event){
+		$(".info-review-push .text-box").blur()
 		$(".info-review-pushMask").removeClass("show")
 		$(".info-review-writing").css("bottom",-panelw)
   });
 	$(".info-review-writing .cancel").tap(function(){
+		$(".info-review-push .text-box").blur()
 		$(".info-review-pushMask").removeClass("show")
 		$(".info-review-writing").css("bottom",-panelw)
 	})
 	$(".send").tap(function(){
+		$(".info-review-push .text-box").blur()
 		$(".info-review-pushMask").removeClass("show")
 		$(".info-review-writing").css("bottom",-panelw)
 		$(".text-box").val("")
