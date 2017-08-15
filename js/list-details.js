@@ -766,7 +766,7 @@ $(function() {
 		$(".reducePrice-notice").removeClass("show")
 	})
 
-//联系置业顾问
+//楼盘页面--楼盘详情--联系置业顾问弹框
 	$(".list-details-pushfooter .contact").tap(function(){
 		$(".list-details-pushMask").addClass("show")
 		$(".contact-adviser").addClass("show")
@@ -782,8 +782,53 @@ $(function() {
 		$(".contact-adviser").removeClass("show")
 	})
 
+
+//楼盘页面--楼盘详情--资讯评论弹框
+	$(".list-details-pushsection .pushsection-propertyReview .view-all").tap(function(){
+		$(".info-review-push").css("left","0")
+	})
 	
+	$(".list-details-pushheader .return").tap(function(){
+		$(".info-review-push").css("left",wrapw)
+	})
+	//input文本框
+	var panelw=$(".writing-panel").height()
 	
+	$(".info-review-pushfooter .pushfooter-wrapper").tap(function(){
+		$(".info-review-pushMask").addClass("show")
+		$(".info-review-writing").css("bottom","0")
+	})
+	$('.info-review-pushMask').bind("touchstart",function(event){
+		$(".info-review-pushMask").removeClass("show")
+		$(".info-review-writing").css("bottom",-panelw)
+  });
+	$(".info-review-writing .cancel").tap(function(){
+		$(".info-review-pushMask").removeClass("show")
+		$(".info-review-writing").css("bottom",-panelw)
+	})
+	$(".send").tap(function(){
+		$(".info-review-pushMask").removeClass("show")
+		$(".info-review-writing").css("bottom",-panelw)
+		$(".text-box").val("")
+	})
+	
+	$(".showall-wrapper").tap(function(){
+		$(".user-say").removeClass("showmore")
+		$(".showall").css("display","none")
+		atPushS.refresh()
+	})
+	
+	function fixedWatch(el) {
+  		if(document.activeElement.nodeName == 'INPUT'){
+    			el.css('position', 'static');
+  		} else {
+    			el.css('position', 'fixed');
+  		}
+	}
+ 
+	setInterval(function () {
+  		fixedWatch($('.info-review-writing'));
+	}, 500);
 	
 	
 	

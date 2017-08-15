@@ -530,7 +530,7 @@
 						<h3 class="propertyReview-title">
 							<span>楼盘点评</span>
 							<span class="num">（279）</span>
-							<span>查看全部</span>
+							<span class="view-all">查看全部</span>
 						</h3>
 						<div class="propertyReview-content">
 							<ul class="propertyReview-ul">
@@ -1208,10 +1208,10 @@
 				</header>
 				<section class="info-review-pushsection">
 					<div class="pushsection-wrapper">
-						<div class="propertyReview-content">
-							<ul class="propertyReview-ul">
-								<li class="propertyReview-li" v-for="user in commention">
-									<div class="propertyReview-li-box" :class="user.className">
+						<div class="info-review-content">
+							<ul class="info-review-ul">
+								<li class="info-review-li" v-for="user in commention">
+									<div class="info-review-li-box" :class="user.className">
 										<div class="user-avatar">
 											<img class="user-avatar-img" v-bind:src="user.avatar"></img>
 										</div>
@@ -1249,6 +1249,17 @@
 						<span>写点评咨询</span>
 					</div>
 				</footer>
+				<div class="info-review-pushMask"></div>
+				<div class="info-review-writing">
+					<div class="writing-panel">
+						<div class="writing-panel-header">
+							<span class="cancel">取消</span>
+							<span class="hader-txt">写点评咨询</span>
+							<span class="send">发送</span>
+						</div>
+						<textarea class="text-box" autofocus name=""></textarea>
+					</div>
+				</div>
 			</div>
 			<!-------- 楼盘页面 楼盘详情 小弹框 -------->
 			<div class="push-bombBox">
