@@ -4894,6 +4894,48 @@ li {
   -webkit-box-sizing: border-box;
 }
 
+.list-details-push .info-review-push .comment-failed {
+  display: none;
+  height: 1.92rem;
+  width: 11.2rem;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 0.08rem;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 0.52rem 0.64rem;
+  text-align: center;
+  line-height: 0.88rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-size: 0.64rem;
+  color: #FFFFFF;
+}
+
+.list-details-push .info-review-push .comment-success {
+  display: none;
+  height: 1.92rem;
+  width: 11.2rem;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 0.08rem;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 0.52rem 0.64rem;
+  text-align: center;
+  line-height: 0.88rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-size: 0.64rem;
+  color: #FFFFFF;
+}
+
 .list-details-push .push-bombBox .collection-succeed {
   display: none;
   width: 11.2rem;

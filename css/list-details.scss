@@ -4317,6 +4317,46 @@ $sc:25;
                 }
             }
         }
+        .comment-failed{
+            display: none;
+            height: 48/$sc+rem;
+            width: 280/$sc+rem;
+            background: rgba(0,0,0,.8);
+            border-radius: 2/$sc+rem;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            padding: 13/$sc+rem 16/$sc+rem;
+            text-align: center;
+            line-height: 22/$sc+rem;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            font-size: 16/$sc+rem;
+            color: #FFFFFF;
+        }
+        .comment-success{
+            display: none;
+            height: 48/$sc+rem;
+            width: 280/$sc+rem;
+            background: rgba(0,0,0,.8);
+            border-radius: 2/$sc+rem;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            padding: 13/$sc+rem 16/$sc+rem;
+            text-align: center;
+            line-height: 22/$sc+rem;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            font-size: 16/$sc+rem;
+            color: #FFFFFF;
+        }
     }
     //<!-------- 楼盘页面 楼盘详情 小弹框 -------->
     .push-bombBox {

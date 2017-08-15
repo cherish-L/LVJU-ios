@@ -791,28 +791,51 @@ $(function() {
 	$(".info-review-pushheader .return").tap(function(){
 		$(".info-review-push").css("left",wrapw)
 	})
+	
 	//input文本框
 	var panelw=$(".writing-panel").height()
 	$(".info-review-pushfooter .pushfooter-wrapper").tap(function(){
 		$(".info-review-push .text-box").focus()
 		$(".info-review-pushMask").addClass("show")
 		$(".info-review-writing").css("bottom","0")
+		
 	})
+	
 	$('.info-review-pushMask').bind("touchstart",function(event){
 		$(".info-review-push .text-box").blur()
 		$(".info-review-pushMask").removeClass("show")
 		$(".info-review-writing").css("bottom",-panelw)
-  });
+  	})
+	
 	$(".info-review-writing .cancel").tap(function(){
 		$(".info-review-push .text-box").blur()
 		$(".info-review-pushMask").removeClass("show")
 		$(".info-review-writing").css("bottom",-panelw)
 	})
-	$(".send").tap(function(){
-		$(".info-review-push .text-box").blur()
-		$(".info-review-pushMask").removeClass("show")
-		$(".info-review-writing").css("bottom",-panelw)
-		$(".text-box").val("")
+	
+	$(".info-review-writing .send").tap(function(){
+		if($(".info-review-push .text-box").val()!==""){
+			$(".info-review-push .text-box").blur()
+			$(".info-review-pushMask").removeClass("show")
+			$(".info-review-writing").css("bottom",-panelw)
+			$(".text-box").val("")
+			$(".info-review-push .comment-success").css("display","none")
+			$(".info-review-push .comment-failed").css("display","block")
+			$(".info-review-push .comment-failed").css("opacity","1")
+			setTimeout(function(){
+				$(".info-review-push .comment-failed").fadeOut(500)
+			}, 1500)
+			setTimeout(function(){
+				$(".info-review-push .comment-success").css("display","block")
+				$(".info-review-push .comment-success").css("opacity","1")
+				setTimeout(function(){
+					$(".info-review-push .comment-success").fadeOut(500)
+				}, 1500)
+			}, 2000)
+		}
+		else{
+			alert("发送内容不能为空")
+		}
 	})
 	
 	$(".showall-wrapper").tap(function(){
