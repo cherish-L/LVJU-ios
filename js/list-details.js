@@ -835,8 +835,21 @@ $(function() {
 		}
 		else{
 			alert("发送内容不能为空")
+			$(".info-review-push .text-box").focus()
 		}
 	})
+	
+	//下拉收起
+	$(window).scroll(function () {
+        if ($(window).scrollTop()<=-10) {
+            alert("1")
+        }
+    });
+	
+	
+	
+	
+	
 	
 	$(".showall-wrapper").tap(function(){
 		$(".user-say").removeClass("showmore")
