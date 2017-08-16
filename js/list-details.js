@@ -301,6 +301,13 @@ $(function() {
 		$(".list-nav-pushul .list-nav-pushli").eq(num).css("transition","all .3s").siblings().css("transition","none")
 		$(".list-nav-pushul .list-nav-pushli").eq(num).siblings().height("0")
 		$(".list-nav-pushul .list-nav-pushli").eq(num).height(pushlih)
+		$(".header .form-ipt").tap(function(){
+			if($(this).focus()){
+				$(".list-nav-pushul .list-nav-pushli").height("0")
+				$(".Mask").removeClass("show")
+				$(".list-nav-ul li").removeClass("touch")
+			}
+		})
 		if($(this).hasClass("touch")){
 			$(".list-nav-pushul .list-nav-pushli").eq(num).css("transition","all .3s")
 			$(".list-nav-pushul .list-nav-pushli").eq(num).height(pushlih)
@@ -326,9 +333,7 @@ $(function() {
 			$(".list-nav-ul li").removeClass("touch")
 			moreS.refresh()
 		})
-		
 	})
-
 
 //楼盘页面 头部需求栏目水平滚动栏
 	//遍历当前以后的需求
@@ -389,39 +394,36 @@ $(function() {
 	
 	var updated=null;
 	sectionS.on("scroll", function() {
-		clearTimeout(updated)
 		maxY = this.maxScrollY - this.y
-		if(maxY >= 40) {
-			$(".section-wrapper").on("touchstart", function(e) {
-				if(e.cancelable) {
-					if(!e.defaultPrevented) {
-						e.preventDefault();
-					}
+		$(".section-wrapper").on("touchstart", function(e) {
+			if(e.cancelable) {
+				if(!e.defaultPrevented) {
+					e.preventDefault();
 				}
-			})
-			$(".section-wrapper").on("touchmove", function(e) {
-				clearTimeout(updated)
+			}
+		})
+		$(".section-wrapper").on("touchmove", function(e) {
+			clearTimeout(updated)
+			$(".section-load").css("display", "block")
+			$(".section-loading").css("display", "none")
+			$(".section-loadnone").css("display", "none")
+			if(maxY >= 40) {
+				$(".section-load").text("松开加载更多...")
 				$(".section-load").css("display", "block")
-				$(".section-loading").css("display", "none")
 				$(".section-loadnone").css("display", "none")
-				if(maxY >= 40) {
-					$(".section-load").text("松开加载更多...")
-					$(".section-load").css("display", "block")
-					$(".section-loadnone").css("display", "none")
-				}
-			})
-			$(".section-wrapper").on("touchend", function(e) {
-				if(maxY >= 40) {
-					$(".section-load").css("display", "none")
-					$(".section-load").text("上拉加载更多")
-					$(".section-loading").css("display", "block")
-				 	updated=setTimeout(function() {
-						$(".section-loading").css("display", "none")
-						$(".section-loadnone").css("display", "block")
-					}, 1500)
-				}
-			})
-		}
+			}
+		})
+		$(".section-wrapper").on("touchend", function(e) {
+			if($(".section-load").text()=="松开加载更多..."){
+				$(".section-load").css("display", "none")
+				$(".section-load").text("上拉加载更多")
+				$(".section-loading").css("display", "block")
+			 	updated=setTimeout(function() {
+					$(".section-loading").css("display", "none")
+					$(".section-loadnone").css("display", "block")
+				}, 1500)	
+			}
+		})
 	})
 	
 	
@@ -552,6 +554,7 @@ $(function() {
 	})
 	
 	$(".reducePrice-notice .notice-button").tap(function(){
+		
 		if($(".notice-user input").val()!==""){
 			$(".list-details-pushMask").removeClass("show")
 			$(".reducePrice-notice").removeClass("show")
@@ -559,7 +562,10 @@ $(function() {
 			$(".notice-user a").css("display","none")
 		}
 		else{
-			alert("不能为空")
+			$(".notice-user input").addClass("animated shake")
+			setTimeout(function(){
+				$(".notice-user input").removeClass("animated shake")
+			}, 500)
 		}
 	})
 
@@ -593,7 +599,7 @@ $(function() {
 
 //楼盘页面--楼盘详情--楼盘户型弹框
 	var screenlisth=$(".screenlist-ul").height()
-	$(".house-type-pushfooter span").tap(function(){
+	$(".house-type-pushfooter").tap(function(){
 		$(".screenlist").css("height",screenlisth)
 		$('.house-type-pushMask').addClass("show")
 		
@@ -738,7 +744,18 @@ $(function() {
 			})
 		}
 		else{
-			alert("不能为空")
+			if($(".discount-username input").val()=="" ){
+				$(".discount-username input").addClass("animated shake")
+				setTimeout(function(){
+					$(".discount-username input").removeClass("animated shake")
+				}, 500)
+			}
+			if($(".discount-userphone input").val()=="" ){
+				$(".discount-userphone input").addClass("animated shake")
+				setTimeout(function(){
+					$(".discount-userphone input").removeClass("animated shake")
+				}, 500)
+			}
 		}
 	})
 	
@@ -751,7 +768,7 @@ $(function() {
 	})
 	
 //楼盘页面--楼盘详情--历史价格弹框 降价通知弹框  input号码输入框内容改变监听事件 执行函数
-	$(".historical-price-pushfooter span").tap(function(){
+	$(".historical-price-pushfooter").tap(function(){
 		$(".list-details-pushMask").addClass("show")
 		$(".reducePrice-notice").addClass("show")
 	})
