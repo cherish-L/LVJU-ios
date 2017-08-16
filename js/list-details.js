@@ -839,18 +839,6 @@ $(function() {
 		}
 	})
 	
-	//下拉收起
-	$(window).scroll(function () {
-        if ($(window).scrollTop()<=-10) {
-            alert("1")
-        }
-    });
-	
-	
-	
-	
-	
-	
 	$(".showall-wrapper").tap(function(){
 		$(".user-say").removeClass("showmore")
 		$(".showall").css("display","none")
@@ -869,8 +857,41 @@ $(function() {
   		fixedWatch($('.info-review-writing'));
 	}, 500);
 	
+//楼盘页面 楼盘详情 楼盘资讯--筛选框
+	var Pscreenh=$(".Property-info-screenlist-ul").height()
+	$(".Property-info-pushfooter").tap(function(){
+		$(".Property-info-screenlist").css("height",Pscreenh)
+		$('.Property-info-pushMask').addClass("show")
+		
+		$(".Property-info-screenlist .screenlist-li").tap(function(){
+			var screenlistTxt=$(this).text()
+			$(".Property-info-pushfooter span").text(screenlistTxt)
+			$(".Property-info-pushfooter span").addClass("screen")
+			$(this).addClass("select").siblings().removeClass("select")
+			$(".Property-info-screenlist").css("height","0")
+			$('.Property-info-pushMask').removeClass("show")
+		})
+		
+		$(".Property-info-pushMask").tap(function(){
+			$(".Property-info-screenlist").css("height","0")
+			$('.Property-info-pushMask').removeClass("show")
+		})
+	})
+	
+	$(".pushsection-propertyInfo .enter").tap(function(){
+		$(".Property-info-push").css("left","0")
+	})
+	
+	$(".Property-info-pushheader .return").tap(function(){
+		$(".Property-info-push").css("left",wrapw)
+	})
+	
+//楼盘页面 楼盘详情 历史优惠活动弹框
 	
 	
+	var ulboxh=$(".historical-discount-content").height()
+	var ulbox_lih=$(".historical-discount-content li:last-child").height()
+	$(".historical-discount-timeAxis .line").height(ulboxh-ulbox_lih)
 	
 	
 	
@@ -918,6 +939,12 @@ $(function() {
 		scrollbars: false
 	})
 	var reviewS = new IScroll('.info-review-pushsection', {
+		scrollbars: false
+	})
+	var PropertyinfoS = new IScroll('.Property-info-pushsection', {
+		scrollbars: false
+	})
+	var discountS = new IScroll('.historical-discount-pushsection', {
 		scrollbars: false
 	})
 	

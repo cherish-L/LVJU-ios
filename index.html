@@ -573,17 +573,13 @@
 					<div class="pushsection-propertyInfo">
 						<h3 class="propertyInfo-title">
 							<span>楼盘资讯</span>
-							<span></span>
+							<span class="enter"></span>
 						</h3>
 						<div class="propertyInfo-content">
 							<ul class="propertyInfo">
-								<li>
-									<h3>客户看中四季康城二期高性价比小苏助力连签四房 </h3>
-									<p>儋州中南西海岸目前洋房33、34号楼在售中，一梯六户，7层高，其主推户型面积约为63平、73平，购房有礼，速速钱来</p>
-								</li>
-								<li>
-									<h3>客户看中四季康城二期高性价比小苏助力连签四房 </h3>
-									<p>儋州中南西海岸目前洋房33、34号楼在售中，一梯六户，7层高，其主推户型面积约为63平、73平，购房有礼，速速钱来</p>
+								<li v-for="list in information">
+									<h3 v-text='list.title'></h3>
+									<p  v-text='list.content'></p>
 								</li>
 							</ul>
 						</div>
@@ -1263,6 +1259,78 @@
 				<div class="comment-failed">评论提交失败，请检查网络</div>
 				<div class="comment-success">评论提交成功</div>
 			</div>
+			<!-------- 楼盘页面 楼盘详情 楼盘资讯 -------->
+			<div class="Property-info-push">
+				<header class="Property-info-pushheader">
+					<div class="signal_bar"></div>
+					<div class="title_bar">
+						<h3 class="title_txt">楼市资讯</h3>
+						<a class="return" href="javascript:;"></a>
+					</div>
+				</header>
+				<section class="Property-info-pushsection">
+					<div class="pushsection-wrapper">
+						<ul class="Property-info-ul">
+							<li v-for="list in information">
+								<h3 v-text='list.title'></h3>
+								<p  v-text='list.content'></p>
+								<div>
+									<span class="source" v-text='list.source'></span>
+									<span class="dates" v-text='list.dates'></span>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<footer class="Property-info-pushfooter">
+					<span>资讯筛选</span>
+				</footer>
+				<div class="Property-info-pushMask"></div>
+				<div class="Property-info-screenlist">
+					<ul class="Property-info-screenlist-ul">
+						<li class="screenlist-li">全部动态</li>
+						<li class="screenlist-li">楼盘热点</li>
+						<li class="screenlist-li">折扣优惠</li>
+						<li class="screenlist-li">新盘速递</li>
+						<li class="screenlist-li">热门推荐</li>
+						<li class="screenlist-li">美图画报</li>
+						<li class="screenlist-li">购房联盟</li>
+						<li class="screenlist-li">看房记</li>
+						<li class="screenlist-li">工程进度</li>	
+					</ul>
+				</div>
+			</div>
+			<!-------- 楼盘页面 楼盘详情 历史优惠动态 -------->
+			<div class="historical-discount-push">
+				<header class="historical-discount-pushheader">
+					<div class="signal_bar"></div>
+					<div class="title_bar">
+						<h3 class="title_txt">历史优惠动态</h3>
+						<a class="return" href="javascript:;"></a>
+					</div>
+					<div class="pushheader-nav">
+						<ul class="nav-list">
+							
+						</ul>
+						<div class="slide-box">
+							<span></span>
+						</div>
+					</div>
+				</header>
+				<section class="historical-discount-pushsection">
+					<div class="pushsection-wrapper">
+						<div class="historical-discount-timeAxis">
+							<span class="line"></span>
+						</div>
+						<ul class="historical-discount-content">
+							<li v-for="list in discount">
+								<p v-text="list.content"></p>
+								<div class="time-box"><span v-text="list.time"></span></div>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</div>
 			<!-------- 楼盘页面 楼盘详情 小弹框 -------->
 			<div class="push-bombBox">
 				<!-------- 收藏成功 -------->
@@ -1379,15 +1447,91 @@
 				pagination : '.swiper-pagination',
 				paginationType : 'fraction'
 			})
+			var building = new Swiper(".building-info-switchBox",{})
 		</script>
 		<script type="text/javascript">
-			var building = new Swiper(".building-info-switchBox",{
-			})
-		</script>
-		<script type="text/javascript">
-			var myVue1 = new Vue({
-				el: ".region",
+			var myVueContainer = new Vue({
+				el: ".container",
 				data: {
+					listdetails: [{
+							img: 'img/massage-subject3.png',
+							sell: '在售',
+							positions: '滨海博鳌小',
+							region: '[琼海]',
+							address: '琼海市博鳌滨海大道（潭门桥旁）',
+							openprice: '开盘：8000元/㎡',
+							averag: '均价：',
+							price: '12000元/㎡',
+							className: {
+								five: true
+							}
+						},
+						{
+							img: 'img/massage-subject3.png',
+							sell: '在售',
+							positions: '滨海博鳌小',
+							region: '[琼海]',
+							address: '琼海市博鳌滨海大道（潭门桥旁）',
+							openprice: '开盘：8000元/㎡',
+							averag: '均价：',
+							price: '12000元/㎡',
+							className: {
+								four: true
+							}
+						},
+						{
+							img: 'img/massage-subject3.png',
+							sell: '在售',
+							positions: '滨海博鳌小',
+							region: '[琼海]',
+							address: '琼海市博鳌滨海大道（潭门桥旁）',
+							openprice: '开盘：8000元/㎡',
+							averag: '均价：',
+							price: '12000元/㎡',
+							className: {
+								three: true
+							}
+						},
+						{
+							img: 'img/massage-subject3.png',
+							sell: '在售',
+							positions: '滨海博鳌小',
+							region: '[琼海]',
+							address: '琼海市博鳌滨海大道（潭门桥旁）',
+							openprice: '开盘：8000元/㎡',
+							averag: '均价：',
+							price: '12000元/㎡',
+							className: {
+								two: true
+							}
+						},
+						{
+							img: 'img/massage-subject3.png',
+							sell: '在售',
+							positions: '滨海博鳌小',
+							region: '[琼海]',
+							address: '琼海市博鳌滨海大道（潭门桥旁）',
+							openprice: '开盘：8000元/㎡',
+							averag: '均价：',
+							price: '12000元/㎡',
+							className: {
+								five: true
+							}
+						},
+						{
+							img: 'img/massage-subject3.png',
+							sell: '在售',
+							positions: '滨海博鳌小',
+							region: '[琼海]',
+							address: '琼海市博鳌滨海大道（潭门桥旁）',
+							openprice: '开盘：8000元/㎡',
+							averag: '均价：',
+							price: '12000元/㎡',
+							className: {
+								four: true
+							}
+						}
+					],
 					municipalitydata: [{
 							city: '不限'
 						},
@@ -1571,95 +1715,7 @@
 					]
 				}
 			})
-		</script>
-		<script type="text/javascript">
-			var myVue2 = new Vue({
-				el: ".container",
-				data: {
-					listdetails: [{
-							img: 'img/massage-subject3.png',
-							sell: '在售',
-							positions: '滨海博鳌小',
-							region: '[琼海]',
-							address: '琼海市博鳌滨海大道（潭门桥旁）',
-							openprice: '开盘：8000元/㎡',
-							averag: '均价：',
-							price: '12000元/㎡',
-							className: {
-								five: true
-							}
-						},
-						{
-							img: 'img/massage-subject3.png',
-							sell: '在售',
-							positions: '滨海博鳌小',
-							region: '[琼海]',
-							address: '琼海市博鳌滨海大道（潭门桥旁）',
-							openprice: '开盘：8000元/㎡',
-							averag: '均价：',
-							price: '12000元/㎡',
-							className: {
-								four: true
-							}
-						},
-						{
-							img: 'img/massage-subject3.png',
-							sell: '在售',
-							positions: '滨海博鳌小',
-							region: '[琼海]',
-							address: '琼海市博鳌滨海大道（潭门桥旁）',
-							openprice: '开盘：8000元/㎡',
-							averag: '均价：',
-							price: '12000元/㎡',
-							className: {
-								three: true
-							}
-						},
-						{
-							img: 'img/massage-subject3.png',
-							sell: '在售',
-							positions: '滨海博鳌小',
-							region: '[琼海]',
-							address: '琼海市博鳌滨海大道（潭门桥旁）',
-							openprice: '开盘：8000元/㎡',
-							averag: '均价：',
-							price: '12000元/㎡',
-							className: {
-								two: true
-							}
-						},
-						{
-							img: 'img/massage-subject3.png',
-							sell: '在售',
-							positions: '滨海博鳌小',
-							region: '[琼海]',
-							address: '琼海市博鳌滨海大道（潭门桥旁）',
-							openprice: '开盘：8000元/㎡',
-							averag: '均价：',
-							price: '12000元/㎡',
-							className: {
-								five: true
-							}
-						},
-						{
-							img: 'img/massage-subject3.png',
-							sell: '在售',
-							positions: '滨海博鳌小',
-							region: '[琼海]',
-							address: '琼海市博鳌滨海大道（潭门桥旁）',
-							openprice: '开盘：8000元/㎡',
-							averag: '均价：',
-							price: '12000元/㎡',
-							className: {
-								four: true
-							}
-						}
-					]
-				}
-			})
-		</script>
-		<script type="text/javascript">
-			var myVue3 = new Vue({
+			var myVuePush = new Vue({
 				el: ".list-details-push",
 				data: {
 					commention: [{
@@ -1795,12 +1851,68 @@
 							areas: '53.60㎡',
 							price: '12000㎡'
 						}
+					],
+					information: [
+						{
+							title: '客户看中四季康城二期高性价比小苏助力连签四房比小苏助力连签四房',
+							content: '儋州中南西海岸目前洋房33、34号楼在售中，一梯六户，7层高，其主推户型面积约为63平、73平，购房有礼，速速钱来',
+							source: '来源:旅居网',
+							dates: '2014年12月16日'
+						},
+						{
+							title: '客户看中四季康城二期高性价比小苏助力连签四房',
+							content: '儋州中南西海岸目前洋房33、34号楼在售中，一梯六户，7层高，其主推户型面积约为63平、73平，购房有礼，速速钱来',
+							source: '来源:旅居网',
+							dates: '2014年12月16日'
+						},
+						{
+							title: '客户看中四季康城二期高性价比小苏助力连签四房',
+							content: '儋州中南西海岸目前洋房33、34号楼在售中，一梯六户，7层高，其主推户型面积约为63平、73平，购房有礼，速速钱来',
+							source: '来源:旅居网',
+							dates: '2014年12月16日'
+						},
+						{
+							title: '客户看中四季康城二期高性价比小苏助力连签四房',
+							content: '儋州中南西海岸目前洋房33、34号楼在售中，一梯六户，7层高，其主推户型面积约为63平、73平，购房有礼，速速钱来',
+							source: '来源:旅居网',
+							dates: '2014年12月16日'
+						},
+						{
+							title: '客户看中四季康城二期高性价比小苏助力连签四房',
+							content: '儋州中南西海岸目前洋房33、34号楼在售中，一梯六户，7层高，其主推户型面积约为63平、73平，购房有礼，速速钱来',
+							source: '来源:旅居网',
+							dates: '2014年12月16日'
+						}
+					],
+					discount: [
+						{
+							content: '项目目前洋房33、34号楼在售中，一梯六户，7层高，其主推户型面积约为63平、73平，购房全款可享9折优惠，按揭则享93折，折后均价约12000元/平，含1800元/平精装修。',
+							time: '07月05日'
+						},
+						{
+							content: '项目目前洋房33、34号楼在售中，一梯六户，7层高，其主推户型面积约为63平、73平，购房全款可享9折优惠，按揭则享93折，折后均价约12000元/平，含1800元/平精装修。',
+							time: '06月11日'
+						},
+						{
+							content: '项目目前洋房33、34号楼在售中，一梯六户，7层高，其主推户型面积约为63平、73平，购房全款可享9折优惠，按揭则享93折，折后均价约12000元/平，含1800元/平精装修。',
+							time: '05月07日'
+						},
+						{
+							content: '项目目前洋房33、34号楼在售中，一梯六户，7层高，其主推户型面积约为63平、73平，购房全款可享9折优惠，按揭则享93折，折后均价约12000元/平，含1800元/平精装修。',
+							time: '05月01日'
+						},
+						{
+							content: '项目目前洋房33、34号楼在售中，一梯六户，7层高，其主推户型面积约为63平、73平，购房全款可享9折优惠，按揭则享93折，折后均价约12000元/平，含1800元/平精装修。',
+							time: '04月17日'
+						},
+						{
+							content: '项目目前洋房33、34号楼在售中，一梯六户，7层高，其主推户型面积约为63平、73平，购房全款可享9折优惠，按揭则享93折，折后均价约12000元/平，含1800元/平精装修。',
+							time: '04月05日'
+						}
 					]
 				}
 			})
 		</script>
-
 	</body>
 	<script type="text/javascript" src="js/list-details.js"></script>
-
 </html>

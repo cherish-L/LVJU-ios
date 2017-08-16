@@ -2196,6 +2196,9 @@ $sc:25;
                                 line-height: 24/$sc+rem;
                                 color: #394043;
                                 line-height: 24/$sc+rem;
+                                white-space:nowrap; 
+                                text-overflow:ellipsis; 
+                                overflow:hidden;
                             }
                             p {
                                 font-size: 14/$sc+rem;
@@ -2208,6 +2211,9 @@ $sc:25;
                                 -webkit-line-clamp: 2;
                                 -webkit-box-orient: vertical;
                             }
+                        }
+                        li:nth-child(n+3){
+                            display: none;
                         }
                     }
                 }
@@ -3795,7 +3801,7 @@ $sc:25;
             }
         }
     }
-    //<!-------- 楼盘页面 楼盘详情 历史价格弹框 -------->
+    //<!-------- 楼盘页面 楼盘详情 楼盘点评弹框 -------->
     .info-review-push{
         width: 100%;
         height: 100%;
@@ -4356,6 +4362,309 @@ $sc:25;
             -webkit-box-sizing: border-box;
             font-size: 16/$sc+rem;
             color: #FFFFFF;
+        }
+    }
+    //<!-------- 楼盘页面 楼盘详情 楼盘资讯弹框 -------->
+    .Property-info-push{
+        width: 100%;
+        height: 100%;
+        transition: all .3s;
+        background: #f4f4f4;
+        position: absolute;
+        left: 380/$sc+rem;
+        top: 0;
+        z-index: 20;
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: column;
+        .Property-info-pushheader{
+            width: 100%;
+            background-color: #f6f6f6;
+            box-shadow: 0 1px 0 0 #cccccc;
+            z-index: 1;
+            .signal_bar {
+                width: 100%;
+                height: 20/$sc+rem;
+            }
+            .title_bar {
+                width: 100%;
+                height: 44/$sc+rem;
+                line-height: 44/$sc+rem;
+                position: relative;
+                .title_txt {
+                    font-size: 18/$sc+rem;
+                    color: #394043!important;
+                    text-align: center;
+                    font-weight: normal;
+                }
+                .return {
+                    display: block;
+                    height: 22/$sc+rem;
+                    width: 22/$sc+rem;
+                    background: url(../img/returnleft.png);
+                    background-size: 22/$sc+rem 22/$sc+rem;
+                    position: absolute;
+                    top: 11/$sc+rem;
+                    left: 16/$sc+rem;
+                }
+            }
+        }
+        .Property-info-pushsection{
+            flex: 1;    
+            -webkit-flex: 1;
+            overflow: hidden;
+            background: #F4F4F4;
+            .pushsection-wrapper{
+                width: 100%;
+                overflow: hidden;
+                .Property-info-ul{
+                    width: 100%;
+                    background: #FFFFFF;
+                    li {
+                        padding: 16/$sc+rem;
+                        background: #FFFFFF;
+                        box-shadow: inset 0 1px 0 0 #EEEEEE;
+                        box-sizing: border-box;
+                        -webkit-box-sizing: border-box;
+                        h3 {
+                            font-size: 16/$sc+rem;
+                            font-weight: normal;
+                            line-height: 22/$sc+rem;
+                            color: #394043;
+                            white-space:nowrap; 
+                            text-overflow:ellipsis; 
+                            overflow:hidden;
+                        }
+                        p {
+                            font-size: 14/$sc+rem;
+                            line-height: 20/$sc+rem;
+                            margin-top: 4/$sc+rem;
+                            color: #999999;
+                            overflow: hidden;
+                            -webkit-text-overflow: ellipsis;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 2;
+                            -webkit-box-orient: vertical;
+                        }
+                        div{
+                            margin-top: 16/$sc+rem;
+                            height: 16/$sc+rem;
+                            .source{
+                                float: left;
+                                font-size: 12/$sc+rem;
+                                line-height: 16/$sc+rem;
+                                color: #999999;
+                            }
+                            .dates{
+                                float: right;
+                                font-size: 12/$sc+rem;
+                                line-height: 16/$sc+rem;
+                                color: #999999;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .Property-info-pushfooter{
+            width: 100%;
+            height: 44/$sc+rem;
+            background: #f6f6f6;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            span{
+                display: block;
+                padding-left: 20/$sc+rem;
+                font-size: 14/$sc+rem;
+                line-height: 16/$sc+rem;
+                color: #394043;
+                background: url(../img/screen.png) no-repeat;
+                background-size: 16/$sc+rem 16/$sc+rem;
+                background-position-x: left;
+            }
+            span.screen{
+                color: #0099EB;
+                background: url(../img/screened.png) no-repeat;
+                background-size: 16/$sc+rem 16/$sc+rem;
+                background-position-x: left;
+            }
+        } 
+        .Property-info-pushMask{
+            width: 100%;
+            height: 100%;
+            transition: all .3s;
+            opacity: 0;
+            z-index: -1;
+            background: rgba(0, 0, 0, .5);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .Property-info-pushMask.show{
+            opacity: 1;
+            z-index: 25;
+        }
+        .Property-info-screenlist{
+            width: 100%;
+            height: 0;
+            transition: all .3s;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 30;
+            .Property-info-screenlist-ul{
+                height: 432/$sc+rem;
+                width: 100%;
+                background: #FFFFFF;
+                .screenlist-li{
+                    height: 48/$sc+rem;
+                    width: 100%;
+                    background: #FFFFFF;
+                    text-align: center;
+                    line-height: 48/$sc+rem;
+                    font-size: 14/$sc+rem;
+                    color: #6C7072;
+                    box-shadow: inset 0 -1px 0 0 #EEEEEE;
+                }
+                .screenlist-li.select{
+                    color: #0099EB;
+                }
+            }
+        }
+    }
+    //<!-------- 楼盘页面 楼盘详情 历史优惠动态 -------->
+    .historical-discount-push{
+        width: 100%;
+        height: 100%;
+        transition: all .3s;
+        background: #f4f4f4;
+        position: fixed;
+        left: 380px;
+        top: 0;
+        z-index: 20;
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: column;
+        .historical-discount-pushheader{
+            width: 100%;
+            background-color: #f6f6f6;
+            box-shadow: 0 1px 0 0 #cccccc;
+            z-index: 1;
+            .signal_bar {
+                width: 100%;
+                height: 20/$sc+rem;
+            }
+            .title_bar {
+                width: 100%;
+                height: 44/$sc+rem;
+                line-height: 44/$sc+rem;
+                position: relative;
+                .title_txt {
+                    font-size: 18/$sc+rem;
+                    color: #394043!important;
+                    text-align: center;
+                    font-weight: normal;
+                }
+                .return {
+                    display: block;
+                    height: 22/$sc+rem;
+                    width: 22/$sc+rem;
+                    background: url(../img/returnleft.png);
+                    background-size: 22/$sc+rem 22/$sc+rem;
+                    position: absolute;
+                    top: 11/$sc+rem;
+                    left: 16/$sc+rem;
+                }
+            }
+            .pushheader-nav{
+                .nav-list{
+                    height: 43/$sc+rem;
+                }
+                .slide-box{
+                    width: 100%;
+                    height: 3/$sc+rem;
+                    position: relative;
+                    span{
+                        display: block;
+                        width: 40/$sc+rem;
+                        height: 100%;
+                        background: #0099EB;
+                        position: absolute;
+                        top: 0;
+                        left: 40/$sc+rem;
+                    }
+                }
+            }
+        }
+        .historical-discount-pushsection{
+            flex: 1;    
+            -webkit-flex: 1;
+            overflow: hidden;
+            background: #FFFFFF;
+            .pushsection-wrapper{
+                width: 100%;
+                padding: 8/$sc+rem 16/$sc+rem 0;
+                overflow: hidden;
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                display: flex;
+                display: -webkit-flex;
+                flex-direction: row;
+                .historical-discount-timeAxis{
+                    width: 51/$sc+rem;
+                    padding-top: 16/$sc+rem;
+                    position: relative;
+                    .line{
+                        display: block;
+                        width: 1px;
+                        background: #0099EB;
+                        position: absolute;
+                        right: 32/$sc+rem;
+                        top: 16/$sc+rem;
+                    }
+                }
+                .historical-discount-content{
+                    flex: 1;
+                    -webkit-flex: 1;
+                    li{
+                        padding: 16/$sc+rem 0;
+                        border-bottom: 1px solid #EEEEEE;
+                        position: relative;
+                        p{
+                            font-size: 12/$sc+rem;
+                            color: #394043;
+                            line-height: 20/$sc+rem;
+                        }
+                        .time-box{
+                            position: absolute;
+                            top: 16/$sc+rem;
+                            left: -51/$sc+rem;
+                            width: 35/$sc+rem;
+                            height: 42/$sc+rem;
+                            background: #0099EB;
+                            border-radius: 4/$sc+rem;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            z-index: 30;
+                            span{
+                                display: block;
+                                font-family: PingFang-SC-Medium;
+                                font-size: 12/$sc+rem;
+                                line-height: 16/$sc+rem;
+                                text-align: center;
+                                color: #FFFFFF;
+                            }
+                        }
+                    }
+                    li:last-child{
+                        border-bottom: 0;
+                    }
+                }
+            }
         }
     }
     //<!-------- 楼盘页面 楼盘详情 小弹框 -------->
