@@ -974,6 +974,7 @@ $(function() {
 	var PropertyinfoS = new IScroll('.Property-info-pushsection', {
 		scrollbars: false
 	})
+	//历史优惠
 	var firstPageS = new IScroll('.historical-discount-pushsection .historical-discount-ul .firstPage', {
 		scrollbars: false
 	})
