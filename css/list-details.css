@@ -5240,11 +5240,11 @@ li {
 .list-details-push .historical-discount-push .historical-discount-pushsection .historical-discount-ul {
   width: 100%;
   height: 100%;
-  display: -webkit-flex;
 }
 
 .list-details-push .historical-discount-push .historical-discount-pushsection .historical-discount-ul .historical-discount-li {
-  -webkit-flex-shrink: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .list-details-push .historical-discount-push .historical-discount-pushsection .historical-discount-ul .historical-discount-li .pushsection-wrapper {
