@@ -974,25 +974,25 @@ $(function() {
 	var PropertyinfoS = new IScroll('.Property-info-pushsection', {
 		scrollbars: false
 	})
-	var discountS = new IScroll('.firstPage', {
-		scrollbars: false
-	})
-	var discountS = new IScroll('.secondPage', {
-		scrollbars: false
-	})
-	var discountS = new IScroll('.thirdPage', {
-		scrollbars: false
-	})
-	var discountS = new IScroll('.fourthPage', {
-		scrollbars: false
-	})
-	var discountS = new IScroll('.fifthPage', {
-		scrollbars: false
-	})
-	var discountS = new IScroll('.sixthPage', {
-		scrollbars: false
-	})
-	var discountS = new IScroll('.seventhPage', {
-		scrollbars: false
-	})
+//	var discountS = new IScroll('.firstPage', {
+//		scrollbars: false
+//	})
+//	var discountS = new IScroll('.secondPage', {
+//		scrollbars: false
+//	})
+//	var discountS = new IScroll('.thirdPage', {
+//		scrollbars: false
+//	})
+//	var discountS = new IScroll('.fourthPage', {
+//		scrollbars: false
+//	})
+//	var discountS = new IScroll('.fifthPage', {
+//		scrollbars: false
+//	})
+//	var discountS = new IScroll('.sixthPage', {
+//		scrollbars: false
+//	})
+//	var discountS = new IScroll('.seventhPage', {
+//		scrollbars: false
+//	})
 })
