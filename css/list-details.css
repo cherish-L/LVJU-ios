@@ -5240,13 +5240,14 @@ li {
 .list-details-push .historical-discount-push .historical-discount-pushsection .historical-discount-ul {
   width: 100%;
   height: 100%;
-  display: -webkit-flex;
 }
 
 .list-details-push .historical-discount-push .historical-discount-pushsection .historical-discount-ul .historical-discount-li {
   width: 100%;
   height: 100%;
-  -webkit-flex-shrink: 0;
+  overflow-y: auto;
+  overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch;
 }
 
 .list-details-push .historical-discount-push .historical-discount-pushsection .historical-discount-ul .historical-discount-li .pushsection-wrapper {

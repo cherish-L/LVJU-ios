@@ -4626,11 +4626,14 @@ $sc:25;
             .historical-discount-ul{
                 width: 100%;
                 height: 100%;
-                display: -webkit-flex;
+//              display: -webkit-flex;
                 .historical-discount-li{
                     width: 100%;
                     height: 100%;
-                    -webkit-flex-shrink: 0;
+                    overflow-y: auto; 
+                    overflow-scrolling: touch;
+                    -webkit-overflow-scrolling: touch;
+//                  -webkit-flex-shrink: 0;
                     .pushsection-wrapper{
                         width: 100%;
                         padding: 8/$sc+rem 16/$sc+rem 0;
