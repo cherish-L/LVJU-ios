@@ -43,7 +43,10 @@
                 _init($(this));
             });
             
-			var discount = new Swiper(".historical-discount-pushsection",{})
+			var discount = new Swiper(".historical-discount-pushsection",{
+				touchMoveStopPropagation : false,
+				passiveListeners: false
+			})
             $(".historical-discount-pushsection").bind("touchend",function(){
 				var this_index=discount.realIndex
 				var $this_obj=_obj_li.eq(this_index);
