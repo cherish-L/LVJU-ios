@@ -43,7 +43,6 @@
                 _init($(this));
             });
             
-            
 			var discount = new Swiper(".historical-discount-pushsection",{})
             $(".historical-discount-pushsection").bind("touchend",function(){
 				var this_index=discount.realIndex

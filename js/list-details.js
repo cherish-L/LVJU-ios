@@ -974,25 +974,25 @@ $(function() {
 	var PropertyinfoS = new IScroll('.Property-info-pushsection', {
 		scrollbars: false
 	})
-//	var firstPageS = new IScroll('.firstPage', {
-//		scrollbars: false
-//	})
-//	var secondPageS = new IScroll('.secondPage', {
-//		scrollbars: false
-//	})
-//	var thirdPageS = new IScroll('.thirdPage', {
-//		scrollbars: false
-//	})
-//	var fourthPageS = new IScroll('.fourthPage', {
-//		scrollbars: false
-//	})
-//	var fifthPageS = new IScroll('.fifthPage', {
-//		scrollbars: false
-//	})
-//	var sixthPageS = new IScroll('.sixthPage', {
-//		scrollbars: false
-//	})
-//	var seventhPageS = new IScroll('.seventhPage', {
-//		scrollbars: false
-//	})
+	var firstPageS = new IScroll('.historical-discount-pushsection .historical-discount-ul .firstPage', {
+		scrollbars: false
+	})
+	var secondPageS = new IScroll('.historical-discount-pushsection .historical-discount-ul .secondPage', {
+		scrollbars: false
+	})
+	var thirdPageS = new IScroll('.historical-discount-pushsection .historical-discount-ul .thirdPage', {
+		scrollbars: false
+	})
+	var fourthPageS = new IScroll('.historical-discount-pushsection .historical-discount-ul .fourthPage', {
+		scrollbars: false
+	})
+	var fifthPageS = new IScroll('.historical-discount-pushsection .historical-discount-ul .fifthPage', {
+		scrollbars: false
+	})
+	var sixthPageS = new IScroll('.historical-discount-pushsection .historical-discount-ul .sixthPage', {
+		scrollbars: false
+	})
+	var seventhPageS = new IScroll('.historical-discount-pushsection .historical-discount-ul .seventhPage', {
+		scrollbars: false
+	})
 })
