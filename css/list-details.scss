@@ -4626,9 +4626,11 @@ $sc:25;
             .historical-discount-ul{
                 width: 100%;
                 height: 100%;
+                display: -webkit-flex;
                 .historical-discount-li{
                     width: 100%;
                     height: 100%;
+                    -webkit-flex-shrink: 0;
                     .pushsection-wrapper{
                         width: 100%;
                         height: 100%;
