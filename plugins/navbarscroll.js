@@ -44,8 +44,8 @@
             });
             
 			var discount = new Swiper(".historical-discount-pushsection",{
-				touchMoveStopPropagation : false,
-				passiveListeners: false
+				touchMoveStopPropagation : false
+//				passiveListeners: false
 			})
             $(".historical-discount-pushsection").bind("touchend",function(){
 				var this_index=discount.realIndex
