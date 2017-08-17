@@ -43,7 +43,6 @@
                 _init($(this));
             });
             
-            
             var discount = new Swiper(".historical-discount-pushsection",{})
             $(".historical-discount-pushsection").bind("touchend",function(){
 				var this_index=discount.realIndex
@@ -85,6 +84,13 @@
                 }
                 $this_obj.addClass(_opt.className).siblings('li').removeClass(_opt.className);
                 _opt.endClickScroll.call(this,$this_obj);
+                firstPageS.refresh()
+                secondPageS.refresh()
+                thirdPageS.refresh()
+                fourthPageS.refresh()
+                fifthPageS.refresh()
+                sixthPageS.refresh()
+                seventhPageS.refresh()
 			})
             
             
