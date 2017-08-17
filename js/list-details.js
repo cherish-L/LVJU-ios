@@ -925,6 +925,13 @@ $(function() {
 	
 	
 	
+//          $(".historical-discount-pushsection").bind("touchend",function(){
+//				var index=discount.activeIndex
+//				$(".pushheader-nav .nav-list li").eq(index).addClass("select").siblings().removeClass("select")
+//			})
+	
+	
+	
 	
 	
 	//iscroll.js各各滚动回弹效果
@@ -967,7 +974,25 @@ $(function() {
 	var PropertyinfoS = new IScroll('.Property-info-pushsection', {
 		scrollbars: false
 	})
-	var discountS = new IScroll('.historical-discount-pushsection', {
+	var discountS = new IScroll('.firstPage', {
+		scrollbars: false
+	})
+	var discountS = new IScroll('.secondPage', {
+		scrollbars: false
+	})
+	var discountS = new IScroll('.thirdPage', {
+		scrollbars: false
+	})
+	var discountS = new IScroll('.fourthPage', {
+		scrollbars: false
+	})
+	var discountS = new IScroll('.fifthPage', {
+		scrollbars: false
+	})
+	var discountS = new IScroll('.sixthPage', {
+		scrollbars: false
+	})
+	var discountS = new IScroll('.seventhPage', {
 		scrollbars: false
 	})
 })

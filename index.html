@@ -3,6 +3,8 @@
 
 	<head>
 		<meta charset="utf-8" />
+		<meta content="email=no" name="format-detection" />
+		<meta http-equiv="Cache-Control" content="no-cache" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title>楼盘列表和详情</title>
 		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
@@ -1325,17 +1327,99 @@
 					</div>
 				</header>
 				<section class="historical-discount-pushsection">
-					<div class="pushsection-wrapper">
-						<div class="historical-discount-timeAxis">
-							<span class="line"></span>
-						</div>
-						<ul class="historical-discount-content">
-							<li v-for="list in discount">
-								<p v-text="list.content"></p>
-								<div class="time-box"><span v-text="list.time"></span></div>
-							</li>
-						</ul>
-					</div>
+					<ul class="historical-discount-ul swiper-wrapper">
+						<li class="historical-discount-li firstPage swiper-slide">
+							<div class="pushsection-wrapper">
+								<div class="historical-discount-timeAxis">
+									<span class="line"></span>
+								</div>
+								<ul class="historical-discount-content">
+									<li v-for="list in discount">
+										<p v-text="list.content"></p>
+										<div class="time-box"><span v-text="list.time"></span></div>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="historical-discount-li secondPage swiper-slide">
+							<div class="pushsection-wrapper">
+								<div class="historical-discount-timeAxis">
+									<span class="line"></span>
+								</div>
+								<ul class="historical-discount-content">
+									<li v-for="list in discount">
+										<p v-text="list.content"></p>
+										<div class="time-box"><span v-text="list.time"></span></div>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="historical-discount-li thirdPage swiper-slide">
+							<div class="pushsection-wrapper">
+								<div class="historical-discount-timeAxis">
+									<span class="line"></span>
+								</div>
+								<ul class="historical-discount-content">
+									<li v-for="list in discount">
+										<p v-text="list.content"></p>
+										<div class="time-box"><span v-text="list.time"></span></div>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="historical-discount-li fourthPage swiper-slide">
+							<div class="pushsection-wrapper">
+								<div class="historical-discount-timeAxis">
+									<span class="line"></span>
+								</div>
+								<ul class="historical-discount-content">
+									<li v-for="list in discount">
+										<p v-text="list.content"></p>
+										<div class="time-box"><span v-text="list.time"></span></div>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="historical-discount-li fifthPage swiper-slide">
+							<div class="pushsection-wrapper">
+								<div class="historical-discount-timeAxis">
+									<span class="line"></span>
+								</div>
+								<ul class="historical-discount-content">
+									<li v-for="list in discount">
+										<p v-text="list.content"></p>
+										<div class="time-box"><span v-text="list.time"></span></div>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="historical-discount-li sixthPage swiper-slide">
+							<div class="pushsection-wrapper">
+								<div class="historical-discount-timeAxis">
+									<span class="line"></span>
+								</div>
+								<ul class="historical-discount-content">
+									<li v-for="list in discount">
+										<p v-text="list.content"></p>
+										<div class="time-box"><span v-text="list.time"></span></div>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="historical-discount-li seventhPage swiper-slide">
+							<div class="pushsection-wrapper">
+								<div class="historical-discount-timeAxis">
+									<span class="line"></span>
+								</div>
+								<ul class="historical-discount-content">
+									<li v-for="list in discount">
+										<p v-text="list.content"></p>
+										<div class="time-box"><span v-text="list.time"></span></div>
+									</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
 				</section>
 			</div>
 			<!-------- 楼盘页面 楼盘详情 小弹框 -------->
@@ -1458,6 +1542,7 @@
 				paginationType : 'fraction'
 			})
 			var building = new Swiper(".building-info-switchBox",{})
+			var discount = new Swiper(".historical-discount-pushsection",{})
 		</script>
 		<script type="text/javascript">
 			var myVueContainer = new Vue({

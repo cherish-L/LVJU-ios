@@ -4623,64 +4623,74 @@ $sc:25;
             -webkit-flex: 1;
             overflow: hidden;
             background: #FFFFFF;
-            .pushsection-wrapper{
+            .historical-discount-ul{
                 width: 100%;
-                padding: 8/$sc+rem 16/$sc+rem 0;
-                overflow: hidden;
-                box-sizing: border-box;
-                -webkit-box-sizing: border-box;
-                display: flex;
+                height: 100%;
                 display: -webkit-flex;
-                flex-direction: row;
-                .historical-discount-timeAxis{
-                    width: 51/$sc+rem;
-                    padding-top: 16/$sc+rem;
-                    position: relative;
-                    .line{
-                        display: block;
-                        width: 1px;
-                        background: #0099EB;
-                        position: absolute;
-                        right: 32/$sc+rem;
-                        top: 16/$sc+rem;
-                    }
-                }
-                .historical-discount-content{
-                    flex: 1;
-                    -webkit-flex: 1;
-                    li{
-                        padding: 16/$sc+rem 0;
-                        border-bottom: 1px solid #EEEEEE;
-                        position: relative;
-                        p{
-                            font-size: 12/$sc+rem;
-                            color: #394043;
-                            line-height: 20/$sc+rem;
-                        }
-                        .time-box{
-                            position: absolute;
-                            top: 16/$sc+rem;
-                            left: -51/$sc+rem;
-                            width: 35/$sc+rem;
-                            height: 42/$sc+rem;
-                            background: #0099EB;
-                            border-radius: 4/$sc+rem;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            z-index: 30;
-                            span{
+                .historical-discount-li{
+                    width: 100%;
+                    height: 100%;
+                    -webkit-flex-shrink: 0;
+                    .pushsection-wrapper{
+                        width: 100%;
+                        padding: 8/$sc+rem 16/$sc+rem 0;
+                        overflow: hidden;
+                        box-sizing: border-box;
+                        -webkit-box-sizing: border-box;
+                        display: flex;
+                        display: -webkit-flex;
+                        flex-direction: row;
+                        .historical-discount-timeAxis{
+                            width: 51/$sc+rem;
+                            padding-top: 16/$sc+rem;
+                            position: relative;
+                            .line{
                                 display: block;
-                                font-family: PingFang-SC-Medium;
-                                font-size: 12/$sc+rem;
-                                line-height: 16/$sc+rem;
-                                text-align: center;
-                                color: #FFFFFF;
+                                width: 1px;
+                                background: #0099EB;
+                                position: absolute;
+                                right: 32/$sc+rem;
+                                top: 16/$sc+rem;
                             }
                         }
-                    }
-                    li:last-child{
-                        border-bottom: 0;
+                        .historical-discount-content{
+                            flex: 1;
+                            -webkit-flex: 1;
+                            li{
+                                padding: 16/$sc+rem 0;
+                                border-bottom: 1px solid #EEEEEE;
+                                position: relative;
+                                p{
+                                    font-size: 12/$sc+rem;
+                                    color: #394043;
+                                    line-height: 20/$sc+rem;
+                                }
+                                .time-box{
+                                    position: absolute;
+                                    top: 16/$sc+rem;
+                                    left: -51/$sc+rem;
+                                    width: 35/$sc+rem;
+                                    height: 42/$sc+rem;
+                                    background: #0099EB;
+                                    border-radius: 4/$sc+rem;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    z-index: 30;
+                                    span{
+                                        display: block;
+                                        font-family: PingFang-SC-Medium;
+                                        font-size: 12/$sc+rem;
+                                        line-height: 16/$sc+rem;
+                                        text-align: center;
+                                        color: #FFFFFF;
+                                    }
+                                }
+                            }
+                            li:last-child{
+                                border-bottom: 0;
+                            }
+                        }
                     }
                 }
             }
