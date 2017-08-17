@@ -12,6 +12,7 @@
 		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>
 		<script src="plugins/swiper-3.4.2.min.js"></script>
 		<script type="text/javascript" src="vue/vue.js"></script>
+		<script type="text/javascript" src="plugins/navbarscroll.js"></script>
 		<script>
 			//适配
 			document.documentElement.style.fontSize = innerWidth / 15 + "px";
@@ -1309,12 +1310,17 @@
 						<h3 class="title_txt">历史优惠动态</h3>
 						<a class="return" href="javascript:;"></a>
 					</div>
-					<div class="pushheader-nav">
-						<ul class="nav-list">
-							
-						</ul>
-						<div class="slide-box">
-							<span></span>
+					<div class="pushheader-nav wrapper" id="demo">
+						<div class="scroller">
+							<ul class="nav-list clearfix">
+								<li><span>2017</span></li>
+								<li><span>2016</span></li>
+								<li><span>2015</span></li>
+								<li><span>2014</span></li>
+								<li><span>2013</span></li>
+								<li><span>2012</span></li>
+								<li><span>2011</span></li>
+							</ul>
 						</div>
 					</div>
 				</header>
@@ -1443,6 +1449,9 @@
 				</div>
 			</div>
 		</div>
+		<script type="text/javascript">
+			$('.historical-discount-pushheader .wrapper').navbarscroll();
+		</script>
 		<script type="text/javascript">
 			var typeDetail = new Swiper(".swiper-container",{
 				pagination : '.swiper-pagination',
@@ -1910,7 +1919,39 @@
 							content: '项目目前洋房33、34号楼在售中，一梯六户，7层高，其主推户型面积约为63平、73平，购房全款可享9折优惠，按揭则享93折，折后均价约12000元/平，含1800元/平精装修。',
 							time: '04月05日'
 						}
-					]
+					],
+//					navData: [
+//						{
+//							year: '2017'
+//						},
+//						{
+//							year: '2016'
+//						},
+//						{
+//							year: '2015'
+//						},
+//						{
+//							year: '2014'
+//						},
+//						{
+//							year: '2013'
+//						},
+//						{
+//							year: '2012'
+//						},
+//						{
+//							year: '2011'
+//						},
+//						{
+//							year: '2010'
+//						},
+//						{
+//							year: '2009'
+//						},
+//						{
+//							year: '2008'
+//						}
+//					]
 				}
 			})
 		</script>

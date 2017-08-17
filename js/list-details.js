@@ -904,17 +904,23 @@ $(function() {
 	})
 	
 //楼盘页面 楼盘详情 历史优惠活动弹框
-	
-	
 	var ulboxh=$(".historical-discount-content").height()
 	var ulbox_lih=$(".historical-discount-content li:last-child").height()
 	$(".historical-discount-timeAxis .line").height(ulboxh-ulbox_lih)
 	
-	
-	
-	
-	
-	
+	//导航滑动
+	var _thisnav=$(".pushheader-nav")
+	var _thisnav_w=$(".pushheader-nav").width()
+	var _thisul=$(".pushheader-nav .nav-list")
+	var _thisli=$(".pushheader-nav .nav-list li")
+	if(_thisli.length==3){
+		_thisul.css("width",_thisnav_w)
+		_thisli.css("width","33.33%")
+	}
+	if(_thisli.length<=2 && _thisli.length>0){
+		_thisul.css("width",_thisnav_w)
+		_thisli.css("width","50%")
+	}
 	
 	
 	
@@ -964,5 +970,4 @@ $(function() {
 	var discountS = new IScroll('.historical-discount-pushsection', {
 		scrollbars: false
 	})
-	
 })

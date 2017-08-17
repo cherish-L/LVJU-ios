@@ -5188,24 +5188,46 @@ li {
   left: 0.64rem;
 }
 
-.list-details-push .historical-discount-push .historical-discount-pushheader .pushheader-nav .nav-list {
-  height: 1.72rem;
-}
-
-.list-details-push .historical-discount-push .historical-discount-pushheader .pushheader-nav .slide-box {
+.list-details-push .historical-discount-push .historical-discount-pushheader .pushheader-nav {
   width: 100%;
-  height: 0.12rem;
+  overflow: hidden;
   position: relative;
+  height: 1.84rem;
 }
 
-.list-details-push .historical-discount-push .historical-discount-pushheader .pushheader-nav .slide-box span {
-  display: block;
-  width: 1.6rem;
+.list-details-push .historical-discount-push .historical-discount-pushheader .pushheader-nav .scroller {
   height: 100%;
-  background: #0099EB;
   position: absolute;
-  top: 0;
-  left: 1.6rem;
+  left: 0;
+}
+
+.list-details-push .historical-discount-push .historical-discount-pushheader .pushheader-nav .scroller .nav-list {
+  height: 1.84rem;
+}
+
+.list-details-push .historical-discount-push .historical-discount-pushheader .pushheader-nav .scroller .nav-list li {
+  float: left;
+  height: 100%;
+  width: 3.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-details-push .historical-discount-push .historical-discount-pushheader .pushheader-nav .scroller .nav-list li span {
+  display: block;
+  height: 100%;
+  line-height: 1.84rem;
+  font-size: 0.64rem;
+  color: #6C7072;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.list-details-push .historical-discount-push .historical-discount-pushheader .pushheader-nav .scroller .nav-list li.select span {
+  font-family: PingFang-SC-Medium;
+  color: #0099EB;
+  border-bottom: 0.12rem solid #0099EB;
 }
 
 .list-details-push .historical-discount-push .historical-discount-pushsection {
@@ -5924,4 +5946,42 @@ li {
 .list-details-push .push-bombBox .contact-adviser.show {
   opacity: 1;
   z-index: 25;
+}
+
+.pr {
+  position: relative;
+}
+
+.abs {
+  position: absolute;
+}
+
+.fl {
+  float: left;
+  display: inline-block;
+}
+
+.fr {
+  float: right;
+  display: inline-block;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+.wrap {
+  min-width: 320px;
+  max-width: 768px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
 }
