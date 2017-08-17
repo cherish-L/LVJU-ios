@@ -975,25 +975,25 @@ $(function() {
 		scrollbars: false
 	})
 	//历史优惠
-	var firstPageS = new IScroll('.historical-discount-pushsection .historical-discount-ul .firstPage', {
+	var firstPageS = new IScroll('.historical-discount-pushsection .historical-discount-li .firstPage', {
 		scrollbars: false
 	})
-	var secondPageS = new IScroll('.historical-discount-pushsection .historical-discount-ul .secondPage', {
+	var secondPageS = new IScroll('.historical-discount-pushsection .historical-discount-li .secondPage', {
 		scrollbars: false
 	})
-	var thirdPageS = new IScroll('.historical-discount-pushsection .historical-discount-ul .thirdPage', {
+	var thirdPageS = new IScroll('.historical-discount-pushsection .historical-discount-li .thirdPage', {
 		scrollbars: false
 	})
-	var fourthPageS = new IScroll('.historical-discount-pushsection .historical-discount-ul .fourthPage', {
+	var fourthPageS = new IScroll('.historical-discount-pushsection .historical-discount-li .fourthPage', {
 		scrollbars: false
 	})
-	var fifthPageS = new IScroll('.historical-discount-pushsection .historical-discount-ul .fifthPage', {
+	var fifthPageS = new IScroll('.historical-discount-pushsection .historical-discount-li .fifthPage', {
 		scrollbars: false
 	})
-	var sixthPageS = new IScroll('.historical-discount-pushsection .historical-discount-ul .sixthPage', {
+	var sixthPageS = new IScroll('.historical-discount-pushsection .historical-discount-li .sixthPage', {
 		scrollbars: false
 	})
-	var seventhPageS = new IScroll('.historical-discount-pushsection .historical-discount-ul .seventhPage', {
+	var seventhPageS = new IScroll('.historical-discount-pushsection .historical-discount-li .seventhPage', {
 		scrollbars: false
 	})
 })
