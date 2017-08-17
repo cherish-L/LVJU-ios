@@ -42,7 +42,48 @@
             _obj_li.click(function(){
                 _init($(this));
             });
-            
+            var firstPageS = new IScroll('.firstPage', {
+				scrollbars: false,
+				mouseWheel: true, 
+				click: true,
+				probeType: 2
+			})
+			var secondPageS = new IScroll('.secondPage', {
+				scrollbars: false,
+				mouseWheel: true, 
+				click: true,
+				probeType: 2
+			})
+			var thirdPageS = new IScroll('.thirdPage', {
+				scrollbars: false,
+				mouseWheel: true, 
+				click: true,
+				probeType: 2
+			})
+			var fourthPageS = new IScroll('.fourthPage', {
+				scrollbars: false,
+				mouseWheel: true, 
+				click: true,
+				probeType: 2
+			})
+			var fifthPageS = new IScroll('.fifthPage', {
+				scrollbars: false,
+				mouseWheel: true, 
+				click: true,
+				probeType: 2
+			})
+			var sixthPageS = new IScroll('.sixthPage', {
+				scrollbars: false,
+				mouseWheel: true, 
+				click: true,
+				probeType: 2
+			})
+			var seventhPageS = new IScroll('.seventhPage', {
+				scrollbars: false,
+				mouseWheel: true, 
+				click: true,
+				probeType: 2
+			})
             var discount = new Swiper(".historical-discount-pushsection",{})
             $(".historical-discount-pushsection").bind("touchend",function(){
 				var this_index=discount.realIndex

@@ -975,24 +975,45 @@ $(function() {
 		scrollbars: false
 	})
 	var firstPageS = new IScroll('.firstPage', {
-		scrollbars: false
+		scrollbars: false,
+		mouseWheel: true, 
+		click: true,
+		probeType: 2
 	})
 	var secondPageS = new IScroll('.secondPage', {
-		scrollbars: false
+		scrollbars: false,
+		mouseWheel: true, 
+		click: true,
+		probeType: 2
 	})
 	var thirdPageS = new IScroll('.thirdPage', {
-		scrollbars: false
+		scrollbars: false,
+		mouseWheel: true, 
+		click: true,
+		probeType: 2
 	})
 	var fourthPageS = new IScroll('.fourthPage', {
-		scrollbars: false
+		scrollbars: false,
+		mouseWheel: true, 
+		click: true,
+		probeType: 2
 	})
 	var fifthPageS = new IScroll('.fifthPage', {
-		scrollbars: false
+		scrollbars: false,
+		mouseWheel: true, 
+		click: true,
+		probeType: 2
 	})
 	var sixthPageS = new IScroll('.sixthPage', {
-		scrollbars: false
+		scrollbars: false,
+		mouseWheel: true, 
+		click: true,
+		probeType: 2
 	})
 	var seventhPageS = new IScroll('.seventhPage', {
-		scrollbars: false
+		scrollbars: false,
+		mouseWheel: true, 
+		click: true,
+		probeType: 2
 	})
 })
