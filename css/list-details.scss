@@ -4633,15 +4633,19 @@ $sc:25;
                 .historical-discount-li{
                     width: 100%;
                     height: 100%;
-                    overflow: hidden;
+                    position: relative;
                     .pushsection-wrapper{
                         width: 100%;
-                        padding: 8/$sc+rem 16/$sc+rem 0;
-                        box-sizing: border-box;
-                        -webkit-box-sizing: border-box;
-                        display: flex;
-                        display: -webkit-flex;
-                        flex-direction: row;
+                        position: absolute;
+                        left: 0;
+                        .scrollPage{
+                            width: 100%;
+                            padding: 8/$sc+rem 16/$sc+rem 0;
+                            box-sizing: border-box;
+                            -webkit-box-sizing: border-box;
+                            display: flex;
+                            display: -webkit-flex;
+                            flex-direction: row;
                             .historical-discount-timeAxis{
                                 width: 51/$sc+rem;
                                 padding-top: 16/$sc+rem;
@@ -4693,6 +4697,7 @@ $sc:25;
                                     border-bottom: 0;
                                 }
                             }
+                        }
                     }
                 }
             }
