@@ -50,6 +50,10 @@
 			var discount = new Swiper(".historical-discount-pushsection",{
 				passiveListeners: false
 			})
+//			$(".historical-discount-pushsection").bind("touchstart",function(){
+//				
+//			})
+			
             $(".historical-discount-pushsection").bind("touchend",function(){
 				var indexS=discount.realIndex
 				var $this_obj=_obj_li.eq(indexS);
@@ -91,16 +95,8 @@
                 $this_obj.addClass(_opt.className).siblings('li').removeClass(_opt.className);
                 _opt.endClickScroll.call(this,$this_obj);
 			})
-//          
-//          _obj_li.click(function(){
-//              var index=$(this).index()
-//              $(".historical-discount-pushsection").bind("touchstart",function(){
-//              		var indexS=discount.realIndex
-//              		if(indexS!==index){
-//              			indexS=index
-//              		}
-//              })
-//          });
+
+
             
 			//解决PC端谷歌浏览器模拟的手机屏幕出现莫名的卡顿现象，滑动时禁止默认事件（2017-01-11）
 			_wrapper[0].addEventListener('touchmove',function (e){e.preventDefault();},false);
