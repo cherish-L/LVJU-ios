@@ -39,20 +39,7 @@
                 preventDefault: false
             });
             _init(_obj_li.eq(_opt.defaultSelect));
-            _obj_li.click(function(){
-                _init($(this));
-                var objindex=$(this).index()
-                var discountw=$(".historical-discount-li").width()
-                $(".historical-discount-ul").css("transform","translate3d(-"+discountw*objindex+"px, 0px, 0px)")
-                discount.realIndex=objindex
-				firstPageS.refresh()
-				secondPageS.refresh()
-				thirdPageS.refresh()
-				fourthPageS.refresh()
-				fifthPageS.refresh()
-				sixthPageS.refresh()
-				seventhPageS.refresh()
-            });
+            
             
 			var discount = new Swiper(".historical-discount-pushsection",{
 				passiveListeners: false
@@ -86,6 +73,22 @@
 				momentum: true
 			})
 			document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+            
+            _obj_li.click(function(){
+                _init($(this));
+                var objindex=$(this).index()
+                var discountw=$(".historical-discount-li").width()
+                $(".historical-discount-ul").css("transform","translate3d(-"+discountw*objindex+"px, 0px, 0px)")
+                discount.realIndex=objindex
+				firstPageS.refresh()
+				secondPageS.refresh()
+				thirdPageS.refresh()
+				fourthPageS.refresh()
+				fifthPageS.refresh()
+				sixthPageS.refresh()
+				seventhPageS.refresh()
+            });
+            
 			
 			$(".historical-discount-pushsection").bind("touchstart",function(){
 				firstPageS.refresh()
