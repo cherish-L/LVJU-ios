@@ -774,6 +774,9 @@ $sc:25;
         overflow: hidden;
         background: #F4F4F4;
         z-index: 1;
+        .iScrollVerticalScrollbar{
+            height: 100%!important;
+        }
         .section-wrapper {
             width: 100%;
             padding-bottom: 32/$sc+rem;
@@ -1165,6 +1168,7 @@ $sc:25;
         -webkit-flex: 1;
         overflow: hidden;
         background: #F4F4F4;
+        position: relative;
         .pushsection-wrapper {
             width: 100%;
             position: relative;
@@ -5297,3 +5301,4 @@ $sc:25;
 .clearfix:after{content:".";display:block;height:0;clear: both;visibility:hidden;}
 .clearfix{*zoom:1;}
 .wrap{min-width: 320px;max-width:768px;margin:0 auto;overflow:hidden;position:relative;}
+

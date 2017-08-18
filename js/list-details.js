@@ -977,7 +977,7 @@ $(function() {
 	//历史优惠
 	var firstPageS = new IScroll('.firstPage', {
 		scrollbars: false,
-		momentum: true
+		momentum: true,		
 	})
 	var secondPageS = new IScroll('.secondPage', {
 		scrollbars: false,

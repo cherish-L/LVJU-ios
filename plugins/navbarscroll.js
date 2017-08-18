@@ -45,15 +45,27 @@
                 var discountw=$(".historical-discount-li").width()
                 $(".historical-discount-ul").css("transform","translate3d(-"+discountw*objindex+"px, 0px, 0px)")
                 discount.realIndex=objindex
+				firstPageS.refresh()
+				secondPageS.refresh()
+				thirdPageS.refresh()
+				fourthPageS.refresh()
+				fifthPageS.refresh()
+				sixthPageS.refresh()
+				seventhPageS.refresh()
             });
             
 			var discount = new Swiper(".historical-discount-pushsection",{
 				passiveListeners: false
 			})
 			$(".historical-discount-pushsection").bind("touchstart",function(){
-				
+				firstPageS.refresh()
+				secondPageS.refresh()
+				thirdPageS.refresh()
+				fourthPageS.refresh()
+				fifthPageS.refresh()
+				sixthPageS.refresh()
+				seventhPageS.refresh()
 			})
-			
             $(".historical-discount-pushsection").bind("touchend",function(){
 				var indexS=discount.realIndex
 				var $this_obj=_obj_li.eq(indexS);
