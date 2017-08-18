@@ -1010,4 +1010,5 @@ $(function() {
 		preventDefault:false,
 		momentum: true
 	})
+	document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
 })

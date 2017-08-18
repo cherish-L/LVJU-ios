@@ -50,9 +50,9 @@
 			var discount = new Swiper(".historical-discount-pushsection",{
 				passiveListeners: false
 			})
-//			$(".historical-discount-pushsection").bind("touchstart",function(){
-//				
-//			})
+			$(".historical-discount-pushsection").bind("touchstart",function(){
+				
+			})
 			
             $(".historical-discount-pushsection").bind("touchend",function(){
 				var indexS=discount.realIndex
