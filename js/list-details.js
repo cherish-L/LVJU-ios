@@ -976,5 +976,6 @@ $(function() {
 		scrollbars: false
 	})
 	//历史优惠
+	document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false)
 	
 })
