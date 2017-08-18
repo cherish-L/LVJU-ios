@@ -977,32 +977,31 @@ $(function() {
 	//历史优惠
 	var firstPageS = new IScroll('.firstPage', {
 		scrollbars: false,
-		preventDefault:false
+		momentum: true
 	})
 	var secondPageS = new IScroll('.secondPage', {
 		scrollbars: false,
-		preventDefault:false
+		momentum: true
 	})
 	var thirdPageS = new IScroll('.thirdPage', {
 		scrollbars: false,
-		preventDefault:false
+		momentum: true
 	})
 	var fourthPageS = new IScroll('.fourthPage', {
 		scrollbars: false,
-		preventDefault:false
+		momentum: true
 	})
 	var fifthPageS = new IScroll('.fifthPage', {
 		scrollbars: false,
-		preventDefault:false
+		momentum: true
 	})
 	var sixthPageS = new IScroll('.sixthPage', {
 		scrollbars: false,
-		preventDefault:false
+		momentum: true
 	})
 	var seventhPageS = new IScroll('.seventhPage', {
 		scrollbars: false,
-		preventDefault:false
-//		momentum: true
+		momentum: true
 	})
 	document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
 })
