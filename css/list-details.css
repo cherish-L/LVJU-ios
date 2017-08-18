@@ -27,6 +27,11 @@ a {
   display: none;
 }
 
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+
 html,
 body {
   width: 100%;
