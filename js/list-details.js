@@ -975,25 +975,25 @@ $(function() {
 		scrollbars: false
 	})
 	//历史优惠
-	var firstPageS = new IScroll('.historical-discount-pushsection .historical-discount-li .firstPage', {
+	var firstPageS = new IScroll('.firstPage', {
 		scrollbars: false
 	})
-	var secondPageS = new IScroll('.historical-discount-pushsection .historical-discount-li .secondPage', {
+	var secondPageS = new IScroll('.secondPage', {
 		scrollbars: false
 	})
-	var thirdPageS = new IScroll('.historical-discount-pushsection .historical-discount-li .thirdPage', {
+	var thirdPageS = new IScroll('.thirdPage', {
 		scrollbars: false
 	})
-	var fourthPageS = new IScroll('.historical-discount-pushsection .historical-discount-li .fourthPage', {
+	var fourthPageS = new IScroll('.fourthPage', {
 		scrollbars: false
 	})
-	var fifthPageS = new IScroll('.historical-discount-pushsection .historical-discount-li .fifthPage', {
+	var fifthPageS = new IScroll('.fifthPage', {
 		scrollbars: false
 	})
-	var sixthPageS = new IScroll('.historical-discount-pushsection .historical-discount-li .sixthPage', {
+	var sixthPageS = new IScroll('.sixthPage', {
 		scrollbars: false
 	})
-	var seventhPageS = new IScroll('.historical-discount-pushsection .historical-discount-li .seventhPage', {
+	var seventhPageS = new IScroll('.seventhPage', {
 		scrollbars: false
 	})
 })
