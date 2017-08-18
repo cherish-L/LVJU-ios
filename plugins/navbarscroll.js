@@ -32,7 +32,7 @@
                 _scroller_w += _obj_li[i].offsetWidth;
             }
             _obj_scroller.width(_scroller_w+_opt.scrollerWidth);
-            var myScroll = new IScroll('#'+_wrapper.attr('id'), {
+            var navScroll = new IScroll('#'+_wrapper.attr('id'), {
                 eventPassthrough: true,
                 scrollX: true,
                 scrollY: false,
@@ -73,7 +73,6 @@
 				scrollbars: false,
 				momentum: true
 			})
-//			document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false)
 			$(".historical-discount-pushsection").bind("touchstart",function(e){
 				e.preventDefault()
 				firstPageS.refresh()
@@ -101,32 +100,32 @@
                 if(_scroller_w+2>_wrapper_width){
                     if(_opt.fingerClick==1){
                         if(indexS==1){
-                            myScroll.scrollTo(-this_pos_left+this_prev_width,0, _opt.clickScrollTime);
+                            navScroll.scrollTo(-this_pos_left+this_prev_width,0, _opt.clickScrollTime);
                         }else if(indexS==0){
-                            myScroll.scrollTo(-this_pos_left,0, _opt.clickScrollTime);
+                            navScroll.scrollTo(-this_pos_left,0, _opt.clickScrollTime);
                         }else if(indexS==_obj_li.length-2){
-                            myScroll.scrollBy(this_off_right-_wrapper_off_right-this_width,0, _opt.clickScrollTime);
+                            navScroll.scrollBy(this_off_right-_wrapper_off_right-this_width,0, _opt.clickScrollTime);
                         }else if(indexS==_obj_li.length-1){
-                            myScroll.scrollBy(this_off_right-_wrapper_off_right,0, _opt.clickScrollTime);
+                            navScroll.scrollBy(this_off_right-_wrapper_off_right,0, _opt.clickScrollTime);
                         }else{
                             if(this_off_left-_wrapper_off_left-(this_width*_opt.fingerClick)<duibi){
-                                myScroll.scrollTo(-this_pos_left+this_prev_width+(this_width*_opt.fingerClick),0, _opt.clickScrollTime);
+                                navScroll.scrollTo(-this_pos_left+this_prev_width+(this_width*_opt.fingerClick),0, _opt.clickScrollTime);
                             }else if(this_off_right-_wrapper_off_right-(this_width*_opt.fingerClick)<duibi){
-                                myScroll.scrollBy(this_off_right-this_next_width-_wrapper_off_right-(this_width*_opt.fingerClick),0, _opt.clickScrollTime);
+                                navScroll.scrollBy(this_off_right-this_next_width-_wrapper_off_right-(this_width*_opt.fingerClick),0, _opt.clickScrollTime);
                             }
                         }
                     }else{
                         if(indexS==1){
-                            myScroll.scrollTo(-this_pos_left+this_prev_width,0, _opt.clickScrollTime);
+                            navScroll.scrollTo(-this_pos_left+this_prev_width,0, _opt.clickScrollTime);
                         }else if(indexS==_obj_li.length-1){
                             if(this_off_right-_wrapper_off_right>1||this_off_right-_wrapper_off_right<-1){
-                                myScroll.scrollBy(this_off_right-_wrapper_off_right,0, _opt.clickScrollTime);
+                                navScroll.scrollBy(this_off_right-_wrapper_off_right,0, _opt.clickScrollTime);
                             }
                         }else{
                             if(this_off_left-_wrapper_off_left<duibi){
-                                myScroll.scrollTo(-this_pos_left+this_prev_width,0, _opt.clickScrollTime);
+                                navScroll.scrollTo(-this_pos_left+this_prev_width,0, _opt.clickScrollTime);
                             }else if(this_off_right-_wrapper_off_right<duibi){
-                                myScroll.scrollBy(this_off_right-this_next_width-_wrapper_off_right,0, _opt.clickScrollTime);
+                                navScroll.scrollBy(this_off_right-this_next_width-_wrapper_off_right,0, _opt.clickScrollTime);
                             }
                         }
                     }
@@ -145,32 +144,32 @@
                 if(_scroller_w+2>_wrapper_width){
                     if(_opt.fingerClick==1){
                         if(this_index==1){
-                            myScroll.scrollTo(-this_pos_left+this_prev_width,0, _opt.clickScrollTime);
+                            navScroll.scrollTo(-this_pos_left+this_prev_width,0, _opt.clickScrollTime);
                         }else if(this_index==0){
-                            myScroll.scrollTo(-this_pos_left,0, _opt.clickScrollTime);
+                            navScroll.scrollTo(-this_pos_left,0, _opt.clickScrollTime);
                         }else if(this_index==_obj_li.length-2){
-                            myScroll.scrollBy(this_off_right-_wrapper_off_right-this_width,0, _opt.clickScrollTime);
+                            navScroll.scrollBy(this_off_right-_wrapper_off_right-this_width,0, _opt.clickScrollTime);
                         }else if(this_index==_obj_li.length-1){
-                            myScroll.scrollBy(this_off_right-_wrapper_off_right,0, _opt.clickScrollTime);
+                            navScroll.scrollBy(this_off_right-_wrapper_off_right,0, _opt.clickScrollTime);
                         }else{
                             if(this_off_left-_wrapper_off_left-(this_width*_opt.fingerClick)<duibi){
-                                myScroll.scrollTo(-this_pos_left+this_prev_width+(this_width*_opt.fingerClick),0, _opt.clickScrollTime);
+                                navScroll.scrollTo(-this_pos_left+this_prev_width+(this_width*_opt.fingerClick),0, _opt.clickScrollTime);
                             }else if(this_off_right-_wrapper_off_right-(this_width*_opt.fingerClick)<duibi){
-                                myScroll.scrollBy(this_off_right-this_next_width-_wrapper_off_right-(this_width*_opt.fingerClick),0, _opt.clickScrollTime);
+                                navScroll.scrollBy(this_off_right-this_next_width-_wrapper_off_right-(this_width*_opt.fingerClick),0, _opt.clickScrollTime);
                             }
                         }
                     }else{
                         if(this_index==1){
-                            myScroll.scrollTo(-this_pos_left+this_prev_width,0, _opt.clickScrollTime);
+                            navScroll.scrollTo(-this_pos_left+this_prev_width,0, _opt.clickScrollTime);
                         }else if(this_index==_obj_li.length-1){
                             if(this_off_right-_wrapper_off_right>1||this_off_right-_wrapper_off_right<-1){
-                                myScroll.scrollBy(this_off_right-_wrapper_off_right,0, _opt.clickScrollTime);
+                                navScroll.scrollBy(this_off_right-_wrapper_off_right,0, _opt.clickScrollTime);
                             }
                         }else{
                             if(this_off_left-_wrapper_off_left<duibi){
-                                myScroll.scrollTo(-this_pos_left+this_prev_width,0, _opt.clickScrollTime);
+                                navScroll.scrollTo(-this_pos_left+this_prev_width,0, _opt.clickScrollTime);
                             }else if(this_off_right-_wrapper_off_right<duibi){
-                                myScroll.scrollBy(this_off_right-this_next_width-_wrapper_off_right,0, _opt.clickScrollTime);
+                                navScroll.scrollBy(this_off_right-this_next_width-_wrapper_off_right,0, _opt.clickScrollTime);
                             }
                         }
                     }

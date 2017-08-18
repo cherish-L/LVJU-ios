@@ -926,16 +926,18 @@ $(function() {
 	$(".historical-discount-li").height(testh)
 	
 	
-//	$(".historical-discount-push").css("left",wrapw)
-//	$(".pushsection-dynamic .dynamic-btn").tap(function(){
-//		$(".historical-discount-push").css("transition","all .3s")
-//		$(".historical-discount-push").css("left","0")
-//	})
-//	$(".historical-discount-pushheader .return").tap(function(){
-//		$(".historical-discount-push").css("transition","all .3s")
-//		$(".historical-discount-push").css("left",wrapw)
-//	})
-	
+	$(".historical-discount-push").css("left",wrapw+5)
+	$(".pushsection-dynamic .dynamic-btn").tap(function(){
+		$(".historical-discount-push").css("transition","all .3s")
+		$(".historical-discount-push").css("left","0")
+	})
+	$(".historical-discount-pushheader .return").tap(function(){
+		$(".historical-discount-push").css("transition","all .3s")
+		$(".historical-discount-push").css("left",wrapw+5)
+	})
+	setTimeout(function(){
+		$(".historical-discount-push").css("z-index","20")
+	}, 0)
 	
 	//iscroll.js各各滚动回弹效果
 	var municipalityS = new IScroll('.municipality', {
@@ -978,6 +980,5 @@ $(function() {
 		scrollbars: false
 	})
 	//历史优惠
-//	document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false)
 	
 })
