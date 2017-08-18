@@ -5251,17 +5251,17 @@ li {
 .list-details-push .historical-discount-push .historical-discount-pushsection .historical-discount-ul .historical-discount-li {
   width: 100%;
   height: 100%;
-  position: relative;
 }
 
 .list-details-push .historical-discount-push .historical-discount-pushsection .historical-discount-ul .historical-discount-li .pushsection-wrapper {
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: relative;
 }
 
 .list-details-push .historical-discount-push .historical-discount-pushsection .historical-discount-ul .historical-discount-li .pushsection-wrapper .scrollPage {
   width: 100%;
+  position: absolute;
   padding: 0.32rem 0.64rem 0;
   overflow: hidden;
   box-sizing: border-box;
