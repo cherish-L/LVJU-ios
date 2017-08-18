@@ -92,13 +92,6 @@
                 var discountw=$(".historical-discount-li").width()
                 $(".historical-discount-ul").css("transform","translate3d(-"+discountw*objindex+"px, 0px, 0px)")
                 discount.realIndex=objindex
-				firstPageS.refresh()
-				secondPageS.refresh()
-				thirdPageS.refresh()
-				fourthPageS.refresh()
-				fifthPageS.refresh()
-				sixthPageS.refresh()
-				seventhPageS.refresh()
             });
             
             $(".historical-discount-pushsection").bind("touchend",function(){
@@ -141,13 +134,6 @@
                 }
                 $this_obj.addClass(_opt.className).siblings('li').removeClass(_opt.className);
                 _opt.endClickScroll.call(this,$this_obj);
-				firstPageS.refresh()
-				secondPageS.refresh()
-				thirdPageS.refresh()
-				fourthPageS.refresh()
-				fifthPageS.refresh()
-				sixthPageS.refresh()
-				seventhPageS.refresh()
 			})
 
 
