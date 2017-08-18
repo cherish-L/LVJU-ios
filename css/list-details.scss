@@ -4630,15 +4630,14 @@ $sc:25;
             .historical-discount-ul{
                 width: 100%;
                 height: 100%;
-                display: -webkit-flex;
 //              position: relative;
                 .historical-discount-li{
                     width: 100%;
                     height: 100%;
+                    overflow: hidden;
                     .pushsection-wrapper{
                         width: 100%;
                         height: 100%;
-                        position:fixed;
                         overflow: hidden;
                         .scrollPage{
                             width: 100%;
