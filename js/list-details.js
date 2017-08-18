@@ -1005,7 +1005,8 @@ $(function() {
 	})
 	document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false)
 	
-	$(".historical-discount-pushsection").bind("touchmove",function(){
+	$(".historical-discount-pushsection").bind("touchstart",function(e){
+		e.preventDefault()
 		firstPageS.refresh()
 		secondPageS.refresh()
 		thirdPageS.refresh()
