@@ -5251,13 +5251,13 @@ li {
 .list-details-push .historical-discount-push .historical-discount-pushsection .historical-discount-ul .historical-discount-li {
   width: 100%;
   height: 100%;
-  -webkit-flex-shrink: 0;
   position: relative;
 }
 
 .list-details-push .historical-discount-push .historical-discount-pushsection .historical-discount-ul .historical-discount-li .pushsection-wrapper {
   width: 100%;
   height: 100%;
+  position: absolute;
 }
 
 .list-details-push .historical-discount-push .historical-discount-pushsection .historical-discount-ul .historical-discount-li .pushsection-wrapper .scrollPage {
