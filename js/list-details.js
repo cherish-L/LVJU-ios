@@ -930,7 +930,8 @@ $(function() {
 //				$(".pushheader-nav .nav-list li").eq(index).addClass("select").siblings().removeClass("select")
 //			})
 	
-	
+	var discounth=$(".historical-discount-pushsection").height()
+	$(".historical-discount-li").height(discounth)
 	
 	
 	
