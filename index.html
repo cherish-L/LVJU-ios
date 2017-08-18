@@ -3,329 +3,66 @@
 
 	<head>
 		<meta charset="utf-8" />
-		<meta content="email=no" name="format-detection" />
-		<meta http-equiv="Cache-Control" content="no-cache" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>楼盘列表和详情</title>
-		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/list-details.css" />
-		<link rel="stylesheet" type="text/css" href="plugins/animate.min.css" />
+		<title>楼盘资讯</title>
+		<link rel="stylesheet" type="text/css" href="css/building-information.css" />
 		<script type="text/javascript" src="plugins/zepto.min.js"></script>
-		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>
-		<script src="plugins/swiper-3.4.2.min.js"></script>
+		<script type="text/javascript" src="plugins/iscroll-master/build/iscroll-probe.js"></script>
 		<script type="text/javascript" src="vue/vue.js"></script>
-		<script type="text/javascript" src="plugins/navbarscroll.js"></script>
+		<script type="text/javascript" src="js/building-information.js"></script>
 		<script>
 			//适配
 			document.documentElement.style.fontSize = innerWidth / 15 + "px";
 		</script>
 	</head>
+
 	<body>
 		<div class="container" v-cloak>
 			<header class="header">
 				<div class="signal_bar"></div>
-				<div class="Search_bar">
-					<form class="list-details-form" action="">
-						<a class="return" href="javascript:;"></a>
-						<input class="form-ipt" type="text" placeholder="输入楼盘名或楼盘地址" />
-						<a class="position" href="javascript:;"></a>
-					</form>
+				<div class="property-information">
+					<h3 class="property-information-title">楼市资讯</h3>
 				</div>
-				<div class="list-nav">
-					<ul class="list-nav-ul">
-						<li class="list-nav-litxt">
-							<span>区域</span>
-						</li>
-						<li class="list-nav-litxt">
-							<span>均价</span>
-						</li>
-						<li class="list-nav-litxt">
-							<span>户型</span>
-						</li>
-						<li class="list-nav-litxt">
-							<span>更多</span>
-						</li>
-						<li class="list-nav-liimg">
-							<span></span>
-						</li>
-					</ul>
-					<ul class="list-nav-pushul">
-						<li class="list-nav-pushli region">
-							<div class="list-nav-pushli-wrapper">
-								<div class="region-body">
-									<div class="region-body-box">
-										<div class="regionlist">
-											<ul class="regionlist-ul">
-												<li class="regionlist-li confirmone">区域</li>
-												<li class="regionlist-li">附近</li>
-											</ul>
-										</div>
-										<div class="municipality">
-											<ul class="municipality-ul">
-												<li class="municipality-li" v-for="list in municipalitydata" v-text="list.city"></li>
-											</ul>
-										</div>
-										<div class="district">
-											<div class="district-wrapper">
-												<ul class="district-ul">
-													<li class="district-li" v-for="list in districtdata1">
-														<span class="district-li-txt" v-text="list.district"></span>
-														<span class="check"></span>
-													</li>
-												</ul>
-
-												<ul class="district-ul">
-													<li class="district-li" v-for="list in districtdata2">
-														<span class="district-li-txt" v-text="list.district"></span>
-														<span class="check"></span>
-													</li>
-												</ul>
-
-												<ul class="district-ul">
-													<li class="district-li" v-for="list in districtdata3">
-														<span class="district-li-txt" v-text="list.district"></span>
-														<span class="check"></span>
-													</li>
-												</ul>
-
-												<ul class="district-ul">
-													<li class="district-li" v-for="list in districtdata4">
-														<span class="district-li-txt" v-text="list.district"></span>
-														<span class="check"></span>
-													</li>
-												</ul>
-
-												<ul class="district-ul">
-													<li class="district-li" v-for="list in districtdata5">
-														<span class="district-li-txt" v-text="list.district"></span>
-														<span class="check"></span>
-													</li>
-												</ul>
-
-												<ul class="district-ul">
-													<li class="district-li" v-for="list in districtdata6">
-														<span class="district-li-txt" v-text="list.district"></span>
-														<span class="check"></span>
-													</li>
-												</ul>
-
-												<ul class="district-ul">
-													<li class="district-li" v-for="list in districtdata7">
-														<span class="district-li-txt" v-text="list.district"></span>
-														<span class="check"></span>
-													</li>
-												</ul>
-
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="region-footer">
-									<span class="empty">重置</span>
-									<span class="determine">确定</span>
-								</div>
-							</div>
-						</li>
-						<li class="list-nav-pushli averagePrice">
-							<div class="list-nav-pushli-wrapper">
-								<div class="averagePrice-body">
-									<ul class="averagePrice-body-ul">
-										<li class="select">
-											<span>不限</span>
-											<i></i>
-										</li>
-										<li>
-											<span>1万以下</span>
-											<i></i>
-										</li>
-										<li>
-											<span>1-1.5万</span>
-											<i></i>
-										</li>
-										<li>
-											<span>1.5-2万</span>
-											<i></i>
-										</li>
-										<li>
-											<span>2万以上</span>
-											<i></i>
-										</li>
-									</ul>
-								</div>
-								<div class="averagePrice-footer">
-									<div class="price-input">
-										<input class="minprice" type="text" placeholder="最低价格" />
-										<span></span>
-										<input class="maxprice" type="text" placeholder="最高价格" />
-									</div>
-									<div class="determine">确定</div>
-								</div>
-							</div>
-						</li>
-						<li class="list-nav-pushli houseType">
-							<div class="list-nav-pushli-wrapper">
-								<div class="houseType-body">
-									<ul class="houseType-body-ul">
-										<li class="select">
-											<span>不限</span>
-											<i></i>
-										</li>
-										<li>
-											<span>一室</span>
-											<i></i>
-										</li>
-										<li>
-											<span>二室</span>
-											<i></i>
-										</li>
-										<li>
-											<span>三室</span>
-											<i></i>
-										</li>
-										<li>
-											<span>四室</span>
-											<i></i>
-										</li>
-										<li>
-											<span>五室以上</span>
-											<i></i>
-										</li>
-										<li>
-											<span>别墅</span>
-											<i></i>
-										</li>
-									</ul>
-								</div>
-								<div class="houseType-footer">
-									<span class="empty">重置</span>
-									<span class="determine">确定</span>
-								</div>
-							</div>
-						</li>
-						<li class="list-nav-pushli more">
-							<div class="list-nav-pushli-wrapper">
-								<div class="more-body">
-									<div class="more-body-wrapper">
-										<div class="open-time">
-											<h3 class="open-time-title">开盘时间</h3>
-											<div class="open-time-content">
-												<span>本月开盘</span>
-												<span>下月开盘</span>
-												<span>三个月内开盘</span>
-												<span>六个月内开盘</span>
-												<span>已开盘三个月</span>
-												<span>已开票六个月</span>
-												<div style="clear: both;"></div>
-											</div>
-										</div>
-										<div class="characteristic">
-											<h3 class="characteristic-title">特色</h3>
-											<div class="characteristic-content">
-												<span class="select">打折优惠</span>
-												<span class="select">住宅</span>
-												<span class="select">养生社区</span>
-												<span class="select">花园洋房</span>
-												<span class="select">海景房</span>
-												<span class="select">河(江)景房</span>
-												<span class="select">温泉社区</span>
-												<span class="select">酒店式公寓</span>
-												<span class="select">商铺</span>
-												<span class="select">别墅</span>
-												<span class="select">公寓</span>
-												<span class="select">社区</span>
-												<span class="select">学区房</span>
-												<span class="select">湖景房</span>
-												<span class="select">写字楼</span>
-												<div style="clear: both;"></div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="more-footer">
-									<span class="empty">重置</span>
-									<span class="determine">确定</span>
-								</div>
-							</div>
-						</li>
-						<li class="list-nav-pushli screen">
-							<div class="list-nav-pushli-wrapper">
-								<div class="screen-body">
-									<ul class="screen-body-ul">
-										<li class="select">默认排序</li>
-										<li>开盘价从高到低</li>
-										<li>开盘价从低到高</li>
-										<li>均价从高到低</li>
-										<li>均价从低到高</li>
-										<li>人气从高到低</li>
-									</ul>
-								</div>
-							</div>
-						</li>
+				<div class="content-nav">
+					<ul class="navsub-ul">
+						<li class="navsub-ul-active"><strong>热门资讯</strong></li>
+						<li><strong>海南资讯</strong></li>
+						<li><strong>楼盘热点</strong></li>
+						<li><strong>新盘速递</strong></li>
+						<li><strong>楼盘导购</strong></li>
 					</ul>
 				</div>
 			</header>
-			<div class="demand-condition">
-				<ul class="demand-condition-wrapper">
-					<li>
-						<span>美兰区</span>
-						<i></i>
-					</li>
-					<li>
-						<span>1-1.5万</span>
-						<i></i>
-					</li>
-					<li>
-						<span>三室</span>
-						<i></i>
-					</li>
-				</ul>
-			</div>
 			<section class="section">
-				<div class="section-wrapper">
-					<div class="section-listhouse">
-						<ul class="listhouse-data-ul">
-							<li class="listhouse-data-li" v-for="list in listdetails">
-								<div class="dataDetail">
-									<div class="listhouse-img">
-										<img :src="list.img" />
-										<span class="biaoqian"></span>
-										<span class="ghtxt" v-text="list.sell"></span>
+				<div class="section-content-body">
+					<div class="section-content-massage">
+						<ul class="pri-ul">
+							<li class="pri-li" v-for="item in items">
+								<div class="style" :class="item.className">
+									<div class="style-left">
+										<img v-bind:src="item.img" />
 									</div>
-									<div class="listhouse-txt">
-										<span class="title">
-											<span class="position" v-text="list.positions"></span>
-										<span class="region" v-text="list.region"></span>
-										</span>
-										<span class="address" v-text="list.address"></span>
-										<span class="openprice" v-text="list.openprice"></span>
-										<span class="averageprice">
-											<span class="averag" v-text="list.averag"></span>
-										<span class="price" v-text="list.price"></span>
-										</span>
+									<div class="style-right">
+										<div class="style-title">
+											<p>
+												<span class="title-txt" v-text='item.title'></span>
+												<span class="title-content" v-text='item.content'></span>
+											</p>
+										</div>
+										<div class="style-img">
+											<img v-bind:src="item.detailed.imgone" />
+											<img v-bind:src="item.detailed.imgtwo" />
+											<img v-bind:src="item.detailed.imgthird" />
+										</div>
+										<div class="style-info">
+											<span class="style-copyright" v-text='item.from'></span>
+											<span class="style-time" v-text='item.time'></span>
+										</div>
 									</div>
-								</div>
-								<div class="dataBrowse">
-									<div class="Browsecount">877451</div>
-									<div class="classification" :class="list.className">
-										<span class="style">住宅</span>
-										<span class="style">养生社区</span>
-										<span class="style">海景房</span>
-										<span class="style">别墅</span>
-										<span class="style">公寓</span>
-									</div>
+
 								</div>
 							</li>
 						</ul>
-					</div>
-					<div class="section-load">
-						上拉加载更多
-					</div>
-					<div class="section-loading">
-						<i></i>
-						<span>正在加载更多</span>
-					</div>
-					<div class="section-loadnone">
-						没有更多内容
 					</div>
 				</div>
 			</section>
@@ -340,13 +77,13 @@
 					<li class="footer-nav-li">
 						<a href="javascript:;">
 							<i><img src="img/Properties.png"/></i>
-							<span class="current">楼盘</span>
+							<span>楼盘</span>
 						</a>
 					</li>
 					<li class="footer-nav-li">
 						<a href="javascript:;">
-							<i><img src="img/zixun1.png"/></i>
-							<span>资讯</span>
+							<i><img src="img/zixun.png"/></i>
+							<span class="current">资讯</span>
 						</a>
 					</li>
 					<li class="footer-nav-li">
@@ -364,181 +101,61 @@
 				</ul>
 			</footer>
 		</div>
-		<div class="Mask"></div>
-		<!-------- 楼盘页面 楼盘详情弹框 -------->
-		<div class="list-details-push">
-			<header class="list-details-pushheader">
-				<div class="signal_bar"></div>
-				<div class="title_bar">
-					<h3 class="title_txt">景园悦海湾</h3>
-					<a class="return" href="javascript:;"></a>
-					<a class="collection" href="javascript:;"></a>
-					<a class="share" href="javascript:;"></a>
-				</div>
-			</header>
-			<section class="list-details-pushsection">
-				<div class="pushsection-wrapper">
-					<div class="pushsection-banner">
-						<img src="img/massage-subject3.png" />
-						<div class="pushsection-banner-info">
-							<span class="browseCount">877451</span>
-							<span class="imgCount">80</span>
-							<span class="seeCount">18</span>
-						</div>
+		<div class="zhezhao"></div>
+		<div class="article-push">
+			<div class="article-push-box">
+				<header class="article-push-header">
+					<div class="signal_bar"></div>
+					<div class="article-push-header-wrapper">
+						<a class="return" href="javascript:;"></a>
+						<span class="comment">8742点评</span>
 					</div>
-					<div class="pushsection-basicInfo">
-						<ul class="basicInfo-ul">
-							<li class="basicInfo-li info">
-								<span>景园悦海湾</span>
-								<span>在售</span>
-								<span>开盘：8000元/㎡</span>
-								<span>
-									均价：<strong>12000元/㎡</strong>
-								</span>
-							</li>
-							<li class="basicInfo-li position">
-								<span>文昌市月亮湾北部起步区的中部</span>
-								<i></i>
-
-							</li>
-							<li class="basicInfo-li notice">
-								<span>降价通知</span>
-								<i></i>
-							</li>
-						</ul>
-					</div>
-					<div class="pushsection-propertiesInfo">
-						<h3 class="propertiesInfo-title">
-							<span>楼盘信息</span>
-							<span class="ParameterDetails">参数详情</span>
-						</h3>
-						<div class="propertiesInfo-content">
-							<div class="member propertiesStyle">
-								<span class="infoLable">楼盘类型：</span>
-								<div class="specific">
-									<span>住宅</span>
-									<span>养生社区</span>
-									<span>海景房</span>
-									<span>别墅</span>
-									<span>公寓</span>
+				</header>
+				<div class="article-push-body">
+					<div class="article-push-wrapper">
+						<div class="article-push-content">
+							<div class="article-push-content-header">
+								<p><span class="title">[鲁能山海天]</span>客户看中四季康城二期高性价比小苏助力连签四房</p>
+								<div class="article-push-article-info">
+									<span class="copyright">旅居网</span>
+									<span class="time">2017-06-20</span>
 								</div>
 							</div>
-							<div class="member openTime">
-								<span class="infoLable">开盘时间：</span>
-								<div class="specific">2013-11-30</div>
-							</div>
-							<div class="member othersTime">
-								<span class="infoLable">交房时间：</span>
-								<div class="specific">2015-06-30</div>
-							</div>
-							<div class="member decorationSituation">
-								<span class="infoLable">装修情况：</span>
-								<div class="specific">精装修</div>
-							</div>
-						</div>
-					</div>
-					<div class="pushsection-houseStyle">
-						<h3 class="houseStyle-title">
-							<span>主力户型</span>
-							<span class="num"></span>
-							<span class="allstyle">全部户型</span>
-						</h3>
-						<div class="houseStyle-content">
-							<ul class="houseStyle-content-ul">
-								<li v-for="style in houseStyle">
-									<div class="imgbox">
-										<img :src="style.src" />
-										<span v-text="style.sale"></span>
+							<div class="article-push-content-body">
+								<p>在经过一月到五月的集中放量和各大节日的优惠活动后，海南楼市迎来了暂时的间隙期，不少开发商暂时冷却下来，减少了楼盘的各种暖场营销活动。那么这个时候购房者来海南买房会不会没办法买到优惠的房源呢？当然不会！本期旅居网小编就来盘点一下6月初儋州楼盘推出的特价房优惠活动，为近期想来海南买优惠房源的购房者提供一份置业参考。</p>
+								<img src="img/massage-subject3.png" alt="" />
+								<p>在经过一月到五月的集中放量和各大节日的优惠活动后，海南楼市迎来了暂时的间隙期，不少开发商暂时冷却下来，减少了楼盘的各种暖场营销活动。那么这个时候购房者来海南买房会不会没办法买到优惠的房源呢？当然不会！本期旅居网小编就来盘点一下6月初儋州楼盘推出的特价房优惠活动，为近期想来海南买优惠房源的购房者提供一份置业参考。</p>
+								<p>在经过一月到五月的集中放量和各大节日的优惠活动后，海南楼市迎来了暂时的间隙期，不少开发商暂时冷却下来，减少了楼盘的各种暖场营销活动。那么这个时候购房者来海南买房会不会没办法买到优惠的房源呢？当然不会！本期旅居网小编就来盘点一下6月初儋州楼盘推出的特价房优惠活动，为近期想来海南买优惠房源的购房者提供一份置业参考。</p>
+								<p class="indent"><span>我是小标题</span>在经过一月到五月的集中放量和各大节日的优惠活动后，海南楼市迎来了暂时的间隙期，不少开发商暂时冷却下来，减少了楼盘的各种暖场营销活动。那么这个时候购房者来海南买房会不会没办法买到优惠的房源呢？当然不会！本期旅居网小编就来盘点一下6月初儋州楼盘推出的特价房优惠活动，为近期想来海南买优惠房源的购房者提供一份置业参考。</p>
+								<div class="edit">编辑：卤鸭卤鸭</div>
+								<div class="share">
+									<span>分享到</span>
+								</div>
+								<div class="shareway">
+									<div class="way weixin">
+										<i></i>
+										<span>微信好友</span>
 									</div>
-									<div class="textbox">
-										<p v-text="style.styles">二期A1户</p>
-										<p v-text="style.parts">1房1厅1厨1卫1阳台</p>
-										<p v-text="style.areas">53.60㎡</p>
+									<div class="way friendcircle">
+										<i></i>
+										<span>朋友圈</span>
 									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="pushsection-buildingInfo">
-						<h3 class="buildingInfo-title">
-							<span>楼栋信息</span>
-							<span class="num"></span>
-							<span class="details">楼栋详情</span>
-						</h3>
-						<div class="buildingInfo-content">
-							<ul class="buildingInfo-content-ul">
-								<li>
-									<span>1#</span>
-									<span>即将上市</span>
-								</li>
-								<li>
-									<span>2#</span>
-									<span>在售</span>
-								</li>
-								<li>
-									<span>3#</span>
-									<span>新地块</span>
-								</li>
-								<li>
-									<span>4#</span>
-									<span>在售</span>
-								</li>
-								<li>
-									<span>5#</span>
-									<span>即将上市</span>
-								</li>
-								<li>
-									<span>6#</span>
-									<span>尾盘</span>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="pushsection-discountActivity">
-						<h3 class="discountActivity-title">
-							<span></span>
-							<span class="redtxt">优惠信息</span>
-							<span class="line">|</span>
-							<span class="graytxt">免费专车</span>
-							<span class="line">|</span>
-							<span class="graytxt">全程接机</span>
-							<span class="line">|</span>
-							<span class="graytxt">安排食宿</span>
-							<span class="line">|</span>
-						</h3>
-						<div class="discountActivity-content">
-							项目三期水生活1、2号楼将于2017年3月16日正式推出， 其面积为56.7平一房、81.9平两房，全通透户型，开盘 价约12000元/平，均价约16000元/平，更有一楼带花园， 顶楼复式带露台的户型哦，先到先得。
-						</div>
-						<div class="discountActivity-partake">
-							<div class="updateTime">
-								<span>更新时间：</span>
-								<span>2017年03月14日</span>
+									<div class="way xinlang">
+										<i></i>
+										<span>新浪微博</span>
+									</div>
+								</div>
+								<div class="jumpPage">
+									<span class="previous">上一篇</span>
+									<span class="next">下一篇</span>
+								</div>
 							</div>
-							<div class="partakeNum">
-								<span>参与人数：</span>
-								<span>420</span>
-							</div>
-							<div class="partakeBox">立即参与</div>
 						</div>
-					</div>
-					<div class="pushsection-historicalPrice">
-						<h3 class="historicalPrice-title">
-							<span>历史价格</span>
-						</h3>
-						<div class="historicalPrice-content">
-
-						</div>
-					</div>
-					<div class="pushsection-propertyReview">
-						<h3 class="propertyReview-title">
-							<span>楼盘点评</span>
-							<span class="num">（279）</span>
-							<span class="view-all">查看全部</span>
-						</h3>
-						<div class="propertyReview-content">
-							<ul class="propertyReview-ul">
-								<li class="propertyReview-li" v-for="user in commention">
-									<div class="propertyReview-li-box" :class="user.className">
+						<div class="article-push-hotThread">
+							<h3 class="hotThread-header">热门跟帖</h3>
+							<ul class="hotThread-ul">
+								<li class="hotThread-li" v-for="user in commention">
+									<div class="hotThread-li-box" :class="user.className">
 										<div class="user-avatar">
 											<img class="user-avatar-img" v-bind:src="user.avatar"></img>
 										</div>
@@ -569,1260 +186,184 @@
 								</li>
 							</ul>
 						</div>
-						<div class="propertyReview-write">
-							<span class="writeTxt">我要点评</span>
-						</div>
-					</div>
-					<div class="pushsection-propertyInfo">
-						<h3 class="propertyInfo-title">
-							<span>楼盘资讯</span>
-							<span class="enter"></span>
-						</h3>
-						<div class="propertyInfo-content">
-							<ul class="propertyInfo">
-								<li v-for="list in information">
-									<h3 v-text='list.title'></h3>
-									<p  v-text='list.content'></p>
+						<div class="article-push-moreAbout">
+							<h3 class="moreAbout-header">更多关于“海滨国际”的资讯</h3>
+							<ul class="moreAbout-ul">
+								<li class="moreAbout-li" v-for="link in moreAbout">
+									<p v-text='link.txt'></p>
+									<span v-text='link.time'></span>
 								</li>
 							</ul>
 						</div>
 					</div>
-					<div class="pushsection-dynamic">
-						<h3 class="dynamic-title">
-							<span>优惠动态</span>
-							<span class="dynamic-btn">历史优惠动态</span>
-						</h3>
-						<div class="dynamic-content">
-							<h3>07月05日</h3>
-							<p>项目目前洋房33、34号楼在售中，一梯六户，7层高， 其主推户型面积约为63平、73平，购房全款可享9折优惠， 按揭则享93折，折后均价约12000元/平，含1800元/平精装修。
-							</p>
-						</div>
-					</div>
+
 				</div>
-			</section>
-			<footer class="list-details-pushfooter">
-				<div class="signUp">
-					<i></i>
-					<span>报名看房</span>
-				</div>
-				<div class="contact">联系置业顾问</div>
-			</footer>
-			<!-------- 楼盘页面 楼盘详情 遮罩 -------->
-			<div class="list-details-pushMask"></div>
-			<!-------- 楼盘页面 楼盘详情 楼盘位置弹框 -------->
-			<div class="house-position-push">
-				<header class="house-position-pushheader">
-					<div class="signal_bar"></div>
-					<div class="title_bar">
-						<h3 class="title_txt">楼盘位置</h3>
-						<a class="return" href="javascript:;"></a>
-					</div>
-				</header>
-				<section class="house-position-pushsection">
-					<div class="house-position-pushsection-map">
-						<img src="img/map.png" alt="" />
-					</div>
-				</section>
-				<div class="house-position-pushperipheral">
-					<div class="map-peripheral-wrapper">
-						<ul class="peripheral-ul">
-							<li class="peripheral-li">
-								<i></i>
-								<span>公交</span>
-							</li>
-							<li class="peripheral-li">
-								<i></i>
-								<span>医院</span>
-							</li>
-							<li class="peripheral-li">
-								<i></i>
-								<span>银行</span>
-							</li>
-							<li class="peripheral-li">
-								<i></i>
-								<span>超市</span>
-							</li>
-							<li class="peripheral-li">
-								<i></i>
-								<span>学校</span>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<!-------- 楼盘页面 楼盘详情 楼盘参数弹框 -------->
-			<div class="Property-parameter-push">
-				<header class="Property-parameter-pushheader">
-					<div class="signal_bar"></div>
-					<div class="title_bar">
-						<h3 class="title_txt">信息详情</h3>
-						<a class="return" href="javascript:;"></a>
-						<a class="collection" href="javascript:;"></a>
-						<a class="share" href="javascript:;"></a>
-					</div>
-				</header>
-				<section class="Property-parameter-pushsection">
-					<div class="pushsection-wrapper">
-						<div class="pushsection-basicInfo">
-							<ul class="basicInfo-ul">
-								<li class="basicInfo-li info">
-									<span>景园悦海湾</span>
-									<span>在售</span>
-									<span>开盘：8000元/㎡</span>
-									<span>
-									均价：<strong>12000元/㎡</strong>
-								</span>
-								</li>
-							</ul>
-						</div>
-						<div class="pushsection-peculiarity">
-							<h3 class="peculiarity-title">
-							<span>楼盘特点</span>
-						</h3>
-							<div class="peculiarity-content">
-								<p class="open">项目位于海南省儋州市白马井滨海新区第二组团，东南紧临海南环岛西线高速公路和规划建设的西环铁路，西朝风光旖旎的北部湾，北靠天然深水避风良港、项目位于海南省儋州市白马井滨海新区第二组团，东南紧临海南环岛西线高速公路和规划建设的西环铁路，西朝风光旖旎的北部湾，北靠天然深水避风良港</p>
-								<div class="openMore">
-									<span>展开更多</span>
-								</div>
-							</div>
-						</div>
-						<div class="pushsection-propertiesInfo">
-							<div class="propertiesInfo-content">
-								<div class="member propertiesStyle">
-									<span class="infoLable">楼盘类型：</span>
-									<div class="specific">
-										<span>住宅</span>
-										<span>养生社区</span>
-										<span>海景房</span>
-										<span>别墅</span>
-										<span>公寓</span>
-									</div>
-								</div>
-								<div class="member openTime">
-									<span class="infoLable">开盘时间：</span>
-									<div class="specific">2.2期开盘2013-09-11</div>
-								</div>
-								<div class="member othersTime">
-									<span class="infoLable">交房时间：</span>
-									<div class="specific">2.1期2015年-6月；2.2期2016年-1月</div>
-								</div>
-								<div class="member decorationSituation">
-									<span class="infoLable">装修情况：</span>
-									<div class="specific">精装修</div>
-								</div>
-								<div class="member housetype">
-									<span class="infoLable">房屋类型：</span>
-									<div class="specific">一房、二房</div>
-								</div>
-							</div>
-						</div>
-						<div class="pushsection-buildingInfo">
-							<div class="buildingInfo-content">
-								<div class="member">
-									<span class="infoLable">所属区域：</span>
-									<div class="specific">儋州 - 滨海新区</div>
-								</div>
-								<div class="member">
-									<span class="infoLable">公交路线：</span>
-									<div class="specific">中南西海岸至白马井镇</div>
-								</div>
-								<div class="member">
-									<span class="infoLable">开发商：</span>
-									<div class="specific">儋州中南房地产开发有限公司</div>
-								</div>
-								<div class="member">
-									<span class="infoLable">售楼电话：</span>
-									<div class="specific">400-900-3313转6666</div>
-								</div>
-								<div class="member">
-									<span class="infoLable">物业公司：</span>
-									<div class="specific">儋州中南物业服务有限公司</div>
-								</div>
-								<div class="member">
-									<span class="infoLable">物业费：</span>
-									<div class="specific">2元/㎡</div>
-								</div>
-							</div>
-						</div>
-						<div class="pushsection-coveredArea">
-							<div class="coveredArea-content">
-								<div class="member">
-									<span class="infoLable">规划面积：</span>
-									<div class="specific">5002500平米</div>
-								</div>
-								<div class="member">
-									<span class="infoLable">建筑面积：</span>
-									<div class="specific">7000000平米</div>
-								</div>
-								<div class="member">
-									<span class="infoLable">总栋数：</span>
-									<div class="specific">100栋</div>
-								</div>
-								<div class="member">
-									<span class="infoLable">规划户数：</span>
-									<div class="specific">20000户</div>
-								</div>
-								<div class="member">
-									<span class="infoLable">容积率：</span>
-									<div class="specific">0.86</div>
-								</div>
-								<div class="member">
-									<span class="infoLable">绿化率：</span>
-									<div class="specific">36.63%</div>
-								</div>
-								<div class="member">
-									<span class="infoLable">预售证号：</span>
-									<div class="specific">儋建房售字第（09）号</div>
-								</div>
-								<div class="member">
-									<span class="infoLable">楼盘地址：</span>
-									<div class="specific">儋州市白马井滨海新区</div>
-								</div>
-								<div class="member">
-									<span class="infoLable">售楼处：</span>
-									<div class="specific">儋州市滨海新区第二组团营销中心</div>
-								</div>
-							</div>
-						</div>
-						<div class="pushsection-introduction">
-							<h3 class="introduction-title">
-							<span>楼盘项目介绍</span>
-						</h3>
-							<div class="introduction-content">
-								<p>中南西海岸位于海南省儋州市白马井滨海新区第二组团， 东南紧临海南环岛西线高速公路和规划建设的西环铁路， 西朝风光旖旎的北部湾，北靠天然深水避风良港、保税港区洋浦。 组团所在区域原生态资源丰富，拥有东坡书院、松涛水库、 石花水洞、热带植物园、蓝洋温泉等十多处旅游景点。 中南西海岸由中南控股集团出资100亿建设开发，由英国合乐集团、 上海现代集团规划院及大地国际建筑事务所联合进行规划、建筑设计。
-								</p>
-								<p>项目一期启动区占地1008亩，总建筑面积约120万平方米；容积率1.49， 绿化率约36.63%，物业类型：滨海花园洋房、电梯洋房、别墅、酒店式公寓。 规划打造一个以西班牙风格为主题的“地中海风情”文明城邦，以五星级海景酒店、 滨海风情商业街、主题广场、星级会所、白马河带状景观公园等配套打造集旅游休闲、 度假居住为一体现代宜居型滨海城市。
-								</p>
-								<p>中南西海岸项目园区规划总面积2910公顷，拥有商业、商住、旅游、科技教育、体育、 医疗等功能区。滨海新区也是洋浦港口配套服务的中高端居住社区及海景休闲度假区， 堪称"洋浦后花园"。依托洋浦经济，以发展修造船、海运、边贸、游艇等港口经济为支撑， 结合海湾景观资源，以发展MICE商务会奖旅游为主导，打造集科技教育、体育、商务、旅 游等为一体的新型服务功能区域。
-								</p>
-							</div>
-						</div>
-					</div>
-				</section>
-			</div>
-			<!-------- 楼盘页面 楼盘详情 主力户型弹框 -------->
-			<div class="house-type-push">
-				<header class="house-type-pushheader">
-					<div class="signal_bar"></div>
-					<div class="title_bar">
-						<h3 class="title_txt">楼盘户型</h3>
-						<a class="return" href="javascript:;"></a>
-						<a class="collectionType" href="javascript:;"></a>
-						<a class="share" href="javascript:;"></a>
-					</div>
-				</header>
-				<section class="house-type-pushsection">
-					<ul class="pushsection-ul">
-						<li class="pushsection-li" v-for="style in houseStyle">
-							<div class="imgbox">
-								<img :src="style.src" />
-								<span v-text="style.sale"></span>
-							</div>
-							<div class="textbox">
-								<p v-text="style.styles">二期A1户</p>
-								<p v-text="style.parts">1房1厅1厨1卫1阳台</p>
-								<p v-text="style.areas">53.60㎡</p>
-								<p v-text="style.price">12000㎡</p>
-							</div>
-						</li>
-					</ul>
-				</section>
-				<footer class="house-type-pushfooter">
-					<span>户型筛选</span>
-				</footer>
-				<div class="house-type-pushMask"></div>
-				<div class="screenlist">
-					<ul class="screenlist-ul">
-						<li class="screenlist-li">全部户型</li>
-						<li class="screenlist-li">一房户型（7）</li>
-						<li class="screenlist-li">二房户型（7）</li>
-						<li class="screenlist-li">三房户型（7）</li>
-						<li class="screenlist-li">四房户型（7）</li>
-						<li class="screenlist-li">五房户型（7）</li>
-						<li class="screenlist-li">别墅（7）</li>
-						<li class="screenlist-li">其他（7）</li>
-					</ul>
-				</div>
-				<div class="house-typeDetail-push">
-					<header class="house-typeDetail-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<h3 class="title_txt">户型详情</h3>
-							<a class="return" href="javascript:;"></a>
-							<a class="share" href="javascript:;"></a>
-						</div>
-					</header>
-					<section class="house-typeDetail-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="swiper-container house-typeDetail-banner">
-								<ul class="swiper-wrapper typeDetail-banner-ul"> 
-									<li class="swiper-slide"><img src="img/style.png"/></li>
-									<li class="swiper-slide"><img src="img/style.png"/></li>
-									<li class="swiper-slide"><img src="img/style.png"/></li>
-									<li class="swiper-slide"><img src="img/style.png"/></li>
-								</ul>
-								<div class="swiper-pagination"></div>
-							</div>
-							<div class="house-typeDetail-info">
-								<div class="info-title">
-									<span>二期A1户型</span>
-									<span>在售</span>
-								</div>
-								<div class="member">
-									<span class="infoLable">户型：</span>
-									<div class="specific">1房2厅1卫1厨</div>
-								</div>
-								<div class="member">
-									<span class="infoLable">建筑面积：</span>
-									<div class="specific">56.70㎡</div>
-								</div>
-								<div class="member">
-									<span class="infoLable">参考均价：</span>
-									<div class="specific">18000元/㎡</div>
-									<i class="Prompt"></i>
-								</div>
-								<div class="member">
-									<span class="infoLable">参考总价：</span>
-									<div class="specific">1020600.00</div>
-								</div>
-								<div class="formula">参考总价=参考均价*建筑面积</div>
-							</div>
-							<div class="house-typeDetail-discount">
-								<h3>
-									<span>优惠信息</span>
-									<span>查看详情</span>
-								</h3>
-								<div>
-									<p>项目目前洋房33、34号楼在售中，一梯六户，7层高，其主推户型面积约为63平、73平，购房全款可享9折优惠，按揭则享93折，折后均价约12000元/平，含1800元/平精装修。</p>
-								</div>
-							</div>
-						</div>
-					</section>
-					<div class="house-typeDetail-Prompt">
-						<p>此价格为该楼盘均价</p>
-						<p>不作为具体户型和房号参考价格</p>
-					</div>
-				</div>
-			</div>
-			<!-------- 楼盘页面 楼盘详情 楼栋信息弹框 -------->
-			<div class="building-info-push">
-				<header class="building-info-pushheader">
-					<div class="signal_bar"></div>
-					<div class="title_bar">
-						<h3 class="title_txt">楼栋信息</h3>
-						<a class="return" href="javascript:;"></a>
-					</div>
-				</header>
-				<section class="building-info-pushsection">
-					<div class="pushsection-wrapper">
-						<div class="building-info-banner">
-							<ul class="buildingInfo-content-ul">
-								<li class="switch">
-									<span>1#</span>
-									<span>即将上市</span>
-								</li>
-								<li>
-									<span>2#</span>
-									<span>在售</span>
-								</li>
-								<li>
-									<span>3#</span>
-									<span>新地块</span>
-								</li>
-								<li>
-									<span>4#</span>
-									<span>在售</span>
-								</li>
-								<li>
-									<span>5#</span>
-									<span>即将上市</span>
-								</li>
-								<li>
-									<span>6#</span>
-									<span>尾盘</span>
-								</li>
-							</ul>
-						</div>
-						<div class="building-info-switch">
-							<div class="building-info-switchBox">
-								<ul class="swiper-wrapper building-info-switch-ul">
-									<li class="swiper-slide">
-										<div class="switch-li-box">
-											<div class="switch-li-box-title">
-												<span class="title">1#</span>
-												<span class="text">即将上市</span>
-											</div>
-											<div class="switch-li-box-info">
-												<div class="switch-li-box-infoleft">
-													<div class="infoleft-top">
-														<span>户数：</span>
-														<span>400</span>
-													</div>
-													<div class="infoleft-bottom">
-														<span>开盘时间：</span>
-														<span>2015-06-30</span>
-													</div>
-												</div>
-												<div class="switch-li-box-inforight">
-													<div class="inforight-top">
-														<span>层数：</span>
-														<span>32</span>
-													</div>
-													<div class="inforight-bottom">
-														<span>交房时间：</span>
-														<span>2017-07-15</span>
-													</div>
-													
-												</div>
-											</div>
-											<div class="switch-li-box-line"></div>
-											<div class="switch-li-box-permit">
-												<span>预售许可：</span>
-												<span>预售许可证：儋建房售字第2017-24</span>
-											</div>
-										</div>
-									</li>
-									<li class="swiper-slide">
-										<div class="switch-li-box">
-											<div class="switch-li-box-title">
-												<span class="title">2#</span>
-												<span class="text">在售</span>
-											</div>
-											<div class="switch-li-box-info">
-												<div class="switch-li-box-infoleft">
-													<div class="infoleft-top">
-														<span>户数：</span>
-														<span>400</span>
-													</div>
-													<div class="infoleft-bottom">
-														<span>开盘时间：</span>
-														<span>2015-06-30</span>
-													</div>
-												</div>
-												<div class="switch-li-box-inforight">
-													<div class="inforight-top">
-														<span>层数：</span>
-														<span>32</span>
-													</div>
-													<div class="inforight-bottom">
-														<span>交房时间：</span>
-														<span>2017-07-15</span>
-													</div>
-													
-												</div>
-											</div>
-											<div class="switch-li-box-line"></div>
-											<div class="switch-li-box-permit">
-												<span>预售许可：</span>
-												<span>预售许可证：儋建房售字第2017-24</span>
-											</div>
-										</div>
-									</li>
-									<li class="swiper-slide">
-										<div class="switch-li-box">
-											<div class="switch-li-box-title">
-												<span class="title">3#</span>
-												<span class="text">新地块</span>
-											</div>
-											<div class="switch-li-box-info">
-												<div class="switch-li-box-infoleft">
-													<div class="infoleft-top">
-														<span>户数：</span>
-														<span>400</span>
-													</div>
-													<div class="infoleft-bottom">
-														<span>开盘时间：</span>
-														<span>2015-06-30</span>
-													</div>
-												</div>
-												<div class="switch-li-box-inforight">
-													<div class="inforight-top">
-														<span>层数：</span>
-														<span>32</span>
-													</div>
-													<div class="inforight-bottom">
-														<span>交房时间：</span>
-														<span>2017-07-15</span>
-													</div>
-													
-												</div>
-											</div>
-											<div class="switch-li-box-line"></div>
-											<div class="switch-li-box-permit">
-												<span>预售许可：</span>
-												<span>预售许可证：儋建房售字第2017-24</span>
-											</div>
-										</div>
-									</li>
-									<li class="swiper-slide">
-										<div class="switch-li-box">
-											<div class="switch-li-box-title">
-												<span class="title">4#</span>
-												<span class="text">在售</span>
-											</div>
-											<div class="switch-li-box-info">
-												<div class="switch-li-box-infoleft">
-													<div class="infoleft-top">
-														<span>户数：</span>
-														<span>400</span>
-													</div>
-													<div class="infoleft-bottom">
-														<span>开盘时间：</span>
-														<span>2015-06-30</span>
-													</div>
-												</div>
-												<div class="switch-li-box-inforight">
-													<div class="inforight-top">
-														<span>层数：</span>
-														<span>32</span>
-													</div>
-													<div class="inforight-bottom">
-														<span>交房时间：</span>
-														<span>2017-07-15</span>
-													</div>
-													
-												</div>
-											</div>
-											<div class="switch-li-box-line"></div>
-											<div class="switch-li-box-permit">
-												<span>预售许可：</span>
-												<span>预售许可证：儋建房售字第2017-24</span>
-											</div>
-										</div>
-									</li>
-									<li class="swiper-slide">
-										<div class="switch-li-box">
-											<div class="switch-li-box-title">
-												<span class="title">5#</span>
-												<span class="text">即将上市</span>
-											</div>
-											<div class="switch-li-box-info">
-												<div class="switch-li-box-infoleft">
-													<div class="infoleft-top">
-														<span>户数：</span>
-														<span>400</span>
-													</div>
-													<div class="infoleft-bottom">
-														<span>开盘时间：</span>
-														<span>2015-06-30</span>
-													</div>
-												</div>
-												<div class="switch-li-box-inforight">
-													<div class="inforight-top">
-														<span>层数：</span>
-														<span>32</span>
-													</div>
-													<div class="inforight-bottom">
-														<span>交房时间：</span>
-														<span>2017-07-15</span>
-													</div>
-													
-												</div>
-											</div>
-											<div class="switch-li-box-line"></div>
-											<div class="switch-li-box-permit">
-												<span>预售许可：</span>
-												<span>预售许可证：儋建房售字第2017-24</span>
-											</div>
-										</div>
-									</li>
-									<li class="swiper-slide">
-										<div class="switch-li-box">
-											<div class="switch-li-box-title">
-												<span class="title">6#</span>
-												<span class="text">尾盘</span>
-											</div>
-											<div class="switch-li-box-info">
-												<div class="switch-li-box-infoleft">
-													<div class="infoleft-top">
-														<span>户数：</span>
-														<span>400</span>
-													</div>
-													<div class="infoleft-bottom">
-														<span>开盘时间：</span>
-														<span>2015-06-30</span>
-													</div>
-												</div>
-												<div class="switch-li-box-inforight">
-													<div class="inforight-top">
-														<span>层数：</span>
-														<span>32</span>
-													</div>
-													<div class="inforight-bottom">
-														<span>交房时间：</span>
-														<span>2017-07-15</span>
-													</div>
-													
-												</div>
-											</div>
-											<div class="switch-li-box-line"></div>
-											<div class="switch-li-box-permit">
-												<span>预售许可：</span>
-												<span>预售许可证：儋建房售字第2017-24</span>
-											</div>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</section>
-			</div>
-			<!-------- 楼盘页面 楼盘详情 历史价格 -------->
-			<div class="historical-price-push">
-				<header class="historical-price-pushheader">
-					<div class="signal_bar"></div>
-					<div class="title_bar">
-						<h3 class="title_txt">历史价格</h3>
-						<a class="return" href="javascript:;"></a>
-					</div>
-				</header>
-				<section class="historical-price-pushsection">
-					<div class="pushsection-wrapper">	
-						<div class="historical-price-current">
-							<p>博鳌滨海小镇&nbsp;当前售价</p>
-							<p>
-								<span>16000</span>
-								<span>元/㎡</span>
-							</p>
-						</div>
-						<div class="historical-price-graph">
-							<div class="graph-data"></div>
-							<div class="graph-txt">左右滑动可查看更多月份价格</div>
-						</div>
-					</div>
-				</section>
-				<footer class="historical-price-pushfooter">
-					<span>开启降价通知</span>
-				</footer>
-			</div>
-			<!-------- 楼盘页面 楼盘详情 资讯评论 -------->
-			<div class="info-review-push">
-				<header class="info-review-pushheader">
-					<div class="signal_bar"></div>
-					<div class="title_bar">
-						<h3 class="title_txt">资讯评论</h3>
-						<a class="return" href="javascript:;"></a>
-					</div>
-				</header>
-				<section class="info-review-pushsection">
-					<div class="pushsection-wrapper">
-						<div class="info-review-content">
-							<ul class="info-review-ul">
-								<li class="info-review-li" v-for="user in commention">
-									<div class="info-review-li-box" :class="user.className">
-										<div class="user-avatar">
-											<img class="user-avatar-img" v-bind:src="user.avatar"></img>
-										</div>
-										<div class="user-comments">
-											<div class="user-name" v-text='user.name'></div>
-											<div class="user-info">
-												<span class="user-info-from" v-text='user.from'></span>
-												<span class="user-info-time" v-text='user.time'></span>
-											</div>
-											<p class="user-say showmore" v-text='user.say'></p>
-											<div class="showall">
-												<div class="showall-wrapper">
-													<span class="showall-wrapper-txt">显示全部</span>
-													<i class="showall-wrapper-img"></i>
-												</div>
-											</div>
-											<div class="otheruser">
-												<div class="otheruser-name" v-text='user.other.name'></div>
-												<div class="otheruser-info">
-													<span class="otheruser-info-from" v-text='user.other.from'></span>
-													<span class="otheruser-info-time" v-text='user.other.time'></span>
-												</div>
-												<div class="otheruser-phone" v-text='user.other.phone'></div>
-												<p class="otheruser-say" v-text='user.other.say'></p>
-											</div>
-										</div>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</section>
-				<footer class="info-review-pushfooter">
-					<div class="pushfooter-wrapper">
+				<footer class="article-push-footer">
+					<div class="write-reviews">
 						<span>写点评咨询</span>
 					</div>
+					<div class="show-reviews">
+						<i></i>
+						<span>8742</span>
+					</div>
 				</footer>
-				<div class="info-review-pushMask"></div>
-				<div class="info-review-writing">
-					<div class="writing-panel">
-						<div class="writing-panel-header">
-							<span class="cancel">取消</span>
-							<span class="hader-txt">写点评咨询</span>
-							<span class="send">发送</span>
-						</div>
-						<textarea class="text-box" tabindex name=""></textarea>
-					</div>
-				</div>
-				<div class="comment-failed">评论提交失败，请检查网络</div>
-				<div class="comment-success">评论提交成功</div>
 			</div>
-			<!-------- 楼盘页面 楼盘详情 楼盘资讯 -------->
-			<div class="Property-info-push">
-				<header class="Property-info-pushheader">
-					<div class="signal_bar"></div>
-					<div class="title_bar">
-						<h3 class="title_txt">楼市资讯</h3>
-						<a class="return" href="javascript:;"></a>
-					</div>
-				</header>
-				<section class="Property-info-pushsection">
-					<div class="pushsection-wrapper">
-						<ul class="Property-info-ul">
-							<li v-for="list in information">
-								<h3 v-text='list.title'></h3>
-								<p  v-text='list.content'></p>
-								<div>
-									<span class="source" v-text='list.source'></span>
-									<span class="dates" v-text='list.dates'></span>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</section>
-				<footer class="Property-info-pushfooter">
-					<span>资讯筛选</span>
-				</footer>
-				<div class="Property-info-pushMask"></div>
-				<div class="Property-info-screenlist">
-					<ul class="Property-info-screenlist-ul">
-						<li class="screenlist-li">全部动态</li>
-						<li class="screenlist-li">楼盘热点</li>
-						<li class="screenlist-li">折扣优惠</li>
-						<li class="screenlist-li">新盘速递</li>
-						<li class="screenlist-li">热门推荐</li>
-						<li class="screenlist-li">美图画报</li>
-						<li class="screenlist-li">购房联盟</li>
-						<li class="screenlist-li">看房记</li>
-						<li class="screenlist-li">工程进度</li>	
-					</ul>
+		</div>
+		<div class="writing-box">
+			<div class="writing-panel">
+				<div class="writing-panel-header">
+					<span class="cancel">取消</span>
+					<span class="hader-txt">写点评咨询</span>
+					<span class="send">发送</span>
 				</div>
-			</div>
-			<!-------- 楼盘页面 楼盘详情 历史优惠动态 -------->
-			<div class="historical-discount-push">
-				<header class="historical-discount-pushheader">
-					<div class="signal_bar"></div>
-					<div class="title_bar">
-						<h3 class="title_txt">历史优惠动态</h3>
-						<a class="return" href="javascript:;"></a>
-					</div>
-					<div class="pushheader-nav wrapper" id="demo">
-						<div class="scroller">
-							<ul class="nav-list clearfix">
-								<li><span>2017</span></li>
-								<li><span>2016</span></li>
-								<li><span>2015</span></li>
-								<li><span>2014</span></li>
-								<li><span>2013</span></li>
-								<li><span>2012</span></li>
-								<li><span>2011</span></li>
-							</ul>
-						</div>
-					</div>
-				</header>
-				<section class="historical-discount-pushsection">
-					<ul class="historical-discount-ul swiper-wrapper">
-						<li class="historical-discount-li swiper-slide firstPage" style="background: lemonchiffon;">
-							<div class="pushsection-wrapper">
-								<div class="scrollPage">
-									<div class="historical-discount-timeAxis">
-										<span class="line"></span>
-									</div>
-									<ul class="historical-discount-content">
-										<li v-for="list in discount">
-											<p v-text="list.content"></p>
-											<div class="time-box"><span v-text="list.time"></span></div>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</li>
-						<li class="historical-discount-li swiper-slide secondPage" style="background: silver;">
-							<div class="pushsection-wrapper">
-								<div class="scrollPage">
-									<div class="historical-discount-timeAxis">
-										<span class="line"></span>
-									</div>
-									<ul class="historical-discount-content">
-										<li v-for="list in discount">
-											<p v-text="list.content"></p>
-											<div class="time-box"><span v-text="list.time"></span></div>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</li>
-						<li class="historical-discount-li swiper-slide thirdPage" style="background: darkkhaki;">
-							<div class="pushsection-wrapper">
-								<div class="scrollPage">
-									<div class="historical-discount-timeAxis">
-										<span class="line"></span>
-									</div>
-									<ul class="historical-discount-content">
-										<li v-for="list in discount">
-											<p v-text="list.content"></p>
-											<div class="time-box"><span v-text="list.time"></span></div>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</li>
-						<li class="historical-discount-li swiper-slide fourthPage" style="background: aquamarine;">
-							<div class="pushsection-wrapper">
-								<div class="scrollPage">
-									<div class="historical-discount-timeAxis">
-										<span class="line"></span>
-									</div>
-									<ul class="historical-discount-content">
-										<li v-for="list in discount">
-											<p v-text="list.content"></p>
-											<div class="time-box"><span v-text="list.time"></span></div>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</li>
-						<li class="historical-discount-li swiper-slide fifthPage" style="background: skyblue;">
-							<div class="pushsection-wrapper">
-								<div class="scrollPage">
-									<div class="historical-discount-timeAxis">
-										<span class="line"></span>
-									</div>
-									<ul class="historical-discount-content">
-										<li v-for="list in discount">
-											<p v-text="list.content"></p>
-											<div class="time-box"><span v-text="list.time"></span></div>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</li>
-						<li class="historical-discount-li swiper-slide sixthPage" style="background: aqua;">
-							<div class="pushsection-wrapper">
-								<div class="scrollPage">
-									<div class="historical-discount-timeAxis">
-										<span class="line"></span>
-									</div>
-									<ul class="historical-discount-content">
-										<li v-for="list in discount">
-											<p v-text="list.content"></p>
-											<div class="time-box"><span v-text="list.time"></span></div>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</li>
-						<li class="historical-discount-li swiper-slide seventhPage" style="background: navajowhite;">
-							<div class="pushsection-wrapper">
-								<div class="scrollPage">
-									<div class="historical-discount-timeAxis">
-										<span class="line"></span>
-									</div>
-									<ul class="historical-discount-content">
-										<li v-for="list in discount">
-											<p v-text="list.content"></p>
-											<div class="time-box"><span v-text="list.time"></span></div>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</li>
-					</ul>
-				</section>
-			</div>
-			<!-------- 楼盘页面 楼盘详情 小弹框 -------->
-			<div class="push-bombBox">
-				<!-------- 收藏成功 -------->
-				<div class="collection-succeed">
-					<div class="succeed-img">
-						<img src="img/CollectionedSuc.png" alt="" />
-					</div>
-					<p class="succeed-txt">楼盘收藏成功</p>
-				</div>
-				<!-------- 取消收藏 -------->
-				<div class="collection-cancel">
-					<p class="cancel-txt">取消收藏</p>
-				</div>
-				<!-------- 降价通知 -------->
-				<div class="reducePrice-notice">
-					<div class="notice-txt">
-						<p class="writeNumber">填写手机号码</p>
-						<p class="writeinfo">用于接收<span>[融创美伦熙语]</span>的降价通知</p>
-					</div>
-					<div class="notice-user">
-						<input type="text" name="" id="" value="" placeholder="您的手机号码" />
-						<a href="javascript:;"></a>
-					</div>
-					<div class="notice-line"></div>
-					<div class="notice-button">确定</div>
-					<div class="notice-delete">
-						<div class="notice-delete-box">
-							<i></i>
-						</div>
-					</div>
-				</div>
-				<!-------- 优惠信息（立即参与） -------->
-				<div class="discount-info">
-					<div class="discount-txt">
-						<p class="writetext">
-							<span>看房·团购·独家优惠</span>
-						</p>
-						<p class="writenum">已有<span>420</span>人报名</p>
-					</div>
-					<div class="discount-username">
-						<input type="text" name="" id="" value="" placeholder="姓名/称呼" />
-						<a href="javascript:;"></a>
-					</div>
-					<div class="discount-line"></div>
-					<div class="discount-userphone">
-						<input type="text" name="" id="" value="" placeholder="您的手机号码" />
-						<a href="javascript:;"></a>
-					</div>
-					<div class="discount-line"></div>
-					<div class="discount-button">确定</div>
-					<div class="discount-delete">
-						<div class="discount-delete-box">
-							<i></i>
-						</div>
-					</div>
-				</div>
-				<!-------- 优惠信息（报名成功） -------->
-				<div class="enroll-success">
-					<div class="imgbox">
-						<img src="img/success.png"/>
-					</div>
-					<div class="suc-txt">
-						<p>恭喜您，报名成功</p>
-						<p>专业置业顾问将会尽快与您联系</p>
-					</div>
-					<div class="suc-button">
-						我知道了
-					</div>
-				</div>
-				<!-------- 优惠信息（报名成功） -------->
-				<div class="enroll-fail">
-					<div class="imgbox">
-						<img src="img/fail.png"/>
-					</div>
-					<div class="fail-txt">
-						<p>报名失败</p>
-						<p>请检查您的网络是否连接</p>
-					</div>
-					<div class="fail-button">
-						重新连接
-					</div>
-				</div>
-				<!-------- 联系置业顾问 -------->
-				<div class="contact-adviser">
-					<div class="portrait-box">
-						<img src="img/portrait.png" alt="" />
-					</div>
-					<div class="adviser-txt">
-						<p>景园悦海湾</p>
-						<p>我们将为您提供专业的置业顾问服务</p>
-					</div>
-					<div class="dial-hotline">
-						<div class="dial-hotline-box">
-							<p>拨打置业热线</p>
-							<p>400-155-3135 转 6676</p>
-						</div>
-						<a href="javascript:;"><img src="img/phone.png"/></a>
-					</div>
-					<div class="online-time">
-						<div class="online-time-box">
-							<p>在线时间 08:30-24:00</p>
-							<p>在线咨询</p>
-						</div>
-						<a href="javascript:;"><img src="img/info.png"/></a>
-					</div>
-					<div class="close-box">
-						<span><img src="img/bigdel.png"/></span>
-					</div>
-				</div>
+				<textarea class="text-box" autofocus name=""></textarea>
 			</div>
 		</div>
 		<script type="text/javascript">
-			$('.historical-discount-pushheader .wrapper').navbarscroll();
-			var typeDetail = new Swiper(".swiper-container",{
-				pagination : '.swiper-pagination',
-				paginationType : 'fraction'
-			})
-			var building = new Swiper(".building-info-switchBox",{})
-		</script>
-		<script type="text/javascript">
-			var myVueContainer = new Vue({
+			var myVue = new Vue({
 				el: ".container",
 				data: {
-					listdetails: [{
-							img: 'img/massage-subject3.png',
-							sell: '在售',
-							positions: '滨海博鳌小',
-							region: '[琼海]',
-							address: '琼海市博鳌滨海大道（潭门桥旁）',
-							openprice: '开盘：8000元/㎡',
-							averag: '均价：',
-							price: '12000元/㎡',
+					items: [{
+							img: 'img/imgbox.png',
+							title: '[鲁能山海天]',
+							content: '客户看中四季康城二期高性价比小苏助力连签四房 客户看中四季康城二期高性价比小苏助力连签四房',
+							from: "海南资讯",
+							time: "2017-06-20",
+							detailed: {
+								imgone: 'img/massage-subject1.png',
+								imgtwo: 'img/massage-subject2.png',
+								imgthird: 'img/massage-subject3.png'
+							},
 							className: {
-								five: true
+								firststyle: true
 							}
 						},
 						{
-							img: 'img/massage-subject3.png',
-							sell: '在售',
-							positions: '滨海博鳌小',
-							region: '[琼海]',
-							address: '琼海市博鳌滨海大道（潭门桥旁）',
-							openprice: '开盘：8000元/㎡',
-							averag: '均价：',
-							price: '12000元/㎡',
+							img: 'img/imgbox.png',
+							title: '[鲁能山海天]',
+							content: '客户看中四季康城二期高性价比小苏助力连签四房 客户看中四季康城二期高性价比小苏助力连签四房',
+							from: "新盘速递",
+							time: "2017-06-20",
+							detailed: {
+								imgone: 'img/massage-subject1.png',
+								imgtwo: 'img/massage-subject2.png',
+								imgthird: 'img/massage-subject3.png'
+							},
 							className: {
-								four: true
+								secondstyle: true
 							}
 						},
 						{
-							img: 'img/massage-subject3.png',
-							sell: '在售',
-							positions: '滨海博鳌小',
-							region: '[琼海]',
-							address: '琼海市博鳌滨海大道（潭门桥旁）',
-							openprice: '开盘：8000元/㎡',
-							averag: '均价：',
-							price: '12000元/㎡',
+							img: 'img/imgbox.png',
+							title: '[鲁能山海天]',
+							content: '客户看中四季康城二期高性价比小苏助力连签四房 客户看中四季康城二期高性价比小苏助力连签四房',
+							from: "海南资讯",
+							time: "2017-06-20",
+							detailed: {
+								imgone: 'img/massage-subject1.png',
+								imgtwo: 'img/massage-subject2.png',
+								imgthird: 'img/massage-subject3.png'
+							},
 							className: {
-								three: true
+								thirdstyle: true
 							}
 						},
 						{
-							img: 'img/massage-subject3.png',
-							sell: '在售',
-							positions: '滨海博鳌小',
-							region: '[琼海]',
-							address: '琼海市博鳌滨海大道（潭门桥旁）',
-							openprice: '开盘：8000元/㎡',
-							averag: '均价：',
-							price: '12000元/㎡',
+							img: 'img/imgbox.png',
+							title: '[鲁能山海天]',
+							content: '客户看中四季康城二期高性价比小苏助力连签四房 客户看中四季康城二期高性价比小苏助力连签四房',
+							from: "楼盘导购",
+							time: "2017-06-20",
+							detailed: {
+								imgone: 'img/massage-subject1.png',
+								imgtwo: 'img/massage-subject2.png',
+								imgthird: 'img/massage-subject3.png'
+							},
 							className: {
-								two: true
+								fourthstyle: true
 							}
 						},
 						{
-							img: 'img/massage-subject3.png',
-							sell: '在售',
-							positions: '滨海博鳌小',
-							region: '[琼海]',
-							address: '琼海市博鳌滨海大道（潭门桥旁）',
-							openprice: '开盘：8000元/㎡',
-							averag: '均价：',
-							price: '12000元/㎡',
+							img: 'img/imgbox.png',
+							title: '[鲁能山海天]',
+							content: '客户看中四季康城二期高性价比小苏助力连签四房 客户看中四季康城二期高性价比小苏助力连签四房',
+							from: "海南资讯",
+							time: "2017-06-20",
+							detailed: {
+								imgone: 'img/massage-subject1.png',
+								imgtwo: 'img/massage-subject2.png',
+								imgthird: 'img/massage-subject3.png'
+							},
 							className: {
-								five: true
+								firststyle: true
 							}
 						},
 						{
-							img: 'img/massage-subject3.png',
-							sell: '在售',
-							positions: '滨海博鳌小',
-							region: '[琼海]',
-							address: '琼海市博鳌滨海大道（潭门桥旁）',
-							openprice: '开盘：8000元/㎡',
-							averag: '均价：',
-							price: '12000元/㎡',
+							img: 'img/imgbox.png',
+							title: '[鲁能山海天]',
+							content: '客户看中四季康城二期高性价比小苏助力连签四房 客户看中四季康城二期高性价比小苏助力连签四房',
+							from: "新盘速递",
+							time: "2017-06-20",
+							detailed: {
+								imgone: 'img/massage-subject1.png',
+								imgtwo: 'img/massage-subject2.png',
+								imgthird: 'img/massage-subject3.png'
+							},
 							className: {
-								four: true
+								secondstyle: true
 							}
-						}
-					],
-					municipalitydata: [{
-							city: '不限'
 						},
 						{
-							city: '海口'
-
+							img: 'img/imgbox.png',
+							title: '[鲁能山海天]',
+							content: '客户看中四季康城二期高性价比小苏助力连签四房 客户看中四季康城二期高性价比小苏助力连签四房',
+							from: "海南资讯",
+							time: "2017-06-20",
+							detailed: {
+								imgone: 'img/massage-subject1.png',
+								imgtwo: 'img/massage-subject2.png',
+								imgthird: 'img/massage-subject3.png'
+							},
+							className: {
+								thirdstyle: true
+							}
 						},
 						{
-							city: '三亚'
-
-						},
-						{
-							city: '儋州'
-
-						},
-						{
-							city: '文昌'
-
-						},
-						{
-							city: '陵水'
-
-						},
-						{
-							city: '琼海'
-
-						}
-					],
-					districtdata1: [{
-							district: '不限',
-						},
-						{
-							district: '美兰区',
-						},
-						{
-							district: '秀英区',
-						},
-						{
-							district: '龙华区',
-						},
-						{
-							district: '琼山区',
-						},
-						{
-							district: '西海岸'
-						},
-						{
-							district: '西海岸'
-						},
-						{
-							district: '西海岸'
-						}
-					],
-					districtdata2: [{
-							district: '不限',
-						},
-						{
-							district: '美兰区',
-						},
-						{
-							district: '秀英区',
-						},
-						{
-							district: '龙华区',
-						},
-						{
-							district: '琼山区'
-						},
-						{
-							district: '西海岸'
-						}
-					],
-					districtdata3: [{
-							district: '不限',
-						},
-						{
-							district: '美兰区',
-						},
-						{
-							district: '秀英区',
-						},
-						{
-							district: '龙华区'
-						},
-						{
-							district: '西海岸'
-						},
-						{
-							district: '龙华区',
-						},
-						{
-							district: '琼山区',
-						},
-						{
-							district: '西海岸'
-						},
-						{
-							district: '琼山区',
-						},
-						{
-							district: '西海岸'
-						}
-					],
-					districtdata4: [{
-							district: '不限',
-						},
-						{
-							district: '美兰区'
-						},
-						{
-							district: '秀英区'
-						},
-						{
-							district: '西海岸'
-						},
-						{
-							district: '龙华区',
-						},
-						{
-							district: '琼山区',
-						},
-						{
-							district: '西海岸'
-						},
-						{
-							district: '琼山区',
-						},
-						{
-							district: '西海岸'
-						}
-					],
-					districtdata5: [{
-							district: '不限',
-						},
-						{
-							district: '美兰区',
-						},
-						{
-							district: '西海岸'
-						},
-						{
-							district: '龙华区',
-						},
-						{
-							district: '琼山区',
-						},
-						{
-							district: '西海岸'
-						},
-						{
-							district: '琼山区',
-						},
-						{
-							district: '西海岸'
-						}
-					],
-					districtdata6: [{
-							district: '不限',
-						},
-						{
-							district: '美兰区',
-						},
-						{
-							district: '秀英区',
-						},
-						{
-							district: '龙华区'
-						},
-						{
-							district: '西海岸'
-						},
-						{
-							district: '西海岸'
-						},
-						{
-							district: '琼山区',
-						},
-						{
-							district: '西海岸'
+							img: 'img/imgbox.png',
+							title: '[鲁能山海天]',
+							content: '客户看中四季康城二期高性价比小苏助力连签四房 客户看中四季康城二期高性价比小苏助力连签四房',
+							from: "楼盘导购",
+							time: "2017-06-20",
+							detailed: {
+								imgone: 'img/massage-subject1.png',
+								imgtwo: 'img/massage-subject2.png',
+								imgthird: 'img/massage-subject3.png'
+							},
+							className: {
+								fourthstyle: true
+							}
 						}
 					]
 				}
 			})
-			var myVuePush = new Vue({
-				el: ".list-details-push",
+		</script>
+		<script type="text/javascript">
+			var myVues = new Vue({
+				el: ".article-push",
 				data: {
+					moreAbout: [{
+							txt: '文昌度假两房户型推假两房户型推假两房户型推假两房户型推荐 雅居乐月亮湾两居室度假宜居雅居乐月亮湾两居室度假宜居',
+							time: '2017-06-21'
+						},
+						{
+							txt: '文昌度假两房户型推假两房户型推假两房户型',
+							time: '2017-06-20'
+						},
+						{
+							txt: '文昌度假两房户型推假两房户型推假两房户型推假两房户型推荐 雅居乐月亮湾两居室度假宜居雅居乐月亮湾两居室度假宜居',
+							time: '2017-06-19'
+						}
+					],
 					commention: [{
 							avatar: 'img/head_portrait.png',
 							name: '张三',
@@ -1874,150 +415,10 @@
 								stylethree: true
 							}
 						}
-					],
-					houseStyle:[
-						{
-							src: 'img/drawing.png',
-							sale: '在售',
-							styles: '二期A1户',
-							parts: '1房1厅1厨1卫1阳台',
-							areas: '53.60㎡',
-							price: '12000㎡'
-						},
-						{
-							src: 'img/drawing.png',
-							sale: '在售',
-							styles: '二期A1户',
-							parts: '1房1厅1厨1卫1阳台',
-							areas: '53.60㎡',
-							price: '12000㎡'
-						},
-						{
-							src: 'img/drawing.png',
-							sale: '在售',
-							styles: '二期A1户',
-							parts: '1房1厅1厨1卫1阳台',
-							areas: '53.60㎡',
-							price: '12000㎡'
-						},
-						{
-							src: 'img/drawing.png',
-							sale: '在售',
-							styles: '二期A1户',
-							parts: '1房1厅1厨1卫1阳台',
-							areas: '53.60㎡',
-							price: '12000㎡'
-						},
-						{
-							src: 'img/drawing.png',
-							sale: '在售',
-							styles: '二期A1户',
-							parts: '1房1厅1厨1卫1阳台',
-							areas: '53.60㎡',
-							price: '12000㎡'
-						},
-						{
-							src: 'img/drawing.png',
-							sale: '在售',
-							styles: '二期A1户',
-							parts: '1房1厅1厨1卫1阳台',
-							areas: '53.60㎡',
-							price: '12000㎡'
-						},
-						{
-							src: 'img/drawing.png',
-							sale: '在售',
-							styles: '二期A1户',
-							parts: '1房1厅1厨1卫1阳台',
-							areas: '53.60㎡',
-							price: '12000㎡'
-						},
-						{
-							src: 'img/drawing.png',
-							sale: '在售',
-							styles: '二期A1户',
-							parts: '1房1厅1厨1卫1阳台',
-							areas: '53.60㎡',
-							price: '12000㎡'
-						},
-						{
-							src: 'img/drawing.png',
-							sale: '在售',
-							styles: '二期A1户',
-							parts: '1房1厅1厨1卫1阳台',
-							areas: '53.60㎡',
-							price: '12000㎡'
-						},
-						{
-							src: 'img/drawing.png',
-							sale: '在售',
-							styles: '二期A1户',
-							parts: '1房1厅1厨1卫1阳台',
-							areas: '53.60㎡',
-							price: '12000㎡'
-						}
-					],
-					information: [
-						{
-							title: '客户看中四季康城二期高性价比小苏助力连签四房比小苏助力连签四房',
-							content: '儋州中南西海岸目前洋房33、34号楼在售中，一梯六户，7层高，其主推户型面积约为63平、73平，购房有礼，速速钱来',
-							source: '来源:旅居网',
-							dates: '2014年12月16日'
-						},
-						{
-							title: '客户看中四季康城二期高性价比小苏助力连签四房',
-							content: '儋州中南西海岸目前洋房33、34号楼在售中，一梯六户，7层高，其主推户型面积约为63平、73平，购房有礼，速速钱来',
-							source: '来源:旅居网',
-							dates: '2014年12月16日'
-						},
-						{
-							title: '客户看中四季康城二期高性价比小苏助力连签四房',
-							content: '儋州中南西海岸目前洋房33、34号楼在售中，一梯六户，7层高，其主推户型面积约为63平、73平，购房有礼，速速钱来',
-							source: '来源:旅居网',
-							dates: '2014年12月16日'
-						},
-						{
-							title: '客户看中四季康城二期高性价比小苏助力连签四房',
-							content: '儋州中南西海岸目前洋房33、34号楼在售中，一梯六户，7层高，其主推户型面积约为63平、73平，购房有礼，速速钱来',
-							source: '来源:旅居网',
-							dates: '2014年12月16日'
-						},
-						{
-							title: '客户看中四季康城二期高性价比小苏助力连签四房',
-							content: '儋州中南西海岸目前洋房33、34号楼在售中，一梯六户，7层高，其主推户型面积约为63平、73平，购房有礼，速速钱来',
-							source: '来源:旅居网',
-							dates: '2014年12月16日'
-						}
-					],
-					discount: [
-						{
-							content: '项目目前洋房33、34号楼在售中，一梯六户，7层高，其主推户型面积约为63平、73平，购房全款可享9折优惠，按揭则享93折，折后均价约12000元/平，含1800元/平精装修。',
-							time: '07月05日'
-						},
-						{
-							content: '项目目前洋房33、34号楼在售中，一梯六户，7层高，其主推户型面积约为63平、73平，购房全款可享9折优惠，按揭则享93折，折后均价约12000元/平，含1800元/平精装修。',
-							time: '06月11日'
-						},
-						{
-							content: '项目目前洋房33、34号楼在售中，一梯六户，7层高，其主推户型面积约为63平、73平，购房全款可享9折优惠，按揭则享93折，折后均价约12000元/平，含1800元/平精装修。',
-							time: '05月07日'
-						},
-						{
-							content: '项目目前洋房33、34号楼在售中，一梯六户，7层高，其主推户型面积约为63平、73平，购房全款可享9折优惠，按揭则享93折，折后均价约12000元/平，含1800元/平精装修。',
-							time: '05月01日'
-						},
-						{
-							content: '项目目前洋房33、34号楼在售中，一梯六户，7层高，其主推户型面积约为63平、73平，购房全款可享9折优惠，按揭则享93折，折后均价约12000元/平，含1800元/平精装修。',
-							time: '04月17日'
-						},
-						{
-							content: '项目目前洋房33、34号楼在售中，一梯六户，7层高，其主推户型面积约为63平、73平，购房全款可享9折优惠，按揭则享93折，折后均价约12000元/平，含1800元/平精装修。',
-							time: '04月05日'
-						}
 					]
 				}
 			})
 		</script>
 	</body>
-	<script type="text/javascript" src="js/list-details.js"></script>
+
 </html>
