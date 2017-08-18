@@ -923,16 +923,17 @@ $(function() {
 	}
 	
 	
-	
-	
-//          $(".historical-discount-pushsection").bind("touchend",function(){
-//				var index=discount.activeIndex
-//				$(".pushheader-nav .nav-list li").eq(index).addClass("select").siblings().removeClass("select")
-//			})
-	
-	var discounth=$(".historical-discount-pushsection").height()
-	$(".historical-discount-li").height(discounth)
-	
+//	var testh=$(".historical-discount-pushsection").height()
+//	$(".historical-discount-li").height(testh)
+//	$(".historical-discount-push").css("left",wrapw)
+//	$(".pushsection-dynamic .dynamic-btn").tap(function(){
+//		$(".historical-discount-push").css("transition","all .3s")
+//		$(".historical-discount-push").css("left","0")
+//	})
+//	$(".historical-discount-pushheader .return").tap(function(){
+//		$(".historical-discount-push").css("transition","all .3s")
+//		$(".historical-discount-push").css("left",wrapw)
+//	})
 	
 	
 	//iscroll.js各各滚动回弹效果
@@ -976,6 +977,6 @@ $(function() {
 		scrollbars: false
 	})
 	//历史优惠
-	document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false)
+//	document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false)
 	
 })

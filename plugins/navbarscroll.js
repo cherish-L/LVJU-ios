@@ -47,7 +47,7 @@
 			
             var firstPageS = new IScroll('.firstPage', {
 				scrollbars: false,
-				momentum: true,		
+				momentum: true
 			})
 			var secondPageS = new IScroll('.secondPage', {
 				scrollbars: false,
@@ -73,7 +73,7 @@
 				scrollbars: false,
 				momentum: true
 			})
-			document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false)
+//			document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false)
 			$(".historical-discount-pushsection").bind("touchstart",function(e){
 				e.preventDefault()
 				firstPageS.refresh()
@@ -134,8 +134,6 @@
                 $this_obj.addClass(_opt.className).siblings('li').removeClass(_opt.className);
                 _opt.endClickScroll.call(this,$this_obj);
 			})
-
-
             
 			//解决PC端谷歌浏览器模拟的手机屏幕出现莫名的卡顿现象，滑动时禁止默认事件（2017-01-11）
 			_wrapper[0].addEventListener('touchmove',function (e){e.preventDefault();},false);

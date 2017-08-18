@@ -5150,7 +5150,6 @@ li {
 .list-details-push .historical-discount-push {
   width: 100%;
   height: 100%;
-  transition: all .3s;
   background: #f4f4f4;
   position: fixed;
   left: 0;
@@ -5165,7 +5164,7 @@ li {
   width: 100%;
   background-color: #f6f6f6;
   box-shadow: 0 1px 0 0 #cccccc;
-  z-index: 1;
+  z-index: 10;
 }
 
 .list-details-push .historical-discount-push .historical-discount-pushheader .signal_bar {
