@@ -922,9 +922,10 @@ $(function() {
 		_thisli.css("width","50%")
 	}
 	
-	
 	var testh=$(".historical-discount-pushsection").height()
 	$(".historical-discount-li").height(testh)
+	
+	
 //	$(".historical-discount-push").css("left",wrapw)
 //	$(".pushsection-dynamic .dynamic-btn").tap(function(){
 //		$(".historical-discount-push").css("transition","all .3s")
