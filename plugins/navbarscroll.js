@@ -57,6 +57,36 @@
 			var discount = new Swiper(".historical-discount-pushsection",{
 				passiveListeners: false
 			})
+			var firstPageS = new IScroll('.firstPage', {
+				scrollbars: false,
+				momentum: true,		
+			})
+			var secondPageS = new IScroll('.secondPage', {
+				scrollbars: false,
+				momentum: true
+			})
+			var thirdPageS = new IScroll('.thirdPage', {
+				scrollbars: false,
+				momentum: true
+			})
+			var fourthPageS = new IScroll('.fourthPage', {
+				scrollbars: false,
+				momentum: true
+			})
+			var fifthPageS = new IScroll('.fifthPage', {
+				scrollbars: false,
+				momentum: true
+			})
+			var sixthPageS = new IScroll('.sixthPage', {
+				scrollbars: false,
+				momentum: true
+			})
+			var seventhPageS = new IScroll('.seventhPage', {
+				scrollbars: false,
+				momentum: true
+			})
+			document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+			
 			$(".historical-discount-pushsection").bind("touchstart",function(){
 				firstPageS.refresh()
 				secondPageS.refresh()
