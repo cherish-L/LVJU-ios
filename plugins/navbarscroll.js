@@ -48,10 +48,8 @@
 				freeMode : false,
 				freeModeMomentumBounce : false,
 				preventLinksPropagation : false,
-				preventClicks : false,
 				longSwipesRatio : 0.5,
-				touchAngle : 10,
-				resistanceRatio : 0.7,
+				touchAngle : 20
 			})
 			
             var firstPageS = new IScroll('.firstPage', {
