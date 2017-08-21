@@ -6,559 +6,229 @@
 		<meta content="email=no" name="format-detection" />
 		<meta http-equiv="Cache-Control" content="no-cache" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>楼盘资讯</title>
+		<title>购房联盟</title>
 		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/building-information.css" />
+		<link rel="stylesheet" type="text/css" href="css/purchase-union.css" />
 		<link rel="stylesheet" type="text/css" href="plugins/animate.min.css" />
 		<script type="text/javascript" src="plugins/zepto.min.js"></script>
 		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>
 		<script src="plugins/swiper-3.4.2.min.js"></script>
 		<script type="text/javascript" src="vue/vue.js"></script>
-		<script type="text/javascript" src="plugins/navbarscroll.js"></script>
 		<script>
 			//适配
 			document.documentElement.style.fontSize = innerWidth / 15 + "px";
 		</script>
 	</head>
+
 	<body>
-		<div class="container" v-cloak>
-			<header class="header">
+		<div class="purchase-union-container" v-cloak>
+			<header class="purchase-union-header">
 				<div class="signal_bar"></div>
-				<div class="property-information">
-					<h3 class="property-information-title">楼市资讯</h3>
-				</div>
-				<div class="header-nav wrapper" id="demo">
-					<div class="scroller">
-						<ul class="nav-list clearfix">
-							<li><span>热门资讯</span></li>
-							<li><span>海南资讯</span></li>
-							<li><span>楼盘热点</span></li>
-							<li><span>新盘速递</span></li>
-							<li><span>楼盘导购</span></li>
-						</ul>
-					</div>
+				<div class="title_bar">
+					<h3 class="title_txt">购房联盟</h3>
+					<a class="return" href="javascript:;"></a>
 				</div>
 			</header>
-			<section class="section">
-					<ul class="section-ul swiper-wrapper">
-						<li class="section-li swiper-slide firstPage">
-							<div class="pushsection-wrapper">
-								<div class="scrollPage">
-									<ul class="pri-ul">
-										<li class="pri-li" v-for="item in items">
-											<div class="style" :class="item.className">
-												<div class="style-left">
-													<img v-bind:src="item.img" />
-												</div>
-												<div class="style-right">
-													<div class="style-title">
-														<p>
-															<span class="title-txt" v-text='item.title'></span>
-															<span class="title-content" v-text='item.content'></span>
-														</p>
-													</div>
-													<div class="style-img">
-														<img v-bind:src="item.detailed.imgone" />
-														<img v-bind:src="item.detailed.imgtwo" />
-														<img v-bind:src="item.detailed.imgthird" />
-													</div>
-													<div class="style-info">
-														<span class="style-copyright" v-text='item.from'></span>
-														<span class="style-time" v-text='item.time'></span>
-													</div>
-												</div>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</li>
-						<li class="section-li swiper-slide secondPage">
-							<div class="pushsection-wrapper">
-								<div class="scrollPage">
-									<ul class="pri-ul">
-										<li class="pri-li" v-for="item in items">
-											<div class="style" :class="item.className">
-												<div class="style-left">
-													<img v-bind:src="item.img" />
-												</div>
-												<div class="style-right">
-													<div class="style-title">
-														<p>
-															<span class="title-txt" v-text='item.title'></span>
-															<span class="title-content" v-text='item.content'></span>
-														</p>
-													</div>
-													<div class="style-img">
-														<img v-bind:src="item.detailed.imgone" />
-														<img v-bind:src="item.detailed.imgtwo" />
-														<img v-bind:src="item.detailed.imgthird" />
-													</div>
-													<div class="style-info">
-														<span class="style-copyright" v-text='item.from'></span>
-														<span class="style-time" v-text='item.time'></span>
-													</div>
-												</div>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</li>
-						<li class="section-li swiper-slide thirdPage">
-							<div class="pushsection-wrapper">
-								<div class="scrollPage">
-									<ul class="pri-ul">
-										<li class="pri-li" v-for="item in items">
-											<div class="style" :class="item.className">
-												<div class="style-left">
-													<img v-bind:src="item.img" />
-												</div>
-												<div class="style-right">
-													<div class="style-title">
-														<p>
-															<span class="title-txt" v-text='item.title'></span>
-															<span class="title-content" v-text='item.content'></span>
-														</p>
-													</div>
-													<div class="style-img">
-														<img v-bind:src="item.detailed.imgone" />
-														<img v-bind:src="item.detailed.imgtwo" />
-														<img v-bind:src="item.detailed.imgthird" />
-													</div>
-													<div class="style-info">
-														<span class="style-copyright" v-text='item.from'></span>
-														<span class="style-time" v-text='item.time'></span>
-													</div>
-												</div>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</li>
-						<li class="section-li swiper-slide fourthPage">
-							<div class="pushsection-wrapper">
-								<div class="scrollPage">
-									<ul class="pri-ul">
-										<li class="pri-li" v-for="item in items">
-											<div class="style" :class="item.className">
-												<div class="style-left">
-													<img v-bind:src="item.img" />
-												</div>
-												<div class="style-right">
-													<div class="style-title">
-														<p>
-															<span class="title-txt" v-text='item.title'></span>
-															<span class="title-content" v-text='item.content'></span>
-														</p>
-													</div>
-													<div class="style-img">
-														<img v-bind:src="item.detailed.imgone" />
-														<img v-bind:src="item.detailed.imgtwo" />
-														<img v-bind:src="item.detailed.imgthird" />
-													</div>
-													<div class="style-info">
-														<span class="style-copyright" v-text='item.from'></span>
-														<span class="style-time" v-text='item.time'></span>
-													</div>
-												</div>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</li>
-						<li class="section-li swiper-slide fifthPage">
-							<div class="pushsection-wrapper">
-								<div class="scrollPage">
-									<ul class="pri-ul">
-										<li class="pri-li" v-for="item in items">
-											<div class="style" :class="item.className">
-												<div class="style-left">
-													<img v-bind:src="item.img" />
-												</div>
-												<div class="style-right">
-													<div class="style-title">
-														<p>
-															<span class="title-txt" v-text='item.title'></span>
-															<span class="title-content" v-text='item.content'></span>
-														</p>
-													</div>
-													<div class="style-img">
-														<img v-bind:src="item.detailed.imgone" />
-														<img v-bind:src="item.detailed.imgtwo" />
-														<img v-bind:src="item.detailed.imgthird" />
-													</div>
-													<div class="style-info">
-														<span class="style-copyright" v-text='item.from'></span>
-														<span class="style-time" v-text='item.time'></span>
-													</div>
-												</div>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</li>
-					</ul>
-			</section>
-			<footer class="footer">
-				<ul class="footer-nav">
-					<li class="footer-nav-li">
-						<a href="javascript:;">
-							<i><img src="img/home_page.png"/></i>
-							<span>首页</span>
-						</a>
-					</li>
-					<li class="footer-nav-li">
-						<a href="javascript:;">
-							<i><img src="img/Properties.png"/></i>
-							<span>楼盘</span>
-						</a>
-					</li>
-					<li class="footer-nav-li">
-						<a href="javascript:;">
-							<i><img src="img/zixun.png"/></i>
-							<span class="current">资讯</span>
-						</a>
-					</li>
-					<li class="footer-nav-li">
-						<a href="javascript:;">
-							<i><img src="img/Pick_airport.png"/></i>
-							<span>公益接机</span>
-						</a>
-					</li>
-					<li class="footer-nav-li">
-						<a href="javascript:;">
-							<i><img src="img/my.png"/></i>
-							<span>我的</span>
-						</a>
-					</li>
-				</ul>
-			</footer>
-		</div>
-		<div class="zhezhao"></div>
-		<div class="article-push">
-			<div class="article-push-box">
-				<header class="article-push-header">
-					<div class="signal_bar"></div>
-					<div class="article-push-header-wrapper">
-						<a class="return" href="javascript:;"></a>
-						<span class="comment">8742点评</span>
+			<section class="purchase-union-section">
+				<div class="section-wrapper">
+					<div class="purchase-union-banner">
+						<img src="img/unionBanner.png" />
 					</div>
-				</header>
-				<section class="article-push-body">
-					<div class="article-push-wrapper">
-						<div class="article-push-content">
-							<div class="article-push-content-header">
-								<p><span class="title">[鲁能山海天]</span>客户看中四季康城二期高性价比小苏助力连签四房</p>
-								<div class="article-push-article-info">
-									<span class="copyright">旅居网</span>
-									<span class="time">2017-06-20</span>
+					<div class="purchase-union-list">
+						<ul class="list-nav">
+							<li class="select">
+								<span>活动简介</span>
+							</li>
+							<li>
+								<span>服务内容</span>
+							</li>
+							<li>
+								<span>联盟优势</span>
+							</li>
+						</ul>
+						<ul class="list-content">
+							<li class="synopsis list-content-li">
+								<div class="synopsis-txt">旅居购房联盟提供24小时接送机、全程接送看房、专业置业顾问答疑解惑等服务。报名购房联盟，购房者不仅能够更高效看房，还能够享受开发商的<span>独家优惠</span>。</div>
+								<div class="synopsis-link">
+									<div class="synopsis-logo"></div>
+									<div class="synopsis-content">
+										<p>相识即是有缘 甄姐夸赞顾问小陈服务好相识即是有缘</p>
+										<p>谢女士想海景房 小梁助其满意购下荣盛谢女士想海景房</p>
+									</div>
+								</div>
+							</li>
+							<li class="service list-content-li">
+								<h3>省心省力得实惠 24小时为您服务</h3>
+								<ul class="service-list">
+									<li>联盟成员可免费入住星级酒店两天；</li>
+									<li>免费享受24小时专车机场接送、看房接送服务；</li>
+									<li>专业置业顾问陪同看房，提供全程参谋式优质服务；</li>
+									<li>购房选择余地更大，近千个优质楼盘供您甄选；</li>
+									<li>独享优惠团购折扣价格，大幅度降低购房成本。</li>
+								</ul>
+							</li>
+							<li class="advantage list-content-li">
+								<ul class="advantage-list">
+									<li>
+										<span>集结：让团购更有力量</span>
+										<i></i>
+									</li>
+									<li>
+										<span>便捷：看房不用满城跑</span>
+										<i></i>
+									</li>
+									<li>
+										<span>看房：全程服务均免费</span>
+										<i></i>
+									</li>
+									<li>
+										<span>专业：让购房者更省心</span>
+										<i></i>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div class="purchase-union-recommend">
+						<div class="recommendHouse">
+							<div class="recommendHouse-title">
+								<div>
+									推荐房源
+									<span>查看更多</span>
 								</div>
 							</div>
-							<div class="article-push-content-body">
-								<p>在经过一月到五月的集中放量和各大节日的优惠活动后，海南楼市迎来了暂时的间隙期，不少开发商暂时冷却下来，减少了楼盘的各种暖场营销活动。那么这个时候购房者来海南买房会不会没办法买到优惠的房源呢？当然不会！本期旅居网小编就来盘点一下6月初儋州楼盘推出的特价房优惠活动，为近期想来海南买优惠房源的购房者提供一份置业参考。</p>
-								<img src="img/massage-subject3.png" alt="" />
-								<p>在经过一月到五月的集中放量和各大节日的优惠活动后，海南楼市迎来了暂时的间隙期，不少开发商暂时冷却下来，减少了楼盘的各种暖场营销活动。那么这个时候购房者来海南买房会不会没办法买到优惠的房源呢？当然不会！本期旅居网小编就来盘点一下6月初儋州楼盘推出的特价房优惠活动，为近期想来海南买优惠房源的购房者提供一份置业参考。</p>
-								<p>在经过一月到五月的集中放量和各大节日的优惠活动后，海南楼市迎来了暂时的间隙期，不少开发商暂时冷却下来，减少了楼盘的各种暖场营销活动。那么这个时候购房者来海南买房会不会没办法买到优惠的房源呢？当然不会！本期旅居网小编就来盘点一下6月初儋州楼盘推出的特价房优惠活动，为近期想来海南买优惠房源的购房者提供一份置业参考。</p>
-								<p class="indent"><span>我是小标题</span>在经过一月到五月的集中放量和各大节日的优惠活动后，海南楼市迎来了暂时的间隙期，不少开发商暂时冷却下来，减少了楼盘的各种暖场营销活动。那么这个时候购房者来海南买房会不会没办法买到优惠的房源呢？当然不会！本期旅居网小编就来盘点一下6月初儋州楼盘推出的特价房优惠活动，为近期想来海南买优惠房源的购房者提供一份置业参考。</p>
-								<div class="edit">编辑：卤鸭卤鸭</div>
-								<div class="share">
-									<span>分享到</span>
-								</div>
-								<div class="shareway">
-									<div class="way weixin">
-										<i></i>
-										<span>微信好友</span>
-									</div>
-									<div class="way friendcircle">
-										<i></i>
-										<span>朋友圈</span>
-									</div>
-									<div class="way xinlang">
-										<i></i>
-										<span>新浪微博</span>
-									</div>
-								</div>
-								<div class="jumpPage">
-									<span class="previous">上一篇</span>
-									<span class="next">下一篇</span>
-								</div>
-							</div>
-						</div>
-						<div class="article-push-hotThread">
-							<h3 class="hotThread-header">热门跟帖</h3>
-							<ul class="hotThread-ul">
-								<li class="hotThread-li" v-for="user in commention">
-									<div class="hotThread-li-box" :class="user.className">
-										<div class="user-avatar">
-											<img class="user-avatar-img" v-bind:src="user.avatar"></img>
-										</div>
-										<div class="user-comments">
-											<div class="user-name" v-text='user.name'></div>
-											<div class="user-info">
-												<span class="user-info-from" v-text='user.from'></span>
-												<span class="user-info-time" v-text='user.time'></span>
+							<div class="recommendHouse-data">
+								<ul class="recommendHouse-data-ul">
+									<li class="recommendHouse-data-li" v-for="list in recommendHouse">
+										<div class="dataDetail">
+											<div class="recommendHouse-img">
+												<img :src="list.img" />
+												<span class="ghtxt" v-text="list.sell"></span>
 											</div>
-											<p class="user-say showmore" v-text='user.say'></p>
-											<div class="showall">
-												<div class="showall-wrapper">
-													<span class="showall-wrapper-txt">显示全部</span>
-													<i class="showall-wrapper-img"></i>
-												</div>
-											</div>
-											<div class="otheruser">
-												<div class="otheruser-name" v-text='user.other.name'></div>
-												<div class="otheruser-info">
-													<span class="otheruser-info-from" v-text='user.other.from'></span>
-													<span class="otheruser-info-time" v-text='user.other.time'></span>
-												</div>
-												<div class="otheruser-phone" v-text='user.other.phone'></div>
-												<p class="otheruser-say" v-text='user.other.say'></p>
+											<div class="recommendHouse-txt">
+												<span class="title">
+												<span class="position" v-text="list.positions"></span>
+												<span class="region" v-text="list.region"></span>
+												</span>
+												<span class="address" v-text="list.address"></span>
+												<span class="openprice" v-text="list.openprice"></span>
+												<span class="averageprice">
+												<span class="averag" v-text="list.averag"></span>
+												<span class="price" v-text="list.price"></span>
+												</span>
 											</div>
 										</div>
-									</div>
-								</li>
-							</ul>
-						</div>
-						<div class="article-push-moreAbout">
-							<h3 class="moreAbout-header">更多关于“海滨国际”的资讯</h3>
-							<ul class="moreAbout-ul">
-								<li class="moreAbout-li" v-for="link in moreAbout">
-									<p v-text='link.txt'></p>
-									<span v-text='link.time'></span>
-								</li>
-							</ul>
+									</li>
+								</ul>
+							</div>
 						</div>
 					</div>
-
-				</section>
-				<footer class="article-push-footer">
-					<div class="write-reviews">
-						<span>写点评咨询</span>
+					<div class="purchase-union-service">
+						<div class="customService">
+							<div class="customService-title">
+								<div>购房联盟客服</div>
+							</div>
+							<div class="customService-data">
+								<ul class="customService-data-ul">
+									<li class="customService-data-li" v-for="list in customService">
+										<div class="dataDetail">
+											<div class="customService-img">
+												<img :src="list.portrait" />
+											</div>
+											<div class="customService-txt">
+												<span class="surname" v-text="list.surname"></span>
+												<span class="dialing">
+													<div class="dialing-wrapper">
+														<span class="style" v-for="item in list.tags" v-text="item"></span>
+													</div>
+													<span class="dialing-txt">拨号</span>
+												</span>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
 					</div>
-					<div class="show-reviews">
-						<i></i>
-						<span>8742</span>
-					</div>
-				</footer>
-			</div>
-			<div class="comment-failed">评论提交失败，请检查网络</div>
-			<div class="comment-success">评论提交成功</div>
-		</div>
-		<div class="writing-box">
-			<div class="writing-panel">
-				<div class="writing-panel-header">
-					<span class="cancel">取消</span>
-					<span class="hader-txt">写点评咨询</span>
-					<span class="send">发送</span>
 				</div>
-				<textarea class="text-box" autofocus name=""></textarea>
-			</div>
+			</section>
+			<div class="signUp-btn"></div>
 		</div>
-		<script type="text/javascript">
-			$('.container .wrapper').navbarscroll();
-		</script>
-		<script type="text/javascript">
-			var myVue1 = new Vue({
-				el: ".container",
-				data: {
-					items: [{
-							img: 'img/imgbox.png',
-							title: '[鲁能山海天]',
-							content: '客户看中四季康城二期高性价比小苏助力连签四房 客户看中四季康城二期高性价比小苏助力连签四房',
-							from: "海南资讯",
-							time: "2017-06-20",
-							detailed: {
-								imgone: 'img/massage-subject1.png',
-								imgtwo: 'img/massage-subject2.png',
-								imgthird: 'img/massage-subject3.png'
-							},
-							className: {
-								firststyle: true
-							}
-						},
-						{
-							img: 'img/imgbox.png',
-							title: '[鲁能山海天]',
-							content: '客户看中四季康城二期高性价比小苏助力连签四房 客户看中四季康城二期高性价比小苏助力连签四房',
-							from: "新盘速递",
-							time: "2017-06-20",
-							detailed: {
-								imgone: 'img/massage-subject1.png',
-								imgtwo: 'img/massage-subject2.png',
-								imgthird: 'img/massage-subject3.png'
-							},
-							className: {
-								secondstyle: true
-							}
-						},
-						{
-							img: 'img/imgbox.png',
-							title: '[鲁能山海天]',
-							content: '客户看中四季康城二期高性价比小苏助力连签四房 客户看中四季康城二期高性价比小苏助力连签四房',
-							from: "海南资讯",
-							time: "2017-06-20",
-							detailed: {
-								imgone: 'img/massage-subject1.png',
-								imgtwo: 'img/massage-subject2.png',
-								imgthird: 'img/massage-subject3.png'
-							},
-							className: {
-								thirdstyle: true
-							}
-						},
-						{
-							img: 'img/imgbox.png',
-							title: '[鲁能山海天]',
-							content: '客户看中四季康城二期高性价比小苏助力连签四房 客户看中四季康城二期高性价比小苏助力连签四房',
-							from: "楼盘导购",
-							time: "2017-06-20",
-							detailed: {
-								imgone: 'img/massage-subject1.png',
-								imgtwo: 'img/massage-subject2.png',
-								imgthird: 'img/massage-subject3.png'
-							},
-							className: {
-								fourthstyle: true
-							}
-						},
-						{
-							img: 'img/imgbox.png',
-							title: '[鲁能山海天]',
-							content: '客户看中四季康城二期高性价比小苏助力连签四房 客户看中四季康城二期高性价比小苏助力连签四房',
-							from: "海南资讯",
-							time: "2017-06-20",
-							detailed: {
-								imgone: 'img/massage-subject1.png',
-								imgtwo: 'img/massage-subject2.png',
-								imgthird: 'img/massage-subject3.png'
-							},
-							className: {
-								firststyle: true
-							}
-						},
-						{
-							img: 'img/imgbox.png',
-							title: '[鲁能山海天]',
-							content: '客户看中四季康城二期高性价比小苏助力连签四房 客户看中四季康城二期高性价比小苏助力连签四房',
-							from: "新盘速递",
-							time: "2017-06-20",
-							detailed: {
-								imgone: 'img/massage-subject1.png',
-								imgtwo: 'img/massage-subject2.png',
-								imgthird: 'img/massage-subject3.png'
-							},
-							className: {
-								secondstyle: true
-							}
-						},
-						{
-							img: 'img/imgbox.png',
-							title: '[鲁能山海天]',
-							content: '客户看中四季康城二期高性价比小苏助力连签四房 客户看中四季康城二期高性价比小苏助力连签四房',
-							from: "海南资讯",
-							time: "2017-06-20",
-							detailed: {
-								imgone: 'img/massage-subject1.png',
-								imgtwo: 'img/massage-subject2.png',
-								imgthird: 'img/massage-subject3.png'
-							},
-							className: {
-								thirdstyle: true
-							}
-						},
-						{
-							img: 'img/imgbox.png',
-							title: '[鲁能山海天]',
-							content: '客户看中四季康城二期高性价比小苏助力连签四房 客户看中四季康城二期高性价比小苏助力连签四房',
-							from: "楼盘导购",
-							time: "2017-06-20",
-							detailed: {
-								imgone: 'img/massage-subject1.png',
-								imgtwo: 'img/massage-subject2.png',
-								imgthird: 'img/massage-subject3.png'
-							},
-							className: {
-								fourthstyle: true
-							}
-						}
-					]
-				}
-			})
-			var myVues2 = new Vue({
-				el: ".article-push",
-				data: {
-					moreAbout: [{
-							txt: '文昌度假两房户型推假两房户型推假两房户型推假两房户型推荐 雅居乐月亮湾两居室度假宜居雅居乐月亮湾两居室度假宜居',
-							time: '2017-06-21'
-						},
-						{
-							txt: '文昌度假两房户型推假两房户型推假两房户型',
-							time: '2017-06-20'
-						},
-						{
-							txt: '文昌度假两房户型推假两房户型推假两房户型推假两房户型推荐 雅居乐月亮湾两居室度假宜居雅居乐月亮湾两居室度假宜居',
-							time: '2017-06-19'
-						}
-					],
-					commention: [{
-							avatar: 'img/head_portrait.png',
-							name: '张三',
-							from: '来自：辽宁省本溪市',
-							time: '2017-06-20',
-							say: '现在有在售房吗？户型？价格？',
-							other: {
-								name: '李四',
-								from: '来自：辽宁省本溪市',
-								time: '2017-06-20',
-								phone: '13878745747',
-								say: '您好，很高兴为您服务。房源不是很多，折后均价13500毛坯。'
-							},
-							className: {
-								styleone: true
-							}
-						},
-						{
-							avatar: 'img/head_portrait.png',
-							name: '李四',
-							from: '来自：浙江省杭州市',
-							time: '2017-06-20',
-							say: '现在5号楼还有房吗？95平的那种户型多少钱？比如中间层的？',
-							other: {
-								name: '李四',
-								from: '来自：辽宁省本溪市',
-								time: '2017-06-20',
-								phone: '13878745747',
-								say: '您好，很高兴为您服务。房源不是很多，折后均价13500毛坯。'
-							},
-							className: {
-								styletwo: true
-							}
-						},
-						{
-							avatar: 'img/head_portrait.png',
-							name: '王五',
-							from: '来自：辽宁省本溪市',
-							time: '2017-06-20',
-							say: '帮我查一下美高梅7期3房166平米共5套，4房205平米共3套的15，16，17，19，2O，25，26，29楼层共8户的价格及现在5号楼还有房吗？95平的那种户型多少钱？比如中间层的？',
-							other: {
-								name: '李四',
-								from: '来自：辽宁省本溪市',
-								time: '2017-06-20',
-								phone: '13878745747',
-								say: '您好，很高兴为您服务。房源不是很多，折后均价13500毛坯。'
-							},
-							className: {
-								stylethree: true
-							}
-						}
-					]
-				}
-			})
-		</script>
 	</body>
-	<script type="text/javascript" src="js/building-information.js"></script>
+	<script type="text/javascript">
+		var myVue = new Vue({
+			el: ".purchase-union-container",
+			data: {
+				recommendHouse: [{
+						img: 'img/massage-subject3.png',
+						positions: '滨海博鳌小',
+						region: '[琼海]',
+						address: '琼海市博鳌滨海大道（潭门桥旁）',
+						openprice: '开盘：8000元/㎡',
+						averag: '均价：',
+						price: '12000元/㎡'
+					},
+					{
+						img: 'img/massage-subject3.png',
+						positions: '滨海博鳌小',
+						region: '[琼海]',
+						address: '琼海市博鳌滨海大道（潭门桥旁）',
+						openprice: '开盘：8000元/㎡',
+						averag: '均价：',
+						price: '12000元/㎡'
+					},
+					{
+						img: 'img/massage-subject3.png',
+						positions: '滨海博鳌小',
+						region: '[琼海]',
+						address: '琼海市博鳌滨海大道（潭门桥旁）',
+						openprice: '开盘：8000元/㎡',
+						averag: '均价：',
+						price: '12000元/㎡'
+					},
+					{
+						img: 'img/massage-subject3.png',
+						positions: '滨海博鳌小',
+						region: '[琼海]',
+						address: '琼海市博鳌滨海大道（潭门桥旁）',
+						openprice: '开盘：8000元/㎡',
+						averag: '均价：',
+						price: '12000元/㎡'
+					}
+				],
+				customService: [{
+						portrait: 'img/photo1.png',
+						surname: '张莉霞',
+						tags: ['海口市区','博鳌']
+					},
+					{
+						portrait: 'img/photo2.png',
+						surname: '徐俊',
+						tags: ['三亚','三亚周边']
+					},
+					{
+						portrait: 'img/photo3.png',
+						surname: '李宝成',
+						tags: ['万宁','陵水','保亭','五指山']
+					},
+					{
+						portrait: 'img/photo4.png',
+						surname: '王珍珍',
+						tags: ['儋州','白马井','澄迈','琼海']
+					},
+					{
+						portrait: 'img/photo5.png',
+						surname: '李承慧',
+						tags: ['海南全岛']
+					},
+					{
+						portrait: 'img/photo6.png',
+						surname: '李云',
+						tags: ['海口周边','澄迈']
+					}
+				]
+			}
+		})
+	</script>
+	<script type="text/javascript" src="js/purchase-union.js"></script>
 </html>
