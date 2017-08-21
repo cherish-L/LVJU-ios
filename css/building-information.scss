@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-a,textarea{
+a {
     outline: none;
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
@@ -11,12 +11,41 @@ a,textarea{
     -webkit-user-select: none;
 }
 
+::-moz-placeholder {
+    color: #cccccc;
+}
+
+::-webkit-input-placeholder {
+    color: #cccccc
+}
+
+:-ms-input-placeholder {
+    color: #cccccc;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+
 html,
 body {
     width: 100%;
     height: 100%;
+    overflow: hidden;
     font-family: PingFangSC-Regular;
     background: #F4F4F4;
+}
+
+input,
+textarea {
+    outline: none;
+    border: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 li {
@@ -36,6 +65,8 @@ $sc:25;
         width: 100%;
         background: #f6f6f6;
         z-index: 10;
+        box-shadow: 0 1px 0 0 #CCCCCC;
+        -webkit-box-shadow: 0 1px 0 0 #CCCCCC;
         .signal_bar {
             width: 100%;
             height: 20/$sc+rem;
@@ -45,8 +76,6 @@ $sc:25;
             height: 44/$sc+rem;
             line-height: 44/$sc+rem;
             position: relative;
-            box-shadow: 0 1px 0 0 #CCCCCC;
-            -webkit-box-shadow: 0 1px 0 0 #CCCCCC;
             .property-information-title {
                 font-size: 18/$sc+rem;
                 color: #394043;
@@ -54,29 +83,41 @@ $sc:25;
                 font-weight: normal;
             }
         }
-        .content-nav {
-            height: 52/$sc+rem;
+        .header-nav {
             width: 100%;
             overflow: hidden;
-            background: #FFFFFF;
-            box-shadow: inset 0 -1px 0 0 #EEEEEE;
-            -webkit-box-shadow: inset 0 -1px 0 0 #EEEEEE;
-            .navsub-ul {
-                height: 52/$sc+rem;
-                width: 410/$sc+rem;
-                padding: 0 12/$sc+rem;
-                li {
-                    float: left;
-                    height: 52/$sc+rem;
-                    line-height: 52/$sc+rem;
-                    width: 82/$sc+rem;
-                    font-size: 14/$sc+rem;
-                    text-align: center;
-                    color: #394043;
-                }
-                li.navsub-ul-active {
-                    font-size: 16/$sc+rem;
-                    color: #0099EB;
+            position: relative;
+            height: 46/$sc+rem;
+            .scroller {
+                height: 100%;
+                position: absolute;
+                left: 0;
+                .nav-list {
+                    height: 46/$sc+rem;
+                    li {
+                        float: left;
+                        height: 100%;
+                        width: 88/$sc+rem;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        span {
+                            display: block;
+                            height: 100%;
+                            line-height: 46/$sc+rem;
+                            font-size: 16/$sc+rem;
+                            color: #6C7072;
+                            box-sizing: border-box;
+                            -webkit-box-sizing: border-box;
+                        }
+                    }
+                    li.select {
+                        span {
+                            font-family: PingFang-SC-Medium;
+                            color: #0099EB;
+                            border-bottom: 3/$sc+rem solid #0099EB;
+                        }
+                    }
                 }
             }
         }
@@ -87,271 +128,291 @@ $sc:25;
         -webkit-flex: 1;
         overflow: hidden;
         background: #f4f4f4;
-        .section-content-body {
-            padding-bottom: 32/$sc+rem;
-            .section-content-massage {
-                .pri-ul {
-                    .pri-li {
+        .section-ul {
+            width: 100%;
+            height: 100%;
+            .section-li {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                .pushsection-wrapper {
+                    width: 100%;
+                    padding-bottom: 32/$sc+rem;
+                    position: absolute;
+                    left: 0;
+                    .scrollPage {
                         width: 100%;
-                        background: #FFFFFF;
-                        padding: 0 16/$sc+rem;
-                        box-shadow: inset 0 -1px 0 0 #EEEEEE;
-                        -webkit-box-shadow: inset 0 -1px 0 0 #EEEEEE;
                         box-sizing: border-box;
                         -webkit-box-sizing: border-box;
                         display: flex;
                         display: -webkit-flex;
                         flex-direction: row;
-                        .firststyle {
-                            margin: 16/$sc+rem 0;
-                            .style-left {
-                                width: 0;
-                                height: 75/$sc+rem;
-                                float: left;
-                                img {
-                                    width: 100%;
-                                    height: 100%;
-                                }
-                            }
-                            .style-right {
+                        .pri-ul {
+                            background: #FFFFFF;
+                            .pri-li {
                                 width: 100%;
-                                float: left;
-                                .style-title {
-                                    p {
-                                        color: #1B1C00;
-                                        line-height: 24/$sc+rem;
-                                        font-size: 16/$sc+rem;
-                                        -webkit-line-clamp: 2;
-                                        display: -webkit-box;
-                                        overflow: hidden;
-                                        -webkit-box-orient: vertical;
-                                        .title-txt {
-                                            font-size: 16/$sc+rem;
-                                            color: #0099EB;
-                                            line-height: 24/$sc+rem;
-                                            font-weight: normal;
-                                        }
-                                        .title-content {
-                                            font-size: 16/$sc+rem;
-                                            color: #1B1C00;
-                                            line-height: 24/$sc+rem;
-                                            font-weight: normal;
-                                        }
-                                    }
-                                }
-                                .style-img {
-                                    display: flex;
-                                    justify-content: space-between;
-                                    flex-wrap: wrap;
-                                    img {
-                                        width: 32%;
-                                        height: 0;
-                                    }
-                                }
-                                .style-info {
-                                    line-height: 16/$sc+rem;
-                                    height: 16/$sc+rem;
-                                    font-size: 12/$sc+rem;
-                                    color: #999999;
-                                    margin-top: 12/$sc+rem;
-                                    .style-copyright {
+                                background: #FFFFFF;
+                                padding: 0 16/$sc+rem;
+                                box-shadow: inset 0 -1px 0 0 #EEEEEE;
+                                -webkit-box-shadow: inset 0 -1px 0 0 #EEEEEE;
+                                box-sizing: border-box;
+                                -webkit-box-sizing: border-box;
+                                display: flex;
+                                display: -webkit-flex;
+                                flex-direction: row;
+                                .firststyle {
+                                    margin: 16/$sc+rem 0;
+                                    .style-left {
+                                        width: 0;
+                                        height: 75/$sc+rem;
                                         float: left;
+                                        img {
+                                            width: 100%;
+                                            height: 100%;
+                                        }
                                     }
-                                    .style-time {
-                                        float: right;
+                                    .style-right {
+                                        width: 100%;
+                                        float: left;
+                                        .style-title {
+                                            p {
+                                                color: #1B1C00;
+                                                line-height: 24/$sc+rem;
+                                                font-size: 16/$sc+rem;
+                                                -webkit-line-clamp: 2;
+                                                display: -webkit-box;
+                                                overflow: hidden;
+                                                -webkit-box-orient: vertical;
+                                                .title-txt {
+                                                    font-size: 16/$sc+rem;
+                                                    color: #0099EB;
+                                                    line-height: 24/$sc+rem;
+                                                    font-weight: normal;
+                                                }
+                                                .title-content {
+                                                    font-size: 16/$sc+rem;
+                                                    color: #1B1C00;
+                                                    line-height: 24/$sc+rem;
+                                                    font-weight: normal;
+                                                }
+                                            }
+                                        }
+                                        .style-img {
+                                            display: flex;
+                                            justify-content: space-between;
+                                            flex-wrap: wrap;
+                                            img {
+                                                width: 31.5%;
+                                                height: 0;
+                                            }
+                                        }
+                                        .style-info {
+                                            line-height: 16/$sc+rem;
+                                            height: 16/$sc+rem;
+                                            font-size: 12/$sc+rem;
+                                            color: #999999;
+                                            margin-top: 12/$sc+rem;
+                                            .style-copyright {
+                                                float: left;
+                                            }
+                                            .style-time {
+                                                float: right;
+                                            }
+                                        }
                                     }
                                 }
+                                .secondstyle {
+                                    margin: 16/$sc+rem 0;
+                                    .style-left {
+                                        width: 100/$sc+rem;
+                                        height: 75/$sc+rem;
+                                        padding-right: 16/$sc+rem;
+                                        float: left;
+                                        img {
+                                            width: 100%;
+                                            height: 100%;
+                                        }
+                                    }
+                                    .style-right {
+                                        width: 227/$sc+rem;
+                                        float: left;
+                                        .style-title {
+                                            p {
+                                                color: #1B1C00;
+                                                line-height: 24/$sc+rem;
+                                                font-size: 16/$sc+rem;
+                                                -webkit-line-clamp: 2;
+                                                display: -webkit-box;
+                                                overflow: hidden;
+                                                -webkit-box-orient: vertical;
+                                                .title-txt {
+                                                    font-size: 16/$sc+rem;
+                                                    color: #0099EB;
+                                                    line-height: 24/$sc+rem;
+                                                    font-weight: normal;
+                                                }
+                                                .title-content {
+                                                    font-size: 16/$sc+rem;
+                                                    color: #1B1C00;
+                                                    line-height: 24/$sc+rem;
+                                                    font-weight: normal;
+                                                }
+                                            }
+                                        }
+                                        .style-img {
+                                            display: flex;
+                                            justify-content: space-between;
+                                            flex-wrap: wrap;
+                                            img {
+                                                width: 31.5%;
+                                                height: 0;
+                                            }
+                                        }
+                                        .style-info {
+                                            line-height: 16/$sc+rem;
+                                            height: 16/$sc+rem;
+                                            font-size: 12/$sc+rem;
+                                            color: #999999;
+                                            margin-top: 12/$sc+rem;
+                                            .style-copyright {
+                                                float: left;
+                                            }
+                                            .style-time {
+                                                float: right;
+                                            }
+                                        }
+                                    }
+                                }
+                                .thirdstyle {
+                                    margin: 16/$sc+rem 0;
+                                    .style-left {
+                                        width: 0;
+                                        height: 75/$sc+rem;
+                                        float: left;
+                                        img {
+                                            width: 100%;
+                                            height: 100%;
+                                        }
+                                    }
+                                    .style-right {
+                                        width: 100%;
+                                        float: left;
+                                        .style-title {
+                                            p {
+                                                color: #1B1C00;
+                                                line-height: 24/$sc+rem;
+                                                font-size: 16/$sc+rem;
+                                                -webkit-line-clamp: 2;
+                                                display: -webkit-box;
+                                                overflow: hidden;
+                                                -webkit-box-orient: vertical;
+                                                .title-txt {
+                                                    font-size: 16/$sc+rem;
+                                                    color: #0099EB;
+                                                    line-height: 24/$sc+rem;
+                                                    font-weight: normal;
+                                                }
+                                                .title-content {
+                                                    font-size: 16/$sc+rem;
+                                                    color: #1B1C00;
+                                                    line-height: 24/$sc+rem;
+                                                    font-weight: normal;
+                                                }
+                                            }
+                                        }
+                                        .style-img {
+                                            display: flex;
+                                            justify-content: space-between;
+                                            flex-wrap: wrap;
+                                            img {
+                                                width: 31.5%;
+                                                height: 0;
+                                            }
+                                        }
+                                        .style-info {
+                                            line-height: 16/$sc+rem;
+                                            height: 16/$sc+rem;
+                                            font-size: 12/$sc+rem;
+                                            color: #999999;
+                                            margin-top: 12/$sc+rem;
+                                            .style-copyright {
+                                                float: left;
+                                            }
+                                            .style-time {
+                                                float: right;
+                                            }
+                                        }
+                                    }
+                                }
+                                .fourthstyle {
+                                    margin: 16/$sc+rem 0;
+                                    .style-left {
+                                        width: 0;
+                                        height: 75/$sc+rem;
+                                        float: left;
+                                        img {
+                                            width: 100%;
+                                            height: 100%;
+                                        }
+                                    }
+                                    .style-right {
+                                        width: 100%;
+                                        float: left;
+                                        .style-title {
+                                            p {
+                                                color: #1B1C00;
+                                                line-height: 24/$sc+rem;
+                                                font-size: 16/$sc+rem;
+                                                -webkit-line-clamp: 2;
+                                                display: -webkit-box;
+                                                overflow: hidden;
+                                                -webkit-box-orient: vertical;
+                                                padding-bottom: 4/$sc+rem;
+                                                .title-txt {
+                                                    font-size: 16/$sc+rem;
+                                                    color: #0099EB;
+                                                    line-height: 24/$sc+rem;
+                                                    font-weight: normal;
+                                                }
+                                                .title-content {
+                                                    font-size: 16/$sc+rem;
+                                                    color: #1B1C00;
+                                                    line-height: 24/$sc+rem;
+                                                    font-weight: normal;
+                                                }
+                                            }
+                                        }
+                                        .style-img {
+                                            margin-top: 8/$sc+rem;
+                                            display: flex;
+                                            justify-content: space-between;
+                                            flex-wrap: wrap;
+                                            img {
+                                                width: 31.5%;
+                                                height: 80/$sc+rem;
+                                            }
+                                        }
+                                        .style-info {
+                                            line-height: 16/$sc+rem;
+                                            height: 16/$sc+rem;
+                                            font-size: 12/$sc+rem;
+                                            color: #999999;
+                                            margin-top: 12/$sc+rem;
+                                            .style-copyright {
+                                                float: left;
+                                            }
+                                            .style-time {
+                                                float: right;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .pri-li:last-child {
+                                box-shadow: none;
+                                -webkit-box-shadow: none;
                             }
                         }
-                        .secondstyle {
-                            margin: 16/$sc+rem 0;
-                            .style-left {
-                                width: 100/$sc+rem;
-                                height: 75/$sc+rem;
-                                padding-right: 16/$sc+rem;
-                                float: left;
-                                img {
-                                    width: 100%;
-                                    height: 100%;
-                                }
-                            }
-                            .style-right {
-                                width: 227/$sc+rem;
-                                float: left;
-                                .style-title {
-                                    p {
-                                        color: #1B1C00;
-                                        line-height: 24/$sc+rem;
-                                        font-size: 16/$sc+rem;
-                                        -webkit-line-clamp: 2;
-                                        display: -webkit-box;
-                                        overflow: hidden;
-                                        -webkit-box-orient: vertical;
-                                        .title-txt {
-                                            font-size: 16/$sc+rem;
-                                            color: #0099EB;
-                                            line-height: 24/$sc+rem;
-                                            font-weight: normal;
-                                        }
-                                        .title-content {
-                                            font-size: 16/$sc+rem;
-                                            color: #1B1C00;
-                                            line-height: 24/$sc+rem;
-                                            font-weight: normal;
-                                        }
-                                    }
-                                }
-                                .style-img {
-                                    display: flex;
-                                    justify-content: space-between;
-                                    flex-wrap: wrap;
-                                    img {
-                                        width: 32%;
-                                        height: 0;
-                                    }
-                                }
-                                .style-info {
-                                    line-height: 16/$sc+rem;
-                                    height: 16/$sc+rem;
-                                    font-size: 12/$sc+rem;
-                                    color: #999999;
-                                    margin-top: 12/$sc+rem;
-                                    .style-copyright {
-                                        float: left;
-                                    }
-                                    .style-time {
-                                        float: right;
-                                    }
-                                }
-                            }
-                        }
-                        .thirdstyle {
-                            margin: 16/$sc+rem 0;
-                            .style-left {
-                                width: 0;
-                                height: 75/$sc+rem;
-                                float: left;
-                                img {
-                                    width: 100%;
-                                    height: 100%;
-                                }
-                            }
-                            .style-right {
-                                width: 100%;
-                                float: left;
-                                .style-title {
-                                    p {
-                                        color: #1B1C00;
-                                        line-height: 24/$sc+rem;
-                                        font-size: 16/$sc+rem;
-                                        -webkit-line-clamp: 2;
-                                        display: -webkit-box;
-                                        overflow: hidden;
-                                        -webkit-box-orient: vertical;
-                                        .title-txt {
-                                            font-size: 16/$sc+rem;
-                                            color: #0099EB;
-                                            line-height: 24/$sc+rem;
-                                            font-weight: normal;
-                                        }
-                                        .title-content {
-                                            font-size: 16/$sc+rem;
-                                            color: #1B1C00;
-                                            line-height: 24/$sc+rem;
-                                            font-weight: normal;
-                                        }
-                                    }
-                                }
-                                .style-img {
-                                    display: flex;
-                                    justify-content: space-between;
-                                    flex-wrap: wrap;
-                                    img {
-                                        width: 30%;
-                                        height: 0;
-                                    }
-                                }
-                                .style-info {
-                                    line-height: 16/$sc+rem;
-                                    height: 16/$sc+rem;
-                                    font-size: 12/$sc+rem;
-                                    color: #999999;
-                                    margin-top: 12/$sc+rem;
-                                    .style-copyright {
-                                        float: left;
-                                    }
-                                    .style-time {
-                                        float: right;
-                                    }
-                                }
-                            }
-                        }
-                        .fourthstyle {
-                            margin: 16/$sc+rem 0;
-                            .style-left {
-                                width: 0;
-                                height: 75/$sc+rem;
-                                float: left;
-                                img {
-                                    width: 100%;
-                                    height: 100%;
-                                }
-                            }
-                            .style-right {
-                                width: 100%;
-                                float: left;
-                                .style-title {
-                                    p {
-                                        color: #1B1C00;
-                                        line-height: 24/$sc+rem;
-                                        font-size: 16/$sc+rem;
-                                        -webkit-line-clamp: 2;
-                                        display: -webkit-box;
-                                        overflow: hidden;
-                                        -webkit-box-orient: vertical;
-                                        padding-bottom: 4/$sc+rem;
-                                        .title-txt {
-                                            font-size: 16/$sc+rem;
-                                            color: #0099EB;
-                                            line-height: 24/$sc+rem;
-                                            font-weight: normal;
-                                        }
-                                        .title-content {
-                                            font-size: 16/$sc+rem;
-                                            color: #1B1C00;
-                                            line-height: 24/$sc+rem;
-                                            font-weight: normal;
-                                        }
-                                    }
-                                }
-                                .style-img {
-                                    margin-top: 8/$sc+rem;
-                                    display: flex;
-                                    justify-content: space-between;
-                                    flex-wrap: wrap;
-                                    img {
-                                        width: 30%;
-                                        height: 80/$sc+rem;
-                                    }
-                                }
-                                .style-info {
-                                    line-height: 16/$sc+rem;
-                                    height: 16/$sc+rem;
-                                    font-size: 12/$sc+rem;
-                                    color: #999999;
-                                    margin-top: 12/$sc+rem;
-                                    .style-copyright {
-                                        float: left;
-                                    }
-                                    .style-time {
-                                        float: right;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    .pri-li:last-child {
-                        border-bottom: none;
                     }
                 }
             }
@@ -929,18 +990,17 @@ $sc:25;
                                             border-radius: 12/$sc+rem;
                                             position: relative;
                                             display: flex;
-                                            flex-direction: row;
                                             justify-content: center;
                                             align-items: center;
                                             .showall-wrapper-txt {
-                                                display: inline-block;
-                                                height: 12/$sc+rem;
-                                                width: 50/$sc+rem;
+                                                display: block;
+                                                line-height: 16/$sc+rem;
                                                 font-size: 12/$sc+rem;
                                                 color: #0099EB;
-                                                padding-right: 10/$sc+rem ;
-                                                background: url(../img/bottom.png) right 4/$sc+rem no-repeat;
-                                                background-size: 8/$sc+rem 4/$sc+rem;
+                                                padding-right: 13/$sc+rem;
+                                                background: url(../img/bottom.png) no-repeat;
+                                                background-size: 9/$sc+rem 16/$sc+rem;
+                                                background-position-x: right;
                                             }
                                         }
                                     }
@@ -1158,10 +1218,51 @@ $sc:25;
             font-size: 12/$sc+rem;
             outline: none;
             padding: 8/$sc+rem;
-            
             resize: none;
             box-sizing: border-box;
             -webkit-box-sizing: border-box;
         }
     }
+}
+
+.comment-failed {
+    display: none;
+    height: 48/$sc+rem;
+    width: 280/$sc+rem;
+    background: rgba(0, 0, 0, .8);
+    border-radius: 2/$sc+rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 13/$sc+rem 16/$sc+rem;
+    text-align: center;
+    line-height: 22/$sc+rem;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-size: 16/$sc+rem;
+    color: #FFFFFF;
+}
+
+.comment-success {
+    display: none;
+    height: 48/$sc+rem;
+    width: 280/$sc+rem;
+    background: rgba(0, 0, 0, .8);
+    border-radius: 2/$sc+rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 13/$sc+rem 16/$sc+rem;
+    text-align: center;
+    line-height: 22/$sc+rem;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-size: 16/$sc+rem;
+    color: #FFFFFF;
 }

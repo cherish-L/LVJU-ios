@@ -3,19 +3,23 @@
 
 	<head>
 		<meta charset="utf-8" />
+		<meta content="email=no" name="format-detection" />
+		<meta http-equiv="Cache-Control" content="no-cache" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title>楼盘资讯</title>
+		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/building-information.css" />
+		<link rel="stylesheet" type="text/css" href="plugins/animate.min.css" />
 		<script type="text/javascript" src="plugins/zepto.min.js"></script>
-		<script type="text/javascript" src="plugins/iscroll-master/build/iscroll-probe.js"></script>
+		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>
+		<script src="plugins/swiper-3.4.2.min.js"></script>
 		<script type="text/javascript" src="vue/vue.js"></script>
-		<script type="text/javascript" src="js/building-information.js"></script>
+		<script type="text/javascript" src="plugins/navbarscroll.js"></script>
 		<script>
 			//适配
 			document.documentElement.style.fontSize = innerWidth / 15 + "px";
 		</script>
 	</head>
-
 	<body>
 		<div class="container" v-cloak>
 			<header class="header">
@@ -23,48 +27,181 @@
 				<div class="property-information">
 					<h3 class="property-information-title">楼市资讯</h3>
 				</div>
-				<div class="content-nav">
-					<ul class="navsub-ul">
-						<li class="navsub-ul-active"><strong>热门资讯</strong></li>
-						<li><strong>海南资讯</strong></li>
-						<li><strong>楼盘热点</strong></li>
-						<li><strong>新盘速递</strong></li>
-						<li><strong>楼盘导购</strong></li>
-					</ul>
-				</div>
-			</header>
-			<section class="section">
-				<div class="section-content-body">
-					<div class="section-content-massage">
-						<ul class="pri-ul">
-							<li class="pri-li" v-for="item in items">
-								<div class="style" :class="item.className">
-									<div class="style-left">
-										<img v-bind:src="item.img" />
-									</div>
-									<div class="style-right">
-										<div class="style-title">
-											<p>
-												<span class="title-txt" v-text='item.title'></span>
-												<span class="title-content" v-text='item.content'></span>
-											</p>
-										</div>
-										<div class="style-img">
-											<img v-bind:src="item.detailed.imgone" />
-											<img v-bind:src="item.detailed.imgtwo" />
-											<img v-bind:src="item.detailed.imgthird" />
-										</div>
-										<div class="style-info">
-											<span class="style-copyright" v-text='item.from'></span>
-											<span class="style-time" v-text='item.time'></span>
-										</div>
-									</div>
-
-								</div>
-							</li>
+				<div class="header-nav wrapper" id="demo">
+					<div class="scroller">
+						<ul class="nav-list clearfix">
+							<li><span>热门资讯</span></li>
+							<li><span>海南资讯</span></li>
+							<li><span>楼盘热点</span></li>
+							<li><span>新盘速递</span></li>
+							<li><span>楼盘导购</span></li>
 						</ul>
 					</div>
 				</div>
+			</header>
+			<section class="section">
+					<ul class="section-ul swiper-wrapper">
+						<li class="section-li swiper-slide firstPage">
+							<div class="pushsection-wrapper">
+								<div class="scrollPage">
+									<ul class="pri-ul">
+										<li class="pri-li" v-for="item in items">
+											<div class="style" :class="item.className">
+												<div class="style-left">
+													<img v-bind:src="item.img" />
+												</div>
+												<div class="style-right">
+													<div class="style-title">
+														<p>
+															<span class="title-txt" v-text='item.title'></span>
+															<span class="title-content" v-text='item.content'></span>
+														</p>
+													</div>
+													<div class="style-img">
+														<img v-bind:src="item.detailed.imgone" />
+														<img v-bind:src="item.detailed.imgtwo" />
+														<img v-bind:src="item.detailed.imgthird" />
+													</div>
+													<div class="style-info">
+														<span class="style-copyright" v-text='item.from'></span>
+														<span class="style-time" v-text='item.time'></span>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li class="section-li swiper-slide secondPage">
+							<div class="pushsection-wrapper">
+								<div class="scrollPage">
+									<ul class="pri-ul">
+										<li class="pri-li" v-for="item in items">
+											<div class="style" :class="item.className">
+												<div class="style-left">
+													<img v-bind:src="item.img" />
+												</div>
+												<div class="style-right">
+													<div class="style-title">
+														<p>
+															<span class="title-txt" v-text='item.title'></span>
+															<span class="title-content" v-text='item.content'></span>
+														</p>
+													</div>
+													<div class="style-img">
+														<img v-bind:src="item.detailed.imgone" />
+														<img v-bind:src="item.detailed.imgtwo" />
+														<img v-bind:src="item.detailed.imgthird" />
+													</div>
+													<div class="style-info">
+														<span class="style-copyright" v-text='item.from'></span>
+														<span class="style-time" v-text='item.time'></span>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li class="section-li swiper-slide thirdPage">
+							<div class="pushsection-wrapper">
+								<div class="scrollPage">
+									<ul class="pri-ul">
+										<li class="pri-li" v-for="item in items">
+											<div class="style" :class="item.className">
+												<div class="style-left">
+													<img v-bind:src="item.img" />
+												</div>
+												<div class="style-right">
+													<div class="style-title">
+														<p>
+															<span class="title-txt" v-text='item.title'></span>
+															<span class="title-content" v-text='item.content'></span>
+														</p>
+													</div>
+													<div class="style-img">
+														<img v-bind:src="item.detailed.imgone" />
+														<img v-bind:src="item.detailed.imgtwo" />
+														<img v-bind:src="item.detailed.imgthird" />
+													</div>
+													<div class="style-info">
+														<span class="style-copyright" v-text='item.from'></span>
+														<span class="style-time" v-text='item.time'></span>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li class="section-li swiper-slide fourthPage">
+							<div class="pushsection-wrapper">
+								<div class="scrollPage">
+									<ul class="pri-ul">
+										<li class="pri-li" v-for="item in items">
+											<div class="style" :class="item.className">
+												<div class="style-left">
+													<img v-bind:src="item.img" />
+												</div>
+												<div class="style-right">
+													<div class="style-title">
+														<p>
+															<span class="title-txt" v-text='item.title'></span>
+															<span class="title-content" v-text='item.content'></span>
+														</p>
+													</div>
+													<div class="style-img">
+														<img v-bind:src="item.detailed.imgone" />
+														<img v-bind:src="item.detailed.imgtwo" />
+														<img v-bind:src="item.detailed.imgthird" />
+													</div>
+													<div class="style-info">
+														<span class="style-copyright" v-text='item.from'></span>
+														<span class="style-time" v-text='item.time'></span>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li class="section-li swiper-slide fifthPage">
+							<div class="pushsection-wrapper">
+								<div class="scrollPage">
+									<ul class="pri-ul">
+										<li class="pri-li" v-for="item in items">
+											<div class="style" :class="item.className">
+												<div class="style-left">
+													<img v-bind:src="item.img" />
+												</div>
+												<div class="style-right">
+													<div class="style-title">
+														<p>
+															<span class="title-txt" v-text='item.title'></span>
+															<span class="title-content" v-text='item.content'></span>
+														</p>
+													</div>
+													<div class="style-img">
+														<img v-bind:src="item.detailed.imgone" />
+														<img v-bind:src="item.detailed.imgtwo" />
+														<img v-bind:src="item.detailed.imgthird" />
+													</div>
+													<div class="style-info">
+														<span class="style-copyright" v-text='item.from'></span>
+														<span class="style-time" v-text='item.time'></span>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+					</ul>
 			</section>
 			<footer class="footer">
 				<ul class="footer-nav">
@@ -111,7 +248,7 @@
 						<span class="comment">8742点评</span>
 					</div>
 				</header>
-				<div class="article-push-body">
+				<section class="article-push-body">
 					<div class="article-push-wrapper">
 						<div class="article-push-content">
 							<div class="article-push-content-header">
@@ -197,7 +334,7 @@
 						</div>
 					</div>
 
-				</div>
+				</section>
 				<footer class="article-push-footer">
 					<div class="write-reviews">
 						<span>写点评咨询</span>
@@ -208,6 +345,8 @@
 					</div>
 				</footer>
 			</div>
+			<div class="comment-failed">评论提交失败，请检查网络</div>
+			<div class="comment-success">评论提交成功</div>
 		</div>
 		<div class="writing-box">
 			<div class="writing-panel">
@@ -220,7 +359,10 @@
 			</div>
 		</div>
 		<script type="text/javascript">
-			var myVue = new Vue({
+			$('.container .wrapper').navbarscroll();
+		</script>
+		<script type="text/javascript">
+			var myVue1 = new Vue({
 				el: ".container",
 				data: {
 					items: [{
@@ -346,9 +488,7 @@
 					]
 				}
 			})
-		</script>
-		<script type="text/javascript">
-			var myVues = new Vue({
+			var myVues2 = new Vue({
 				el: ".article-push",
 				data: {
 					moreAbout: [{
@@ -420,5 +560,5 @@
 			})
 		</script>
 	</body>
-
+	<script type="text/javascript" src="js/building-information.js"></script>
 </html>
