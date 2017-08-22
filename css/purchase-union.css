@@ -56,6 +56,7 @@ li {
   width: 100%;
   height: 100%;
   background: #f4f4f4;
+  position: relative;
   display: flex;
   display: -webkit-flex;
   flex-direction: column;
@@ -66,7 +67,7 @@ li {
   background: #f6f6f6;
   box-shadow: 0 1px 0 0 #CCCCCC;
   -webkit-box-shadow: 0 1px 0 0 #CCCCCC;
-  z-index: 10;
+  z-index: 1;
 }
 
 .purchase-union-container .purchase-union-header .signal_bar {
@@ -84,7 +85,6 @@ li {
 .purchase-union-container .purchase-union-header .title_bar .title_txt {
   font-size: 0.72rem;
   color: #394043 !important;
-  letter-spacing: 0;
   text-align: center;
   font-weight: normal;
 }
@@ -598,6 +598,23 @@ li {
   background-position-x: right;
 }
 
+.purchase-union-container .purchase-union-Mask {
+  width: 100%;
+  height: 100%;
+  transition: all .3s;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.purchase-union-container .purchase-union-Mask.show {
+  z-index: 25;
+  opacity: 1;
+}
+
 .purchase-union-container .signUp-btn {
   width: 2.16rem;
   height: 2.16rem;
@@ -607,4 +624,617 @@ li {
   right: 0.64rem;
   background: url(../img/signUpimg.png) no-repeat;
   background-size: 2.16rem 2.16rem;
+}
+
+.purchase-union-container .union-dynamic-push {
+  width: 100%;
+  height: 100%;
+  transition: all .3s;
+  background: #f4f4f4;
+  position: absolute;
+  left: 15.2rem;
+  top: 0;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+}
+
+.purchase-union-container .union-dynamic-push .union-dynamic-pushheader {
+  width: 100%;
+  background: #f6f6f6;
+  box-shadow: 0 1px 0 0 #CCCCCC;
+  -webkit-box-shadow: 0 1px 0 0 #CCCCCC;
+  z-index: 10;
+}
+
+.purchase-union-container .union-dynamic-push .union-dynamic-pushheader .signal_bar {
+  width: 100%;
+  height: 0.8rem;
+}
+
+.purchase-union-container .union-dynamic-push .union-dynamic-pushheader .title_bar {
+  width: 100%;
+  height: 1.76rem;
+  line-height: 1.76rem;
+  position: relative;
+}
+
+.purchase-union-container .union-dynamic-push .union-dynamic-pushheader .title_bar .title_txt {
+  font-size: 0.72rem;
+  color: #394043 !important;
+  letter-spacing: 0;
+  text-align: center;
+  font-weight: normal;
+}
+
+.purchase-union-container .union-dynamic-push .union-dynamic-pushheader .title_bar .return {
+  display: block;
+  height: 0.88rem;
+  width: 0.88rem;
+  background: url(../img/returnleft.png) no-repeat;
+  background-size: 0.88rem 0.88rem;
+  position: absolute;
+  top: 0.44rem;
+  left: 0.64rem;
+}
+
+.purchase-union-container .union-dynamic-push .union-dynamic-pushsection {
+  flex: 1;
+  -webkit-flex: 1;
+  overflow: hidden;
+  background: #f4f4f4;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  position: relative;
+}
+
+.purchase-union-container .union-dynamic-push .union-dynamic-pushsection .pushsection-wrapper {
+  width: 100%;
+  position: relative;
+  padding-bottom: 1.28rem;
+}
+
+.purchase-union-container .union-dynamic-push .union-dynamic-pushsection .pushsection-wrapper .union-dynamic-ul {
+  width: 100%;
+  background: #FFFffF;
+}
+
+.purchase-union-container .union-dynamic-push .union-dynamic-pushsection .pushsection-wrapper .union-dynamic-ul .union-dynamic-li {
+  width: 100%;
+  padding: 0.64rem;
+  box-shadow: inset 0 -1px 0 0 #EEEEEE;
+  -webkit-box-shadow: inset 0 -1px 0 0 #EEEEEE;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.purchase-union-container .union-dynamic-push .union-dynamic-pushsection .pushsection-wrapper .union-dynamic-ul .union-dynamic-li .dynamic-txt {
+  line-height: 0.96rem;
+  font-size: 0.64rem;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.purchase-union-container .union-dynamic-push .union-dynamic-pushsection .pushsection-wrapper .union-dynamic-ul .union-dynamic-li .dynamic-txt .title-txt {
+  color: #0099EB;
+  line-height: 0.96rem;
+}
+
+.purchase-union-container .union-dynamic-push .union-dynamic-pushsection .pushsection-wrapper .union-dynamic-ul .union-dynamic-li .dynamic-txt .title-content {
+  color: #6C7072;
+  line-height: 0.96rem;
+}
+
+.purchase-union-container .union-dynamic-push .union-dynamic-pushsection .pushsection-wrapper .union-dynamic-ul .union-dynamic-li .dynamic-time {
+  width: 100%;
+  margin-top: 0.36rem;
+  height: 0.64rem;
+  line-height: 0.64rem;
+}
+
+.purchase-union-container .union-dynamic-push .union-dynamic-pushsection .pushsection-wrapper .union-dynamic-ul .union-dynamic-li .dynamic-time span {
+  display: block;
+  float: right;
+  line-height: 0.64rem;
+  font-size: 0.48rem;
+  color: #999999;
+}
+
+.purchase-union-container .union-advantage-push {
+  width: 12.8rem;
+  height: 15.72rem;
+  background: #FFFFFF;
+  transition: all .3s;
+  opacity: 0;
+  z-index: -1;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  position: absolute;
+  top: 11%;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.purchase-union-container .union-advantage-push .advantage-push-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.purchase-union-container .union-advantage-push .advantage-push-wrapper .advantage-wrapper {
+  width: 100%;
+  padding: 1.28rem 0.64rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.purchase-union-container .union-advantage-push .advantage-push-wrapper .advantage-wrapper .aggregation {
+  width: 100%;
+  margin-bottom: 0.72rem;
+}
+
+.purchase-union-container .union-advantage-push .advantage-push-wrapper .advantage-wrapper .aggregation h3 {
+  font-family: PingFang-SC-Medium;
+  font-size: 0.64rem;
+  color: #0099EB;
+  font-weight: normal;
+  line-height: 0.96rem;
+}
+
+.purchase-union-container .union-advantage-push .advantage-push-wrapper .advantage-wrapper .aggregation p {
+  margin-top: 0.16rem;
+  font-size: 0.48rem;
+  color: #999999;
+  line-height: 0.8rem;
+}
+
+.purchase-union-container .union-advantage-push .advantage-push-wrapper .advantage-wrapper .convenient {
+  width: 100%;
+  margin-bottom: 0.72rem;
+}
+
+.purchase-union-container .union-advantage-push .advantage-push-wrapper .advantage-wrapper .convenient h3 {
+  font-family: PingFang-SC-Medium;
+  font-size: 0.64rem;
+  color: #0099EB;
+  font-weight: normal;
+  line-height: 0.96rem;
+}
+
+.purchase-union-container .union-advantage-push .advantage-push-wrapper .advantage-wrapper .convenient p {
+  margin-top: 0.16rem;
+  font-size: 0.48rem;
+  color: #999999;
+  line-height: 0.8rem;
+}
+
+.purchase-union-container .union-advantage-push .advantage-push-wrapper .advantage-wrapper .showings {
+  width: 100%;
+  margin-bottom: 0.72rem;
+}
+
+.purchase-union-container .union-advantage-push .advantage-push-wrapper .advantage-wrapper .showings h3 {
+  font-family: PingFang-SC-Medium;
+  font-size: 0.64rem;
+  color: #0099EB;
+  font-weight: normal;
+  line-height: 0.96rem;
+}
+
+.purchase-union-container .union-advantage-push .advantage-push-wrapper .advantage-wrapper .showings p {
+  margin-top: 0.16rem;
+  font-size: 0.48rem;
+  color: #999999;
+  line-height: 0.8rem;
+}
+
+.purchase-union-container .union-advantage-push .advantage-push-wrapper .advantage-wrapper .professional {
+  width: 100%;
+}
+
+.purchase-union-container .union-advantage-push .advantage-push-wrapper .advantage-wrapper .professional h3 {
+  font-family: PingFang-SC-Medium;
+  font-size: 0.64rem;
+  color: #0099EB;
+  font-weight: normal;
+  line-height: 0.96rem;
+}
+
+.purchase-union-container .union-advantage-push .advantage-push-wrapper .advantage-wrapper .professional p {
+  margin-top: 0.16rem;
+  font-size: 0.48rem;
+  color: #999999;
+  line-height: 0.8rem;
+}
+
+.purchase-union-container .union-advantage-push .advantage-push-wrapper .iScrollVerticalScrollbar {
+  width: 0.16rem !important;
+  right: 0 !important;
+}
+
+.purchase-union-container .union-advantage-push .advantage-delete {
+  width: 0.08rem;
+  height: 0.64rem;
+  background: #FFFFFF;
+  position: absolute;
+  right: 0.6rem;
+  top: -0.64rem;
+}
+
+.purchase-union-container .union-advantage-push .advantage-delete .advantage-delete-box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.purchase-union-container .union-advantage-push .advantage-delete .advantage-delete-box i {
+  display: block;
+  width: 1.28rem;
+  height: 1.28rem;
+  background: url(../img/pushdel.png) no-repeat;
+  background-size: 1.28rem 1.28rem;
+  position: absolute;
+  right: -0.6rem;
+  top: -1.28rem;
+}
+
+.purchase-union-container .union-advantage-push.show {
+  opacity: 1;
+  z-index: 30;
+}
+
+.purchase-union-container .purchase-union-signUp .signUp-push {
+  width: 12.8rem;
+  height: 15.72rem;
+  padding: 0.68rem 1.2rem 1.6rem;
+  background: #FFFFFF;
+  transition: all .3s;
+  opacity: 0;
+  z-index: -1;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  position: absolute;
+  top: 11%;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.purchase-union-container .purchase-union-signUp .signUp-push .pushBox-img {
+  height: 3.52rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.purchase-union-container .purchase-union-signUp .signUp-push .pushBox-img img {
+  height: 3.52rem;
+}
+
+.purchase-union-container .purchase-union-signUp .signUp-push .signUp-username {
+  width: 100%;
+  margin-top: 1.08rem;
+  height: 1.76rem;
+  position: relative;
+}
+
+.purchase-union-container .purchase-union-signUp .signUp-push .signUp-username input {
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  font-size: 0.56rem;
+  line-height: 0.8rem;
+  color: #394043;
+}
+
+.purchase-union-container .purchase-union-signUp .signUp-push .signUp-userphone {
+  width: 100%;
+  margin-top: 0.16rem;
+  height: 1.76rem;
+  position: relative;
+}
+
+.purchase-union-container .purchase-union-signUp .signUp-push .signUp-userphone input {
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  font-size: 0.56rem;
+  line-height: 0.8rem;
+  color: #394043;
+}
+
+.purchase-union-container .purchase-union-signUp .signUp-push .signUp-message {
+  width: 100%;
+  margin-top: 0.16rem;
+  height: 1.76rem;
+  position: relative;
+}
+
+.purchase-union-container .purchase-union-signUp .signUp-push .signUp-message input {
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  font-size: 0.56rem;
+  line-height: 0.8rem;
+  color: #394043;
+}
+
+.purchase-union-container .purchase-union-signUp .signUp-push .signUp-line {
+  width: 100%;
+  height: 0.04rem;
+  background: #EEEEEE;
+}
+
+.purchase-union-container .purchase-union-signUp .signUp-push .signUp-button {
+  margin-top: 1.28rem;
+  width: 100%;
+  height: 1.84rem;
+  line-height: 1.84rem;
+  text-align: center;
+  background: #0099EB;
+  border-radius: 0.08rem;
+  font-size: 0.64rem;
+  color: #FFFFFF;
+}
+
+.purchase-union-container .purchase-union-signUp .signUp-push .signUp-delete {
+  width: 0.08rem;
+  height: 0.64rem;
+  background: #FFFFFF;
+  position: absolute;
+  right: 0.6rem;
+  top: -0.64rem;
+}
+
+.purchase-union-container .purchase-union-signUp .signUp-push .signUp-delete .signUp-delete-box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.purchase-union-container .purchase-union-signUp .signUp-push .signUp-delete .signUp-delete-box i {
+  display: block;
+  width: 1.28rem;
+  height: 1.28rem;
+  background: url(../img/pushdel.png) no-repeat;
+  background-size: 1.28rem 1.28rem;
+  position: absolute;
+  right: -0.6rem;
+  top: -1.28rem;
+}
+
+.purchase-union-container .purchase-union-signUp .signUp-push.show {
+  opacity: 1;
+  z-index: 30;
+}
+
+.purchase-union-container .purchase-union-signUp .enroll-success {
+  width: 12.8rem;
+  height: 11.2rem;
+  padding: 1.6rem 1.2rem 1.28rem;
+  background: #FFFFFF;
+  transition: all .3s;
+  opacity: 0;
+  z-index: -1;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.purchase-union-container .purchase-union-signUp .enroll-success .imgbox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.purchase-union-container .purchase-union-signUp .enroll-success .imgbox img {
+  display: block;
+  width: 3.84rem;
+  height: 3.84rem;
+}
+
+.purchase-union-container .purchase-union-signUp .enroll-success .suc-txt {
+  width: 100%;
+  margin-top: 0.16rem;
+}
+
+.purchase-union-container .purchase-union-signUp .enroll-success .suc-txt p:first-child {
+  text-align: center;
+  font-size: 0.64rem;
+  line-height: 0.88rem;
+  color: #0099EB;
+}
+
+.purchase-union-container .purchase-union-signUp .enroll-success .suc-txt p:last-child {
+  text-align: center;
+  line-height: 0.64rem;
+  font-size: 0.48rem;
+  color: #6C7072;
+}
+
+.purchase-union-container .purchase-union-signUp .enroll-success .suc-button {
+  width: 100%;
+  height: 1.84rem;
+  text-align: center;
+  margin-top: 1rem;
+  line-height: 1.84rem;
+  background: #0099EB;
+  border-radius: 0.08rem;
+  font-size: 0.64rem;
+  color: #FFFFFF;
+}
+
+.purchase-union-container .purchase-union-signUp .enroll-success.show {
+  opacity: 1;
+  z-index: 30;
+}
+
+.purchase-union-container .purchase-union-signUp .enroll-fail {
+  width: 12.8rem;
+  height: 11.2rem;
+  padding: 1.6rem 1.2rem 1.28rem;
+  background: #FFFFFF;
+  transition: all .3s;
+  opacity: 0;
+  z-index: -1;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.purchase-union-container .purchase-union-signUp .enroll-fail .imgbox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.purchase-union-container .purchase-union-signUp .enroll-fail .imgbox img {
+  display: block;
+  width: 3.84rem;
+  height: 3.84rem;
+}
+
+.purchase-union-container .purchase-union-signUp .enroll-fail .fail-txt {
+  width: 100%;
+  margin-top: 0.16rem;
+}
+
+.purchase-union-container .purchase-union-signUp .enroll-fail .fail-txt p:first-child {
+  text-align: center;
+  font-size: 0.64rem;
+  line-height: 0.88rem;
+  color: #0099EB;
+}
+
+.purchase-union-container .purchase-union-signUp .enroll-fail .fail-txt p:last-child {
+  text-align: center;
+  line-height: 0.64rem;
+  font-size: 0.48rem;
+  color: #6C7072;
+}
+
+.purchase-union-container .purchase-union-signUp .enroll-fail .fail-button {
+  width: 100%;
+  height: 1.84rem;
+  text-align: center;
+  margin-top: 1rem;
+  line-height: 1.84rem;
+  background: #0099EB;
+  border-radius: 0.08rem;
+  font-size: 0.64rem;
+  color: #FFFFFF;
+}
+
+.purchase-union-container .purchase-union-signUp .enroll-fail.show {
+  opacity: 1;
+  z-index: 30;
+}
+
+.purchase-union-container .contact-adviser-push {
+  width: 12.8rem;
+  height: 12.88rem;
+  padding: 1.28rem 1.2rem;
+  background: #FFFFFF;
+  transition: all .3s;
+  opacity: 0;
+  z-index: -1;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.purchase-union-container .contact-adviser-push .adviser-img {
+  width: 100%;
+  height: 2.24rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.purchase-union-container .contact-adviser-push .adviser-img img {
+  display: block;
+  width: 2.24rem;
+  height: 2.24rem;
+  border-radius: 50%;
+}
+
+.purchase-union-container .contact-adviser-push .adviser-phone {
+  width: 100%;
+  margin-top: 0.64rem;
+}
+
+.purchase-union-container .contact-adviser-push .adviser-phone p:first-child {
+  width: 100%;
+  font-size: 0.56rem;
+  color: #999999;
+  line-height: 0.8rem;
+  text-align: center;
+}
+
+.purchase-union-container .contact-adviser-push .adviser-phone p:first-child span {
+  font-size: 0.56rem;
+  color: #1B1C00;
+}
+
+.purchase-union-container .contact-adviser-push .adviser-phone p:last-child {
+  text-align: center;
+  margin-top: 0.32rem;
+  font-size: 0.64rem;
+  line-height: 0.88rem;
+  color: #394043;
+}
+
+.purchase-union-container .contact-adviser-push .adviser-btn {
+  width: 100%;
+  margin-top: 1.28rem;
+}
+
+.purchase-union-container .contact-adviser-push .adviser-btn div {
+  width: 100%;
+  height: 1.6rem;
+  line-height: 1.52rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-radius: 0.08rem;
+  text-align: center;
+  font-size: 0.56rem;
+}
+
+.purchase-union-container .contact-adviser-push .adviser-btn .immediately {
+  background: #0099EB;
+  border: 1px solid #0099EB;
+  color: #FFFFFF;
+}
+
+.purchase-union-container .contact-adviser-push .adviser-btn .cancel {
+  margin-top: 0.96rem;
+  background: #FFFFFF;
+  border: 1px solid #0099EB;
+  color: #0099EB;
+}
+
+.purchase-union-container .contact-adviser-push.show {
+  opacity: 1;
+  z-index: 30;
 }

@@ -153,10 +153,127 @@
 				</div>
 			</section>
 			<div class="signUp-btn"></div>
+			<div class="purchase-union-Mask"></div>
+			<div class="union-dynamic-push">
+				<header class="union-dynamic-pushheader">
+					<div class="signal_bar"></div>
+					<div class="title_bar">
+						<h3 class="title_txt">联盟动态</h3>
+						<a class="return" href="javascript:;"></a>
+					</div>
+				</header>
+				<section class="union-dynamic-pushsection">
+					<div class="pushsection-wrapper">
+						<ul class="union-dynamic-ul">
+							<li class="union-dynamic-li" v-for="list in unionDynamic">
+								<p class="dynamic-txt">
+									<span class="title-txt" v-text="list.title"></span>
+									<span class="title-content" v-text="list.content"></span>
+								</p>
+								<div class="dynamic-time">
+									<span v-text="list.times"></span>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</div>
+			<div class="union-advantage-push">
+				<div class="advantage-push-wrapper">
+					<div class="advantage-wrapper">
+						<div class="aggregation">
+							<h3>集结：让团购更有力量</h3>
+							<p>人多力量大，报名购房联盟的会员越多，开发商给予的优惠就更大，联盟会员享受的优惠就更大。</p>
+						</div>
+						<div class="convenient">
+							<h3>便捷：看房不用满城跑</h3>
+							<p>根据会员购房需求，置业顾问将为其提供有针对性的选择方案，并且公正、客观地告之“所提供项目的优势和不足之处”，使购房者在选房中得到更全面的信息，比在每个售楼处只能听到“一面之词”更有参考性，购房者选房心里更有数，更有底。</p>
+						</div>
+						<div class="showings">
+							<h3>看房：全程服务均免费</h3>
+							<p>购房联盟会员享有机场接送机、车接车送看房、专业置业顾问全程陪同、游玩知名景点、入住星级酒店等一站式优质服务，全程免费，对异地置业的购房者而言，这无疑是“雪中送炭”之举。</p>
+						</div>
+						<div class="professional">
+							<h3>专业：让购房者更省心</h3>
+							<p>购房未成功，如果会员需要，购房联盟将会针对会员置业需求，提供后续的房产优惠提醒、推荐等服务；购房成功，购房联盟会提供购房后续过程中涉及的“合同咨询、验房服务、装修咨询”等一系列服务。让专业的人，为购房者做专业服务。</p>
+						</div>
+					</div>
+				</div>
+				<div class="advantage-delete">
+					<div class="advantage-delete-box">
+						<i></i>
+					</div>
+				</div>
+			</div>
+			<div class="purchase-union-signUp">
+				<!--  购房联盟报名弹框  -->
+				<div class="signUp-push">
+					<div class="pushBox-img">
+						<img src="img/signUpbanner.png"/>
+					</div>
+					<div class="signUp-username">
+						<input type="text" name="" id="" value="" placeholder="姓名/称呼" />
+					</div>
+					<div class="signUp-line"></div>
+					<div class="signUp-userphone">
+						<input type="text" name="" id="" value="" placeholder="您的手机号码" />
+					</div>
+					<div class="signUp-line"></div>
+					<div class="signUp-message">
+						<input type="text" name="" id="" value="" placeholder="报名留言" />
+					</div>
+					<div class="signUp-line"></div>
+					<div class="signUp-button">立即报名</div>
+					<div class="signUp-delete">
+						<div class="signUp-delete-box">
+							<i></i>
+						</div>
+					</div>
+				</div>
+				<!--  购房联盟报名成功  -->
+				<div class="enroll-success">
+					<div class="imgbox">
+						<img src="img/success.png" />
+					</div>
+					<div class="suc-txt">
+						<p>恭喜您，报名成功</p>
+						<p>专业置业顾问将会尽快与您联系</p>
+					</div>
+					<div class="suc-button">
+						我知道了
+					</div>
+				</div>
+				<!--  购房联盟报名失败  -->
+				<div class="enroll-fail">
+					<div class="imgbox">
+						<img src="img/fail.png" />
+					</div>
+					<div class="fail-txt">
+						<p>报名失败</p>
+						<p>请检查您的网络是否连接</p>
+					</div>
+					<div class="fail-button">
+						重新连接
+					</div>
+				</div>
+			</div>
+			<div class="contact-adviser-push">
+				<div class="adviser-img">
+					<img src="img/photo5.png" alt="" />
+				</div>
+				<div class="adviser-phone">
+					<p>确定联系置业顾问<span>李云</span>吗？</p>
+					<p>188-4455-8888</p>
+				</div>
+				<div class="adviser-btn">
+					<div class="immediately">立即拨号</div>
+					<div class="cancel">取消</div>
+				</div>
+			</div>
 		</div>
 	</body>
 	<script type="text/javascript">
-		var myVue = new Vue({
+		var myVue1 = new Vue({
 			el: ".purchase-union-container",
 			data: {
 				recommendHouse: [{
@@ -226,9 +343,42 @@
 						surname: '李云',
 						tags: ['海口周边','澄迈']
 					}
+				],
+				unionDynamic: [{
+						title: '[四季康城二期]',
+						content: '客户看中四季康城二期高性价比小苏助力连签四房',
+						times: '2017-06-20'
+					},
+					{
+						title: '[四季康城二期]',
+						content: '客户看中四季康城二期高性价比小苏助力连签四房',
+						times: '2017-06-20'
+					},
+					{
+						content: '买房度假养老选万宁还是文昌？徐哥选万宁的木棉山庄',
+						times: '2017-06-20'
+					},
+					{
+						content: '买房度假养老选万宁还是文昌？徐哥选万宁的木棉山庄',
+						times: '2017-06-20'
+					},
+					{
+						content: '不打算在三亚一直租房 杨叔选在水三千买养老房',
+						times: '2017-06-20'
+					},
+					{
+						title: '[四季康城二期]',
+						content: '客户看中四季康城二期高性价比小苏助力连签四房',
+						times: '2017-06-20'
+					},
+					{
+						title: '[四季康城二期]',
+						content: '客户看中四季康城二期高性价比小苏助力连签四房',
+						times: '2017-06-20'
+					}
 				]
 			}
-		})
+		});
 	</script>
 	<script type="text/javascript" src="js/purchase-union.js"></script>
 </html>
