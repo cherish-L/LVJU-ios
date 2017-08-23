@@ -4,6 +4,9 @@ $(function(){
 		scrollbars: false,
 		probeType: 3
 	})
+	 
+	var centerH=$(".user-center-section").height()
+	$(".user-center-section .section-wrapper").height(centerH+1)
 	
 	var bgh=$(".user-center-Bg img").height()
 	var bgw=$(".user-center-Bg img").width()
