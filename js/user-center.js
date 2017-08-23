@@ -24,6 +24,9 @@ $(function(){
 	})
 	
 	//设置弹框
+	var setH=$(".set-up-pushsection").height()
+	$(".set-up-pushsection .pushsection-wrapper").height(setH+1)
+	
 	var setS = new IScroll('.set-up-pushsection', {
 		scrollbars: false
 	})
@@ -38,6 +41,9 @@ $(function(){
 	})
 	
 	//消息管理
+	var managementH=$(".message-management-pushsection").height()
+	$(".message-management-pushsection .pushsection-wrapper").height(managementH+1)
+	
 	var managementS = new IScroll('.message-management-pushsection', {
 		scrollbars: false
 	})
@@ -50,6 +56,8 @@ $(function(){
 	})
 	
 	//关于我们
+	var aboutH=$(".about-us-pushsection").height()
+	$(".about-us-pushsection .pushsection-wrapper").height(aboutH+1)
 	 
 	var aboutS = new IScroll('.about-us-pushsection', {
 		scrollbars: false
@@ -63,6 +71,8 @@ $(function(){
 	})
 	
 	//帮助说明
+	var descriptionH=$(".help-description-pushsection").height()
+	$(".help-description-pushsection .pushsection-wrapper").height(descriptionH+1)
 	
 	var descriptionS = new IScroll('.help-description-pushsection', {
 		scrollbars: false
@@ -76,6 +86,8 @@ $(function(){
 	})
 	
 	//怎么注册成为用户
+	var registerH=$(".how-register-pushsection").height()
+	$(".how-register-pushsection .pushsection-wrapper").height(registerH+1)
 	
 	var registerS = new IScroll('.how-register-pushsection', {
 		scrollbars: false
