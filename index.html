@@ -1,384 +1,330 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<meta charset="utf-8" />
 		<meta content="email=no" name="format-detection" />
 		<meta http-equiv="Cache-Control" content="no-cache" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>购房联盟</title>
+		<title>用户中心</title>
 		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/purchase-union.css" />
+		<link rel="stylesheet" type="text/css" href="css/user-center.css" />
 		<link rel="stylesheet" type="text/css" href="plugins/animate.min.css" />
+		<link rel="stylesheet" type="text/css" href="plugins/honeySwitch/honeySwitch.css"/>
 		<script type="text/javascript" src="plugins/zepto.min.js"></script>
 		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>
 		<script src="plugins/swiper-3.4.2.min.js"></script>
 		<script type="text/javascript" src="vue/vue.js"></script>
+		<script type="text/javascript" src="plugins/honeySwitch/honeySwitch.js"></script>
 		<script>
 			//适配
 			document.documentElement.style.fontSize = innerWidth / 15 + "px";
 		</script>
 	</head>
-
 	<body>
-		<div class="purchase-union-container" v-cloak>
-			<header class="purchase-union-header">
+		<div class="user-center-container">
+			<header class="user-center-header">
 				<div class="signal_bar"></div>
 				<div class="title_bar">
-					<h3 class="title_txt">购房联盟</h3>
-					<a class="return" href="javascript:;"></a>
+					<a class="setUp" href="javascript:;">设置</a>
 				</div>
 			</header>
-			<section class="purchase-union-section">
+			<div class="user-center-Bg">
+				<img src="img/userBg.png" alt="" />
+			</div>
+			<section class="user-center-section">
 				<div class="section-wrapper">
-					<div class="purchase-union-banner">
-						<img src="img/unionBanner.png" />
-					</div>
-					<div class="purchase-union-list">
-						<ul class="list-nav">
-							<li class="select">
-								<span>活动简介</span>
-							</li>
-							<li>
-								<span>服务内容</span>
-							</li>
-							<li>
-								<span>联盟优势</span>
-							</li>
-						</ul>
-						<ul class="list-content">
-							<li class="synopsis list-content-li">
-								<div class="synopsis-txt">旅居购房联盟提供24小时接送机、全程接送看房、专业置业顾问答疑解惑等服务。报名购房联盟，购房者不仅能够更高效看房，还能够享受开发商的<span>独家优惠</span>。</div>
-								<div class="synopsis-link">
-									<div class="synopsis-logo"></div>
-									<div class="synopsis-content">
-										<p>相识即是有缘 甄姐夸赞顾问小陈服务好相识即是有缘</p>
-										<p>谢女士想海景房 小梁助其满意购下荣盛谢女士想海景房</p>
-									</div>
-								</div>
-							</li>
-							<li class="service list-content-li">
-								<h3>省心省力得实惠 24小时为您服务</h3>
-								<ul class="service-list">
-									<li>联盟成员可免费入住星级酒店两天；</li>
-									<li>免费享受24小时专车机场接送、看房接送服务；</li>
-									<li>专业置业顾问陪同看房，提供全程参谋式优质服务；</li>
-									<li>购房选择余地更大，近千个优质楼盘供您甄选；</li>
-									<li>独享优惠团购折扣价格，大幅度降低购房成本。</li>
-								</ul>
-							</li>
-							<li class="advantage list-content-li">
-								<ul class="advantage-list">
-									<li>
-										<span>集结：让团购更有力量</span>
-										<i></i>
-									</li>
-									<li>
-										<span>便捷：看房不用满城跑</span>
-										<i></i>
-									</li>
-									<li>
-										<span>看房：全程服务均免费</span>
-										<i></i>
-									</li>
-									<li>
-										<span>专业：让购房者更省心</span>
-										<i></i>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-					<div class="purchase-union-recommend">
-						<div class="recommendHouse">
-							<div class="recommendHouse-title">
-								<div>
-									推荐房源
-									<span>查看更多</span>
-								</div>
-							</div>
-							<div class="recommendHouse-data">
-								<ul class="recommendHouse-data-ul">
-									<li class="recommendHouse-data-li" v-for="list in recommendHouse">
-										<div class="dataDetail">
-											<div class="recommendHouse-img">
-												<img :src="list.img" />
-												<span class="ghtxt" v-text="list.sell"></span>
-											</div>
-											<div class="recommendHouse-txt">
-												<span class="title">
-												<span class="position" v-text="list.positions"></span>
-												<span class="region" v-text="list.region"></span>
-												</span>
-												<span class="address" v-text="list.address"></span>
-												<span class="openprice" v-text="list.openprice"></span>
-												<span class="averageprice">
-												<span class="averag" v-text="list.averag"></span>
-												<span class="price" v-text="list.price"></span>
-												</span>
-											</div>
-										</div>
-									</li>
-								</ul>
-							</div>
+					<div class="cushion">
+						<div class="cushion-wrapper">
+							<i class="head-portrait"><img src="img/head_portrait.png"/></i>
+							<p class="sign-in">
+								<span>登录</span>
+							</p>
 						</div>
 					</div>
-					<div class="purchase-union-service">
-						<div class="customService">
-							<div class="customService-title">
-								<div>购房联盟客服</div>
-							</div>
-							<div class="customService-data">
-								<ul class="customService-data-ul">
-									<li class="customService-data-li" v-for="list in customService">
-										<div class="dataDetail">
-											<div class="customService-img">
-												<img :src="list.portrait" />
-											</div>
-											<div class="customService-txt">
-												<span class="surname" v-text="list.surname"></span>
-												<span class="dialing">
-													<div class="dialing-wrapper">
-														<span class="style" v-for="item in list.tags" v-text="item"></span>
-													</div>
-													<span class="dialing-txt">拨号</span>
-												</span>
-											</div>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
+					<ul class="user-center-application">
+						<li>
+							<i><img src="img/myCollection.png"/></i>
+							<span>我的收藏</span>
+						</li>
+						<li>
+							<i><img src="img/footprint.png"/></i>
+							<span>我的足迹</span>
+						</li>
+						<li>
+							<i><img src="img/tidings.png"/></i>
+							<span>消息</span>
+						</li>
+						<li>
+							<i><img src="img/Coupon.png"/></i>
+							<span>优惠券</span>
+						</li>
+						<li>
+							<i><img src="img/myCar.png"/></i>
+							<span>我的用车</span>
+						</li>
+						<li>
+							<i><img src="img/Computer.png"/></i>
+							<span>购房计算器</span>
+						</li>
+					</ul>
 				</div>
 			</section>
-			<div class="signUp-btn"></div>
-			<div class="purchase-union-Mask"></div>
-			<div class="union-dynamic-push">
-				<header class="union-dynamic-pushheader">
+			<footer class="user-center-footer">
+				<ul class="footer-nav">
+					<li class="footer-nav-li">
+						<a href="javascript:;">
+							<i><img src="img/home_page.png"/></i>
+							<span>首页</span>
+						</a>
+					</li>
+					<li class="footer-nav-li">
+						<a href="javascript:;">
+							<i><img src="img/Properties.png"/></i>
+							<span>楼盘</span>
+						</a>
+					</li>
+					<li class="footer-nav-li">
+						<a href="javascript:;">
+							<i><img src="img/zixun1.png"/></i>
+							<span>资讯</span>
+						</a>
+					</li>
+					<li class="footer-nav-li">
+						<a href="javascript:;">
+							<i><img src="img/Pick_airport.png"/></i>
+							<span>公益接机</span>
+						</a>
+					</li>
+					<li class="footer-nav-li">
+						<a href="javascript:;">
+							<i><img src="img/my.png"/></i>
+							<span class="current">我的</span>
+						</a>
+					</li>
+				</ul>
+			</footer>
+			<div class="set-up-push">
+				<header class="set-up-pushheader">
 					<div class="signal_bar"></div>
 					<div class="title_bar">
-						<h3 class="title_txt">联盟动态</h3>
+						<h3 class="title_txt">设置</h3>
 						<a class="return" href="javascript:;"></a>
 					</div>
 				</header>
-				<section class="union-dynamic-pushsection">
+				<section class="set-up-pushsection">
 					<div class="pushsection-wrapper">
-						<ul class="union-dynamic-ul">
-							<li class="union-dynamic-li" v-for="list in unionDynamic">
-								<p class="dynamic-txt">
-									<span class="title-txt" v-text="list.title"></span>
-									<span class="title-content" v-text="list.content"></span>
-								</p>
-								<div class="dynamic-time">
-									<span v-text="list.times"></span>
-								</div>
-							</li>
-						</ul>
+						<div class="administration">
+							<ul class="administration-ul">
+								<li class="message-management">	
+									消息管理
+									<span></span>
+								</li>
+								<li class="clear-cache">	
+									清除缓存
+									<span>41.40M</span>
+								</li>
+								<li class="Update-software">	
+									更新软件
+									<span>可更新至V1.2</span>
+								</li>
+							</ul>
+						</div>
+						<div class="holders">
+							<ul class="holders-ul">
+								<li class="comment-us">	
+									评论我们
+									<span></span>
+								</li>
+								<li class="about-us">	
+									关于我们
+									<span></span>
+								</li>
+								<li class="feedback">	
+									意见反馈
+									<span></span>
+								</li>
+								<li class="help-description">
+									帮助说明
+									<span></span>
+								</li>
+							</ul>
+						</div>
+						<div class="login-status">
+							<div class="login-box">退出登录</div>
+						</div>
 					</div>
 				</section>
-			</div>
-			<div class="union-advantage-push">
-				<div class="advantage-push-wrapper">
-					<div class="advantage-wrapper">
-						<div class="aggregation">
-							<h3>集结：让团购更有力量</h3>
-							<p>人多力量大，报名购房联盟的会员越多，开发商给予的优惠就更大，联盟会员享受的优惠就更大。</p>
+				<!----------  消息管理  ----------->
+				<div class="message-management-push">
+					<header class="message-management-pushheader">
+						<div class="signal_bar"></div>
+						<div class="title_bar">
+							<h3 class="title_txt">消息管理</h3>
+							<a class="return" href="javascript:;"></a>
 						</div>
-						<div class="convenient">
-							<h3>便捷：看房不用满城跑</h3>
-							<p>根据会员购房需求，置业顾问将为其提供有针对性的选择方案，并且公正、客观地告之“所提供项目的优势和不足之处”，使购房者在选房中得到更全面的信息，比在每个售楼处只能听到“一面之词”更有参考性，购房者选房心里更有数，更有底。</p>
+					</header>
+					<section class="message-management-pushsection">
+						<div class="pushsection-wrapper">
+							<div class="receive-message">
+								<p class="receive-box">
+									<span class="receive-txt">接收推送</span>
+									<span class="receive-close">已经关闭</span>
+								</p>
+								<p class="close-prompt">您已在系统中关闭旅居的通知，无法收到任何提醒</p>
+								<p class="goOpen">
+									<span>去打开</span>
+								</p>
+							</div>
+							<div class="prompt-message">
+								<div class="prompt-message-txt">
+									<p>提示消息</p>
+									<p>系统通知、客服消息</p>
+								</div>
+								<div class="prompt-message-switch">
+									<span class="switch-on switch-disabled"  themeColor="#0099eb"></span>
+								</div>
+							</div>
+							<div class="cue-tone">
+								<ul class="cue-tone-ul">
+									<li>
+										声音提示
+										<span class="switch-on" themeColor="#0099eb"></span>
+									</li>
+									<li>
+										震动提示
+										<span class="switch-off" themeColor="#0099eb"></span>
+									</li>
+								</ul>
+							</div>
 						</div>
-						<div class="showings">
-							<h3>看房：全程服务均免费</h3>
-							<p>购房联盟会员享有机场接送机、车接车送看房、专业置业顾问全程陪同、游玩知名景点、入住星级酒店等一站式优质服务，全程免费，对异地置业的购房者而言，这无疑是“雪中送炭”之举。</p>
+					</section>
+				</div>
+				<!----------  关于我们  ----------->
+				<div class="about-us-push">
+					<header class="about-us-pushheader">
+						<div class="signal_bar"></div>
+						<div class="title_bar">
+							<h3 class="title_txt">关于我们</h3>
+							<a class="return" href="javascript:;"></a>
 						</div>
-						<div class="professional">
-							<h3>专业：让购房者更省心</h3>
-							<p>购房未成功，如果会员需要，购房联盟将会针对会员置业需求，提供后续的房产优惠提醒、推荐等服务；购房成功，购房联盟会提供购房后续过程中涉及的“合同咨询、验房服务、装修咨询”等一系列服务。让专业的人，为购房者做专业服务。</p>
+					</header>
+					<section class="about-us-pushsection">
+						<div class="pushsection-wrapper">
+							<div class="logo-area">
+								<div class="logo-box">
+									<img src="img/logo.png"/>
+									<span>V1.0</span>
+								</div>
+							</div>
+							<div class="company-synopsis">
+								<ul class="company-synopsis-ul">
+									<li class="contact-us">
+										联系我们
+										<span class="change"></span>
+									</li>
+									<li class="concern-us">
+										关注我们
+										<span class="weix"><img src="img/weix.png"/></span>
+										<span class="change"></span>
+									</li>
+									<li class="synopsis-us">
+										<div class="synopsis-us-title">旅居简介</div>
+										<div class="synopsis-us-txt">
+											简介内容简介内容简介内容简介内容简介内容简介内容简介
+											内容简介内容简介内容简介内容简介内容简介内容简介内容
+											简介内容简介内容简介内容简介内容简介内容简介内容简介
+											内容简介内容简介内容简介内容简介内容简介内容简介内容
+											简介内容简介内容简介内容简介内容简介内容简介内容简介
+											内容简介内容简介内容简介内容简介内容简介内容简介内容
+											简介内容简介内容简介内容简介内容简介内容简介内容简介
+											内容简介内容简介内容简介内容
+										</div>
+									</li>
+								</ul>
+							</div>
 						</div>
-					</div>
+					</section>
 				</div>
-				<div class="advantage-delete">
-					<div class="advantage-delete-box">
-						<i></i>
-					</div>
-				</div>
-			</div>
-			<div class="purchase-union-signUp">
-				<!--  购房联盟报名弹框  -->
-				<div class="signUp-push">
-					<div class="pushBox-img">
-						<img src="img/signUpbanner.png"/>
-					</div>
-					<div class="signUp-username">
-						<input type="text" name="" id="" value="" placeholder="姓名/称呼" />
-					</div>
-					<div class="signUp-line"></div>
-					<div class="signUp-userphone">
-						<input type="text" name="" id="" value="" placeholder="您的手机号码" />
-					</div>
-					<div class="signUp-line"></div>
-					<div class="signUp-message">
-						<input type="text" name="" id="" value="" placeholder="报名留言" />
-					</div>
-					<div class="signUp-line"></div>
-					<div class="signUp-button">立即报名</div>
-					<div class="signUp-delete">
-						<div class="signUp-delete-box">
-							<i></i>
+				<!----------  帮助说明  ----------->
+				<div class="help-description-push">
+					<header class="help-description-pushheader">
+						<div class="signal_bar"></div>
+						<div class="title_bar">
+							<h3 class="title_txt">帮助说明</h3>
+							<a class="return" href="javascript:;"></a>
 						</div>
+					</header>
+					<section class="help-description-pushsection">
+						<div class="pushsection-wrapper">
+							<ul class="pushsection-wrapper-ul">
+								<li class="how-register">
+									怎样注册成为用户
+									<span></span>
+								</li>
+								<li>
+									无法发布信息
+									<span></span>
+								</li>
+								<li>
+									无法删除信息
+									<span></span>
+								</li>
+								<li>
+									账号被冻结
+									<span></span>
+								</li>
+								<li>
+									提示非法用户
+									<span></span>
+								</li>
+								<li>
+									电话被骚扰，看这里！
+									<span></span>
+								</li>
+								<li>
+									其他异常反馈
+									<span></span>
+								</li>
+							</ul>
+						</div>
+					</section>
+					<div class="how-register-push">
+						<header class="how-register-pushheader">
+							<div class="signal_bar"></div>
+							<div class="title_bar">
+								<h3 class="title_txt">怎么注册成为用户</h3>
+								<a class="return" href="javascript:;"></a>
+							</div>
+						</header>
+						<section class="how-register-pushsection">
+							<div class="pushsection-wrapper">
+								<div class="how-register-header">怎么注册成为用户</div>
+								<div class="how-register-txt">
+									详细内容详细内容详细内容详细内容详细内容详细内容
+									详细内容详细内容详细内容详细内容详细内容详细内容
+									详细内容详细内容详细内容详细内容详细内容详细内容
+									详细内容详细内容详细内容详细内容详细内容详细内容
+									详细内容详细内容详细内容详细内容详细内容详细内容
+									详细内容详细内容详细内容详细内容详细内容详细内容
+									详细内容详细内容详细内容详细内容详细内容详细内容
+									详细内容详细内容详细内容详细内容详细内容详细内容
+								</div>
+								<div class="how-register-box">
+									<div class="solve">
+										<i><img src="img/good.png"/></i>
+										<span>解决了我的问题</span>
+									</div>
+									<div class="noSolve">
+										<i><img src="img/bad.png"/></i>
+										<span>没有解决我的问题</span>
+									</div>
+								</div>
+							</div>
+						</section>
 					</div>
-				</div>
-				<!--  购房联盟报名成功  -->
-				<div class="enroll-success">
-					<div class="imgbox">
-						<img src="img/success.png" />
-					</div>
-					<div class="suc-txt">
-						<p>恭喜您，报名成功</p>
-						<p>专业置业顾问将会尽快与您联系</p>
-					</div>
-					<div class="suc-button">
-						我知道了
-					</div>
-				</div>
-				<!--  购房联盟报名失败  -->
-				<div class="enroll-fail">
-					<div class="imgbox">
-						<img src="img/fail.png" />
-					</div>
-					<div class="fail-txt">
-						<p>报名失败</p>
-						<p>请检查您的网络是否连接</p>
-					</div>
-					<div class="fail-button">
-						重新连接
-					</div>
-				</div>
-			</div>
-			<div class="contact-adviser-push">
-				<div class="adviser-img">
-					<img src="img/photo5.png" alt="" />
-				</div>
-				<div class="adviser-phone">
-					<p>确定联系置业顾问<span>李云</span>吗？</p>
-					<p>188-4455-8888</p>
-				</div>
-				<div class="adviser-btn">
-					<div class="immediately">立即拨号</div>
-					<div class="cancel">取消</div>
 				</div>
 			</div>
 		</div>
 	</body>
-	<script type="text/javascript">
-		var myVue1 = new Vue({
-			el: ".purchase-union-container",
-			data: {
-				recommendHouse: [{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
-					},
-					{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
-					},
-					{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
-					},
-					{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
-					}
-				],
-				customService: [{
-						portrait: 'img/photo1.png',
-						surname: '张莉霞',
-						tags: ['海口市区','博鳌']
-					},
-					{
-						portrait: 'img/photo2.png',
-						surname: '徐俊',
-						tags: ['三亚','三亚周边']
-					},
-					{
-						portrait: 'img/photo3.png',
-						surname: '李宝成',
-						tags: ['万宁','陵水','保亭','五指山']
-					},
-					{
-						portrait: 'img/photo4.png',
-						surname: '王珍珍',
-						tags: ['儋州','白马井','澄迈','琼海']
-					},
-					{
-						portrait: 'img/photo5.png',
-						surname: '李承慧',
-						tags: ['海南全岛']
-					},
-					{
-						portrait: 'img/photo6.png',
-						surname: '李云',
-						tags: ['海口周边','澄迈']
-					}
-				],
-				unionDynamic: [{
-						title: '[四季康城二期]',
-						content: '客户看中四季康城二期高性价比小苏助力连签四房',
-						times: '2017-06-20'
-					},
-					{
-						title: '[四季康城二期]',
-						content: '客户看中四季康城二期高性价比小苏助力连签四房',
-						times: '2017-06-20'
-					},
-					{
-						content: '买房度假养老选万宁还是文昌？徐哥选万宁的木棉山庄',
-						times: '2017-06-20'
-					},
-					{
-						content: '买房度假养老选万宁还是文昌？徐哥选万宁的木棉山庄',
-						times: '2017-06-20'
-					},
-					{
-						content: '不打算在三亚一直租房 杨叔选在水三千买养老房',
-						times: '2017-06-20'
-					},
-					{
-						title: '[四季康城二期]',
-						content: '客户看中四季康城二期高性价比小苏助力连签四房',
-						times: '2017-06-20'
-					},
-					{
-						title: '[四季康城二期]',
-						content: '客户看中四季康城二期高性价比小苏助力连签四房',
-						times: '2017-06-20'
-					}
-				]
-			}
-		});
-	</script>
-	<script type="text/javascript" src="js/purchase-union.js"></script>
+	<script type="text/javascript" src="js/user-center.js"></script>
 </html>
