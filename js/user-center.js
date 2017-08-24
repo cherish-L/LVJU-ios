@@ -56,8 +56,6 @@ $(function(){
 	})
 	
 	//关于我们
-	var aboutH=$(".about-us-pushsection").height()
-	$(".about-us-pushsection .pushsection-wrapper").height(aboutH+1)
 	 
 	var aboutS = new IScroll('.about-us-pushsection', {
 		scrollbars: false
