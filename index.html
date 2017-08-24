@@ -11,12 +11,13 @@
 		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/user-center.css" />
 		<link rel="stylesheet" type="text/css" href="plugins/animate.min.css" />
-		<link rel="stylesheet" type="text/css" href="plugins/honeySwitch/honeySwitch.css"/>
+		<!--<link rel="stylesheet" type="text/css" href="plugins/honeySwitch/honeySwitch.css"/>-->
+		<link rel="stylesheet" type="text/css" href="css/switch.css"/>
 		<script type="text/javascript" src="plugins/zepto.min.js"></script>
 		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>
 		<script src="plugins/swiper-3.4.2.min.js"></script>
 		<script type="text/javascript" src="vue/vue.js"></script>
-		<script type="text/javascript" src="plugins/honeySwitch/honeySwitch.js"></script>
+		<!--<script type="text/javascript" src="plugins/honeySwitch/honeySwitch.js"></script>-->
 		<script>
 			//适配
 			document.documentElement.style.fontSize = innerWidth / 15 + "px";
@@ -105,7 +106,7 @@
 					</li>
 				</ul>
 			</footer>
-			<span class="switch-off" themeColor="#0099eb"></span>
+			
 			<div class="set-up-push">
 				<header class="set-up-pushheader">
 					<div class="signal_bar"></div>
@@ -184,18 +185,21 @@
 									<p>系统通知、客服消息</p>
 								</div>
 								<div class="prompt-message-switch">
-									<span class="switch-on switch-disabled" themeColor="#0099eb"></span>
+									<!--<span class="switch-on switch-disabled" themeColor="#0099eb"></span>-->
+									<label><input class="mui-switch mui-switch-anim" type="checkbox" checked disabled></label>
 								</div>
 							</div>
 							<div class="cue-tone">
 								<ul class="cue-tone-ul">
 									<li>
 										声音提示
-										<span class="switch-on" themeColor="#0099eb"></span>
+										<!--<span class="switch-on" themeColor="#0099eb"></span>-->
+										<label><input class="mui-switch mui-switch-anim" type="checkbox" checked></label>
 									</li>
 									<li>
 										震动提示
-										<span class="switch-off" themeColor="#0099eb"></span>
+										<!--<span class="switch-off" themeColor="#0099eb"></span>-->
+										<label><input class="mui-switch mui-switch-anim" type="checkbox"></label>
 									</li>
 								</ul>
 							</div>
