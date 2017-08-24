@@ -56,7 +56,6 @@ $(function(){
 	})
 	
 	//关于我们
-	 
 	var aboutS = new IScroll('.about-us-pushsection', {
 		scrollbars: false
 	})
