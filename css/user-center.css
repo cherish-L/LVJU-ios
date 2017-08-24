@@ -584,8 +584,9 @@ li {
   position: relative;
 }
 
-.user-center-container .set-up-push .message-management-push .message-management-pushsection .pushsection-wrapper .prompt-message .prompt-message-switch span {
+.user-center-container .set-up-push .message-management-push .message-management-pushsection .pushsection-wrapper .prompt-message .prompt-message-switch label {
   float: right;
+  height: 1.28rem;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -618,13 +619,14 @@ li {
   -webkit-box-shadow: inset 0 -1px 0 0 #EEEEEE;
 }
 
-.user-center-container .set-up-push .message-management-push .message-management-pushsection .pushsection-wrapper .cue-tone .cue-tone-ul li:first-child span {
+.user-center-container .set-up-push .message-management-push .message-management-pushsection .pushsection-wrapper .cue-tone .cue-tone-ul li:first-child label {
   margin-top: 0.4rem;
   float: right;
+  height: 1.28rem;
   z-index: 999;
 }
 
-.user-center-container .set-up-push .message-management-push .message-management-pushsection .pushsection-wrapper .cue-tone .cue-tone-ul li:first-child span .slider {
+.user-center-container .set-up-push .message-management-push .message-management-pushsection .pushsection-wrapper .cue-tone .cue-tone-ul li:first-child label .slider {
   margin-top: 0;
 }
 
@@ -633,13 +635,14 @@ li {
   -webkit-box-shadow: none;
 }
 
-.user-center-container .set-up-push .message-management-push .message-management-pushsection .pushsection-wrapper .cue-tone .cue-tone-ul li:last-child span {
+.user-center-container .set-up-push .message-management-push .message-management-pushsection .pushsection-wrapper .cue-tone .cue-tone-ul li:last-child label {
   margin-top: 0.4rem;
   float: right;
+  height: 1.28rem;
   z-index: 999;
 }
 
-.user-center-container .set-up-push .message-management-push .message-management-pushsection .pushsection-wrapper .cue-tone .cue-tone-ul li:last-child span .slider {
+.user-center-container .set-up-push .message-management-push .message-management-pushsection .pushsection-wrapper .cue-tone .cue-tone-ul li:last-child label .slider {
   margin-top: 0;
 }
 
