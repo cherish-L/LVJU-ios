@@ -126,7 +126,7 @@ li {
 
 .user-center-container .user-center-section .section-wrapper .cushion {
   width: 100%;
-  height: 8rem;
+  height: 7.92rem;
   position: relative;
 }
 
@@ -707,9 +707,6 @@ li {
 .user-center-container .set-up-push .about-us-push .about-us-pushsection .pushsection-wrapper {
   width: 100%;
   height: 100%;
-  display: flex;
-  -webkit-display: flex;
-  flex-direction: column;
 }
 
 .user-center-container .set-up-push .about-us-push .about-us-pushsection .pushsection-wrapper .logo-area {
@@ -1069,4 +1066,67 @@ li {
 .user-center-container .set-up-push .help-description-push .how-register-push .how-register-pushsection .pushsection-wrapper .how-register-box .solve {
   box-shadow: inset -1px 0 0 0 #EEEEEE;
   -webkit-box-shadow: inset -1px 0 0 0 #EEEEEE;
+}
+
+.user-center-container .set-up-push .feedback-push {
+  width: 100%;
+  height: 100%;
+  transition: all .3s;
+  background: #f4f4f4;
+  position: absolute;
+  left: 15.2rem;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+}
+
+.user-center-container .set-up-push .feedback-push .feedback-pushheader {
+  width: 100%;
+  background-color: #f6f6f6;
+  box-shadow: 0 1px 0 0 #cccccc;
+  z-index: 1;
+}
+
+.user-center-container .set-up-push .feedback-push .feedback-pushheader .signal_bar {
+  width: 100%;
+  height: 0.8rem;
+}
+
+.user-center-container .set-up-push .feedback-push .feedback-pushheader .title_bar {
+  width: 100%;
+  height: 1.76rem;
+  line-height: 1.76rem;
+  position: relative;
+}
+
+.user-center-container .set-up-push .feedback-push .feedback-pushheader .title_bar .title_txt {
+  font-size: 0.72rem;
+  color: #394043 !important;
+  text-align: center;
+  font-weight: normal;
+}
+
+.user-center-container .set-up-push .feedback-push .feedback-pushheader .title_bar .return {
+  display: block;
+  height: 0.88rem;
+  width: 0.88rem;
+  background: url(../img/returnleft.png);
+  background-size: 0.88rem 0.88rem;
+  position: absolute;
+  top: 0.44rem;
+  left: 0.64rem;
+}
+
+.user-center-container .set-up-push .feedback-push .feedback-pushsection {
+  flex: 1;
+  -webkit-flex: 1;
+  overflow: hidden;
+  background: #F4F4F4;
+}
+
+.user-center-container .set-up-push .feedback-push .feedback-pushsection .pushsection-wrapper {
+  width: 100%;
+  height: 100%;
 }

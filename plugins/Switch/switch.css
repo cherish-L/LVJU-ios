@@ -34,9 +34,9 @@
 }
 
 .mui-switch:checked {
-	border-color: #64bd63;
-	box-shadow: #64bd63 0 0 0 16px inset;
-	background-color: #64bd63;
+	border-color: #0099EB;
+	box-shadow: #0099EB 0 0 0 16px inset;
+	background-color: #0099EB;
 }
 
 .mui-switch:checked:before {
@@ -53,7 +53,7 @@
 
 .mui-switch.mui-switch-animbg:checked {
 	box-shadow: #dfdfdf 0 0 0 0 inset;
-	background-color: #64bd63;
+	background-color: #0099EB;
 	transition: border-color 0.4s, background-color ease 0.4s;
 }
 
@@ -70,8 +70,8 @@
 }
 
 .mui-switch.mui-switch-anim:checked {
-	box-shadow: #64bd63 0 0 0 16px inset;
-	background-color: #64bd63;
+	box-shadow: #0099EB 0 0 0 16px inset;
+	background-color: #0099EB;
 	transition: border ease 0.4s, box-shadow ease 0.4s, background-color ease 1.2s;
 }
 
