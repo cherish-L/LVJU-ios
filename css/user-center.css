@@ -621,6 +621,7 @@ li {
 .user-center-container .set-up-push .message-management-push .message-management-pushsection .pushsection-wrapper .cue-tone .cue-tone-ul li:first-child span {
   margin-top: 0.4rem;
   float: right;
+  z-index: 999;
 }
 
 .user-center-container .set-up-push .message-management-push .message-management-pushsection .pushsection-wrapper .cue-tone .cue-tone-ul li:first-child span .slider {
@@ -635,6 +636,7 @@ li {
 .user-center-container .set-up-push .message-management-push .message-management-pushsection .pushsection-wrapper .cue-tone .cue-tone-ul li:last-child span {
   margin-top: 0.4rem;
   float: right;
+  z-index: 999;
 }
 
 .user-center-container .set-up-push .message-management-push .message-management-pushsection .pushsection-wrapper .cue-tone .cue-tone-ul li:last-child span .slider {
