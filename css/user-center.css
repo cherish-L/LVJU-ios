@@ -4366,6 +4366,9 @@ li {
 .user-center-container .personal-coupon-push .personal-coupon-pushsection .coupon-whole {
   width: 100%;
   height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .user-center-container .personal-coupon-push .personal-coupon-pushsection .coupon-whole .coupon-whole-ul {
@@ -4918,7 +4921,9 @@ li {
 }
 
 .user-center-container .personal-coupon-push .personal-coupon-pushsection .coupon-notUsed {
+  display: none;
   width: 100%;
+  height: 100%;
   padding: 0.64rem 0.64rem 1.28rem;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
