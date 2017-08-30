@@ -786,10 +786,10 @@ $(function() {
 	$(".personal-coupon-push .coupon-nav-li").tap(function(){
 		var index=$(this).index()
 		$(this).addClass("select").siblings().removeClass("select")
-		$(".personal-coupon-pushsection .coupon-wrapper .coupon-wrapper-li").eq(index).css("display","block").siblings().css("display","none")
+		$(".personal-coupon-pushsection .pushsection-wrapper").eq(index).css("display","block").siblings().css("display","none")
 	})
 	
-	var coupon_wholeS = new IScroll('.personal-coupon-pushsection .coupon-whole', {
+	var CwholeS = new IScroll('.personal-coupon-pushsection .coupon-whole', {
 		scrollbars: false
 	})
 })
