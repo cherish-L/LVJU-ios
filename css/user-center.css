@@ -4263,7 +4263,7 @@ li {
   overflow: hidden;
   background: #f4f4f4;
   position: absolute;
-  left: 15.2rem;
+  left: 0;
   top: 0;
   z-index: 10;
   display: flex;
