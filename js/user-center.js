@@ -615,18 +615,20 @@ $(function() {
     		$(".delete-collection-push .determine").tap(function(){
     			$(".personal-collection-Mask").removeClass("show")
     			$(".delete-collection-push").height("0")
-    		
-    			_this.parent().remove();
-    			PcollectionS.refresh()
-    			newPwrapperh=$(".personal-collection-pushsection .pushsection-wrapper .Pcollection-data").height()
-		  	if(newPwrapperh<=Pcollectionh){
-				$(".personal-collection-pushsection .pushsection-wrapper").height(Pcollectionh+1)
-		  		PcollectionS.refresh()
-			}
-		  	else if(newPwrapperh>Pcollectionh){
-				$(".personal-collection-pushsection .pushsection-wrapper").height(newPwrapperh)
-		  		PcollectionS.refresh()
-			}
+    			_this.parent().css("height","0")
+    			setTimeout(function(){
+    				_this.parent().remove();
+	    			PcollectionS.refresh()
+	    			newPwrapperh=$(".personal-collection-pushsection .pushsection-wrapper .Pcollection-data").height()
+			  	if(newPwrapperh<=Pcollectionh){
+					$(".personal-collection-pushsection .pushsection-wrapper").height(Pcollectionh+1)
+			  		PcollectionS.refresh()
+				}
+			  	else if(newPwrapperh>Pcollectionh){
+					$(".personal-collection-pushsection .pushsection-wrapper").height(newPwrapperh)
+			  		PcollectionS.refresh()
+				}
+    			},200)
     		})
     		
     		$(".delete-collection-push .cancle").tap(function(){
@@ -692,18 +694,20 @@ $(function() {
     		$(".delete-footprint-push .determine").tap(function(){
     			$(".personal-footprint-Mask").removeClass("show")
     			$(".delete-footprint-push").height("0")
-    		
-    			_this.parent().remove();
-    			PfootprintS.refresh()
-    			newFwrapperh=$(".personal-footprint-pushsection .pushsection-wrapper .Pfootprint-data").height()
-		  	if(newFwrapperh<=Pfootprinth){
-				$(".personal-footprint-pushsection .pushsection-wrapper").height(Pfootprinth+1)
-		  		PfootprintS.refresh()
-			}
-		  	else if(newFwrapperh>Pfootprinth){
-				$(".personal-footprint-pushsection .pushsection-wrapper").height(newFwrapperh)
-		  		PfootprintS.refresh()
-			}
+    			_this.parent().css("height","0")
+    			setTimeout(function(){
+    				_this.parent().remove();
+	    			PfootprintS.refresh()
+	    			newFwrapperh=$(".personal-footprint-pushsection .pushsection-wrapper .Pfootprint-data").height()
+			  	if(newFwrapperh<=Pfootprinth){
+					$(".personal-footprint-pushsection .pushsection-wrapper").height(Pfootprinth+1)
+			  		PfootprintS.refresh()
+				}
+			  	else if(newFwrapperh>Pfootprinth){
+					$(".personal-footprint-pushsection .pushsection-wrapper").height(newFwrapperh)
+			  		PfootprintS.refresh()
+				}
+    			},200)
     		})
     		
     		$(".delete-footprint-push .cancle").tap(function(){

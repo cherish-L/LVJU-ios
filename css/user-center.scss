@@ -258,8 +258,9 @@
             width: 100%;
             height: 100%;
             transition: all .3s;
+            overflow: hidden;
             background: #f4f4f4;
-            position: fixed;
+            position: absolute;
             left: 380/$sc+rem;
             top: 0;
             z-index: 10;
@@ -1125,8 +1126,9 @@
             width: 100%;
             height: 100%;
             transition: all .3s;
+            overflow: hidden;
             background: #f6f6f6;
-            position: fixed;
+            position: absolute;
             left: 380/$sc+rem;
             top: 0;
             z-index: 10;
@@ -1951,8 +1953,9 @@
             width: 100%;
             height: 100%;
             transition: all .3s;
+            overflow: hidden;
             background: #f4f4f4;
-            position: fixed;
+            position: absolute;
             left: 380/$sc+rem;
             top: 0;
             z-index: 10;
@@ -2883,8 +2886,9 @@
             width: 100%;
             height: 100%;
             transition: all .3s;
+            overflow: hidden;
             background: #f4f4f4;
-            position: fixed;
+            position: absolute;
             left: 380/$sc+rem;
             top: 0;
             z-index: 10;
@@ -2943,6 +2947,7 @@
                             .Pcollection-data-li {
                                 width: 100%;
                                 height: 124/$sc+rem;
+                                transition: all .2s;
                                 background: #FFFFFF;
                                 overflow: hidden;
                                 position: relative;
@@ -3152,8 +3157,9 @@
             width: 100%;
             height: 100%;
             transition: all .3s;
+            overflow: hidden;
             background: #f4f4f4;
-            position: fixed;
+            position: absolute;
             left: 380/$sc+rem;
             top: 0;
             z-index: 10;
@@ -3213,6 +3219,7 @@
                                 width: 100%;
                                 height: 124/$sc+rem;
                                 background: #FFFFFF;
+                                transition: all .2s;
                                 overflow: hidden;
                                 position: relative;
                                 box-sizing: border-box;
@@ -3421,8 +3428,9 @@
             width: 100%;
             height: 100%;
             transition: all .3s;
+            overflow: hidden;
             background: #f4f4f4;
-            position: fixed;
+            position: absolute;
             left: 380/$sc+rem;
             top: 0;
             z-index: 10;
@@ -3761,7 +3769,7 @@
             transition: all .3s;
             overflow: hidden;
             background: #f4f4f4;
-            position: fixed;
+            position: absolute;
             left: 380/$sc+rem;
             top: 0;
             z-index: 10;
