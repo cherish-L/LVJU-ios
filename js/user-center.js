@@ -903,7 +903,6 @@ $(function() {
 		$(".coupon-details-push").css("left",setw+5)
 	})
 	
-	
 	//点击已过期优惠券
 	var overdue_Z=$(".coupon-details-pushsection .coupon-details-overdue")
 	$(".personal-coupon-pushsection .overdue").tap(function(){
@@ -929,4 +928,8 @@ $(function() {
 		$(".coupon-details-push").css("left",setw+5)
 	})
 	
+	
+	var CdetailsS = new IScroll('.coupon-details-pushsection', {
+		scrollbars: false
+	})
 })
