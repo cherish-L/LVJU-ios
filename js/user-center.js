@@ -771,25 +771,74 @@ $(function() {
 	})
 
 
-//我的优惠券
-	var Pcouponh = $(".personal-coupon-pushsection").height()
-	var Cwrapperh = $(".personal-coupon-pushsection .pushsection-wrapper").height()
-	
-	if(Cwrapperh<=Pcouponh){
-		$(".personal-coupon-pushsection .pushsection-wrapper").height(Pcouponh+1)
-	}
-	if(Cwrapperh>Pcouponh){
-		$(".personal-coupon-pushsection .pushsection-wrapper").height(Cwrapperh)
-	}
-	
-	$(".personal-coupon-pushsection .coupon-wrapper .coupon-wrapper-li").eq(0).css("display","block").siblings().css("display","none")
+//我的优惠券	
+	$(".personal-coupon-pushsection .pushsection-wrapper").eq(0).css("left","0").siblings().css("left",setw+5)
 	$(".personal-coupon-push .coupon-nav-li").tap(function(){
 		var index=$(this).index()
 		$(this).addClass("select").siblings().removeClass("select")
-		$(".personal-coupon-pushsection .pushsection-wrapper").eq(index).css("display","block").siblings().css("display","none")
+		$(".personal-coupon-pushsection .pushsection-wrapper").eq(index).css("left","0").siblings().css("left",setw+5)
 	})
+
+	//全部
+	var Cwholeh = $(".personal-coupon-pushsection .coupon-whole").height()
+	var Cwhole_ulh = $(".personal-coupon-pushsection .coupon-whole .coupon-whole-ul").height()
+	
+	if(Cwhole_ulh<=Cwholeh){
+		$(".personal-coupon-pushsection .coupon-whole .coupon-whole-ul").height(Cwholeh+1)
+	}
+	if(Cwhole_ulh>Cwholeh){
+		$(".personal-coupon-pushsection .coupon-whole .coupon-whole-ul").height(Cwhole_ulh)
+	}
 	
 	var CwholeS = new IScroll('.personal-coupon-pushsection .coupon-whole', {
+		scrollbars: false
+	})
+	
+	//未使用
+	var CnotUsedh = $(".personal-coupon-pushsection .coupon-notUsed").height()
+	
+	var CnotUsed_ulh = $(".personal-coupon-pushsection .coupon-notUsed .coupon-notUsed-ul").height()
+	
+	if(CnotUsed_ulh<=CnotUsedh){
+		$(".personal-coupon-pushsection .coupon-notUsed .coupon-notUsed-ul").height(CnotUsedh+1)
+	}
+	if(CnotUsed_ulh>CnotUsedh){
+		$(".personal-coupon-pushsection .coupon-notUsed .coupon-notUsed-ul").height(CnotUsed_ulh)
+	}
+	
+	var CnotUsedS = new IScroll('.personal-coupon-pushsection .coupon-notUsed', {
+		scrollbars: false
+	})
+	
+	//已使用
+	var CalreadyUsedh = $(".personal-coupon-pushsection .coupon-alreadyUsed").height()
+	
+	var CalreadyUsed_ulh = $(".personal-coupon-pushsection .coupon-alreadyUsed .coupon-alreadyUsed-ul").height()
+	
+	if(CalreadyUsed_ulh<=CalreadyUsedh){
+		$(".personal-coupon-pushsection .coupon-alreadyUsed .coupon-alreadyUsed-ul").height(CalreadyUsedh+1)
+	}
+	if(CalreadyUsed_ulh>CalreadyUsedh){
+		$(".personal-coupon-pushsection .coupon-alreadyUsed .coupon-alreadyUsed-ul").height(CalreadyUsed_ulh)
+	}
+	
+	var CalreadyUsedS = new IScroll('.personal-coupon-pushsection .coupon-alreadyUsed', {
+		scrollbars: false
+	})
+	
+	//已过期
+	var Coverdueh = $(".personal-coupon-pushsection .coupon-overdue").height()
+	
+	var Coverdue_ulh = $(".personal-coupon-pushsection .coupon-overdue .coupon-overdue-ul").height()
+	
+	if(Coverdue_ulh<=Coverdueh){
+		$(".personal-coupon-pushsection .coupon-overdue .coupon-overdue-ul").height(Coverdueh+1)
+	}
+	if(Coverdue_ulh>Coverdueh){
+		$(".personal-coupon-pushsection .coupon-overdue .coupon-overdue-ul").height(Coverdue_ulh)
+	}
+	
+	var CoverdueS = new IScroll('.personal-coupon-pushsection .coupon-overdue', {
 		scrollbars: false
 	})
 })

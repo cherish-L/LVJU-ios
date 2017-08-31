@@ -889,7 +889,7 @@
 					</div>
 				</header>
 				<section class="personal-coupon-pushsection">
-					<div class="coupon-whole">
+					<div class="pushsection-wrapper coupon-whole">
 						<ul class="coupon-whole-ul">
 							<li class="coupon-whole-li notUsed" v-for="list in notUsed">
 								<div class="leftPart">
@@ -965,139 +965,90 @@
 							</li>
 						</ul>
 					</div>
-					<div class="coupon-notUsed">
-						<div class="coupon-notUsed-li notUsed" v-for="list in notUsed">
-							<div class="leftPart">
-								<div class="leftPart-wrapper">
-									<img class="leftPart-img" src="img/no_bestow.png" />
-									<p class="leftPart-content">
-										<span class="currency" v-text="list.currency"></span>
-										<span class="content" v-text="list.content"></span>
-									</p>
-									<span class="leftPart-txt">未使用</span>
-								</div>
-							</div>
-							<div class="rightPart">
-								<div class="rightPart-wrapper">
-									<div class="rightPart-content">
-										<p class="content-title" v-text="list.title"></p>
-										<p class="termOf-validity" v-text="list.validity"></p>
-										<p class="remaining-time" v-text="list.remaining"></p>
+					<div class="pushsection-wrapper coupon-notUsed">
+						<div class="coupon-notUsed-ul">
+							<div class="coupon-notUsed-li notUsed" v-for="list in notUsed">
+								<div class="leftPart">
+									<div class="leftPart-wrapper">
+										<img class="leftPart-img" src="img/no_bestow.png" />
+										<p class="leftPart-content">
+											<span class="currency" v-text="list.currency"></span>
+											<span class="content" v-text="list.content"></span>
+										</p>
+										<span class="leftPart-txt">未使用</span>
 									</div>
-									<div class="rightPart-details">
-										<span>详情</span>
+								</div>
+								<div class="rightPart">
+									<div class="rightPart-wrapper">
+										<div class="rightPart-content">
+											<p class="content-title" v-text="list.title"></p>
+											<p class="termOf-validity" v-text="list.validity"></p>
+											<p class="remaining-time" v-text="list.remaining"></p>
+										</div>
+										<div class="rightPart-details">
+											<span>详情</span>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<!--<ul class="coupon-wrapper">
-							<li class="coupon-wrapper-li coupon-whole">
-								<ul class="coupon-whole-ul">
-									<li class="coupon-whole-li notUsed" v-for="list in notUsed">
-										<div class="leftPart">
-											<div class="leftPart-wrapper">
-												<img class="leftPart-img" src="img/no_bestow.png"/>
-												<p class="leftPart-content">
-													<span class="currency" v-text="list.currency"></span>
-													<span class="content" v-text="list.content"></span>
-												</p>
-												<span class="leftPart-txt" >未使用</span>
-											</div>
-										</div>
-										<div class="rightPart">
-											<div class="rightPart-wrapper">
-												<div class="rightPart-content">
-													<p class="content-title" v-text="list.title"></p>
-													<p class="termOf-validity" v-text="list.validity"></p>
-													<p class="remaining-time" v-text="list.remaining"></p>
-												</div>
-												<div class="rightPart-details">
-													<span>详情</span>
-												</div>
-											</div>
-										</div>
-									</li>
-									<li class="coupon-whole-li alreadyUsed" v-for="list in alreadyUsed">
-										<div class="leftPart">
-											<div class="leftPart-wrapper">
-												<img class="leftPart-img" src="img/bestow.png"/>
-												<p class="leftPart-content">
-													<span class="currency" v-text="list.currency"></span>
-													<span class="content" v-text="list.content"></span>
-												</p>
-												<span class="leftPart-txt" >已使用</span>
-											</div>
-										</div>
-										<div class="rightPart">
-											<div class="rightPart-wrapper">
-												<div class="rightPart-content">
-													<p class="content-title" v-text="list.title"></p>
-													<p class="termOf-validity" v-text="list.validity"></p>
-													<p class="remaining-time" v-text="list.remaining"></p>
-												</div>
-												<div class="rightPart-details">
-													<span>详情</span>
-												</div>
-											</div>
-										</div>
-									</li>
-									<li class="coupon-whole-li overdue" v-for="list in overdue">
-										<div class="leftPart">
-											<div class="leftPart-wrapper">
-												<img class="leftPart-img" src="img/overdue.png"/>
-												<p class="leftPart-content">
-													<span class="currency" v-text="list.currency"></span>
-													<span class="content" v-text="list.content"></span>
-												</p>
-												<span class="leftPart-txt" >已过期</span>
-											</div>
-										</div>
-										<div class="rightPart">
-											<div class="rightPart-wrapper">
-												<div class="rightPart-content">
-													<p class="content-title" v-text="list.title"></p>
-													<p class="termOf-validity" v-text="list.validity"></p>
-													<p class="remaining-time" v-text="list.remaining"></p>
-												</div>
-												<div class="rightPart-details">
-													<span>详情</span>
-												</div>
-											</div>
-										</div>
-									</li>
-								</ul>
-							</li>
-							<li class="coupon-wrapper-li coupon-notUsed">
-								<div class="coupon-notUsed-li notUsed" v-for="list in notUsed">
-									<div class="leftPart">
-										<div class="leftPart-wrapper">
-											<img class="leftPart-img" src="img/no_bestow.png"/>
-											<p class="leftPart-content">
-												<span class="currency" v-text="list.currency"></span>
-												<span class="content" v-text="list.content"></span>
-											</p>
-											<span class="leftPart-txt" >未使用</span>
-										</div>
+					<div class="pushsection-wrapper coupon-alreadyUsed">
+						<div class="coupon-alreadyUsed-ul">
+							<div class="coupon-alreadyUsed-li alreadyUsed" v-for="list in alreadyUsed">
+								<div class="leftPart">
+									<div class="leftPart-wrapper">
+										<img class="leftPart-img" src="img/bestow.png" />
+										<p class="leftPart-content">
+											<span class="currency" v-text="list.currency"></span>
+											<span class="content" v-text="list.content"></span>
+										</p>
+										<span class="leftPart-txt">已使用</span>
 									</div>
-									<div class="rightPart">
-										<div class="rightPart-wrapper">
-											<div class="rightPart-content">
-												<p class="content-title" v-text="list.title"></p>
-												<p class="termOf-validity" v-text="list.validity"></p>
-												<p class="remaining-time" v-text="list.remaining"></p>
-											</div>
-											<div class="rightPart-details">
-												<span>详情</span>
-											</div>
+								</div>
+								<div class="rightPart">
+									<div class="rightPart-wrapper">
+										<div class="rightPart-content">
+											<p class="content-title" v-text="list.title"></p>
+											<p class="termOf-validity" v-text="list.validity"></p>
+											<p class="remaining-time" v-text="list.remaining"></p>
+										</div>
+										<div class="rightPart-details">
+											<span>详情</span>
 										</div>
 									</div>
 								</div>
-							</li>
-							<li class="coupon-wrapper-li coupon-alreadyUsed"></li>
-							<li class="coupon-wrapper-li coupon-overdue"></li>
-						</ul>-->
-
+							</div>
+						</div>
+					</div>
+					<div class="pushsection-wrapper coupon-overdue">
+						<div class="coupon-overdue-ul">
+							<div class="coupon-overdue-li overdue" v-for="list in overdue">
+								<div class="leftPart">
+									<div class="leftPart-wrapper">
+										<img class="leftPart-img" src="img/overdue.png" />
+										<p class="leftPart-content">
+											<span class="currency" v-text="list.currency"></span>
+											<span class="content" v-text="list.content"></span>
+										</p>
+										<span class="leftPart-txt">已过期</span>
+									</div>
+								</div>
+								<div class="rightPart">
+									<div class="rightPart-wrapper">
+										<div class="rightPart-content">
+											<p class="content-title" v-text="list.title"></p>
+											<p class="termOf-validity" v-text="list.validity"></p>
+											<p class="remaining-time" v-text="list.remaining"></p>
+										</div>
+										<div class="rightPart-details">
+											<span>详情</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</section>
 				<footer class="personal-coupon-pushfooter">查看优惠券使用流程</footer>
 			</div>
