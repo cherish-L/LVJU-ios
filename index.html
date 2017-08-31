@@ -914,6 +914,15 @@
 										</div>
 									</div>
 								</div>
+								<div class="hide_data">
+									<span class="dataTitle" v-text="list.hide_data.dataTitle"></span>
+									<span class="dataDetailed" v-text="list.hide_data.dataDetailed"></span>
+									<span class="dataCode" v-text="list.hide_data.dataCode"></span>
+									<span class="dataValidity" v-text="list.hide_data.dataValidity"></span>
+									<span class="dataQR_code">
+										<img :src="list.hide_data.dataQR_code"/>
+									</span>
+								</div>
 							</li>
 							<li class="coupon-whole-li alreadyUsed" v-for="list in alreadyUsed">
 								<div class="leftPart">
@@ -938,6 +947,15 @@
 										</div>
 									</div>
 								</div>
+								<div class="hide_data">
+									<span class="dataTitle" v-text="list.hide_data.dataTitle"></span>
+									<span class="dataDetailed" v-text="list.hide_data.dataDetailed"></span>
+									<span class="dataCode" v-text="list.hide_data.dataCode"></span>
+									<span class="dataValidity" v-text="list.hide_data.dataValidity"></span>
+									<span class="dataQR_code">
+										<img :src="list.hide_data.dataQR_code"/>
+									</span>
+								</div>
 							</li>
 							<li class="coupon-whole-li overdue" v-for="list in overdue">
 								<div class="leftPart">
@@ -961,6 +979,15 @@
 											<span>详情</span>
 										</div>
 									</div>
+								</div>
+								<div class="hide_data">
+									<span class="dataTitle" v-text="list.hide_data.dataTitle"></span>
+									<span class="dataDetailed" v-text="list.hide_data.dataDetailed"></span>
+									<span class="dataCode" v-text="list.hide_data.dataCode"></span>
+									<span class="dataValidity" v-text="list.hide_data.dataValidity"></span>
+									<span class="dataQR_code">
+										<img :src="list.hide_data.dataQR_code"/>
+									</span>
 								</div>
 							</li>
 						</ul>
@@ -990,6 +1017,15 @@
 										</div>
 									</div>
 								</div>
+								<div class="hide_data">
+									<span class="dataTitle" v-text="list.hide_data.dataTitle"></span>
+									<span class="dataDetailed" v-text="list.hide_data.dataDetailed"></span>
+									<span class="dataCode" v-text="list.hide_data.dataCode"></span>
+									<span class="dataValidity" v-text="list.hide_data.dataValidity"></span>
+									<span class="dataQR_code">
+										<img :src="list.hide_data.dataQR_code"/>
+									</span>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -1017,6 +1053,15 @@
 											<span>详情</span>
 										</div>
 									</div>
+								</div>
+								<div class="hide_data">
+									<span class="dataTitle" v-text="list.hide_data.dataTitle"></span>
+									<span class="dataDetailed" v-text="list.hide_data.dataDetailed"></span>
+									<span class="dataCode" v-text="list.hide_data.dataCode"></span>
+									<span class="dataValidity" v-text="list.hide_data.dataValidity"></span>
+									<span class="dataQR_code">
+										<img :src="list.hide_data.dataQR_code"/>
+									</span>
 								</div>
 							</div>
 						</div>
@@ -1046,11 +1091,139 @@
 										</div>
 									</div>
 								</div>
+								<div class="hide_data">
+									<span class="dataTitle" v-text="list.hide_data.dataTitle"></span>
+									<span class="dataDetailed" v-text="list.hide_data.dataDetailed"></span>
+									<span class="dataCode" v-text="list.hide_data.dataCode"></span>
+									<span class="dataValidity" v-text="list.hide_data.dataValidity"></span>
+									<span class="dataQR_code">
+										<img :src="list.hide_data.dataQR_code"/>
+									</span>
+								</div>
 							</div>
 						</div>
 					</div>
 				</section>
 				<footer class="personal-coupon-pushfooter">查看优惠券使用流程</footer>
+				<div class="using-tutorials-push">
+					<header class="using-tutorials-pushheader">
+						<div class="signal_bar"></div>
+						<div class="title_bar">
+							<h3 class="title_txt">优惠券使用流程</h3>
+							<a class="return" href="javascript:;"></a>
+						</div>
+					</header>
+					<section class="using-tutorials-pushsection">
+						<div class="pushsection-wrapper">
+							<div class="using-tutorials-wrapper">
+								<div class="step-bar">
+									<span class="num">1</span>
+									<span class="bar"><img src="img/arrow.png"/></span>
+									<span class="num">2</span>
+									<span class="bar"><img src="img/arrow.png"/></span>
+									<span class="num">3</span>
+									<span class="bar"><img src="img/arrow.png"/></span>
+									<span class="num">4</span>
+									<span class="bar"><img src="img/arrow.png"/></span>
+									<span class="num">5</span>
+								</div>
+								<div class="step-content">
+									<span class="txt">网上筛选区域/楼盘</span>
+									<span class="txt">申请使用优惠券</span>
+									<span class="txt">专车接送实地看房</span>
+									<span class="txt">确定房源商定最终房款</span>
+									<span class="txt">验证券码兑现优惠</span>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+				<div class="coupon-details-push">
+					<header class="coupon-details-pushheader">
+						<div class="signal_bar"></div>
+						<div class="title_bar">
+							<h3 class="title_txt">优惠券详情</h3>
+							<a class="return" href="javascript:;"></a>
+						</div>
+					</header>
+					<section class="coupon-details-pushsection">
+						<div class="pushsection-wrapper">
+							<div class="coupon-details-notUsed">
+								<div class="details-notUsed-header">
+									<span class="header-price"></span>
+									<span class="header-txt">未使用</span>
+								</div>
+								<div class="details-notUsed-line"></div>
+								<div  class="details-notUsed-footer">
+									<p class="footer-title"></p>
+									<div class="footer-detailed">
+										<div class="detailed-title">详细详细：</div>
+										<div class="detailed-content"></div>
+									</div>
+									<div class="footer-code">
+										<div class="code-title">验证劵码：</div>
+										<div class="code-content"></div>
+									</div>
+									<div class="footer-term">
+										<div class="term-title">有效期：</div>
+										<div class="term-content"></div>
+									</div>
+									<div class="footer-QR_code"></div>
+								</div>
+							</div>
+							<div class="coupon-details-alreadyUsed">
+								<div class="details-alreadyUsed-header">
+									<span class="header-price">¥2000</span>
+									<span class="header-txt">已使用</span>
+								</div>
+								<div class="details-alreadyUsed-line"></div>
+								<div  class="details-alreadyUsed-footer">
+									<p class="footer-title">2000元旅居网会员购房红包</p>
+									<div class="footer-detailed">
+										<div class="detailed-title">详细详细：</div>
+										<div class="detailed-content">通过旅居网报名成功购房，即可凭券码申请返现，每套房限返一个红包。</div>
+									</div>
+									<div class="footer-code">
+										<div class="code-title">验证劵码：</div>
+										<div class="code-content">24587864538787</div>
+									</div>
+									<div class="footer-term">
+										<div class="term-title">有效期：</div>
+										<div class="term-content">2018年12月01日（剩余501天）</div>
+									</div>
+									<div class="footer-QR_code">
+										<img src="img/QR_code.png"/>
+									</div>
+								</div>
+							</div>
+							<div class="coupon-details-overdue">
+								<div class="details-overdue-header">
+									<span class="header-price">¥2000</span>
+									<span class="header-txt">已过期</span>
+								</div>
+								<div class="details-overdue-line"></div>
+								<div  class="details-overdue-footer">
+									<p class="footer-title">2000元旅居网会员购房红包</p>
+									<div class="footer-detailed">
+										<div class="detailed-title">详细详细：</div>
+										<div class="detailed-content">通过旅居网报名成功购房，即可凭券码申请返现，每套房限返一个红包。</div>
+									</div>
+									<div class="footer-code">
+										<div class="code-title">验证劵码：</div>
+										<div class="code-content">24587864538787</div>
+									</div>
+									<div class="footer-term">
+										<div class="term-title">有效期：</div>
+										<div class="term-content">2018年12月01日（剩余0天）</div>
+									</div>
+									<div class="footer-QR_code">
+										<img src="img/QR_code.png"/>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
 			</div>
 		</div>
 	</body>
@@ -1315,13 +1488,27 @@
 						content: '2000',
 						title: '2000元旅居网会员购房优惠券',
 						validity: '有效期：2018年12月01日前',
-						remaining: '剩余：501天'
+						remaining: '剩余：501天',
+						hide_data: {
+							dataTitle: '￥2000',
+							dataDetailed: '通过旅居网报名成功购房，即可凭券码申请返现，每套房限返一个红包。',
+							dataCode: '123456789876554321',
+							dataValidity: '2018年12月01日（剩余501天）',
+							dataQR_code: 'img/QR_code.png'
+						}
 					},
 					{
 						content: '9.8折',
-						title: '2000元旅居网会员购房优惠券',
+						title: '9.8折旅居网会员购房优惠券',
 						validity: '有效期：2018年12月01日前',
-						remaining: '剩余：501天'
+						remaining: '剩余：501天',
+						hide_data: {
+							dataTitle: '9.8折',
+							dataDetailed: '通过旅居网报名成功购房，即可凭券码申请返现，每套房限返一个红包。',
+							dataCode: '98765432123456789',
+							dataValidity: '2018年12月01日（剩余501天）',
+							dataQR_code: 'img/QR_code.png'
+						}
 					}
 				],
 				alreadyUsed: [{
@@ -1329,13 +1516,27 @@
 						content: '2000',
 						title: '2000元旅居网会员购房优惠券',
 						validity: '有效期：2018年12月01日前',
-						remaining: '剩余：501天'
+						remaining: '剩余：501天',
+						hide_data: {
+							dataTitle: '￥2000',
+							dataDetailed: '通过旅居网报名成功购房，即可凭券码申请返现，每套房限返一个红包。',
+							dataCode: 'dfjghkdjfbg4461432',
+							dataValidity: '2018年12月01日（剩余501天）',
+							dataQR_code: 'img/QR_code.png'
+						}
 					},
 					{
 						content: '9.8折',
-						title: '2000元旅居网会员购房优惠券',
+						title: '9.8折旅居网会员购房优惠券',
 						validity: '有效期：2018年12月01日前',
-						remaining: '剩余：501天'
+						remaining: '剩余：501天',
+						hide_data: {
+							dataTitle: '9.8折',
+							dataDetailed: '通过旅居网报名成功购房，即可凭券码申请返现，每套房限返一个红包。',
+							dataCode: '564dfsg2132sdfgrgxz',
+							dataValidity: '2018年12月01日（剩余501天）',
+							dataQR_code: 'img/QR_code.png'
+						}
 					}
 				],
 				overdue: [{
@@ -1343,13 +1544,27 @@
 						content: '2000',
 						title: '2000元旅居网会员购房优惠券',
 						validity: '有效期：2018年12月01日前',
-						remaining: '剩余：0天'
+						remaining: '剩余：0天',
+						hide_data: {
+							dataTitle: '￥2000',
+							dataDetailed: '通过旅居网报名成功购房，即可凭券码申请返现，每套房限返一个红包。',
+							dataCode: '978ewdfs847fv456',
+							dataValidity: '2018年12月01日（剩余0天）',
+							dataQR_code: 'img/QR_code.png'
+						}
 					},
 					{
 						content: '9.8折',
-						title: '2000元旅居网会员购房优惠券',
+						title: '9.8折旅居网会员购房优惠券',
 						validity: '有效期：2018年12月01日前',
-						remaining: '剩余：0天'
+						remaining: '剩余：0天',
+						hide_data: {
+							dataTitle: '9.8折',
+							dataDetailed: '通过旅居网报名成功购房，即可凭券码申请返现，每套房限返一个红包。',
+							dataCode: 'd456v5613f9hj7r4',
+							dataValidity: '2018年12月01日（剩余0天）',
+							dataQR_code: 'img/QR_code.png'
+						}
 					}
 				]
 			}

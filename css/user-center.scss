@@ -3983,6 +3983,9 @@
                                     }
                                 }
                             }
+                            .hide-data{
+                                display: none;
+                            }
                         }
                         .alreadyUsed {
                             margin-top: 16/$sc+rem;
@@ -4631,6 +4634,550 @@
                 color: #6C7072;
                 box-shadow: 0 0 6/$sc+rem 0 rgba(0, 0, 0, 0.16);
                 -webkit-box-shadow: 0 0 6/$sc+rem 0 rgba(0, 0, 0, 0.16);
+            }
+            .using-tutorials-push{
+                width: 100%;
+                height: 100%;
+                transition: all .3s;
+                background: #f4f4f4;
+                position: absolute;
+                left: 380/$sc+rem;
+                top: 0;
+                z-index: 10;
+                display: flex;
+                display: -webkit-flex;
+                flex-direction: column;
+                .using-tutorials-pushheader {
+                    width: 100%;
+                    background-color: #f6f6f6;
+                    box-shadow: 0 1px 0 0 #cccccc;
+                    z-index: 1;
+                    .signal_bar {
+                        width: 100%;
+                        height: 20/$sc+rem;
+                    }
+                    .title_bar {
+                        width: 100%;
+                        height: 44/$sc+rem;
+                        line-height: 44/$sc+rem;
+                        position: relative;
+                        .title_txt {
+                            font-size: 18/$sc+rem;
+                            color: #394043!important;
+                            text-align: center;
+                            font-weight: normal;
+                        }
+                        .return {
+                            display: block;
+                            height: 22/$sc+rem;
+                            width: 22/$sc+rem;
+                            background: url(../img/returnleft.png);
+                            background-size: 22/$sc+rem 22/$sc+rem;
+                            position: absolute;
+                            top: 11/$sc+rem;
+                            left: 16/$sc+rem;
+                        }
+                    }
+                }
+                .using-tutorials-pushsection {
+                    flex: 1;
+                    -webkit-flex: 1;
+                    overflow: hidden;
+                    position: relative;
+                    background: #ffffff;
+                    .pushsection-wrapper {
+                        width: 100%;
+                        height: 100%;
+                        background: #ffffff;
+                        position: relative;
+                        box-sizing: border-box;
+                        -webkit-box-sizing: border-box;
+                        .using-tutorials-wrapper{
+                            width: 210/$sc+rem;
+                            height: 321/$sc+rem;
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            margin: auto;
+                            display: flex;
+                            flex-direction: row;
+                            .step-bar{
+                                width: 32/$sc+rem;
+                                height: 100%;
+                                padding-right: 8/$sc+rem;
+                                .num{
+                                    display: block;
+                                    width: 32/$sc+rem;
+                                    height: 32/$sc+rem;
+                                    font-size: 16/$sc+rem;
+                                    color: #FFFFFF;
+                                    line-height: 32/$sc+rem;
+                                    background: #0099eb;
+                                    text-align: center;
+                                    border-radius: 50%;
+                                }
+                                .bar{
+                                    display: block;
+                                    width: 32/$sc+rem;
+                                    height: 40/$sc+rem;
+                                    position: relative;
+                                    img{
+                                        display: block;
+                                        width: 12/$sc+rem;
+                                        height: 40/$sc+rem;
+                                        position: absolute;
+                                        top: 0;
+                                        bottom: 0;
+                                        left: 0;
+                                        right: 0;
+                                        margin: auto;
+                                    }
+                                }
+                            }
+                            .step-content{
+                                width: 170/$sc+rem;
+                                height: 100%;
+                                span{
+                                    display: block;
+                                    width: 170/$sc+rem;
+                                    height: 32/$sc+rem;
+                                    line-height: 32/$sc+rem;
+                                    margin-top: 40/$sc+rem;
+                                    font-size: 14/$sc+rem;
+                                    color: #0099EB;
+                                    text-align: center;
+                                    background: url(../img/Dialogbox.png) no-repeat;
+                                    background-size: 164/$sc+rem 32/$sc+rem;
+                                }
+                                span:first-child{
+                                    margin-top: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .coupon-details-push{
+                width: 100%;
+                height: 100%;
+                transition: all .3s;
+                background: #394043;
+                position: absolute;
+                left: 380/$sc+rem;
+                top: 0;
+                z-index: 10;
+                display: flex;
+                display: -webkit-flex;
+                flex-direction: column;
+                .coupon-details-pushheader {
+                    width: 100%;
+                    background: #394043;
+                    z-index: 1;
+                    .signal_bar {
+                        width: 100%;
+                        height: 20/$sc+rem;
+                    }
+                    .title_bar {
+                        width: 100%;
+                        height: 44/$sc+rem;
+                        line-height: 44/$sc+rem;
+                        position: relative;
+                        .title_txt {
+                            font-size: 18/$sc+rem;
+                            color: #ffffff!important;
+                            text-align: center;
+                            font-weight: normal;
+                        }
+                        .return {
+                            display: block;
+                            height: 22/$sc+rem;
+                            width: 22/$sc+rem;
+                            background: url(../img/leftt.png);
+                            background-size: 22/$sc+rem 22/$sc+rem;
+                            position: absolute;
+                            top: 11/$sc+rem;
+                            left: 16/$sc+rem;
+                        }
+                    }
+                }
+                .coupon-details-pushsection {
+                    flex: 1;
+                    -webkit-flex: 1;
+                    overflow: hidden;
+                    position: relative;
+                    background: #394043;
+                    .pushsection-wrapper {
+                        width: 100%;
+                        background: #394043;
+                        padding: 35/$sc+rem 0 32/$sc+rem;
+                        position: relative;
+                        box-sizing: border-box;
+                        -webkit-box-sizing: border-box;
+                        .coupon-details-notUsed{
+                            display: none;
+                            width: 343/$sc+rem;
+                            height: 536/$sc+rem;
+                            margin: 0 auto;
+                            background: url(../img/Couponbox.png) no-repeat;
+                            background-size: 343/$sc+rem 537/$sc+rem;
+                            position: relative;
+                            .details-notUsed-header{
+                                width: 100%;
+                                height: 142/$sc+rem;
+                                .header-price{
+                                    display: block;
+                                    padding-top: 32/$sc+rem;
+                                    line-height: 56/$sc+rem;
+                                    text-align: center;
+                                    font-family: PingFang-SC-Medium;
+                                    font-size: 40/$sc+rem;
+                                    color: #0099EB;
+                                }
+                                .header-txt{
+                                    display: block;
+                                    line-height: 22/$sc+rem;
+                                    text-align: center;
+                                    font-size: 16/$sc+rem;
+                                    color: #0099EB;
+                                }
+                            }
+                            .details-notUsed-line{
+                                width: 280/$sc+rem;
+                                height: 1px;
+                                margin: 0 auto;
+                                background: #EEEEEE;
+                            }
+                            .details-notUsed-footer{
+                                width: 100%;
+                                .footer-title{
+                                    line-height: 64/$sc+rem;
+                                    padding-top: 8/$sc+rem;
+                                    font-size: 14/$sc+rem;
+                                    text-align: center;
+                                    color: #394043;
+                                }
+                                .footer-detailed{
+                                    width: 100%;
+                                    padding: 0 24/$sc+rem;
+                                    box-sizing: border-box;
+                                    -webkit-box-sizing: border-box;
+                                    display: flex;
+                                    display: -webkit-flex;
+                                    flex-direction: row;
+                                    .detailed-title{
+                                        width: 60/$sc+rem;
+                                        line-height: 24/$sc+rem;
+                                        font-size: 12/$sc+rem;
+                                        color: #999999;
+                                    }
+                                    .detailed-content{
+                                        flex: 1;
+                                        line-height: 24/$sc+rem;
+                                        font-size: 12/$sc+rem;
+                                        color: #394043;
+                                    }
+                                }
+                                .footer-code{
+                                    width: 100%;
+                                    padding: 0 24/$sc+rem;
+                                    margin-top: 8/$sc+rem;
+                                    box-sizing: border-box;
+                                    -webkit-box-sizing: border-box;
+                                    display: flex;
+                                    display: -webkit-flex;
+                                    flex-direction: row;
+                                    .code-title{
+                                        width: 60/$sc+rem;
+                                        line-height: 24/$sc+rem;
+                                        font-size: 12/$sc+rem;
+                                        color: #999999;
+                                    }
+                                    .code-content{
+                                        flex: 1;
+                                        line-height: 24/$sc+rem;
+                                        font-size: 12/$sc+rem;
+                                        color: #394043;
+                                    }
+                                }
+                                .footer-term{
+                                    width: 100%;
+                                    padding: 0 24/$sc+rem;
+                                    margin-top: 8/$sc+rem;
+                                    box-sizing: border-box;
+                                    -webkit-box-sizing: border-box;
+                                    display: flex;
+                                    display: -webkit-flex;
+                                    flex-direction: row;
+                                    .term-title{
+                                        width: 60/$sc+rem;
+                                        line-height: 24/$sc+rem;
+                                        font-size: 12/$sc+rem;
+                                        color: #999999;
+                                    }
+                                    .term-content{
+                                        flex: 1;
+                                        line-height: 24/$sc+rem;
+                                        font-size: 12/$sc+rem;
+                                        color: #394043;
+                                    }
+                                }
+                                .footer-QR_code{
+                                    margin-top: 62/$sc+rem;
+                                    img{
+                                        display: block;
+                                        width: 120/$sc+rem;
+                                        height: 120/$sc+rem;
+                                        margin: 0 auto;
+                                    }
+                                }
+                            }
+                        }
+                        .coupon-details-alreadyUsed{
+                            display: none;
+                            width: 343/$sc+rem;
+                            height: 536/$sc+rem;
+                            margin: 0 auto;
+                            background: url(../img/Couponbox.png) no-repeat;
+                            background-size: 343/$sc+rem 537/$sc+rem;
+                            position: relative;
+                            .details-alreadyUsed-header{
+                                width: 100%;
+                                height: 142/$sc+rem;
+                                background: url(../img/bestowlogo.png) no-repeat;
+                                background-size: 110/$sc+rem 110/$sc+rem;
+                                background-position-x: 93%;
+                                background-position-y: 10/$sc+rem;
+                                .header-price{
+                                    display: block;
+                                    padding-top: 32/$sc+rem;
+                                    line-height: 56/$sc+rem;
+                                    text-align: center;
+                                    font-family: PingFang-SC-Medium;
+                                    font-size: 40/$sc+rem;
+                                    color: #0099EB;
+                                }
+                                .header-txt{
+                                    display: block;
+                                    line-height: 22/$sc+rem;
+                                    text-align: center;
+                                    font-size: 16/$sc+rem;
+                                    color: #0099EB;
+                                }
+                            }
+                            .details-alreadyUsed-line{
+                                width: 280/$sc+rem;
+                                height: 1px;
+                                margin: 0 auto;
+                                background: #EEEEEE;
+                            }
+                            .details-alreadyUsed-footer{
+                                width: 100%;
+                                .footer-title{
+                                    line-height: 64/$sc+rem;
+                                    padding-top: 8/$sc+rem;
+                                    font-size: 14/$sc+rem;
+                                    text-align: center;
+                                    color: #394043;
+                                }
+                                .footer-detailed{
+                                    width: 100%;
+                                    padding: 0 24/$sc+rem;
+                                    box-sizing: border-box;
+                                    -webkit-box-sizing: border-box;
+                                    display: flex;
+                                    display: -webkit-flex;
+                                    flex-direction: row;
+                                    .detailed-title{
+                                        width: 60/$sc+rem;
+                                        line-height: 24/$sc+rem;
+                                        font-size: 12/$sc+rem;
+                                        color: #999999;
+                                    }
+                                    .detailed-content{
+                                        flex: 1;
+                                        line-height: 24/$sc+rem;
+                                        font-size: 12/$sc+rem;
+                                        color: #394043;
+                                    }
+                                }
+                                .footer-code{
+                                    width: 100%;
+                                    padding: 0 24/$sc+rem;
+                                    margin-top: 8/$sc+rem;
+                                    box-sizing: border-box;
+                                    -webkit-box-sizing: border-box;
+                                    display: flex;
+                                    display: -webkit-flex;
+                                    flex-direction: row;
+                                    .code-title{
+                                        width: 60/$sc+rem;
+                                        line-height: 24/$sc+rem;
+                                        font-size: 12/$sc+rem;
+                                        color: #999999;
+                                    }
+                                    .code-content{
+                                        flex: 1;
+                                        line-height: 24/$sc+rem;
+                                        font-size: 12/$sc+rem;
+                                        color: #394043;
+                                    }
+                                }
+                                .footer-term{
+                                    width: 100%;
+                                    padding: 0 24/$sc+rem;
+                                    margin-top: 8/$sc+rem;
+                                    box-sizing: border-box;
+                                    -webkit-box-sizing: border-box;
+                                    display: flex;
+                                    display: -webkit-flex;
+                                    flex-direction: row;
+                                    .term-title{
+                                        width: 60/$sc+rem;
+                                        line-height: 24/$sc+rem;
+                                        font-size: 12/$sc+rem;
+                                        color: #999999;
+                                    }
+                                    .term-content{
+                                        flex: 1;
+                                        line-height: 24/$sc+rem;
+                                        font-size: 12/$sc+rem;
+                                        color: #394043;
+                                    }
+                                }
+                                .footer-QR_code{
+                                    margin-top: 62/$sc+rem;
+                                    img{
+                                        display: block;
+                                        width: 120/$sc+rem;
+                                        height: 120/$sc+rem;
+                                        margin: 0 auto;
+                                    }
+                                }
+                            }
+                        }
+                        .coupon-details-overdue{
+                            display: none;
+                            width: 343/$sc+rem;
+                            height: 536/$sc+rem;
+                            margin: 0 auto;
+                            background: url(../img/Couponbox.png) no-repeat;
+                            background-size: 343/$sc+rem 537/$sc+rem;
+                            position: relative;
+                            .details-overdue-header{
+                                width: 100%;
+                                height: 142/$sc+rem;
+                                .header-price{
+                                    display: block;
+                                    padding-top: 32/$sc+rem;
+                                    line-height: 56/$sc+rem;
+                                    text-align: center;
+                                    font-family: PingFang-SC-Medium;
+                                    font-size: 40/$sc+rem;
+                                    color: #cccccc;
+                                }
+                                .header-txt{
+                                    display: block;
+                                    line-height: 22/$sc+rem;
+                                    text-align: center;
+                                    font-size: 16/$sc+rem;
+                                    color: #cccccc;
+                                }
+                            }
+                            .details-overdue-line{
+                                width: 280/$sc+rem;
+                                height: 1px;
+                                margin: 0 auto;
+                                background: #EEEEEE;
+                            }
+                            .details-overdue-footer{
+                                width: 100%;
+                                .footer-title{
+                                    line-height: 64/$sc+rem;
+                                    padding-top: 8/$sc+rem;
+                                    font-size: 14/$sc+rem;
+                                    text-align: center;
+                                    color: #394043;
+                                }
+                                .footer-detailed{
+                                    width: 100%;
+                                    padding: 0 24/$sc+rem;
+                                    box-sizing: border-box;
+                                    -webkit-box-sizing: border-box;
+                                    display: flex;
+                                    display: -webkit-flex;
+                                    flex-direction: row;
+                                    .detailed-title{
+                                        width: 60/$sc+rem;
+                                        line-height: 24/$sc+rem;
+                                        font-size: 12/$sc+rem;
+                                        color: #999999;
+                                    }
+                                    .detailed-content{
+                                        flex: 1;
+                                        line-height: 24/$sc+rem;
+                                        font-size: 12/$sc+rem;
+                                        color: #394043;
+                                    }
+                                }
+                                .footer-code{
+                                    width: 100%;
+                                    padding: 0 24/$sc+rem;
+                                    margin-top: 8/$sc+rem;
+                                    box-sizing: border-box;
+                                    -webkit-box-sizing: border-box;
+                                    display: flex;
+                                    display: -webkit-flex;
+                                    flex-direction: row;
+                                    .code-title{
+                                        width: 60/$sc+rem;
+                                        line-height: 24/$sc+rem;
+                                        font-size: 12/$sc+rem;
+                                        color: #999999;
+                                    }
+                                    .code-content{
+                                        flex: 1;
+                                        line-height: 24/$sc+rem;
+                                        font-size: 12/$sc+rem;
+                                        color: #394043;
+                                    }
+                                }
+                                .footer-term{
+                                    width: 100%;
+                                    padding: 0 24/$sc+rem;
+                                    margin-top: 8/$sc+rem;
+                                    box-sizing: border-box;
+                                    -webkit-box-sizing: border-box;
+                                    display: flex;
+                                    display: -webkit-flex;
+                                    flex-direction: row;
+                                    .term-title{
+                                        width: 60/$sc+rem;
+                                        line-height: 24/$sc+rem;
+                                        font-size: 12/$sc+rem;
+                                        color: #999999;
+                                    }
+                                    .term-content{
+                                        flex: 1;
+                                        line-height: 24/$sc+rem;
+                                        font-size: 12/$sc+rem;
+                                        color: #394043;
+                                    }
+                                }
+                                .footer-QR_code{
+                                    margin-top: 62/$sc+rem;
+                                    img{
+                                        display: block;
+                                        width: 120/$sc+rem;
+                                        height: 120/$sc+rem;
+                                        margin: 0 auto;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }

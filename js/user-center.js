@@ -841,4 +841,92 @@ $(function() {
 	var CoverdueS = new IScroll('.personal-coupon-pushsection .coupon-overdue', {
 		scrollbars: false
 	})
+	
+	
+	//优惠券使用教程弹框
+	$(".personal-coupon-pushfooter").tap(function(){
+		$(".using-tutorials-push").css("left","0")
+	})
+	$(".using-tutorials-pushheader .return").tap(function(){
+		$(".using-tutorials-push").css("left",setw+5)
+	})
+	
+//优惠券详情
+	//点击未使用优惠券
+	var notUsed_Z=$(".coupon-details-pushsection .coupon-details-notUsed")
+	$(".personal-coupon-pushsection .notUsed").tap(function(){
+		//获取优惠券数据
+		var dataTitle=$(this).find(".hide_data .dataTitle").html()
+		var dataDetailed=$(this).find(".hide_data .dataDetailed").html()
+		var dataCode=$(this).find(".hide_data .dataCode").html()
+		var dataQR_code=$(this).find(".hide_data .dataQR_code").html()
+		var dataValidity=$(this).find(".hide_data .dataValidity").html()
+		var contentTitle=$(this).find(".rightPart .content-title").html()
+		//渲染优惠券数据
+		notUsed_Z.find(".header-price").html(dataTitle)
+		notUsed_Z.find(".detailed-content").html(dataDetailed)
+		notUsed_Z.find(".code-content").html(dataCode)
+		notUsed_Z.find(".footer-QR_code").html(dataQR_code)
+		notUsed_Z.find(".footer-title").html(contentTitle)
+		notUsed_Z.find(".term-content").html(dataValidity)
+		
+		$(".coupon-details-push").css("left","0")
+		$(".coupon-details-pushsection .coupon-details-notUsed").css("display","block").siblings().css("display","none")
+	})
+	$(".coupon-details-pushheader .return").tap(function(){
+		$(".coupon-details-push").css("left",setw+5)
+	})
+	
+	
+	//点击已使用优惠券
+	var alreadyUsed_Z=$(".coupon-details-pushsection .coupon-details-alreadyUsed")
+	$(".personal-coupon-pushsection .alreadyUsed").tap(function(){
+		//获取优惠券数据
+		var dataTitle=$(this).find(".hide_data .dataTitle").html()
+		var dataDetailed=$(this).find(".hide_data .dataDetailed").html()
+		var dataCode=$(this).find(".hide_data .dataCode").html()
+		var dataQR_code=$(this).find(".hide_data .dataQR_code").html()
+		var dataValidity=$(this).find(".hide_data .dataValidity").html()
+		var contentTitle=$(this).find(".rightPart .content-title").html()
+		//渲染优惠券数据
+		alreadyUsed_Z.find(".header-price").html(dataTitle)
+		alreadyUsed_Z.find(".detailed-content").html(dataDetailed)
+		alreadyUsed_Z.find(".code-content").html(dataCode)
+		alreadyUsed_Z.find(".footer-QR_code").html(dataQR_code)
+		alreadyUsed_Z.find(".footer-title").html(contentTitle)
+		alreadyUsed_Z.find(".term-content").html(dataValidity)
+		
+		$(".coupon-details-push").css("left","0")
+		$(".coupon-details-pushsection .coupon-details-alreadyUsed").css("display","block").siblings().css("display","none")
+	})
+	$(".coupon-details-pushheader .return").tap(function(){
+		$(".coupon-details-push").css("left",setw+5)
+	})
+	
+	
+	//点击已过期优惠券
+	var overdue_Z=$(".coupon-details-pushsection .coupon-details-overdue")
+	$(".personal-coupon-pushsection .overdue").tap(function(){
+		//获取优惠券数据
+		var dataTitle=$(this).find(".hide_data .dataTitle").html()
+		var dataDetailed=$(this).find(".hide_data .dataDetailed").html()
+		var dataCode=$(this).find(".hide_data .dataCode").html()
+		var dataQR_code=$(this).find(".hide_data .dataQR_code").html()
+		var dataValidity=$(this).find(".hide_data .dataValidity").html()
+		var contentTitle=$(this).find(".rightPart .content-title").html()
+		//渲染优惠券数据
+		overdue_Z.find(".header-price").html(dataTitle)
+		overdue_Z.find(".detailed-content").html(dataDetailed)
+		overdue_Z.find(".code-content").html(dataCode)
+		overdue_Z.find(".footer-QR_code").html(dataQR_code)
+		overdue_Z.find(".footer-title").html(contentTitle)
+		overdue_Z.find(".term-content").html(dataValidity)
+		
+		$(".coupon-details-push").css("left","0")
+		$(".coupon-details-pushsection .coupon-details-overdue").css("display","block").siblings().css("display","none")
+	})
+	$(".coupon-details-pushheader .return").tap(function(){
+		$(".coupon-details-push").css("left",setw+5)
+	})
+	
 })
