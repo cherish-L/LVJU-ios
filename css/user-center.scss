@@ -54,9 +54,11 @@
     }
     
     $sc:25;
+    
     .user-center-container {
         width: 100%;
         height: 100%;
+        overflow: hidden;
         background: #f4f4f4;
         display: flex;
         display: -webkit-flex;
@@ -3760,7 +3762,7 @@
             overflow: hidden;
             background: #f4f4f4;
             position: absolute;
-            left: 0;
+            left: 380/$sc+rem;
             top: 0;
             z-index: 10;
             display: flex;
