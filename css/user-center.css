@@ -286,7 +286,7 @@ li {
   height: 100%;
   transition: all .3s;
   background: #f4f4f4;
-  position: absolute;
+  position: fixed;
   left: 15.2rem;
   top: 0;
   z-index: 10;
@@ -1267,7 +1267,7 @@ li {
   height: 100%;
   transition: all .3s;
   background: #f6f6f6;
-  position: absolute;
+  position: fixed;
   left: 15.2rem;
   top: 0;
   z-index: 10;
@@ -2211,7 +2211,7 @@ li {
   height: 100%;
   transition: all .3s;
   background: #f4f4f4;
-  position: absolute;
+  position: fixed;
   left: 15.2rem;
   top: 0;
   z-index: 10;
@@ -3259,7 +3259,7 @@ li {
   height: 100%;
   transition: all .3s;
   background: #f4f4f4;
-  position: absolute;
+  position: fixed;
   left: 15.2rem;
   top: 0;
   z-index: 10;
@@ -3562,7 +3562,7 @@ li {
   height: 100%;
   transition: all .3s;
   background: #f4f4f4;
-  position: absolute;
+  position: fixed;
   left: 15.2rem;
   top: 0;
   z-index: 10;
@@ -3865,7 +3865,7 @@ li {
   height: 100%;
   transition: all .3s;
   background: #f4f4f4;
-  position: absolute;
+  position: fixed;
   left: 15.2rem;
   top: 0;
   z-index: 10;
@@ -4254,7 +4254,7 @@ li {
   transition: all .3s;
   overflow: hidden;
   background: #f4f4f4;
-  position: absolute;
+  position: fixed;
   left: 15.2rem;
   top: 0;
   z-index: 10;
