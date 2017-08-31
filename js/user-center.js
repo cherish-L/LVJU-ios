@@ -776,6 +776,13 @@ $(function() {
 
 
 //我的优惠券	
+	$(".user-center-section .Coupon").tap(function(){
+		$(".personal-coupon-push").css("left","0")
+	})
+	$(".personal-coupon-pushheader .return").tap(function(){
+		$(".personal-coupon-push").css("left",setw+5)
+	})
+
 	$(".personal-coupon-pushsection .pushsection-wrapper").eq(0).css("left","0").siblings().css("left",setw+5)
 	$(".personal-coupon-push .coupon-nav-li").tap(function(){
 		var index=$(this).index()
