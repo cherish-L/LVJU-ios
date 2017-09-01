@@ -4714,17 +4714,15 @@
                         height: 100%;
                         background: #ffffff;
                         position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
                         box-sizing: border-box;
                         -webkit-box-sizing: border-box;
                         .using-tutorials-wrapper{
                             width: 210/$sc+rem;
                             height: 321/$sc+rem;
-                            position: absolute;
-                            top: 0;
-                            bottom: 0;
-                            left: 0;
-                            right: 0;
-                            margin: auto;
                             display: flex;
                             flex-direction: row;
                             .step-bar{
