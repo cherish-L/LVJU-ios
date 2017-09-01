@@ -940,7 +940,6 @@ $(function() {
 		$(".coupon-details-push").css("left",setw+5)
 	})
 	
-	
 	var Cdetailsh = $(".coupon-details-pushsection").height()
 	
 	var Cdetails_wh = $(".coupon-details-pushsection .pushsection-wrapper").height()
@@ -952,4 +951,13 @@ $(function() {
 	var CdetailsS = new IScroll('.coupon-details-pushsection', {
 		scrollbars: false
 	})
+	
+	//优惠券使用流程居中
+	var usingh=$(".using-tutorials-pushsection").height()
+	
+	var tutorialsh=$(".using-tutorials-pushsection .using-tutorials-wrapper .step-content").height()
+	
+	$(".using-tutorials-pushsection .using-tutorials-wrapper").css("padding-top",(usingh-tutorialsh)/2)
+	
+	
 })
