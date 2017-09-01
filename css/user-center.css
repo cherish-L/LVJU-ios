@@ -5482,7 +5482,7 @@ li {
 }
 
 .user-center-container .personal-coupon-push .coupon-details-push .coupon-details-pushsection .pushsection-wrapper .coupon-details-notUsed {
-  display: none;
+  display: block;
   width: 13.72rem;
   height: 21.44rem;
   margin: 0 auto;
