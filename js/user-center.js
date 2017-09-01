@@ -941,6 +941,18 @@ $(function() {
 	})
 	
 	
+	
+	var Cdetailsh = $(".coupon-details-pushsection").height()
+	
+	var Cdetails_wh = $(".coupon-details-pushsection .pushsection-wrapper").height()
+	
+	if(Cdetails_wh<=Cdetailsh){
+		$(".coupon-details-pushsection .pushsection-wrapper").height(Cdetailsh+1)
+	}
+	if(Cdetails_wh>Cdetailsh){
+		$(".coupon-details-pushsection .pushsection-wrapper").height(Cdetails_wh)
+	}
+	
 	var CdetailsS = new IScroll('.coupon-details-pushsection', {
 		scrollbars: false
 	})
