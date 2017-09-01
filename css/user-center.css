@@ -5279,7 +5279,7 @@ li {
   background: #f4f4f4;
   overflow: hidden;
   position: absolute;
-  left: 15.2rem;
+  left: 0;
   top: 0;
   z-index: 10;
   display: flex;
@@ -5328,7 +5328,6 @@ li {
   flex: 1;
   -webkit-flex: 1;
   overflow: hidden;
-  position: relative;
   background: #ffffff;
 }
 
