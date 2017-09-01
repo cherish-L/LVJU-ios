@@ -4719,11 +4719,8 @@
                         .using-tutorials-wrapper{
                             width: 210/$sc+rem;
                             height: 321/$sc+rem;
-                            position: absolute;
-                            left: 50%;
-                            top: 50%;
-                            margin-left:-105px;
-                            margin-top:-160px;
+                            margin: 0 auto;
+                            padding-top: 100/$sc+rem;
                             display: flex;
                             flex-direction: row;
                             .step-bar{

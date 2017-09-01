@@ -5343,11 +5343,8 @@ li {
 .user-center-container .personal-coupon-push .using-tutorials-push .using-tutorials-pushsection .pushsection-wrapper .using-tutorials-wrapper {
   width: 8.4rem;
   height: 12.84rem;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-left: -105px;
-  margin-top: -160px;
+  margin: 0 auto;
+  padding-top: 4rem;
   display: flex;
   flex-direction: row;
 }
