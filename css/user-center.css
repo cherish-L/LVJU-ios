@@ -5339,14 +5339,12 @@ li {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
 }
 
 .user-center-container .personal-coupon-push .using-tutorials-push .using-tutorials-pushsection .pushsection-wrapper .using-tutorials-wrapper {
   width: 8.4rem;
   height: 12.84rem;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
 }
