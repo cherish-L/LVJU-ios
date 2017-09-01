@@ -5336,15 +5336,18 @@ li {
   height: 100%;
   background: #ffffff;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 .user-center-container .personal-coupon-push .using-tutorials-push .using-tutorials-pushsection .pushsection-wrapper .using-tutorials-wrapper {
   width: 8.4rem;
   height: 12.84rem;
-  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -105px;
+  margin-top: -160px;
   display: flex;
   flex-direction: row;
 }
