@@ -2943,6 +2943,7 @@
                 flex: 1;
                 -webkit-flex: 1;
                 overflow: hidden;
+                position: relative;
                 background: #F4F4F4;
                 .pushsection-wrapper {
                     width: 100%;
@@ -3214,6 +3215,7 @@
                 flex: 1;
                 -webkit-flex: 1;
                 overflow: hidden;
+                position: relative;
                 background: #F4F4F4;
                 .pushsection-wrapper {
                     width: 100%;
@@ -3783,7 +3785,7 @@
             overflow: hidden;
             background: #f4f4f4;
             position: fixed;
-            left: 0;
+            left: 380/$sc+rem;
             top: 0;
             z-index: 10;
             display: flex;
@@ -5276,433 +5278,436 @@
                     background: #f4f4f4;
                     .pushsection-wrapper {
                         width: 100%;
-                        padding-top: 28/$sc+rem;
                         background: #f4f4f4;
                         position: relative;
                         box-sizing: border-box;
                         -webkit-box-sizing: border-box;
-                        .lookup-coupon-input{
+                        .pushsection-wrapper-box{
+                            padding-top: 28/$sc+rem;
                             width: 100%;
-                            height: 44/$sc+rem;
-                            padding: 0 24/$sc+rem;
-                            box-sizing: border-box;
-                            -webkit-box-sizing: border-box;
-                            .input-wrapper{
+                            .lookup-coupon-input{
                                 width: 100%;
-                                height: 100%;
-                                position: relative;
-                                border-bottom: 1px solid #EEEEEE;
-                                .lookup_ipt{
-                                    width: 100%;
-                                    height: 100%;
-                                    line-height: 20/$sc+rem;
-                                    font-size: 14/$sc+rem;
-                                    color: #394043;
-                                    background: transparent;
-                                    padding: 12/$sc+rem 4/$sc+rem;
-                                    box-sizing: border-box;
-                                    -webkit-box-sizing: border-box;
-                                }
-                                a{
-                                    display: none;
-                                    width: 38/$sc+rem;
-                                    height: 100%;
-                                    background: url(../img/empty.png) no-repeat center center #f4f4f4;
-                                    background-size: 22/$sc+rem 22/$sc+rem;
-                                    position: absolute;
-                                    top: 0;
-                                    right: 0;
-                                }
-                            }
-                        }
-                        .lookup-coupon-btn{
-                            width: 100%;
-                            padding: 24/$sc+rem 24/$sc+rem 0;
-                            box-sizing: border-box;
-                            -webkit-box-sizing: border-box;
-                            .btn-wrapper{
-                                width: 100%;
-                                height: 46/$sc+rem;
-                                line-height: 46/$sc+rem;
-                                text-align: center;
-                                font-size: 16/$sc+rem;
-                                color: #FFFFFF;
-                                background: #0099EB;
-                                border-radius: 2/$sc+rem;
-                            }
-                        }
-                        .lookup-coupon-results{
-                            display: none;
-                            width: 100%;
-                            padding: 32/$sc+rem 16/$sc+rem;
-                            box-sizing: border-box;
-                            -webkit-box-sizing: border-box;
-                            .results-title{
-                                width: 100%;
-                                height: 52/$sc+rem;
-                                font-weight: normal;
-                                line-height: 52/$sc+rem;
-                                font-size: 14/$sc+rem;
-                                color: #6C7072;
-                            }
-                            .results-coupon{
-                                width: 100%;
+                                height: 44/$sc+rem;
+                                padding: 0 24/$sc+rem;
                                 box-sizing: border-box;
                                 -webkit-box-sizing: border-box;
-                                .notUsed {
-                                    margin-top: 16/$sc+rem;
-                                    overflow: hidden;
+                                .input-wrapper{
                                     width: 100%;
-                                    height: 120/$sc+rem;
+                                    height: 100%;
                                     position: relative;
-                                    .leftPart {
-                                        width: 118/$sc+rem;
-                                        height: 100%;
-                                        position: absolute;
-                                        top: 0;
-                                        left: 0;
-                                        .leftPart-wrapper {
-                                            width: 100%;
-                                            height: 100%;
-                                            position: relative;
-                                            .leftPart-img {
-                                                width: 120/$sc+rem;
-                                                height: 100%;
-                                            }
-                                            .leftPart-content {
-                                                width: 100%;
-                                                height: 36/$sc+rem;
-                                                text-align: center;
-                                                font-family: PingFang-SC-Medium;
-                                                color: #FFFFFF;
-                                                position: absolute;
-                                                top: 28/$sc+rem;
-                                                left: 0;
-                                                display: flex;
-                                                justify-content: center;
-                                                .currency {
-                                                    font-size: 16/$sc+rem;
-                                                    margin-top: 10/$sc+rem;
-                                                }
-                                                .content {
-                                                    line-height: 36/$sc+rem;
-                                                    font-size: 26/$sc+rem;
-                                                }
-                                            }
-                                            .leftPart-txt {
-                                                width: 100%;
-                                                height: 32/$sc+rem;
-                                                text-align: center;
-                                                font-family: PingFang-SC-Medium;
-                                                line-height: 16/$sc+rem;
-                                                font-size: 12/$sc+rem;
-                                                color: #FFFFFF;
-                                                position: absolute;
-                                                top: 72/$sc+rem;
-                                                left: 0;
-                                            }
-                                        }
-                                    }
-                                    .rightPart {
+                                    border-bottom: 1px solid #EEEEEE;
+                                    .lookup_ipt{
                                         width: 100%;
                                         height: 100%;
-                                        padding-left: 118/$sc+rem;
+                                        line-height: 20/$sc+rem;
+                                        font-size: 14/$sc+rem;
+                                        color: #394043;
+                                        background: transparent;
+                                        padding: 12/$sc+rem 4/$sc+rem;
                                         box-sizing: border-box;
                                         -webkit-box-sizing: border-box;
-                                        .rightPart-wrapper {
-                                            width: 100%;
-                                            height: 100%;
-                                            padding: 13/$sc+rem 0 13/$sc+rem 18/$sc+rem;
-                                            background: #FFFFFF;
-                                            box-sizing: border-box;
-                                            -webkit-box-sizing: border-box;
-                                            display: flex;
-                                            .rightPart-content {
-                                                flex: 1;
-                                                -webkit-flex: 1;
-                                                .content-title {
-                                                    margin-top: 19/$sc+rem;
-                                                    line-height: 20/$sc+rem;
-                                                    font-family: PingFang-SC-Medium;
-                                                    font-size: 14/$sc+rem;
-                                                    color: #394043;
-                                                    overflow: hidden;
-                                                    text-overflow: ellipsis;
-                                                    display: -webkit-box;
-                                                    -webkit-line-clamp: 1;
-                                                    -webkit-box-orient: vertical;
-                                                }
-                                                .termOf-validity {
-                                                    margin-top: 4/$sc+rem;
-                                                    font-size: 12/$sc+rem;
-                                                    color: #999999;
-                                                    line-height: 18/$sc+rem;
-                                                }
-                                                .remaining-time {
-                                                    font-size: 12/$sc+rem;
-                                                    color: #999999;
-                                                    line-height: 18/$sc+rem;
-                                                }
-                                            }
-                                            .rightPart-details {
-                                                width: 40/$sc+rem;
-                                                height: 100%;
-                                                position: relative;
-                                                border-left: 1px dotted #cccccc;
-                                                span {
-                                                    width: 14/$sc+rem;
-                                                    line-height: 20/$sc+rem;
-                                                    height: 40/$sc+rem;
-                                                    font-size: 14/$sc+rem;
-                                                    color: #0099EB;
-                                                    position: absolute;
-                                                    top: 0;
-                                                    bottom: 0;
-                                                    left: 0;
-                                                    right: 0;
-                                                    margin: auto;
-                                                }
-                                            }
-                                        }
                                     }
-                                    .hide-data{
+                                    a{
                                         display: none;
-                                    }
-                                }
-                                .alreadyUsed {
-                                    margin-top: 16/$sc+rem;
-                                    overflow: hidden;
-                                    width: 100%;
-                                    height: 120/$sc+rem;
-                                    position: relative;
-                                    .leftPart {
-                                        width: 118/$sc+rem;
+                                        width: 38/$sc+rem;
                                         height: 100%;
+                                        background: url(../img/empty.png) no-repeat center center #f4f4f4;
+                                        background-size: 22/$sc+rem 22/$sc+rem;
                                         position: absolute;
                                         top: 0;
-                                        left: 0;
-                                        .leftPart-wrapper {
-                                            width: 100%;
-                                            height: 100%;
-                                            position: relative;
-                                            .leftPart-img {
-                                                width: 120/$sc+rem;
-                                                height: 100%;
-                                            }
-                                            .leftPart-content {
-                                                width: 100%;
-                                                height: 36/$sc+rem;
-                                                text-align: center;
-                                                font-family: PingFang-SC-Medium;
-                                                color: #FFFFFF;
-                                                position: absolute;
-                                                top: 28/$sc+rem;
-                                                left: 0;
-                                                display: flex;
-                                                justify-content: center;
-                                                .currency {
-                                                    font-size: 16/$sc+rem;
-                                                    margin-top: 10/$sc+rem;
-                                                }
-                                                .content {
-                                                    line-height: 36/$sc+rem;
-                                                    font-size: 26/$sc+rem;
-                                                }
-                                            }
-                                            .leftPart-txt {
-                                                width: 100%;
-                                                height: 32/$sc+rem;
-                                                text-align: center;
-                                                line-height: 16/$sc+rem;
-                                                font-size: 12/$sc+rem;
-                                                color: #FFFFFF;
-                                                position: absolute;
-                                                top: 72/$sc+rem;
-                                                left: 0;
-                                            }
-                                        }
-                                    }
-                                    .rightPart {
-                                        width: 100%;
-                                        height: 100%;
-                                        padding-left: 118/$sc+rem;
-                                        box-sizing: border-box;
-                                        -webkit-box-sizing: border-box;
-                                        .rightPart-wrapper {
-                                            width: 100%;
-                                            height: 100%;
-                                            padding: 13/$sc+rem 0 13/$sc+rem 18/$sc+rem;
-                                            background: #FFFFFF;
-                                            box-sizing: border-box;
-                                            -webkit-box-sizing: border-box;
-                                            display: flex;
-                                            .rightPart-content {
-                                                flex: 1;
-                                                -webkit-flex: 1;
-                                                .content-title {
-                                                    margin-top: 19/$sc+rem;
-                                                    line-height: 20/$sc+rem;
-                                                    font-family: PingFang-SC-Medium;
-                                                    font-size: 14/$sc+rem;
-                                                    color: #394043;
-                                                    overflow: hidden;
-                                                    text-overflow: ellipsis;
-                                                    display: -webkit-box;
-                                                    -webkit-line-clamp: 1;
-                                                    -webkit-box-orient: vertical;
-                                                }
-                                                .termOf-validity {
-                                                    margin-top: 4/$sc+rem;
-                                                    font-size: 12/$sc+rem;
-                                                    color: #999999;
-                                                    line-height: 18/$sc+rem;
-                                                }
-                                                .remaining-time {
-                                                    font-size: 12/$sc+rem;
-                                                    color: #999999;
-                                                    line-height: 18/$sc+rem;
-                                                }
-                                            }
-                                            .rightPart-details {
-                                                width: 40/$sc+rem;
-                                                height: 100%;
-                                                position: relative;
-                                                border-left: 1px dotted #cccccc;
-                                                span {
-                                                    width: 14/$sc+rem;
-                                                    line-height: 20/$sc+rem;
-                                                    height: 40/$sc+rem;
-                                                    font-size: 14/$sc+rem;
-                                                    color: #8ACDF2;
-                                                    position: absolute;
-                                                    top: 0;
-                                                    bottom: 0;
-                                                    left: 0;
-                                                    right: 0;
-                                                    margin: auto;
-                                                }
-                                            }
-                                        }
+                                        right: 0;
                                     }
                                 }
-                                .overdue {
-                                    margin-top: 16/$sc+rem;
-                                    overflow: hidden;
+                            }
+                            .lookup-coupon-btn{
+                                width: 100%;
+                                padding: 24/$sc+rem 24/$sc+rem 0;
+                                box-sizing: border-box;
+                                -webkit-box-sizing: border-box;
+                                .btn-wrapper{
                                     width: 100%;
-                                    height: 120/$sc+rem;
-                                    position: relative;
-                                    .leftPart {
-                                        width: 118/$sc+rem;
-                                        height: 100%;
-                                        position: absolute;
-                                        top: 0;
-                                        left: 0;
-                                        .leftPart-wrapper {
-                                            width: 100%;
-                                            height: 100%;
-                                            position: relative;
-                                            .leftPart-img {
-                                                width: 120/$sc+rem;
-                                                height: 100%;
-                                            }
-                                            .leftPart-content {
-                                                width: 100%;
-                                                height: 36/$sc+rem;
-                                                text-align: center;
-                                                font-family: PingFang-SC-Medium;
-                                                color: #FFFFFF;
-                                                position: absolute;
-                                                top: 28/$sc+rem;
-                                                left: 0;
-                                                display: flex;
-                                                justify-content: center;
-                                                .currency {
-                                                    font-size: 16/$sc+rem;
-                                                    margin-top: 10/$sc+rem;
-                                                }
-                                                .content {
-                                                    line-height: 36/$sc+rem;
-                                                    font-size: 26/$sc+rem;
-                                                }
-                                            }
-                                            .leftPart-txt {
-                                                width: 100%;
-                                                height: 32/$sc+rem;
-                                                text-align: center;
-                                                line-height: 16/$sc+rem;
-                                                font-size: 12/$sc+rem;
-                                                color: #FFFFFF;
-                                                position: absolute;
-                                                top: 72/$sc+rem;
-                                                left: 0;
-                                            }
-                                        }
-                                    }
-                                    .rightPart {
+                                    height: 46/$sc+rem;
+                                    line-height: 46/$sc+rem;
+                                    text-align: center;
+                                    font-size: 16/$sc+rem;
+                                    color: #FFFFFF;
+                                    background: #0099EB;
+                                    border-radius: 2/$sc+rem;
+                                }
+                            }
+                            .lookup-coupon-results{
+                                display: none;
+                                width: 100%;
+                                padding: 32/$sc+rem 16/$sc+rem;
+                                box-sizing: border-box;
+                                -webkit-box-sizing: border-box;
+                                .results-title{
+                                    width: 100%;
+                                    height: 52/$sc+rem;
+                                    font-weight: normal;
+                                    line-height: 52/$sc+rem;
+                                    font-size: 14/$sc+rem;
+                                    color: #6C7072;
+                                }
+                                .results-coupon{
+                                    width: 100%;
+                                    box-sizing: border-box;
+                                    -webkit-box-sizing: border-box;
+                                    .notUsed {
+                                        margin-top: 16/$sc+rem;
+                                        overflow: hidden;
                                         width: 100%;
-                                        height: 100%;
-                                        padding-left: 118/$sc+rem;
-                                        box-sizing: border-box;
-                                        -webkit-box-sizing: border-box;
-                                        .rightPart-wrapper {
-                                            width: 100%;
+                                        height: 120/$sc+rem;
+                                        position: relative;
+                                        .leftPart {
+                                            width: 118/$sc+rem;
                                             height: 100%;
-                                            padding: 13/$sc+rem 0 13/$sc+rem 18/$sc+rem;
-                                            background: #FFFFFF;
-                                            box-sizing: border-box;
-                                            -webkit-box-sizing: border-box;
-                                            display: flex;
-                                            .rightPart-content {
-                                                flex: 1;
-                                                -webkit-flex: 1;
-                                                .content-title {
-                                                    margin-top: 19/$sc+rem;
-                                                    line-height: 20/$sc+rem;
-                                                    font-family: PingFang-SC-Medium;
-                                                    font-size: 14/$sc+rem;
-                                                    color: #394043;
-                                                    overflow: hidden;
-                                                    text-overflow: ellipsis;
-                                                    display: -webkit-box;
-                                                    -webkit-line-clamp: 1;
-                                                    -webkit-box-orient: vertical;
-                                                }
-                                                .termOf-validity {
-                                                    margin-top: 4/$sc+rem;
-                                                    font-size: 12/$sc+rem;
-                                                    color: #999999;
-                                                    line-height: 18/$sc+rem;
-                                                }
-                                                .remaining-time {
-                                                    font-size: 12/$sc+rem;
-                                                    color: #999999;
-                                                    line-height: 18/$sc+rem;
-                                                }
-                                            }
-                                            .rightPart-details {
-                                                width: 40/$sc+rem;
+                                            position: absolute;
+                                            top: 0;
+                                            left: 0;
+                                            .leftPart-wrapper {
+                                                width: 100%;
                                                 height: 100%;
                                                 position: relative;
-                                                border-left: 1px dotted #cccccc;
-                                                span {
-                                                    width: 14/$sc+rem;
-                                                    line-height: 20/$sc+rem;
-                                                    height: 40/$sc+rem;
-                                                    font-size: 14/$sc+rem;
-                                                    color: #999999;
+                                                .leftPart-img {
+                                                    width: 120/$sc+rem;
+                                                    height: 100%;
+                                                }
+                                                .leftPart-content {
+                                                    width: 100%;
+                                                    height: 36/$sc+rem;
+                                                    text-align: center;
+                                                    font-family: PingFang-SC-Medium;
+                                                    color: #FFFFFF;
                                                     position: absolute;
-                                                    top: 0;
-                                                    bottom: 0;
+                                                    top: 28/$sc+rem;
                                                     left: 0;
-                                                    right: 0;
-                                                    margin: auto;
+                                                    display: flex;
+                                                    justify-content: center;
+                                                    .currency {
+                                                        font-size: 16/$sc+rem;
+                                                        margin-top: 10/$sc+rem;
+                                                    }
+                                                    .content {
+                                                        line-height: 36/$sc+rem;
+                                                        font-size: 26/$sc+rem;
+                                                    }
+                                                }
+                                                .leftPart-txt {
+                                                    width: 100%;
+                                                    height: 32/$sc+rem;
+                                                    text-align: center;
+                                                    font-family: PingFang-SC-Medium;
+                                                    line-height: 16/$sc+rem;
+                                                    font-size: 12/$sc+rem;
+                                                    color: #FFFFFF;
+                                                    position: absolute;
+                                                    top: 72/$sc+rem;
+                                                    left: 0;
+                                                }
+                                            }
+                                        }
+                                        .rightPart {
+                                            width: 100%;
+                                            height: 100%;
+                                            padding-left: 118/$sc+rem;
+                                            box-sizing: border-box;
+                                            -webkit-box-sizing: border-box;
+                                            .rightPart-wrapper {
+                                                width: 100%;
+                                                height: 100%;
+                                                padding: 13/$sc+rem 0 13/$sc+rem 18/$sc+rem;
+                                                background: #FFFFFF;
+                                                box-sizing: border-box;
+                                                -webkit-box-sizing: border-box;
+                                                display: flex;
+                                                .rightPart-content {
+                                                    flex: 1;
+                                                    -webkit-flex: 1;
+                                                    .content-title {
+                                                        margin-top: 19/$sc+rem;
+                                                        line-height: 20/$sc+rem;
+                                                        font-family: PingFang-SC-Medium;
+                                                        font-size: 14/$sc+rem;
+                                                        color: #394043;
+                                                        overflow: hidden;
+                                                        text-overflow: ellipsis;
+                                                        display: -webkit-box;
+                                                        -webkit-line-clamp: 1;
+                                                        -webkit-box-orient: vertical;
+                                                    }
+                                                    .termOf-validity {
+                                                        margin-top: 4/$sc+rem;
+                                                        font-size: 12/$sc+rem;
+                                                        color: #999999;
+                                                        line-height: 18/$sc+rem;
+                                                    }
+                                                    .remaining-time {
+                                                        font-size: 12/$sc+rem;
+                                                        color: #999999;
+                                                        line-height: 18/$sc+rem;
+                                                    }
+                                                }
+                                                .rightPart-details {
+                                                    width: 40/$sc+rem;
+                                                    height: 100%;
+                                                    position: relative;
+                                                    border-left: 1px dotted #cccccc;
+                                                    span {
+                                                        width: 14/$sc+rem;
+                                                        line-height: 20/$sc+rem;
+                                                        height: 40/$sc+rem;
+                                                        font-size: 14/$sc+rem;
+                                                        color: #0099EB;
+                                                        position: absolute;
+                                                        top: 0;
+                                                        bottom: 0;
+                                                        left: 0;
+                                                        right: 0;
+                                                        margin: auto;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .hide-data{
+                                            display: none;
+                                        }
+                                    }
+                                    .alreadyUsed {
+                                        margin-top: 16/$sc+rem;
+                                        overflow: hidden;
+                                        width: 100%;
+                                        height: 120/$sc+rem;
+                                        position: relative;
+                                        .leftPart {
+                                            width: 118/$sc+rem;
+                                            height: 100%;
+                                            position: absolute;
+                                            top: 0;
+                                            left: 0;
+                                            .leftPart-wrapper {
+                                                width: 100%;
+                                                height: 100%;
+                                                position: relative;
+                                                .leftPart-img {
+                                                    width: 120/$sc+rem;
+                                                    height: 100%;
+                                                }
+                                                .leftPart-content {
+                                                    width: 100%;
+                                                    height: 36/$sc+rem;
+                                                    text-align: center;
+                                                    font-family: PingFang-SC-Medium;
+                                                    color: #FFFFFF;
+                                                    position: absolute;
+                                                    top: 28/$sc+rem;
+                                                    left: 0;
+                                                    display: flex;
+                                                    justify-content: center;
+                                                    .currency {
+                                                        font-size: 16/$sc+rem;
+                                                        margin-top: 10/$sc+rem;
+                                                    }
+                                                    .content {
+                                                        line-height: 36/$sc+rem;
+                                                        font-size: 26/$sc+rem;
+                                                    }
+                                                }
+                                                .leftPart-txt {
+                                                    width: 100%;
+                                                    height: 32/$sc+rem;
+                                                    text-align: center;
+                                                    line-height: 16/$sc+rem;
+                                                    font-size: 12/$sc+rem;
+                                                    color: #FFFFFF;
+                                                    position: absolute;
+                                                    top: 72/$sc+rem;
+                                                    left: 0;
+                                                }
+                                            }
+                                        }
+                                        .rightPart {
+                                            width: 100%;
+                                            height: 100%;
+                                            padding-left: 118/$sc+rem;
+                                            box-sizing: border-box;
+                                            -webkit-box-sizing: border-box;
+                                            .rightPart-wrapper {
+                                                width: 100%;
+                                                height: 100%;
+                                                padding: 13/$sc+rem 0 13/$sc+rem 18/$sc+rem;
+                                                background: #FFFFFF;
+                                                box-sizing: border-box;
+                                                -webkit-box-sizing: border-box;
+                                                display: flex;
+                                                .rightPart-content {
+                                                    flex: 1;
+                                                    -webkit-flex: 1;
+                                                    .content-title {
+                                                        margin-top: 19/$sc+rem;
+                                                        line-height: 20/$sc+rem;
+                                                        font-family: PingFang-SC-Medium;
+                                                        font-size: 14/$sc+rem;
+                                                        color: #394043;
+                                                        overflow: hidden;
+                                                        text-overflow: ellipsis;
+                                                        display: -webkit-box;
+                                                        -webkit-line-clamp: 1;
+                                                        -webkit-box-orient: vertical;
+                                                    }
+                                                    .termOf-validity {
+                                                        margin-top: 4/$sc+rem;
+                                                        font-size: 12/$sc+rem;
+                                                        color: #999999;
+                                                        line-height: 18/$sc+rem;
+                                                    }
+                                                    .remaining-time {
+                                                        font-size: 12/$sc+rem;
+                                                        color: #999999;
+                                                        line-height: 18/$sc+rem;
+                                                    }
+                                                }
+                                                .rightPart-details {
+                                                    width: 40/$sc+rem;
+                                                    height: 100%;
+                                                    position: relative;
+                                                    border-left: 1px dotted #cccccc;
+                                                    span {
+                                                        width: 14/$sc+rem;
+                                                        line-height: 20/$sc+rem;
+                                                        height: 40/$sc+rem;
+                                                        font-size: 14/$sc+rem;
+                                                        color: #8ACDF2;
+                                                        position: absolute;
+                                                        top: 0;
+                                                        bottom: 0;
+                                                        left: 0;
+                                                        right: 0;
+                                                        margin: auto;
+                                                    }
                                                 }
                                             }
                                         }
                                     }
-                                }
-                                .coupon-whole-li:first-child {
-                                    margin-top: 0;
+                                    .overdue {
+                                        margin-top: 16/$sc+rem;
+                                        overflow: hidden;
+                                        width: 100%;
+                                        height: 120/$sc+rem;
+                                        position: relative;
+                                        .leftPart {
+                                            width: 118/$sc+rem;
+                                            height: 100%;
+                                            position: absolute;
+                                            top: 0;
+                                            left: 0;
+                                            .leftPart-wrapper {
+                                                width: 100%;
+                                                height: 100%;
+                                                position: relative;
+                                                .leftPart-img {
+                                                    width: 120/$sc+rem;
+                                                    height: 100%;
+                                                }
+                                                .leftPart-content {
+                                                    width: 100%;
+                                                    height: 36/$sc+rem;
+                                                    text-align: center;
+                                                    font-family: PingFang-SC-Medium;
+                                                    color: #FFFFFF;
+                                                    position: absolute;
+                                                    top: 28/$sc+rem;
+                                                    left: 0;
+                                                    display: flex;
+                                                    justify-content: center;
+                                                    .currency {
+                                                        font-size: 16/$sc+rem;
+                                                        margin-top: 10/$sc+rem;
+                                                    }
+                                                    .content {
+                                                        line-height: 36/$sc+rem;
+                                                        font-size: 26/$sc+rem;
+                                                    }
+                                                }
+                                                .leftPart-txt {
+                                                    width: 100%;
+                                                    height: 32/$sc+rem;
+                                                    text-align: center;
+                                                    line-height: 16/$sc+rem;
+                                                    font-size: 12/$sc+rem;
+                                                    color: #FFFFFF;
+                                                    position: absolute;
+                                                    top: 72/$sc+rem;
+                                                    left: 0;
+                                                }
+                                            }
+                                        }
+                                        .rightPart {
+                                            width: 100%;
+                                            height: 100%;
+                                            padding-left: 118/$sc+rem;
+                                            box-sizing: border-box;
+                                            -webkit-box-sizing: border-box;
+                                            .rightPart-wrapper {
+                                                width: 100%;
+                                                height: 100%;
+                                                padding: 13/$sc+rem 0 13/$sc+rem 18/$sc+rem;
+                                                background: #FFFFFF;
+                                                box-sizing: border-box;
+                                                -webkit-box-sizing: border-box;
+                                                display: flex;
+                                                .rightPart-content {
+                                                    flex: 1;
+                                                    -webkit-flex: 1;
+                                                    .content-title {
+                                                        margin-top: 19/$sc+rem;
+                                                        line-height: 20/$sc+rem;
+                                                        font-family: PingFang-SC-Medium;
+                                                        font-size: 14/$sc+rem;
+                                                        color: #394043;
+                                                        overflow: hidden;
+                                                        text-overflow: ellipsis;
+                                                        display: -webkit-box;
+                                                        -webkit-line-clamp: 1;
+                                                        -webkit-box-orient: vertical;
+                                                    }
+                                                    .termOf-validity {
+                                                        margin-top: 4/$sc+rem;
+                                                        font-size: 12/$sc+rem;
+                                                        color: #999999;
+                                                        line-height: 18/$sc+rem;
+                                                    }
+                                                    .remaining-time {
+                                                        font-size: 12/$sc+rem;
+                                                        color: #999999;
+                                                        line-height: 18/$sc+rem;
+                                                    }
+                                                }
+                                                .rightPart-details {
+                                                    width: 40/$sc+rem;
+                                                    height: 100%;
+                                                    position: relative;
+                                                    border-left: 1px dotted #cccccc;
+                                                    span {
+                                                        width: 14/$sc+rem;
+                                                        line-height: 20/$sc+rem;
+                                                        height: 40/$sc+rem;
+                                                        font-size: 14/$sc+rem;
+                                                        color: #999999;
+                                                        position: absolute;
+                                                        top: 0;
+                                                        bottom: 0;
+                                                        left: 0;
+                                                        right: 0;
+                                                        margin: auto;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .coupon-whole-li:first-child {
+                                        margin-top: 0;
+                                    }
                                 }
                             }
                         }
@@ -5731,6 +5736,5 @@
     
     .iScrollVerticalScrollbar {
         width: 4/$sc+rem!important;
-        right: 0/$sc+rem!important;
         z-index: 1!important;
     }
