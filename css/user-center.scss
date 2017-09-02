@@ -59,6 +59,7 @@
         width: 100%;
         height: 100%;
         overflow: hidden;
+        position: relative;
         background: #f4f4f4;
         display: flex;
         display: -webkit-flex;
@@ -148,14 +149,18 @@
                         justify-content: center;
                         align-items: center;
                         position: absolute;
-                        top: 70%;
+                        top: 72%;
                         left: 0;
                         right: 0;
                         margin: auto;
                         .Not-logged {
+                            display: none;
                             font-family: PingFang-SC-Medium;
                             font-size: 16/$sc+rem;
                             color: #FFFFFF;
+                        }
+                        .Not-logged.show{
+                            display: block;
                         }
                         .Logged-in {
                             display: none;
@@ -168,7 +173,9 @@
                             background-size: 6/$sc+rem 12/$sc+rem;
                             background-position-x: right;
                             background-position-y: 5/$sc+rem;
-                            ;
+                        }
+                        .Logged-in.show{
+                            display: block;
                         }
                     }
                 }
@@ -196,13 +203,30 @@
                                 height: 26/$sc+rem;
                             }
                         }
-                        span {
+                        .li-txt {
                             display: block;
                             margin-top: 7/$sc+rem;
                             text-align: center;
                             line-height: 20/$sc+rem;
                             font-size: 14/$sc+rem;
                             color: #6C7072;
+                        }
+                    }
+                    li:nth-child(3){
+                        position: relative;
+                        .message-prompt{
+                            display: none;
+                            width: 16/$sc+rem;
+                            height: 16/$sc+rem;
+                            line-height: 16/$sc+rem;
+                            border-radius: 50%;
+                            font-size: 10/$sc+rem;
+                            color: #FFFFFF;
+                            text-align: center;
+                            background: #FF4444;
+                            position: absolute;
+                            top: 15%;
+                            left: 55%;
                         }
                     }
                     li:nth-child(-n+4) {
@@ -222,7 +246,7 @@
                 height: 100%;
                 display: flex;
                 display: -webkit-flex;
-                .footer-nav-li {
+                .footer-nav-li:first-child{
                     height: 100%;
                     flex: 1;
                     a {
@@ -230,14 +254,13 @@
                         z-index: 1;
                         i {
                             display: block;
-                            width: 22/$sc+rem;
-                            height: 22/$sc+rem;
-                            margin: 7/$sc+rem auto 4/$sc+rem;
-                            img {
-                                float: left;
-                                width: 22/$sc+rem;
-                                height: 22/$sc+rem;
-                            }
+                            width: 24/$sc+rem;
+                            height: 24/$sc+rem;
+                            margin: 6/$sc+rem auto 1/$sc+rem;
+                            background: url(../img/hpicon.png) no-repeat;
+                            background-size: 130/$sc+rem 52/$sc+rem;
+                            background-position-x:-1/$sc+rem ;
+                            background-position-y:-1/$sc+rem ;
                         }
                         span {
                             display: block;
@@ -246,12 +269,152 @@
                             font-size: 10/$sc+rem;
                             color: #6C7072;
                         }
-                        span.current {
+                    }
+                }
+                .footer-nav-li:nth-child(2){
+                    height: 100%;
+                    flex: 1;
+                    a {
+                        height: 100%;
+                        z-index: 1;
+                        i {
+                            display: block;
+                            width: 24/$sc+rem;
+                            height: 24/$sc+rem;
+                            margin: 6/$sc+rem auto 1/$sc+rem;
+                            background: url(../img/hpicon.png) no-repeat;
+                            background-size: 130/$sc+rem 52/$sc+rem;
+                            background-position-x:-27/$sc+rem ;
+                            background-position-y:-1/$sc+rem ;
+                        }
+                        span {
+                            display: block;
+                            text-align: center;
+                            line-height: 14/$sc+rem;
+                            font-size: 10/$sc+rem;
+                            color: #6C7072;
+                        }
+                    }
+                }
+                .footer-nav-li:nth-child(3){
+                    height: 100%;
+                    flex: 1;
+                    a {
+                        height: 100%;
+                        z-index: 1;
+                        i {
+                            display: block;
+                            width: 24/$sc+rem;
+                            height: 24/$sc+rem;
+                            margin: 6/$sc+rem auto 1/$sc+rem;
+                            background: url(../img/hpicon.png) no-repeat;
+                            background-size: 130/$sc+rem 52/$sc+rem;
+                            background-position-x:-53/$sc+rem ;
+                            background-position-y:-1/$sc+rem ;
+                        }
+                        span {
+                            display: block;
+                            text-align: center;
+                            line-height: 14/$sc+rem;
+                            font-size: 10/$sc+rem;
+                            color: #6C7072;
+                        }
+                    }
+                }
+                .footer-nav-li:nth-child(4){
+                    height: 100%;
+                    flex: 1;
+                    a {
+                        height: 100%;
+                        z-index: 1;
+                        i {
+                            display: block;
+                            width: 24/$sc+rem;
+                            height: 24/$sc+rem;
+                            margin: 6/$sc+rem auto 1/$sc+rem;
+                            background: url(../img/hpicon.png) no-repeat;
+                            background-size: 130/$sc+rem 52/$sc+rem;
+                            background-position-x:-79/$sc+rem ;
+                            background-position-y:-1/$sc+rem ;
+                        }
+                        span {
+                            display: block;
+                            text-align: center;
+                            line-height: 14/$sc+rem;
+                            font-size: 10/$sc+rem;
+                            color: #6C7072;
+                        }
+                    }
+                }
+                .footer-nav-li:last-child{
+                    height: 100%;
+                    flex: 1;
+                    position: relative;
+                    a {
+                        height: 100%;
+                        z-index: 1;
+                        i {
+                            display: block;
+                            width: 24/$sc+rem;
+                            height: 24/$sc+rem;
+                            margin: 6/$sc+rem auto 1/$sc+rem;
+                            background: url(../img/hpicon.png) no-repeat;
+                            background-size: 130/$sc+rem 52/$sc+rem;
+                            background-position-x:-105/$sc+rem ;
+                            background-position-y:-1/$sc+rem ;
+                        }
+                        span {
+                            display: block;
+                            text-align: center;
+                            line-height: 14/$sc+rem;
+                            font-size: 10/$sc+rem;
+                            color: #6C7072;
+                        }
+                        .message-prompt{
+                            display: none;
+                            width: 16/$sc+rem;
+                            height: 16/$sc+rem;
+                            line-height: 16/$sc+rem;
+                            border-radius: 50%;
+                            font-size: 10/$sc+rem;
+                            color: #FFFFFF;
+                            text-align: center;
+                            background: #FF4444;
+                            position: absolute;
+                            top: 7%;
+                            left: 55%;
+                        }
+                    }
+                }
+                .footer-nav-li.select{
+                    a{
+                        i {
+                            background-position-y:-27/$sc+rem ;
+                        }
+                        span {
                             color: #0099EB;
                         }
                     }
                 }
             }
+        }
+        //<----------- 提示请登录 ----------->
+        .please-login-account{
+            display: none;
+            width: 280/$sc+rem;
+            height: 48/$sc+rem;
+            text-align: center;
+            font-size: 16/$sc+rem;
+            color: #FFFFFF;
+            line-height: 48/$sc+rem;
+            background: rgba(0,0,0,.8);
+            border-radius: 2/$sc+rem;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
         }
         //<----------- 设置 ----------->
         .set-up-push {
@@ -1221,7 +1384,8 @@
                                 transition: all .2s;
                                 opacity: 1;
                                 position: absolute;
-                                bottom: 36/$sc+rem;
+                                top: 0;
+                                bottom: 0;
                                 left: 0;
                                 right: 0;
                                 margin: auto;
@@ -1267,8 +1431,11 @@
                             margin-top: 4/$sc+rem;
                             box-shadow: 0 1px 0 0 #EEEEEE;
                             position: relative;
+                            display: flex;
+                            flex-direction: row;
                             input {
-                                width: 100%;
+                                flex: 1;
+                                -webkit-flex: 1;
                                 height: 44/$sc+rem;
                                 line-height: 20/$sc+rem;
                                 font-size: 14/$sc+rem;
@@ -1292,15 +1459,16 @@
                             }
                             .showPassword {
                                 display: block;
-                                width: 22/$sc+rem;
-                                height: 22/$sc+rem;
-                                background: red;
-                                position: absolute;
-                                top: 0;
-                                bottom: 0;
-                                right: 0;
-                                margin: auto;
+                                width: 38/$sc+rem;
+                                height: 100%;
+                                background: url(../img/Eyeing.png) center center no-repeat #F6F6F6;
+                                background-size: 22/$sc+rem 22/$sc+rem;
                             }
+                            .showPassword.show {
+                                background: url(../img/Eyeed.png) center center no-repeat #F6F6F6;
+                                background-size: 22/$sc+rem 22/$sc+rem;
+                            }
+                            
                         }
                         .login-page-btn {
                             width: 100%;
@@ -1698,8 +1866,11 @@
                             margin-top: 4/$sc+rem;
                             box-shadow: 0 1px 0 0 #EEEEEE;
                             position: relative;
+                            display: flex;
+                            flex-direction: row;
                             input {
-                                width: 100%;
+                                flex: 1;
+                                -webkit-flex: 1;
                                 height: 44/$sc+rem;
                                 line-height: 20/$sc+rem;
                                 font-size: 14/$sc+rem;
@@ -1723,14 +1894,14 @@
                             }
                             .showPassword {
                                 display: block;
-                                width: 22/$sc+rem;
-                                height: 22/$sc+rem;
-                                background: red;
-                                position: absolute;
-                                top: 0;
-                                bottom: 0;
-                                right: 0;
-                                margin: auto;
+                                width: 38/$sc+rem;
+                                height: 100%;
+                                background: url(../img/Eyeing.png) center center no-repeat;
+                                background-size: 22/$sc+rem 22/$sc+rem;
+                            }
+                            .showPassword.show {
+                                background: url(../img/Eyeed.png) center center no-repeat;
+                                background-size: 22/$sc+rem 22/$sc+rem;
                             }
                         }
                         .registered-btn {
@@ -1963,7 +2134,7 @@
             overflow: hidden;
             background: #f4f4f4;
             position: fixed;
-            left: 380/$sc+rem;
+            left: 0;
             top: 0;
             z-index: 10;
             display: flex;
@@ -2008,7 +2179,6 @@
                 background: #F4F4F4;
                 .pushsection-wrapper {
                     width: 100%;
-                    height: 100%;
                     padding-bottom: 32/$sc+rem;
                     .personal-data-box {
                         width: 100%;
@@ -2662,6 +2832,126 @@
                     }
                 }
             }
+            //<!---------- 修改密码 ------------->
+            .modify-password-push{
+                width: 100%;
+                height: 100%;
+                transition: all .3s;
+                overflow: hidden;
+                background: #F6F6F6;
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 10;
+                display: flex;
+                display: -webkit-flex;
+                flex-direction: column;
+                .modify-password-pushheader {
+                    width: 100%;
+                    background-color: #f6f6f6;
+                    box-shadow: 0 1px 0 0 #cccccc;
+                    z-index: 1;
+                    .signal_bar {
+                        width: 100%;
+                        height: 20/$sc+rem;
+                    }
+                    .title_bar {
+                        width: 100%;
+                        height: 44/$sc+rem;
+                        line-height: 44/$sc+rem;
+                        position: relative;
+                        .title_txt {
+                            font-size: 18/$sc+rem;
+                            color: #394043!important;
+                            text-align: center;
+                            font-weight: normal;
+                        }
+                        .del {
+                            display: block;
+                            height: 22/$sc+rem;
+                            width: 22/$sc+rem;
+                            background: url(../img/del.png) no-repeat;
+                            background-size: 22/$sc+rem 22/$sc+rem;
+                            position: absolute;
+                            top: 11/$sc+rem;
+                            left: 16/$sc+rem;
+                        }
+                    }
+                }
+                .modify-password-pushsection {
+                    flex: 1;
+                    -webkit-flex: 1;
+                    overflow: hidden;
+                    background: #f6f6f6;
+                    .pushsection-wrapper {
+                        width: 100%;
+                        .modify-password-box{
+                            width: 100%;
+                            padding: 12/$sc+rem 24/$sc+rem 0;
+                            box-sizing: border-box;
+                            -webkit-box-sizing: border-box;
+                            .old-password{
+                                width: 100%;
+                                height: 44/$sc+rem;
+                                border-bottom: 1px solid #EEEEEE;
+                                .old_P{
+                                    width: 100%;
+                                    height: 100%;
+                                    line-height: 20/$sc+rem;
+                                    font-size: 14/$sc+rem;
+                                    background: transparent;
+                                    color: #6C7072;
+                                    padding: 12/$sc+rem 4/$sc+rem;
+                                    box-sizing: border-box;
+                                    -webkit-box-sizing: border-box;
+                                }
+                            }
+                            .new-password{
+                                width: 100%;
+                                height: 44/$sc+rem;
+                                margin-top: 4/$sc+rem;
+                                border-bottom: 1px solid #EEEEEE;
+                                display: flex;
+                                flex-direction: row;
+                                .new_P{
+                                    flex: 1;
+                                    -webkit-flex: 1;
+                                    height: 100%;
+                                    line-height: 20/$sc+rem;
+                                    font-size: 14/$sc+rem;
+                                    background: transparent;
+                                    color: #6C7072;
+                                    padding: 12/$sc+rem 4/$sc+rem;
+                                    box-sizing: border-box;
+                                    -webkit-box-sizing: border-box;
+                                }
+                                a{
+                                    display: block;
+                                    width: 38/$sc+rem;
+                                    height: 100%;
+                                    background: url(../img/Eyeing.png) center center no-repeat #F6F6F6;
+                                    background-size: 22/$sc+rem 22/$sc+rem;
+                                }
+                                a.show{
+                                    background: url(../img/Eyeed.png) center center no-repeat #F6F6F6;
+                                    background-size: 22/$sc+rem 22/$sc+rem;
+                                }
+                            }
+                            .modify-btn{
+                                width: 100%;
+                                height: 46/$sc+rem;
+                                font-size: 16/$sc+rem;
+                                color: #FFFFFF;
+                                line-height: 46/$sc+rem;
+                                margin-top: 24/$sc+rem;
+                                background: #0099EB;
+                                text-align: center;
+                                border-radius: 2/$sc+rem;
+                            }
+                        }
+                    }
+                }
+            }
             //<!---------- 性别 ------------->
             .gender-push {
                 width: 100%;
@@ -2892,6 +3182,7 @@
                     }
                 }
             }
+            //<!---------- 地区 ------------->
         }
         //<----------- 我的收藏 ----------->
         .personal-collection-push {

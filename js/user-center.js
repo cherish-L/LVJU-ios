@@ -22,6 +22,102 @@ $(function() {
 		}
 	})
 
+	//用户中心--消息未读状态
+	if($(".message-prompt").text()==0){
+		$(".user-center-container .message-prompt").css("display","none")
+	}
+	
+	//登录状态才能查询信息
+	var please_login=null;
+	
+		//我的收藏弹框
+		$(".user-center-section .collection").tap(function(){
+			if($(".user-center-container .Not-logged").hasClass("show")){
+				clearTimeout(please_login)
+				$(".user-center-container .message-prompt").css("display","none")
+				$(".set-up-push .login-status .login-box").css("display","none")
+				$(".set-up-pushsection .login-box").css("display","none")
+				$(".please-login-account").show()
+				please_login=setTimeout(function(){
+					$(".please-login-account").fadeOut(200)
+				},1800)
+			}
+			if(!$(".user-center-container .Not-logged").hasClass("show")){
+				$(".user-center-container .message-prompt").css("display","block")
+				$(".set-up-push .login-status .login-box").css("display","block")
+				$(".set-up-pushsection .login-box").css("display","block")
+				$(".personal-collection-push").css("left","0")
+			}
+		})
+		$(".personal-collection-pushheader .return").tap(function(){
+			$(".personal-collection-push").css("left",setw+5)
+		})
+		
+		//我的足迹弹框
+		$(".user-center-section .footprint").tap(function(){
+			if($(".user-center-container .Not-logged").hasClass("show")){
+				clearTimeout(please_login)
+				$(".user-center-container .message-prompt").css("display","none")
+				$(".set-up-pushsection .login-box").css("display","none")
+				$(".please-login-account").show()
+				please_login=setTimeout(function(){
+					$(".please-login-account").fadeOut(200)
+				},1800)
+			}
+			if(!$(".user-center-container .Not-logged").hasClass("show")){
+				$(".user-center-container .message-prompt").css("display","block")
+				$(".set-up-pushsection .login-box").css("display","block")
+				$(".personal-footprint-push").css("left","0")
+			}
+		})
+		$(".personal-footprint-pushheader .return").tap(function(){
+			$(".personal-footprint-push").css("left",setw+5)
+		})
+		
+		//我的消息弹框
+		$(".user-center-section .news").tap(function(){
+			if($(".user-center-container .Not-logged").hasClass("show")){
+				clearTimeout(please_login)
+				$(".user-center-container .message-prompt").css("display","none")
+				$(".set-up-pushsection .login-box").css("display","none")
+				$(".please-login-account").show()
+				please_login=setTimeout(function(){
+					$(".please-login-account").fadeOut(200)
+				},1800)
+			}
+			if(!$(".user-center-container .Not-logged").hasClass("show")){
+				$(".user-center-container .message-prompt").css("display","block")
+				$(".set-up-pushsection .login-box").css("display","block")
+				$(".personal-news-push").css("left","0")
+			}
+		})
+		$(".personal-news-pushheader .return").tap(function(){
+			$(".personal-news-push").css("left",setw+5)
+		})
+		
+		//我的优惠券弹框
+		$(".user-center-section .Coupon").tap(function(){
+			if($(".user-center-container .Not-logged").hasClass("show")){
+				clearTimeout(please_login)
+				$(".user-center-container .message-prompt").css("display","none")
+				$(".set-up-pushsection .login-box").css("display","none")
+				$(".please-login-account").show()
+				please_login=setTimeout(function(){
+					$(".please-login-account").fadeOut(200)
+				},1800)
+			}
+			if(!$(".user-center-container .Not-logged").hasClass("show")){
+				$(".user-center-container .message-prompt").css("display","block")
+				$(".set-up-pushsection .login-box").css("display","block")
+				$(".personal-coupon-push").css("left","0")
+			}
+		})
+		$(".personal-coupon-pushheader .return").tap(function(){
+			$(".personal-coupon-push").css("left",setw+5)
+		})
+	
+	
+
 	//用户中心--设置弹框
 	var setH = $(".set-up-pushsection").height()
 	$(".set-up-pushsection .pushsection-wrapper").height(setH + 1)
@@ -33,6 +129,12 @@ $(function() {
 	var setw = $(".set-up-push").width()
 	$(".user-center-header .setUp").tap(function() {
 		$(".set-up-push").css("left", "0")
+		if($(".user-center-container .Not-logged").hasClass("show")){
+		$(".set-up-pushsection .login-box").css("display","none")
+		}
+		if(!$(".user-center-container .Not-logged").hasClass("show")){
+			$(".set-up-pushsection .login-box").css("display","block")
+		}
 		$(".set-up-pushheader .return").tap(function() {
 			$(".set-up-push").css("left", setw + 5)
 		})
@@ -119,12 +221,51 @@ $(function() {
 	//用户中心--登录界面
 	var loginH = $(".login-page-pushsection").height()
 	$(".login-page-pushsection .pushsection-wrapper").height(loginH + 1)
-
+	
 	var loginS = new IScroll('.login-page-pushsection', {
 		scrollbars: false,
 		preventDefault: true
 	})
 
+	//登录点击显示新密码
+	$(".login-page-pushsection .login-page-Password .showPassword").tap(function(){
+		if(!$(this).hasClass("show") && $("#l-Password").attr("type") == "password"){
+			$(this).addClass("show")
+            $("#l-Password").attr("type", "text")
+		}
+		else{
+			$(this).removeClass("show")
+			$("#l-Password").attr("type", "password")
+		}
+	})
+
+	//注册点击显示新密码
+	$(".login-page-pushsection .registered-Password .showPassword").tap(function(){
+		if(!$(this).hasClass("show") && $("#r-Password").attr("type") == "password"){
+			$(this).addClass("show")
+            $("#r-Password").attr("type", "text")
+		}
+		else{
+			$(this).removeClass("show")
+			$("#r-Password").attr("type", "password")
+		}
+	})
+	
+	//点击登录账号
+	$(".login-page-pushsection .account-login .login-page-btn").tap(function(){
+		if($(".login-page-pushsection .account-login .login-page-Username .Username").val()!=="" && $(".login-page-pushsection .account-login .login-page-Password .Password").val()!==""){
+			$(".login-page-pushsection .account-login .login-page-Username .Username").val("")
+			$(".login-page-pushsection .account-login .login-page-Password .Password").val("")
+			$(".login-page-push").css("left",setw + 5)
+			$(".user-center-section .Not-logged").removeClass("show")
+			$(".user-center-section .Logged-in").addClass("show")
+			
+			
+			
+			
+		}
+	})
+	
 	//用户中心--登录界面  input获取焦点页面状态改变
 	
 	$(".login-page-phone .Userphone").bind('input propertychange', function() {
@@ -323,8 +464,6 @@ $(function() {
 	})
 	
 	//用户中心--个人资料设置
-	var personalH = $(".personal-data-pushsection").height()
-	$(".personal-data-pushsection .pushsection-wrapper").height(personalH + 1)
 	
 	var personalS = new IScroll('.personal-data-pushsection', {
 		scrollbars: false
@@ -380,14 +519,13 @@ $(function() {
 			$(".account-name-pushsection .delete").css("display","none")
 		}
 	})
+	
 	//用户中心--个人资料设置--修改用户名弹框  清空键
 	$(".account-name-pushsection .delete").tap(function(){
 		$(".account-name-pushsection .accountName").val("")
 		$(".account-name-pushsection .accountName").focus()
 		$(".account-name-pushsection .delete").css("display","none")
 	})
-	
-	
 	
 	//用户中心--个人资料设置--修改昵称弹框
 	var nicknameH = $(".nickname-pushsection").height()
@@ -440,9 +578,6 @@ $(function() {
 		$(".nickname-pushsection .delete").css("display","none")
 	})
 	
-	
-	
-	
 	//用户中心--个人资料设置--填写真实姓名弹框
 	var realnameH = $(".real-name-pushsection").height()
 	$(".real-name-pushsection .pushsection-wrapper").height(realnameH + 1)
@@ -492,8 +627,6 @@ $(function() {
 		$(".real-name-pushsection .delete").css("display","none")
 	})
 	
-	
-	
 	//用户中心--个人资料设置--账户类型弹框
 	var accountTypeh=$(".account-type-push .push-wrapper").height()
 	$(".personal-data-pushsection .account-type").tap(function(){
@@ -515,6 +648,28 @@ $(function() {
 		})
 		
 	})
+	
+	//用户中心--个人资料设置--修改密码弹框
+	var modifyh = $(".modify-password-pushsection").height()
+	$(".modify-password-pushsection .pushsection-wrapper").height(modifyh + 1)
+	
+	var modifyS = new IScroll('.modify-password-pushsection', {
+		scrollbars: false
+	})
+	
+	//点击显示新密码
+	$(".modify-password-box .new-password a").tap(function(){
+		if(!$(this).hasClass("show") && $("#new_P").attr("type") == "password"){
+			$(this).addClass("show")
+            $("#new_P").attr("type", "text")
+		}
+		else{
+			$(this).removeClass("show")
+			$("#new_P").attr("type", "password")
+		}
+	})
+	
+	
 	
 	//用户中心--个人资料设置--性别弹框
 	var genderh=$(".gender-push .push-wrapper").height()
@@ -570,6 +725,8 @@ $(function() {
 		$(".region-push").css("left",setw+5)
 	})
 
+
+
 	//用户中心--我的收藏
 	var Pcollectionh = $(".personal-collection-pushsection").height()
 	var Pwrapperh = $(".personal-collection-pushsection .pushsection-wrapper").height()
@@ -577,13 +734,6 @@ $(function() {
 	if(Pwrapperh<=Pcollectionh){
 		$(".personal-collection-pushsection .pushsection-wrapper").height(Pcollectionh+1)
 	}
-	
-	$(".user-center-section .collection").tap(function(){
-		$(".personal-collection-push").css("left","0")
-	})
-	$(".personal-collection-pushheader .return").tap(function(){
-		$(".personal-collection-push").css("left",setw+5)
-	})
 	
 	//用户中心--我的收藏 左滑出现删除键
 	var deletebtnw=$(".Pcollection-data-li .slide-delete-btn .delete-btn").width()
@@ -646,9 +796,6 @@ $(function() {
 		shrinkScrollbars: 'clip'
 	})
 	
-	
-	
-	
 	//用户中心--我的足迹
 	var Pfootprinth = $(".personal-footprint-pushsection").height()
 	var Fwrapperh = $(".personal-footprint-pushsection .pushsection-wrapper").height()
@@ -656,13 +803,6 @@ $(function() {
 	if(Fwrapperh<=Pfootprinth){
 		$(".personal-footprint-pushsection .pushsection-wrapper").height(Pfootprinth+1)
 	}
-	
-	$(".user-center-section .footprint").tap(function(){
-		$(".personal-footprint-push").css("left","0")
-	})
-	$(".personal-footprint-pushheader .return").tap(function(){
-		$(".personal-footprint-push").css("left",setw+5)
-	})
 	
 	//用户中心--我的足迹  左滑出现删除键
 	
@@ -730,12 +870,6 @@ $(function() {
 	
 
 	//用户中心--我的消息
-	$(".user-center-section .news").tap(function(){
-		$(".personal-news-push").css("left","0")
-	})
-	$(".personal-news-pushheader .return").tap(function(){
-		$(".personal-news-push").css("left",setw+5)
-	})
 
 	var Pnewsh = $(".personal-news-pushsection").height()
 	var Nwrapperh = $(".personal-news-pushsection .pushsection-wrapper").height()
@@ -769,13 +903,7 @@ $(function() {
 		shrinkScrollbars: 'clip'
 	})
 	
-	//用户中心--我的优惠券	
-	$(".user-center-section .Coupon").tap(function(){
-		$(".personal-coupon-push").css("left","0")
-	})
-	$(".personal-coupon-pushheader .return").tap(function(){
-		$(".personal-coupon-push").css("left",setw+5)
-	})
+	//用户中心--我的优惠券
 
 	$(".personal-coupon-pushsection .pushsection-wrapper").eq(0).css("left","0").siblings(".pushsection-wrapper").css("left",setw+5)
 	$(".personal-coupon-push .coupon-nav-li").tap(function(){
@@ -1107,7 +1235,6 @@ $(function() {
 		$(".personal-coupon-pushheader .coupon-nav").css("display","none")
 		$(".personal-coupon-pushheader .lookup").css("display","none")
 		$(".personal-coupon-pushfooter").css("display","none")
-		
 		$(".personal-coupon-pushsection .none-coupons").css("display","block")
 	}
 	else if(wholelen!==0){
@@ -1115,8 +1242,12 @@ $(function() {
 		$(".personal-coupon-pushheader .coupon-nav").css("display","block")
 		$(".personal-coupon-pushheader .lookup").css("display","block")
 		$(".personal-coupon-pushfooter").css("display","block")
-		
 		$(".personal-coupon-pushsection .none-coupons").css("display","none")
 	}
+	
+	
+	
+	
+	
 	
 })

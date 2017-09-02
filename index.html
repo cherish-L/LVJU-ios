@@ -41,34 +41,35 @@
 							<i class="head-portrait"><img src="img/head_portraitbig.png"/></i>
 						</div>
 						<p class="sign-in">
-							<span class="Not-logged">登录</span>
+							<span class="Not-logged show">登录</span>
 							<span class="Logged-in">哈利波特</span>
 						</p>
 					</div>
 					<ul class="user-center-application">
 						<li class="collection">
 							<i><img src="img/myCollection.png"/></i>
-							<span>我的收藏</span>
+							<span class="li-txt">我的收藏</span>
 						</li>
 						<li class="footprint">
 							<i><img src="img/footprint.png"/></i>
-							<span>我的足迹</span>
+							<span class="li-txt">我的足迹</span>
 						</li>
 						<li class="news">
 							<i><img src="img/tidings.png"/></i>
-							<span>消息</span>
+							<span class="li-txt">消息</span>
+							<div class="message-prompt">5</div>
 						</li>
 						<li class="Coupon">
 							<i><img src="img/Coupon.png"/></i>
-							<span>优惠券</span>
+							<span class="li-txt">优惠券</span>
 						</li>
 						<li class="useCar">
 							<i><img src="img/myCar.png"/></i>
-							<span>我的用车</span>
+							<span class="li-txt">我的用车</span>
 						</li>
 						<li class="calculator">
 							<i><img src="img/Computer.png"/></i>
-							<span>购房计算器</span>
+							<span class="li-txt">购房计算器</span>
 						</li>
 					</ul>
 				</div>
@@ -77,37 +78,40 @@
 				<ul class="footer-nav">
 					<li class="footer-nav-li">
 						<a href="javascript:;">
-							<i><img src="img/home_page.png"/></i>
+							<i></i>
 							<span>首页</span>
 						</a>
 					</li>
 					<li class="footer-nav-li">
 						<a href="javascript:;">
-							<i><img src="img/Properties.png"/></i>
+							<i></i>
 							<span>楼盘</span>
 						</a>
 					</li>
 					<li class="footer-nav-li">
 						<a href="javascript:;">
-							<i><img src="img/zixun1.png"/></i>
+							<i></i>
 							<span>资讯</span>
 						</a>
 					</li>
 					<li class="footer-nav-li">
 						<a href="javascript:;">
-							<i><img src="img/Pick_airport.png"/></i>
+							<i></i>
 							<span>公益接机</span>
 						</a>
 					</li>
-					<li class="footer-nav-li">
+					<li class="footer-nav-li select">
 						<a href="javascript:;">
-							<i><img src="img/my.png"/></i>
-							<span class="current">我的</span>
+							<i></i>
+							<span>我的</span>
+							<div class="message-prompt">5</div>
 						</a>
 					</li>
 				</ul>
 			</footer>
-			<!-------------设置弹框------------->
+			<!-------------  提示请登录弹框  ---------------->
+			<div class="please-login-account">请登录后查看</div>
+			<!-------------  设置弹框  ---------------->
 			<div class="set-up-push">
 				<header class="set-up-pushheader">
 					<div class="signal_bar"></div>
@@ -343,7 +347,7 @@
 					</section>
 				</div>
 			</div>
-			<!-------------登录注册界面弹框------------->
+			<!-------------  登录注册界面弹框  --------->
 			<div class="login-page-push">
 				<header class="login-page-pushheader">
 					<div class="signal_bar"></div>
@@ -363,7 +367,7 @@
 							</div>
 							<div class="login-page-Password">
 								<input class="Password" id="l-Password" type="password" name="" id="" value="" placeholder="密码" />
-								<a class="showPassword" id="showlPassword" href="javascript:;" onclick="lPassword()"></a>
+								<a class="showPassword" id="showlPassword" href="javascript:;"></a>
 							</div>
 							<div class="login-page-btn">登录</div>
 							<div class="login-page-way">
@@ -416,7 +420,7 @@
 							</div>
 							<div class="registered-Password">
 								<input class="Password" id="r-Password" type="password" name="" id="" value="" placeholder="密码" />
-								<a class="showPassword" id="showrPassword" href="javascript:;" onclick="rPassword()"></a>
+								<a class="showPassword" id="showrPassword" href="javascript:;"></a>
 							</div>
 							<div class="registered-btn">注册</div>
 							<div class="registered-txt">点击注册按钮即代表<span class="dynamic-login">同意旅居网服务条款</span></div>
@@ -455,7 +459,7 @@
 					</section>
 				</div>
 			</div>
-			<!-------------个人资料弹框------------->
+			<!-------------  个人资料弹框  ------------->
 			<div class="personal-data-push">
 				<header class="personal-data-pushheader">
 					<div class="signal_bar"></div>
@@ -478,14 +482,14 @@
 								<li class="account-name">
 									<div class="li-wrapper">
 										<span class="li-wrapper-title">用户名</span>
-										<span class="li-wrapper-info">7867865sd</span>
+										<span class="li-wrapper-info">哈利波特</span>
 										<span class="li-wrapper-btn"><img src="img/returnright.png"/></span>
 									</div>
 								</li>
 								<li class="nickname">
 									<div class="li-wrapper">
 										<span class="li-wrapper-title">昵称</span>
-										<span class="li-wrapper-info">7867865sd</span>
+										<span class="li-wrapper-info">哈利波特</span>
 										<span class="li-wrapper-btn"><img src="img/returnright.png"/></span>
 									</div>
 								</li>
@@ -643,6 +647,30 @@
 						<li class="newuser">新用户</li>
 					</ul>
 				</div>
+				<!-------------修改密码------------->
+				<div class="modify-password-push">
+					<header class="modify-password-pushheader">
+						<div class="signal_bar"></div>
+						<div class="title_bar">
+							<h3 class="title_txt">修改密码</h3>
+							<a class="del" href="javascript:;"></a>
+						</div>
+					</header>
+					<section class="modify-password-pushsection">
+						<div class="pushsection-wrapper">
+							<div class="modify-password-box">
+								<div class="old-password">
+									<input class="old_P" id="old_P" type="password" name="" id="" value="" placeholder="旧密码">
+								</div>
+								<div class="new-password">
+									<input class="new_P" id="new_P" type="password" name="" id="" value="" placeholder="新密码">
+									<a href="javascript:;"></a>
+								</div>
+								<div class="modify-btn">确定</div>
+							</div>
+						</div>
+					</section>
+				</div>
 				<!-------------性别弹框------------->
 				<div class="gender-push">
 					<ul class="push-wrapper">
@@ -698,7 +726,7 @@
 					</footer>
 				</div>
 			</div>
-			<!-------------我的收藏弹框------------->
+			<!-------------  我的收藏弹框  ------------->
 			<div class="personal-collection-push">
 				<header class="personal-collection-pushheader">
 					<div class="signal_bar"></div>
@@ -749,7 +777,7 @@
 					</div>
 				</div>
 			</div>
-			<!-------------我的足迹弹框------------->
+			<!-------------  我的足迹弹框  ------------->
 			<div class="personal-footprint-push">
 				<header class="personal-footprint-pushheader">
 					<div class="signal_bar"></div>
@@ -800,7 +828,7 @@
 					</div>
 				</div>
 			</div>
-			<!-------------我的消息弹框------------->
+			<!-------------  我的消息弹框  ------------->
 			<div class="personal-news-push">
 				<header class="personal-news-pushheader">
 					<div class="signal_bar"></div>
@@ -862,7 +890,7 @@
 					</section>
 				</div>
 			</div>
-			<!-------------我的优惠券弹框------------->
+			<!-------------  我的优惠券弹框  ----------->
 			<div class="personal-coupon-push">
 				<header class="personal-coupon-pushheader">
 					<div class="signal_bar"></div>
@@ -1263,27 +1291,6 @@
 		</div>
 	</body>
 	<script type="text/javascript">
-		// 这里使用最原始的js语法实现，可对应换成jquery语法进行逻辑控制  
-		var l_Password = document.getElementById("l-Password");
-		//隐藏text block，显示password block  
-		function lPassword() {
-			if(l_Password.type == "password") {
-				l_Password.type = "text";
-			} else {
-				l_Password.type = "password";
-			}
-		}
-		// 这里使用最原始的js语法实现，可对应换成jquery语法进行逻辑控制  
-		var r_Password = document.getElementById("r-Password");
-		//隐藏text block，显示password block  
-		function rPassword() {
-			if(r_Password.type == "password") {
-				r_Password.type = "text";
-			} else {
-				r_Password.type = "password";
-			}
-		}
-
 		function imgChange(obj1, obj2) {
 			//获取点击的文本框
 			var file = document.getElementById("file");
@@ -1606,5 +1613,4 @@
 		})
 	</script>
 	<script type="text/javascript" src="js/user-center.js"></script>
-
 </html>

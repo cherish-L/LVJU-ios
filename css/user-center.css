@@ -57,6 +57,7 @@ li {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  position: relative;
   background: #f4f4f4;
   display: flex;
   display: -webkit-flex;
@@ -163,16 +164,21 @@ li {
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 70%;
+  top: 72%;
   left: 0;
   right: 0;
   margin: auto;
 }
 
 .user-center-container .user-center-section .section-wrapper .cushion .sign-in .Not-logged {
+  display: none;
   font-family: PingFang-SC-Medium;
   font-size: 0.64rem;
   color: #FFFFFF;
+}
+
+.user-center-container .user-center-section .section-wrapper .cushion .sign-in .Not-logged.show {
+  display: block;
 }
 
 .user-center-container .user-center-section .section-wrapper .cushion .sign-in .Logged-in {
@@ -186,6 +192,10 @@ li {
   background-size: 0.24rem 0.48rem;
   background-position-x: right;
   background-position-y: 0.2rem;
+}
+
+.user-center-container .user-center-section .section-wrapper .cushion .sign-in .Logged-in.show {
+  display: block;
 }
 
 .user-center-container .user-center-section .section-wrapper .user-center-application {
@@ -218,13 +228,32 @@ li {
   height: 1.04rem;
 }
 
-.user-center-container .user-center-section .section-wrapper .user-center-application li span {
+.user-center-container .user-center-section .section-wrapper .user-center-application li .li-txt {
   display: block;
   margin-top: 0.28rem;
   text-align: center;
   line-height: 0.8rem;
   font-size: 0.56rem;
   color: #6C7072;
+}
+
+.user-center-container .user-center-section .section-wrapper .user-center-application li:nth-child(3) {
+  position: relative;
+}
+
+.user-center-container .user-center-section .section-wrapper .user-center-application li:nth-child(3) .message-prompt {
+  display: none;
+  width: 0.64rem;
+  height: 0.64rem;
+  line-height: 0.64rem;
+  border-radius: 50%;
+  font-size: 0.4rem;
+  color: #FFFFFF;
+  text-align: center;
+  background: #FF4444;
+  position: absolute;
+  top: 15%;
+  left: 55%;
 }
 
 .user-center-container .user-center-section .section-wrapper .user-center-application li:nth-child(-n+4) {
@@ -246,30 +275,28 @@ li {
   display: -webkit-flex;
 }
 
-.user-center-container .user-center-footer .footer-nav .footer-nav-li {
+.user-center-container .user-center-footer .footer-nav .footer-nav-li:first-child {
   height: 100%;
   flex: 1;
 }
 
-.user-center-container .user-center-footer .footer-nav .footer-nav-li a {
+.user-center-container .user-center-footer .footer-nav .footer-nav-li:first-child a {
   height: 100%;
   z-index: 1;
 }
 
-.user-center-container .user-center-footer .footer-nav .footer-nav-li a i {
+.user-center-container .user-center-footer .footer-nav .footer-nav-li:first-child a i {
   display: block;
-  width: 0.88rem;
-  height: 0.88rem;
-  margin: 0.28rem auto 0.16rem;
+  width: 0.96rem;
+  height: 0.96rem;
+  margin: 0.24rem auto 0.04rem;
+  background: url(../img/hpicon.png) no-repeat;
+  background-size: 5.2rem 2.08rem;
+  background-position-x: -0.04rem;
+  background-position-y: -0.04rem;
 }
 
-.user-center-container .user-center-footer .footer-nav .footer-nav-li a i img {
-  float: left;
-  width: 0.88rem;
-  height: 0.88rem;
-}
-
-.user-center-container .user-center-footer .footer-nav .footer-nav-li a span {
+.user-center-container .user-center-footer .footer-nav .footer-nav-li:first-child a span {
   display: block;
   text-align: center;
   line-height: 0.56rem;
@@ -277,8 +304,162 @@ li {
   color: #6C7072;
 }
 
-.user-center-container .user-center-footer .footer-nav .footer-nav-li a span.current {
+.user-center-container .user-center-footer .footer-nav .footer-nav-li:nth-child(2) {
+  height: 100%;
+  flex: 1;
+}
+
+.user-center-container .user-center-footer .footer-nav .footer-nav-li:nth-child(2) a {
+  height: 100%;
+  z-index: 1;
+}
+
+.user-center-container .user-center-footer .footer-nav .footer-nav-li:nth-child(2) a i {
+  display: block;
+  width: 0.96rem;
+  height: 0.96rem;
+  margin: 0.24rem auto 0.04rem;
+  background: url(../img/hpicon.png) no-repeat;
+  background-size: 5.2rem 2.08rem;
+  background-position-x: -1.08rem;
+  background-position-y: -0.04rem;
+}
+
+.user-center-container .user-center-footer .footer-nav .footer-nav-li:nth-child(2) a span {
+  display: block;
+  text-align: center;
+  line-height: 0.56rem;
+  font-size: 0.4rem;
+  color: #6C7072;
+}
+
+.user-center-container .user-center-footer .footer-nav .footer-nav-li:nth-child(3) {
+  height: 100%;
+  flex: 1;
+}
+
+.user-center-container .user-center-footer .footer-nav .footer-nav-li:nth-child(3) a {
+  height: 100%;
+  z-index: 1;
+}
+
+.user-center-container .user-center-footer .footer-nav .footer-nav-li:nth-child(3) a i {
+  display: block;
+  width: 0.96rem;
+  height: 0.96rem;
+  margin: 0.24rem auto 0.04rem;
+  background: url(../img/hpicon.png) no-repeat;
+  background-size: 5.2rem 2.08rem;
+  background-position-x: -2.12rem;
+  background-position-y: -0.04rem;
+}
+
+.user-center-container .user-center-footer .footer-nav .footer-nav-li:nth-child(3) a span {
+  display: block;
+  text-align: center;
+  line-height: 0.56rem;
+  font-size: 0.4rem;
+  color: #6C7072;
+}
+
+.user-center-container .user-center-footer .footer-nav .footer-nav-li:nth-child(4) {
+  height: 100%;
+  flex: 1;
+}
+
+.user-center-container .user-center-footer .footer-nav .footer-nav-li:nth-child(4) a {
+  height: 100%;
+  z-index: 1;
+}
+
+.user-center-container .user-center-footer .footer-nav .footer-nav-li:nth-child(4) a i {
+  display: block;
+  width: 0.96rem;
+  height: 0.96rem;
+  margin: 0.24rem auto 0.04rem;
+  background: url(../img/hpicon.png) no-repeat;
+  background-size: 5.2rem 2.08rem;
+  background-position-x: -3.16rem;
+  background-position-y: -0.04rem;
+}
+
+.user-center-container .user-center-footer .footer-nav .footer-nav-li:nth-child(4) a span {
+  display: block;
+  text-align: center;
+  line-height: 0.56rem;
+  font-size: 0.4rem;
+  color: #6C7072;
+}
+
+.user-center-container .user-center-footer .footer-nav .footer-nav-li:last-child {
+  height: 100%;
+  flex: 1;
+  position: relative;
+}
+
+.user-center-container .user-center-footer .footer-nav .footer-nav-li:last-child a {
+  height: 100%;
+  z-index: 1;
+}
+
+.user-center-container .user-center-footer .footer-nav .footer-nav-li:last-child a i {
+  display: block;
+  width: 0.96rem;
+  height: 0.96rem;
+  margin: 0.24rem auto 0.04rem;
+  background: url(../img/hpicon.png) no-repeat;
+  background-size: 5.2rem 2.08rem;
+  background-position-x: -4.2rem;
+  background-position-y: -0.04rem;
+}
+
+.user-center-container .user-center-footer .footer-nav .footer-nav-li:last-child a span {
+  display: block;
+  text-align: center;
+  line-height: 0.56rem;
+  font-size: 0.4rem;
+  color: #6C7072;
+}
+
+.user-center-container .user-center-footer .footer-nav .footer-nav-li:last-child a .message-prompt {
+  display: none;
+  width: 0.64rem;
+  height: 0.64rem;
+  line-height: 0.64rem;
+  border-radius: 50%;
+  font-size: 0.4rem;
+  color: #FFFFFF;
+  text-align: center;
+  background: #FF4444;
+  position: absolute;
+  top: 7%;
+  left: 55%;
+}
+
+.user-center-container .user-center-footer .footer-nav .footer-nav-li.select a i {
+  background-position-y: -1.08rem;
+}
+
+.user-center-container .user-center-footer .footer-nav .footer-nav-li.select a span {
   color: #0099EB;
+}
+
+.user-center-container .please-login-account {
+  display: none;
+  width: 11.2rem;
+  height: 1.92rem;
+  text-align: center;
+  font-size: 0.64rem;
+  color: #FFFFFF;
+  line-height: 1.92rem;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 0.08rem;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 .user-center-container .set-up-push {
@@ -1380,7 +1561,8 @@ li {
   transition: all .2s;
   opacity: 1;
   position: absolute;
-  bottom: 1.44rem;
+  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
   margin: auto;
@@ -1434,10 +1616,13 @@ li {
   margin-top: 0.16rem;
   box-shadow: 0 1px 0 0 #EEEEEE;
   position: relative;
+  display: flex;
+  flex-direction: row;
 }
 
 .user-center-container .login-page-push .login-page-pushsection .pushsection-wrapper .account-login .login-page-Password input {
-  width: 100%;
+  flex: 1;
+  -webkit-flex: 1;
   height: 1.76rem;
   line-height: 0.8rem;
   font-size: 0.56rem;
@@ -1466,14 +1651,15 @@ li {
 
 .user-center-container .login-page-push .login-page-pushsection .pushsection-wrapper .account-login .login-page-Password .showPassword {
   display: block;
-  width: 0.88rem;
-  height: 0.88rem;
-  background: red;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
+  width: 1.52rem;
+  height: 100%;
+  background: url(../img/Eyeing.png) center center no-repeat #F6F6F6;
+  background-size: 0.88rem 0.88rem;
+}
+
+.user-center-container .login-page-push .login-page-pushsection .pushsection-wrapper .account-login .login-page-Password .showPassword.show {
+  background: url(../img/Eyeed.png) center center no-repeat #F6F6F6;
+  background-size: 0.88rem 0.88rem;
 }
 
 .user-center-container .login-page-push .login-page-pushsection .pushsection-wrapper .account-login .login-page-btn {
@@ -1929,10 +2115,13 @@ li {
   margin-top: 0.16rem;
   box-shadow: 0 1px 0 0 #EEEEEE;
   position: relative;
+  display: flex;
+  flex-direction: row;
 }
 
 .user-center-container .login-page-push .login-page-pushsection .pushsection-wrapper .registered-account .registered-Password input {
-  width: 100%;
+  flex: 1;
+  -webkit-flex: 1;
   height: 1.76rem;
   line-height: 0.8rem;
   font-size: 0.56rem;
@@ -1961,14 +2150,15 @@ li {
 
 .user-center-container .login-page-push .login-page-pushsection .pushsection-wrapper .registered-account .registered-Password .showPassword {
   display: block;
-  width: 0.88rem;
-  height: 0.88rem;
-  background: red;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
+  width: 1.52rem;
+  height: 100%;
+  background: url(../img/Eyeing.png) center center no-repeat;
+  background-size: 0.88rem 0.88rem;
+}
+
+.user-center-container .login-page-push .login-page-pushsection .pushsection-wrapper .registered-account .registered-Password .showPassword.show {
+  background: url(../img/Eyeed.png) center center no-repeat;
+  background-size: 0.88rem 0.88rem;
 }
 
 .user-center-container .login-page-push .login-page-pushsection .pushsection-wrapper .registered-account .registered-btn {
@@ -2220,7 +2410,7 @@ li {
   overflow: hidden;
   background: #f4f4f4;
   position: fixed;
-  left: 15.2rem;
+  left: 0;
   top: 0;
   z-index: 10;
   display: flex;
@@ -2274,7 +2464,6 @@ li {
 
 .user-center-container .personal-data-push .personal-data-pushsection .pushsection-wrapper {
   width: 100%;
-  height: 100%;
   padding-bottom: 1.28rem;
 }
 
@@ -3005,6 +3194,141 @@ li {
 
 .user-center-container .personal-data-push .account-type-push .push-wrapper .newuser {
   border-radius: 0 0 0.08rem 0.08rem;
+}
+
+.user-center-container .personal-data-push .modify-password-push {
+  width: 100%;
+  height: 100%;
+  transition: all .3s;
+  overflow: hidden;
+  background: #F6F6F6;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+}
+
+.user-center-container .personal-data-push .modify-password-push .modify-password-pushheader {
+  width: 100%;
+  background-color: #f6f6f6;
+  box-shadow: 0 1px 0 0 #cccccc;
+  z-index: 1;
+}
+
+.user-center-container .personal-data-push .modify-password-push .modify-password-pushheader .signal_bar {
+  width: 100%;
+  height: 0.8rem;
+}
+
+.user-center-container .personal-data-push .modify-password-push .modify-password-pushheader .title_bar {
+  width: 100%;
+  height: 1.76rem;
+  line-height: 1.76rem;
+  position: relative;
+}
+
+.user-center-container .personal-data-push .modify-password-push .modify-password-pushheader .title_bar .title_txt {
+  font-size: 0.72rem;
+  color: #394043 !important;
+  text-align: center;
+  font-weight: normal;
+}
+
+.user-center-container .personal-data-push .modify-password-push .modify-password-pushheader .title_bar .del {
+  display: block;
+  height: 0.88rem;
+  width: 0.88rem;
+  background: url(../img/del.png) no-repeat;
+  background-size: 0.88rem 0.88rem;
+  position: absolute;
+  top: 0.44rem;
+  left: 0.64rem;
+}
+
+.user-center-container .personal-data-push .modify-password-push .modify-password-pushsection {
+  flex: 1;
+  -webkit-flex: 1;
+  overflow: hidden;
+  background: #f6f6f6;
+}
+
+.user-center-container .personal-data-push .modify-password-push .modify-password-pushsection .pushsection-wrapper {
+  width: 100%;
+}
+
+.user-center-container .personal-data-push .modify-password-push .modify-password-pushsection .pushsection-wrapper .modify-password-box {
+  width: 100%;
+  padding: 0.48rem 0.96rem 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.user-center-container .personal-data-push .modify-password-push .modify-password-pushsection .pushsection-wrapper .modify-password-box .old-password {
+  width: 100%;
+  height: 1.76rem;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+.user-center-container .personal-data-push .modify-password-push .modify-password-pushsection .pushsection-wrapper .modify-password-box .old-password .old_P {
+  width: 100%;
+  height: 100%;
+  line-height: 0.8rem;
+  font-size: 0.56rem;
+  background: transparent;
+  color: #6C7072;
+  padding: 0.48rem 0.16rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.user-center-container .personal-data-push .modify-password-push .modify-password-pushsection .pushsection-wrapper .modify-password-box .new-password {
+  width: 100%;
+  height: 1.76rem;
+  margin-top: 0.16rem;
+  border-bottom: 1px solid #EEEEEE;
+  display: flex;
+  flex-direction: row;
+}
+
+.user-center-container .personal-data-push .modify-password-push .modify-password-pushsection .pushsection-wrapper .modify-password-box .new-password .new_P {
+  flex: 1;
+  -webkit-flex: 1;
+  height: 100%;
+  line-height: 0.8rem;
+  font-size: 0.56rem;
+  background: transparent;
+  color: #6C7072;
+  padding: 0.48rem 0.16rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.user-center-container .personal-data-push .modify-password-push .modify-password-pushsection .pushsection-wrapper .modify-password-box .new-password a {
+  display: block;
+  width: 1.52rem;
+  height: 100%;
+  background: url(../img/Eyeing.png) center center no-repeat #F6F6F6;
+  background-size: 0.88rem 0.88rem;
+}
+
+.user-center-container .personal-data-push .modify-password-push .modify-password-pushsection .pushsection-wrapper .modify-password-box .new-password a.show {
+  background: url(../img/Eyeed.png) center center no-repeat #F6F6F6;
+  background-size: 0.88rem 0.88rem;
+}
+
+.user-center-container .personal-data-push .modify-password-push .modify-password-pushsection .pushsection-wrapper .modify-password-box .modify-btn {
+  width: 100%;
+  height: 1.84rem;
+  font-size: 0.64rem;
+  color: #FFFFFF;
+  line-height: 1.84rem;
+  margin-top: 0.96rem;
+  background: #0099EB;
+  text-align: center;
+  border-radius: 0.08rem;
 }
 
 .user-center-container .personal-data-push .gender-push {
