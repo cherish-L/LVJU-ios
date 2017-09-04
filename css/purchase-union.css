@@ -112,7 +112,7 @@ li {
 
 .purchase-union-container .purchase-union-section .section-wrapper {
   width: 100%;
-  padding-bottom: 0.64rem;
+  padding-bottom: 1.28rem;
 }
 
 .purchase-union-container .purchase-union-section .section-wrapper .purchase-union-banner {
@@ -905,6 +905,9 @@ li {
 
 .purchase-union-container .purchase-union-signUp .signUp-push .pushBox-img {
   height: 3.52rem;
+  opacity: 1;
+  overflow: hidden;
+  transition: all .3s;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -913,6 +916,11 @@ li {
 
 .purchase-union-container .purchase-union-signUp .signUp-push .pushBox-img img {
   height: 3.52rem;
+}
+
+.purchase-union-container .purchase-union-signUp .signUp-push .pushBox-img.hide {
+  height: 0;
+  opacity: 0;
 }
 
 .purchase-union-container .purchase-union-signUp .signUp-push .signUp-username {
@@ -1119,7 +1127,7 @@ li {
   text-align: center;
   font-size: 0.64rem;
   line-height: 0.88rem;
-  color: #0099EB;
+  color: #EF7747;
 }
 
 .purchase-union-container .purchase-union-signUp .enroll-fail .fail-txt p:last-child {
@@ -1237,4 +1245,9 @@ li {
 .purchase-union-container .contact-adviser-push.show {
   opacity: 1;
   z-index: 30;
+}
+
+.iScrollVerticalScrollbar {
+  width: 0.16rem !important;
+  z-index: 1 !important;
 }

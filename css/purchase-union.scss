@@ -105,7 +105,7 @@ $sc:25;
         position: relative;
         .section-wrapper {
             width: 100%;
-            padding-bottom: 16/$sc+rem;
+            padding-bottom: 32/$sc+rem;
             .purchase-union-banner {
                 width: 100%;
                 height: 200/$sc+rem;
@@ -543,6 +543,7 @@ $sc:25;
         z-index: 25;
         opacity: 1;
     }
+     //----------- 报名弹框按钮 --------------
     .signUp-btn {
         width: 54/$sc+rem;
         height: 54/$sc+rem;
@@ -553,6 +554,7 @@ $sc:25;
         background: url(../img/signUpimg.png) no-repeat;
         background-size: 54/$sc+rem 54/$sc+rem;
     }
+    //----------- 联盟动态弹框 --------------
     .union-dynamic-push{
         width: 100%;
         height: 100%;
@@ -656,6 +658,7 @@ $sc:25;
             }
         }
     }
+    //----------- 联盟优势弹框 --------------
     .union-advantage-push{
         width: 320/$sc+rem;
         height: 393/$sc+rem;
@@ -783,6 +786,7 @@ $sc:25;
         opacity: 1;
         z-index: 30;
     }
+    //----------- 联盟报名弹框 --------------
     .purchase-union-signUp{
         .signUp-push {
             width: 320/$sc+rem;
@@ -801,6 +805,9 @@ $sc:25;
             margin: auto;
             .pushBox-img {
                 height: 88/$sc+rem;
+                opacity: 1;
+                overflow: hidden;
+                transition: all .3s;
                 width: 100%;
                 display: flex;
                 justify-content: center;
@@ -808,6 +815,10 @@ $sc:25;
                 img{
                     height: 88/$sc+rem;
                 }
+            }
+            .pushBox-img.hide{
+                height: 0;
+                opacity: 0;
             }
             .signUp-username {
                 width: 100%;
@@ -990,7 +1001,7 @@ $sc:25;
                     text-align: center;
                     font-size: 16/$sc+rem;
                     line-height: 22/$sc+rem;
-                    color: #0099EB;
+                    color: #EF7747;
                 }
                 p:last-child {
                     text-align: center;
@@ -1016,6 +1027,7 @@ $sc:25;
             z-index: 30;
         }
     }
+    //----------- 置业顾问弹框 --------------
     .contact-adviser-push{
         width: 320/$sc+rem;
         height: 322/$sc+rem;
@@ -1097,4 +1109,8 @@ $sc:25;
         opacity: 1;
         z-index: 30;
     }
+}
+.iScrollVerticalScrollbar {
+    width: 4/$sc+rem!important;
+    z-index: 1!important;
 }

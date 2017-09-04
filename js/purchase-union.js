@@ -12,8 +12,13 @@ $(function() {
 	})
 
 	//联盟动态
+	
+	
 	var dynamicS = new IScroll('.union-dynamic-pushsection', {
-		scrollbars: false
+		scrollbars: true,
+		fadeScrollbars: true,
+		shrinkScrollbars: 'clip'
+		
 	})
 	var unionW = $(".union-dynamic-push").width()
 	$(".synopsis-link").tap(function() {
@@ -77,7 +82,28 @@ $(function() {
 		})
 	})
 	
+	//实时监听input的变化 获取焦点 logo .3s后消失
+	$(".signUp-username input").focus(function() {
+		$(".signUp-push .pushBox-img").addClass("hide")
+		$(this).blur(function() {
+			$(".signUp-push .pushBox-img").removeClass("hide")
+		})
+	})
 	
+	$(".signUp-userphone input").focus(function() {
+		$(".signUp-push .pushBox-img").addClass("hide")
+		$(this).blur(function() {
+			$(".signUp-push .pushBox-img").removeClass("hide")
+		})
+	})
+	
+	$(".signUp-message input").focus(function() {
+		$(".signUp-push .pushBox-img").addClass("hide")
+		$(this).blur(function() {
+			$(".signUp-push .pushBox-img").removeClass("hide")
+		})
+	})
+		
 	//联盟优势
 	
 	var advantageS = new IScroll('.advantage-push-wrapper', {
