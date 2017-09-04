@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>计算器</title>
+		<link rel="stylesheet" type="text/css" href="css/calculator.css" />
+		<script type="text/javascript" src="plugins/zepto.min.js"></script>
+		<script type="text/javascript" src="plugins/iscroll-master/build/iscroll-probe.js"></script>
+		<script type="text/javascript" src="vue/vue.js"></script>
+		<script type="text/javascript" src="js/calculator.js"></script>
+		<script>
+			document.documentElement.style.fontSize = innerWidth / 15 + "px";
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<header class="header">
+				<div class="signal_bar"></div>
+				<div class="title_bar">
+					<h3 class="title_txt">计算器</h3>
+					<a class="return" href="javascript:;"></a>
+				</div>
+			</header>
+			<section class="section">
+				<div class="AF-money credit">
+					<div class="AF-calculate">
+						<div class="AF-calculate-select">
+							<span class="interest select">等额本息</span>
+							<span class="principa">等额本金</span>
+						</div>
+						<div class="AF-calculate-forMonth">
+							<span class="forMonth">每月月供参考（元）</span>
+							<span class="forMonthnum">0.00</span>
+						</div>
+						<div class="AF-calculate-payment">
+							<div class="payment equal">
+								<span>支付利息（元）</span>
+								<span>0.00</span>
+							</div>
+							<div class="repayment equal">
+								<span>还款总额（元）</span>
+								<span>0.00</span>
+							</div>
+						</div>
+					</div>
+					<div class="AF-rDetails">
+						<span class="push">点击查看还款详情</span>
+					</div>
+					<ul class="AF-type typebox">
+						<li class="AF-type-li jisuan">
+							<div class="AF-type-info">
+								<span class="AF-type-infotitle">计算类型</span>
+							</div>
+							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+							<div class="returnright">公积金贷款（按贷款金额）</div>
+						</li>
+						<li class="AF-type-li">
+							<div class="AF-type-info">
+								<span class="AF-type-infotitle">贷款金额（万）</span>
+							</div>
+							<input class="name" id="AF-money-pri" type="text" placeholder="请输入金额" />
+						</li>
+						<li class="AF-type-li goufang">
+							<div class="AF-type-info">
+								<span class="AF-type-infotitle">购房性质</span>
+							</div>
+							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+							<div class="returnright null"></div>
+						</li>
+						<li class="AF-type-li shoufu">
+							<div class="AF-type-info">
+								<span class="AF-type-infotitle">首付</span>
+							</div>
+							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+							<div class="returnright null"></div>
+						</li>
+						<li class="AF-type-li gongjijin">
+							<div class="AF-type-info">
+								<span class="AF-type-infotitle">公积金贷利率</span>
+							</div>
+							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+							<div class="returnright null"></div>
+						</li>
+						<li class="AF-type-li nianxian">
+							<div class="AF-type-info">
+								<span class="AF-type-infotitle">贷款年限（年）</span>
+							</div>
+							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+							<div class="returnright null"></div>
+						</li>
+					</ul>
+					<div class="AF-rule">以上为央行2016年最新公布的贷款基准利率</div>
+				</div>
+				<div class="AF-area credit">
+					<div class="AF-calculate">
+						<div class="AF-calculate-select">
+							<span class="interest select">等额本息</span>
+							<span class="principa">等额本金</span>
+						</div>
+						<div class="AF-calculate-forMonth">
+							<span class="forMonth">每月月供参考（元）</span>
+							<span class="forMonthnum">0.00</span>
+						</div>
+						<div class="AF-calculate-payment">
+							<div class="payment equal">
+								<span>支付利息（元）</span>
+								<span>0.00</span>
+							</div>
+							<div class="repayment equal">
+								<span>还款总额（元）</span>
+								<span>0.00</span>
+							</div>
+						</div>
+					</div>
+					<div class="AF-rDetails">
+						<span class="push">点击查看还款详情</span>
+					</div>
+					<ul class="AF-type typebox">
+						<li class="AF-type-li jisuan">
+							<div class="AF-type-info">
+								<span class="AF-type-infotitle">计算类型</span>
+							</div>
+							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+							<div class="returnright">公积金贷款（按面积）</div>
+						</li>
+						<li class="AF-type-li">
+							<div class="AF-type-info">
+								<span class="AF-type-infotitle">单价</span>
+							</div>
+							<input class="name" id="AF-area-pri" type="text" placeholder="元/平方" />
+						</li>
+						<li class="AF-type-li">
+							<div class="AF-type-info">
+								<span class="AF-type-infotitle">面积</span>
+							</div>
+							<input class="name" id="AF-area-areas" type="text" placeholder="平方米" />
+						</li>
+						<li class="AF-type-li goufang">
+							<div class="AF-type-info">
+								<span class="AF-type-infotitle">购房性质</span>
+							</div>
+							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+							<div class="returnright null"></div>
+						</li>
+						<li class="AF-type-li shoufu">
+							<div class="AF-type-info">
+								<span class="AF-type-infotitle">首付</span>
+							</div>
+							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+							<div class="returnright null"></div>
+						</li>
+						<li class="AF-type-li gongjijin">
+							<div class="AF-type-info">
+								<span class="AF-type-infotitle">公积金贷利率</span>
+							</div>
+							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+							<div class="returnright null"></div>
+						</li>
+						<li class="AF-type-li nianxian">
+							<div class="AF-type-info">
+								<span class="AF-type-infotitle">贷款年限（年）</span>
+							</div>
+							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+							<div class="returnright null"></div>
+						</li>
+					</ul>
+					<div class="AF-rule">以上为央行2016年最新公布的贷款基准利率</div>
+				</div>
+				<div class="CL-money credit">
+					<div class="CL-calculate">
+						<div class="CL-calculate-select">
+							<span class="interest select">等额本息</span>
+							<span class="principa">等额本金</span>
+						</div>
+						<div class="CL-calculate-forMonth">
+							<span class="forMonth">每月月供参考（元）</span>
+							<span class="forMonthnum">0.00</span>
+						</div>
+						<div class="CL-calculate-payment">
+							<div class="payment equal">
+								<span>支付利息（元）</span>
+								<span>0.00</span>
+							</div>
+							<div class="repayment equal">
+								<span>还款总额（元）</span>
+								<span>0.00</span>
+							</div>
+						</div>
+					</div>
+					<div class="CL-rDetails">
+						<span class="push">点击查看还款详情</span>
+					</div>
+					<ul class="CL-type typebox">
+						<li class="CL-type-li jisuan">
+							<div class="CL-type-info">
+								<span class="CL-type-infotitle">计算类型</span>
+							</div>
+							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+							<div class="returnright">商业贷款（按贷款金额）</div>
+						</li>
+						<li class="CL-type-li">
+							<div class="CL-type-info">
+								<span class="CL-type-infotitle">贷款金额金额（万）</span>
+							</div>
+							<input class="name" id="CL-money-pri" type="text" placeholder="请输入金额" />
+						</li>
+						<li class="CL-type-li goufang">
+							<div class="CL-type-info">
+								<span class="CL-type-infotitle">购房性质</span>
+							</div>
+							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+							<div class="returnright null"></div>
+						</li>
+						<li class="CL-type-li shoufu">
+							<div class="CL-type-info">
+								<span class="CL-type-infotitle">首付</span>
+							</div>
+							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+							<div class="returnright null"></div>
+						</li>
+						<li class="CL-type-li shanye">
+							<div class="CL-type-info">
+								<span class="CL-type-infotitle">商业贷利率</span>
+							</div>
+							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+							<div class="returnright null"></div>
+						</li>
+						<li class="CL-type-li nianxian">
+							<div class="CL-type-info">
+								<span class="CL-type-infotitle">贷款年限（年）</span>
+							</div>
+							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+							<div class="returnright null"></div>
+						</li>
+					</ul>
+					<div class="CL-rule">以上为央行2016年最新公布的贷款基准利率</div>
+				</div>
+				<div class="CL-area credit">
+					<div class="CL-calculate">
+						<div class="CL-calculate-select">
+							<span class="interest select">等额本息</span>
+							<span class="principa">等额本金</span>
+						</div>
+						<div class="CL-calculate-forMonth">
+							<span class="forMonth">每月月供参考（元）</span>
+							<span class="forMonthnum">0.00</span>
+						</div>
+						<div class="CL-calculate-payment">
+							<div class="payment equal">
+								<span>支付利息（元）</span>
+								<span>0.00</span>
+							</div>
+							<div class="repayment equal">
+								<span>还款总额（元）</span>
+								<span>0.00</span>
+							</div>
+						</div>
+					</div>
+					<div class="CL-rDetails">
+						<span class="push">点击查看还款详情</span>
+					</div>
+					<ul class="CL-type typebox">
+						<li class="CL-type-li jisuan">
+							<div class="CL-type-info">
+								<span class="CL-type-infotitle">计算类型</span>
+							</div>
+							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+							<div class="returnright">商业贷款（按面积）</div>
+						</li>
+						<li class="CL-type-li">
+							<div class="CL-type-info">
+								<span class="CL-type-infotitle">单价</span>
+							</div>
+							<input class="name" id="CL-area-pri" type="text" placeholder="元/平方" />
+						</li>
+
+						<li class="CL-type-li">
+							<div class="CL-type-info">
+								<span class="CL-type-infotitle">面积</span>
+							</div>
+							<input class="name" id="CL-area-areas" type="text" placeholder="平方米" />
+						</li>
+						<li class="CL-type-li goufang">
+							<div class="CL-type-info">
+								<span class="CL-type-infotitle">购房性质</span>
+							</div>
+							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+							<div class="returnright null"></div>
+						</li>
+						<li class="CL-type-li shoufu">
+							<div class="CL-type-info">
+								<span class="CL-type-infotitle">首付</span>
+							</div>
+							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+							<div class="returnright null"></div>
+						</li>
+						<li class="CL-type-li shanye">
+							<div class="CL-type-info">
+								<span class="CL-type-infotitle">商业贷利率</span>
+							</div>
+							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+							<div class="returnright null"></div>
+						</li>
+						<li class="CL-type-li nianxian">
+							<div class="CL-type-info">
+								<span class="CL-type-infotitle">贷款年限（年）</span>
+							</div>
+							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+							<div class="returnright null"></div>
+						</li>
+					</ul>
+					<div class="CL-rule">以上为央行2016年最新公布的贷款基准利率</div>
+				</div>
+				<div class="CombinationL credit">
+					<div class="CombinationL-calculate">
+						<div class="CombinationL-calculate-select">
+							<span class="interest select">等额本息</span>
+							<span class="principa">等额本金</span>
+						</div>
+						<div class="CombinationL-calculate-forMonth">
+							<span class="forMonth">每月月供参考（元）</span>
+							<span class="forMonthnum">0.00</span>
+						</div>
+						<div class="CombinationL-calculate-payment">
+							<div class="payment equal">
+								<span>支付利息（元）</span>
+								<span>0.00</span>
+							</div>
+							<div class="repayment equal">
+								<span>还款总额（元）</span>
+								<span>0.00</span>
+							</div>
+						</div>
+					</div>
+					<div class="CombinationL-rDetails">
+						<span class="push">点击查看还款详情</span>
+					</div>
+					<ul class="CombinationL-type typebox">
+						<li class="CombinationL-type-li jisuan">
+							<div class="CombinationL-type-info">
+								<span class="CombinationL-type-infotitle">计算类型</span>
+							</div>
+							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+							<div class="returnright">组合贷款</div>
+						</li>
+						<li class="CombinationL-type-li">
+							<div class="CombinationL-type-info">
+								<span class="CombinationL-type-infotitle">商贷金额（万）</span>
+							</div>
+							<input class="name" id="CombinationL-pri1" type="text" placeholder="请输入金额" />
+						</li>
+						<li class="CombinationL-type-li">
+							<div class="CombinationL-type-info">
+								<span class="CombinationL-type-infotitle">公积金贷款金额（万）</span>
+							</div>
+							<input class="name" id="CombinationL-pri2" type="text" placeholder="请输入金额" />
+						</li>
+						<li class="CombinationL-type-li nianxian">
+							<div class="CombinationL-type-info">
+								<span class="CombinationL-type-infotitle">期限（年）</span>
+							</div>
+							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+							<div class="returnright null"></div>
+						</li>
+						<li class="CombinationL-type-li shanye">
+							<div class="CombinationL-type-info">
+								<span class="CombinationL-type-infotitle">商贷利率（%）</span>
+							</div>
+							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+							<div class="returnright null"></div>
+						</li>
+						<li class="CombinationL-type-li gongjijin">
+							<div class="CombinationL-type-info">
+								<span class="CombinationL-type-infotitle">公积金贷利率（%）</span>
+							</div>
+							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+							<div class="returnright null"></div>
+						</li>
+					</ul>
+					<div class="CombinationL-rule">以上为央行2016年最新公布的贷款基准利率</div>
+				</div>
+				<div class="Taxation credit">
+					<div class="Taxation-calculate">
+						<div class="Taxation-calculate-fortax">
+							<div class="total-tax equal">
+								<span class="fortotal">税费总计</span>
+								<span class="fortotalnum">0.00</span>
+							</div>
+							<div class="house-tax equal">
+								<span class="forhouse">房屋总价</span>
+								<span class="forhousenum">0.00</span>
+							</div>
+						</div>
+						<div class="Taxation-calculate-payment">
+							<div class="payment equal">
+								<span>契税（元）</span>
+								<span>0.00</span>
+							</div>
+							<div class="repayment equal">
+								<span>印花税（元）</span>
+								<span>免征</span>
+							</div>
+						</div>
+					</div>
+					<div class="Taxation-rDetails">
+						<span class="push">点击查看还款详情</span>
+					</div>
+					<ul class="Taxation-type typebox">
+						<li class="Taxation-type-li jisuan">
+							<div class="Taxation-type-info">
+								<span class="Taxation-type-infotitle">计算类型</span>
+							</div>
+							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+							<div class="returnright">税率计算</div>
+						</li>
+						<li class="Taxation-type-li zhuzhai">
+							<div class="Taxation-type-info">
+								<span class="Taxation-type-infotitle">住宅类型</span>
+							</div>
+							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+							<div class="returnright null"></div>
+						</li>
+						<li class="Taxation-type-li goufang">
+							<div class="Taxation-type-info">
+								<span class="Taxation-type-infotitle">购房性质</span>
+							</div>
+							<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+							<div class="returnright null"></div>
+						</li>
+						<li class="Taxation-type-li">
+							<div class="Taxation-type-info">
+								<span class="Taxation-type-infotitle">单价</span>
+							</div>
+							<input class="name" id="Taxation-pri" type="text" placeholder="元/平方" />
+						</li>
+						<li class="Taxation-type-li">
+							<div class="Taxation-type-info">
+								<span class="Taxation-type-infotitle">面积</span>
+							</div>
+							<input class="name" id="Taxation-area" type="text" placeholder="平方米" />
+						</li>
+					</ul>
+					<div class="Taxation-rule">
+						<p><span>契税：</span>购买“非普通住宅”需缴纳总房价3%的契税，“普通住宅”税率减半至1.5%；个人首次购买90平方米以下的“普通住宅”，且属家庭首套房的，税率仅为1%。</p>
+						<p><span>印花税：</span>免征</p>
+						<p>购房过程中还会收取其他费用，不同楼盘收取费用不一致，详情请与开发商沟通。</p>
+					</div>
+				</div>
+			</section>
+		</div>
+		<div class="R-details">
+			<div class="details-wrapper">
+				<header class="details-wrapper-header">
+					<div class="signal_bar"></div>
+					<div class="details-wrapper-header-wrapper">
+						<h3 class="title_txt">还款明细</h3>
+						<a class="return" href="javascript:;"></a>
+					</div>
+				</header>
+				<div class="details-wrapper-body">
+					<div class="details-wrapper-body-box">
+						<div class="details-wrapper-calculate">
+							<div class="details-calculate-select">
+								<span class="interest select">等额本息</span>
+								<span class="principa">等额本金</span>
+							</div>
+							<div class="details-calculate-payment">
+								<div class="total-r equal">
+									<span>总还款(万)</span>
+									<span>0.00</span>
+								</div>
+								<div class="total-i equal">
+									<span>总利息(万)</span>
+									<span>0.00</span>
+								</div>
+								<div class="total-l equal">
+									<span>总贷款(万)</span>
+									<span>0.00</span>
+								</div>
+								<div class="total-m equal">
+									<span>贷款月数</span>
+									<span>0</span>
+								</div>
+							</div>
+						</div>
+						<div class="details-wrapper-data">
+							<ul class="data-listheader">
+								<li>月份</li>
+								<li>月供本金</li>
+								<li>月供利息</li>
+								<li>剩余</li>
+							</ul>
+							<div class="data-listtable" v-for="list in detailslist">
+								<h3 class="year" v-text="list.title"></h3>
+								<ul class="month">
+									<li class="date" v-for="items in list.data">
+										<span v-text="items.month"></span>
+										<span v-text="items.principal"></span>
+										<span v-text="items.interest"></span>
+										<span v-text="items.surplus"></span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="zhezhao"></div>
+		<div class="bomb-wrap">
+			<ul class="calculation-type frame">
+				<li class="select">公积金贷款（按贷款金额）</li>
+				<li>公积金贷款（按面积）</li>
+				<li>商业贷款（按贷款金额）</li>
+				<li>商业贷款（面积）</li>
+				<li>组合贷款</li>
+				<li>税费计算</li>
+			</ul>
+			<ul class="house-type frame">
+				<li>首套房1</li>
+				<li>首套房2</li>
+				<li>首套房3</li>
+			</ul>
+			<ul class="down-payments frame">
+				<li>1成</li>
+				<li>2成</li>
+				<li>3成</li>
+				<li>4成</li>
+			</ul>
+			<ul class="gong-rate frame">
+				<li>4.7%</li>
+				<li>4.8%</li>
+				<li>4.9%</li>
+				<li>5.0%</li>
+			</ul>
+			<ul class="shan-rate frame">
+				<li>3.7%</li>
+				<li>3.8%</li>
+				<li>3.9%</li>
+				<li>4.0%</li>
+			</ul>
+			<ul class="loan-term frame">
+				<li>5年</li>
+				<li>10年</li>
+				<li>15年</li>
+				<li>20年</li>
+			</ul>
+			<ul class="housing-type frame">
+				<li>毛坯</li>
+				<li>普通住宅</li>
+				<li>豪华住宅</li>
+				<li>别墅</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var myVue = new Vue({
+			el: ".R-details",
+			data: {
+				detailslist: [
+					{
+						title: '第一年',
+						data: [
+							{
+								month: '1月',
+								principal: '5,574.57',
+								interest: '5,574.57',
+								surplus: '7,587,774.57'
+							},
+							{
+								month: '2月',
+								principal: '5,574.57',
+								interest: '5,574.57',
+								surplus: '7,587,774.57'
+							},
+							{
+								month: '3月',
+								principal: '5,574.57',
+								interest: '5,574.57',
+								surplus: '7,587,774.57'
+							},
+							{
+								month: '4月',
+								principal: '5,574.57',
+								interest: '5,574.57',
+								surplus: '7,587,774.57'
+							},
+							{
+								month: '5月',
+								principal: '5,574.57',
+								interest: '5,574.57',
+								surplus: '7,587,774.57'
+							},
+							{
+								month: '6月',
+								principal: '5,574.57',
+								interest: '5,574.57',
+								surplus: '7,587,774.57'
+							},
+							{
+								month: '7月',
+								principal: '5,574.57',
+								interest: '5,574.57',
+								surplus: '7,587,774.57'
+							},
+							{
+								month: '8月',
+								principal: '5,574.57',
+								interest: '5,574.57',
+								surplus: '7,587,774.57'
+							},
+							{
+								month: '9月',
+								principal: '5,574.57',
+								interest: '5,574.57',
+								surplus: '7,587,774.57'
+							},
+							{
+								month: '10月',
+								principal: '5,574.57',
+								interest: '5,574.57',
+								surplus: '7,587,774.57'
+							},
+							{
+								month: '11月',
+								principal: '5,574.57',
+								interest: '5,574.57',
+								surplus: '7,587,774.57'
+							},
+							{
+								month: '12月',
+								principal: '5,574.57',
+								interest: '5,574.57',
+								surplus: '7,587,774.57'
+							}
+						]
+					},
+					{
+						title: '第二年',
+						data: [
+							{
+								month: '1月',
+								principal: '5,574.57',
+								interest: '5,574.57',
+								surplus: '7,587,774.57'
+							},
+							{
+								month: '2月',
+								principal: '5,574.57',
+								interest: '5,574.57',
+								surplus: '7,587,774.57'
+							},
+							{
+								month: '3月',
+								principal: '5,574.57',
+								interest: '5,574.57',
+								surplus: '7,587,774.57'
+							},
+							{
+								month: '4月',
+								principal: '5,574.57',
+								interest: '5,574.57',
+								surplus: '7,587,774.57'
+							},
+							{
+								month: '5月',
+								principal: '5,574.57',
+								interest: '5,574.57',
+								surplus: '7,587,774.57'
+							},
+							{
+								month: '6月',
+								principal: '5,574.57',
+								interest: '5,574.57',
+								surplus: '7,587,774.57'
+							},
+							{
+								month: '7月',
+								principal: '5,574.57',
+								interest: '5,574.57',
+								surplus: '7,587,774.57'
+							},
+							{
+								month: '8月',
+								principal: '5,574.57',
+								interest: '5,574.57',
+								surplus: '7,587,774.57'
+							},
+							{
+								month: '9月',
+								principal: '5,574.57',
+								interest: '5,574.57',
+								surplus: '7,587,774.57'
+							},
+							{
+								month: '10月',
+								principal: '5,574.57',
+								interest: '5,574.57',
+								surplus: '7,587,774.57'
+							},
+							{
+								month: '11月',
+								principal: '5,574.57',
+								interest: '5,574.57',
+								surplus: '7,587,774.57'
+							},
+							{
+								month: '12月',
+								principal: '5,574.57',
+								interest: '5,574.57',
+								surplus: '7,587,774.57'
+							}
+						]
+					}
+				]
+			}
+		})
+	</script>
+
+</html>

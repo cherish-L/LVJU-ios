@@ -1,0 +1,1901 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+}
+
+input {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+::-moz-placeholder {
+  color: #CCCCCC;
+}
+
+::-webkit-input-placeholder {
+  color: #CCCCCC;
+}
+
+:-ms-input-placeholder {
+  color: #cccccc;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: PingFangSC-Regular;
+  background: #f4f4f4;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  background: #f4f4f4;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+}
+
+.container .header {
+  width: 100%;
+  background: #f6f6f6;
+  border-bottom: 1px solid #CCCCCC;
+}
+
+.container .header .signal_bar {
+  width: 100%;
+  height: 0.8rem;
+}
+
+.container .header .title_bar {
+  width: 100%;
+  height: 1.76rem;
+  line-height: 1.76rem;
+  position: relative;
+}
+
+.container .header .title_bar .title_txt {
+  font-size: 0.72rem;
+  color: #394043;
+  letter-spacing: 0;
+  text-align: center;
+  font-weight: normal;
+}
+
+.container .header .title_bar .return {
+  display: block;
+  height: 0.88rem;
+  width: 0.88rem;
+  background: url(../img/returnleft.png) no-repeat;
+  background-size: 0.88rem 0.88rem;
+  position: absolute;
+  top: 0.44rem;
+  left: 0.64rem;
+}
+
+.container .section {
+  flex: 1;
+  -webkit-flex: 1;
+  overflow: hidden;
+  background: #f4f4f4;
+  position: relative;
+}
+
+.container .section .credit {
+  height: 100%;
+  background: #F4F4F4;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.container .section .AF-money {
+  width: 100%;
+}
+
+.container .section .AF-money .AF-calculate {
+  width: 100%;
+  height: 7.68rem;
+  background: url(../img/AFbg.png);
+  background-size: cover;
+  position: relative;
+}
+
+.container .section .AF-money .AF-calculate .AF-calculate-select {
+  padding-top: 0.48rem;
+  height: 0.96rem;
+  position: relative;
+}
+
+.container .section .AF-money .AF-calculate .AF-calculate-select span {
+  display: inline-block;
+  width: 4rem;
+  height: 0.96rem;
+  line-height: 0.88rem;
+  box-sizing: border-box;
+  font-size: 0.48rem;
+  -webkit-box-sizing: border-box;
+  text-align: center;
+  border: 0.04rem solid #FFFFFF;
+  position: absolute;
+  bottom: 0;
+}
+
+.container .section .AF-money .AF-calculate .AF-calculate-select span.select {
+  background: #fff;
+  color: #0099EB;
+}
+
+.container .section .AF-money .AF-calculate .AF-calculate-select .interest {
+  color: #F6F6F6;
+  border-radius: 0.16rem 0 0 0.16rem;
+  left: 3.48rem;
+}
+
+.container .section .AF-money .AF-calculate .AF-calculate-select .principa {
+  color: #F6F6F6;
+  border-radius: 0 0.16rem 0.16rem 0;
+  left: 7.48rem;
+}
+
+.container .section .AF-money .AF-calculate .AF-calculate-forMonth {
+  margin-top: 0.64rem;
+  padding-left: 0.64rem;
+}
+
+.container .section .AF-money .AF-calculate .AF-calculate-forMonth span {
+  display: block;
+}
+
+.container .section .AF-money .AF-calculate .AF-calculate-forMonth .forMonth {
+  font-size: 0.48rem;
+  line-height: 0.64rem;
+  color: #FFFFFF;
+}
+
+.container .section .AF-money .AF-calculate .AF-calculate-forMonth .forMonthnum {
+  margin-top: 0.2rem;
+  font-size: 0.96rem;
+  line-height: 1.32rem;
+  color: #FFFFFF;
+}
+
+.container .section .AF-money .AF-calculate .AF-calculate-payment {
+  width: 100%;
+  padding: 0.64rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.container .section .AF-money .AF-calculate .AF-calculate-payment .equal {
+  width: 50%;
+  float: left;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.container .section .AF-money .AF-calculate .AF-calculate-payment .equal span {
+  display: block;
+}
+
+.container .section .AF-money .AF-calculate .AF-calculate-payment .equal span:first-child {
+  font-size: 0.48rem;
+  line-height: 0.64rem;
+  color: #FFFFFF;
+}
+
+.container .section .AF-money .AF-calculate .AF-calculate-payment .equal span:last-child {
+  margin-top: 0.2rem;
+  font-size: 0.72rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+
+.container .section .AF-money .AF-calculate .AF-calculate-payment .payment {
+  border-right: 0.04rem solid rgba(246, 246, 246, 0.5);
+}
+
+.container .section .AF-money .AF-calculate .AF-calculate-payment .repayment {
+  padding-left: 0.64rem;
+}
+
+.container .section .AF-money .AF-rDetails {
+  height: 1.28rem;
+  text-align: center;
+  position: relative;
+}
+
+.container .section .AF-money .AF-rDetails span {
+  display: inline-block;
+  margin: 0.16rem auto;
+  height: 0.64rem;
+  line-height: 0.64rem;
+  padding-right: 0.64rem;
+  background: url(../img/right.png) no-repeat;
+  background-size: 0.48rem 0.48rem;
+  background-position: 3.92rem 0.12rem;
+  font-size: 0.48rem;
+  color: #0099EB;
+  position: absolute;
+  top: 0;
+  left: 36%;
+}
+
+.container .section .AF-money .AF-type {
+  width: 100%;
+}
+
+.container .section .AF-money .AF-type .AF-type-li {
+  width: 100%;
+  height: 1.8rem;
+  line-height: 1.8rem;
+  background: #fff;
+  box-shadow: inset 0 -1px 0 0 #EEEEEE;
+}
+
+.container .section .AF-money .AF-type .AF-type-li .AF-type-info {
+  height: 100%;
+  margin-left: 0.64rem;
+  float: left;
+}
+
+.container .section .AF-money .AF-type .AF-type-li .AF-type-info .AF-type-infotitle {
+  display: inline-block;
+  font-size: 0.56rem;
+  margin-right: 0.32rem;
+  color: #394043;
+  letter-spacing: 0;
+  float: left;
+}
+
+.container .section .AF-money .AF-type .AF-type-li .AF-type-info .required {
+  display: inline-block;
+  font-size: 0.48rem;
+  color: #0099EB;
+  float: left;
+}
+
+.container .section .AF-money .AF-type .AF-type-li .name {
+  width: 8rem;
+  height: 1.8rem;
+  padding: 0.48rem 0;
+  line-height: 0.84rem;
+  margin-right: 0.64rem;
+  float: right;
+  font-size: 0.56rem;
+  color: #6C7072;
+  text-align: right;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: none;
+  background: none;
+}
+
+.container .section .AF-money .AF-type .AF-type-li .returnright {
+  height: 1.8rem;
+  width: 6.8rem;
+  margin-right: 0.2rem;
+  float: right;
+  text-align: right;
+  line-height: 1.8rem;
+  font-size: 0.56rem;
+  color: #6C7072;
+  margin-right: 0.2rem;
+}
+
+.container .section .AF-money .AF-type .AF-type-li .returnright_img {
+  width: 0.56rem;
+  margin-right: 0.64rem;
+  height: 100%;
+  float: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.container .section .AF-money .AF-type .AF-type-li .returnright_img img {
+  width: 0.56rem;
+  height: 0.56rem;
+}
+
+.container .section .AF-money .AF-rule {
+  padding: 0.52rem 0.64rem;
+  line-height: 0.64rem;
+  font-size: 0.48rem;
+  color: #999999;
+}
+
+.container .section .AF-area {
+  width: 100%;
+}
+
+.container .section .AF-area .AF-calculate {
+  width: 100%;
+  height: 7.68rem;
+  background: url(../img/AFbg.png);
+  background-size: cover;
+  position: relative;
+}
+
+.container .section .AF-area .AF-calculate .AF-calculate-select {
+  padding-top: 0.48rem;
+  height: 0.96rem;
+  position: relative;
+}
+
+.container .section .AF-area .AF-calculate .AF-calculate-select span {
+  display: inline-block;
+  width: 4rem;
+  height: 0.96rem;
+  line-height: 0.88rem;
+  box-sizing: border-box;
+  font-size: 0.48rem;
+  -webkit-box-sizing: border-box;
+  text-align: center;
+  border: 0.04rem solid #FFFFFF;
+  position: absolute;
+  bottom: 0;
+}
+
+.container .section .AF-area .AF-calculate .AF-calculate-select span.select {
+  background: #fff;
+  color: #0099EB;
+}
+
+.container .section .AF-area .AF-calculate .AF-calculate-select .interest {
+  color: #F6F6F6;
+  border-radius: 0.16rem 0 0 0.16rem;
+  left: 3.48rem;
+}
+
+.container .section .AF-area .AF-calculate .AF-calculate-select .principa {
+  color: #F6F6F6;
+  border-radius: 0 0.16rem 0.16rem 0;
+  left: 7.48rem;
+}
+
+.container .section .AF-area .AF-calculate .AF-calculate-forMonth {
+  margin-top: 0.64rem;
+  padding-left: 0.64rem;
+}
+
+.container .section .AF-area .AF-calculate .AF-calculate-forMonth span {
+  display: block;
+}
+
+.container .section .AF-area .AF-calculate .AF-calculate-forMonth .forMonth {
+  font-size: 0.48rem;
+  line-height: 0.64rem;
+  color: #FFFFFF;
+}
+
+.container .section .AF-area .AF-calculate .AF-calculate-forMonth .forMonthnum {
+  margin-top: 0.2rem;
+  font-size: 0.96rem;
+  line-height: 1.32rem;
+  color: #FFFFFF;
+}
+
+.container .section .AF-area .AF-calculate .AF-calculate-payment {
+  width: 100%;
+  padding: 0.64rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.container .section .AF-area .AF-calculate .AF-calculate-payment .equal {
+  width: 50%;
+  float: left;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.container .section .AF-area .AF-calculate .AF-calculate-payment .equal span {
+  display: block;
+}
+
+.container .section .AF-area .AF-calculate .AF-calculate-payment .equal span:first-child {
+  font-size: 0.48rem;
+  line-height: 0.64rem;
+  color: #FFFFFF;
+}
+
+.container .section .AF-area .AF-calculate .AF-calculate-payment .equal span:last-child {
+  margin-top: 0.2rem;
+  font-size: 0.72rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+
+.container .section .AF-area .AF-calculate .AF-calculate-payment .payment {
+  border-right: 0.04rem solid rgba(246, 246, 246, 0.5);
+}
+
+.container .section .AF-area .AF-calculate .AF-calculate-payment .repayment {
+  padding-left: 0.64rem;
+}
+
+.container .section .AF-area .AF-rDetails {
+  height: 1.28rem;
+  text-align: center;
+  position: relative;
+}
+
+.container .section .AF-area .AF-rDetails span {
+  display: inline-block;
+  margin: 0.16rem auto;
+  height: 0.64rem;
+  line-height: 0.64rem;
+  padding-right: 0.64rem;
+  background: url(../img/right.png) no-repeat;
+  background-size: 0.48rem 0.48rem;
+  background-position: 3.92rem 0.12rem;
+  font-size: 0.48rem;
+  color: #0099EB;
+  position: absolute;
+  top: 0;
+  left: 36%;
+}
+
+.container .section .AF-area .AF-type {
+  width: 100%;
+}
+
+.container .section .AF-area .AF-type .AF-type-li {
+  width: 100%;
+  height: 1.8rem;
+  line-height: 1.8rem;
+  background: #fff;
+  box-shadow: inset 0 -1px 0 0 #EEEEEE;
+}
+
+.container .section .AF-area .AF-type .AF-type-li .AF-type-info {
+  height: 100%;
+  margin-left: 0.64rem;
+  float: left;
+}
+
+.container .section .AF-area .AF-type .AF-type-li .AF-type-info .AF-type-infotitle {
+  display: inline-block;
+  font-size: 0.56rem;
+  margin-right: 0.32rem;
+  color: #394043;
+  letter-spacing: 0;
+  float: left;
+}
+
+.container .section .AF-area .AF-type .AF-type-li .AF-type-info .required {
+  display: inline-block;
+  font-size: 0.48rem;
+  color: #0099EB;
+  float: left;
+}
+
+.container .section .AF-area .AF-type .AF-type-li .name {
+  width: 8rem;
+  height: 1.8rem;
+  padding: 0.48rem 0;
+  line-height: 0.84rem;
+  margin-right: 0.64rem;
+  float: right;
+  font-size: 0.56rem;
+  color: #6C7072;
+  text-align: right;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: none;
+  background: none;
+}
+
+.container .section .AF-area .AF-type .AF-type-li .returnright {
+  height: 1.8rem;
+  width: 6.8rem;
+  margin-right: 0.2rem;
+  float: right;
+  text-align: right;
+  line-height: 1.8rem;
+  font-size: 0.56rem;
+  color: #6C7072;
+  margin-right: 0.2rem;
+}
+
+.container .section .AF-area .AF-type .AF-type-li .returnright_img {
+  width: 0.56rem;
+  margin-right: 0.64rem;
+  height: 100%;
+  float: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.container .section .AF-area .AF-type .AF-type-li .returnright_img img {
+  width: 0.56rem;
+  height: 0.56rem;
+}
+
+.container .section .AF-area .AF-rule {
+  padding: 0.52rem 0.64rem;
+  line-height: 0.64rem;
+  font-size: 0.48rem;
+  color: #999999;
+}
+
+.container .section .CL-money {
+  width: 100%;
+}
+
+.container .section .CL-money .CL-calculate {
+  width: 100%;
+  height: 7.68rem;
+  background: url(../img/AFbg.png);
+  background-size: cover;
+  position: relative;
+}
+
+.container .section .CL-money .CL-calculate .CL-calculate-select {
+  padding-top: 0.48rem;
+  height: 0.96rem;
+  position: relative;
+}
+
+.container .section .CL-money .CL-calculate .CL-calculate-select span {
+  display: inline-block;
+  width: 4rem;
+  height: 0.96rem;
+  line-height: 0.88rem;
+  box-sizing: border-box;
+  font-size: 0.48rem;
+  -webkit-box-sizing: border-box;
+  text-align: center;
+  border: 0.04rem solid #FFFFFF;
+  position: absolute;
+  bottom: 0;
+}
+
+.container .section .CL-money .CL-calculate .CL-calculate-select span.select {
+  background: #fff;
+  color: #0099EB;
+}
+
+.container .section .CL-money .CL-calculate .CL-calculate-select .interest {
+  color: #F6F6F6;
+  border-radius: 0.16rem 0 0 0.16rem;
+  left: 3.48rem;
+}
+
+.container .section .CL-money .CL-calculate .CL-calculate-select .principa {
+  color: #F6F6F6;
+  border-radius: 0 0.16rem 0.16rem 0;
+  left: 7.48rem;
+}
+
+.container .section .CL-money .CL-calculate .CL-calculate-forMonth {
+  margin-top: 0.64rem;
+  padding-left: 0.64rem;
+}
+
+.container .section .CL-money .CL-calculate .CL-calculate-forMonth span {
+  display: block;
+}
+
+.container .section .CL-money .CL-calculate .CL-calculate-forMonth .forMonth {
+  font-size: 0.48rem;
+  line-height: 0.64rem;
+  color: #FFFFFF;
+}
+
+.container .section .CL-money .CL-calculate .CL-calculate-forMonth .forMonthnum {
+  margin-top: 0.2rem;
+  font-size: 0.96rem;
+  line-height: 1.32rem;
+  color: #FFFFFF;
+}
+
+.container .section .CL-money .CL-calculate .CL-calculate-payment {
+  width: 100%;
+  padding: 0.64rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.container .section .CL-money .CL-calculate .CL-calculate-payment .equal {
+  width: 50%;
+  float: left;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.container .section .CL-money .CL-calculate .CL-calculate-payment .equal span {
+  display: block;
+}
+
+.container .section .CL-money .CL-calculate .CL-calculate-payment .equal span:first-child {
+  font-size: 0.48rem;
+  line-height: 0.64rem;
+  color: #FFFFFF;
+}
+
+.container .section .CL-money .CL-calculate .CL-calculate-payment .equal span:last-child {
+  margin-top: 0.2rem;
+  font-size: 0.72rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+
+.container .section .CL-money .CL-calculate .CL-calculate-payment .payment {
+  border-right: 0.04rem solid rgba(246, 246, 246, 0.5);
+}
+
+.container .section .CL-money .CL-calculate .CL-calculate-payment .repayment {
+  padding-left: 0.64rem;
+}
+
+.container .section .CL-money .CL-rDetails {
+  height: 1.28rem;
+  text-align: center;
+  position: relative;
+}
+
+.container .section .CL-money .CL-rDetails span {
+  display: inline-block;
+  margin: 0.16rem auto;
+  height: 0.64rem;
+  line-height: 0.64rem;
+  padding-right: 0.64rem;
+  background: url(../img/right.png) no-repeat;
+  background-size: 0.48rem 0.48rem;
+  background-position: 3.92rem 0.12rem;
+  font-size: 0.48rem;
+  color: #0099EB;
+  position: absolute;
+  top: 0;
+  left: 36%;
+}
+
+.container .section .CL-money .CL-type {
+  width: 100%;
+}
+
+.container .section .CL-money .CL-type .CL-type-li {
+  width: 100%;
+  height: 1.8rem;
+  line-height: 1.8rem;
+  background: #fff;
+  box-shadow: inset 0 -1px 0 0 #EEEEEE;
+}
+
+.container .section .CL-money .CL-type .CL-type-li .CL-type-info {
+  height: 100%;
+  margin-left: 0.64rem;
+  float: left;
+}
+
+.container .section .CL-money .CL-type .CL-type-li .CL-type-info .CL-type-infotitle {
+  display: inline-block;
+  font-size: 0.56rem;
+  margin-right: 0.32rem;
+  color: #394043;
+  letter-spacing: 0;
+  float: left;
+}
+
+.container .section .CL-money .CL-type .CL-type-li .CL-type-info .required {
+  display: inline-block;
+  font-size: 0.48rem;
+  color: #0099EB;
+  float: left;
+}
+
+.container .section .CL-money .CL-type .CL-type-li .name {
+  width: 8rem;
+  height: 1.8rem;
+  padding: 0.48rem 0;
+  line-height: 0.84rem;
+  margin-right: 0.64rem;
+  float: right;
+  font-size: 0.56rem;
+  color: #6C7072;
+  text-align: right;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: none;
+  background: none;
+}
+
+.container .section .CL-money .CL-type .CL-type-li .returnright {
+  height: 1.8rem;
+  width: 6.8rem;
+  margin-right: 0.2rem;
+  float: right;
+  text-align: right;
+  line-height: 1.8rem;
+  font-size: 0.56rem;
+  color: #6C7072;
+  margin-right: 0.2rem;
+}
+
+.container .section .CL-money .CL-type .CL-type-li .returnright_img {
+  width: 0.56rem;
+  margin-right: 0.64rem;
+  height: 100%;
+  float: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.container .section .CL-money .CL-type .CL-type-li .returnright_img img {
+  width: 0.56rem;
+  height: 0.56rem;
+}
+
+.container .section .CL-money .CL-rule {
+  padding: 0.52rem 0.64rem;
+  line-height: 0.64rem;
+  font-size: 0.48rem;
+  color: #999999;
+}
+
+.container .section .CL-area {
+  width: 100%;
+}
+
+.container .section .CL-area .CL-calculate {
+  width: 100%;
+  height: 7.68rem;
+  background: url(../img/AFbg.png);
+  background-size: cover;
+  position: relative;
+}
+
+.container .section .CL-area .CL-calculate .CL-calculate-select {
+  padding-top: 0.48rem;
+  height: 0.96rem;
+  position: relative;
+}
+
+.container .section .CL-area .CL-calculate .CL-calculate-select span {
+  display: inline-block;
+  width: 4rem;
+  height: 0.96rem;
+  line-height: 0.88rem;
+  box-sizing: border-box;
+  font-size: 0.48rem;
+  -webkit-box-sizing: border-box;
+  text-align: center;
+  border: 0.04rem solid #FFFFFF;
+  position: absolute;
+  bottom: 0;
+}
+
+.container .section .CL-area .CL-calculate .CL-calculate-select span.select {
+  background: #fff;
+  color: #0099EB;
+}
+
+.container .section .CL-area .CL-calculate .CL-calculate-select .interest {
+  color: #F6F6F6;
+  border-radius: 0.16rem 0 0 0.16rem;
+  left: 3.48rem;
+}
+
+.container .section .CL-area .CL-calculate .CL-calculate-select .principa {
+  color: #F6F6F6;
+  border-radius: 0 0.16rem 0.16rem 0;
+  left: 7.48rem;
+}
+
+.container .section .CL-area .CL-calculate .CL-calculate-forMonth {
+  margin-top: 0.64rem;
+  padding-left: 0.64rem;
+}
+
+.container .section .CL-area .CL-calculate .CL-calculate-forMonth span {
+  display: block;
+}
+
+.container .section .CL-area .CL-calculate .CL-calculate-forMonth .forMonth {
+  font-size: 0.48rem;
+  line-height: 0.64rem;
+  color: #FFFFFF;
+}
+
+.container .section .CL-area .CL-calculate .CL-calculate-forMonth .forMonthnum {
+  margin-top: 0.2rem;
+  font-size: 0.96rem;
+  line-height: 1.32rem;
+  color: #FFFFFF;
+}
+
+.container .section .CL-area .CL-calculate .CL-calculate-payment {
+  width: 100%;
+  padding: 0.64rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.container .section .CL-area .CL-calculate .CL-calculate-payment .equal {
+  width: 50%;
+  float: left;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.container .section .CL-area .CL-calculate .CL-calculate-payment .equal span {
+  display: block;
+}
+
+.container .section .CL-area .CL-calculate .CL-calculate-payment .equal span:first-child {
+  font-size: 0.48rem;
+  line-height: 0.64rem;
+  color: #FFFFFF;
+}
+
+.container .section .CL-area .CL-calculate .CL-calculate-payment .equal span:last-child {
+  margin-top: 0.2rem;
+  font-size: 0.72rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+
+.container .section .CL-area .CL-calculate .CL-calculate-payment .payment {
+  border-right: 0.04rem solid rgba(246, 246, 246, 0.5);
+}
+
+.container .section .CL-area .CL-calculate .CL-calculate-payment .repayment {
+  padding-left: 0.64rem;
+}
+
+.container .section .CL-area .CL-rDetails {
+  height: 1.28rem;
+  text-align: center;
+  position: relative;
+}
+
+.container .section .CL-area .CL-rDetails span {
+  display: inline-block;
+  margin: 0.16rem auto;
+  height: 0.64rem;
+  line-height: 0.64rem;
+  padding-right: 0.64rem;
+  background: url(../img/right.png) no-repeat;
+  background-size: 0.48rem 0.48rem;
+  background-position: 3.92rem 0.12rem;
+  font-size: 0.48rem;
+  color: #0099EB;
+  position: absolute;
+  top: 0;
+  left: 36%;
+}
+
+.container .section .CL-area .CL-type {
+  width: 100%;
+}
+
+.container .section .CL-area .CL-type .CL-type-li {
+  width: 100%;
+  height: 1.8rem;
+  line-height: 1.8rem;
+  background: #fff;
+  box-shadow: inset 0 -1px 0 0 #EEEEEE;
+}
+
+.container .section .CL-area .CL-type .CL-type-li .CL-type-info {
+  height: 100%;
+  margin-left: 0.64rem;
+  float: left;
+}
+
+.container .section .CL-area .CL-type .CL-type-li .CL-type-info .CL-type-infotitle {
+  display: inline-block;
+  font-size: 0.56rem;
+  margin-right: 0.32rem;
+  color: #394043;
+  letter-spacing: 0;
+  float: left;
+}
+
+.container .section .CL-area .CL-type .CL-type-li .CL-type-info .required {
+  display: inline-block;
+  font-size: 0.48rem;
+  color: #0099EB;
+  float: left;
+}
+
+.container .section .CL-area .CL-type .CL-type-li .name {
+  width: 8rem;
+  height: 1.8rem;
+  padding: 0.48rem 0;
+  line-height: 0.84rem;
+  margin-right: 0.64rem;
+  float: right;
+  font-size: 0.56rem;
+  color: #6C7072;
+  text-align: right;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: none;
+  background: none;
+}
+
+.container .section .CL-area .CL-type .CL-type-li .returnright {
+  height: 1.8rem;
+  width: 6.8rem;
+  margin-right: 0.2rem;
+  float: right;
+  text-align: right;
+  line-height: 1.8rem;
+  font-size: 0.56rem;
+  color: #6C7072;
+  margin-right: 0.2rem;
+}
+
+.container .section .CL-area .CL-type .CL-type-li .returnright_img {
+  width: 0.56rem;
+  margin-right: 0.64rem;
+  height: 100%;
+  float: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.container .section .CL-area .CL-type .CL-type-li .returnright_img img {
+  width: 0.56rem;
+  height: 0.56rem;
+}
+
+.container .section .CL-area .CL-rule {
+  padding: 0.52rem 0.64rem;
+  line-height: 0.64rem;
+  font-size: 0.48rem;
+  color: #999999;
+}
+
+.container .section .CombinationL {
+  width: 100%;
+}
+
+.container .section .CombinationL .CombinationL-calculate {
+  width: 100%;
+  height: 7.68rem;
+  background: url(../img/AFbg.png);
+  background-size: cover;
+  position: relative;
+}
+
+.container .section .CombinationL .CombinationL-calculate .CombinationL-calculate-select {
+  padding-top: 0.48rem;
+  height: 0.96rem;
+  position: relative;
+}
+
+.container .section .CombinationL .CombinationL-calculate .CombinationL-calculate-select span {
+  display: inline-block;
+  width: 4rem;
+  height: 0.96rem;
+  line-height: 0.88rem;
+  box-sizing: border-box;
+  font-size: 0.48rem;
+  -webkit-box-sizing: border-box;
+  text-align: center;
+  border: 0.04rem solid #FFFFFF;
+  position: absolute;
+  bottom: 0;
+}
+
+.container .section .CombinationL .CombinationL-calculate .CombinationL-calculate-select span.select {
+  background: #fff;
+  color: #0099EB;
+}
+
+.container .section .CombinationL .CombinationL-calculate .CombinationL-calculate-select .interest {
+  color: #F6F6F6;
+  border-radius: 0.16rem 0 0 0.16rem;
+  left: 3.48rem;
+}
+
+.container .section .CombinationL .CombinationL-calculate .CombinationL-calculate-select .principa {
+  color: #F6F6F6;
+  border-radius: 0 0.16rem 0.16rem 0;
+  left: 7.48rem;
+}
+
+.container .section .CombinationL .CombinationL-calculate .CombinationL-calculate-forMonth {
+  margin-top: 0.64rem;
+  padding-left: 0.64rem;
+}
+
+.container .section .CombinationL .CombinationL-calculate .CombinationL-calculate-forMonth span {
+  display: block;
+}
+
+.container .section .CombinationL .CombinationL-calculate .CombinationL-calculate-forMonth .forMonth {
+  font-size: 0.48rem;
+  line-height: 0.64rem;
+  color: #FFFFFF;
+}
+
+.container .section .CombinationL .CombinationL-calculate .CombinationL-calculate-forMonth .forMonthnum {
+  margin-top: 0.2rem;
+  font-size: 0.96rem;
+  line-height: 1.32rem;
+  color: #FFFFFF;
+}
+
+.container .section .CombinationL .CombinationL-calculate .CombinationL-calculate-payment {
+  width: 100%;
+  padding: 0.64rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.container .section .CombinationL .CombinationL-calculate .CombinationL-calculate-payment .equal {
+  width: 50%;
+  float: left;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.container .section .CombinationL .CombinationL-calculate .CombinationL-calculate-payment .equal span {
+  display: block;
+}
+
+.container .section .CombinationL .CombinationL-calculate .CombinationL-calculate-payment .equal span:first-child {
+  font-size: 0.48rem;
+  line-height: 0.64rem;
+  color: #FFFFFF;
+}
+
+.container .section .CombinationL .CombinationL-calculate .CombinationL-calculate-payment .equal span:last-child {
+  margin-top: 0.2rem;
+  font-size: 0.72rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+
+.container .section .CombinationL .CombinationL-calculate .CombinationL-calculate-payment .payment {
+  border-right: 0.04rem solid rgba(246, 246, 246, 0.5);
+}
+
+.container .section .CombinationL .CombinationL-calculate .CombinationL-calculate-payment .repayment {
+  padding-left: 0.64rem;
+}
+
+.container .section .CombinationL .CombinationL-rDetails {
+  height: 1.28rem;
+  text-align: center;
+  position: relative;
+}
+
+.container .section .CombinationL .CombinationL-rDetails span {
+  display: inline-block;
+  margin: 0.16rem auto;
+  height: 0.64rem;
+  line-height: 0.64rem;
+  padding-right: 0.64rem;
+  background: url(../img/right.png) no-repeat;
+  background-size: 0.48rem 0.48rem;
+  background-position: 3.92rem 0.12rem;
+  font-size: 0.48rem;
+  color: #0099EB;
+  position: absolute;
+  top: 0;
+  left: 36%;
+}
+
+.container .section .CombinationL .CombinationL-type {
+  width: 100%;
+}
+
+.container .section .CombinationL .CombinationL-type .CombinationL-type-li {
+  width: 100%;
+  height: 1.8rem;
+  line-height: 1.8rem;
+  background: #fff;
+  box-shadow: inset 0 -1px 0 0 #EEEEEE;
+}
+
+.container .section .CombinationL .CombinationL-type .CombinationL-type-li .CombinationL-type-info {
+  height: 100%;
+  margin-left: 0.64rem;
+  float: left;
+}
+
+.container .section .CombinationL .CombinationL-type .CombinationL-type-li .CombinationL-type-info .CombinationL-type-infotitle {
+  display: inline-block;
+  font-size: 0.56rem;
+  margin-right: 0.32rem;
+  color: #394043;
+  letter-spacing: 0;
+  float: left;
+}
+
+.container .section .CombinationL .CombinationL-type .CombinationL-type-li .CombinationL-type-info .required {
+  display: inline-block;
+  font-size: 0.48rem;
+  color: #0099EB;
+  float: left;
+}
+
+.container .section .CombinationL .CombinationL-type .CombinationL-type-li .name {
+  width: 7.2rem;
+  height: 1.8rem;
+  padding: 0.48rem 0;
+  line-height: 0.84rem;
+  margin-right: 0.64rem;
+  float: right;
+  font-size: 0.56rem;
+  color: #6C7072;
+  text-align: right;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: none;
+  background: none;
+}
+
+.container .section .CombinationL .CombinationL-type .CombinationL-type-li .returnright {
+  height: 1.8rem;
+  width: 6.8rem;
+  margin-right: 0.2rem;
+  float: right;
+  text-align: right;
+  line-height: 1.8rem;
+  font-size: 0.56rem;
+  color: #6C7072;
+  margin-right: 0.2rem;
+}
+
+.container .section .CombinationL .CombinationL-type .CombinationL-type-li .returnright_img {
+  width: 0.56rem;
+  margin-right: 0.64rem;
+  height: 100%;
+  float: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.container .section .CombinationL .CombinationL-type .CombinationL-type-li .returnright_img img {
+  width: 0.56rem;
+  height: 0.56rem;
+}
+
+.container .section .CombinationL .CombinationL-rule {
+  padding: 0.52rem 0.64rem;
+  line-height: 0.64rem;
+  font-size: 0.48rem;
+  color: #999999;
+}
+
+.container .section .Taxation {
+  width: 100%;
+}
+
+.container .section .Taxation .Taxation-calculate {
+  width: 100%;
+  height: 7.68rem;
+  background: url(../img/AFbg.png);
+  background-size: cover;
+  position: relative;
+}
+
+.container .section .Taxation .Taxation-calculate .Taxation-calculate-fortax {
+  width: 100%;
+  padding: 2.08rem 0.64rem 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.container .section .Taxation .Taxation-calculate .Taxation-calculate-fortax .equal {
+  width: 50%;
+  float: left;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.container .section .Taxation .Taxation-calculate .Taxation-calculate-fortax .equal span {
+  display: block;
+}
+
+.container .section .Taxation .Taxation-calculate .Taxation-calculate-fortax .total-tax span:first-child {
+  font-size: 0.48rem;
+  line-height: 0.64rem;
+  color: #FFFFFF;
+}
+
+.container .section .Taxation .Taxation-calculate .Taxation-calculate-fortax .total-tax span:last-child {
+  margin-top: 0.2rem;
+  font-size: 0.96rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+
+.container .section .Taxation .Taxation-calculate .Taxation-calculate-fortax .house-tax {
+  padding-left: 0.64rem;
+}
+
+.container .section .Taxation .Taxation-calculate .Taxation-calculate-fortax .house-tax span:first-child {
+  font-size: 0.48rem;
+  line-height: 0.64rem;
+  color: #FFFFFF;
+}
+
+.container .section .Taxation .Taxation-calculate .Taxation-calculate-fortax .house-tax span:last-child {
+  margin-top: 0.2rem;
+  font-size: 0.72rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+
+.container .section .Taxation .Taxation-calculate .Taxation-calculate-payment {
+  width: 100%;
+  padding: 0.64rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.container .section .Taxation .Taxation-calculate .Taxation-calculate-payment .equal {
+  width: 50%;
+  float: left;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.container .section .Taxation .Taxation-calculate .Taxation-calculate-payment .equal span {
+  display: block;
+}
+
+.container .section .Taxation .Taxation-calculate .Taxation-calculate-payment .equal span:first-child {
+  font-size: 0.48rem;
+  line-height: 0.64rem;
+  color: #FFFFFF;
+}
+
+.container .section .Taxation .Taxation-calculate .Taxation-calculate-payment .payment {
+  border-right: 0.04rem solid #F6F6F6;
+}
+
+.container .section .Taxation .Taxation-calculate .Taxation-calculate-payment .payment span:last-child {
+  margin-top: 0.2rem;
+  font-size: 0.72rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+
+.container .section .Taxation .Taxation-calculate .Taxation-calculate-payment .repayment {
+  padding-left: 0.64rem;
+}
+
+.container .section .Taxation .Taxation-calculate .Taxation-calculate-payment .repayment span:last-child {
+  margin-top: 0.2rem;
+  font-size: 0.56rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+
+.container .section .Taxation .Taxation-rDetails {
+  height: 1.28rem;
+  text-align: center;
+  position: relative;
+}
+
+.container .section .Taxation .Taxation-rDetails span {
+  display: inline-block;
+  margin: 0.16rem auto;
+  height: 0.64rem;
+  line-height: 0.64rem;
+  padding-right: 0.64rem;
+  background: url(../img/right.png) no-repeat;
+  background-size: 0.48rem 0.48rem;
+  background-position: 3.92rem 0.12rem;
+  font-size: 0.48rem;
+  color: #0099EB;
+  position: absolute;
+  top: 0;
+  left: 36%;
+}
+
+.container .section .Taxation .Taxation-type {
+  width: 100%;
+}
+
+.container .section .Taxation .Taxation-type .Taxation-type-li {
+  width: 100%;
+  height: 1.8rem;
+  line-height: 1.8rem;
+  background: #fff;
+  box-shadow: inset 0 -1px 0 0 #EEEEEE;
+}
+
+.container .section .Taxation .Taxation-type .Taxation-type-li .Taxation-type-info {
+  height: 100%;
+  margin-left: 0.64rem;
+  float: left;
+}
+
+.container .section .Taxation .Taxation-type .Taxation-type-li .Taxation-type-info .Taxation-type-infotitle {
+  display: inline-block;
+  font-size: 0.56rem;
+  margin-right: 0.32rem;
+  color: #394043;
+  letter-spacing: 0;
+  float: left;
+}
+
+.container .section .Taxation .Taxation-type .Taxation-type-li .Taxation-type-info .required {
+  display: inline-block;
+  font-size: 0.48rem;
+  color: #0099EB;
+  float: left;
+}
+
+.container .section .Taxation .Taxation-type .Taxation-type-li .name {
+  width: 8rem;
+  height: 1.8rem;
+  padding: 0.48rem 0;
+  line-height: 0.84rem;
+  margin-right: 0.64rem;
+  float: right;
+  font-size: 0.56rem;
+  color: #6C7072;
+  text-align: right;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: none;
+  background: none;
+}
+
+.container .section .Taxation .Taxation-type .Taxation-type-li .returnright {
+  height: 1.8rem;
+  width: 6.8rem;
+  margin-right: 0.2rem;
+  float: right;
+  text-align: right;
+  line-height: 1.8rem;
+  font-size: 0.56rem;
+  color: #6C7072;
+  margin-right: 0.2rem;
+}
+
+.container .section .Taxation .Taxation-type .Taxation-type-li .returnright_img {
+  width: 0.56rem;
+  margin-right: 0.64rem;
+  height: 100%;
+  float: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.container .section .Taxation .Taxation-type .Taxation-type-li .returnright_img img {
+  width: 0.56rem;
+  height: 0.56rem;
+}
+
+.container .section .Taxation .Taxation-rule {
+  padding: 0.52rem 0.64rem;
+  line-height: 0.64rem;
+  font-size: 0.48rem;
+}
+
+.container .section .Taxation .Taxation-rule p {
+  padding-right: 0.64rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-size: 0.48rem;
+  line-height: 0.64rem;
+  color: #999999;
+}
+
+.container .section .Taxation .Taxation-rule p span {
+  font-size: 0.48rem;
+  color: #3F3F3F;
+}
+
+.R-details {
+  width: 100%;
+  height: 100%;
+  background: #f4f4f4;
+  transition: all .3s;
+  position: fixed;
+  left: 15.2rem;
+  top: 0;
+}
+
+.R-details .details-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+}
+
+.R-details .details-wrapper .details-wrapper-header {
+  width: 100%;
+  background: #f6f6f6;
+  box-shadow: 0 1px 0 0 #CCCCCC;
+  -webkit-box-shadow: 0 1px 0 0 #CCCCCC;
+  z-index: 30;
+}
+
+.R-details .details-wrapper .details-wrapper-header .signal_bar {
+  width: 100%;
+  height: 0.8rem;
+}
+
+.R-details .details-wrapper .details-wrapper-header .details-wrapper-header-wrapper {
+  width: 100%;
+  height: 1.76rem;
+  line-height: 1.76rem;
+  position: relative;
+}
+
+.R-details .details-wrapper .details-wrapper-header .details-wrapper-header-wrapper .title_txt {
+  font-size: 0.72rem;
+  color: #394043;
+  letter-spacing: 0;
+  text-align: center;
+  font-weight: normal;
+}
+
+.R-details .details-wrapper .details-wrapper-header .details-wrapper-header-wrapper .return {
+  display: block;
+  height: 0.88rem;
+  width: 0.88rem;
+  background: url(../img/returnleft.png) no-repeat;
+  background-size: 0.88rem 0.88rem;
+  position: absolute;
+  top: 0.44rem;
+  left: 0.64rem;
+}
+
+.R-details .details-wrapper .details-wrapper-body {
+  flex: 1;
+  -webkit-flex: 1;
+  overflow: hidden;
+  background: #f4f4f4;
+}
+
+.R-details .details-wrapper .details-wrapper-body .details-wrapper-body-box {
+  width: 100%;
+  padding-bottom: 1.28rem;
+}
+
+.R-details .details-wrapper .details-wrapper-body .details-wrapper-body-box .details-wrapper-calculate {
+  width: 100%;
+  height: 4.56rem;
+  background: url(../img/AFbg.png);
+  background-size: cover;
+  position: relative;
+}
+
+.R-details .details-wrapper .details-wrapper-body .details-wrapper-body-box .details-wrapper-calculate .details-calculate-select {
+  padding-top: 0.48rem;
+  height: 0.96rem;
+  position: relative;
+}
+
+.R-details .details-wrapper .details-wrapper-body .details-wrapper-body-box .details-wrapper-calculate .details-calculate-select span {
+  display: inline-block;
+  width: 4rem;
+  height: 0.96rem;
+  line-height: 0.88rem;
+  box-sizing: border-box;
+  font-size: 0.48rem;
+  -webkit-box-sizing: border-box;
+  text-align: center;
+  border: 0.04rem solid #FFFFFF;
+  position: absolute;
+  bottom: 0;
+}
+
+.R-details .details-wrapper .details-wrapper-body .details-wrapper-body-box .details-wrapper-calculate .details-calculate-select span.select {
+  background: #fff;
+  color: #0099EB;
+}
+
+.R-details .details-wrapper .details-wrapper-body .details-wrapper-body-box .details-wrapper-calculate .details-calculate-select .interest {
+  color: #F6F6F6;
+  border-radius: 0.16rem 0 0 0.16rem;
+  left: 3.48rem;
+}
+
+.R-details .details-wrapper .details-wrapper-body .details-wrapper-body-box .details-wrapper-calculate .details-calculate-select .principa {
+  color: #F6F6F6;
+  border-radius: 0 0.16rem 0.16rem 0;
+  left: 7.48rem;
+}
+
+.R-details .details-wrapper .details-wrapper-body .details-wrapper-body-box .details-wrapper-calculate .details-calculate-payment {
+  width: 100%;
+  padding: 0.32rem 0 0.64rem;
+}
+
+.R-details .details-wrapper .details-wrapper-body .details-wrapper-body-box .details-wrapper-calculate .details-calculate-payment .equal {
+  width: 25%;
+  height: 2.16rem;
+  float: left;
+  text-align: center;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-right: 0.04rem solid rgba(246, 246, 246, 0.5);
+}
+
+.R-details .details-wrapper .details-wrapper-body .details-wrapper-body-box .details-wrapper-calculate .details-calculate-payment .equal span:first-child {
+  display: block;
+  margin: 0 auto;
+  line-height: 0.56rem;
+  font-size: 0.4rem;
+  padding-top: 0.32rem;
+  color: #FFFFFF;
+}
+
+.R-details .details-wrapper .details-wrapper-body .details-wrapper-body-box .details-wrapper-calculate .details-calculate-payment .equal span:last-child {
+  display: block;
+  margin: 0 auto;
+  line-height: 0.8rem;
+  font-size: 0.56rem;
+  padding-top: 0.08rem;
+  color: #FFFFFF;
+}
+
+.R-details .details-wrapper .details-wrapper-body .details-wrapper-body-box .details-wrapper-calculate .details-calculate-payment .equal:last-child {
+  border-right: none;
+}
+
+.R-details .details-wrapper .details-wrapper-body .details-wrapper-body-box .details-wrapper-data {
+  width: 100%;
+}
+
+.R-details .details-wrapper .details-wrapper-body .details-wrapper-body-box .details-wrapper-data .data-listheader {
+  height: 1.28rem;
+  background: #FFFFFF;
+}
+
+.R-details .details-wrapper .details-wrapper-body .details-wrapper-body-box .details-wrapper-data .data-listheader li {
+  float: left;
+  height: 1.28rem;
+  line-height: 1.28rem;
+  font-size: 0.48rem;
+  color: #0099EB;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.R-details .details-wrapper .details-wrapper-body .details-wrapper-body-box .details-wrapper-data .data-listheader li:first-child {
+  width: 21%;
+  padding-left: 0.64rem;
+}
+
+.R-details .details-wrapper .details-wrapper-body .details-wrapper-body-box .details-wrapper-data .data-listheader li:nth-child(2) {
+  width: 26.33%;
+}
+
+.R-details .details-wrapper .details-wrapper-body .details-wrapper-body-box .details-wrapper-data .data-listheader li:nth-child(3) {
+  width: 26.33%;
+}
+
+.R-details .details-wrapper .details-wrapper-body .details-wrapper-body-box .details-wrapper-data .data-listheader li:last-child {
+  width: 26.33%;
+}
+
+.R-details .details-wrapper .details-wrapper-body .details-wrapper-body-box .details-wrapper-data .data-listtable .year {
+  width: 100%;
+  height: 1.04rem;
+  line-height: 1.04rem;
+  padding-left: 0.64rem;
+  background: #E6F7FF;
+  font-size: 0.48rem;
+  font-weight: normal;
+  color: #0099EB;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.R-details .details-wrapper .details-wrapper-body .details-wrapper-body-box .details-wrapper-data .data-listtable .month {
+  width: 100%;
+  background: #FFFFFF;
+}
+
+.R-details .details-wrapper .details-wrapper-body .details-wrapper-body-box .details-wrapper-data .data-listtable .month li {
+  width: 100%;
+  height: 1.28rem;
+  box-shadow: inset 0 -1px 0 0 #EEEEEE;
+}
+
+.R-details .details-wrapper .details-wrapper-body .details-wrapper-body-box .details-wrapper-data .data-listtable .month li span {
+  display: block;
+  float: left;
+  height: 1.28rem;
+  line-height: 1.28rem;
+  font-size: 0.48rem;
+  color: #0099EB;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.R-details .details-wrapper .details-wrapper-body .details-wrapper-body-box .details-wrapper-data .data-listtable .month li span:first-child {
+  width: 21%;
+  padding-left: 0.64rem;
+}
+
+.R-details .details-wrapper .details-wrapper-body .details-wrapper-body-box .details-wrapper-data .data-listtable .month li span:nth-child(2) {
+  width: 26.33%;
+}
+
+.R-details .details-wrapper .details-wrapper-body .details-wrapper-body-box .details-wrapper-data .data-listtable .month li span:nth-child(3) {
+  width: 26.33%;
+}
+
+.R-details .details-wrapper .details-wrapper-body .details-wrapper-body-box .details-wrapper-data .data-listtable .month li span:last-child {
+  width: 26.33%;
+}
+
+.zhezhao {
+  width: 100%;
+  height: 100%;
+  transition: all .3s;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.bomb-wrap {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+}
+
+.bomb-wrap .calculation-type {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  background: #fff;
+  transition: all .3s;
+}
+
+.bomb-wrap .calculation-type li {
+  width: 100%;
+  height: 1.92rem;
+  line-height: 1.92rem;
+  background: #FFFFFF;
+  text-align: center;
+  box-shadow: inset 0 -1px 0 0 #EEEEEE;
+  font-size: 0.56rem;
+  color: #6C7072;
+}
+
+.bomb-wrap .calculation-type li.select {
+  color: #0099EB;
+}
+
+.bomb-wrap .calculation-type li:last-child {
+  box-shadow: none;
+}
+
+.bomb-wrap .house-type {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  background: #fff;
+  transition: all .3s;
+}
+
+.bomb-wrap .house-type li {
+  width: 100%;
+  height: 1.92rem;
+  line-height: 1.92rem;
+  background: #FFFFFF;
+  text-align: center;
+  box-shadow: inset 0 -1px 0 0 #EEEEEE;
+  font-size: 0.56rem;
+  color: #6C7072;
+}
+
+.bomb-wrap .house-type li:last-child {
+  box-shadow: none;
+}
+
+.bomb-wrap .house-type li.select {
+  color: #0099EB;
+}
+
+.bomb-wrap .down-payments {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  background: #fff;
+  transition: all .3s;
+}
+
+.bomb-wrap .down-payments li {
+  width: 100%;
+  height: 1.92rem;
+  line-height: 1.92rem;
+  background: #FFFFFF;
+  text-align: center;
+  box-shadow: inset 0 -1px 0 0 #EEEEEE;
+  font-size: 0.56rem;
+  color: #6C7072;
+}
+
+.bomb-wrap .down-payments li:last-child {
+  box-shadow: none;
+}
+
+.bomb-wrap .down-payments li.select {
+  color: #0099EB;
+}
+
+.bomb-wrap .gong-rate {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  background: #fff;
+  transition: all .3s;
+}
+
+.bomb-wrap .gong-rate li {
+  width: 100%;
+  height: 1.92rem;
+  line-height: 1.92rem;
+  background: #FFFFFF;
+  text-align: center;
+  box-shadow: inset 0 -1px 0 0 #EEEEEE;
+  font-size: 0.56rem;
+  color: #6C7072;
+}
+
+.bomb-wrap .gong-rate li:last-child {
+  box-shadow: none;
+}
+
+.bomb-wrap .gong-rate li.select {
+  color: #0099EB;
+}
+
+.bomb-wrap .shan-rate {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  background: #fff;
+  transition: all .3s;
+}
+
+.bomb-wrap .shan-rate li {
+  width: 100%;
+  height: 1.92rem;
+  line-height: 1.92rem;
+  background: #FFFFFF;
+  text-align: center;
+  box-shadow: inset 0 -1px 0 0 #EEEEEE;
+  font-size: 0.56rem;
+  color: #6C7072;
+}
+
+.bomb-wrap .shan-rate li:last-child {
+  box-shadow: none;
+}
+
+.bomb-wrap .shan-rate li.select {
+  color: #0099EB;
+}
+
+.bomb-wrap .housing-type {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  background: #fff;
+  transition: all .3s;
+}
+
+.bomb-wrap .housing-type li {
+  width: 100%;
+  height: 1.92rem;
+  line-height: 1.92rem;
+  background: #FFFFFF;
+  text-align: center;
+  box-shadow: inset 0 -1px 0 0 #EEEEEE;
+  font-size: 0.56rem;
+  color: #6C7072;
+}
+
+.bomb-wrap .housing-type li:last-child {
+  box-shadow: none;
+}
+
+.bomb-wrap .housing-type li.select {
+  color: #0099EB;
+}
+
+.bomb-wrap .loan-term {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  background: #fff;
+  transition: all .3s;
+}
+
+.bomb-wrap .loan-term li {
+  width: 100%;
+  height: 1.92rem;
+  line-height: 1.92rem;
+  background: #FFFFFF;
+  text-align: center;
+  box-shadow: inset 0 -1px 0 0 #EEEEEE;
+  font-size: 0.56rem;
+  color: #6C7072;
+}
+
+.bomb-wrap .loan-term li:last-child {
+  box-shadow: none;
+}
+
+.bomb-wrap .loan-term li.select {
+  color: #0099EB;
+}
+
+.bomb-wrap .housing-type {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  background: #fff;
+  transition: all .3s;
+}
+
+.bomb-wrap .housing-type li {
+  width: 100%;
+  height: 1.92rem;
+  line-height: 1.92rem;
+  background: #FFFFFF;
+  text-align: center;
+  box-shadow: inset 0 -1px 0 0 #EEEEEE;
+  font-size: 0.56rem;
+  color: #6C7072;
+}
+
+.bomb-wrap .housing-type li:last-child {
+  box-shadow: none;
+}
+
+.bomb-wrap .housing-type li.select {
+  color: #0099EB;
+}

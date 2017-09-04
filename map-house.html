@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>地图看房</title>
+		<link rel="stylesheet" type="text/css" href="css/map-house.css" />
+		<script type="text/javascript" src="plugins/zepto.min.js"></script>
+		<script type="text/javascript" src="plugins/iscroll-master/build/iscroll-probe.js"></script>
+		<script type="text/javascript" src="vue/vue.js"></script>
+		<script>
+			document.documentElement.style.fontSize = innerWidth / 15 + "px";
+		</script>
+	</head>
+
+	<body>
+		<div class="container">
+			<header class="header">
+				<div class="signal_bar"></div>
+				<div class="title_bar">
+					<h3 class="title_txt">地图看房</h3>
+					<a class="return" href="javascript:;"></a>
+					<a class="Showing" href="javascript:;"></a>
+				</div>
+			</header>
+			<section class="section">
+				<div class="section-map"></div>
+			</section>
+			<div class="section-map-list">
+				<div class="map-list-wrapper">
+					<ul class="map-list-btn">
+						<li class="regionli">
+							<span class="btn pregion">区域</span>
+							<span class="num"></span>
+						</li>
+						<li class="screenli">
+							<span class="btn pscreen">筛选</span>
+							<span class="num"></span>
+						</li>
+						<li class="listli">
+							<span class="btn plist">列表</span>
+						</li>
+					</ul>
+					<div class="map-list-location"></div>
+					<div class="map-list-trand"></div>
+					<div class="map-list-tranddata">
+						<span class="regional">海口均价</span>
+						<span class="price">12000元/㎡</span>
+						<span class="rose">40.1%</span>
+					</div>
+				</div>
+			</div>
+			<div class="section-map-peripheral">
+				<div class="map-peripheral-wrapper">
+					<ul class="peripheral-ul">
+						<li class="peripheral-li">
+							<i></i>
+							<span>公交</span>
+						</li>
+						<li class="peripheral-li">
+							<i></i>
+							<span>医院</span>
+						</li>
+						<li class="peripheral-li">
+							<i></i>
+							<span>银行</span>
+						</li>
+						<li class="peripheral-li">
+							<i></i>
+							<span>超市</span>
+						</li>
+						<li class="peripheral-li">
+							<i></i>
+							<span>学校</span>
+						</li>
+					</ul>
+					<div class="peripheral-return"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="region-push">
+			<header class="region-push-header">
+				<div class="signal_bar"></div>
+				<div class="title_bar">
+					<h3 class="title_txt">区域</h3>
+					<a class="return" href="javascript:;"></a>
+				</div>
+			</header>
+			<section class="region-push-section">
+				<div class="region-push-section-wrapper">
+					<div class="regionlist">
+						<ul class="regionlist-ul">
+							<li class="regionlist-li confirmone">区域</li>
+							<li class="regionlist-li">附近</li>
+						</ul>
+					</div>
+
+					<div class="municipality">
+						<ul class="municipality-ul">
+							<li class="municipality-li" v-for="list in municipalitydata" v-text="list.city"></li>
+						</ul>
+					</div>
+					<div class="district">
+						<ul class="district-ul">
+							<li class="district-li" v-for="list in districtdata1">
+								<span v-text="list.district"></span>
+								<span class="check"></span>
+							</li>
+						</ul>
+
+						<ul class="district-ul">
+							<li class="district-li" v-for="list in districtdata2">
+								<span v-text="list.district"></span>
+								<span class="check"></span>
+							</li>
+						</ul>
+
+						<ul class="district-ul">
+							<li class="district-li" v-for="list in districtdata3">
+								<span v-text="list.district"></span>
+								<span class="check"></span>
+							</li>
+						</ul>
+
+						<ul class="district-ul">
+							<li class="district-li" v-for="list in districtdata4">
+								<span v-text="list.district"></span>
+								<span class="check"></span>
+							</li>
+						</ul>
+
+						<ul class="district-ul">
+							<li class="district-li" v-for="list in districtdata5">
+								<span v-text="list.district"></span>
+								<span class="check"></span>
+							</li>
+						</ul>
+
+						<ul class="district-ul">
+							<li class="district-li" v-for="list in districtdata6">
+								<span v-text="list.district"></span>
+								<span class="check"></span>
+							</li>
+						</ul>
+
+						<ul class="district-ul">
+							<li class="district-li" v-for="list in districtdata7">
+								<span v-text="list.district"></span>
+								<span class="check"></span>
+							</li>
+						</ul>
+					</div>
+					<p style="clear: both;"></p>
+				</div>
+
+			</section>
+			<footer class="region-push-footer">
+				<span class="empty">清空条件</span>
+				<span class="determine">确定</span>
+			</footer>
+		</div>
+
+		<div class="screen-push">
+			<header class="screen-push-header">
+				<div class="signal_bar"></div>
+				<div class="title_bar">
+					<h3 class="title_txt">筛选</h3>
+					<a class="return" href="javascript:;"></a>
+				</div>
+			</header>
+			<section class="screen-push-section">
+				<div class="screen-push-section-wrapper">
+					<div class="average-price">
+						<h3 class="average-price-title">均价</h3>
+						<div class="average-price-num">
+							<span class="select">1万以下</span>
+							<span class="select">1-1.5万</span>
+							<span class="select">1.5-2万</span>
+							<span class="none select">2万以上</span>
+							<div style="clear: both;"></div>
+						</div>
+						<div class="average-price-input">
+							<input class="minprice" type="text" placeholder="最低价格" />
+							<span></span>
+							<input class="maxprice" type="text" placeholder="最高价格" />
+						</div>
+					</div>
+					<div class="house-style">
+						<h3 class="house-style-title">户型</h3>
+						<div class="house-style-content">
+							<span class="select">一室</span>
+							<span class="select">二室</span>
+							<span class="select">三室</span>
+							<span class="select">四室</span>
+							<span class="select">五室以上</span>
+							<span class="select">别墅</span>
+							<div style="clear: both;"></div>
+						</div>
+					</div>
+					<div class="open-time">
+						<h3 class="open-time-title">开盘时间</h3>
+						<div class="open-time-content">
+							<span class="select">本月开盘</span>
+							<span class="select">下月开盘</span>
+							<span class="select">三个月内开盘</span>
+							<span class="select">六个月内开盘</span>
+							<span class="select">已开盘三个月</span>
+							<span class="select">已开票六个月</span>
+							<div style="clear: both;"></div>
+						</div>
+					</div>
+					<div class="characteristic">
+						<h3 class="characteristic-title">特色</h3>
+						<div class="characteristic-content">
+							<span class="select">打折优惠</span>
+							<span class="select">住宅</span>
+							<span class="select">养生社区</span>
+							<span class="select">花园洋房</span>
+							<span class="select">海景房</span>
+							<span class="select">河(江)景房</span>
+							<span class="select">温泉社区</span>
+							<span class="select">酒店式公寓</span>
+							<span class="select">商铺</span>
+							<span class="select">别墅</span>
+							<span class="select">公寓</span>
+							<span class="select">社区</span>
+							<span class="select">学区房</span>
+							<span class="select">湖景房</span>
+							<span class="select">写字楼</span>
+							<div style="clear: both;"></div>
+						</div>
+					</div>
+				</div>
+
+			</section>
+			<footer class="screen-push-footer">
+				<span class="empty">清空条件</span>
+				<span class="determine">确定</span>
+			</footer>
+		</div>
+
+		<script type="text/javascript">
+			var myVue = new Vue({
+				el: ".region-push",
+				data: {
+					municipalitydata: [{
+							city: '不限'
+						},
+						{
+							city: '海口'
+
+						},
+						{
+							city: '三亚'
+
+						},
+						{
+							city: '儋州'
+
+						},
+						{
+							city: '文昌'
+
+						},
+						{
+							city: '陵水'
+
+						},
+						{
+							city: '琼海'
+
+						}
+					],
+					districtdata1: [{
+							district: '不限',
+						},
+						{
+							district: '美兰区',
+						},
+						{
+							district: '秀英区',
+						},
+						{
+							district: '龙华区',
+						},
+						{
+							district: '琼山区',
+						},
+						{
+							district: '西海岸'
+						}
+					],
+					districtdata2: [{
+							district: '不限',
+						},
+						{
+							district: '美兰区',
+						},
+						{
+							district: '秀英区',
+						},
+						{
+							district: '龙华区',
+						},
+						{
+							district: '琼山区'
+						}
+					],
+					districtdata3: [{
+							district: '不限',
+						},
+						{
+							district: '美兰区',
+						},
+						{
+							district: '秀英区',
+						},
+						{
+							district: '龙华区'
+						}
+					],
+					districtdata4: [{
+							district: '不限',
+						},
+						{
+							district: '美兰区'
+						},
+						{
+							district: '秀英区'
+						}
+					],
+					districtdata5: [{
+							district: '不限',
+						},
+						{
+							district: '美兰区',
+						}
+					],
+					districtdata6: [{
+							district: '不限',
+						},
+						{
+							district: '美兰区',
+						},
+						{
+							district: '秀英区',
+						},
+						{
+							district: '龙华区'
+						}
+					]
+				}
+			})
+		</script>
+	</body>
+
+	<script type="text/javascript" src="js/map-house.js"></script>
+
+</html>
