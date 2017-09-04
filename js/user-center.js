@@ -251,20 +251,108 @@ $(function() {
 		}
 	})
 	
+	//找回密码 点击显示新密码
+	var retrieveh = $(".retrieve-password-pushsection").height()
+	$(".retrieve-password-pushsection .pushsection-wrapper").height(loginH + 1)
+	
+	var retrieveS = new IScroll('.retrieve-password-pushsection', {
+		scrollbars: false,
+		preventDefault: true
+	})
+	
+	$(".retrieve-password-push .retrieve-new a").tap(function(){
+		if(!$(this).hasClass("show") && $("#retrieve-n").attr("type") == "password"){
+			$(this).addClass("show")
+            $("#retrieve-n").attr("type", "text")
+		}
+		else{
+			$(this).removeClass("show")
+			$("#retrieve-n").attr("type", "password")
+		}
+	})
+	
+	
+	//找回密码获取验证
+	$(".retrieve-password-pushsection .retrieve-p").bind('input propertychange', function() {
+		if($(this).val()!==""){
+			$(".retrieve-password-pushsection .Verificationbtn").addClass("light")
+			if($(".retrieve-password-pushsection .Verificationbtn").hasClass("light")){
+				$(".retrieve-password-pushsection .Verificationbtn").tap(function(){
+					$(".retrieve-password-pushsection .Verificationbtn-box-wrapper .click").css("display","block")
+					$(".retrieve-password-pushsection .Verificationbtn").removeClass("light")
+					var setTime;
+			        $(document).ready(function(){
+			            var time=60;
+			            setTime=setInterval(function(){
+			                if(time<=0){
+			                    clearInterval(setTime);
+			            			$(".retrieve-password-pushsection .Verificationbtn").addClass("light")
+			            			$(".retrieve-password-pushsection .Verificationbtn").text("重新获取");
+			            			$(".retrieve-password-pushsection .Verificationbtn-box-wrapper .click").css("display","none")
+			                }
+			                if(time>0){
+			                		$(".retrieve-password-pushsection .Verificationbtn").text("("+time+")"+"重新获取");
+			            			$(".retrieve-password-pushsection .Verificationbtn-box-wrapper .click").css("display","block")
+			                }
+			                time--;
+			            },1000)
+			        })
+				})
+			}
+		}
+		else if($(this).val()==""){
+			$(".retrieve-password-pushsection .Verificationbtn").removeClass("light")
+		}
+	})
+	
+	//修改密码失败
+	var retrievenum=0;
+	$(".retrieve-password-pushsection .retrieve-btn").tap(function(){
+		if($(".retrieve-password-pushsection .retrieve-p").val()!=="" && $(".retrieve-password-pushsection .retrieve_v").val()!=="" && $(".retrieve-password-pushsection .retrieve-n").val()!==""){
+			if(retrievenum%2==0){
+				$(".retrieve-password-push .retrieve-failed").show()
+				setTimeout(function(){
+					$(".retrieve-password-push .retrieve-failed").fadeOut(300)
+				},1700)
+			}
+			else{
+				$(".retrieve-password-push").css("left",setw+5)
+				setTimeout(function(){
+					$(".login-page-push .retrieve-success").show()
+					
+					$(".retrieve-password-pushsection .retrieve-p").val("").blur()
+					$(".retrieve-password-pushsection .retrieve-v").val("").blur()
+					$(".retrieve-password-pushsection .retrieve-n").val("").blur()
+					setTimeout(function(){
+						$(".login-page-push .retrieve-success").fadeOut(300)
+					},1700)
+				},300)
+			}
+			retrievenum++
+		}
+	})
+	
+	//点击忘记密码
+	$(".login-page-pushsection .login-page-way .forgot-password").tap(function(){
+		$(".retrieve-password-push").css("left", "0")
+		$(".retrieve-password-pushheader .return").tap(function() {
+			$(".retrieve-password-push").css("left", setw + 5)
+		})
+	})
+	
+	
 	//点击登录账号
 	$(".login-page-pushsection .account-login .login-page-btn").tap(function(){
 		if($(".login-page-pushsection .account-login .login-page-Username .Username").val()!=="" && $(".login-page-pushsection .account-login .login-page-Password .Password").val()!==""){
-			$(".login-page-pushsection .account-login .login-page-Username .Username").val("")
-			$(".login-page-pushsection .account-login .login-page-Password .Password").val("")
+			$(".login-page-pushsection .account-login .login-page-Username .Username").val("").blur()
+			$(".login-page-pushsection .account-login .login-page-Password .Password").val("").blur()
 			$(".login-page-push").css("left",setw + 5)
 			$(".user-center-section .Not-logged").removeClass("show")
 			$(".user-center-section .Logged-in").addClass("show")
-			
-			
-			
-			
+			$(".message-prompt").css("display","block")
 		}
 	})
+	
 	
 	//用户中心--登录界面  input获取焦点页面状态改变
 	
@@ -296,7 +384,7 @@ $(function() {
 			}
 		}
 		else if($(this).val()==""){
-			$(".Verificationbtn").removeClass("light")
+			$(".login-page-phone .Verificationbtn").removeClass("light")
 		}
 	})
 	
@@ -656,6 +744,49 @@ $(function() {
 	var modifyS = new IScroll('.modify-password-pushsection', {
 		scrollbars: false
 	})
+	
+	$(".personal-data-pushsection .account-management .Modify-password").tap(function(){
+		$(".modify-password-push").css("left","0")
+	})
+	$(".modify-password-pushheader .del").tap(function(){
+		$(".modify-password-push").css("left",setw+5)
+	})
+	var modify=0;
+	$(".modify-password-pushsection .modify-btn").tap(function(){
+		if($(".modify-password-pushsection .old_P").val()!=="" && $(".modify-password-pushsection .new_P").val()!==""){
+			if(modify%2==0){
+				$(".modify-password-push").css("left",setw+5)
+				setTimeout(function(){
+					$(".personal-data-push .modify-failed").show()
+					$(".modify-password-pushsection .old_P").val("").blur()
+					$(".modify-password-pushsection .new_P").val("").blur()
+					setTimeout(function(){
+						$(".personal-data-push .modify-failed").fadeOut(300)
+					},1700)
+				},300)
+			}
+			else{
+				$(".login-page-push").css("left","0")
+				setTimeout(function(){
+					$(".personal-data-push").css("left",setw+5)
+					$(".modify-password-push").css("left",setw+5)
+					$(".login-page-push .modify-success").show()
+					$(".modify-password-pushsection .old_P").val("").blur()
+					$(".modify-password-pushsection .new_P").val("").blur()
+					
+					$(".user-center-section .Not-logged").addClass("show")
+					$(".user-center-section .Logged-in").removeClass("show")
+					$(".message-prompt").css("display","none")
+					
+					setTimeout(function(){
+						$(".login-page-push .modify-success").fadeOut(300)
+					},1700)
+				},300)
+			}
+			modify++
+		}
+	})
+	
 	
 	//点击显示新密码
 	$(".modify-password-box .new-password a").tap(function(){

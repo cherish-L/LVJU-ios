@@ -1457,7 +1457,7 @@ li {
   position: fixed;
   left: 15.2rem;
   top: 0;
-  z-index: 10;
+  z-index: 15;
   display: flex;
   display: -webkit-flex;
   flex-direction: column;
@@ -1782,6 +1782,7 @@ li {
 
 .user-center-container .login-page-push .login-page-pushsection .pushsection-wrapper .phone-dynamic-login .login-page-phone .Verificationbtn-box {
   height: 1.12rem;
+  padding-left: 0.2rem;
   background: #f6f6f6;
   position: absolute;
   top: 0;
@@ -1821,22 +1822,6 @@ li {
   bottom: 0;
   right: 0;
   margin: auto;
-}
-
-.user-center-container .login-page-push .login-page-pushsection .pushsection-wrapper .phone-dynamic-login .login-page-phone .Verificationbtn-box .Verificationbtn-box-wrapper input::-moz-placeholder {
-  color: #999999;
-}
-
-.user-center-container .login-page-push .login-page-pushsection .pushsection-wrapper .phone-dynamic-login .login-page-phone .Verificationbtn-box .Verificationbtn-box-wrapper input::-webkit-input-placeholder {
-  color: #999999;
-}
-
-.user-center-container .login-page-push .login-page-pushsection .pushsection-wrapper .phone-dynamic-login .login-page-phone .Verificationbtn-box .Verificationbtn-box-wrapper input:-ms-input-placeholder {
-  color: #999999;
-}
-
-.user-center-container .login-page-push .login-page-pushsection .pushsection-wrapper .phone-dynamic-login .login-page-phone .Verificationbtn-box .Verificationbtn-box-wrapper input::-webkit-scrollbar {
-  display: none;
 }
 
 .user-center-container .login-page-push .login-page-pushsection .pushsection-wrapper .phone-dynamic-login .Verification-Code {
@@ -2004,6 +1989,7 @@ li {
 
 .user-center-container .login-page-push .login-page-pushsection .pushsection-wrapper .registered-account .registered-phone .Verificationbtn-box {
   height: 1.12rem;
+  padding-left: 0.2rem;
   background: #f6f6f6;
   position: absolute;
   top: 0;
@@ -2403,6 +2389,347 @@ li {
   border-radius: 0.08rem;
 }
 
+.user-center-container .login-page-push .modify-success {
+  display: none;
+  opacity: 0;
+  width: 11.2rem;
+  height: 1.92rem;
+  line-height: 1.92rem;
+  text-align: center;
+  font-size: 0.64rem;
+  color: #FFFFFF;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 0.08rem;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.user-center-container .login-page-push .retrieve-success {
+  display: none;
+  opacity: 0;
+  width: 11.2rem;
+  height: 1.92rem;
+  line-height: 1.92rem;
+  text-align: center;
+  font-size: 0.64rem;
+  color: #FFFFFF;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 0.08rem;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.user-center-container .login-page-push .retrieve-password-push {
+  width: 100%;
+  height: 100%;
+  transition: all .3s;
+  overflow: hidden;
+  background: #F6F6F6;
+  position: absolute;
+  left: 15.2rem;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushheader {
+  width: 100%;
+  background-color: #f6f6f6;
+  box-shadow: 0 1px 0 0 #cccccc;
+  z-index: 1;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushheader .signal_bar {
+  width: 100%;
+  height: 0.8rem;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushheader .title_bar {
+  width: 100%;
+  height: 1.76rem;
+  line-height: 1.76rem;
+  position: relative;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushheader .title_bar .title_txt {
+  font-size: 0.72rem;
+  color: #394043 !important;
+  text-align: center;
+  font-weight: normal;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushheader .title_bar .return {
+  display: block;
+  height: 0.88rem;
+  width: 0.88rem;
+  background: url(../img/del.png) no-repeat;
+  background-size: 0.88rem 0.88rem;
+  position: absolute;
+  top: 0.44rem;
+  left: 0.64rem;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushsection {
+  flex: 1;
+  -webkit-flex: 1;
+  overflow: hidden;
+  background: #f6f6f6;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushsection .pushsection-wrapper {
+  width: 100%;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushsection .pushsection-wrapper .retrieve-password-box {
+  width: 100%;
+  padding: 0.48rem 0.96rem 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushsection .pushsection-wrapper .retrieve-password-box .retrieve-phone {
+  width: 100%;
+  height: 1.76rem;
+  border-bottom: 1px solid #EEEEEE;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushsection .pushsection-wrapper .retrieve-password-box .retrieve-phone span {
+  display: block;
+  width: 2.32rem;
+  height: 1.76rem;
+  line-height: 1.76rem;
+  font-size: 0.56rem;
+  color: #999999;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushsection .pushsection-wrapper .retrieve-password-box .retrieve-phone input {
+  flex: 1;
+  -webkit-flex: 1;
+  width: 100%;
+  height: 100%;
+  line-height: 0.8rem;
+  font-size: 0.56rem;
+  background: transparent;
+  color: #6C7072;
+  padding: 0.48rem 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushsection .pushsection-wrapper .retrieve-password-box .retrieve-phone input::-moz-placeholder {
+  color: #CCCCCC;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushsection .pushsection-wrapper .retrieve-password-box .retrieve-phone input::-webkit-input-placeholder {
+  color: #CCCCCC;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushsection .pushsection-wrapper .retrieve-password-box .retrieve-phone input:-ms-input-placeholder {
+  color: #CCCCCC;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushsection .pushsection-wrapper .retrieve-password-box .retrieve-phone input::-webkit-scrollbar {
+  display: none;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushsection .pushsection-wrapper .retrieve-password-box .retrieve-phone .Verificationbtn-box {
+  height: 1.12rem;
+  padding-left: 0.2rem;
+  background: #f6f6f6;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushsection .pushsection-wrapper .retrieve-password-box .retrieve-phone .Verificationbtn-box .Verificationbtn-box-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushsection .pushsection-wrapper .retrieve-password-box .retrieve-phone .Verificationbtn-box .Verificationbtn-box-wrapper .Verificationbtn {
+  display: block;
+  height: 1.12rem;
+  line-height: 1.12rem;
+  font-size: 0.56rem;
+  color: #999999;
+  background: transparent;
+  float: right;
+  position: relative;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushsection .pushsection-wrapper .retrieve-password-box .retrieve-phone .Verificationbtn-box .Verificationbtn-box-wrapper .Verificationbtn.light {
+  color: #0099EB;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushsection .pushsection-wrapper .retrieve-password-box .retrieve-phone .Verificationbtn-box .Verificationbtn-box-wrapper .click {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushsection .pushsection-wrapper .retrieve-password-box .retrieve-verification {
+  width: 100%;
+  height: 1.76rem;
+  margin-top: 0.16rem;
+  border-bottom: 1px solid #EEEEEE;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushsection .pushsection-wrapper .retrieve-password-box .retrieve-verification span {
+  display: block;
+  width: 2.32rem;
+  height: 1.76rem;
+  line-height: 1.76rem;
+  font-size: 0.56rem;
+  color: #999999;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushsection .pushsection-wrapper .retrieve-password-box .retrieve-verification input {
+  flex: 1;
+  -webkit-flex: 1;
+  width: 100%;
+  height: 100%;
+  line-height: 0.8rem;
+  font-size: 0.56rem;
+  background: transparent;
+  color: #6C7072;
+  padding: 0.48rem 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushsection .pushsection-wrapper .retrieve-password-box .retrieve-verification input::-moz-placeholder {
+  color: #CCCCCC;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushsection .pushsection-wrapper .retrieve-password-box .retrieve-verification input::-webkit-input-placeholder {
+  color: #CCCCCC;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushsection .pushsection-wrapper .retrieve-password-box .retrieve-verification input:-ms-input-placeholder {
+  color: #CCCCCC;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushsection .pushsection-wrapper .retrieve-password-box .retrieve-verification input::-webkit-scrollbar {
+  display: none;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushsection .pushsection-wrapper .retrieve-password-box .retrieve-new {
+  width: 100%;
+  height: 1.76rem;
+  margin-top: 0.16rem;
+  border-bottom: 1px solid #EEEEEE;
+  display: flex;
+  flex-direction: row;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushsection .pushsection-wrapper .retrieve-password-box .retrieve-new span {
+  display: block;
+  width: 2.32rem;
+  height: 1.76rem;
+  line-height: 1.76rem;
+  font-size: 0.56rem;
+  color: #999999;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushsection .pushsection-wrapper .retrieve-password-box .retrieve-new input {
+  flex: 1;
+  -webkit-flex: 1;
+  width: 100%;
+  height: 100%;
+  line-height: 0.8rem;
+  font-size: 0.56rem;
+  background: transparent;
+  color: #6C7072;
+  padding: 0.48rem 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushsection .pushsection-wrapper .retrieve-password-box .retrieve-new input::-moz-placeholder {
+  color: #CCCCCC;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushsection .pushsection-wrapper .retrieve-password-box .retrieve-new input::-webkit-input-placeholder {
+  color: #CCCCCC;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushsection .pushsection-wrapper .retrieve-password-box .retrieve-new input:-ms-input-placeholder {
+  color: #CCCCCC;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushsection .pushsection-wrapper .retrieve-password-box .retrieve-new input::-webkit-scrollbar {
+  display: none;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushsection .pushsection-wrapper .retrieve-password-box .retrieve-new a {
+  display: block;
+  width: 1.52rem;
+  height: 100%;
+  background: url(../img/Eyeing.png) center center no-repeat #F6F6F6;
+  background-size: 0.88rem 0.88rem;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushsection .pushsection-wrapper .retrieve-password-box .retrieve-new a.show {
+  background: url(../img/Eyeed.png) center center no-repeat #F6F6F6;
+  background-size: 0.88rem 0.88rem;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-password-pushsection .pushsection-wrapper .retrieve-password-box .retrieve-btn {
+  width: 100%;
+  height: 1.84rem;
+  font-size: 0.64rem;
+  color: #FFFFFF;
+  line-height: 1.84rem;
+  margin-top: 0.96rem;
+  background: #0099EB;
+  text-align: center;
+  border-radius: 0.08rem;
+}
+
+.user-center-container .login-page-push .retrieve-password-push .retrieve-failed {
+  display: none;
+  opacity: 0;
+  width: 11.2rem;
+  height: 1.92rem;
+  line-height: 1.92rem;
+  text-align: center;
+  font-size: 0.64rem;
+  color: #FFFFFF;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 0.08rem;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
 .user-center-container .personal-data-push {
   width: 100%;
   height: 100%;
@@ -2410,7 +2737,7 @@ li {
   overflow: hidden;
   background: #f4f4f4;
   position: fixed;
-  left: 0;
+  left: 15.2rem;
   top: 0;
   z-index: 10;
   display: flex;
@@ -3203,7 +3530,7 @@ li {
   overflow: hidden;
   background: #F6F6F6;
   position: absolute;
-  left: 0;
+  left: 15.2rem;
   top: 0;
   z-index: 10;
   display: flex;
@@ -3589,6 +3916,25 @@ li {
   width: 100%;
   height: 7.4rem;
   background: #FFFFFF;
+}
+
+.user-center-container .personal-data-push .modify-failed {
+  display: none;
+  opacity: 0;
+  width: 11.2rem;
+  height: 1.92rem;
+  line-height: 1.92rem;
+  text-align: center;
+  font-size: 0.64rem;
+  color: #FFFFFF;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 0.08rem;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 .user-center-container .personal-collection-push {

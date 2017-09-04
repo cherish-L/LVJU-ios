@@ -458,6 +458,45 @@
 						</div>
 					</section>
 				</div>
+				<div class="modify-success">密码修改成功，请重新登录</div>
+				<div class="retrieve-success">密码找回成功，请登录</div>
+				<!-------------找回密码------------->
+				<div class="retrieve-password-push">
+					<header class="retrieve-password-pushheader">
+						<div class="signal_bar"></div>
+						<div class="title_bar">
+							<h3 class="title_txt">找回密码</h3>
+							<a class="return" href="javascript:;"></a>
+						</div>
+					</header>
+					<section class="retrieve-password-pushsection">
+						<div class="pushsection-wrapper">
+							<div class="retrieve-password-box">
+								<div class="retrieve-phone">
+									<span>手机号</span>
+									<input class="retrieve-p" id="retrieve-p" type="number" name="" id="" value="" placeholder="请输入手机号">
+									<div class="Verificationbtn-box">
+										<div class="Verificationbtn-box-wrapper">
+											<a class="Verificationbtn" href="javascript:;">获取验证码</a>
+											<div class="click"></div>
+										</div>
+									</div>
+								</div>
+								<div class="retrieve-verification">
+									<span>验证码</span>
+									<input class="retrieve_v" id="retrieve_v" type="number" name="" id="" value="" placeholder="请输入验证码">
+								</div>
+								<div class="retrieve-new">
+									<span>新密码</span>
+									<input class="retrieve-n" id="retrieve-n" type="password" name="" id="" value="" placeholder="6~15位之间">
+									<a href="javascript:;"></a>
+								</div>
+								<div class="retrieve-btn">确定</div>
+							</div>
+						</div>
+					</section>
+					<div class="retrieve-failed">提交失败，请检查网络</div>
+				</div>
 			</div>
 			<!-------------  个人资料弹框  ------------->
 			<div class="personal-data-push">
@@ -725,6 +764,8 @@
 						<div class="pushfooter-content"></div>
 					</footer>
 				</div>
+				<!-------------密码修改失败弹框------------->
+				<div class="modify-failed">密码修改失败，请检查网络</div>
 			</div>
 			<!-------------  我的收藏弹框  ------------->
 			<div class="personal-collection-push">
