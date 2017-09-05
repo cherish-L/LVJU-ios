@@ -7,14 +7,15 @@
 		<link rel="stylesheet" type="text/css" href="css/home-page.css" />
 		<script type="text/javascript" src="plugins/zepto.min.js"></script>
 		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>
+		<script type="text/javascript" src="vue/vue.js"></script>
 		<script>
 			//适配
 			document.documentElement.style.fontSize = innerWidth / 16 + "px"
 		</script>
 	</head>
 	<body>
-		<div class="container">
-			<header class="header">
+		<div class="home-page-container" v-cloak>
+			<header class="home-page-header">
 				<div class="signal_bar"></div>
 				<div class="title_bar">
 					<h3 class="title_txt">程凡房地产</h3>
@@ -22,10 +23,195 @@
 					<a class="more" href="javascript:;"></a>
 				</div>
 			</header>
-			<section class="section">
-				
+			<section class="home-page-section">
+				<div class="section-wrapper">
+					<div class="section-banner">
+						<img src="img/style.png"/>
+						<div class="address">
+							<span class="address-city">海口</span>
+						</div>
+						<div class="search">
+							<img src="img/Home-search.png"/>
+						</div>
+					</div>
+					<div class="section-nav">
+						<ul class="section-nav-ul">
+							<li class="section-nav-li">
+								<i><img src="img/Properties-sale-logo.png"/></i>
+								<span>楼盘</span>
+							</li>
+							<li class="section-nav-li">
+								<i><img src="img/Rental.png"/></i>
+								<span>二手房租房</span>
+							</li>
+							<li class="section-nav-li">
+								<i><img src="img/Rental.png"/></i>
+								<span>团购</span>
+							</li>
+							<li class="section-nav-li">
+								<i><img src="img/union-logo.png"/></i>
+								<span>购房联盟</span>
+							</li>
+							<li class="section-nav-li">
+								<i><img src="img/information.png"/></i>
+								<span>资讯</span>
+							</li>
+						</ul>
+						<div class="section-nav-headlines">
+							<div class="headlines-logo"></div>
+							<div class="headlines-content">
+								<p>相识即是有缘 甄姐夸赞顾问小陈服务好相识即是有缘</p>
+								<p>谢女士想海景房 小梁助其满意购下荣盛谢女士想海景房</p>
+							</div>
+							<div class="headlines-link">
+								<img src="img/returnright.png"/>
+							</div>
+						</div>
+					</div>
+					<div class="section-list">
+						<ul class="section-list-big">
+							<li>
+								<div class="section-list-big-txt">
+									<p class="title">定制专属购房方案</p>
+									<p class="txt">为您优选最合适房源</p>
+									<p class="connect">
+										<span class="people">222人</span>
+										<span class="txt">正在报名</span>
+										<span class="right"></span>
+									</p>
+								</div>
+							</li>
+							<li>
+								<div class="section-list-big-txt">
+									<p class="title">50万新房</p>
+									<p class="txt">刚需安家首选</p>
+									<p class="connect">
+										<span class="people">222人</span>
+										<span class="txt">正在看</span>
+										<span class="right"></span>
+									</p>
+								</div>
+							</li>
+						</ul>
+						<ul class="section-list-small">
+							<li>
+								<p class="title">独家返现</p>
+								<p class="txt"><span>联盟会员特惠</span></p>
+							</li>
+							<li>
+								<p class="title">看房笔记</p>
+								<p class="txt"><span>小编为您推荐</span></p>
+							</li>
+							<li>
+								<p class="title">进度组图</p>
+								<p class="txt"><span>准现房一睹为快</span></p>
+							</li>
+						</ul>
+					</div>
+					<div class="section-recommend">
+						<h3 class="section-recommend-title">为您推荐<span>更多</span></h3>
+						<div class="section-recommend-content">
+							<ul class="recommend-content-ul">
+								<li class="recommend-content-li" v-for="list in recommend">
+									<div class="recommend-content-li-img">
+										<img :src="list.src"/>
+									</div>
+									<div class="recommend-content-li-txt">
+										<div class="title">
+											<span class="title-txt" v-text="list.title_txt"></span>
+											<span class="title-box" v-text="list.title_box"></span>
+										</div>
+										<div class="info">
+											<span class="txt" v-text="list.info_txt_f"></span>
+											<span class="line">|</span>
+											<span class="txt" v-text="list.info_txt_t"></span>
+											<span class="line">|</span>
+											<span class="txt" v-text="list.info_txt_th"></span>
+										</div>
+										<div class="demand">
+											<span v-for="items in list.tags" v-text="items"></span>
+										</div>
+										<div class="average-price">
+											均价：<span class="price" v-text="list.price"></span> 元/m²
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
 			</section>
 		</div>
 	</body>
+	<script type="text/javascript">
+		var myVue = new Vue({
+			el: ".home-page-container",
+			data: {
+				recommend: [
+					{
+						src: 'img/style.png',
+						title_txt: '融创观澜湖公寓',
+						title_box: '推荐',
+						info_txt_f: '75-105m²',
+						info_txt_t: '2-3室',
+						info_txt_th: '龙昆南',
+						price: '12500',
+						tags: ['入户花园','刚需婚房','不限购']
+					},
+					{
+						src: 'img/style.png',
+						title_txt: '融创观澜湖公寓',
+						title_box: '在售',
+						info_txt_f: '75-105m²',
+						info_txt_t: '2-3室',
+						info_txt_th: '龙昆南',
+						price: '12500',
+						tags: ['入户花园','刚需婚房','不限购']
+					},
+					{
+						src: 'img/style.png',
+						title_txt: '融创观澜湖公寓',
+						title_box: '热卖',
+						info_txt_f: '75-105m²',
+						info_txt_t: '2-3室',
+						info_txt_th: '龙昆南',
+						price: '12500',
+						tags: ['入户花园','刚需婚房','不限购']
+					},
+					{
+						src: 'img/style.png',
+						title_txt: '融创观澜湖公寓',
+						title_box: '折扣',
+						info_txt_f: '75-105m²',
+						info_txt_t: '2-3室',
+						info_txt_th: '龙昆南',
+						price: '12500',
+						tags: ['入户花园','刚需婚房','不限购']
+					},
+					{
+						src: 'img/style.png',
+						title_txt: '融创观澜湖公寓',
+						title_box: '在售',
+						info_txt_f: '75-105m²',
+						info_txt_t: '2-3室',
+						info_txt_th: '龙昆南',
+						price: '12500',
+						tags: ['入户花园','刚需婚房','不限购']
+					},
+					{
+						src: 'img/style.png',
+						title_txt: '融创观澜湖公寓',
+						title_box: '热卖',
+						info_txt_f: '75-105m²',
+						info_txt_t: '2-3室',
+						info_txt_th: '龙昆南',
+						price: '12500',
+						tags: ['入户花园','刚需婚房','不限购']
+					},
+					
+				]
+			}
+		})
+	</script>
 	<script type="text/javascript" src="js/home-page.js"></script>
 </html>
