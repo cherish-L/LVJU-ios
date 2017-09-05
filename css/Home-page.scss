@@ -37,28 +37,24 @@ li {
 }
 
 $sc:20;
-.container {
+
+.container{
     width: 100%;
     height: 100%;
-    background: #FAFAFA;
-    position: relative;
+    overflow: hidden;
     display: flex;
-    display: -webkit-flex;
     flex-direction: column;
-    .header {
+    .header{
         width: 100%;
-        height: 44/$sc+rem;
         background: #47464b;
         box-shadow: 0 1px 0 0 #B2B2B2;
         -webkit-box-shadow: 0 1px 0 0 #B2B2B2;
         .title_bar {
             width: 100%;
             height: 44/$sc+rem;
-            line-height: 44/$sc+rem;    
+            line-height: 44/$sc+rem;
             position: relative;
             .title_txt {
-                display: block;
-                width: 100%;
                 font-size: 17/$sc+rem;
                 color: #FFFFFF;
                 text-align: center;
@@ -68,27 +64,27 @@ $sc:20;
                 display: block;
                 height: 18/$sc+rem;
                 line-height: 18/$sc+rem;
-                font-size: 17/$sc+rem;
-                color: #FFFFFF;
-                font-weight: normal;
                 padding-left: 16/$sc+rem;
+                font-size: 17/$sc+rem;
+                color: #ffffff;
                 background: url(../img/return.png) no-repeat;
                 background-size: 9/$sc+rem 16/$sc+rem;
                 background-position-x: left;
                 background-position-y: 1/$sc+rem;
                 position: absolute;
-                top: 13/$sc+rem;
+                top: 14/$sc+rem;
                 left: 8/$sc+rem;
             }
-            .more {
+            .more{
                 display: block;
                 height: 20/$sc+rem;
                 width: 20/$sc+rem;
                 background: url(../img/more.png) no-repeat;
                 background-size: 20/$sc+rem 20/$sc+rem;
                 position: absolute;
-                top: 12/$sc+rem;
+                top: 13/$sc+rem;
                 right: 8/$sc+rem;
+                
             }
         }
     }
@@ -96,11 +92,6 @@ $sc:20;
         flex: 1;
         -webkit-flex: 1;
         overflow: hidden;
-        background: #ffffff;
-        .section-wrapper{
-            width: 100%;
-            height: 100%;
-            border-bottom: 1px solid transparent;
-        }
     }
+    
 }

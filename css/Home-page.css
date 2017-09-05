@@ -39,16 +39,13 @@ li {
 .container {
   width: 100%;
   height: 100%;
-  background: #FAFAFA;
-  position: relative;
+  overflow: hidden;
   display: flex;
-  display: -webkit-flex;
   flex-direction: column;
 }
 
 .container .header {
   width: 100%;
-  height: 2.2rem;
   background: #47464b;
   box-shadow: 0 1px 0 0 #B2B2B2;
   -webkit-box-shadow: 0 1px 0 0 #B2B2B2;
@@ -62,8 +59,6 @@ li {
 }
 
 .container .header .title_bar .title_txt {
-  display: block;
-  width: 100%;
   font-size: 0.85rem;
   color: #FFFFFF;
   text-align: center;
@@ -74,16 +69,15 @@ li {
   display: block;
   height: 0.9rem;
   line-height: 0.9rem;
-  font-size: 0.85rem;
-  color: #FFFFFF;
-  font-weight: normal;
   padding-left: 0.8rem;
+  font-size: 0.85rem;
+  color: #ffffff;
   background: url(../img/return.png) no-repeat;
   background-size: 0.45rem 0.8rem;
   background-position-x: left;
   background-position-y: 0.05rem;
   position: absolute;
-  top: 0.65rem;
+  top: 0.7rem;
   left: 0.4rem;
 }
 
@@ -94,7 +88,7 @@ li {
   background: url(../img/more.png) no-repeat;
   background-size: 1rem 1rem;
   position: absolute;
-  top: 0.6rem;
+  top: 0.65rem;
   right: 0.4rem;
 }
 
@@ -102,11 +96,4 @@ li {
   flex: 1;
   -webkit-flex: 1;
   overflow: hidden;
-  background: #ffffff;
-}
-
-.container .section .section-wrapper {
-  width: 100%;
-  height: 100%;
-  border-bottom: 1px solid transparent;
 }
