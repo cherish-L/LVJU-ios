@@ -447,15 +447,24 @@ $sc:20;
                                 height: 100%;
                                 .title{
                                     font-size: 14/$sc+rem;
+                                    height: 20/$sc+rem;
                                     line-height: 20/$sc+rem;
                                     color: #333333;
+                                    .title-txt{
+                                        float: left;
+                                        font-size: 14/$sc+rem;
+                                        line-height: 20/$sc+rem;
+                                        color: #333333;
+                                        
+                                    }
                                     .title-box{
                                         display: inline-block;
+                                        float: left;
                                         background: #FFFFFF;
                                         height: 12/$sc+rem;
-                                        line-height: 10/$sc+rem;
+                                        line-height: 11/$sc+rem;
                                         padding: 0 2/$sc+rem;
-                                        margin-left: 3/$sc+rem;
+                                        margin: 4/$sc+rem 0 0 3/$sc+rem;
                                         border: 1px solid #F23023;
                                         border-radius: 2/$sc+rem;
                                         font-size: 8/$sc+rem;

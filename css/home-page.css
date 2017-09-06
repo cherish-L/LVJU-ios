@@ -512,17 +512,26 @@ li {
 
 .home-page-container .home-page-section .section-wrapper .section-recommend .section-recommend-content .recommend-content-ul .recommend-content-li .recommend-content-li-txt .title {
   font-size: 0.7rem;
+  height: 1rem;
+  line-height: 1rem;
+  color: #333333;
+}
+
+.home-page-container .home-page-section .section-wrapper .section-recommend .section-recommend-content .recommend-content-ul .recommend-content-li .recommend-content-li-txt .title .title-txt {
+  float: left;
+  font-size: 0.7rem;
   line-height: 1rem;
   color: #333333;
 }
 
 .home-page-container .home-page-section .section-wrapper .section-recommend .section-recommend-content .recommend-content-ul .recommend-content-li .recommend-content-li-txt .title .title-box {
   display: inline-block;
+  float: left;
   background: #FFFFFF;
   height: 0.6rem;
-  line-height: 0.5rem;
+  line-height: 0.55rem;
   padding: 0 0.1rem;
-  margin-left: 0.15rem;
+  margin: 0.2rem 0 0 0.15rem;
   border: 1px solid #F23023;
   border-radius: 0.1rem;
   font-size: 0.4rem;
