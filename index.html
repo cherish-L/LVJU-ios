@@ -1,1657 +1,217 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
-		<meta charset="utf-8" />
-		<meta content="email=no" name="format-detection" />
-		<meta http-equiv="Cache-Control" content="no-cache" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="description" content="switch,honeySwitch,switch button">
+		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>用户中心</title>
-		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/user-center.css" />
-		<link rel="stylesheet" type="text/css" href="plugins/animate.min.css" />
-		<link rel="stylesheet" type="text/css" href="plugins/Switch/switch.css" />
+		<title>程凡首页</title>
+		<link rel="stylesheet" type="text/css" href="css/home-page.css" />
 		<script type="text/javascript" src="plugins/zepto.min.js"></script>
 		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>
-		<script src="plugins/swiper-3.4.2.min.js"></script>
 		<script type="text/javascript" src="vue/vue.js"></script>
 		<script>
 			//适配
-			document.documentElement.style.fontSize = innerWidth / 15 + "px";
+			document.documentElement.style.fontSize = innerWidth / 16 + "px"
 		</script>
 	</head>
-
 	<body>
-		<div class="user-center-container">
-			<header class="user-center-header">
+		<div class="home-page-container" v-cloak>
+			<header class="home-page-header">
 				<div class="signal_bar"></div>
 				<div class="title_bar">
-					<a class="setUp" href="javascript:;">设置</a>
+					<h3 class="title_txt">程凡房地产</h3>
+					<a class="return" href="javascript:;">返回</a>
+					<a class="more" href="javascript:;"></a>
 				</div>
 			</header>
-			<div class="user-center-Bg">
-				<img src="img/userBg.png" alt="" />
-			</div>
-			<section class="user-center-section">
+			<section class="home-page-section">
 				<div class="section-wrapper">
-					<div class="cushion">
-						<div class="cushion-wrapper">
-							<i class="head-portrait"><img src="img/head_portraitbig.png"/></i>
+					<div class="section-banner">
+						<img src="img/style.png"/>
+						<div class="address">
+							<span class="address-city">海口</span>
 						</div>
-						<p class="sign-in">
-							<span class="Not-logged show">登录</span>
-							<span class="Logged-in">哈利波特</span>
-						</p>
+						<div class="search">
+							<img src="img/Home-search.png"/>
+						</div>
 					</div>
-					<ul class="user-center-application">
-						<li class="collection">
-							<i><img src="img/myCollection.png"/></i>
-							<span class="li-txt">我的收藏</span>
-						</li>
-						<li class="footprint">
-							<i><img src="img/footprint.png"/></i>
-							<span class="li-txt">我的足迹</span>
-						</li>
-						<li class="news">
-							<i><img src="img/tidings.png"/></i>
-							<span class="li-txt">消息</span>
-							<div class="message-prompt">5</div>
-						</li>
-						<li class="Coupon">
-							<i><img src="img/Coupon.png"/></i>
-							<span class="li-txt">优惠券</span>
-						</li>
-						<li class="useCar">
-							<i><img src="img/myCar.png"/></i>
-							<span class="li-txt">我的用车</span>
-						</li>
-						<li class="calculator">
-							<i><img src="img/Computer.png"/></i>
-							<span class="li-txt">购房计算器</span>
-						</li>
-					</ul>
+					<div class="section-nav">
+						<ul class="section-nav-ul">
+							<li class="section-nav-li">
+								<i><img src="img/Properties-sale-logo.png"/></i>
+								<span>楼盘</span>
+							</li>
+							<li class="section-nav-li">
+								<i><img src="img/Rental.png"/></i>
+								<span>二手房租房</span>
+							</li>
+							<li class="section-nav-li">
+								<i><img src="img/Rental.png"/></i>
+								<span>团购</span>
+							</li>
+							<li class="section-nav-li">
+								<i><img src="img/union-logo.png"/></i>
+								<span>购房联盟</span>
+							</li>
+							<li class="section-nav-li">
+								<i><img src="img/information.png"/></i>
+								<span>资讯</span>
+							</li>
+						</ul>
+						<div class="section-nav-headlines">
+							<div class="headlines-logo"></div>
+							<div class="headlines-content">
+								<p>相识即是有缘 甄姐夸赞顾问小陈服务好相识即是有缘</p>
+								<p>谢女士想海景房 小梁助其满意购下荣盛谢女士想海景房</p>
+							</div>
+							<div class="headlines-link">
+								<img src="img/returnright.png"/>
+							</div>
+						</div>
+					</div>
+					<div class="section-list">
+						<ul class="section-list-big">
+							<li>
+								<div class="section-list-big-txt">
+									<p class="title">定制专属购房方案</p>
+									<p class="txt">为您优选最合适房源</p>
+									<p class="connect">
+										<span class="people">222人</span>
+										<span class="txt">正在报名</span>
+										<span class="right"></span>
+									</p>
+								</div>
+							</li>
+							<li>
+								<div class="section-list-big-txt">
+									<p class="title">50万新房</p>
+									<p class="txt">刚需安家首选</p>
+									<p class="connect">
+										<span class="people">222人</span>
+										<span class="txt">正在看</span>
+										<span class="right"></span>
+									</p>
+								</div>
+							</li>
+						</ul>
+						<ul class="section-list-small">
+							<li>
+								<p class="title">独家返现</p>
+								<p class="txt"><span>联盟会员特惠</span></p>
+							</li>
+							<li>
+								<p class="title">看房笔记</p>
+								<p class="txt"><span>小编为您推荐</span></p>
+							</li>
+							<li>
+								<p class="title">进度组图</p>
+								<p class="txt"><span>准现房一睹为快</span></p>
+							</li>
+						</ul>
+					</div>
+					<div class="section-recommend">
+						<h3 class="section-recommend-title">为您推荐<span>更多</span></h3>
+						<div class="section-recommend-content">
+							<ul class="recommend-content-ul">
+								<li class="recommend-content-li" v-for="list in recommend">
+									<div class="recommend-content-li-img">
+										<img :src="list.src"/>
+									</div>
+									<div class="recommend-content-li-txt">
+										<div class="title">
+											<span class="title-txt" v-text="list.title_txt"></span>
+											<span class="title-box" v-text="list.title_box"></span>
+										</div>
+										<div class="info">
+											<span class="txt" v-text="list.info_txt_f"></span>
+											<span class="line">|</span>
+											<span class="txt" v-text="list.info_txt_t"></span>
+											<span class="line">|</span>
+											<span class="txt" v-text="list.info_txt_th"></span>
+										</div>
+										<div class="demand">
+											<span v-for="items in list.tags" v-text="items"></span>
+										</div>
+										<div class="average-price">
+											均价：<span class="price" v-text="list.price"></span> 元/m²
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</section>
-			<footer class="user-center-footer">
-				<ul class="footer-nav">
-					<li class="footer-nav-li">
-						<a href="javascript:;">
-							<i></i>
-							<span>首页</span>
-						</a>
-					</li>
-					<li class="footer-nav-li">
-						<a href="javascript:;">
-							<i></i>
-							<span>楼盘</span>
-						</a>
-					</li>
-					<li class="footer-nav-li">
-						<a href="javascript:;">
-							<i></i>
-							<span>资讯</span>
-						</a>
-					</li>
-					<li class="footer-nav-li">
-						<a href="javascript:;">
-							<i></i>
-							<span>公益接机</span>
-						</a>
-					</li>
-					<li class="footer-nav-li select">
-						<a href="javascript:;">
-							<i></i>
-							<span>我的</span>
-							<div class="message-prompt">5</div>
-						</a>
-					</li>
-				</ul>
-			</footer>
-			<!-------------  提示请登录弹框  ---------------->
-			<div class="please-login-account">请登录后查看</div>
-			<!-------------  设置弹框  ---------------->
-			<div class="set-up-push">
-				<header class="set-up-pushheader">
-					<div class="signal_bar"></div>
-					<div class="title_bar">
-						<h3 class="title_txt">设置</h3>
-						<a class="return" href="javascript:;"></a>
-					</div>
-				</header>
-				<section class="set-up-pushsection">
-					<div class="pushsection-wrapper">
-						<div class="administration">
-							<ul class="administration-ul">
-								<li class="message-management">
-									消息管理
-									<span></span>
-								</li>
-								<li class="clear-cache">
-									清除缓存
-									<span>41.40M</span>
-								</li>
-								<li class="Update-software">
-									更新软件
-									<span>可更新至V1.2</span>
-								</li>
-							</ul>
-						</div>
-						<div class="holders">
-							<ul class="holders-ul">
-								<li class="comment-us">
-									评论我们
-									<span></span>
-								</li>
-								<li class="about-us">
-									关于我们
-									<span></span>
-								</li>
-								<li class="feedback">
-									意见反馈
-									<span></span>
-								</li>
-								<li class="help-description">
-									帮助说明
-									<span></span>
-								</li>
-							</ul>
-						</div>
-						<div class="login-status">
-							<div class="login-box">退出登录</div>
-						</div>
-					</div>
-				</section>
-				<!----------  消息管理  ----------->
-				<div class="message-management-push">
-					<header class="message-management-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<h3 class="title_txt">消息管理</h3>
-							<a class="return" href="javascript:;"></a>
-						</div>
-					</header>
-					<section class="message-management-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="receive-message">
-								<p class="receive-box">
-									<span class="receive-txt">接收推送</span>
-									<span class="receive-close">已经关闭</span>
-								</p>
-								<p class="close-prompt">您已在系统中关闭旅居的通知，无法收到任何提醒</p>
-								<p class="goOpen">
-									<span>去打开</span>
-								</p>
-							</div>
-							<div class="prompt-message">
-								<div class="prompt-message-txt">
-									<p>提示消息</p>
-									<p>系统通知、客服消息</p>
-								</div>
-								<div class="prompt-message-switch">
-									<label><input class="mui-switch mui-switch-anim" type="checkbox" checked disabled></label>
-								</div>
-							</div>
-							<div class="cue-tone">
-								<ul class="cue-tone-ul">
-									<li>
-										声音提示
-										<label><input class="mui-switch mui-switch-anim" type="checkbox" checked></label>
-									</li>
-									<li>
-										震动提示
-										<label><input class="mui-switch mui-switch-anim" type="checkbox"></label>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</section>
-				</div>
-				<!----------  关于我们  ----------->
-				<div class="about-us-push">
-					<header class="about-us-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<h3 class="title_txt">关于我们</h3>
-							<a class="return" href="javascript:;"></a>
-						</div>
-					</header>
-					<section class="about-us-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="logo-area">
-								<div class="logo-box">
-									<img src="img/logo.png" />
-									<span>V1.0</span>
-								</div>
-							</div>
-							<div class="company-synopsis">
-								<ul class="company-synopsis-ul">
-									<li class="contact-us">
-										联系我们
-										<span class="change"></span>
-									</li>
-									<li class="concern-us">
-										关注我们
-										<span class="weix"><img src="img/weix.png"/></span>
-										<span class="change"></span>
-									</li>
-									<li class="synopsis-us">
-										<div class="synopsis-us-title">旅居简介</div>
-										<div class="synopsis-us-txt">
-											简介内容简介内容简介内容简介内容简介内容简介内容简介 内容简介内容简介内容简介内容简介内容简介内容简介内容 简介内容简介内容简介内容简介内容简介内容简介内容简介 内容简介内容简介内容简介内容简介内容简介内容简介内容 简介内容简介内容简介内容简介内容简介内容简介内容简介 内容简介内容简介内容简介内容简介内容简介内容简介内容 简介内容简介内容简介内容简介内容简介内容简介内容简介 内容简介内容简介内容简介内容
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</section>
-				</div>
-				<!----------  帮助说明  ----------->
-				<div class="help-description-push">
-					<header class="help-description-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<h3 class="title_txt">帮助说明</h3>
-							<a class="return" href="javascript:;"></a>
-						</div>
-					</header>
-					<section class="help-description-pushsection">
-						<div class="pushsection-wrapper">
-							<ul class="pushsection-wrapper-ul">
-								<li class="how-register">
-									怎样注册成为用户
-									<span></span>
-								</li>
-								<li>
-									无法发布信息
-									<span></span>
-								</li>
-								<li>
-									无法删除信息
-									<span></span>
-								</li>
-								<li>
-									账号被冻结
-									<span></span>
-								</li>
-								<li>
-									提示非法用户
-									<span></span>
-								</li>
-								<li>
-									电话被骚扰，看这里！
-									<span></span>
-								</li>
-								<li>
-									其他异常反馈
-									<span></span>
-								</li>
-							</ul>
-						</div>
-					</section>
-					<div class="how-register-push">
-						<header class="how-register-pushheader">
-							<div class="signal_bar"></div>
-							<div class="title_bar">
-								<h3 class="title_txt">怎么注册成为用户</h3>
-								<a class="return" href="javascript:;"></a>
-							</div>
-						</header>
-						<section class="how-register-pushsection">
-							<div class="pushsection-wrapper">
-								<div class="how-register-header">怎么注册成为用户</div>
-								<div class="how-register-txt">
-									详细内容详细内容详细内容详细内容详细内容详细内容 详细内容详细内容详细内容详细内容详细内容详细内容 详细内容详细内容详细内容详细内容详细内容详细内容 详细内容详细内容详细内容详细内容详细内容详细内容 详细内容详细内容详细内容详细内容详细内容详细内容 详细内容详细内容详细内容详细内容详细内容详细内容 详细内容详细内容详细内容详细内容详细内容详细内容 详细内容详细内容详细内容详细内容详细内容详细内容
-								</div>
-								<div class="how-register-box">
-									<div class="solve">
-										<i><img src="img/good.png"/></i>
-										<span>解决了我的问题</span>
-									</div>
-									<div class="noSolve">
-										<i><img src="img/bad.png"/></i>
-										<span>没有解决我的问题</span>
-									</div>
-								</div>
-							</div>
-						</section>
-					</div>
-				</div>
-				<!----------  意见反馈  ----------->
-				<div class="feedback-push">
-					<header class="feedback-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<h3 class="title_txt">意见反馈</h3>
-							<a class="return" href="javascript:;"></a>
-						</div>
-					</header>
-					<section class="feedback-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="feedback-textarea">
-								<div class="textarea-box">
-									<textarea class="textarea" tabindex name="" id="" onkeyup="this.value = this.value.substring(0,200)" placeholder="请填写您的意见"></textarea>
-								</div>
-								<span class="Surplus-character">184字</span>
-							</div>
-							<div class="feedback-img z_photo">
-								<div class="addbtn-box z_file">
-									<img src="img/add.png" />
-									<span>上传图片</span>
-									<input class="addbtn" type="file" name="file" id="file" value="" accept="image/*" multiple onchange="imgChange('z_photo','z_file');" />
-								</div>
-								<span class="upload">还可上传1张</span>
-							</div>
-						</div>
-					</section>
-				</div>
-			</div>
-			<!-------------  登录注册界面弹框  --------->
-			<div class="login-page-push">
-				<header class="login-page-pushheader">
-					<div class="signal_bar"></div>
-					<div class="title_bar">
-						<h3 class="title_txt">登录</h3>
-						<a class="return" href="javascript:;"></a>
-						<a class="register" href="javascript:;">注册</a>
-						<a class="login" href="javascript:;">登录</a>
-					</div>
-				</header>
-				<section class="login-page-pushsection">
-					<div class="pushsection-wrapper">
-						<div class="account-login">
-							<div class="login-page-logo"><img class="login-logo" src="img/lvjulogo.png" /></div>
-							<div class="login-page-Username">
-								<input class="Username" type="text" name="" id="" value="" placeholder="手机号/用户名" />
-							</div>
-							<div class="login-page-Password">
-								<input class="Password" id="l-Password" type="password" name="" id="" value="" placeholder="密码" />
-								<a class="showPassword" id="showlPassword" href="javascript:;"></a>
-							</div>
-							<div class="login-page-btn">登录</div>
-							<div class="login-page-way">
-								<span class="dynamic-login">手机动态登录</span>
-								<span class="forgot-password">忘记密码</span>
-							</div>
-							<div class="log-in-anotherWay">
-								<div class="anotherWay-box">
-									<p>其他方法登录</p>
-									<div class="weix-login">
-										<i><img src="img/grayweixin.png"/></i>
-										<span>微信</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="phone-dynamic-login">
-							<div class="login-page-phone">
-								<input class="Userphone" type="number" name="" id="" value="" placeholder="手机号" />
-								<div class="Verificationbtn-box">
-									<div class="Verificationbtn-box-wrapper">
-										<a class="Verificationbtn" href="javascript:;">获取验证码</a>
-										<div class="click"></div>
-									</div>
-								</div>
-							</div>
-							<div class="Verification-Code">
-								<input class="Verification" id="Verification" type="number" name="" id="" value="" placeholder="验证码" />
-							</div>
-							<div class="login-page-btn">登录</div>
-							<div class="login-page-way">
-								<span class="dynamic-login">旅居账号登录</span>
-							</div>
-							<div class="login-page-LogonFailure">登录失败，请检查网络</div>
-							<div class="login-page-VerifyCodeError">验证码错误</div>
-						</div>
-						<div class="registered-account">
-							<div class="registered-logo"><img class="registered-img" src="img/lvjulogo.png" /></div>
-							<div class="registered-phone">
-								<input class="Userphone" type="number" name="" id="" value="" placeholder="手机号" />
-								<div class="Verificationbtn-box">
-									<div class="Verificationbtn-box-wrapper">
-										<a class="Verificationbtn" href="javascript:;">获取验证码</a>
-										<div class="click"></div>
-									</div>
-								</div>
-							</div>
-							<div class="registered-Verification">
-								<input class="Verification" id="Verification" type="number" name="" id="" value="" placeholder="验证码" />
-							</div>
-							<div class="registered-Password">
-								<input class="Password" id="r-Password" type="password" name="" id="" value="" placeholder="密码" />
-								<a class="showPassword" id="showrPassword" href="javascript:;"></a>
-							</div>
-							<div class="registered-btn">注册</div>
-							<div class="registered-txt">点击注册按钮即代表<span class="dynamic-login">同意旅居网服务条款</span></div>
-						</div>
-					</div>
-				</section>
-				<div class="register-state-push">
-					<header class="register-state-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<a class="return" href="javascript:;"></a>
-						</div>
-					</header>
-					<section class="register-state-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="register-success-box">
-								<img class="suc-img" src="img/success.png" />
-								<p class="suc-txt">注册成功</p>
-								<p class="account-type">请设置您的账户类型</p>
-								<div class="new-account">
-									<p>新用户</p>
-									<span>第一次注册旅居网</span>
-								</div>
-								<div class="old-account">
-									<p>老用户</p>
-									<span>以前接触过旅居网</span>
-								</div>
-							</div>
-							<div class="register-fail-box">
-								<img class="fail-img" src="img/fail.png" />
-								<p class="fail-txt">注册失败</p>
-								<p class="check-network">请检查您的网络是否连接</p>
-								<div class="Re-registration">重新注册</div>
-							</div>
-						</div>
-					</section>
-				</div>
-				<div class="modify-success">密码修改成功，请重新登录</div>
-				<div class="retrieve-success">密码找回成功，请登录</div>
-				<!-------------找回密码------------->
-				<div class="retrieve-password-push">
-					<header class="retrieve-password-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<h3 class="title_txt">找回密码</h3>
-							<a class="return" href="javascript:;"></a>
-						</div>
-					</header>
-					<section class="retrieve-password-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="retrieve-password-box">
-								<div class="retrieve-phone">
-									<span>手机号</span>
-									<input class="retrieve-p" id="retrieve-p" type="number" name="" id="" value="" placeholder="请输入手机号">
-									<div class="Verificationbtn-box">
-										<div class="Verificationbtn-box-wrapper">
-											<a class="Verificationbtn" href="javascript:;">获取验证码</a>
-											<div class="click"></div>
-										</div>
-									</div>
-								</div>
-								<div class="retrieve-verification">
-									<span>验证码</span>
-									<input class="retrieve_v" id="retrieve_v" type="number" name="" id="" value="" placeholder="请输入验证码">
-								</div>
-								<div class="retrieve-new">
-									<span>新密码</span>
-									<input class="retrieve-n" id="retrieve-n" type="password" name="" id="" value="" placeholder="6~15位之间">
-									<a href="javascript:;"></a>
-								</div>
-								<div class="retrieve-btn">确定</div>
-							</div>
-						</div>
-					</section>
-					<div class="retrieve-failed">提交失败，请检查网络</div>
-				</div>
-			</div>
-			<!-------------  个人资料弹框  ------------->
-			<div class="personal-data-push">
-				<header class="personal-data-pushheader">
-					<div class="signal_bar"></div>
-					<div class="title_bar">
-						<h3 class="title_txt">设置</h3>
-						<a class="return" href="javascript:;"></a>
-					</div>
-				</header>
-				<section class="personal-data-pushsection">
-					<div class="pushsection-wrapper">
-						<div class="personal-data-box">
-							<ul class="account-management">
-								<li class="head-portrait">
-									<div class="li-wrapper">
-										<span class="li-wrapper-title">头像</span>
-										<span class="li-wrapper-info"><img src="img/userimg2.png"/></span>
-										<span class="li-wrapper-btn"><img src="img/returnright.png"/></span>
-									</div>
-								</li>
-								<li class="account-name">
-									<div class="li-wrapper">
-										<span class="li-wrapper-title">用户名</span>
-										<span class="li-wrapper-info">哈利波特</span>
-										<span class="li-wrapper-btn"><img src="img/returnright.png"/></span>
-									</div>
-								</li>
-								<li class="nickname">
-									<div class="li-wrapper">
-										<span class="li-wrapper-title">昵称</span>
-										<span class="li-wrapper-info">哈利波特</span>
-										<span class="li-wrapper-btn"><img src="img/returnright.png"/></span>
-									</div>
-								</li>
-								<li class="real-name">
-									<div class="li-wrapper">
-										<span class="li-wrapper-title">真实姓名</span>
-										<span class="li-wrapper-info"></span>
-										<span class="li-wrapper-btn"><img src="img/returnright.png"/></span>
-									</div>
-								</li>
-								<li class="account-type">
-									<div class="li-wrapper">
-										<span class="li-wrapper-title">账户类型</span>
-										<span class="li-wrapper-info"></span>
-										<span class="li-wrapper-btn"><img src="img/returnright.png"/></span>
-									</div>
-								</li>
-								<li class="Modify-password">
-									<div class="li-wrapper">
-										<span class="li-wrapper-title">修改密码</span>
-										<span class="li-wrapper-info"></span>
-										<span class="li-wrapper-btn"><img src="img/returnright.png"/></span>
-									</div>
-								</li>
-							</ul>
-							<ul class="personal-info">
-								<li class="gender">
-									<div class="li-wrapper">
-										<span class="li-wrapper-title">性别</span>
-										<span class="li-wrapper-info"></span>
-										<span class="li-wrapper-btn"><img src="img/returnright.png"/></span>
-									</div>
-								</li>
-								<li class="birthday">
-									<div class="li-wrapper">
-										<span class="li-wrapper-title">生日</span>
-										<span class="li-wrapper-info"></span>
-										<span class="li-wrapper-btn"><img src="img/returnright.png"/></span>
-									</div>
-								</li>
-								<li class="region">
-									<div class="li-wrapper">
-										<span class="li-wrapper-title">地区</span>
-										<span class="li-wrapper-info"></span>
-										<span class="li-wrapper-btn"><img src="img/returnright.png"/></span>
-									</div>
-								</li>
-							</ul>
-							<ul class="binding-device">
-								<li>
-									<div class="li-wrapper">
-										<span class="li-wrapper-title"><img src="img/bindingphone.png"/></span>
-										<span class="li-wrapper-info">173****8888</span>
-										<span class="li-wrapper-btn">
-											<span class="btn">绑定</span>
-										</span>
-									</div>
-								</li>
-								<li>
-									<div class="li-wrapper">
-										<span class="li-wrapper-title"><img src="img/bindingweix.png"/></span>
-										<span class="li-wrapper-info">lgylei</span>
-										<span class="li-wrapper-btn">
-											<span class="btn">绑定</span>
-										</span>
-									</div>
-								</li>
-								<li>
-									<div class="li-wrapper">
-										<span class="li-wrapper-title"><img src="img/bindingEmail.png"/></span>
-										<span class="li-wrapper-info">492718257@qq.com</span>
-										<span class="li-wrapper-btn">
-											<span class="btn">绑定</span>
-										</span>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</section>
-				<div class="personal-data-Mask"></div>
-				<!-------------修改用户名弹框------------->
-				<div class="account-name-push">
-					<header class="account-name-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<h3 class="title_txt">修改用户名</h3>
-							<a class="return" href="javascript:;"></a>
-							<a class="save" href="javascript:;">保存</a>
-						</div>
-					</header>
-					<section class="account-name-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="account-name-revise">
-								<span class="title">修改用户名：</span>
-								<input class="accountName" type="text" name="" id="" />
-								<span class="delete"><img src="img/empty.png"/></span>
-							</div>
-							<p>20个以内字符，仅可以使用汉字、字母、数字或下划线</p>
-						</div>
-					</section>
-				</div>
-				<!-------------修改昵称弹框------------->
-				<div class="nickname-push">
-					<header class="nickname-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<h3 class="title_txt">修改昵称</h3>
-							<a class="return" href="javascript:;"></a>
-							<a class="save" href="javascript:;">保存</a>
-						</div>
-					</header>
-					<section class="nickname-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="nickname-push-revise">
-								<span class="title">昵称：</span>
-								<input class="nickName" type="text" name="" id="" />
-								<span class="delete"><img src="img/empty.png"/></span>
-							</div>
-							<p>20个以内字符，仅可以使用汉字、字母、数字或下划线</p>
-						</div>
-					</section>
-				</div>
-				<!-------------填写真实姓名弹框------------->
-				<div class="real-name-push">
-					<header class="real-name-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<h3 class="title_txt">填写真实姓名</h3>
-							<a class="return" href="javascript:;"></a>
-							<a class="save" href="javascript:;">保存</a>
-						</div>
-					</header>
-					<section class="real-name-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="realname-push-revise">
-								<span class="title">真实姓名：</span>
-								<input class="realName" type="text" name="" id="" />
-								<span class="delete"><img src="img/empty.png"/></span>
-							</div>
-							<div class="realname-push-prompt">
-								<p>1. 取票人姓名必须与所持证件一致。</p>
-								<p>2. 若姓名中包含生僻字，生僻字需更换为拼音。如“巘”为生僻字，姓名为“巘张君”请提交“yan张君”；姓名为“张巘君”，请提交“张yan君”；姓名为“张君巘”，请提交“张君yan”。</p>
-								<p>3. 姓名中不可含称谓等词语，如：小姐、先生、太太、夫人等。</p>
-								<p>4. 中文姓名不可少于2个汉字。</p>
-							</div>
-
-						</div>
-					</section>
-				</div>
-				<!-------------账户类型弹框------------->
-				<div class="account-type-push">
-					<ul class="push-wrapper">
-						<li class="olduser">老用户</li>
-						<li class="newuser">新用户</li>
-					</ul>
-				</div>
-				<!-------------修改密码------------->
-				<div class="modify-password-push">
-					<header class="modify-password-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<h3 class="title_txt">修改密码</h3>
-							<a class="del" href="javascript:;"></a>
-						</div>
-					</header>
-					<section class="modify-password-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="modify-password-box">
-								<div class="old-password">
-									<input class="old_P" id="old_P" type="password" name="" id="" value="" placeholder="旧密码">
-								</div>
-								<div class="new-password">
-									<input class="new_P" id="new_P" type="password" name="" id="" value="" placeholder="新密码">
-									<a href="javascript:;"></a>
-								</div>
-								<div class="modify-btn">确定</div>
-							</div>
-						</div>
-					</section>
-				</div>
-				<!-------------性别弹框------------->
-				<div class="gender-push">
-					<ul class="push-wrapper">
-						<li class="male">男</li>
-						<li class="female">女</li>
-						<li class="secrecy">保密</li>
-					</ul>
-				</div>
-				<!-------------设置生日弹框------------->
-				<div class="birthday-push">
-					<header class="birthday-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<h3 class="title_txt">设置生日</h3>
-							<a class="return" href="javascript:;"></a>
-							<a class="determine" href="javascript:;">确定</a>
-						</div>
-					</header>
-					<section class="birthday-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="birthday-time" id="birthday-time">
-								1994年04月02日
-							</div>
-						</div>
-					</section>
-					<footer class="birthday-pushfooter">
-						<p class="pushfooter-title" id="pushfooter-title">选择您的生日</p>
-						<div class="pushfooter-content">
-
-						</div>
-					</footer>
-				</div>
-				<!-------------设置地区弹框------------->
-				<div class="region-push">
-					<header class="region-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<h3 class="title_txt">设置地区</h3>
-							<a class="return" href="javascript:;"></a>
-							<a class="determine" href="javascript:;">确定</a>
-						</div>
-					</header>
-					<section class="region-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="region-place">
-								海南省 海口市 龙华区
-							</div>
-						</div>
-					</section>
-					<footer class="region-pushfooter">
-						<p class="pushfooter-title">选择您的生日</p>
-						<div class="pushfooter-content"></div>
-					</footer>
-				</div>
-				<!-------------密码修改失败弹框------------->
-				<div class="modify-failed">密码修改失败，请检查网络</div>
-			</div>
-			<!-------------  我的收藏弹框  ------------->
-			<div class="personal-collection-push">
-				<header class="personal-collection-pushheader">
-					<div class="signal_bar"></div>
-					<div class="title_bar">
-						<h3 class="title_txt">我的收藏</h3>
-						<a class="return" href="javascript:;"></a>
-					</div>
-				</header>
-				<section class="personal-collection-pushsection">
-					<div class="pushsection-wrapper">
-						<div class="Pcollection-data">
-							<ul class="Pcollection-data-ul">
-								<li class="Pcollection-data-li" v-for="list in Pcollection">
-									<div class="slide-delete-btn">
-										<a class="delete-btn" href="#">
-											<span>删除</span>
-										</a>
-									</div>
-									<div class="dataDetail">
-										<div class="Pcollection-img">
-											<img :src="list.img" />
-											<span class="ghtxt" v-text="list.sell"></span>
-										</div>
-										<div class="Pcollection-txt">
-											<span class="title">
-												<span class="position" v-text="list.positions"></span>
-											<span class="region" v-text="list.region"></span>
-											</span>
-											<span class="address" v-text="list.address"></span>
-											<span class="openprice" v-text="list.openprice"></span>
-											<span class="averageprice">
-												<span class="averag" v-text="list.averag"></span>
-											<span class="price" v-text="list.price"></span>
-											</span>
-										</div>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</section>
-				<div class="personal-collection-Mask"></div>
-				<div class="delete-collection-push">
-					<div class="push-wrapper">
-						<span class="prompt">确定要删除收藏吗？</span>
-						<span class="determine">确定</span>
-						<span class="cancle">取消</span>
-					</div>
-				</div>
-			</div>
-			<!-------------  我的足迹弹框  ------------->
-			<div class="personal-footprint-push">
-				<header class="personal-footprint-pushheader">
-					<div class="signal_bar"></div>
-					<div class="title_bar">
-						<h3 class="title_txt">我的足迹</h3>
-						<a class="return" href="javascript:;"></a>
-					</div>
-				</header>
-				<section class="personal-footprint-pushsection">
-					<div class="pushsection-wrapper">
-						<div class="Pfootprint-data">
-							<ul class="Pfootprint-data-ul">
-								<li class="Pfootprint-data-li" v-for="list in Pfootprint">
-									<div class="slide-delete-btn">
-										<a class="delete-btn" href="#">
-											<span>删除</span>
-										</a>
-									</div>
-									<div class="dataDetail">
-										<div class="Pfootprint-img">
-											<img :src="list.img" />
-											<span class="ghtxt" v-text="list.sell"></span>
-										</div>
-										<div class="Pfootprint-txt">
-											<span class="title">
-												<span class="position" v-text="list.positions"></span>
-											<span class="region" v-text="list.region"></span>
-											</span>
-											<span class="address" v-text="list.address"></span>
-											<span class="openprice" v-text="list.openprice"></span>
-											<span class="averageprice">
-												<span class="averag" v-text="list.averag"></span>
-											<span class="price" v-text="list.price"></span>
-											</span>
-										</div>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</section>
-				<div class="personal-footprint-Mask"></div>
-				<div class="delete-footprint-push">
-					<div class="push-wrapper">
-						<span class="prompt">确定要删除收藏吗？</span>
-						<span class="determine">确定</span>
-						<span class="cancle">取消</span>
-					</div>
-				</div>
-			</div>
-			<!-------------  我的消息弹框  ------------->
-			<div class="personal-news-push">
-				<header class="personal-news-pushheader">
-					<div class="signal_bar"></div>
-					<div class="title_bar">
-						<h3 class="title_txt">我的消息</h3>
-						<a class="return" href="javascript:;"></a>
-					</div>
-				</header>
-				<section class="personal-news-pushsection">
-					<div class="pushsection-wrapper">
-						<div class="personal-news-data">
-							<ul class="personal-news-dataul">
-								<li class="personal-news-datali" v-for="news in Pnews">
-									<span class="receiveNews-time" v-text="news.receiveNewsT"></span>
-									<ul class="receiveNews-time-ul">
-										<li class="receiveNews-time-li" v-for="items in news.list">
-											<div class="receiveNews-time-liwrapper" :class="items.className">
-												<h3 class="news-title" v-text="items.title"></h3>
-												<div class="news-bigimg">
-													<img :src="items.bigimg" />
-												</div>
-												<div class="news-content">
-													<div class="news-smallimg"><img :src="items.smallimg" /></div>
-													<div class="news-txt" v-text="items.txt"></div>
-												</div>
-											</div>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</section>
-				<div class="news-detail-push">
-					<header class="news-detail-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<h3 class="title_txt">消息详情</h3>
-							<a class="return" href="javascript:;"></a>
-						</div>
-					</header>
-					<section class="news-detail-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="news-detail-content">
-								<div class="news-detail-header">
-									<p><span class="title"></span>消息标题消息标题消息标题消息标题消息标题消息标题消息标题消息标题</p>
-									<div class="news-detail-info">
-										<span class="copyright">旅居网</span>
-										<span class="time">2017-06-20</span>
-									</div>
-								</div>
-								<div class="news-detail-body">
-									<p>在经过一月到五月的集中放量和各大节日的优惠活动后，海南楼市迎来了暂时的间隙期，不少开发商暂时冷却下来，减少了楼盘的各种暖场营销活动。那么这个时候购房者来海南买房会不会没办法买到优惠的房源呢？当然不会！本期旅居网小编就来盘点一下6月初儋州楼盘推出的特价房优惠活动，为近期想来海南买优惠房源的购房者提供一份置业参考。</p>
-									<img src="img/massage-subject3.png" alt="" />
-									<p>在经过一月到五月的集中放量和各大节日的优惠活动后，海南楼市迎来了暂时的间隙期，不少开发商暂时冷却下来，减少了楼盘的各种暖场营销活动。那么这个时候购房者来海南买房会不会没办法买到优惠的房源呢？当然不会！本期旅居网小编就来盘点一下6月初儋州楼盘推出的特价房优惠活动，为近期想来海南买优惠房源的购房者提供一份置业参考。</p>
-								</div>
-							</div>
-						</div>
-					</section>
-				</div>
-			</div>
-			<!-------------  我的优惠券弹框  ----------->
-			<div class="personal-coupon-push">
-				<header class="personal-coupon-pushheader">
-					<div class="signal_bar"></div>
-					<div class="title_bar">
-						<h3 class="title_txt">我的优惠券</h3>
-						<a class="return" href="javascript:;"></a>
-						<a class="lookup" href="javascript:;">查找</a>
-					</div>
-					<div class="coupon-nav">
-						<ul class="coupon-nav-ul">
-							<li class="coupon-nav-li select">
-								<span>全部</span>
-							</li>
-							<li class="coupon-nav-li">
-								<span>未使用</span>
-							</li>
-							<li class="coupon-nav-li">
-								<span>已使用</span>
-							</li>
-							<li class="coupon-nav-li">
-								<span>已过期</span>
-							</li>
-						</ul>
-					</div>
-				</header>
-				<section class="personal-coupon-pushsection">
-					<div class="pushsection-wrapper coupon-whole">
-						<ul class="coupon-whole-ul">
-							<li class="coupon-whole-li notUsed" v-for="list in notUsed">
-								<div class="leftPart">
-									<div class="leftPart-wrapper">
-										<img class="leftPart-img" src="img/no_bestow.png" />
-										<p class="leftPart-content">
-											<span class="currency" v-text="list.currency"></span>
-											<span class="content" v-text="list.content"></span>
-										</p>
-										<span class="leftPart-txt">未使用</span>
-									</div>
-								</div>
-								<div class="rightPart">
-									<div class="rightPart-wrapper">
-										<div class="rightPart-content">
-											<p class="content-title" v-text="list.title"></p>
-											<p class="termOf-validity" v-text="list.validity"></p>
-											<p class="remaining-time" v-text="list.remaining"></p>
-										</div>
-										<div class="rightPart-details">
-											<span>详情</span>
-										</div>
-									</div>
-								</div>
-								<div class="hide_data">
-									<span class="dataTitle" v-text="list.hide_data.dataTitle"></span>
-									<span class="dataDetailed" v-text="list.hide_data.dataDetailed"></span>
-									<span class="dataCode" v-text="list.hide_data.dataCode"></span>
-									<span class="dataValidity" v-text="list.hide_data.dataValidity"></span>
-									<span class="dataQR_code">
-										<img :src="list.hide_data.dataQR_code"/>
-									</span>
-								</div>
-							</li>
-							<li class="coupon-whole-li alreadyUsed" v-for="list in alreadyUsed">
-								<div class="leftPart">
-									<div class="leftPart-wrapper">
-										<img class="leftPart-img" src="img/bestow.png" />
-										<p class="leftPart-content">
-											<span class="currency" v-text="list.currency"></span>
-											<span class="content" v-text="list.content"></span>
-										</p>
-										<span class="leftPart-txt">已使用</span>
-									</div>
-								</div>
-								<div class="rightPart">
-									<div class="rightPart-wrapper">
-										<div class="rightPart-content">
-											<p class="content-title" v-text="list.title"></p>
-											<p class="termOf-validity" v-text="list.validity"></p>
-											<p class="remaining-time" v-text="list.remaining"></p>
-										</div>
-										<div class="rightPart-details">
-											<span>详情</span>
-										</div>
-									</div>
-								</div>
-								<div class="hide_data">
-									<span class="dataTitle" v-text="list.hide_data.dataTitle"></span>
-									<span class="dataDetailed" v-text="list.hide_data.dataDetailed"></span>
-									<span class="dataCode" v-text="list.hide_data.dataCode"></span>
-									<span class="dataValidity" v-text="list.hide_data.dataValidity"></span>
-									<span class="dataQR_code">
-										<img :src="list.hide_data.dataQR_code"/>
-									</span>
-								</div>
-							</li>
-							<li class="coupon-whole-li overdue" v-for="list in overdue">
-								<div class="leftPart">
-									<div class="leftPart-wrapper">
-										<img class="leftPart-img" src="img/overdue.png" />
-										<p class="leftPart-content">
-											<span class="currency" v-text="list.currency"></span>
-											<span class="content" v-text="list.content"></span>
-										</p>
-										<span class="leftPart-txt">已过期</span>
-									</div>
-								</div>
-								<div class="rightPart">
-									<div class="rightPart-wrapper">
-										<div class="rightPart-content">
-											<p class="content-title" v-text="list.title"></p>
-											<p class="termOf-validity" v-text="list.validity"></p>
-											<p class="remaining-time" v-text="list.remaining"></p>
-										</div>
-										<div class="rightPart-details">
-											<span>详情</span>
-										</div>
-									</div>
-								</div>
-								<div class="hide_data">
-									<span class="dataTitle" v-text="list.hide_data.dataTitle"></span>
-									<span class="dataDetailed" v-text="list.hide_data.dataDetailed"></span>
-									<span class="dataCode" v-text="list.hide_data.dataCode"></span>
-									<span class="dataValidity" v-text="list.hide_data.dataValidity"></span>
-									<span class="dataQR_code">
-										<img :src="list.hide_data.dataQR_code"/>
-									</span>
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="pushsection-wrapper coupon-notUsed">
-						<div class="coupon-notUsed-ul">
-							<div class="coupon-notUsed-li notUsed" v-for="list in notUsed">
-								<div class="leftPart">
-									<div class="leftPart-wrapper">
-										<img class="leftPart-img" src="img/no_bestow.png" />
-										<p class="leftPart-content">
-											<span class="currency" v-text="list.currency"></span>
-											<span class="content" v-text="list.content"></span>
-										</p>
-										<span class="leftPart-txt">未使用</span>
-									</div>
-								</div>
-								<div class="rightPart">
-									<div class="rightPart-wrapper">
-										<div class="rightPart-content">
-											<p class="content-title" v-text="list.title"></p>
-											<p class="termOf-validity" v-text="list.validity"></p>
-											<p class="remaining-time" v-text="list.remaining"></p>
-										</div>
-										<div class="rightPart-details">
-											<span>详情</span>
-										</div>
-									</div>
-								</div>
-								<div class="hide_data">
-									<span class="dataTitle" v-text="list.hide_data.dataTitle"></span>
-									<span class="dataDetailed" v-text="list.hide_data.dataDetailed"></span>
-									<span class="dataCode" v-text="list.hide_data.dataCode"></span>
-									<span class="dataValidity" v-text="list.hide_data.dataValidity"></span>
-									<span class="dataQR_code">
-										<img :src="list.hide_data.dataQR_code"/>
-									</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="pushsection-wrapper coupon-alreadyUsed">
-						<div class="coupon-alreadyUsed-ul">
-							<div class="coupon-alreadyUsed-li alreadyUsed" v-for="list in alreadyUsed">
-								<div class="leftPart">
-									<div class="leftPart-wrapper">
-										<img class="leftPart-img" src="img/bestow.png" />
-										<p class="leftPart-content">
-											<span class="currency" v-text="list.currency"></span>
-											<span class="content" v-text="list.content"></span>
-										</p>
-										<span class="leftPart-txt">已使用</span>
-									</div>
-								</div>
-								<div class="rightPart">
-									<div class="rightPart-wrapper">
-										<div class="rightPart-content">
-											<p class="content-title" v-text="list.title"></p>
-											<p class="termOf-validity" v-text="list.validity"></p>
-											<p class="remaining-time" v-text="list.remaining"></p>
-										</div>
-										<div class="rightPart-details">
-											<span>详情</span>
-										</div>
-									</div>
-								</div>
-								<div class="hide_data">
-									<span class="dataTitle" v-text="list.hide_data.dataTitle"></span>
-									<span class="dataDetailed" v-text="list.hide_data.dataDetailed"></span>
-									<span class="dataCode" v-text="list.hide_data.dataCode"></span>
-									<span class="dataValidity" v-text="list.hide_data.dataValidity"></span>
-									<span class="dataQR_code">
-										<img :src="list.hide_data.dataQR_code"/>
-									</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="pushsection-wrapper coupon-overdue">
-						<div class="coupon-overdue-ul">
-							<div class="coupon-overdue-li overdue" v-for="list in overdue">
-								<div class="leftPart">
-									<div class="leftPart-wrapper">
-										<img class="leftPart-img" src="img/overdue.png" />
-										<p class="leftPart-content">
-											<span class="currency" v-text="list.currency"></span>
-											<span class="content" v-text="list.content"></span>
-										</p>
-										<span class="leftPart-txt">已过期</span>
-									</div>
-								</div>
-								<div class="rightPart">
-									<div class="rightPart-wrapper">
-										<div class="rightPart-content">
-											<p class="content-title" v-text="list.title"></p>
-											<p class="termOf-validity" v-text="list.validity"></p>
-											<p class="remaining-time" v-text="list.remaining"></p>
-										</div>
-										<div class="rightPart-details">
-											<span>详情</span>
-										</div>
-									</div>
-								</div>
-								<div class="hide_data">
-									<span class="dataTitle" v-text="list.hide_data.dataTitle"></span>
-									<span class="dataDetailed" v-text="list.hide_data.dataDetailed"></span>
-									<span class="dataCode" v-text="list.hide_data.dataCode"></span>
-									<span class="dataValidity" v-text="list.hide_data.dataValidity"></span>
-									<span class="dataQR_code">
-										<img :src="list.hide_data.dataQR_code"/>
-									</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="none-coupons">
-						<div class="none-coupon-wrapper">
-							<img src="img/Coupon.png"/>
-							<p>领取优惠券  购房更低价！</p>
-						</div>
-					</div>
-				</section>
-				<footer class="personal-coupon-pushfooter">查看优惠券使用流程</footer>
-				<div class="using-tutorials-push">
-					<header class="using-tutorials-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<h3 class="title_txt">优惠券使用流程</h3>
-							<a class="return" href="javascript:;"></a>
-						</div>
-					</header>
-					<section class="using-tutorials-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="using-tutorials-wrapper">
-								<div class="step-bar">
-									<span class="num">1</span>
-									<span class="bar"><img src="img/arrow.png"/></span>
-									<span class="num">2</span>
-									<span class="bar"><img src="img/arrow.png"/></span>
-									<span class="num">3</span>
-									<span class="bar"><img src="img/arrow.png"/></span>
-									<span class="num">4</span>
-									<span class="bar"><img src="img/arrow.png"/></span>
-									<span class="num">5</span>
-								</div>
-								<div class="step-content">
-									<span class="txt">网上筛选区域/楼盘</span>
-									<span class="txt">申请使用优惠券</span>
-									<span class="txt">专车接送实地看房</span>
-									<span class="txt">确定房源商定最终房款</span>
-									<span class="txt">验证券码兑现优惠</span>
-								</div>
-							</div>
-						</div>
-					</section>
-				</div>
-				<div class="coupon-details-push">
-					<header class="coupon-details-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<h3 class="title_txt">优惠券详情</h3>
-							<a class="return" href="javascript:;"></a>
-						</div>
-					</header>
-					<section class="coupon-details-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="coupon-details-notUsed">
-								<div class="details-notUsed-header">
-									<span class="header-price"></span>
-									<span class="header-txt">未使用</span>
-								</div>
-								<div class="details-notUsed-line"></div>
-								<div  class="details-notUsed-footer">
-									<p class="footer-title"></p>
-									<div class="footer-detailed">
-										<div class="detailed-title">详细详细：</div>
-										<div class="detailed-content"></div>
-									</div>
-									<div class="footer-code">
-										<div class="code-title">验证劵码：</div>
-										<div class="code-content"></div>
-									</div>
-									<div class="footer-term">
-										<div class="term-title">有效期：</div>
-										<div class="term-content"></div>
-									</div>
-									<div class="footer-QR_code"></div>
-								</div>
-							</div>
-							<div class="coupon-details-alreadyUsed">
-								<div class="details-alreadyUsed-header">
-									<span class="header-price">¥2000</span>
-									<span class="header-txt">已使用</span>
-								</div>
-								<div class="details-alreadyUsed-line"></div>
-								<div  class="details-alreadyUsed-footer">
-									<p class="footer-title">2000元旅居网会员购房红包</p>
-									<div class="footer-detailed">
-										<div class="detailed-title">详细详细：</div>
-										<div class="detailed-content">通过旅居网报名成功购房，即可凭券码申请返现，每套房限返一个红包。</div>
-									</div>
-									<div class="footer-code">
-										<div class="code-title">验证劵码：</div>
-										<div class="code-content">24587864538787</div>
-									</div>
-									<div class="footer-term">
-										<div class="term-title">有效期：</div>
-										<div class="term-content">2018年12月01日（剩余501天）</div>
-									</div>
-									<div class="footer-QR_code">
-										<img src="img/QR_code.png"/>
-									</div>
-								</div>
-							</div>
-							<div class="coupon-details-overdue">
-								<div class="details-overdue-header">
-									<span class="header-price">¥2000</span>
-									<span class="header-txt">已过期</span>
-								</div>
-								<div class="details-overdue-line"></div>
-								<div  class="details-overdue-footer">
-									<p class="footer-title">2000元旅居网会员购房红包</p>
-									<div class="footer-detailed">
-										<div class="detailed-title">详细详细：</div>
-										<div class="detailed-content">通过旅居网报名成功购房，即可凭券码申请返现，每套房限返一个红包。</div>
-									</div>
-									<div class="footer-code">
-										<div class="code-title">验证劵码：</div>
-										<div class="code-content">24587864538787</div>
-									</div>
-									<div class="footer-term">
-										<div class="term-title">有效期：</div>
-										<div class="term-content">2018年12月01日（剩余0天）</div>
-									</div>
-									<div class="footer-QR_code">
-										<img src="img/QR_code.png"/>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-				</div>
-				<div class="lookup-coupon-push">
-					<header class="lookup-coupon-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<h3 class="title_txt">查找优惠券</h3>
-							<a class="return" href="javascript:;"></a>
-						</div>
-					</header>
-					<section class="lookup-coupon-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="pushsection-wrapper-box">
-								<div class="lookup-coupon-input">
-									<div class="input-wrapper">
-										<input class="lookup_ipt" type="number" name="" id="" value="" placeholder="输入查找信息">
-										<a href="javascript:;"></a>
-									</div>
-								</div>
-								<div class="lookup-coupon-btn">
-									<div class="btn-wrapper">立即查找</div>
-								</div>
-								<div class="lookup-coupon-results">
-									<h3 class="results-title">查找结果：</h3>
-									<div class="results-coupon"></div>
-								</div>
-							</div>
-						</div>
-					</section>
-					<div class="can_t-find">找不到相关优惠券</div>
-				</div>
-			</div>
 		</div>
 	</body>
 	<script type="text/javascript">
-		function imgChange(obj1, obj2) {
-			//获取点击的文本框
-			var file = document.getElementById("file");
-			//存放图片的父级元素
-			var imgContainer = document.getElementsByClassName(obj1)[0];
-			//获取的图片文件
-			var fileList = file.files;
-			//文本框的父级元素
-			var input = document.getElementsByClassName(obj2)[0];
-			var imgArr = [];
-			//遍历获取到得图片文件
-			for(var i = 0; i < fileList.length; i++) {
-				var imgUrl = window.URL.createObjectURL(file.files[i]);
-				imgArr.push(imgUrl);
-				var img = document.createElement("img");
-				img.setAttribute("src", imgArr[i]);
-				var imgAdd = document.createElement("div");
-				imgAdd.setAttribute("class", "z_addImg");
-				imgAdd.appendChild(img);
-				imgContainer.appendChild(imgAdd);
-			}
-		}
-	</script>
-	<script type="text/javascript">
-		var myVue1 = new Vue({
-			el: ".user-center-container",
+		var myVue = new Vue({
+			el: ".home-page-container",
 			data: {
-				Pcollection: [{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
+				recommend: [
+					{
+						src: 'img/style.png',
+						title_txt: '融创观澜湖公寓',
+						title_box: '推荐',
+						info_txt_f: '75-105m²',
+						info_txt_t: '2-3室',
+						info_txt_th: '龙昆南',
+						price: '12500',
+						tags: ['入户花园','刚需婚房','不限购']
 					},
 					{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
+						src: 'img/style.png',
+						title_txt: '融创观澜湖公寓',
+						title_box: '在售',
+						info_txt_f: '75-105m²',
+						info_txt_t: '2-3室',
+						info_txt_th: '龙昆南',
+						price: '12500',
+						tags: ['入户花园','刚需婚房','不限购']
 					},
 					{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
+						src: 'img/style.png',
+						title_txt: '融创观澜湖公寓',
+						title_box: '热卖',
+						info_txt_f: '75-105m²',
+						info_txt_t: '2-3室',
+						info_txt_th: '龙昆南',
+						price: '12500',
+						tags: ['入户花园','刚需婚房','不限购']
 					},
 					{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
+						src: 'img/style.png',
+						title_txt: '融创观澜湖公寓',
+						title_box: '折扣',
+						info_txt_f: '75-105m²',
+						info_txt_t: '2-3室',
+						info_txt_th: '龙昆南',
+						price: '12500',
+						tags: ['入户花园','刚需婚房','不限购']
 					},
 					{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
+						src: 'img/style.png',
+						title_txt: '融创观澜湖公寓',
+						title_box: '在售',
+						info_txt_f: '75-105m²',
+						info_txt_t: '2-3室',
+						info_txt_th: '龙昆南',
+						price: '12500',
+						tags: ['入户花园','刚需婚房','不限购']
 					},
 					{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
+						src: 'img/style.png',
+						title_txt: '融创观澜湖公寓',
+						title_box: '热卖',
+						info_txt_f: '75-105m²',
+						info_txt_t: '2-3室',
+						info_txt_th: '龙昆南',
+						price: '12500',
+						tags: ['入户花园','刚需婚房','不限购']
 					},
-					{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
-					},
-					{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
-					}
-				],
-				Pfootprint: [{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
-					},
-					{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
-					},
-					{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
-					},
-					{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
-					},
-					{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
-					},
-					{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
-					},
-					{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
-					},
-					{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
-					}
-				],
-				Pnews: [{
-						receiveNewsT: '2017年07月11日',
-						list: [{
-							className: {
-								styletwo: true
-							},
-							title: '纯文字消息消息标题啊消息标题啊消息标题啊消息标题啊消息标题啊消息标题啊',
-							bigimg: 'img/bigimg.png',
-							smallimg: 'img/smallimg.png',
-							txt: '消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊'
-						}]
-					},
-					{
-						receiveNewsT: '2017年07月13日',
-						list: [{
-							className: {
-								styleone: true
-							},
-							title: '纯文字消息消息标题啊消息标题啊消息标题啊消息标题啊消息标题啊消息标题啊',
-							bigimg: 'img/bigimg.png',
-							smallimg: 'img/smallimg.png',
-							txt: '消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊'
-						}]
-					},
-					{
-						receiveNewsT: '2017年07月15日',
-						list: [{
-							className: {
-								stylethree: true
-							},
-							title: '纯文字消息消息标题啊消息标题啊消息标题啊消息标题啊消息标题啊消息标题啊',
-							bigimg: 'img/bigimg.png',
-							smallimg: 'img/smallimg.png',
-							txt: '消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊'
-						}]
-					},
-					{
-						receiveNewsT: '2017年07月17日',
-						list: [{
-							className: {
-								styletwo: true
-							},
-							title: '纯文字消息消息标题啊消息标题啊消息标题啊消息标题啊消息标题啊消息标题啊',
-							bigimg: 'img/bigimg.png',
-							smallimg: 'img/smallimg.png',
-							txt: '消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊'
-						}]
-					},
-					{
-						receiveNewsT: '2017年07月19日',
-						list: [{
-							className: {
-								styleone: true
-							},
-							title: '纯文字消息消息标题啊消息标题啊消息标题啊消息标题啊消息标题啊消息标题啊',
-							bigimg: 'img/bigimg.png',
-							smallimg: 'img/smallimg.png',
-							txt: '消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊'
-						}]
-					}
-				],
-				notUsed: [{
-						currency: '￥',
-						content: '2000',
-						title: '2000元旅居网会员购房优惠券',
-						validity: '有效期：2018年12月01日前',
-						remaining: '剩余：501天',
-						hide_data: {
-							dataTitle: '￥2000',
-							dataDetailed: '通过旅居网报名成功购房，即可凭券码申请返现，每套房限返一个红包。',
-							dataCode: '123456789876554321',
-							dataValidity: '2018年12月01日（剩余501天）',
-							dataQR_code: 'img/QR_code.png'
-						}
-					},
-					{
-						content: '9.8折',
-						title: '9.8折旅居网会员购房优惠券',
-						validity: '有效期：2018年12月01日前',
-						remaining: '剩余：501天',
-						hide_data: {
-							dataTitle: '9.8折',
-							dataDetailed: '通过旅居网报名成功购房，即可凭券码申请返现，每套房限返一个红包。',
-							dataCode: '98765432123456789',
-							dataValidity: '2018年12月01日（剩余501天）',
-							dataQR_code: 'img/QR_code.png'
-						}
-					}
-				],
-				alreadyUsed: [{
-						currency: '￥',
-						content: '2000',
-						title: '2000元旅居网会员购房优惠券',
-						validity: '有效期：2018年12月01日前',
-						remaining: '剩余：501天',
-						hide_data: {
-							dataTitle: '￥2000',
-							dataDetailed: '通过旅居网报名成功购房，即可凭券码申请返现，每套房限返一个红包。',
-							dataCode: 'dfjghkdjfbg4461432',
-							dataValidity: '2018年12月01日（剩余501天）',
-							dataQR_code: 'img/QR_code.png'
-						}
-					},
-					{
-						content: '9.8折',
-						title: '9.8折旅居网会员购房优惠券',
-						validity: '有效期：2018年12月01日前',
-						remaining: '剩余：501天',
-						hide_data: {
-							dataTitle: '9.8折',
-							dataDetailed: '通过旅居网报名成功购房，即可凭券码申请返现，每套房限返一个红包。',
-							dataCode: '564dfsg2132sdfgrgxz',
-							dataValidity: '2018年12月01日（剩余501天）',
-							dataQR_code: 'img/QR_code.png'
-						}
-					}
-				],
-				overdue: [{
-						currency: '￥',
-						content: '2000',
-						title: '2000元旅居网会员购房优惠券',
-						validity: '有效期：2018年12月01日前',
-						remaining: '剩余：0天',
-						hide_data: {
-							dataTitle: '￥2000',
-							dataDetailed: '通过旅居网报名成功购房，即可凭券码申请返现，每套房限返一个红包。',
-							dataCode: '978ewdfs847fv456',
-							dataValidity: '2018年12月01日（剩余0天）',
-							dataQR_code: 'img/QR_code.png'
-						}
-					},
-					{
-						content: '9.8折',
-						title: '9.8折旅居网会员购房优惠券',
-						validity: '有效期：2018年12月01日前',
-						remaining: '剩余：0天',
-						hide_data: {
-							dataTitle: '9.8折',
-							dataDetailed: '通过旅居网报名成功购房，即可凭券码申请返现，每套房限返一个红包。',
-							dataCode: 'd456v5613f9hj7r4',
-							dataValidity: '2018年12月01日（剩余0天）',
-							dataQR_code: 'img/QR_code.png'
-						}
-					}
+					
 				]
 			}
 		})
 	</script>
-	<script type="text/javascript" src="js/user-center.js"></script>
+	<script type="text/javascript" src="js/home-page.js"></script>
 </html>
