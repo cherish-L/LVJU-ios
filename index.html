@@ -5,9 +5,9 @@
 		<meta content="email=no" name="format-detection" />
 		<meta http-equiv="Cache-Control" content="no-cache" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>程凡首页</title>
+		<title>程凡首页(城市定位)</title>
 		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/home-page.css" />
+		<link rel="stylesheet" type="text/css" href="css/city-position.css" />
 		<link rel="stylesheet" type="text/css" href="plugins/animate.min.css" />
 		<script type="text/javascript" src="plugins/zepto.min.js"></script>
 		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>
@@ -20,8 +20,8 @@
 		</script>
 	</head>
 	<body>
-		<div class="home-page-container" v-cloak>
-			<header class="home-page-header">
+		<div class="city-position-container" v-cloak>
+			<header class="city-position-header">
 				<div class="signal_bar"></div>
 				<div class="title_bar">
 					<h3 class="title_txt">程凡房地产</h3>
@@ -29,195 +29,244 @@
 					<a class="more" href="javascript:;"></a>
 				</div>
 			</header>
-			<section class="home-page-section">
+			<section class="city-position-section">
 				<div class="section-wrapper">
-					<div class="section-banner">
-						<img src="img/style.png"/>
-						<div class="address">
-							<span class="address-city">海口</span>
-						</div>
-						<div class="search">
-							<img src="img/Home-search.png"/>
+					<div class="current-location city" id="c-l">
+						<h3 class="title"><span>当前定位</span></h3>
+						<div class="content">
+							<span class="state">定位失败</span>
+							<span class="refresh"><img src="img/Refresh.png"/></span>
 						</div>
 					</div>
-					<div class="section-nav">
-						<ul class="section-nav-ul">
-							<li class="section-nav-li">
-								<i><img src="img/Properties-sale-logo.png"/></i>
-								<span>楼盘</span>
-							</li>
-							<li class="section-nav-li">
-								<i><img src="img/Rental.png"/></i>
-								<span>二手房租房</span>
-							</li>
-							<li class="section-nav-li">
-								<i><img src="img/Rental.png"/></i>
-								<span>团购</span>
-							</li>
-							<li class="section-nav-li">
-								<i><img src="img/union-logo.png"/></i>
-								<span>购房联盟</span>
-							</li>
-							<li class="section-nav-li">
-								<i><img src="img/information.png"/></i>
-								<span>资讯</span>
-							</li>
-						</ul>
-						<div class="section-nav-headlines">
-							<div class="headlines-logo"></div>
-							<div class="headlines-content">
-								<p>相识即是有缘 甄姐夸赞顾问小陈服务好相识即是有缘</p>
-								<p>谢女士想海景房 小梁助其满意购下荣盛谢女士想海景房</p>
-							</div>
-							<div class="headlines-link">
-								<img src="img/returnright.png"/>
-							</div>
+					<div class="hot-city city" id="h-t">
+						<h3 class="title"><span>热门城市</span></h3>
+						<div class="content">
+							<span class="state" v-for="list in hot_t" v-text="list"></span>
 						</div>
 					</div>
-					<div class="section-list">
-						<ul class="section-list-big">
-							<li>
-								<div class="section-list-big-txt">
-									<p class="title">定制专属购房方案</p>
-									<p class="txt">为您优选最合适房源</p>
-									<p class="connect">
-										<span class="people">222人</span>
-										<span class="txt">正在报名</span>
-										<span class="right"></span>
-									</p>
-								</div>
-							</li>
-							<li>
-								<div class="section-list-big-txt">
-									<p class="title">50万新房</p>
-									<p class="txt">刚需安家首选</p>
-									<p class="connect">
-										<span class="people">222人</span>
-										<span class="txt">正在看</span>
-										<span class="right"></span>
-									</p>
-								</div>
-							</li>
-						</ul>
-						<ul class="section-list-small">
-							<li>
-								<p class="title">独家返现</p>
-								<p class="txt"><span>联盟会员特惠</span></p>
-							</li>
-							<li>
-								<p class="title">看房笔记</p>
-								<p class="txt"><span>小编为您推荐</span></p>
-							</li>
-							<li>
-								<p class="title">进度组图</p>
-								<p class="txt"><span>准现房一睹为快</span></p>
-							</li>
-						</ul>
-					</div>
-					<div class="section-recommend">
-						<h3 class="section-recommend-title">为您推荐<span>更多</span></h3>
-						<div class="section-recommend-content">
-							<ul class="recommend-content-ul">
-								<li class="recommend-content-li" v-for="list in recommend">
-									<div class="recommend-content-li-img">
-										<img :src="list.src"/>
-									</div>
-									<div class="recommend-content-li-txt">
-										<div class="title">
-											<span class="title-txt" v-text="list.title_txt"></span>
-											<span class="title-box" v-text="list.title_box"></span>
-										</div>
-										<div class="info">
-											<span class="txt" v-text="list.info_txt_f"></span>
-											<span class="line">|</span>
-											<span class="txt" v-text="list.info_txt_t"></span>
-											<span class="line">|</span>
-											<span class="txt" v-text="list.info_txt_th"></span>
-										</div>
-										<div class="demand">
-											<span v-for="items in list.tags" v-text="items"></span>
-										</div>
-										<div class="average-price">
-											均价：<span class="price" v-text="list.price"></span> 元/m²
-										</div>
-									</div>
-								</li>
-							</ul>
+					<div class="A city" id="A">
+						<h3 class="title"><span>A</span></h3>
+						<div class="content">
+							<span class="state" v-for="list in letterA" v-text="list"></span>
 						</div>
 					</div>
+					<div class="B city" id="B">
+						<h3 class="title"><span>B</span></h3>
+						<div class="content">
+							<span class="state" v-for="list in letterB" v-text="list"></span>
+						</div>
+					</div>
+					<div class="C city" id="C">
+						<h3 class="title"><span>C</span></h3>
+						<div class="content">
+							<span class="state" v-for="list in letterC" v-text="list"></span>
+						</div>
+					</div>
+					<div class="D city" id="D">
+						<h3 class="title"><span>D</span></h3>
+						<div class="content">
+							<span class="state" v-for="list in letterD" v-text="list"></span>
+						</div>
+					</div>
+					<div class="E city" id="E">
+						<h3 class="title"><span>E</span></h3>
+						<div class="content">
+							<span class="state" v-for="list in letterE" v-text="list"></span>
+						</div>
+					</div>
+					<div class="F city" id="F">
+						<h3 class="title"><span>F</span></h3>
+						<div class="content">
+							<span class="state" v-for="list in letterF" v-text="list"></span>
+						</div>
+					</div>
+					<div class="G city" id="G">
+						<h3 class="title"><span>G</span></h3>
+						<div class="content">
+							<span class="state" v-for="list in letterG" v-text="list"></span>
+						</div>
+					</div>
+					<div class="H city" id="H">
+						<h3 class="title"><span>H</span></h3>
+						<div class="content">
+							<span class="state" v-for="list in letterH" v-text="list"></span>
+						</div>
+					</div>
+					<div class="I city" id="I">
+						<h3 class="title"><span>I</span></h3>
+						<div class="content">
+							<span class="state" v-for="list in letterI" v-text="list"></span>
+						</div>
+					</div>
+					<div class="J city" id="J">
+						<h3 class="title"><span>J</span></h3>
+						<div class="content">
+							<span class="state" v-for="list in J" v-text="list"></span>
+						</div>
+					</div>
+					<div class="K city" id="K">
+						<h3 class="title"><span>K</span></h3>
+						<div class="content">
+							<span class="state" v-for="list in letterK" v-text="list"></span>
+						</div>
+					</div>
+					<div class="L city" id="L">
+						<h3 class="title"><span>L</span></h3>
+						<div class="content">
+							<span class="state" v-for="list in letterL" v-text="list"></span>
+						</div>
+					</div>
+					<div class="M city" id="M">
+						<h3 class="title"><span>M</span></h3>
+						<div class="content">
+							<span class="state" v-for="list in letterM" v-text="list"></span>
+						</div>
+					</div>
+					<div class="N city" id="N">
+						<h3 class="title"><span>N</span></h3>
+						<div class="content">
+							<span class="state" v-for="list in letterN" v-text="list"></span>
+						</div>
+					</div>
+					<div class="O city" id="O">
+						<h3 class="title"><span>O</span></h3>
+						<div class="content">
+							<span class="state" v-for="list in letterO" v-text="list"></span>
+						</div>
+					</div>
+					<div class="P city" id="P">
+						<h3 class="title"><span>P</span></h3>
+						<div class="content">
+							<span class="state" v-for="list in letterP" v-text="list"></span>
+						</div>
+					</div>
+					<div class="Q city" id="Q">
+						<h3 class="title"><span>Q</span></h3>
+						<div class="content">
+							<span class="state" v-for="list in letterQ" v-text="list"></span>
+						</div>
+					</div>
+					<div class="R city" id="R">
+						<h3 class="title"><span>R</span></h3>
+						<div class="content">
+							<span class="state" v-for="list in letterR" v-text="list"></span>
+						</div>
+					</div>
+					<div class="S city" id="S">
+						<h3 class="title"><span>S</span></h3>
+						<div class="content">
+							<span class="state" v-for="list in letterS" v-text="list"></span>
+						</div>
+					</div>
+					<div class="T city" id="T">
+						<h3 class="title"><span>T</span></h3>
+						<div class="content">
+							<span class="state" v-for="list in letterT" v-text="list"></span>
+						</div>
+					</div>
+					<div class="U city" id="U">
+						<h3 class="title"><span>U</span></h3>
+						<div class="content">
+							<span class="state" v-for="list in letterU" v-text="list"></span>
+						</div>
+					</div>
+					<div class="V city" id="V">
+						<h3 class="title"><span>V</span></h3>
+						<div class="content">
+							<span class="state" v-for="list in letterV" v-text="list"></span>
+						</div>
+					</div>
+					<div class="W city" id="W">
+						<h3 class="title"><span>W</span></h3>
+						<div class="content">
+							<span class="state" v-for="list in letterW" v-text="list"></span>
+						</div>
+					</div>
+					<div class="X city" id="X">
+						<h3 class="title"><span>X</span></h3>
+						<div class="content">
+							<span class="state" v-for="list in letterX" v-text="list"></span>
+						</div>
+					</div>
+					<div class="Y city" id="Y">
+						<h3 class="title"><span>Y</span></h3>
+						<div class="content">
+							<span class="state" v-for="list in letterY" v-text="list"></span>
+						</div>
+					</div>
+					<div class="Z city" id="Z">
+						<h3 class="title"><span>Z</span></h3>
+						<div class="content">
+							<span class="state" v-for="list in letterZ" v-text="list"></span>
+						</div>
+					</div>
+				</div>
+				<div class="section-nav">
+					<span class="S_nav"><a class="aToz" href="#c-l">#</a></span>
+					<span class="S_nav"><a class="aToz" href="#h-t">热</a></span>
+					<span class="S_nav"><a class="aToz" href="#A">A</a></span>
+					<span class="S_nav"><a class="aToz" href="#B">B</a></span>
+					<span class="S_nav"><a class="aToz" href="#C">C</a></span>
+					<span class="S_nav"><a class="aToz" href="#D">D</a></span>
+					<span class="S_nav"><a class="aToz" href="#E">E</a></span>
+					<span class="S_nav"><a class="aToz" href="#F">F</a></span>
+					<span class="S_nav"><a class="aToz" href="#G">G</a></span>
+					<span class="S_nav"><a class="aToz" href="#H">H</a></span>
+					<span class="S_nav"><a class="aToz" href="#I">I</a></span>
+					<span class="S_nav"><a class="aToz" href="#J">J</a></span>
+					<span class="S_nav"><a class="aToz" href="#K">K</a></span>
+					<span class="S_nav"><a class="aToz" href="#L">L</a></span>
+					<span class="S_nav"><a class="aToz" href="#M">M</a></span>
+					<span class="S_nav"><a class="aToz" href="#N">N</a></span>
+					<span class="S_nav"><a class="aToz" href="#O">O</a></span>
+					<span class="S_nav"><a class="aToz" href="#P">P</a></span>
+					<span class="S_nav"><a class="aToz" href="#Q">Q</a></span>
+					<span class="S_nav"><a class="aToz" href="#R">R</a></span>
+					<span class="S_nav"><a class="aToz" href="#S">S</a></span>
+					<span class="S_nav"><a class="aToz" href="#T">T</a></span>
+					<span class="S_nav"><a class="aToz" href="#U">U</a></span>
+					<span class="S_nav"><a class="aToz" href="#V">V</a></span>
+					<span class="S_nav"><a class="aToz" href="#W">W</a></span>
+					<span class="S_nav"><a class="aToz" href="#X">X</a></span>
+					<span class="S_nav"><a class="aToz" href="#Y">Y</a></span>
+					<span class="S_nav"><a class="aToz" href="#Z">Z</a></span>
 				</div>
 			</section>
 		</div>
 	</body>
 	<script type="text/javascript">
 		var myVue = new Vue({
-			el: ".home-page-container",
+			el: ".city-position-container",
 			data: {
-				recommend: [
-					{
-						src: 'img/style.png',
-						title_txt: '融创观澜湖公寓',
-						title_box: '推荐',
-						info_txt_f: '75-105m²',
-						info_txt_t: '2-3室',
-						info_txt_th: '龙昆南',
-						price: '12500',
-						tags: ['入户花园','刚需婚房','不限购']
-					},
-					{
-						src: 'img/style.png',
-						title_txt: '融创观澜湖公寓',
-						title_box: '在售',
-						info_txt_f: '75-105m²',
-						info_txt_t: '2-3室',
-						info_txt_th: '龙昆南',
-						price: '12500',
-						tags: ['入户花园','刚需婚房','不限购']
-					},
-					{
-						src: 'img/style.png',
-						title_txt: '融创观澜湖公寓',
-						title_box: '热卖',
-						info_txt_f: '75-105m²',
-						info_txt_t: '2-3室',
-						info_txt_th: '龙昆南',
-						price: '12500',
-						tags: ['入户花园','刚需婚房','不限购']
-					},
-					{
-						src: 'img/style.png',
-						title_txt: '融创观澜湖公寓',
-						title_box: '折扣',
-						info_txt_f: '75-105m²',
-						info_txt_t: '2-3室',
-						info_txt_th: '龙昆南',
-						price: '12500',
-						tags: ['入户花园','刚需婚房','不限购']
-					},
-					{
-						src: 'img/style.png',
-						title_txt: '融创观澜湖公寓',
-						title_box: '在售',
-						info_txt_f: '75-105m²',
-						info_txt_t: '2-3室',
-						info_txt_th: '龙昆南',
-						price: '12500',
-						tags: ['入户花园','刚需婚房','不限购']
-					},
-					{
-						src: 'img/style.png',
-						title_txt: '融创观澜湖公寓',
-						title_box: '热卖',
-						info_txt_f: '75-105m²',
-						info_txt_t: '2-3室',
-						info_txt_th: '龙昆南',
-						price: '12500',
-						tags: ['入户花园','刚需婚房','不限购']
-					},
-					
-				]
+				hot_t: ['北京','上海','广州','深圳'],
+				letterA: ['阿克苏','安宁','安庆','鞍山','安顺','安阳'],
+				letterB: ['白城','白山','白银','蚌埠','保定','宝鸡'],
+				letterC: ['沧州','常德','昌吉','常熟','常州','朝阳','承德','潮州','成都'],
+				letterD: ['大理','大连','丹东','丹阳','大庆','大同','德州','东莞'],
+				letterE: ['鄂尔多斯','恩施'],
+				letterF: ['防城港','肥城','奉化','抚顺','阜新','阜阳','富阳','福州','抚州'],
+				letterG: ['赣榆','赣州','高明','高邮','格尔木','个旧','巩义','广安','广元','桂林','贵阳'],
+				letterH: ['哈尔滨','海城','海口','海门','海宁','哈密','邯郸','杭州','汉中','衡水','怀化','衡阳'],
+				letterI: [],
+				letterJ: ['佳木斯','吉安','江都','江门','胶州','焦作','邯吉','济南','晋城','景德镇','荆门','济宁'],
+				letterK: ['开封','凯里','开平','开远','喀什','克拉玛依','库尔勒','奎屯','昆明','昆山'],
+				letterL: ['来宾','莱芜','莱西','莱州','廊坊','兰州'],
+				letterM: ['马鞍山','茂名','梅河口','眉山','梅州','勉县','绵阳','牡丹江'],
+				letterN: ['南安','南昌','南充','南京','南宁','南平','南通','南阳','宁波','宁德'],
+				letterO: [],
+				letterP: ['盘锦','攀枝花','蓬莱','平顶山','平度','平湖'],
+				letterQ: ['黔南','启东','青岛','庆阳','清远','青州','秦皇岛'],
+				letterR: ['日喀则','日照','荣成','如皋','乳山'],
+				letterS: ['三门峡','三明','三亚','汕头','石狮','朔州','随州','松原','沭阳'],
+				letterT: [],
+				letterU: [],
+				letterV: [],
+				letterW: ['瓦房店','潍坊','威海','渭南','文登'],
+				letterX: ['信阳','新余','忻州','许昌','徐州'],
+				letterY: ['宜宾','宜昌','宜春','伊春','银川','伊宁'],
+				letterZ: ['湛江','肇东','肇庆','昭通','郑州','镇江','中山','舟山','诸城','珠海'],
 			}
 		})
 	</script>
-	<script type="text/javascript" src="js/home-page.js"></script>
+	<script type="text/javascript" src="js/city-position.js"></script>
 </html>
