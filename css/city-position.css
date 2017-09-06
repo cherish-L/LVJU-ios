@@ -188,8 +188,12 @@ li {
 }
 
 .city-position-container .city-position-section .section-nav span {
+  display: block;
+  height: 0.7rem;
+  width: 0.5rem;
+  margin-top: 0.05rem;
   font-family: PingFangSC-Medium;
-  font-size: 0.55rem;
+  font-size: 0.5rem;
   text-align: center;
 }
 

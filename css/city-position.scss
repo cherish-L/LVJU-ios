@@ -172,8 +172,12 @@ $sc:20;
             top: 0;
             right: 12/$sc+rem;
             span{
+                display: block;
+                height: 14/$sc+rem;
+                width: 10/$sc+rem;
+                margin-top: 1/$sc+rem;
                 font-family: PingFangSC-Medium;
-                font-size: 11/$sc+rem;
+                font-size: 10/$sc+rem;
                 text-align: center;
                 a{
                     color: #333333;   
