@@ -457,7 +457,7 @@ li {
 
 .building-list-container .building-list-column .building-list-demand .building-list-demand-wrapper .building-list-demand-column .demand_houseType .nav-list-li-wrapper .demand_houseType-body .demand_houseType-body-ul li .check {
   display: block;
-  width: 0.75rem;
+  width: 0.8rem;
   height: 0.75rem;
   background: url(../img/Checkbox.png) no-repeat;
   background-size: 0.75rem 0.75rem;
@@ -519,7 +519,7 @@ li {
 
 .building-list-container .building-list-column .building-list-demand .building-list-demand-wrapper .building-list-demand-column .demand_theme .nav-list-li-wrapper .demand_theme-body .demand_theme-body-ul li .check {
   display: block;
-  width: 0.75rem;
+  width: 0.8rem;
   height: 0.75rem;
   background: url(../img/Checkbox.png) no-repeat;
   background-size: 0.75rem 0.75rem;

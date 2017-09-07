@@ -34,6 +34,7 @@ $(function(){
 		var wrapper_h=$('.building-list-demand-column .nav-list-li').eq(demand_index).find(".nav-list-li-wrapper").height()
 		if($(this).hasClass("select")) {
 			$(this).removeClass("select")
+			$(".building-list-column .building-list-demand-ul").removeClass("select")
 			$(".building-list-Mask").removeClass("show")
 			$('.building-list-demand-column').css("height","0")
 			setTimeout(function(){
