@@ -459,7 +459,7 @@ li {
   display: block;
   width: 0.85rem;
   height: 0.75rem;
-  background: url(../img/Checkbox.png) no-repeat;
+  background: url(../img/Housing-demand-Checkbox.png) no-repeat;
   background-size: 0.75rem 0.75rem;
   position: absolute;
   top: 0;
@@ -473,7 +473,7 @@ li {
 }
 
 .building-list-container .building-list-column .building-list-demand .building-list-demand-wrapper .building-list-demand-column .demand_houseType .nav-list-li-wrapper .demand_houseType-body .demand_houseType-body-ul li.select span {
-  background: url(../img/Check.png) no-repeat;
+  background: url(../img/Housing-demand-Check.png) no-repeat;
   background-size: 0.75rem 0.75rem;
 }
 
@@ -521,7 +521,7 @@ li {
   display: block;
   width: 0.85rem;
   height: 0.75rem;
-  background: url(../img/Checkbox.png) no-repeat;
+  background: url(../img/Housing-demand-Checkbox.png) no-repeat;
   background-size: 0.75rem 0.75rem;
   position: absolute;
   top: 0;
@@ -535,7 +535,7 @@ li {
 }
 
 .building-list-container .building-list-column .building-list-demand .building-list-demand-wrapper .building-list-demand-column .demand_theme .nav-list-li-wrapper .demand_theme-body .demand_theme-body-ul li.select span {
-  background: url(../img/Check.png) no-repeat;
+  background: url(../img/Housing-demand-Check.png) no-repeat;
   background-size: 0.75rem 0.75rem;
 }
 
