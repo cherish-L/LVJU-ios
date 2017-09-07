@@ -851,7 +851,7 @@ li {
 .building-list-container .sign-up-push .sign-up-name span {
   display: inline-block;
   line-height: 0.8rem;
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   color: #666666;
 }
 
@@ -859,10 +859,12 @@ li {
   flex: 1;
   -webkit-flex: 1;
   height: 100%;
+  padding: 0.1rem 0;
   background: transparent;
-  line-height: 0.75rem;
-  font-size: 0.65rem;
+  line-height: 0.8rem;
+  font-size: 0.6rem;
   color: #333333;
+  box-sizing: border-box;
 }
 
 .building-list-container .sign-up-push .sign-up-contact {
@@ -879,7 +881,7 @@ li {
 .building-list-container .sign-up-push .sign-up-contact span {
   display: inline-block;
   line-height: 0.8rem;
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   color: #666666;
   word-break: keep-all;
 }
@@ -888,10 +890,12 @@ li {
   flex: 1;
   -webkit-flex: 1;
   height: 100%;
+  padding: 0.1rem 0;
   background: transparent;
   line-height: 0.8rem;
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   color: #333333;
+  box-sizing: border-box;
 }
 
 .building-list-container .sign-up-push .sign-up-intention {
@@ -908,7 +912,7 @@ li {
 .building-list-container .sign-up-push .sign-up-intention span {
   display: inline-block;
   line-height: 0.8rem;
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   color: #666666;
   word-break: keep-all;
 }
@@ -917,10 +921,12 @@ li {
   flex: 1;
   -webkit-flex: 1;
   height: 100%;
+  padding: 0.1rem 0;
   background: transparent;
   line-height: 0.8rem;
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   color: #333333;
+  box-sizing: border-box;
 }
 
 .building-list-container .sign-up-push .sign-up-btn {

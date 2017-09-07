@@ -752,17 +752,19 @@ $sc:20;
             span{
                 display: inline-block;
                 line-height: 16/$sc+rem;
-                font-size: 13/$sc+rem;
+                font-size: 12/$sc+rem;
                 color: #666666;
             }
             .name_ipt{
                 flex: 1;
                 -webkit-flex: 1;
                 height: 100%;
+                padding: 2/$sc+rem 0;
                 background: transparent;
-                line-height: 15/$sc+rem;
-                font-size: 13/$sc+rem;
+                line-height: 16/$sc+rem;
+                font-size: 12/$sc+rem;
                 color: #333333;
+                box-sizing: border-box;
             }
         }
         .sign-up-contact{
@@ -777,7 +779,7 @@ $sc:20;
             span{
                 display: inline-block;
                 line-height: 16/$sc+rem;
-                font-size: 13/$sc+rem;
+                font-size: 12/$sc+rem;
                 color: #666666;
                 word-break:keep-all; 
             }
@@ -785,10 +787,12 @@ $sc:20;
                 flex: 1;
                 -webkit-flex: 1;
                 height: 100%;
+                padding: 2/$sc+rem 0;
                 background: transparent;
                 line-height: 16/$sc+rem;
-                font-size: 13/$sc+rem;
+                font-size: 12/$sc+rem;
                 color: #333333;
+                box-sizing: border-box;
             }
         }
         .sign-up-intention{
@@ -803,7 +807,7 @@ $sc:20;
             span{
                 display: inline-block;
                 line-height: 16/$sc+rem;
-                font-size: 13/$sc+rem;
+                font-size: 12/$sc+rem;
                 color: #666666;
                 word-break:keep-all; 
             }
@@ -811,10 +815,12 @@ $sc:20;
                 flex: 1;
                 -webkit-flex: 1;
                 height: 100%;
+                padding: 2/$sc+rem 0;
                 background: transparent;
                 line-height: 16/$sc+rem;
-                font-size: 13/$sc+rem;
+                font-size: 12/$sc+rem;
                 color: #333333;
+                box-sizing: border-box;
             }
         }
         .sign-up-btn{
