@@ -23,10 +23,43 @@ $(function(){
 		shrinkScrollbars: 'clip'
 	})
 	
-	//点击报名看房
-	$(".building-list-column .Sign-up").tap(function(){
+	//报名免费看房团
+	$(".building-list-column .building-list-search .Sign-up").tap(function(){
 		$(this).addClass("select")
+		$(".building-list-Mask").addClass("signal_show")
+		$(".sign-up-push").addClass("show")
+		$(".sign-up-push .sign-up-btn span").tap(function(){
+			if($(".name_ipt").val()!=="" && $(".contact_ipt").val()!=="" && $(".intention_ipt").val()!==""){
+				$(".name_ipt").val("")
+				$(".contact_ipt").val("")
+				$(".intention_ipt").val("")
+				$(".sign-up-push").removeClass("show")
+				$(".sign-up-false").addClass("show")
+				$(".sign-up-false a").tap(function(){
+					$(".sign-up-success").addClass("show")
+					$(".sign-up-false").removeClass("show")
+					$(".sign-up-push").removeClass("show")
+				})
+				
+			}
+		})
+		
+		$(".sign-up-push .sign-up-del").tap(function(){
+			$(".sign-up-push").removeClass("show")
+			$(".building-list-Mask").removeClass("signal_show")
+			$(".building-list-column .building-list-search .Sign-up").removeClass("select")
+		})
+		
+		$(".building-list-Mask").tap(function(){
+			$(".sign-up-success").removeClass("show")
+			$(".sign-up-false").removeClass("show")
+			$(".sign-up-push").removeClass("show")
+			$(".building-list-Mask").removeClass("signal_show")
+			$(".building-list-column .building-list-search .Sign-up").removeClass("select")
+		})
 	})
+	
+	
 	
 	//点击需求导航
 	$(".building-list-demand .building-list-demand-ul li").tap(function() {
@@ -128,6 +161,10 @@ $(function(){
 			$(".building-list-section .recommend-content-li").eq(index).find(".recommend-content-li-img span").remove()
 		}
 	})
+	
+	
+	
+	
 	
 	
 })
