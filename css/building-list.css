@@ -817,7 +817,7 @@ li {
   transition: all .3s;
   border-radius: 0.25rem;
   opacity: 0;
-  z-index: -10;
+  z-index: -1;
   box-sizing: border-box;
   position: absolute;
   top: 0;
@@ -860,7 +860,7 @@ li {
   -webkit-flex: 1;
   height: 100%;
   background: transparent;
-  line-height: 0.8rem;
+  line-height: 0.75rem;
   font-size: 0.65rem;
   color: #333333;
 }
@@ -969,7 +969,7 @@ li {
   transition: all .3s;
   border-radius: 0.25rem;
   opacity: 0;
-  z-index: -10;
+  z-index: -1;
   box-sizing: border-box;
   position: absolute;
   top: 0;
