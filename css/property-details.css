@@ -667,14 +667,14 @@ li {
 }
 
 .property-details-container .property-details-section .section-wrapper .property-details-QA .QA-wrapper .QA-content .QA-content-li .QA-content-li-left {
-  width: 1.25rem;
+  width: 1.35rem;
   padding-right: 0.4rem;
 }
 
 .property-details-container .property-details-section .section-wrapper .property-details-QA .QA-wrapper .QA-content .QA-content-li .QA-content-li-left .head-portrait {
   display: block;
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1.35rem;
+  height: 1.35rem;
   border-radius: 50%;
   overflow: hidden;
   background: lightblue;
@@ -682,8 +682,8 @@ li {
 
 .property-details-container .property-details-section .section-wrapper .property-details-QA .QA-wrapper .QA-content .QA-content-li .QA-content-li-left .head-portrait img {
   display: block;
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1.35rem;
+  height: 1.35rem;
 }
 
 .property-details-container .property-details-section .section-wrapper .property-details-QA .QA-wrapper .QA-content .QA-content-li .QA-content-li-left .name {

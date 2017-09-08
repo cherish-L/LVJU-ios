@@ -33,17 +33,18 @@ $(function(){
 		scrollX: true,
 		scrollY: false
 	})
-	
+	var head_h=$(".head-portrait").height()
+	var max_h=(head_h*48/27)+5
 	$(".QA-content-li").each(function(){
 		var index=$(this).index()
 		var li_index=$(".QA-content-li").eq(index)
-		if(li_index.find(".answer").height()>50){
+		if(li_index.find(".answer").height()>max_h){
 			$(this).find(".answer").siblings(".full_text").css("display","block")
 			$(this).find(".answer").addClass("showall")
 		}
-		else if(li_index.find(".answer").height()<50){
+		else if(li_index.find(".answer").height()<max_h){
 			$(this).find(".answer").siblings(".full_text").css("display","none")
-			$(this).find(".answer").addClass("showall")
+			$(this).find(".answer").removeClass("showall")
 		}
 	})
 	$(".full_text").tap(function(){
