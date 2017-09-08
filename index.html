@@ -6,13 +6,12 @@
 		<meta content="email=no" name="format-detection" />
 		<meta http-equiv="Cache-Control" content="no-cache" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>程凡首页(楼盘列表)</title>
+		<title>程凡首页(搜索页面)</title>
 		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/building-list.css" />
+		<link rel="stylesheet" type="text/css" href="css/property-details.css" />
 		<link rel="stylesheet" type="text/css" href="plugins/animate.min.css" />
 		<script type="text/javascript" src="plugins/zepto.min.js"></script>
-		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>
-		<script src="plugins/swiper-3.4.2.min.js"></script>
+		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>      
 		<script type="text/javascript" src="vue/vue.js"></script>
 		<script type="text/javascript" src="plugins/navbarscroll.js"></script>
 		<script>
@@ -20,268 +19,113 @@
 			document.documentElement.style.fontSize = innerWidth / 16 + "px";
 		</script>
 	</head>
-
 	<body>
-		<div class="building-list-container" v-cloak>
-			<header class="building-list-header">
+		<div class="property-details-container" v-cloak>
+			<header class="property-details-header">
 				<div class="signal_bar"></div>
 				<div class="title_bar">
-					<h3 class="title_txt">程凡房地产</h3>
+					<h3 class="title_txt">南国夏威夷城</h3>
 					<a class="return" href="javascript:;">返回</a>
 					<a class="more" href="javascript:;"></a>
 				</div>
 			</header>
-			<div class="building-list-column">
-				<div class="building-list-search">
-					<input class="B_search" type="text" name="" id="" placeholder="请输入楼盘名称或区域" />
-					<i class="Sign-up"></i>
-				</div>
-				<div class="building-list-demand">
-					<ul class="building-list-demand-ul">
-						<li class="demand-li"><span>海口</span></li>
-						<li class="demand-li"><span>价格</span></li>
-						<li class="demand-li"><span>户型</span></li>
-						<li class="demand-li"><span>主题</span></li>
-						<li class="drop-down"><span></span></li>
-					</ul>
-					<div class="found-for-you">
-						<span>为您找到152个楼盘</span>
-					</div>
-					<div class="building-list-demand-wrapper">
-						<ul class="building-list-demand-column">
-							<li class="nav-list-li demand_city">
-								<div class="nav-list-li-wrapper">
-									<div class="demand_city-body">
-										<ul class="demand_city-body-ul">
-											<li>不限</li>
-											<li class="select">海口</li>
-											<li>三亚</li>
-											<li>琼海</li>
-											<li>儋州</li>
-											<li>澄迈</li>
-										</ul>
+			<section class="property-details-section">
+				<div class="section-wrapper">
+					<div class="property-details-info">
+						<div class="info-banner swiper-container">
+							<ul class="info-banner-ul swiper-wrapper">
+								<li class="info-banner-li swiper-slide" v-for="list in banners"><img :src="list.src"/></li>
+							</ul>
+							<div class="swiper-pagination"></div>
+							<div class="info-banner-share"><img src="img/share.png"/></div>
+							<span class="info-banner-txt">效果图</span>
+						</div> 
+						<ul class="info-details">
+							<li class="title">
+								<div class="title-txt">
+									<div class="title-txt-left">南国夏威夷城</div>
+									<div class="title-txt-right">
+										<span class="right-price">24620</span>
+										<span class="right-txt">元/m²</span>
 									</div>
 								</div>
-							</li>
-							<li class="nav-list-li demand_price">
-								<div class="nav-list-li-wrapper">
-									<div class="demand_price-body">
-										<ul class="demand_price-body-ul">
-											<li class="select">不限</li>
-											<li>3000元以下</li>
-											<li>3000-6000元</li>
-											<li>6000-8000元</li>
-											<li>8000元以上</li>
-										</ul>
-										<div class="demand_price-input">
-											<input class="min-price" type="number" name="" id="" placeholder="最低价格" />
-											<span></span>
-											<input class="max-price" type="number" name="" id="" placeholder="最高价格" />
-											<div class="btn">确定</div>
-										</div>
+								<div class="title-tags">
+									<div class="title-tags-left">
+										<span>入户花园</span>
+										<span>刚需婚房</span>
+										<span>不限购</span>
 									</div>
+									<div class="title-tags-right">在售</div>
 								</div>
 							</li>
-							<li class="nav-list-li demand_houseType">
-								<div class="nav-list-li-wrapper">
-									<div class="demand_houseType-body">
-										<ul class="demand_houseType-body-ul">
-											<li class="select">不限</li>
-											<li>一房户型<span class="check"></span></li>
-											<li>二房户型<span class="check"></span></li>
-											<li>三房户型<span class="check"></span></li>
-											<li>四房户型<span class="check"></span></li>
-											<li>五房户型<span class="check"></span></li>
-										</ul>
-									</div>
-								</div>
-							</li>
-							<li class="nav-list-li demand_theme">
-								<div class="nav-list-li-wrapper">
-									<div class="demand_theme-body">
-										<ul class="demand_theme-body-ul">
-											<li class="unlimited select">不限</li>
-											<li class="theme">住宅<span class="check"></span></li>
-											<li class="theme">养生社区<span class="check"></span></li>
-											<li class="theme">花园洋房<span class="check"></span></li>
-											<li class="theme">海景房<span class="check"></span></li>
-											<li class="theme">江（河）景房<span class="check"></span></li>
-										</ul>
-									</div>
-								</div>
-							</li>
-							<li class="nav-list-li demand_sort">
-								<div class="nav-list-li-wrapper">
-									<div class="demand_sort-body">
-										<ul class="demand_sort-body-ul">
-											<li class="select">智能排序</li>
-											<li>人气最高</li>
-											<li>均价从高到低</li>
-											<li>均价从低到高</li>
-										</ul>
-									</div>
-								</div>
-							</li>
+							<li class="open_time">开盘时间：2017年01月21号</li>
+							<li class="house_style">主力户型：五居(3) 6居(2) 4居(1)</li>
+							<li class="address">老城经济开发区南一环路北侧2弄21号</li>
+							<li class="phone">联系置业顾问：0898-66766666</li>
 						</ul>
 					</div>
-				</div>
-			</div>
-			<section class="building-list-section">
-				<div class="section-wrapper">
-					<div class="section-recommend">
-						<div class="section-recommend-content">
-							<ul class="recommend-content-ul">
-								<li class="recommend-content-li" v-for="list in recommend">
-									<div class="recommend-content-li-img">
-										<img :src="list.src" />
-										<span v-text="list.lable"></span>
-									</div>
-									<div class="recommend-content-li-txt">
-										<div class="title">
-											<span class="title-txt" v-text="list.title_txt"></span>
-											<span class="title-box" v-text="list.title_box" :class="{
-													'tags1': list.title_box === '推荐',
-													'tags2': list.title_box === '在售',
-													'tags3': list.title_box === '热卖',
-													'tags4': list.title_box === '折扣'
-												}">
-											</span>
-										</div>
-										<div class="info">
-											<span class="txt" v-text="list.info_txt_f"></span>
-											<span class="line">|</span>
-											<span class="txt" v-text="list.info_txt_t"></span>
-											<span class="line">|</span>
-											<span class="txt" v-text="list.info_txt_th"></span>
-										</div>
-										<div class="demand">
-											<span v-for="items in list.tags" v-text="items" :class="{
-													'state1': items === '入户花园',
-													'state2': items === '刚需婚房',
-													'state3': items === '不限购',
-												}">
-											</span>
-										</div>
-										<div class="average-price">
-											<span class="price" v-text="list.price"></span>
-											<span class="acreage" v-text="list.acreage"></span>
-										</div>
-									</div>
-								</li>
+					<div class="property-details-houseStyle">
+						<h3 class="houseStyle-title">
+							<span class="houseStyle-title-txt">户型展示</span>
+							<span class="houseStyle-title-link">全部户型</span>
+						</h3>
+						<div class="houseStyle-content">
+							<ul class="houseStyle-content-ul">
+								<li class="houseStyle-content-li"></li>
+								<li class="houseStyle-content-li"></li>
+								<li class="houseStyle-content-li"></li>
+								<li class="houseStyle-content-li"></li>
+								<li class="houseStyle-content-li"></li>
+								<li class="houseStyle-content-li"></li>
 							</ul>
 						</div>
 					</div>
 				</div>
 			</section>
-			<div class="building-list-Mask"></div>
-			<div class="sign-up-push">
-				<h3 class="sign-up-title">免费看房团</h3>
-				<div class="sign-up-name">
-					<span>姓名：</span>
-					<input class="name_ipt" type="text" name="" id=""/>
-				</div>
-				<div class="sign-up-contact">
-					<span>联系方式：</span>
-					<input class="contact_ipt" type="number" name="" id="" />
-				</div>
-				<div class="sign-up-intention">
-					<span>意向楼盘：</span>
-					<input class="intention_ipt" type="text" name="" id="" />
-				</div>
-				<div class="sign-up-btn">
-					<span>立即报名</span>
-				</div>
-				<div class="sign-up-del"><img src="img/close-button.png"/></div>
-			</div>
-			<div class="sign-up-false">
-				<i><img src="img/Submission-failure.png"/></i>
-				<p>报名失败！ <a href="javascript:;">再试一次</a></p>
-			</div>
-			<div class="sign-up-success">
-				<i><img src="img/Submit-successfully.png"/></i>
-				<p>报名成功！</p>
-			</div>
+			<footer class="property-details-footer">
+				<ul class="footer-ul">
+					<li class="footer-comment"><span>评论</span></li>
+					<li class="footer-touristHouse"><span>旅游看房</span></li>
+					<li class="footer-consultation"><span>咨询楼盘信息</span></li>
+				</ul>
+			</footer>
 		</div>
 	</body>
 	<script type="text/javascript">
 		var myVue = new Vue({
-			el: ".building-list-container",
+			el: ".property-details-container",
 			data: {
-				recommend: [{
-						src: 'img/style.png',
-						lable: '全 款95折',
-						title_txt: '融创观澜湖公寓',
-						title_box: '推荐',
-						info_txt_f: '75-105m²',
-						info_txt_t: '2-3室',
-						info_txt_th: '龙昆南',
-						price: '12500元/m²',
-						acreage: '建面 92-235m²',
-						tags: ['入户花园', '刚需婚房', '不限购']
-
-					},
-					{
-						src: 'img/style.png',
-						title_txt: '融创观澜湖公寓',
-						title_box: '在售',
-						info_txt_f: '75-105m²',
-						info_txt_t: '2-3室',
-						info_txt_th: '龙昆南',
-						price: '12500元/m²',
-						acreage: '建面 92-235m²',
-						tags: ['刚需婚房', '不限购']
-					},
-					{
-						src: 'img/style.png',
-						lable: '预 售立 减',
-						title_txt: '融创观澜湖公寓',
-						title_box: '热卖',
-						info_txt_f: '75-105m²',
-						info_txt_t: '2-3室',
-						info_txt_th: '龙昆南',
-						price: '12500元/m²',
-						acreage: '建面 92-235m²',
-						tags: ['入户花园', '刚需婚房', '不限购']
-					},
-					{
-						src: 'img/style.png',
-						title_txt: '融创观澜湖公寓',
-						title_box: '折扣',
-						info_txt_f: '75-105m²',
-						info_txt_t: '2-3室',
-						info_txt_th: '龙昆南',
-						price: '12500元/m²',
-						acreage: '建面 92-235m²',
-						tags: ['入户花园', '不限购']
-					},
-					{
-						src: 'img/style.png',
-						lable: '预 售立 减',
-						title_txt: '融创观澜湖公寓',
-						title_box: '在售',
-						info_txt_f: '75-105m²',
-						info_txt_t: '2-3室',
-						info_txt_th: '龙昆南',
-						price: '12500元/m²',
-						acreage: '建面 92-235m²',
-						tags: ['入户花园', '刚需婚房']
-					},
-					{
-						src: 'img/style.png',
-						lable: '全 款95折',
-						title_txt: '融创观澜湖公寓',
-						title_box: '热卖',
-						info_txt_f: '75-105m²',
-						info_txt_t: '2-3室',
-						info_txt_th: '龙昆南',
-						price: '12500元/m²',
-						acreage: '建面 92-235m²',
-						tags: ['入户花园', '刚需婚房', '不限购']
-					}
+				banners: [
+					{src: "img/style.png"},
+					{src: "img/style.png"},
+					{src: "img/style.png"},
+					{src: "img/style.png"},
+					{src: "img/style.png"},
+					{src: "img/style.png"},
+					{src: "img/style.png"},
+					{src: "img/style.png"},
+					{src: "img/style.png"},
+					{src: "img/style.png"},
+					{src: "img/style.png"},
+					{src: "img/style.png"},
+					{src: "img/style.png"},
+					{src: "img/style.png"},
+					{src: "img/style.png"},
+					{src: "img/style.png"},
+					{src: "img/style.png"},
+					{src: "img/style.png"},
+					{src: "img/style.png"},
+					{src: "img/style.png"}
 				]
 			}
 		})
 	</script>
-	<script type="text/javascript" src="js/building-list.js"></script>
-
+	<script src="plugins/swiper-3.4.2.min.js"></script>
+	<script type="text/javascript">
+		var mySwiper = new Swiper('.swiper-container', {
+			pagination : '.swiper-pagination',
+			paginationType : 'fraction'
+		})
+	</script>
+	<script type="text/javascript" src="js/property-details.js"></script>
 </html>
