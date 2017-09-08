@@ -71,24 +71,195 @@
 						</h3>
 						<div class="houseStyle-content">
 							<ul class="houseStyle-content-ul">
-								<li class="houseStyle-content-li"></li>
-								<li class="houseStyle-content-li"></li>
-								<li class="houseStyle-content-li"></li>
-								<li class="houseStyle-content-li"></li>
-								<li class="houseStyle-content-li"></li>
-								<li class="houseStyle-content-li"></li>
+								<li class="houseStyle-content-li" v-for="list in houseStyle">
+									<div class="wrapper-li">
+										<h3 class="wrapper-li-title">
+											<div class="title-wrapper">
+												<span class="title-txt" v-text="list.titleTxt"></span>
+												<span class="title-state" v-text="list.titleState"></span>
+											</div>
+										</h3>
+										<div class="wrapper-li-img">
+											<img :src="list.src"/>
+										</div>
+										<div class="wrapper-li-txt">
+											<div class="wrapper-li-txt-top" v-text="list.txtTop"></div>
+											<div class="wrapper-li-txt-bottom">
+												<div class="bottom-wrapper">
+													<span class="wrapper-all" v-text="list.wrapperAll"></span>
+													<span class="wrapper-price" v-text="list.wrapperPrice"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="property-details-parameter">
+						<h3 class="parameter-title">
+							<span class="parameter-title-txt">参数详情</span>
+							<span class="parameter-title-link">更多</span>
+						</h3>
+						<ul class="parameter-content">
+							<li class="parameter-content-li">
+								<span class="li-txt">开发商</span>
+								<span class="li-content">海南中南房地产开发有限公司</span>
+							</li>
+							<li class="parameter-content-li">
+								<span class="li-txt">最新开盘 </span>
+								<span class="li-content">2017年06月06日</span>
+							</li>
+							<li class="parameter-content-li">
+								<span class="li-txt">交房时间</span>
+								<span class="li-content">2018年06月</span>
+							</li>
+							<li class="parameter-content-li">
+								<span class="li-txt">产权年限 </span>
+								<span class="li-content">70年</span>
+							</li>
+						</ul>
+					</div>
+					<div class="property-details-message">
+						<div class="message-wrapper">
+							<h3 class="message-title">
+								<span class="message-title-txt">楼盘资讯</span>
+							</h3>
+							<ul class="message-content">
+								<li class="message-content-li">
+									<p class="li-txt">石梅半岛独栋别墅房源在售  总价约120万／套</p>
+									<p class="li-content">石梅半岛位于海口最高端的居住板块——西海岸起步区，项目占地204亩，是集高端住宅、商业、酒店式公寓为一体的大型综合社区。</p>
+								</li>
+								<li class="message-content-li">
+									<p class="li-txt">石梅半岛独栋别墅房源在售  总价约120万／套</p>
+									<p class="li-content">石梅半岛位于海口最高端的居住板块——西海岸起步区，项目占地204亩，是集高端住宅、商业、酒店式公寓为一体的大型综合社区。</p>
+								</li>
+							</ul>
+						</div>
+						<div class="message-btn">查看更多资讯</div>
+					</div>
+					<div class="property-details-QA">
+						<div class="QA-wrapper">
+							<h3 class="QA-title">
+								<span class="QA-title-txt">咨询问答</span>
+								<span class="QA-title-link">我要咨询</span>
+							</h3>
+							<ul class="QA-content">
+								<li class="QA-content-li">
+									<div class="QA-content-li-left">
+										<i class="head-portrait"><img src="img/Crowd.png"/></i>
+										<p class="name">鹿先生</p>
+									</div>
+									<div class="QA-content-li-right">
+										<p class="problem">南国威尼斯城2期12号楼什么时候开盘？</p>
+										<p class="answer">您好，很高兴为您服务，现在南国威尼斯城2期12号楼还没开盘，我们为您推荐相似楼盘：恒大山水汇园，欢迎您致电咨询。您好，很高兴为您服务，现在南国威尼斯城2期12号楼还没开盘，我们为您推荐相似楼盘：恒大山水汇园，欢迎您致电咨询。</p>
+										<div class="full_text">全文</div>
+										<div class="send_time">2017.02.02</div>
+									</div>
+								</li>
+								<li class="QA-content-li">
+									<div class="QA-content-li-left">
+										<i class="head-portrait"><img src="img/Crowd.png"/></i>
+										<p class="name">鹿先生</p>
+									</div>
+									<div class="QA-content-li-right">
+										<p class="problem">南国威尼斯城2期12号楼什么时候开盘？</p>
+										<p class="answer">您好，很高兴为您服务，现在南国威尼斯城2期12号楼还没开盘，我们为您推荐相似楼盘：恒大山水汇园，欢迎您致电咨询。</p>
+										<div class="full_text">全文</div>
+										<div class="send_time">2017.02.02</div>
+									</div>
+								</li>   
+							</ul>
+						</div>
+						<div class="QA-btn">查看更多咨询</div>
+					</div>
+					<div class="property-details-building">
+						<h3 class="building-title">
+							<span class="building-title-txt">楼栋信息</span>
+						</h3>
+						<div class="building-content">
+							<img src="img/style.png"/>
+							<ul class="building-content-lable">
+								<li>
+									<span class="stage">2期6号</span>
+									<span class="state">在售</span>
+								</li>
+								<li>
+									<span class="stage">2期7号</span>
+									<span class="state">在售</span>
+								</li>
+								<li>
+									<span class="stage">2期8号</span>
+									<span class="state">在售</span>
+								</li>
+								<li>
+									<span class="stage">2期9号</span>
+									<span class="state">在售</span>
+								</li>
+							</ul>
+						</div>
+						<div class="building-btn">共4个楼栋信息，点击查看详情</div>
+					</div>
+					<div class="property-details-recommend">
+						<h3 class="recommend-title">
+							<span class="recommend-title-txt">推荐楼盘</span>
+						</h3>
+						<div class="recommend-content">
+							<ul class="recommend-content-ul">
+								<li class="recommend-content-li">
+									<img src="img/style.png"/>
+									<div class="recommend-content-li-txt">
+										<span class="sale">国祯·棕榈岛</span>
+										<span class="price">21400元/m²</span>
+									</div>
+								</li>
+								<li class="recommend-content-li">
+									<img src="img/style.png"/>
+									<div class="recommend-content-li-txt">
+										<span class="sale">国祯·棕榈岛</span>
+										<span class="price">21400元/m²</span>
+									</div>
+								</li>
+								<li class="recommend-content-li">
+									<img src="img/style.png"/>
+									<div class="recommend-content-li-txt">
+										<span class="sale">国祯·棕榈岛</span>
+										<span class="price">21400元/m²</span>
+									</div>
+								</li>
+								<li class="recommend-content-li">
+									<img src="img/style.png"/>
+									<div class="recommend-content-li-txt">
+										<span class="sale">国祯·棕榈岛</span>
+										<span class="price">21400元/m²</span>
+									</div>
+								</li>
+								<li class="recommend-content-li">
+									<img src="img/style.png"/>
+									<div class="recommend-content-li-txt">
+										<span class="sale">国祯·棕榈岛</span>
+										<span class="price">21400元/m²</span>
+									</div>
+								</li>
+								<li class="recommend-content-li">
+									<img src="img/style.png"/>
+									<div class="recommend-content-li-txt">
+										<span class="sale">国祯·棕榈岛</span>
+										<span class="price">21400元/m²</span>
+									</div>
+								</li>
 							</ul>
 						</div>
 					</div>
 				</div>
-			</section>
+			</section> 
 			<footer class="property-details-footer">
 				<ul class="footer-ul">
 					<li class="footer-comment"><span>评论</span></li>
 					<li class="footer-touristHouse"><span>旅游看房</span></li>
 					<li class="footer-consultation"><span>咨询楼盘信息</span></li>
 				</ul>
-			</footer>
+			</footer> 
 		</div>
 	</body>
 	<script type="text/javascript">
@@ -116,6 +287,56 @@
 					{src: "img/style.png"},
 					{src: "img/style.png"},
 					{src: "img/style.png"}
+				],
+				houseStyle: [
+					{
+						titleTxt: 'A户型-',
+						titleState: '在售',
+						src: 'img/Properties-sale.png',
+						txtTop: '3室2厅2卫 128m²',
+						wrapperAll: '85万',
+						wrapperPrice: '6867元/m²'
+					},
+					{
+						titleTxt: 'A户型-',
+						titleState: '在售',
+						src: 'img/Properties-sale.png',
+						txtTop: '3室2厅2卫 128m²',
+						wrapperAll: '85万',
+						wrapperPrice: '6867元/m²'
+					},
+					{
+						titleTxt: 'A户型-',
+						titleState: '在售',
+						src: 'img/Properties-sale.png',
+						txtTop: '3室2厅2卫 128m²',
+						wrapperAll: '85万',
+						wrapperPrice: '6867元/m²'
+					},
+					{
+						titleTxt: 'A户型-',
+						titleState: '在售',
+						src: 'img/Properties-sale.png',
+						txtTop: '3室2厅2卫 128m²',
+						wrapperAll: '85万',
+						wrapperPrice: '6867元/m²'
+					},
+					{
+						titleTxt: 'A户型-',
+						titleState: '在售',
+						src: 'img/Properties-sale.png',
+						txtTop: '3室2厅2卫 128m²',
+						wrapperAll: '85万',
+						wrapperPrice: '6867元/m²'
+					},
+					{
+						titleTxt: 'A户型-',
+						titleState: '在售',
+						src: 'img/Properties-sale.png',
+						txtTop: '3室2厅2卫 128m²',
+						wrapperAll: '85万',
+						wrapperPrice: '6867元/m²'
+					},
 				]
 			}
 		})
