@@ -127,6 +127,7 @@ li {
   height: 5rem;
   line-height: 0.8rem;
   background: #F9F9F9;
+  box-shadow: none;
   font-size: 0.6rem;
   color: #333333;
   padding: 0.35rem;
