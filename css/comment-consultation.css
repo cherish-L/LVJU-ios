@@ -1,0 +1,496 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+
+::-moz-placeholder {
+  color: #999999;
+}
+
+::-webkit-input-placeholder {
+  color: #999999;
+}
+
+:-ms-input-placeholder {
+  color: #999999;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: PingFangSC-Regular;
+  background: #FAFAFA;
+}
+
+input,
+textarea {
+  outline: none;
+  border: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+li {
+  list-style: none;
+}
+
+.comment-consultation-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-consultation-container .comment-consultation-header {
+  width: 100%;
+  background: #47464b;
+  z-index: 40;
+  box-shadow: 0 1px 0 0 #B2B2B2;
+  -webkit-box-shadow: 0 1px 0 0 #B2B2B2;
+}
+
+.comment-consultation-container .comment-consultation-header .title_bar {
+  width: 100%;
+  height: 2.2rem;
+  line-height: 2.2rem;
+  position: relative;
+}
+
+.comment-consultation-container .comment-consultation-header .title_bar .title_txt {
+  font-size: 0.85rem;
+  color: #FFFFFF;
+  text-align: center;
+  font-weight: normal;
+}
+
+.comment-consultation-container .comment-consultation-header .title_bar .return {
+  display: block;
+  height: 0.9rem;
+  line-height: 0.9rem;
+  padding-left: 0.8rem;
+  font-size: 0.85rem;
+  color: #ffffff;
+  background: url(../img/return.png) no-repeat;
+  background-size: 0.45rem 0.8rem;
+  background-position-x: left;
+  background-position-y: 0.05rem;
+  position: absolute;
+  top: 0.7rem;
+  left: 0.4rem;
+}
+
+.comment-consultation-container .comment-consultation-header .title_bar .more {
+  display: block;
+  height: 1rem;
+  width: 1rem;
+  background: url(../img/more.png) no-repeat;
+  background-size: 1rem 1rem;
+  position: absolute;
+  top: 0.65rem;
+  right: 0.4rem;
+}
+
+.comment-consultation-container .comment-consultation-textBox {
+  width: 100%;
+  height: 7.85rem;
+  background: #ffffff;
+  box-shadow: 0 1px 0 0 #E8E8E8;
+  z-index: 2;
+  padding: 0.6rem 1.25rem 0.5rem;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.comment-consultation-container .comment-consultation-textBox .textBox_textarea {
+  width: 100%;
+  height: 5rem;
+  line-height: 0.8rem;
+  background: #F9F9F9;
+  font-size: 0.6rem;
+  color: #333333;
+  padding: 0.35rem;
+  outline: none;
+  resize: none;
+  border: 1px solid #E3E3E3;
+  box-sizing: border-box;
+}
+
+.comment-consultation-container .comment-consultation-textBox .textBox_submit {
+  display: block;
+  width: 3.5rem;
+  height: 1.25rem;
+  line-height: 1.25rem;
+  text-align: center;
+  float: right;
+  font-family: PingFangSC-Medium;
+  font-size: 0.6rem;
+  color: #ffffff;
+  background: #FF7C00;
+  border-radius: 0.1rem;
+  position: absolute;
+  right: 1.25rem;
+  bottom: 0.5rem;
+}
+
+.comment-consultation-container .comment-consultation-section {
+  flex: 1;
+  -webkit-flex: 1;
+  overflow: hidden;
+  background: #fafafa;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+.comment-consultation-container .comment-consultation-section .section-wrapper {
+  width: 100%;
+  background: #fafafa;
+  padding-top: 0.5rem;
+  padding-bottom: 0.35rem;
+  position: relative;
+}
+
+.comment-consultation-container .comment-consultation-section .section-wrapper .comment-consultation-QA {
+  width: 100%;
+  background: #FFFFFF;
+}
+
+.comment-consultation-container .comment-consultation-section .section-wrapper .comment-consultation-QA .QA-wrapper {
+  width: 100%;
+  padding: 0 0.6rem;
+  box-sizing: border-box;
+}
+
+.comment-consultation-container .comment-consultation-section .section-wrapper .comment-consultation-QA .QA-wrapper .QA-content {
+  width: 100%;
+}
+
+.comment-consultation-container .comment-consultation-section .section-wrapper .comment-consultation-QA .QA-wrapper .QA-content .QA-content-li {
+  width: 100%;
+  padding: 0.5rem 0;
+  box-shadow: 0 -1px 0 0 #e8e8e8;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+}
+
+.comment-consultation-container .comment-consultation-section .section-wrapper .comment-consultation-QA .QA-wrapper .QA-content .QA-content-li .QA-content-li-left {
+  width: 1.35rem;
+  padding-right: 0.4rem;
+}
+
+.comment-consultation-container .comment-consultation-section .section-wrapper .comment-consultation-QA .QA-wrapper .QA-content .QA-content-li .QA-content-li-left .head-portrait {
+  display: block;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background: lightblue;
+}
+
+.comment-consultation-container .comment-consultation-section .section-wrapper .comment-consultation-QA .QA-wrapper .QA-content .QA-content-li .QA-content-li-left .head-portrait img {
+  display: block;
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.comment-consultation-container .comment-consultation-section .section-wrapper .comment-consultation-QA .QA-wrapper .QA-content .QA-content-li .QA-content-li-left .name {
+  margin-top: 0.1rem;
+  font-family: PingFangSC-Medium;
+  font-size: 0.45rem;
+  color: #3EC0F3;
+  white-space: nowrap;
+}
+
+.comment-consultation-container .comment-consultation-section .section-wrapper .comment-consultation-QA .QA-wrapper .QA-content .QA-content-li .QA-content-li-right {
+  flex: 1;
+  -webkit-flex: 1;
+}
+
+.comment-consultation-container .comment-consultation-section .section-wrapper .comment-consultation-QA .QA-wrapper .QA-content .QA-content-li .QA-content-li-right .problem {
+  width: 100%;
+  font-size: 0.6rem;
+  color: #333333;
+  line-height: 0.8rem;
+  margin: 0.15rem 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.comment-consultation-container .comment-consultation-section .section-wrapper .comment-consultation-QA .QA-wrapper .QA-content .QA-content-li .QA-content-li-right .answer {
+  width: 100%;
+  font-size: 0.55rem;
+  color: #999999;
+  line-height: 0.8rem;
+  margin: 0.15rem 0;
+}
+
+.comment-consultation-container .comment-consultation-section .section-wrapper .comment-consultation-QA .QA-wrapper .QA-content .QA-content-li .QA-content-li-right .answer.showall {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.comment-consultation-container .comment-consultation-section .section-wrapper .comment-consultation-QA .QA-wrapper .QA-content .QA-content-li .QA-content-li-right .full_text {
+  width: 1.5rem;
+  font-size: 0.55rem;
+  color: #89AEEF;
+  line-height: 0.8rem;
+  margin: 0.15rem 0;
+}
+
+.comment-consultation-container .comment-consultation-section .section-wrapper .comment-consultation-QA .QA-wrapper .QA-content .QA-content-li .QA-content-li-right .send_time {
+  width: 100%;
+  font-size: 0.5rem;
+  color: #999999;
+  line-height: 0.8rem;
+  margin: 0.15rem 0;
+}
+
+.comment-consultation-container .comment-consultation-section .section-wrapper .comment-consultation-QA .QA-wrapper .QA-content .QA-content-li:first-child {
+  box-shadow: none;
+}
+
+.comment-consultation-container .comment-consultation-section .section-wrapper .comment-consultation-QA .QA-btn {
+  width: 100%;
+  height: 2.05rem;
+  line-height: 2.05rem;
+  text-align: center;
+  font-size: 0.55rem;
+  box-shadow: 0 -1px 0 0 #e8e8e8;
+  color: #999999;
+}
+
+.comment-consultation-container .comment-consultation-footer {
+  width: 100%;
+  height: 2.1rem;
+  z-index: 1;
+  background: #FFFFFF;
+  box-shadow: 0 -1px 0 0 #E8E8E8;
+}
+
+.comment-consultation-container .comment-consultation-footer .footer-ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.comment-consultation-container .comment-consultation-footer .footer-ul .footer-comment {
+  width: 3.3rem;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: 1px 0 0 0 #e8e8e8;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment-consultation-container .comment-consultation-footer .footer-ul .footer-comment span {
+  display: inline-block;
+  height: 0.75rem;
+  line-height: 0.75rem;
+  font-size: 0.65rem;
+  color: #666666;
+  padding-left: 1rem;
+  background: url(../img/comment.png) no-repeat;
+  background-size: 0.75rem 0.75rem;
+}
+
+.comment-consultation-container .comment-consultation-footer .footer-ul .footer-touristHouse {
+  width: 4.8rem;
+  height: 100%;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment-consultation-container .comment-consultation-footer .footer-ul .footer-touristHouse span {
+  display: inline-block;
+  height: 0.75rem;
+  line-height: 0.75rem;
+  font-size: 0.65rem;
+  color: #666666;
+  padding-left: 1rem;
+  background: url(../img/Tourist-house.png) no-repeat;
+  background-size: 0.75rem 0.75rem;
+}
+
+.comment-consultation-container .comment-consultation-footer .footer-ul .footer-consultation {
+  flex: 1;
+  -webkit-flex: 1;
+  background: #FF7C00;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment-consultation-container .comment-consultation-footer .footer-ul .footer-consultation span {
+  display: inline-block;
+  height: 0.75rem;
+  line-height: 0.75rem;
+  font-size: 0.65rem;
+  color: #ffffff;
+  padding-left: 1rem;
+  background: url(../img/Consultation.png) no-repeat;
+  background-size: 0.75rem 0.75rem;
+}
+
+.comment-consultation-container .comment-consultation-Mask {
+  width: 100%;
+  height: 100%;
+  transition: all .3s;
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0;
+}
+
+.comment-consultation-container .comment-consultation-Mask.show {
+  z-index: 35;
+  opacity: 1;
+}
+
+.comment-consultation-container .submit-false {
+  width: 8rem;
+  height: 5rem;
+  background: #FFFFFF;
+  transition: all .3s;
+  border-radius: 0.25rem;
+  opacity: 0;
+  z-index: -1;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+.comment-consultation-container .submit-false i {
+  display: block;
+  width: 2.05rem;
+  height: 1.3rem;
+  margin: 1.2rem auto 0;
+}
+
+.comment-consultation-container .submit-false i img {
+  display: block;
+  width: 2.05rem;
+  height: 1.3rem;
+}
+
+.comment-consultation-container .submit-false p {
+  width: 100%;
+  margin-top: 0.5rem;
+  line-height: 1rem;
+  text-align: center;
+  font-size: 0.7rem;
+  color: #666666;
+}
+
+.comment-consultation-container .submit-false p a {
+  line-height: 1rem;
+  font-size: 0.7rem;
+  color: #86D646;
+  text-decoration: underline;
+}
+
+.comment-consultation-container .submit-false.show {
+  opacity: 1;
+  z-index: 40;
+}
+
+.comment-consultation-container .submit-success {
+  width: 8rem;
+  height: 5rem;
+  background: #FFFFFF;
+  transition: all .3s;
+  border-radius: 0.25rem;
+  opacity: 0;
+  z-index: -1;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+.comment-consultation-container .submit-success i {
+  display: block;
+  width: 2.05rem;
+  height: 1.3rem;
+  margin: 1.2rem auto 0;
+}
+
+.comment-consultation-container .submit-success i img {
+  display: block;
+  width: 2.05rem;
+  height: 1.3rem;
+}
+
+.comment-consultation-container .submit-success p {
+  width: 100%;
+  margin-top: 0.5rem;
+  line-height: 1rem;
+  text-align: center;
+  font-size: 0.7rem;
+  color: #666666;
+}
+
+.comment-consultation-container .submit-success p a {
+  line-height: 1rem;
+  font-size: 0.7rem;
+  color: #86D646;
+  text-decoration: underline;
+}
+
+.comment-consultation-container .submit-success.show {
+  opacity: 1;
+  z-index: 40;
+}
+
+.iScrollVerticalScrollbar {
+  width: 0.2rem !important;
+  z-index: 1 !important;
+}
+
+.iScrollHorizontalScrollbar {
+  height: 0.2rem !important;
+  z-index: 1 !important;
+}
