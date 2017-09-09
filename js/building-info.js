@@ -9,7 +9,6 @@ $(function(){
 	})
 	
 	
-	var section_h=$(".building-info-section").height()
-	$(".building-info-banner").height(section_h*0.65)
-	$(".building-info-switch").height(section_h*0.35)
+	var section_w=$(".building-info-section").width()
+	$(".building-info-banner").height(section_w*1.1)
 })

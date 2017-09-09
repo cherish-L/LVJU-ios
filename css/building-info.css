@@ -126,7 +126,6 @@ li {
 
 .building-info-container .building-info-section .section-wrapper .building-info-banner {
   width: 100%;
-  height: 65%;
   position: relative;
   background: url(../img/B-info.jpg) no-repeat;
   background-size: 100% 100%;
@@ -177,7 +176,7 @@ li {
 }
 
 .building-info-container .building-info-section .section-wrapper .building-info-banner .building-content-lable li:nth-child(1) {
-  top: 32%;
+  top: 30%;
   left: -3%;
 }
 
@@ -198,8 +197,8 @@ li {
 
 .building-info-container .building-info-section .section-wrapper .building-info-switch {
   width: 100%;
-  height: 35%;
-  padding: 9.5% 1.1rem;
+  height: 8.6rem;
+  padding: 1.5rem 1.1rem;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
@@ -225,9 +224,9 @@ li {
   height: 100%;
   width: 94.5%;
   margin: 0 auto;
-  padding: 3.5% 0.6rem;
+  padding: 0.5rem 0.6rem;
   background: #FFFFFF;
-  box-shadow: 0 0 0.2rem 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 4px 0 rgba(193, 193, 193, 0.5);
   border-radius: 0.1rem;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -240,12 +239,11 @@ li {
 
 .building-info-container .building-info-section .section-wrapper .building-info-switch .building-info-switchBox .building-info-switch-ul .swiper-slide .switch-li-box .switch-li-box-wrapper .switch-li-box-title {
   width: 100%;
-  height: 2.75rem;
 }
 
 .building-info-container .building-info-section .section-wrapper .building-info-switch .building-info-switchBox .building-info-switch-ul .swiper-slide .switch-li-box .switch-li-box-wrapper .switch-li-box-title .title {
   width: 100%;
-  height: 1.25rem;
+  height: 1rem;
 }
 
 .building-info-container .building-info-section .section-wrapper .building-info-switch .building-info-switchBox .building-info-switch-ul .swiper-slide .switch-li-box .switch-li-box-wrapper .switch-li-box-title .title .title-txt {
@@ -262,7 +260,7 @@ li {
   height: 0.55rem;
   line-height: 0.55rem;
   padding: 0 0.15rem;
-  margin: 0.15rem 0 0 0.25rem;
+  margin: 0.2rem 0 0 0.25rem;
   background: #FFFFFF;
   border: 1px solid #979797;
   font-family: PingFangSC-Medium;
@@ -272,6 +270,7 @@ li {
 
 .building-info-container .building-info-section .section-wrapper .building-info-switch .building-info-switchBox .building-info-switch-ul .swiper-slide .switch-li-box .switch-li-box-wrapper .switch-li-box-title .time {
   width: 100%;
+  margin-top: 0.25rem;
   display: flex;
   flex-direction: row;
 }
@@ -292,11 +291,12 @@ li {
 
 .building-info-container .building-info-section .section-wrapper .building-info-switch .building-info-switchBox .building-info-switch-ul .swiper-slide .switch-li-box .switch-li-box-wrapper .switch-li-box-info {
   width: 100%;
+  margin-top: 0.7rem;
 }
 
 .building-info-container .building-info-section .section-wrapper .building-info-switch .building-info-switchBox .building-info-switch-ul .swiper-slide .switch-li-box .switch-li-box-wrapper .switch-li-box-info .info-top {
   width: 100%;
-  height: 1.05rem;
+  height: 0.8rem;
   display: flex;
   flex-direction: row;
 }
@@ -318,6 +318,7 @@ li {
 .building-info-container .building-info-section .section-wrapper .building-info-switch .building-info-switchBox .building-info-switch-ul .swiper-slide .switch-li-box .switch-li-box-wrapper .switch-li-box-info .info-bottom {
   width: 100%;
   display: flex;
+  margin-top: 0.25rem;
   flex-direction: row;
 }
 
