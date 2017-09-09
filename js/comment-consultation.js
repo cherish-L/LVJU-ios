@@ -10,6 +10,7 @@ $(function(){
 	
 	$(".comment-consultation-textBox .textBox_submit").tap(function(){
 		if($(".textBox_textarea").val()!==""){
+			$(this).blur()
 			$(this).text("正在提交...")
 			$(".comment-consultation-Mask").addClass("show")
 			$(".submit-false").addClass("show")
