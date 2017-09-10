@@ -6,9 +6,9 @@
 		<meta content="email=no" name="format-detection" />
 		<meta http-equiv="Cache-Control" content="no-cache" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>资讯页面</title>
+		<title>资讯页面(资讯详情)</title>
 		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/Information-page.css" />
+		<link rel="stylesheet" type="text/css" href="css/Information-details.css" />
 		<link rel="stylesheet" type="text/css" href="plugins/animate.min.css" />
 		<script type="text/javascript" src="plugins/zepto.min.js"></script>
 		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>      
@@ -20,144 +20,41 @@
 		</script>
 	</head>
 	<body>
-		<div class="Information-page-container" v-cloak>
-			<header class="Information-page-header">
+		<div class="Information-details-container" v-cloak>
+			<header class="Information-details-header">
 				<div class="signal_bar"></div>
 				<div class="title_bar">
-					<h3 class="title_txt">资讯</h3>
+					<h3 class="title_txt">楼盘热点</h3>
 					<a class="return" href="javascript:;">返回</a>
 					<a class="more" href="javascript:;"></a>
 				</div>
 			</header>
-			<section class="Information-page-section">
+			<section class="Information-details-section">
 				<div class="section-wrapper">
-					<div class="Information-page-banner">
-						<ul class="banner-ul swiper-wrapper">
-							<li class="banner-li swiper-slide">
-								<img src="img/banner.png"/>
-								<p>适合90后的房子应该是什么样的？</p>
-							</li>
-							<li class="banner-li swiper-slide">
-								<img src="img/banner.png"/>
-								<p>适合90后的房子应该是什么样的？</p>
-							</li>
-							<li class="banner-li swiper-slide">
-								<img src="img/banner.png"/>
-								<p>适合90后的房子应该是什么样的？</p>
-							</li>
-							<li class="banner-li swiper-slide">
-								<img src="img/banner.png"/>
-								<p>适合90后的房子应该是什么样的？</p>
-							</li>
-						</ul>
-						<div class="swiper-pagination"></div>
-						<div class="banner-magnifier"><img src="img/Home-search.png"/></div>
-					</div>
-					<div class="Information-page-nav">
-						<ul class="nav-ul">
-							<li>
-								<i><img src="img/R-quarters.png"/></i>
-								<span>楼盘热点</span>
-							</li>
-							<li>
-								<i><img src="img/sellers.png"/></i>
-								<span>成交记录</span>
-							</li>
-							<li>
-								<i><img src="img/Ranking.png"/></i>
-								<span>工程进度</span>
-							</li>
-							<li>
-								<i><img src="img/Car.png"/></i>
-								<span>新盘速递</span>
-							</li>
-							<li>
-								<i><img src="img/Apartment-layout-diagram.png"/></i>
-								<span>热门推荐</span>
-							</li>
-							<li>
-								<i><img src="img/daily.png"/></i>
-								<span>看房记</span>
-							</li>
-							<li>
-								<i><img src="img/landscape.png"/></i>
-								<span>风土人情</span>
-							</li>
-							<li>
-								<i><img src="img/data.png"/></i>
-								<span>楼市资讯</span>
-							</li>
-						</ul>
-						<div class="nav-btn">查看全部资讯</div>
-					</div>
-					<div class="Information-page-content">
-						<ul class="content-ul">
-							<li class="content-li" v-for="list in info_m">
-								<div class="content-li-left"><img :src="list.src"/></div>
-								<div class="content-li-right">
-									<div class="content-li-right-title" v-text="list.title"></div>
-									<div class="content-li-right-time">
-										<span class="time" v-text="list.time"></span>
-									</div>
-								</div>
-							</li>	
-						</ul>
-					</div>
+					<header class="details-header">
+						<h3 class="details-header-title">万宁石梅山庄二期别墅将于5月22日交房 美图提前来袭！</h3>
+						<div class="details-header-info">
+							<span class="from">程凡房地产</span>
+							<span class="time">｜2017.02.02</span>
+							<span class="read_num">阅读：24582</span>
+						</div>
+					</header>
+					<section class="details-section">
+						<p>万宁首屈一指的养生大盘——石梅山庄规划占地5000亩，社区内涵盖山、林、湖、海、温泉等多种自然养生资源。项目三面环山，一面临海，还毗邻拥有近4000种热带植物的热带花园；在社区内，原始森林充当绿化，空气中负离子的含量高达8万个/立方厘米，可以说是一个天然的大氧吧。</p>
+						<div class="banner">
+							<img src="img/banner.png"/>
+							<span>石梅山庄精装修图</span>
+						</div>
+						<p>万宁石梅山庄花园洋房均带电梯，层数仅为8层；为了使户户能赏到不同的景观，项目的建筑形态即不同于传统的板房更有别于普通的塔楼，虽不是纯正的南北通透，但采光和通风都不是问题。项目为精装交房，户型有开间至三房选择，满足多种购房需求；另外还有半山独栋别墅区，依山傍水、温泉入户、私家泳池等尊贵配套等你来体验。</p>
+					</section>
+					<footer class="details-footer">
+						<span class="previous-article">上一篇：万宁石梅山庄 六万人入住的高品质社区</span>
+						<span class="next-article">下一篇：万宁石梅山庄 六万人入住的高品质社区</span>
+					</footer>
 				</div>
 			</section>
 		</div>
 	</body>
-	<script type="text/javascript">
-		var myVue = new Vue({
-			el: ".Information-page-container",
-			data: {
-				info_m: [
-					{
-						src: 'img/banner.png',
-						title: '央行：多项房地产信贷数据回落 房价下行可能加大',
-						froms: '程凡房地产',
-						time: '2017.02.02'
-					},
-					{
-						src: 'img/banner.png',
-						title: '央行：多项房地产信贷数据回落 房价下行可能加大',
-						froms: '程凡房地产',
-						time: '2017.02.02'
-					},
-					{
-						src: 'img/banner.png',
-						title: '央行：多项房地产信贷数据回落 房价下行可能加大',
-						froms: '程凡房地产',
-						time: '2017.02.02'
-					},
-					{
-						src: 'img/banner.png',
-						title: '央行：多项房地产信贷数据回落 房价下行可能加大',
-						froms: '程凡房地产',
-						time: '2017.02.02'
-					},
-					{
-						src: 'img/banner.png',
-						title: '央行：多项房地产信贷数据回落 房价下行可能加大',
-						froms: '程凡房地产',
-						time: '2017.02.02'
-					},
-					{
-						src: 'img/banner.png',
-						title: '央行：多项房地产信贷数据回落 房价下行可能加大',
-						froms: '程凡房地产',
-						time: '2017.02.02'
-					}
-				]
-			}
-		})
-	</script>
 	<script src="plugins/swiper-3.4.2.min.js"></script>
-	<script type="text/javascript">
-		var mySwiper = new Swiper('.Information-page-banner', {
-			pagination : '.swiper-pagination',
-			
-		})
-	</script>
-	<script type="text/javascript" src="js/Information-page.js"></script>
+	<script type="text/javascript" src="js/Information-details.js"></script>
 </html>
