@@ -6,12 +6,13 @@
 		<meta content="email=no" name="format-detection" />
 		<meta http-equiv="Cache-Control" content="no-cache" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>资讯页面(工程进度)</title>
+		<title>团购列表(团购详情)</title>
 		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/project-schedule.css" />
+		<link rel="stylesheet" type="text/css" href="css/group-buy-details.css" />
 		<link rel="stylesheet" type="text/css" href="plugins/animate.min.css" />
 		<script type="text/javascript" src="plugins/zepto.min.js"></script>
-		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>      
+		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>
+		<script src="plugins/swiper-3.4.2.min.js"></script>
 		<script type="text/javascript" src="vue/vue.js"></script>
 		<script type="text/javascript" src="plugins/navbarscroll.js"></script>
 		<script>
@@ -20,107 +21,78 @@
 		</script>
 	</head>
 	<body>
-		<div class="project-schedule-container" v-cloak>
-			<header class="project-schedule-header">
+		<div class="group-buy-details-container" v-cloak>
+			<header class="group-buy-details-header">
 				<div class="signal_bar"></div>
 				<div class="title_bar">
-					<h3 class="title_txt">工程进度</h3>
+					<h3 class="title_txt">国祯·棕榈岛</h3>
 					<a class="return" href="javascript:;">返回</a>
 					<a class="more" href="javascript:;"></a>
 				</div>
 			</header>
-			<section class="project-schedule-section">
+			<section class="group-buy-details-section">
 				<div class="section-wrapper">
-					<div class="project-schedule-banner">
-						<ul class="banner-ul swiper-wrapper">
-							<li class="banner-li swiper-slide">
-								<img src="img/banner.png"/>
-								<p>恒大御府7月工程进度组图</p>
-							</li>
-							<li class="banner-li swiper-slide">
-								<img src="img/banner.png"/>
-								<p>恒大御府7月工程进度组图</p>
-							</li>
-							<li class="banner-li swiper-slide">
-								<img src="img/banner.png"/>
-								<p>恒大御府7月工程进度组图</p>
-							</li>
-							<li class="banner-li swiper-slide">
-								<img src="img/banner.png"/>
-								<p>恒大御府7月工程进度组图</p>
-							</li>
-						</ul>
-						<div class="swiper-pagination"></div>
-					</div>
-					<div class="project-schedule-content">
-						<ul class="content-ul">
-							<li class="content-li" v-for="list in info_m">
-								<div class="content-li-left"><img :src="list.src"/></div>
-								<div class="content-li-right">
-									<div class="content-li-right-title" v-text="list.title"></div>
-									<div class="content-li-right-time">
-										<span class="time" v-text="list.time"></span>
+					<div class="project-info">
+						<div class="project-info-banner">
+							<img src="img/banner.png"/>
+							<span>查看详情</span>
+						</div>
+						<ul class="project-info-ul">
+							<li class="project-info-li activity-title">
+								<div class="activity-title-txt">
+									<div class="activity-title-txt-left">融创观澜湖公园壹号意向登记中舒享高端度假生活</div>
+									<div class="activity-title-txt-right">
+										<span>全款9.5折</span>
+										<span>按揭9.8折</span>
 									</div>
 								</div>
-							</li>	
+								<div class="activity-title-address">老城经济开发区南一环路北侧2弄21号</div>
+							</li>
+							<li class="project-info-li sale">
+								<span class="tags">减</span>
+								<span class="txt">立减9888元</span>
+							</li>
+							<li class="project-info-li group">
+								<span class="tags">团</span>
+								<span class="txt">参与折扣可享受折上折</span>
+							</li>
+							<li class="project-info-li discount">
+								<span class="tags">惠</span>
+								<span class="txt">旅游看房、免费接机等更多优惠</span>
+							</li>
+							<li class="project-info-li activity-join">
+								<div class="activity-join-txt">
+									<p>已有232人报名</p>
+									<p>
+										距离结束还有
+										<span class="day">20</span>
+										天
+										<span class="hour">15</span>
+										小时
+										<span class="minute">25</span>
+										分
+										<span class="second">22</span>
+										秒
+									</p>
+								</div>
+								<div class="activity-join-btn">立即参团</div>
+							</li>
 						</ul>
+					</div>
+					<div class="project-details">
+						<header class="details-header">项目详情</header>
+						<section class="details-section">
+							<p>万宁首屈一指的养生大盘——石梅山庄规划占地5000亩，社区内涵盖山、林、湖、海、温泉等多种自然养生资源。项目三面环山，一面临海，还毗邻拥有近4000种热带植物的热带花园；在社区内，原始森林充当绿化，空气中负离子的含量高达8万个/立方厘米，可以说是一个天然的大氧吧。</p>
+							<div class="banner">
+								<img src="img/banner.png"/>
+								<span>石梅山庄精装修图</span>
+							</div>
+							<p>万宁石梅山庄花园洋房均带电梯，层数仅为8层；为了使户户能赏到不同的景观，项目的建筑形态即不同于传统的板房更有别于普通的塔楼，虽不是纯正的南北通透，但采光和通风都不是问题。项目为精装交房，户型有开间至三房选择，满足多种购房需求；另外还有半山独栋别墅区，依山傍水、温泉入户、私家泳池等尊贵配套等你来体验。</p>
+						</section>
 					</div>
 				</div>
 			</section>
 		</div>
 	</body>
-	<script type="text/javascript">
-		var myVue = new Vue({
-			el: ".project-schedule-container",
-			data: {
-				info_m: [
-					{
-						src: 'img/banner.png',
-						title: 'IFC海南国际度假村7月工程进度组图',
-						froms: '程凡房地产',
-						time: '2017.02.02'
-					},
-					{
-						src: 'img/banner.png',
-						title: 'IFC海南国际度假村7月工程进度组图',
-						froms: '程凡房地产',
-						time: '2017.02.02'
-					},
-					{
-						src: 'img/banner.png',
-						title: 'IFC海南国际度假村7月工程进度组图',
-						froms: '程凡房地产',
-						time: '2017.02.02'
-					},
-					{
-						src: 'img/banner.png',
-						title: 'IFC海南国际度假村7月工程进度组图',
-						froms: '程凡房地产',
-						time: '2017.02.02'
-					},
-					{
-						src: 'img/banner.png',
-						title: 'IFC海南国际度假村7月工程进度组图',
-						froms: '程凡房地产',
-						time: '2017.02.02'
-					},
-					{
-						src: 'img/banner.png',
-						title: 'IFC海南国际度假村7月工程进度组图',
-						froms: '程凡房地产',
-						time: '2017.02.02'
-					}
-				]
-			}
-		})
-	</script>
-	<script src="plugins/swiper-3.4.2.min.js"></script>
-	<script type="text/javascript">
-		var mySwiper = new Swiper('.project-schedule-banner', {
-			pagination : '.swiper-pagination',
-			autoplay : 3000,
-			autoplayDisableOnInteraction : false
-		})
-	</script>
-	<script type="text/javascript" src="js/project-schedule.js"></script>
+	<script type="text/javascript" src="js/group-buy-details.js"></script>
 </html>
