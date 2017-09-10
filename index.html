@@ -6,9 +6,9 @@
 		<meta content="email=no" name="format-detection" />
 		<meta http-equiv="Cache-Control" content="no-cache" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>资讯页面(楼盘热点)</title>
+		<title>资讯页面</title>
 		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/Information-list.css" />
+		<link rel="stylesheet" type="text/css" href="css/Information-page.css" />
 		<link rel="stylesheet" type="text/css" href="plugins/animate.min.css" />
 		<script type="text/javascript" src="plugins/zepto.min.js"></script>
 		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>      
@@ -20,28 +20,83 @@
 		</script>
 	</head>
 	<body>
-		<div class="Information-list-container" v-cloak>
-			<header class="Information-list-header">
+		<div class="Information-page-container" v-cloak>
+			<header class="Information-page-header">
 				<div class="signal_bar"></div>
 				<div class="title_bar">
-					<h3 class="title_txt">楼盘热点</h3>
+					<h3 class="title_txt">资讯</h3>
 					<a class="return" href="javascript:;">返回</a>
 					<a class="more" href="javascript:;"></a>
 				</div>
-				<div class="found-for-you">
-					<span>为您找到15条资讯</span>
-				</div>
 			</header>
-			<section class="Information-list-section">
+			<section class="Information-page-section">
 				<div class="section-wrapper">
-					<div class="Information-list-content">
+					<div class="Information-page-banner">
+						<ul class="banner-ul swiper-wrapper">
+							<li class="banner-li swiper-slide">
+								<img src="img/banner.png"/>
+								<p>适合90后的房子应该是什么样的？</p>
+							</li>
+							<li class="banner-li swiper-slide">
+								<img src="img/banner.png"/>
+								<p>适合90后的房子应该是什么样的？</p>
+							</li>
+							<li class="banner-li swiper-slide">
+								<img src="img/banner.png"/>
+								<p>适合90后的房子应该是什么样的？</p>
+							</li>
+							<li class="banner-li swiper-slide">
+								<img src="img/banner.png"/>
+								<p>适合90后的房子应该是什么样的？</p>
+							</li>
+						</ul>
+						<div class="swiper-pagination"></div>
+						<div class="banner-magnifier"><img src="img/Home-search.png"/></div>
+					</div>
+					<div class="Information-page-nav">
+						<ul class="nav-ul">
+							<li>
+								<i><img src="img/R-quarters.png"/></i>
+								<span>楼盘热点</span>
+							</li>
+							<li>
+								<i><img src="img/sellers.png"/></i>
+								<span>成交记录</span>
+							</li>
+							<li>
+								<i><img src="img/Ranking.png"/></i>
+								<span>工程进度</span>
+							</li>
+							<li>
+								<i><img src="img/Car.png"/></i>
+								<span>新盘速递</span>
+							</li>
+							<li>
+								<i><img src="img/Apartment-layout-diagram.png"/></i>
+								<span>热门推荐</span>
+							</li>
+							<li>
+								<i><img src="img/daily.png"/></i>
+								<span>看房记</span>
+							</li>
+							<li>
+								<i><img src="img/landscape.png"/></i>
+								<span>风土人情</span>
+							</li>
+							<li>
+								<i><img src="img/data.png"/></i>
+								<span>楼市资讯</span>
+							</li>
+						</ul>
+						<div class="nav-btn">查看全部资讯</div>
+					</div>
+					<div class="Information-page-content">
 						<ul class="content-ul">
 							<li class="content-li" v-for="list in info_m">
 								<div class="content-li-left"><img :src="list.src"/></div>
 								<div class="content-li-right">
 									<div class="content-li-right-title" v-text="list.title"></div>
 									<div class="content-li-right-time">
-										<span class="from" v-text="list.froms"></span>
 										<span class="time" v-text="list.time"></span>
 									</div>
 								</div>
@@ -54,44 +109,44 @@
 	</body>
 	<script type="text/javascript">
 		var myVue = new Vue({
-			el: ".Information-list-container",
+			el: ".Information-page-container",
 			data: {
 				info_m: [
 					{
 						src: 'img/banner.png',
 						title: '央行：多项房地产信贷数据回落 房价下行可能加大',
 						froms: '程凡房地产',
-						time: '｜2017.02.02'
+						time: '2017.02.02'
 					},
 					{
 						src: 'img/banner.png',
 						title: '央行：多项房地产信贷数据回落 房价下行可能加大',
 						froms: '程凡房地产',
-						time: '｜2017.02.02'
+						time: '2017.02.02'
 					},
 					{
 						src: 'img/banner.png',
 						title: '央行：多项房地产信贷数据回落 房价下行可能加大',
 						froms: '程凡房地产',
-						time: '｜2017.02.02'
+						time: '2017.02.02'
 					},
 					{
 						src: 'img/banner.png',
 						title: '央行：多项房地产信贷数据回落 房价下行可能加大',
 						froms: '程凡房地产',
-						time: '｜2017.02.02'
+						time: '2017.02.02'
 					},
 					{
 						src: 'img/banner.png',
 						title: '央行：多项房地产信贷数据回落 房价下行可能加大',
 						froms: '程凡房地产',
-						time: '｜2017.02.02'
+						time: '2017.02.02'
 					},
 					{
 						src: 'img/banner.png',
 						title: '央行：多项房地产信贷数据回落 房价下行可能加大',
 						froms: '程凡房地产',
-						time: '｜2017.02.02'
+						time: '2017.02.02'
 					}
 				]
 			}
@@ -99,10 +154,10 @@
 	</script>
 	<script src="plugins/swiper-3.4.2.min.js"></script>
 	<script type="text/javascript">
-		var mySwiper = new Swiper('.Information-list-banner', {
+		var mySwiper = new Swiper('.Information-page-banner', {
 			pagination : '.swiper-pagination',
 			
 		})
 	</script>
-	<script type="text/javascript" src="js/Information-list.js"></script>
+	<script type="text/javascript" src="js/Information-page.js"></script>
 </html>
