@@ -164,10 +164,13 @@ $sc:20;
                             background: #F6747C;
                             margin-right: 4/$sc+rem;
                             border-radius: 2/$sc+rem;
-                            line-height: 13/$sc+rem;
-                            text-align: center;
-                            font-size: 10/$sc+rem;
-                            color: #FFFFFF;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            span{
+                                font-size: 10/$sc+rem;
+                                color: #FFFFFF;
+                            }
                         }
                         .txt{
                             font-size: 12/$sc+rem;
@@ -187,10 +190,13 @@ $sc:20;
                             background: #F8926C;
                             margin-right: 4/$sc+rem;
                             border-radius: 2/$sc+rem;
-                            line-height: 13/$sc+rem;
-                            text-align: center;
-                            font-size: 10/$sc+rem;
-                            color: #FFFFFF;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            span{
+                                font-size: 10/$sc+rem;
+                                color: #FFFFFF;
+                            }
                         }
                         .txt{
                             font-size: 12/$sc+rem;
@@ -210,10 +216,13 @@ $sc:20;
                             background: #FFB045;
                             margin-right: 4/$sc+rem;
                             border-radius: 2/$sc+rem;
-                            line-height: 13/$sc+rem;
-                            text-align: center;
-                            font-size: 10/$sc+rem;
-                            color: #FFFFFF;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            span{
+                                font-size: 10/$sc+rem;
+                                color: #FFFFFF;
+                            }
                         }
                         .txt{
                             font-size: 12/$sc+rem;
