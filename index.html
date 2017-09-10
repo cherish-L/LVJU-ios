@@ -6,12 +6,12 @@
 		<meta content="email=no" name="format-detection" />
 		<meta http-equiv="Cache-Control" content="no-cache" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>楼盘详情(楼栋信息)</title>
+		<title>资讯页面(楼盘热点)</title>
 		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/building-info.css" />
+		<link rel="stylesheet" type="text/css" href="css/Information-list.css" />
 		<link rel="stylesheet" type="text/css" href="plugins/animate.min.css" />
 		<script type="text/javascript" src="plugins/zepto.min.js"></script>
-		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>
+		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>      
 		<script type="text/javascript" src="vue/vue.js"></script>
 		<script type="text/javascript" src="plugins/navbarscroll.js"></script>
 		<script>
@@ -20,56 +20,33 @@
 		</script>
 	</head>
 	<body>
-		<div class="building-info-container" v-cloak>
-			<header class="building-info-header">
+		<div class="Information-list-container" v-cloak>
+			<header class="Information-list-header">
 				<div class="signal_bar"></div>
 				<div class="title_bar">
-					<h3 class="title_txt">南国夏威夷城</h3>
+					<h3 class="title_txt">楼盘热点</h3>
 					<a class="return" href="javascript:;">返回</a>
 					<a class="more" href="javascript:;"></a>
 				</div>
+				<div class="found-for-you">
+					<span>为您找到15条资讯</span>
+				</div>
 			</header>
-			<section class="building-info-section">
+			<section class="Information-list-section">
 				<div class="section-wrapper">
-					<div class="building-info-banner">
-						<ul class="building-content-lable">
-							<li v-for="list in tags" :class="list.className">
-								<span class="stage" v-text="list.stage"></span>
-								<span class="state" v-text="list.state"></span>
-							</li>
-						</ul>
-					</div>
-					<div class="building-info-switch">
-						<div class="building-info-switchBox">
-							<ul class="swiper-wrapper building-info-switch-ul">
-								<li class="swiper-slide" v-for="list in swipers">
-									<div class="switch-li-box">
-										<div  class="switch-li-box-wrapper">
-											<div class="switch-li-box-title">
-												<div class="title">
-													<span class="title-txt" v-text="list.titleTxt"></span>
-													<span class="title-tags" v-text="list.titleTags"></span>
-												</div>
-												<div class="time">
-													<span class="time-open" v-text="list.openTime"></span>
-													<span class="time-other" v-text="list.otherTime"></span>
-												</div>
-											</div>
-											<div class="switch-li-box-info">
-												<div class="info-top">
-													<span v-text="list.houseStyle"></span>
-													<span v-text="list.reference"></span>
-												</div>
-												<div class="info-bottom">
-													<span v-text="list.num"></span>
-													<span v-text="list.stairs"></span>
-												</div>
-											</div>
-										</div>
+					<div class="Information-list-content">
+						<ul class="content-ul">
+							<li class="content-li" v-for="list in info_m">
+								<div class="content-li-left"><img :src="list.src"/></div>
+								<div class="content-li-right">
+									<div class="content-li-right-title" v-text="list.title"></div>
+									<div class="content-li-right-time">
+										<span class="from" v-text="list.froms"></span>
+										<span class="time" v-text="list.time"></span>
 									</div>
-								</li>
-							</ul>
-						</div>
+								</div>
+							</li>	
+						</ul>
 					</div>
 				</div>
 			</section>
@@ -77,68 +54,44 @@
 	</body>
 	<script type="text/javascript">
 		var myVue = new Vue({
-			el: ".building-info-container",
+			el: ".Information-list-container",
 			data: {
-				tags: [
+				info_m: [
 					{
-						stage: '2期6号',	
-						state: '在售',
-						className: "zaishou"
+						src: 'img/banner.png',
+						title: '央行：多项房地产信贷数据回落 房价下行可能加大',
+						froms: '程凡房地产',
+						time: '｜2017.02.02'
 					},
 					{
-						stage: '2期7号',	
-						state: '待售'
+						src: 'img/banner.png',
+						title: '央行：多项房地产信贷数据回落 房价下行可能加大',
+						froms: '程凡房地产',
+						time: '｜2017.02.02'
 					},
 					{
-						stage: '2期8号',	
-						state: '待售'
+						src: 'img/banner.png',
+						title: '央行：多项房地产信贷数据回落 房价下行可能加大',
+						froms: '程凡房地产',
+						time: '｜2017.02.02'
 					},
 					{
-						stage: '2期9号',	
-						state: '在售',
-						className: "zaishou"
-					}
-				],
-				swipers: [
-					{
-						titleTxt: '2期6号楼',
-						titleTags: '塔楼',
-						openTime: '开盘时间：2017.02.02',
-						otherTime: '交房时间：暂无信息',
-						houseStyle: '户型：3个户型',
-						reference: '参考价：139~160万',
-						num: '层数：21层',
-						stairs: '梯户比：2梯6户'
+						src: 'img/banner.png',
+						title: '央行：多项房地产信贷数据回落 房价下行可能加大',
+						froms: '程凡房地产',
+						time: '｜2017.02.02'
 					},
 					{
-						titleTxt: '2期7号楼',
-						titleTags: '塔楼',
-						openTime: '开盘时间：2017.02.02',
-						otherTime: '交房时间：暂无信息',
-						houseStyle: '户型：3个户型',
-						reference: '参考价：139~160万',
-						num: '层数：21层',
-						stairs: '梯户比：2梯6户'
+						src: 'img/banner.png',
+						title: '央行：多项房地产信贷数据回落 房价下行可能加大',
+						froms: '程凡房地产',
+						time: '｜2017.02.02'
 					},
 					{
-						titleTxt: '2期8号楼',
-						titleTags: '塔楼',
-						openTime: '开盘时间：2017.02.02',
-						otherTime: '交房时间：暂无信息',
-						houseStyle: '户型：3个户型',
-						reference: '参考价：139~160万',
-						num: '层数：21层',
-						stairs: '梯户比：2梯6户'
-					},
-					{
-						titleTxt: '2期9号楼',
-						titleTags: '塔楼',
-						openTime: '开盘时间：2017.02.02',
-						otherTime: '交房时间：暂无信息',
-						houseStyle: '户型：3个户型',
-						reference: '参考价：139~160万',
-						num: '层数：21层',
-						stairs: '梯户比：2梯6户'
+						src: 'img/banner.png',
+						title: '央行：多项房地产信贷数据回落 房价下行可能加大',
+						froms: '程凡房地产',
+						time: '｜2017.02.02'
 					}
 				]
 			}
@@ -146,11 +99,10 @@
 	</script>
 	<script src="plugins/swiper-3.4.2.min.js"></script>
 	<script type="text/javascript">
-		var mySwiper = new Swiper('.building-info-switchBox', {
+		var mySwiper = new Swiper('.Information-list-banner', {
 			pagination : '.swiper-pagination',
-			paginationType : 'fraction'
+			
 		})
 	</script>
-	<script type="text/javascript" src="js/building-info.js"></script>
-
+	<script type="text/javascript" src="js/Information-list.js"></script>
 </html>
