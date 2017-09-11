@@ -6,12 +6,13 @@
 		<meta content="email=no" name="format-detection" />
 		<meta http-equiv="Cache-Control" content="no-cache" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>购房联盟</title>
+		<title>二手房出租(二手房出售)</title>
 		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/purchasing-union.css" />
+		<link rel="stylesheet" type="text/css" href="css/rental-list-sell.css" />
 		<link rel="stylesheet" type="text/css" href="plugins/animate.min.css" />
 		<script type="text/javascript" src="plugins/zepto.min.js"></script>
 		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>
+		<script src="plugins/swiper-3.4.2.min.js"></script>
 		<script type="text/javascript" src="vue/vue.js"></script>
 		<script type="text/javascript" src="plugins/navbarscroll.js"></script>
 		<script>
@@ -21,303 +22,248 @@
 	</head>
 
 	<body>
-		<div class="purchasing-union-container" v-cloak>
-			<header class="purchasing-union-header">
+		<div class="rental-list-sell-container" v-cloak>
+			<header class="rental-list-sell-header">
 				<div class="signal_bar"></div>
 				<div class="title_bar">
-					<h3 class="title_txt">购房联盟</h3>
+					<h3 class="title_txt">二手房出售</h3>
 					<a class="return" href="javascript:;">返回</a>
 					<a class="more" href="javascript:;"></a>
 				</div>
 			</header>
-			<section class="purchasing-union-section">
+			<div class="rental-list-sell-column">
+				<div class="rental-list-sell-search">
+					<input class="B_search" type="text" name="" id="" placeholder="请输入楼盘名称或区域" />
+					<i class="Sign-up"></i>
+				</div>
+				<div class="rental-list-sell-demand">
+					<ul class="rental-list-sell-demand-ul">
+						<li class="demand-li"><span>海口</span></li>
+						<li class="demand-li"><span>总价</span></li>
+						<li class="demand-li"><span>面积</span></li>
+						<li class="demand-li"><span>户型</span></li>
+						<li class="demand-li"><span>朝向</span></li>
+						<li class="drop-down"><span></span></li>
+					</ul>
+					<div class="found-for-you">
+						<span>为您找到152个楼盘</span>
+					</div>
+					<div class="rental-list-sell-demand-wrapper">
+						<ul class="rental-list-sell-demand-column">
+							<li class="nav-list-li demand_city">
+								<div class="nav-list-li-wrapper">
+									<div class="demand_city-body">
+										<ul class="demand_city-body-ul">
+											<li>不限</li>
+											<li class="select">海口</li>
+											<li>三亚</li>
+											<li>琼海</li>
+											<li>儋州</li>
+											<li>澄迈</li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li class="nav-list-li demand_price">
+								<div class="nav-list-li-wrapper">
+									<div class="demand_price-body">
+										<ul class="demand_price-body-ul">
+											<li class="select">不限</li>
+											<li>30万以下</li>
+											<li>30万-45万</li>
+											<li>45万-60万</li>
+											<li>60万以上</li>
+										</ul>
+										<div class="demand_price-input">
+											<input class="min-price" type="number" name="" id="" placeholder="最低价格" />
+											<span></span>
+											<input class="max-price" type="number" name="" id="" placeholder="最高价格" />
+											<div class="btn">确定</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="nav-list-li demand_area">
+								<div class="nav-list-li-wrapper">
+									<div class="demand_area-body">
+										<ul class="demand_area-body-ul">
+											<li class="select">不限</li>
+											<li>60m² 以下</li>
+											<li>60m²-90m²</li>
+											<li>90m²-110m²</li>
+											<li>110m²-150m²</li>
+											<li>150m² 以上</li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li class="nav-list-li demand_houseType">
+								<div class="nav-list-li-wrapper">
+									<div class="demand_houseType-body">
+										<ul class="demand_houseType-body-ul">
+											<li class="select">不限</li>
+											<li>一房户型<span class="check"></span></li>
+											<li>二房户型<span class="check"></span></li>
+											<li>三房户型<span class="check"></span></li>
+											<li>四房户型<span class="check"></span></li>
+											<li>五房户型<span class="check"></span></li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li class="nav-list-li demand_orientation">
+								<div class="nav-list-li-wrapper">
+									<div class="demand_orientation-body">
+										<ul class="demand_orientation-body-ul">
+											<li class="select">不限</li>
+											<li>南</li>
+											<li>东南</li>
+											<li>西南</li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li class="nav-list-li demand_sort">
+								<div class="nav-list-li-wrapper">
+									<div class="demand_sort-body">
+										<ul class="demand_sort-body-ul">
+											<li class="select">智能排序</li>
+											<li>人气最高</li>
+											<li>均价从高到低</li>
+											<li>均价从低到高</li>
+										</ul>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<section class="rental-list-sell-section">
 				<div class="section-wrapper">
-					<div class="purchasing-union-info">
-						<div class="purchasing-union-banner">
-							<ul class="banner-ul swiper-wrapper">
-								<li class="banner-li swiper-slide">
-									<img src="img/banner.png" />
-								</li>
-								<li class="banner-li swiper-slide">
-									<img src="img/banner.png" />
-								</li>
-								<li class="banner-li swiper-slide">
-									<img src="img/banner.png" />
-								</li>
-							</ul>
-							<div class="swiper-pagination"></div>
-						</div>
-						<div class="purchasing-union-nav">
-							<ul class="nav-ul">
-								<li class="nav-li">
-									<div class="nav-li-wrapper">
-										<i><img src="img/Crowd.png"/></i>
-										<span>集结</span>
-										<p>人越多优惠越大</p>
+					<div class="section-recommend">
+						<div class="section-recommend-content">
+							<ul class="recommend-content-ul">
+								<li class="recommend-content-li" v-for="list in recommend">
+									<div class="recommend-content-li-img">
+										<img :src="list.src" />
 									</div>
-								</li>
-								<li class="nav-li">
-									<div class="nav-li-wrapper">
-										<i><img src="img/rocket.png"/></i>
-										<span>便捷</span>
-										<p>看房不用满城跑</p>
-									</div>
-								</li>
-								<li class="nav-li">
-									<div class="nav-li-wrapper">
-										<i><img src="img/free.png"/></i>
-										<span>看房</span>
-										<p>酒店接机均免费</p>
-									</div>
-								</li>
-								<li class="nav-li">
-									<div class="nav-li-wrapper">
-										<i><img src="img/major.png"/></i>
-										<span>专业</span>
-										<p>让购房者更安心</p>
-									</div>
-								</li>
-							</ul>
-							<div class="nav-btn">
-								<span>立即报名参加购房联盟</span>
-							</div>
-						</div>
-					</div>
-					<div class="purchasing-union-C_service">
-						<div class="C_service-title">
-							<span>联盟客服</span>
-							<span>购房达人</span>
-						</div>
-						<ul class="C_service-ul">
-							<li class="C_service-li" v-for="list in C_service">
-								<div class="C_service-li-portrait"><img :src="list.src" /></div>
-								<div class="C_service-li-info">
-									<div class="pc-info">
-										<span class="name" v-text="list.name"></span>
-										<span class="city" v-text="list.city"></span>
-										<span class="dialog_box"><img src="img/Consultant.png"/></span>
-									</div>
-									<div class="pc-region" v-text="list.region"></div>
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="purchasing-union-message">
-						<div class="message-wrapper">
-							<h3 class="message-title">
-								<span class="message-title-txt">购房联盟动态</span>
-							</h3>
-							<ul class="message-content">
-								<li class="message-content-li">
-									<p class="li-txt">安徽胜姨寄来表扬信 旅居网看房服务再获点赞</p>
-									<p class="li-content">近日我们旅居网收到了来自安徽客户胜姨的表扬信，肯定了我们旅居网，并对我们置业顾问李承慧周到负责的看房动并对我们置业顾问李承慧周到负责的看房动</p>
-								</li>
-								<li class="message-content-li">
-									<p class="li-txt">安徽胜姨寄来表扬信 旅居网看房服务再获点赞</p>
-									<p class="li-content">近日我们旅居网收到了来自安徽客户胜姨的表扬信，肯定了我们旅居网，并对我们置业顾问李承慧周到负责的看房动并对我们置业顾问李承慧周到负责的看房动</p>
-								</li>
-							</ul>
-						</div>
-						<div class="message-btn">查看更多动态</div>
-					</div>
-					<div class="purchasing-union-recommend">
-						<ul class="recommend-content-ul">
-							<li class="recommend-content-li" v-for="list in recommend">
-								<div class="recommend-content-li-img">
-									<img :src="list.src" />
-									<span v-text="list.lable"></span>
-								</div>
-								<div class="recommend-content-li-txt">
-									<div class="title">
-										<span class="title-txt" v-text="list.title_txt"></span>
-										<span class="title-box" v-text="list.title_box" :class="{
-													'tags1': list.title_box === '推荐',
-													'tags2': list.title_box === '在售',
-													'tags3': list.title_box === '热卖',
-													'tags4': list.title_box === '折扣'
+									<div class="recommend-content-li-txt">
+										<div class="title">
+											<span class="title-txt" v-text="list.title_txt"></span>
+											<span class="title-date" v-text="list.title_date"></span>
+										</div>
+										<div class="info">
+											<span class="txt" v-text="list.info_txt_s"></span>
+											<span class="line">|</span>
+											<span class="txt" v-text="list.info_txt_f"></span>
+											<span class="line">|</span>
+											<span class="txt" v-text="list.info_txt_t"></span>
+											<span class="line">|</span>
+											<span class="txt" v-text="list.info_txt_th"></span>
+										</div>
+										<div class="demand">
+											<span v-for="items in list.tags" v-text="items" :class="{
+													'state1': items === '家具配套',
+													'state2': items === '交通便利',
+													'state3': items === '海景房',
 												}">
 											</span>
-									</div>
-									<div class="info">
-										<span class="txt" v-text="list.info_txt_f"></span>
-										<span class="line">|</span>
-										<span class="txt" v-text="list.info_txt_t"></span>
-										<span class="line">|</span>
-										<span class="txt" v-text="list.info_txt_th"></span>
-									</div>
-									<div class="demand">
-										<span v-for="items in list.tags" v-text="items" :class="{
-													'state1': items === '入户花园',
-													'state2': items === '刚需婚房',
-													'state3': items === '不限购',
-												}">
-											</span>
-									</div>
-									<div class="average-price">
-										<span class="price" v-text="list.price"></span>
-										<span class="acreage" v-text="list.acreage"></span>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="purchasing-union-QA">
-						<div class="QA-wrapper">
-							<h3 class="QA-title">
-								<span class="QA-title-txt">咨询问答</span>
-								<span class="QA-title-link">我要咨询</span>
-							</h3>
-							<ul class="QA-content">
-								<li class="QA-content-li">
-									<div class="QA-content-li-left">
-										<i class="head-portrait"><img src="img/Crowd.png"/></i>
-										<p class="name">鹿先生</p>
-									</div>
-									<div class="QA-content-li-right">
-										<p class="problem">南国威尼斯城2期12号楼什么时候开盘？</p>
-										<p class="answer">您好，很高兴为您服务，现在南国威尼斯城2期12号楼还没开盘，我们为您推荐相似楼盘：恒大山水汇园，欢迎您致电咨询。您好，很高兴为您服务，现在南国威尼斯城2期12号楼还没开盘，我们为您推荐相似楼盘：恒大山水汇园，欢迎您致电咨询。</p>
-										<div class="full_text">全文</div>
-										<div class="send_time">2017.02.02</div>
-									</div>
-								</li>
-								<li class="QA-content-li">
-									<div class="QA-content-li-left">
-										<i class="head-portrait"><img src="img/Crowd.png"/></i>
-										<p class="name">鹿先生</p>
-									</div>
-									<div class="QA-content-li-right">
-										<p class="problem">南国威尼斯城2期12号楼什么时候开盘？</p>
-										<p class="answer">您好，很高兴为您服务，现在南国威尼斯城2期12号楼还没开盘，我们为您推荐相似楼盘：恒大山水汇园，欢迎您致电咨询。</p>
-										<div class="full_text">全文</div>
-										<div class="send_time">2017.02.02</div>
+										</div>
+										<div class="average-price">
+											<span class="price" v-text="list.price"></span>
+											<span class="acreage" v-text="list.acreage"></span>
+										</div>
 									</div>
 								</li>
 							</ul>
 						</div>
-						<div class="QA-btn">查看更多咨询</div>
 					</div>
 				</div>
 			</section>
-			<div class="purchasing-union-Mask"></div>
-			<div class="sign-up-push">
-				<h3 class="sign-up-title">参加购房联盟</h3>
-				<div class="sign-up-name">
-					<span>姓名：</span>
-					<input class="name_ipt" type="text" name="" id=""/>
-				</div>
-				<div class="sign-up-contact">
-					<span>联系方式：</span>
-					<input class="contact_ipt" type="number" name="" id="" />
-				</div>
-				<div class="sign-up-btn">
-					<span>立即报名</span>
-				</div>
-				<div class="sign-up-del"><img src="img/close-button.png"/></div>
-			</div>
-			<div class="sign-up-false">
-				<i><img src="img/Submission-failure.png"/></i>
-				<p>报名失败！ <a href="javascript:;">再试一次</a></p>
-			</div>
-			<div class="sign-up-success">
-				<i><img src="img/Submit-successfully.png"/></i>
-				<p>报名成功！</p>
-			</div>
+			<div class="rental-list-sell-Mask"></div>
 		</div>
 	</body>
 	<script type="text/javascript">
 		var myVue = new Vue({
-			el: ".purchasing-union-container",
+			el: ".rental-list-sell-container",
 			data: {
-				C_service: [{
-						src: 'img/C_service.jpg',
-						name: '王珍珍',
-						city: '浙江省宁波市',
-						region: '负责万宁、陵水、保亭、五指山项目，对发展规划，风土人情，等掌握较为透彻，能根据客户需求帮客户在海南选择适合自己的家。'
-					},
-					{
-						src: 'img/C_service.jpg',
-						name: '王珍珍',
-						city: '浙江省宁波市',
-						region: '负责万宁、陵水、保亭、五指山项目，对发展规划，风土人情，等掌握较为透彻，能根据客户需求帮客户在海南选择适合自己的家。'
-					},
-					{
-						src: 'img/C_service.jpg',
-						name: '王珍珍',
-						city: '浙江省宁波市',
-						region: '负责万宁、陵水、保亭、五指山项目，对发展规划，风土人情，等掌握较为透彻，能根据客户需求帮客户在海南选择适合自己的家。'
-					}
-				],
 				recommend: [{
-						src: 'img/style.png',
-						lable: '全 款95折',
-						title_txt: '融创观澜湖公寓',
-						title_box: '推荐',
-						info_txt_f: '75-105m²',
-						info_txt_t: '2-3室',
-						info_txt_th: '龙昆南',
-						price: '12500元/m²',
-						acreage: '建面 92-235m²',
-						tags: ['入户花园', '刚需婚房', '不限购']
+					src: 'img/style.png',
+					title_txt: '威尼斯城',
+					title_date: '1月前',
+					info_txt_s: '1房1厨1卫',
+					info_txt_f: '2-3室',
+					info_txt_t: '56m²',
+					info_txt_th: '龙昆南',
+					price: '45.00万元',
+					acreage: '参考单价：5000元',
+					tags: ['家具配套', '交通便利', '海景房']
 
-					},
-					{
-						src: 'img/style.png',
-						title_txt: '融创观澜湖公寓',
-						title_box: '在售',
-						info_txt_f: '75-105m²',
-						info_txt_t: '2-3室',
-						info_txt_th: '龙昆南',
-						price: '12500元/m²',
-						acreage: '建面 92-235m²',
-						tags: ['刚需婚房', '不限购']
-					},
-					{
-						src: 'img/style.png',
-						lable: '预 售立 减',
-						title_txt: '融创观澜湖公寓',
-						title_box: '热卖',
-						info_txt_f: '75-105m²',
-						info_txt_t: '2-3室',
-						info_txt_th: '龙昆南',
-						price: '12500元/m²',
-						acreage: '建面 92-235m²',
-						tags: ['入户花园', '刚需婚房', '不限购']
-					},
-					{
-						src: 'img/style.png',
-						title_txt: '融创观澜湖公寓',
-						title_box: '折扣',
-						info_txt_f: '75-105m²',
-						info_txt_t: '2-3室',
-						info_txt_th: '龙昆南',
-						price: '12500元/m²',
-						acreage: '建面 92-235m²',
-						tags: ['入户花园', '不限购']
-					},
-					{
-						src: 'img/style.png',
-						lable: '预 售立 减',
-						title_txt: '融创观澜湖公寓',
-						title_box: '在售',
-						info_txt_f: '75-105m²',
-						info_txt_t: '2-3室',
-						info_txt_th: '龙昆南',
-						price: '12500元/m²',
-						acreage: '建面 92-235m²',
-						tags: ['入户花园', '刚需婚房']
-					}
-				]
+				}, {
+					src: 'img/style.png',
+					title_txt: '威尼斯城',
+					title_date: '1月前',
+					info_txt_s: '1房1厨1卫',
+					info_txt_f: '2-3室',
+					info_txt_t: '56m²',
+					info_txt_th: '龙昆南',
+					price: '45.00万元',
+					acreage: '参考单价：5000元',
+					tags: ['家具配套', '交通便利', '海景房']
+
+				}, {
+					src: 'img/style.png',
+					title_txt: '威尼斯城',
+					title_date: '1月前',
+					info_txt_s: '1房1厨1卫',
+					info_txt_f: '2-3室',
+					info_txt_t: '56m²',
+					info_txt_th: '龙昆南',
+					price: '45.00万元',
+					acreage: '参考单价：5000元',
+					tags: ['家具配套', '交通便利', '海景房']
+
+				}, {
+					src: 'img/style.png',
+					title_txt: '威尼斯城',
+					title_date: '1月前',
+					info_txt_s: '1房1厨1卫',
+					info_txt_f: '2-3室',
+					info_txt_t: '56m²',
+					info_txt_th: '龙昆南',
+					price: '45.00万元',
+					acreage: '参考单价：5000元',
+					tags: ['家具配套', '交通便利', '海景房']
+
+				}, {
+					src: 'img/style.png',
+					title_txt: '威尼斯城',
+					title_date: '1月前',
+					info_txt_s: '1房1厨1卫',
+					info_txt_f: '2-3室',
+					info_txt_t: '56m²',
+					info_txt_th: '龙昆南',
+					price: '45.00万元',
+					acreage: '参考单价：5000元',
+					tags: ['家具配套', '交通便利', '海景房']
+
+				}, {
+					src: 'img/style.png',
+					title_txt: '威尼斯城',
+					title_date: '1月前',
+					info_txt_s: '1房1厨1卫',
+					info_txt_f: '2-3室',
+					info_txt_t: '56m²',
+					info_txt_th: '龙昆南',
+					price: '45.00万元',
+					acreage: '参考单价：5000元',
+					tags: ['家具配套', '交通便利', '海景房']
+
+				}]
 			}
 		})
 	</script>
-	<script src="plugins/swiper-3.4.2.min.js"></script>
-	<script type="text/javascript">
-		var mySwiper = new Swiper('.purchasing-union-banner', {
-			pagination: '.swiper-pagination',
-			autoplay: 3000,
-			autoplayDisableOnInteraction: false
-		})
-	</script>
-	<script type="text/javascript" src="js/purchasing-union.js"></script>
+	<script type="text/javascript" src="js/rental-list-sell.js"></script>
 
 </html>

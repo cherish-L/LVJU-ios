@@ -1,0 +1,951 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+::-moz-placeholder {
+    color: #999999;
+}
+
+::-webkit-input-placeholder {
+    color: #999999;
+}
+
+:-ms-input-placeholder {
+    color: #999999;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: PingFangSC-Regular;
+    background: #FAFAFA;
+}
+
+input,
+textarea {
+    outline: none;
+    border: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+li {
+    list-style: none;
+}
+
+$sc:20;
+.rental-list-sell-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    background: #fafafa;
+    display: flex;
+    flex-direction: column;
+    .rental-list-sell-header {
+        width: 100%;
+        background: #47464b;
+        z-index: 40;
+        box-shadow: 0 1px 0 0 #B2B2B2;
+        -webkit-box-shadow: 0 1px 0 0 #B2B2B2;
+        .title_bar {
+            width: 100%;
+            height: 44/$sc+rem;
+            line-height: 44/$sc+rem;
+            position: relative;
+            .title_txt {
+                font-size: 17/$sc+rem;
+                color: #FFFFFF;
+                text-align: center;
+                font-weight: normal;
+            }
+            .return {
+                display: block;
+                height: 18/$sc+rem;
+                line-height: 18/$sc+rem;
+                padding-left: 16/$sc+rem;
+                font-size: 17/$sc+rem;
+                color: #ffffff;
+                background: url(../img/return.png) no-repeat;
+                background-size: 9/$sc+rem 16/$sc+rem;
+                background-position-x: left;
+                background-position-y: 1/$sc+rem;
+                position: absolute;
+                top: 14/$sc+rem;
+                left: 8/$sc+rem;
+            }
+            .more {
+                display: block;
+                height: 20/$sc+rem;
+                width: 20/$sc+rem;
+                background: url(../img/more.png) no-repeat;
+                background-size: 20/$sc+rem 20/$sc+rem;
+                position: absolute;
+                top: 13/$sc+rem;
+                right: 8/$sc+rem;
+            }
+        }
+    }
+    .rental-list-sell-column {
+        width: 100%;
+        background: #FFFFFF;
+        box-shadow: 0 1px 0 0 #E8E8E8;
+        -webkit-box-shadow: 0 1px 0 0 #E8E8E8;
+        z-index: 3;
+        .rental-list-sell-search {
+            width: 100%;
+            height: 44/$sc+rem;
+            padding: 10/$sc+rem 12/$sc+rem;
+            background: #FFFFFF;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            .B_search {
+                flex: 1;
+                -webkit-flex: 1;
+                line-height: 12/$sc+rem;
+                font-size: 11/$sc+rem;
+                color: #333333;
+                caret-color: #ff7c00;
+                padding: 6/$sc+rem 0 6/$sc+rem 34/$sc+rem;
+                border-radius: 12/$sc+rem;
+                background: url(../img/Home-search.png) no-repeat #F0F0F0;
+                background-size: 12/$sc+rem 12/$sc+rem;
+                background-position-x: 15/$sc+rem;
+                background-position-y: center;
+            }
+            .Sign-up {
+                display: block;
+                width: 15/$sc+rem;
+                height: 24/$sc+rem;
+                padding-left: 12/$sc+rem;
+                background: url(../img/Sign-up.png) no-repeat;
+                background-size: 15/$sc+rem 15/$sc+rem;
+                background-position-x: right;
+                background-position-y: center;
+            }
+            .Sign-up.select {
+                background: url(../img/Sign-up-visit.png) no-repeat;
+                background-size: 15/$sc+rem 15/$sc+rem;
+                background-position-x: right;
+                background-position-y: center;
+            }
+        }
+        .rental-list-sell-demand {
+            width: 100%;
+            height: 40/$sc+rem;
+            background: #FFFFFF;
+            position: relative;
+            .rental-list-sell-demand-ul {
+                width: 100%;
+                background: #FFFFFF;
+                transition: all .3s;
+                display: flex;
+                flex-direction: row;
+                .demand-li {
+                    flex: 1;
+                    -webkit-flex: 1;
+                    height: 40/$sc+rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    span {
+                        display: inline-block;
+                        height: 15/$sc+rem;
+                        line-height: 15/$sc+rem;
+                        padding-right: 10/$sc+rem;
+                        font-size: 10/$sc+rem;
+                        color: #333333;
+                        max-width: 60/$sc+rem;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        background: url(../img/drop-down.png) right center no-repeat;
+                        background-size: 6/$sc+rem 4/$sc+rem;
+                        box-sizing: border-box;
+                    }
+                }
+                .demand-li.select {
+                    span {
+                        color: #FF7C00;
+                        background: url(../img/drop-down-hover.png) right center no-repeat;
+                        background-size: 6/$sc+rem 4/$sc+rem;
+                    }
+                }
+                .drop-down {
+                    width: 40/$sc+rem;
+                    height: 40/$sc+rem;
+                    span {
+                        display: block;
+                        width: 40/$sc+rem;
+                        height: 20/$sc+rem;
+                        border-left: 1px solid #d8d8d8;
+                        margin: 10/$sc+rem 0;
+                        box-sizing: border-box;
+                        background: url(../img/sort.png) center center no-repeat;
+                        background-size: 10/$sc+rem 12/$sc+rem;
+                    }
+                }
+                .drop-down.select {
+                    span {
+                        background: url(../img/sort-hover.png) center center no-repeat;
+                        background-size: 10/$sc+rem 12/$sc+rem;
+                    }
+                }
+            }
+            .rental-list-sell-demand-ul.select {
+                background: #F9F9F9;
+            }
+            .found-for-you {
+                width: 100%;
+                overflow: hidden;
+                opacity: 0;
+                transition: all .6s;
+                height: 0;
+                background: rgba(0, 0, 0, .6);
+                border-radius: 0 0 2/$sc+rem 2/$sc+rem;
+                position: absolute;
+                top: 40/$sc+rem;
+                left: 0;
+                span {
+                    display: block;
+                    width: 100%;
+                    height: 30/$sc+rem;
+                    line-height: 30/$sc+rem;
+                    color: #FFFFFF;
+                    font-size: 11/$sc+rem;
+                    text-align: center;
+                }
+            }
+            .rental-list-sell-demand-wrapper {
+                width: 100%;
+                position: absolute;
+                top: 40/$sc+rem;
+                left: 0;
+                .rental-list-sell-demand-column {
+                    width: 100%;
+                    height: 0;
+                    transition: all .3s;
+                    overflow: hidden;
+                    background: #ffffff;
+                    position: relative;
+                    .demand_city {
+                        width: 100%;
+                        overflow: hidden;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        .nav-list-li-wrapper {
+                            width: 100%;
+                            background: #FFFFFF;
+                            display: flex;
+                            display: -webkit-flex;
+                            flex-direction: column;
+                            .demand_city-body {
+                                flex: 1;
+                                -webkit-flex: 1;
+                                overflow: hidden;
+                                background: #FFFFFF;
+                                padding: 0 12/$sc+rem 12/$sc+rem;
+                                box-sizing: border-box;
+                                -webkit-box-sizing: border-box;
+                                .demand_city-body-ul {
+                                    width: 100%;
+                                    li {
+                                        width: 100%;
+                                        height: 36/$sc+rem;
+                                        line-height: 36/$sc+rem;
+                                        font-size: 12/$sc+rem;
+                                        color: #333333;
+                                        box-shadow: inset 0 -1px 0 0 #e8e8e8;
+                                    }
+                                    li.select {
+                                        color: #FF7C00;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .demand_price {
+                        width: 100%;
+                        overflow: hidden;
+                        background: #FFFFFF;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        .nav-list-li-wrapper {
+                            width: 100%;
+                            background: #FFFFFF;
+                            .demand_price-body {
+                                overflow: hidden;
+                                background: #ffffff;
+                                .demand_price-body-ul {
+                                    width: 100%;
+                                    padding: 0 12/$sc+rem;
+                                    box-sizing: border-box;
+                                    li {
+                                        width: 100%;
+                                        height: 36/$sc+rem;
+                                        line-height: 36/$sc+rem;
+                                        font-size: 12/$sc+rem;
+                                        color: #333333;
+                                        box-shadow: inset 0 -1px 0 0 #EEEEEE;
+                                    }
+                                    li.select {
+                                        color: #FF7C00;
+                                    }
+                                    li:last-child {
+                                        box-shadow: none;
+                                    }
+                                }
+                                .demand_price-input {
+                                    width: 100%;
+                                    height: 44/$sc+rem;
+                                    padding: 10/$sc+rem 12/$sc+rem;
+                                    box-sizing: border-box;
+                                    position: relative;
+                                    box-shadow: inset 0 1px 0 0 #e8e8e8;
+                                    display: flex;
+                                    flex-direction: row;
+                                    .min-price {
+                                        width: 75/$sc+rem;
+                                        height: 100%;
+                                        line-height: 12/$sc+rem;
+                                        color: #333333;
+                                        background: #F9F9F9;
+                                        text-align: center;
+                                        border-radius: 2/$sc+rem;
+                                        box-sizing: border-box;
+                                        padding: 6/$sc+rem;
+                                    }
+                                    span {
+                                        display: block;
+                                        width: 7/$sc+rem;
+                                        height: 11/$sc+rem;
+                                        margin: 0 8/$sc+rem;
+                                        border-bottom: 1px solid #999999;
+                                    }
+                                    .max-price {
+                                        width: 75/$sc+rem;
+                                        height: 100%;
+                                        line-height: 12/$sc+rem;
+                                        color: #333333;
+                                        background: #F9F9F9;
+                                        text-align: center;
+                                        border-radius: 2/$sc+rem;
+                                        box-sizing: border-box;
+                                        padding: 6/$sc+rem;
+                                    }
+                                    .btn {
+                                        position: absolute;
+                                        top: 10/$sc+rem;
+                                        right: 15/$sc+rem;
+                                        width: 100/$sc+rem;
+                                        height: 24/$sc+rem;
+                                        line-height: 22/$sc+rem;
+                                        text-align: center;
+                                        background: #FFFFFF;
+                                        border: 1px solid #FF7C00;
+                                        border-radius: 2/$sc+rem;
+                                        font-size: 10/$sc+rem;
+                                        color: #FF7C00;
+                                        box-sizing: border-box;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .demand_area {
+                        width: 100%;
+                        overflow: hidden;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        .nav-list-li-wrapper {
+                            width: 100%;
+                            background: #FFFFFF;
+                            display: flex;
+                            display: -webkit-flex;
+                            flex-direction: column;
+                            .demand_area-body {
+                                flex: 1;
+                                -webkit-flex: 1;
+                                overflow: hidden;
+                                background: #FFFFFF;
+                                padding: 0 12/$sc+rem 12/$sc+rem;
+                                box-sizing: border-box;
+                                -webkit-box-sizing: border-box;
+                                .demand_area-body-ul {
+                                    width: 100%;
+                                    li {
+                                        width: 100%;
+                                        height: 36/$sc+rem;
+                                        line-height: 36/$sc+rem;
+                                        font-size: 12/$sc+rem;
+                                        color: #333333;
+                                        box-shadow: inset 0 -1px 0 0 #e8e8e8;
+                                    }
+                                    li.select {
+                                        color: #FF7C00;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .demand_houseType {
+                        width: 100%;
+                        overflow: hidden;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        .nav-list-li-wrapper {
+                            width: 100%;
+                            background: #FFFFFF;
+                            display: flex;
+                            display: -webkit-flex;
+                            flex-direction: column;
+                            .demand_houseType-body {
+                                flex: 1;
+                                -webkit-flex: 1;
+                                overflow: hidden;
+                                background: #FFFFFF;
+                                padding: 0 12/$sc+rem 12/$sc+rem;
+                                box-sizing: border-box;
+                                -webkit-box-sizing: border-box;
+                                .demand_houseType-body-ul {
+                                    width: 100%;
+                                    li {
+                                        width: 100%;
+                                        height: 36/$sc+rem;
+                                        line-height: 36/$sc+rem;
+                                        font-size: 12/$sc+rem;
+                                        color: #333333;
+                                        box-shadow: inset 0 -1px 0 0 #e8e8e8;
+                                        position: relative;
+                                        .check {
+                                            display: block;
+                                            width: 17/$sc+rem;
+                                            height: 15/$sc+rem;
+                                            background: url(../img/Housing-demand-Checkbox.png) no-repeat;
+                                            background-size: 15/$sc+rem 15/$sc+rem;
+                                            position: absolute;
+                                            top: 0;
+                                            right: 12/$sc+rem;
+                                            bottom: 0;
+                                            margin: auto;
+                                        }
+                                    }
+                                    li.select {
+                                        color: #FF7C00;
+                                        span {
+                                            background: url(../img/Housing-demand-Check.png) no-repeat;
+                                            background-size: 15/$sc+rem 15/$sc+rem;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .demand_orientation {
+                        width: 100%;
+                        overflow: hidden;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        .nav-list-li-wrapper {
+                            width: 100%;
+                            background: #FFFFFF;
+                            display: flex;
+                            display: -webkit-flex;
+                            flex-direction: column;
+                            .demand_orientation-body {
+                                flex: 1;
+                                -webkit-flex: 1;
+                                overflow: hidden;
+                                background: #FFFFFF;
+                                padding: 0 12/$sc+rem 12/$sc+rem;
+                                box-sizing: border-box;
+                                -webkit-box-sizing: border-box;
+                                .demand_orientation-body-ul {
+                                    width: 100%;
+                                    li {
+                                        width: 100%;
+                                        height: 36/$sc+rem;
+                                        line-height: 36/$sc+rem;
+                                        font-size: 12/$sc+rem;
+                                        color: #333333;
+                                        box-shadow: inset 0 -1px 0 0 #e8e8e8;
+                                    }
+                                    li.select {
+                                        color: #FF7C00;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .demand_sort {
+                        width: 100%;
+                        overflow: hidden;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        .nav-list-li-wrapper {
+                            width: 100%;
+                            background: #FFFFFF;
+                            .demand_sort-body {
+                                width: 100%;
+                                overflow: hidden;
+                                background: #FFFFFF;
+                                padding: 0 12/$sc+rem 12/$sc+rem;
+                                box-sizing: border-box;
+                                -webkit-box-sizing: border-box;
+                                .demand_sort-body-ul {
+                                    width: 100%;
+                                    li {
+                                        width: 100%;
+                                        height: 36/$sc+rem;
+                                        line-height: 36/$sc+rem;
+                                        font-size: 12/$sc+rem;
+                                        color: #333333;
+                                        box-shadow: inset 0 -1px 0 0 #e8e8e8;
+                                    }
+                                    li.select {
+                                        color: #FF7C00;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .rental-list-sell-section {
+        flex: 1;
+        -webkit-flex: 1;
+        overflow: hidden;
+        background: #fafafa;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        position: relative;
+        z-index: 1;
+        .section-wrapper {
+            width: 100%;
+            .section-recommend {
+                width: 100%;
+                background: #FFFFFF;
+                padding: 0 12/$sc+rem;
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                .section-recommend-content {
+                    width: 100%;
+                    .recommend-content-ul {
+                        width: 100%;
+                        padding-bottom: 15/$sc+rem;
+                        .recommend-content-li {
+                            width: 100%;
+                            height: 80/$sc+rem;
+                            padding: 15/$sc+rem 0;
+                            border-bottom: 1px solid #e8e8e8;
+                            display: flex;
+                            display: -webkit-flex;
+                            flex-direction: row;
+                            .recommend-content-li-img {
+                                width: 110/$sc+rem;
+                                height: 80/$sc+rem;
+                                padding-right: 12/$sc+rem;
+                                position: relative;
+                                img {
+                                    display: block;
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                            }
+                            .recommend-content-li-txt {
+                                flex: 1;
+                                -webkit-flex: 1;
+                                height: 100%;
+                                .title {
+                                    font-size: 14/$sc+rem;
+                                    height: 20/$sc+rem;
+                                    line-height: 20/$sc+rem;
+                                    color: #333333;
+                                    .title-txt {
+                                        float: left;
+                                        font-size: 14/$sc+rem;
+                                        line-height: 20/$sc+rem;
+                                        color: #333333;
+                                    }
+                                    .title-date {
+                                        font-size: 9/$sc+rem;
+                                        padding-left: 12/$sc+rem;
+                                        color: #999999;
+                                        margin-left: 10/$sc+rem;
+                                        background: url(../img/Date.png) left center no-repeat;
+                                        background-size: 10/$sc+rem 10/$sc+rem;
+                                    }
+                                    .tags1 {
+                                        color: #F23023;
+                                        border: 1px solid #F23023;
+                                    }
+                                    .tags2 {
+                                        color: #86D646;
+                                        border: 1px solid #86D646;
+                                    }
+                                    .tags3 {
+                                        color: #FF5D00;
+                                        border: 1px solid #FF5D00;
+                                    }
+                                    .tags4 {
+                                        color: #FF0079;
+                                        border: 1px solid #FF0079;
+                                    }
+                                }
+                                .info {
+                                    height: 15/$sc+rem;
+                                    margin-top: 3/$sc+rem;
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    span {
+                                        float: left;
+                                        line-height: 15/$sc+rem;
+                                        font-size: 11/$sc+rem;
+                                        color: #666666;
+                                        letter-spacing: -0.3/$sc+rem;
+                                    }
+                                    span:first-child {
+                                        letter-spacing: -0.5/$sc+rem;
+                                    }
+                                    .line {
+                                        margin: 0 3/$sc+rem;
+                                    }
+                                }
+                                .demand {
+                                    height: 18/$sc+rem;
+                                    margin-top: 3/$sc+rem;
+                                    span {
+                                        display: block;
+                                        float: left;
+                                        margin-right: 5/$sc+rem;
+                                        padding: 0 6/$sc+rem;
+                                        height: 18/$sc+rem;
+                                        background: #F3F1FF;
+                                        line-height: 18/$sc+rem;
+                                        font-size: 9/$sc+rem;
+                                        color: #928AEA;
+                                    }
+                                    span:last-child {
+                                        margin-right: 0;
+                                    }
+                                    .state1 {
+                                        color: #928AEA;
+                                        background: #F3F1FF;
+                                    }
+                                    .state2 {
+                                        color: #5FA6EB;
+                                        background: #ECF5FF;
+                                    }
+                                    .state3 {
+                                        color: #8B9FEC;
+                                        background: #EEF3FF;
+                                    }
+                                }
+                                .average-price {
+                                    margin-top: 3/$sc+rem;
+                                    height: 18/$sc+rem;
+                                    font-size: 11/$sc+rem;
+                                    color: #666666;
+                                    .price {
+                                        font-size: 13/$sc+rem;
+                                        color: #FF7C00;
+                                    }
+                                    .acreage {
+                                        font-size: 11/$sc+rem;
+                                        color: #666666;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .rental-list-sell-Mask {
+        width: 100%;
+        height: 100%;
+        transition: all .3s;
+        background: rgba(0, 0, 0, .6);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        opacity: 0;
+    }
+    .rental-list-sell-Mask.show {
+        z-index: 2;
+        opacity: 1;
+    }
+    .rental-list-sell-Mask.signal_show {
+        z-index: 35;
+        opacity: 1;
+    }
+    .sign-up-push {
+        width: 218/$sc+rem;
+        height: 182/$sc+rem;
+        padding: 12/$sc+rem;
+        background: #FFFFFF;
+        transition: all .3s;
+        border-radius: 5/$sc+rem;
+        opacity: 0;
+        z-index: -1;
+        box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        .sign-up-title {
+            width: 100%;
+            height: 21/$sc+rem;
+            text-align: center;
+            font-weight: normal;
+            line-height: 21/$sc+rem;
+            font-size: 15/$sc+rem;
+            color: #333333;
+        }
+        .sign-up-name {
+            width: 100%;
+            height: 22/$sc+rem;
+            padding: 3/$sc+rem 0;
+            margin-top: 10/$sc+rem;
+            box-shadow: 0 1px 0 0 #E8E8E8;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            span {
+                display: inline-block;
+                line-height: 16/$sc+rem;
+                font-size: 12/$sc+rem;
+                color: #666666;
+            }
+            .name_ipt {
+                flex: 1;
+                -webkit-flex: 1;
+                height: 100%;
+                padding: 2/$sc+rem 0;
+                background: transparent;
+                line-height: 16/$sc+rem;
+                font-size: 12/$sc+rem;
+                color: #333333;
+                box-sizing: border-box;
+            }
+        }
+        .sign-up-contact {
+            width: 100%;
+            height: 22/$sc+rem;
+            padding: 3/$sc+rem 0;
+            margin-top: 10/$sc+rem;
+            box-shadow: 0 1px 0 0 #E8E8E8;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            span {
+                display: inline-block;
+                line-height: 16/$sc+rem;
+                font-size: 12/$sc+rem;
+                color: #666666;
+                word-break: keep-all;
+            }
+            .contact_ipt {
+                flex: 1;
+                -webkit-flex: 1;
+                height: 100%;
+                padding: 2/$sc+rem 0;
+                background: transparent;
+                line-height: 16/$sc+rem;
+                font-size: 12/$sc+rem;
+                color: #333333;
+                box-sizing: border-box;
+            }
+        }
+        .sign-up-intention {
+            width: 100%;
+            height: 22/$sc+rem;
+            padding: 3/$sc+rem 0;
+            margin-top: 10/$sc+rem;
+            box-shadow: 0 1px 0 0 #E8E8E8;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            span {
+                display: inline-block;
+                line-height: 16/$sc+rem;
+                font-size: 12/$sc+rem;
+                color: #666666;
+                word-break: keep-all;
+            }
+            .intention_ipt {
+                flex: 1;
+                -webkit-flex: 1;
+                height: 100%;
+                padding: 2/$sc+rem 0;
+                background: transparent;
+                line-height: 16/$sc+rem;
+                font-size: 12/$sc+rem;
+                color: #333333;
+                box-sizing: border-box;
+            }
+        }
+        .sign-up-btn {
+            margin-top: 15/$sc+rem;
+            span {
+                display: block;
+                width: 85/$sc+rem;
+                height: 26/$sc+rem;
+                line-height: 26/$sc+rem;
+                text-align: center;
+                background: #FF7C00;
+                font-size: 13/$sc+rem;
+                color: #FFFFFF;
+                margin: 0 auto;
+                border-radius: 2/$sc+rem;
+            }
+        }
+        .sign-up-del {
+            width: 33/$sc+rem;
+            height: 33/$sc+rem;
+            border-radius: 50%;
+            position: absolute;
+            bottom: -50/$sc+rem;
+            left: 0;
+            right: 0;
+            margin: auto;
+            img {
+                display: block;
+                width: 33/$sc+rem;
+                height: 33/$sc+rem;
+            }
+        }
+    }
+    .sign-up-push.show {
+        opacity: 1;
+        z-index: 40;
+    }
+    .sign-up-false {
+        width: 160/$sc+rem;
+        height: 100/$sc+rem;
+        background: #FFFFFF;
+        transition: all .3s;
+        border-radius: 5/$sc+rem;
+        opacity: 0;
+        z-index: -1;
+        box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        i {
+            display: block;
+            width: 41/$sc+rem;
+            height: 26/$sc+rem;
+            margin: 24/$sc+rem auto 0;
+            img {
+                display: block;
+                width: 41/$sc+rem;
+                height: 26/$sc+rem;
+            }
+        }
+        p {
+            width: 100%;
+            margin-top: 10/$sc+rem;
+            line-height: 20/$sc+rem;
+            text-align: center;
+            font-size: 14/$sc+rem;
+            color: #666666;
+            a {
+                line-height: 20/$sc+rem;
+                font-size: 14/$sc+rem;
+                color: #86D646;
+                text-decoration: underline;
+            }
+        }
+    }
+    .sign-up-false.show {
+        opacity: 1;
+        z-index: 40;
+    }
+    .sign-up-success {
+        width: 160/$sc+rem;
+        height: 100/$sc+rem;
+        background: #FFFFFF;
+        transition: all .3s;
+        border-radius: 5/$sc+rem;
+        opacity: 0;
+        z-index: -10;
+        box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        i {
+            display: block;
+            width: 41/$sc+rem;
+            height: 26/$sc+rem;
+            margin: 24/$sc+rem auto 0;
+            img {
+                display: block;
+                width: 41/$sc+rem;
+                height: 26/$sc+rem;
+            }
+        }
+        p {
+            width: 100%;
+            margin-top: 10/$sc+rem;
+            line-height: 20/$sc+rem;
+            text-align: center;
+            font-size: 14/$sc+rem;
+            color: #666666;
+            a {
+                line-height: 20/$sc+rem;
+                font-size: 14/$sc+rem;
+                color: #86D646;
+                text-decoration: underline;
+            }
+        }
+    }
+    .sign-up-success.show {
+        opacity: 1;
+        z-index: 40;
+    }
+}
+
+.iScrollVerticalScrollbar {
+    width: 4/$sc+rem!important;
+    z-index: 1!important;
+}
