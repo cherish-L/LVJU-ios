@@ -6,13 +6,12 @@
 		<meta content="email=no" name="format-detection" />
 		<meta http-equiv="Cache-Control" content="no-cache" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>团购列表(团购详情)</title>
+		<title>购房联盟</title>
 		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/group-buy-details.css" />
+		<link rel="stylesheet" type="text/css" href="css/purchasing-union.css" />
 		<link rel="stylesheet" type="text/css" href="plugins/animate.min.css" />
 		<script type="text/javascript" src="plugins/zepto.min.js"></script>
 		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>
-		<script src="plugins/swiper-3.4.2.min.js"></script>
 		<script type="text/javascript" src="vue/vue.js"></script>
 		<script type="text/javascript" src="plugins/navbarscroll.js"></script>
 		<script>
@@ -20,87 +19,188 @@
 			document.documentElement.style.fontSize = innerWidth / 16 + "px";
 		</script>
 	</head>
+
 	<body>
-		<div class="group-buy-details-container" v-cloak>
-			<header class="group-buy-details-header">
+		<div class="purchasing-union-container" v-cloak>
+			<header class="purchasing-union-header">
 				<div class="signal_bar"></div>
 				<div class="title_bar">
-					<h3 class="title_txt">国祯·棕榈岛</h3>
+					<h3 class="title_txt">购房联盟</h3>
 					<a class="return" href="javascript:;">返回</a>
 					<a class="more" href="javascript:;"></a>
 				</div>
 			</header>
-			<section class="group-buy-details-section">
+			<section class="purchasing-union-section">
 				<div class="section-wrapper">
-					<div class="project-info">
-						<div class="project-info-banner">
-							<img src="img/banner.png"/>
-							<span>查看详情</span>
+					<div class="purchasing-union-info">
+						<div class="purchasing-union-banner">
+							<ul class="banner-ul swiper-wrapper">
+								<li class="banner-li swiper-slide">
+									<img src="img/banner.png" />
+								</li>
+								<li class="banner-li swiper-slide">
+									<img src="img/banner.png" />
+								</li>
+								<li class="banner-li swiper-slide">
+									<img src="img/banner.png" />
+								</li>
+							</ul>
+							<div class="swiper-pagination"></div>
 						</div>
-						<ul class="project-info-ul">
-							<li class="project-info-li activity-title">
-								<div class="activity-title-txt">
-									<div class="activity-title-txt-left">融创观澜湖公园壹号意向登记中舒享高端度假生活</div>
-									<div class="activity-title-txt-right">
-										<span>全款9.5折</span>
-										<span>按揭9.8折</span>
+						<div class="purchasing-union-nav">
+							<ul class="nav-ul">
+								<li class="nav-li">
+									<div class="nav-li-wrapper">
+										<i><img src="img/Crowd.png"/></i>
+										<span>集结</span>
+										<p>人越多优惠越大</p>
 									</div>
+								</li>
+								<li class="nav-li">
+									<div class="nav-li-wrapper">
+										<i><img src="img/rocket.png"/></i>
+										<span>便捷</span>
+										<p>看房不用满城跑</p>
+									</div>
+								</li>
+								<li class="nav-li">
+									<div class="nav-li-wrapper">
+										<i><img src="img/free.png"/></i>
+										<span>看房</span>
+										<p>酒店接机均免费</p>
+									</div>
+								</li>
+								<li class="nav-li">
+									<div class="nav-li-wrapper">
+										<i><img src="img/major.png"/></i>
+										<span>专业</span>
+										<p>让购房者更安心</p>
+									</div>
+								</li>
+							</ul>
+							<div class="nav-btn">
+								<span>立即报名参加购房联盟</span>
+							</div>
+						</div>
+					</div>
+					<div class="purchasing-union-C_service">
+						<div class="C_service-title">
+							<span>联盟客服</span>
+							<span>购房达人</span>
+						</div>
+						<ul class="C_service-ul">
+							<li class="C_service-li" v-for="list in C_service">
+								<div class="C_service-li-portrait"><img :src="list.src" /></div>
+								<div class="C_service-li-info">
+									<div class="pc-info">
+										<span class="name" v-text="list.name"></span>
+										<span class="city" v-text="list.city"></span>
+										<span class="dialog_box"><img src="img/Consultant.png"/></span>
+									</div>
+									<div class="pc-region" v-text="list.region"></div>
 								</div>
-								<div class="activity-title-address">老城经济开发区南一环路北侧2弄21号</div>
-							</li>
-							<li class="project-info-li sale">
-								<span class="tags">
-									<span>减</span>
-								</span>
-								<span class="txt">立减9888元</span>
-							</li>
-							<li class="project-info-li group">
-								<span class="tags">
-									<span>团</span>
-								</span>
-								<span class="txt">参与折扣可享受折上折</span>
-							</li>
-							<li class="project-info-li discount">
-								<span class="tags">
-									<span>惠</span>
-								</span>
-								<span class="txt">旅游看房、免费接机等更多优惠</span>
-							</li>
-							<li class="project-info-li activity-join">
-								<div class="activity-join-txt">
-									<p>已有232人报名</p>
-									<p>
-										距离结束还有
-										<span class="day">20</span>
-										天
-										<span class="hour">15</span>
-										小时
-										<span class="minute">25</span>
-										分
-										<span class="second">22</span>
-										秒
-									</p>
-								</div>
-								<div class="activity-join-btn">立即参团</div>
 							</li>
 						</ul>
 					</div>
-					<div class="project-details">
-						<header class="details-header">项目详情</header>
-						<section class="details-section">
-							<p>万宁首屈一指的养生大盘——石梅山庄规划占地5000亩，社区内涵盖山、林、湖、海、温泉等多种自然养生资源。项目三面环山，一面临海，还毗邻拥有近4000种热带植物的热带花园；在社区内，原始森林充当绿化，空气中负离子的含量高达8万个/立方厘米，可以说是一个天然的大氧吧。</p>
-							<div class="banner">
-								<img src="img/banner.png"/>
-								<span>石梅山庄精装修图</span>
-							</div>
-							<p>万宁石梅山庄花园洋房均带电梯，层数仅为8层；为了使户户能赏到不同的景观，项目的建筑形态即不同于传统的板房更有别于普通的塔楼，虽不是纯正的南北通透，但采光和通风都不是问题。项目为精装交房，户型有开间至三房选择，满足多种购房需求；另外还有半山独栋别墅区，依山傍水、温泉入户、私家泳池等尊贵配套等你来体验。</p>
-						</section>
+					<div class="purchasing-union-message">
+						<div class="message-wrapper">
+							<h3 class="message-title">
+								<span class="message-title-txt">购房联盟动态</span>
+							</h3>
+							<ul class="message-content">
+								<li class="message-content-li">
+									<p class="li-txt">安徽胜姨寄来表扬信 旅居网看房服务再获点赞</p>
+									<p class="li-content">近日我们旅居网收到了来自安徽客户胜姨的表扬信，肯定了我们旅居网，并对我们置业顾问李承慧周到负责的看房动并对我们置业顾问李承慧周到负责的看房动</p>
+								</li>
+								<li class="message-content-li">
+									<p class="li-txt">安徽胜姨寄来表扬信 旅居网看房服务再获点赞</p>
+									<p class="li-content">近日我们旅居网收到了来自安徽客户胜姨的表扬信，肯定了我们旅居网，并对我们置业顾问李承慧周到负责的看房动并对我们置业顾问李承慧周到负责的看房动</p>
+								</li>
+							</ul>
+						</div>
+						<div class="message-btn">查看更多动态</div>
+					</div>
+					<div class="purchasing-union-recommend">
+						<ul class="recommend-content-ul">
+							<li class="recommend-content-li" v-for="list in recommend">
+								<div class="recommend-content-li-img">
+									<img :src="list.src" />
+									<span v-text="list.lable"></span>
+								</div>
+								<div class="recommend-content-li-txt">
+									<div class="title">
+										<span class="title-txt" v-text="list.title_txt"></span>
+										<span class="title-box" v-text="list.title_box" :class="{
+													'tags1': list.title_box === '推荐',
+													'tags2': list.title_box === '在售',
+													'tags3': list.title_box === '热卖',
+													'tags4': list.title_box === '折扣'
+												}">
+											</span>
+									</div>
+									<div class="info">
+										<span class="txt" v-text="list.info_txt_f"></span>
+										<span class="line">|</span>
+										<span class="txt" v-text="list.info_txt_t"></span>
+										<span class="line">|</span>
+										<span class="txt" v-text="list.info_txt_th"></span>
+									</div>
+									<div class="demand">
+										<span v-for="items in list.tags" v-text="items" :class="{
+													'state1': items === '入户花园',
+													'state2': items === '刚需婚房',
+													'state3': items === '不限购',
+												}">
+											</span>
+									</div>
+									<div class="average-price">
+										<span class="price" v-text="list.price"></span>
+										<span class="acreage" v-text="list.acreage"></span>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="purchasing-union-QA">
+						<div class="QA-wrapper">
+							<h3 class="QA-title">
+								<span class="QA-title-txt">咨询问答</span>
+								<span class="QA-title-link">我要咨询</span>
+							</h3>
+							<ul class="QA-content">
+								<li class="QA-content-li">
+									<div class="QA-content-li-left">
+										<i class="head-portrait"><img src="img/Crowd.png"/></i>
+										<p class="name">鹿先生</p>
+									</div>
+									<div class="QA-content-li-right">
+										<p class="problem">南国威尼斯城2期12号楼什么时候开盘？</p>
+										<p class="answer">您好，很高兴为您服务，现在南国威尼斯城2期12号楼还没开盘，我们为您推荐相似楼盘：恒大山水汇园，欢迎您致电咨询。您好，很高兴为您服务，现在南国威尼斯城2期12号楼还没开盘，我们为您推荐相似楼盘：恒大山水汇园，欢迎您致电咨询。</p>
+										<div class="full_text">全文</div>
+										<div class="send_time">2017.02.02</div>
+									</div>
+								</li>
+								<li class="QA-content-li">
+									<div class="QA-content-li-left">
+										<i class="head-portrait"><img src="img/Crowd.png"/></i>
+										<p class="name">鹿先生</p>
+									</div>
+									<div class="QA-content-li-right">
+										<p class="problem">南国威尼斯城2期12号楼什么时候开盘？</p>
+										<p class="answer">您好，很高兴为您服务，现在南国威尼斯城2期12号楼还没开盘，我们为您推荐相似楼盘：恒大山水汇园，欢迎您致电咨询。</p>
+										<div class="full_text">全文</div>
+										<div class="send_time">2017.02.02</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="QA-btn">查看更多咨询</div>
 					</div>
 				</div>
 			</section>
-			<div class="group-buy-details-Mask"></div>
+			<div class="purchasing-union-Mask"></div>
 			<div class="sign-up-push">
-				<h3 class="sign-up-title">参与团购</h3>
+				<h3 class="sign-up-title">参加购房联盟</h3>
 				<div class="sign-up-name">
 					<span>姓名：</span>
 					<input class="name_ipt" type="text" name="" id=""/>
@@ -124,5 +224,100 @@
 			</div>
 		</div>
 	</body>
-	<script type="text/javascript" src="js/group-buy-details.js"></script>
+	<script type="text/javascript">
+		var myVue = new Vue({
+			el: ".purchasing-union-container",
+			data: {
+				C_service: [{
+						src: 'img/C_service.jpg',
+						name: '王珍珍',
+						city: '浙江省宁波市',
+						region: '负责万宁、陵水、保亭、五指山项目，对发展规划，风土人情，等掌握较为透彻，能根据客户需求帮客户在海南选择适合自己的家。'
+					},
+					{
+						src: 'img/C_service.jpg',
+						name: '王珍珍',
+						city: '浙江省宁波市',
+						region: '负责万宁、陵水、保亭、五指山项目，对发展规划，风土人情，等掌握较为透彻，能根据客户需求帮客户在海南选择适合自己的家。'
+					},
+					{
+						src: 'img/C_service.jpg',
+						name: '王珍珍',
+						city: '浙江省宁波市',
+						region: '负责万宁、陵水、保亭、五指山项目，对发展规划，风土人情，等掌握较为透彻，能根据客户需求帮客户在海南选择适合自己的家。'
+					}
+				],
+				recommend: [{
+						src: 'img/style.png',
+						lable: '全 款95折',
+						title_txt: '融创观澜湖公寓',
+						title_box: '推荐',
+						info_txt_f: '75-105m²',
+						info_txt_t: '2-3室',
+						info_txt_th: '龙昆南',
+						price: '12500元/m²',
+						acreage: '建面 92-235m²',
+						tags: ['入户花园', '刚需婚房', '不限购']
+
+					},
+					{
+						src: 'img/style.png',
+						title_txt: '融创观澜湖公寓',
+						title_box: '在售',
+						info_txt_f: '75-105m²',
+						info_txt_t: '2-3室',
+						info_txt_th: '龙昆南',
+						price: '12500元/m²',
+						acreage: '建面 92-235m²',
+						tags: ['刚需婚房', '不限购']
+					},
+					{
+						src: 'img/style.png',
+						lable: '预 售立 减',
+						title_txt: '融创观澜湖公寓',
+						title_box: '热卖',
+						info_txt_f: '75-105m²',
+						info_txt_t: '2-3室',
+						info_txt_th: '龙昆南',
+						price: '12500元/m²',
+						acreage: '建面 92-235m²',
+						tags: ['入户花园', '刚需婚房', '不限购']
+					},
+					{
+						src: 'img/style.png',
+						title_txt: '融创观澜湖公寓',
+						title_box: '折扣',
+						info_txt_f: '75-105m²',
+						info_txt_t: '2-3室',
+						info_txt_th: '龙昆南',
+						price: '12500元/m²',
+						acreage: '建面 92-235m²',
+						tags: ['入户花园', '不限购']
+					},
+					{
+						src: 'img/style.png',
+						lable: '预 售立 减',
+						title_txt: '融创观澜湖公寓',
+						title_box: '在售',
+						info_txt_f: '75-105m²',
+						info_txt_t: '2-3室',
+						info_txt_th: '龙昆南',
+						price: '12500元/m²',
+						acreage: '建面 92-235m²',
+						tags: ['入户花园', '刚需婚房']
+					}
+				]
+			}
+		})
+	</script>
+	<script src="plugins/swiper-3.4.2.min.js"></script>
+	<script type="text/javascript">
+		var mySwiper = new Swiper('.purchasing-union-banner', {
+			pagination: '.swiper-pagination',
+			autoplay: 3000,
+			autoplayDisableOnInteraction: false
+		})
+	</script>
+	<script type="text/javascript" src="js/purchasing-union.js"></script>
+
 </html>
