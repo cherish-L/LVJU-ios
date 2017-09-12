@@ -298,7 +298,6 @@ $sc:20;
                             li{
                                 width: 25%;
                                 height: 32/$sc+rem;
-                                padding: 8/$sc+rem 0;
                                 display: flex;
                                 align-items: center;
                                 box-sizing: border-box;
@@ -309,14 +308,15 @@ $sc:20;
                                 label{
                                     display: inline-block;
                                     font-size: 12/$sc+rem;
-                                    line-height: 13/$sc+rem;
+                                    height: 32/$sc+rem;
+                                    line-height: 32/$sc+rem;
                                     padding-left: 17/$sc+rem;
                                     color: #333333;
-                                    background: url(../img/Radio-select.png) left top no-repeat;
+                                    background: url(../img/Radio-select.png) left center no-repeat;
                                     background-size: 13/$sc+rem 13/$sc+rem;
                                 }
                                 label.select{
-                                    background: url(../img/Radio-selected.png) left top no-repeat;
+                                    background: url(../img/Radio-selected.png) left center no-repeat;
                                     background-size: 13/$sc+rem 13/$sc+rem;
                                 }
                             }
@@ -360,7 +360,6 @@ $sc:20;
                             li{
                                 width: 33.33%;
                                 height: 32/$sc+rem;
-                                padding: 8/$sc+rem 0;
                                 display: flex;
                                 align-items: center;
                                 box-sizing: border-box;
@@ -371,14 +370,15 @@ $sc:20;
                                 label{
                                     display: inline-block;
                                     font-size: 12/$sc+rem;
-                                    line-height: 13/$sc+rem;
+                                    height: 32/$sc+rem;
+                                    line-height: 32/$sc+rem;
                                     padding-left: 17/$sc+rem;
                                     color: #333333;
-                                    background: url(../img/Radio-select.png) left top no-repeat;
+                                    background: url(../img/Radio-select.png) left center no-repeat;
                                     background-size: 13/$sc+rem 13/$sc+rem;
                                 }
                                 label.select{
-                                    background: url(../img/Radio-selected.png) left top no-repeat;
+                                    background: url(../img/Radio-selected.png) left center no-repeat;
                                     background-size: 13/$sc+rem 13/$sc+rem;
                                 }
                             }
@@ -419,7 +419,6 @@ $sc:20;
                             li{
                                 width: 33.33%;
                                 height: 32/$sc+rem;
-                                padding: 8/$sc+rem 0;
                                 display: flex;
                                 align-items: center;
                                 box-sizing: border-box;
@@ -430,15 +429,16 @@ $sc:20;
                                 label{
                                     display: inline-block;
                                     font-size: 12/$sc+rem;
-                                    line-height: 13/$sc+rem;
+                                    height: 32/$sc+rem;
+                                    line-height: 32/$sc+rem;
                                     padding-left: 17/$sc+rem;
                                     color: #333333;
                                     letter-spacing: -0.5/$sc+rem;
-                                    background: url(../img/Radio-select.png) left top no-repeat;
+                                    background: url(../img/Radio-select.png) left center no-repeat;
                                     background-size: 13/$sc+rem 13/$sc+rem;
                                 }
                                 label.select{
-                                    background: url(../img/Radio-selected.png) left top no-repeat;
+                                    background: url(../img/Radio-selected.png) left center no-repeat;
                                     background-size: 13/$sc+rem 13/$sc+rem;
                                 }
                             }
@@ -479,7 +479,6 @@ $sc:20;
                             li{
                                 width: 33.33%;
                                 height: 32/$sc+rem;
-                                padding: 8/$sc+rem 0;
                                 display: flex;
                                 align-items: center;
                                 box-sizing: border-box;
@@ -490,15 +489,16 @@ $sc:20;
                                 label{
                                     display: inline-block;
                                     font-size: 12/$sc+rem;
-                                    line-height: 13/$sc+rem;
+                                    height: 32/$sc+rem;
+                                    line-height: 32/$sc+rem;
                                     padding-left: 17/$sc+rem;
                                     color: #333333;
                                     letter-spacing: -0.5/$sc+rem;
-                                    background: url(../img/Radio-select.png) left top no-repeat;
+                                    background: url(../img/Radio-select.png) left center no-repeat;
                                     background-size: 13/$sc+rem 13/$sc+rem;
                                 }
                                 label.select{
-                                    background: url(../img/Radio-selected.png) left top no-repeat;
+                                    background: url(../img/Radio-selected.png) left center no-repeat;
                                     background-size: 13/$sc+rem 13/$sc+rem;
                                 }
                             }
@@ -558,15 +558,16 @@ $sc:20;
                                 label{
                                     display: inline-block;
                                     font-size: 12/$sc+rem;
-                                    line-height: 13/$sc+rem;
+                                    height: 27/$sc+rem;
+                                    line-height: 27/$sc+rem;
                                     padding-left: 17/$sc+rem;
                                     color: #333333;
                                     white-space: nowrap;
-                                    background: url(../img/Radio-select.png) left top no-repeat;
+                                    background: url(../img/Radio-select.png) left center no-repeat;
                                     background-size: 13/$sc+rem 13/$sc+rem;
                                 }
                                 label.select{
-                                    background: url(../img/Radio-selected.png) left top no-repeat;
+                                    background: url(../img/Radio-selected.png) left center no-repeat;
                                     background-size: 13/$sc+rem 13/$sc+rem;
                                 }
                             }
