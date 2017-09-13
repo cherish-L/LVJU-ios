@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta content="email=no" name="format-detection" />
+		<meta http-equiv="Cache-Control" content="no-cache" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>二手房租房</title>
+		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/rental-list.css" />
+		<link rel="stylesheet" type="text/css" href="plugins/animate.min.css" />
+		<script type="text/javascript" src="plugins/zepto.min.js"></script>
+		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>
+		<script src="plugins/swiper-3.4.2.min.js"></script>
+		<script type="text/javascript" src="vue/vue.js"></script>
+		<script type="text/javascript" src="plugins/navbarscroll.js"></script>
+		<script>
+			//适配
+			document.documentElement.style.fontSize = innerWidth / 16 + "px";
+		</script>
+	</head>
+
+	<body>
+		<div class="rental-list-container" v-cloak>
+			<header class="rental-list-header">
+				<div class="signal_bar"></div>
+				<div class="title_bar">
+					<h3 class="title_txt">二手房租房</h3>
+					<a class="return" href="javascript:;">返回</a>
+					<a class="more" href="javascript:;"></a>
+				</div>
+			</header>
+			<div class="rental-list-column">
+				<div class="rental-list-search">
+					<input class="B_search" type="text" name="" id="" placeholder="请输入楼盘名称或区域" />
+					<i class="Sign-up"></i>
+				</div>
+				<div class="rental-list-demand">
+					<ul class="rental-list-demand-ul">
+						<li class="demand-li"><span>二手房出售</span></li>
+						<li class="demand-li"><span>二手房求购</span></li>
+						<li class="demand-li"><span>房屋出售</span></li>
+						<li class="demand-li"><span>房屋求租</span></li>
+					</ul>
+					<div class="found-for-you">
+						<span>为您找到152个楼盘</span>
+					</div>
+				</div>
+			</div>
+			<section class="rental-list-section">
+				<div class="section-wrapper">
+					<div class="section-recommend">
+						<div class="section-recommend-content">
+							<ul class="recommend-content-ul">
+								<li class="recommend-content-li" v-for="list in recommend">
+									<div class="recommend-content-li-img">
+										<img :src="list.src" />
+									</div>
+									<div class="recommend-content-li-txt">
+										<div class="title">
+											<span class="title-txt" v-text="list.title_txt"></span>
+											<span class="title-date" v-text="list.title_date"></span>
+										</div>
+										<div class="info">
+											<span class="txt" v-text="list.info_txt_s"></span>
+											<span class="line">|</span>
+											<span class="txt" v-text="list.info_txt_f"></span>
+											<span class="line">|</span>
+											<span class="txt" v-text="list.info_txt_t"></span>
+											<span class="line">|</span>
+											<span class="txt" v-text="list.info_txt_th"></span>
+										</div>
+										<div class="demand">
+											<span v-for="items in list.tags" v-text="items" :class="{
+													'state1': items === '家具配套',
+													'state2': items === '交通便利',
+													'state3': items === '海景房',
+												}">
+											</span>
+										</div>
+										<div class="average-price">
+											<span class="price" v-text="list.price"></span>
+											<span class="acreage" v-text="list.acreage"></span>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var myVue = new Vue({
+			el: ".rental-list-container",
+			data: {
+				recommend: [{
+						src: 'img/style.png',
+						title_txt: '威尼斯城',
+						title_date: '1月前',
+						info_txt_s: '1房1厨1卫',
+						info_txt_f: '2-3室',
+						info_txt_t: '56m²',
+						info_txt_th: '龙昆南',
+						price: '45.00万元',
+						acreage: '参考单价：5000元',
+						tags: ['家具配套', '交通便利', '海景房']
+
+					},{
+						src: 'img/style.png',
+						title_txt: '威尼斯城',
+						title_date: '1月前',
+						info_txt_s: '1房1厨1卫',
+						info_txt_f: '2-3室',
+						info_txt_t: '56m²',
+						info_txt_th: '龙昆南',
+						price: '45.00万元',
+						acreage: '参考单价：5000元',
+						tags: ['家具配套', '交通便利', '海景房']
+
+					},{
+						src: 'img/style.png',
+						title_txt: '威尼斯城',
+						title_date: '1月前',
+						info_txt_s: '1房1厨1卫',
+						info_txt_f: '2-3室',
+						info_txt_t: '56m²',
+						info_txt_th: '龙昆南',
+						price: '45.00万元',
+						acreage: '参考单价：5000元',
+						tags: ['家具配套', '交通便利', '海景房']
+
+					},{
+						src: 'img/style.png',
+						title_txt: '威尼斯城',
+						title_date: '1月前',
+						info_txt_s: '1房1厨1卫',
+						info_txt_f: '2-3室',
+						info_txt_t: '56m²',
+						info_txt_th: '龙昆南',
+						price: '45.00万元',
+						acreage: '参考单价：5000元',
+						tags: ['家具配套', '交通便利', '海景房']
+
+					},{
+						src: 'img/style.png',
+						title_txt: '威尼斯城',
+						title_date: '1月前',
+						info_txt_s: '1房1厨1卫',
+						info_txt_f: '2-3室',
+						info_txt_t: '56m²',
+						info_txt_th: '龙昆南',
+						price: '45.00万元',
+						acreage: '参考单价：5000元',
+						tags: ['家具配套', '交通便利', '海景房']
+
+					},{
+						src: 'img/style.png',
+						title_txt: '威尼斯城',
+						title_date: '1月前',
+						info_txt_s: '1房1厨1卫',
+						info_txt_f: '2-3室',
+						info_txt_t: '56m²',
+						info_txt_th: '龙昆南',
+						price: '45.00万元',
+						acreage: '参考单价：5000元',
+						tags: ['家具配套', '交通便利', '海景房']
+
+					}
+				]
+			}
+		})
+	</script>
+	<script type="text/javascript" src="js/rental-list.js"></script>
+
+</html>
