@@ -999,12 +999,10 @@ $sc:20;
                     height: 100%;
                     background: #333333;
                     display: flex;
-                    display: -webkit-flex;
                     flex-direction: column;
                     .top-txt{
                         width: 100%;
-                        flex: 1;
-                        -webkit-flex: 1;
+                        height: 25%;
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -1024,8 +1022,18 @@ $sc:20;
                         background: #ffffff;
                     }
                     .bottom-nav{
-                        flex: 1.55;
-                        -webkit-flex: 1.55;
+                        flex: 1;
+                        -webkit-flex: 1;
+                        position: relative;
+                        ul{
+                            width: 100%;
+                            position: absolute;
+                            top: 10%;
+                            li{
+                                text-align: center;
+                                color: #ffffff;
+                            }
+                        }
                     }
                 }
             }
@@ -1075,6 +1083,16 @@ $sc:20;
                         .sale-name{
                             padding-right: 8/$sc+rem;
                         }
+                    }
+                    .img-box{
+                        width: 80%;
+                        height: 100%;
+                        background: #ffffff;
+                    }
+                    .bottom-nav{
+                        display: none;
+                        flex: 1.55;
+                        -webkit-flex: 1.55;
                     }
                 }
             }

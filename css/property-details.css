@@ -1136,13 +1136,11 @@ li {
     height: 100%;
     background: #333333;
     display: flex;
-    display: -webkit-flex;
     flex-direction: column;
   }
   .property-details-container .album-push .album-pushsection .section-wrapper .top-txt {
     width: 100%;
-    flex: 1;
-    -webkit-flex: 1;
+    height: 25%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1162,8 +1160,18 @@ li {
     background: #ffffff;
   }
   .property-details-container .album-push .album-pushsection .section-wrapper .bottom-nav {
-    flex: 1.55;
-    -webkit-flex: 1.55;
+    flex: 1;
+    -webkit-flex: 1;
+    position: relative;
+  }
+  .property-details-container .album-push .album-pushsection .section-wrapper .bottom-nav ul {
+    width: 100%;
+    position: absolute;
+    top: 10%;
+  }
+  .property-details-container .album-push .album-pushsection .section-wrapper .bottom-nav ul li {
+    text-align: center;
+    color: #ffffff;
   }
 }
 
@@ -1214,6 +1222,16 @@ li {
   }
   .property-details-container .album-push .album-pushsection .section-wrapper .top-txt .sale-name {
     padding-right: 0.4rem;
+  }
+  .property-details-container .album-push .album-pushsection .section-wrapper .img-box {
+    width: 80%;
+    height: 100%;
+    background: #ffffff;
+  }
+  .property-details-container .album-push .album-pushsection .section-wrapper .bottom-nav {
+    display: none;
+    flex: 1.55;
+    -webkit-flex: 1.55;
   }
 }
 

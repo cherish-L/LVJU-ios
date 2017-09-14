@@ -1,4 +1,5 @@
 $(function(){
+	
 	$(".property-details-section").bind("touchstart",function(){
 		property_detailsS.refresh()
 	})
