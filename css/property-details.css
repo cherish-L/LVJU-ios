@@ -1138,7 +1138,7 @@ li {
     display: flex;
     flex-direction: column;
   }
-  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt-vertical {
+  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt {
     width: 100%;
     flex: 1;
     -webkit-flex: 1;
@@ -1146,17 +1146,14 @@ li {
     justify-content: center;
     align-items: center;
   }
-  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt-vertical span {
+  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt span {
     font-family: PingFangSC-Medium;
     font-size: 0.65rem;
     line-height: 0.9rem;
     color: #FFFFFF;
   }
-  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt-vertical .sale-name {
+  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt .sale-name {
     margin-right: 0.4rem;
-  }
-  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt-transverse {
-    display: none;
   }
   .property-details-container .album-push .album-pushsection .section-wrapper .img-box {
     width: 100%;
@@ -1196,11 +1193,11 @@ li {
     height: 100%;
     position: relative;
   }
-  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt-transverse {
+  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt {
     width: 33.33%;
-    height: 0.5rem;
+    height: 0.9rem;
     position: absolute;
-    top: 0.3rem;
+    top: 0.5rem;
     left: 0;
     right: 0;
     margin: auto;
@@ -1208,17 +1205,14 @@ li {
     justify-content: center;
     align-items: center;
   }
-  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt-transverse span {
+  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt span {
     font-family: PingFangSC-Medium;
-    font-size: 0.35rem;
-    line-height: 0.5rem;
+    font-size: 0.65rem;
+    line-height: 0.9rem;
     color: #FFFFFF;
   }
-  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt-transverse .sale-name {
-    padding-right: 0.25rem;
-  }
-  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt-vertical {
-    display: none;
+  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt .sale-name {
+    padding-right: 0.4rem;
   }
 }
 
