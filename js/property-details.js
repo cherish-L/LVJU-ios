@@ -1,11 +1,4 @@
 $(function(){
-	var album_h=$(".album-pushsection").height()
-
-
-
-
-
-
 	$(".property-details-section").bind("touchstart",function(){
 		property_detailsS.refresh()
 	})

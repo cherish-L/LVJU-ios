@@ -999,6 +999,7 @@ $sc:20;
                     height: 100%;
                     background: #333333;
                     display: flex;
+                    display: -webkit-flex;
                     flex-direction: column;
                     .top-txt{
                         width: 100%;
