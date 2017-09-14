@@ -1138,7 +1138,7 @@ li {
     display: flex;
     flex-direction: column;
   }
-  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt-vertical {
+  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt {
     width: 100%;
     flex: 1;
     -webkit-flex: 1;
@@ -1146,36 +1146,14 @@ li {
     justify-content: center;
     align-items: center;
   }
-  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt-vertical span {
+  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt span {
     font-family: PingFangSC-Medium;
     font-size: 0.65rem;
     line-height: 0.9rem;
     color: #FFFFFF;
   }
-  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt-vertical .sale-name {
+  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt .sale-name {
     margin-right: 0.4rem;
-  }
-  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt-transverse {
-    width: 33.33%;
-    height: 0;
-    overflow: hidden;
-    position: absolute;
-    top: 0.5rem;
-    left: 0;
-    right: 0;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt-transverse span {
-    font-family: PingFangSC-Medium;
-    font-size: 0.65rem;
-    line-height: 0.9rem;
-    color: #FFFFFF;
-  }
-  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt-transverse .sale-name {
-    padding-right: 0.4rem;
   }
   .property-details-container .album-push .album-pushsection .section-wrapper .img-box {
     width: 100%;
@@ -1215,8 +1193,8 @@ li {
     height: 100%;
     position: relative;
   }
-  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt-transverse {
-    width: 33.33%;
+  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt {
+    width: 50%;
     height: 0.9rem;
     position: absolute;
     top: 0.5rem;
@@ -1227,13 +1205,13 @@ li {
     justify-content: center;
     align-items: center;
   }
-  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt-transverse span {
+  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt span {
     font-family: PingFangSC-Medium;
     font-size: 0.65rem;
     line-height: 0.9rem;
     color: #FFFFFF;
   }
-  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt-transverse .sale-name {
+  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt .sale-name {
     padding-right: 0.4rem;
   }
 }
