@@ -1167,7 +1167,7 @@ li {
   .property-details-container .album-push .album-pushsection .section-wrapper .bottom-nav ul {
     width: 100%;
     position: absolute;
-    top: 10%;
+    top: 25%;
   }
   .property-details-container .album-push .album-pushsection .section-wrapper .bottom-nav ul li {
     text-align: center;
