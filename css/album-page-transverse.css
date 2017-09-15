@@ -1122,7 +1122,7 @@ li {
     top: 0.65rem;
     right: 0.4rem;
   }
-  .property-details-container .album-push .album-pushsection {
+  .property-details-container .album-push .album-pushsection-vertical {
     flex: 1;
     -webkit-flex: 1;
     overflow: hidden;
@@ -1131,73 +1131,59 @@ li {
     -webkit-box-sizing: border-box;
     position: relative;
   }
-  .property-details-container .album-push .album-pushsection .section-wrapper {
+  .property-details-container .album-push .album-pushsection-vertical .section-wrapper {
     width: 100%;
     height: 100%;
     background: #333333;
     display: -webkit-flex;
     flex-direction: column;
   }
-  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt-vertical {
+  .property-details-container .album-push .album-pushsection-vertical .section-wrapper .top-txt {
     width: 100%;
     display: -webkit-flex;
     justify-content: center;
     align-items: center;
   }
-  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt-vertical span {
-    font-family: PingFangSC-Medium;
-    font-size: 0.65rem;
-    line-height: 0.9rem;
-    color: #FFFFFF;
-  }
-  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt-vertical .sale-name {
-    margin-right: 0.4rem;
-  }
-  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt-transverse {
-    display: none;
-    width: 50%;
-    height: 0.9rem;
-    position: absolute;
-    top: 0.5rem;
-    left: 0;
-    right: 0;
-    margin: auto;
-  }
-  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt-transverse .transverse-box {
+  .property-details-container .album-push .album-pushsection-vertical .section-wrapper .top-txt .top-txt-box {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt-transverse .transverse-box span {
-    float: left;
+  .property-details-container .album-push .album-pushsection-vertical .section-wrapper .top-txt .top-txt-box span {
     font-family: PingFangSC-Medium;
     font-size: 0.65rem;
     line-height: 0.9rem;
     color: #FFFFFF;
   }
-  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt-transverse .transverse-box .sale-name {
-    padding-right: 0.4rem;
+  .property-details-container .album-push .album-pushsection-vertical .section-wrapper .top-txt .top-txt-box .sale-name {
+    margin-right: 0.4rem;
   }
-  .property-details-container .album-push .album-pushsection .section-wrapper .img-box {
+  .property-details-container .album-push .album-pushsection-vertical .section-wrapper .img-box {
     width: 100%;
     height: 10.5rem;
     background: #ffffff;
   }
-  .property-details-container .album-push .album-pushsection .section-wrapper .bottom-nav {
+  .property-details-container .album-push .album-pushsection-vertical .section-wrapper .bottom-nav {
     width: 100%;
     position: relative;
   }
-  .property-details-container .album-push .album-pushsection .section-wrapper .bottom-nav ul {
+  .property-details-container .album-push .album-pushsection-vertical .section-wrapper .bottom-nav ul {
     width: 100%;
-    height: 0.8rem;
+    height: 1.5rem;
     position: absolute;
-    top: 25%;
+    top: 30%;
   }
-  .property-details-container .album-push .album-pushsection .section-wrapper .bottom-nav ul li {
+  .property-details-container .album-push .album-pushsection-vertical .section-wrapper .bottom-nav ul li {
+    font-family: PingFangSC-Medium;
+    font-size: 0.6rem;
+    line-height: 1.5rem;
     text-align: center;
     color: #ffffff;
+  }
+  .property-details-container .album-push .album-pushsection-transverse {
+    display: none;
   }
 }
 
@@ -1217,18 +1203,21 @@ li {
   .property-details-container .album-push .album-pushheader {
     display: none;
   }
-  .property-details-container .album-push .album-pushsection {
+  .property-details-container .album-push .album-pushsection-vertical {
+    display: none;
+  }
+  .property-details-container .album-push .album-pushsection-transverse {
     width: 100%;
     height: 100%;
     position: relative;
     background: #333333;
   }
-  .property-details-container .album-push .album-pushsection .section-wrapper {
+  .property-details-container .album-push .album-pushsection-transverse .section-wrapper {
     width: 100%;
     height: 100%;
     position: relative;
   }
-  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt-transverse {
+  .property-details-container .album-push .album-pushsection-transverse .section-wrapper .top-txt {
     width: 50%;
     height: 0.9rem;
     position: absolute;
@@ -1237,36 +1226,48 @@ li {
     right: 0;
     margin: auto;
   }
-  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt-transverse .transverse-box {
+  .property-details-container .album-push .album-pushsection-transverse .section-wrapper .top-txt .top-txt-box {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt-transverse .transverse-box span {
+  .property-details-container .album-push .album-pushsection-transverse .section-wrapper .top-txt .top-txt-box span {
     float: left;
     font-family: PingFangSC-Medium;
     font-size: 0.65rem;
     line-height: 0.9rem;
     color: #FFFFFF;
   }
-  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt-transverse .transverse-box .sale-name {
+  .property-details-container .album-push .album-pushsection-transverse .section-wrapper .top-txt .top-txt-box .sale-name {
     padding-right: 0.4rem;
   }
-  .property-details-container .album-push .album-pushsection .section-wrapper .top-txt-vertical {
-    display: none;
-  }
-  .property-details-container .album-push .album-pushsection .section-wrapper .img-box {
+  .property-details-container .album-push .album-pushsection-transverse .section-wrapper .img-box {
     width: 86%;
     height: 100%;
     margin: 0 auto;
     background: red;
   }
-  .property-details-container .album-push .album-pushsection .section-wrapper .bottom-nav {
-    display: none;
-    flex: 1.55;
-    -webkit-flex: 1.55;
+  .property-details-container .album-push .album-pushsection-transverse .section-wrapper .bottom-nav {
+    width: 100%;
+    height: 1rem;
+    position: relative;
+    position: absolute;
+    bottom: 0;
+  }
+  .property-details-container .album-push .album-pushsection-transverse .section-wrapper .bottom-nav ul {
+    width: 100%;
+    height: 0.8rem;
+    position: absolute;
+    top: 25%;
+  }
+  .property-details-container .album-push .album-pushsection-transverse .section-wrapper .bottom-nav ul li {
+    font-family: PingFangSC-Medium;
+    font-size: 0.6rem;
+    line-height: 0.8rem;
+    text-align: center;
+    color: #ffffff;
   }
 }
 
