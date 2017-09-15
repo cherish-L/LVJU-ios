@@ -144,6 +144,7 @@ li {
   }
   .album-page .album-page-section .section-wrapper-vertical .img-box {
     width: 100%;
+    background: #333333;
   }
   .album-page .album-page-section .section-wrapper-vertical .img-box .img-box-ul {
     width: 100%;
@@ -153,18 +154,20 @@ li {
   .album-page .album-page-section .section-wrapper-vertical .bottom-nav {
     width: 100%;
     height: 0.9rem;
-    overflow-x: auto;
     padding: 0 0.6rem;
     position: absolute;
     bottom: 20%;
     box-sizing: border-box;
   }
-  .album-page .album-page-section .section-wrapper-vertical .bottom-nav ul {
+  .album-page .album-page-section .section-wrapper-vertical .bottom-nav .bottom-nav-box {
+    width: 100%;
+    height: 100%;
+  }
+  .album-page .album-page-section .section-wrapper-vertical .bottom-nav .bottom-nav-box ul {
     height: 0.9rem;
     padding-left: 5px;
-    padding-right: 0.6rem;
   }
-  .album-page .album-page-section .section-wrapper-vertical .bottom-nav ul li {
+  .album-page .album-page-section .section-wrapper-vertical .bottom-nav .bottom-nav-box ul li {
     display: inline-block;
     float: left;
     padding-right: 0.75rem;
@@ -174,10 +177,10 @@ li {
     text-align: center;
     color: #ffffff;
   }
-  .album-page .album-page-section .section-wrapper-vertical .bottom-nav ul li.select {
+  .album-page .album-page-section .section-wrapper-vertical .bottom-nav .bottom-nav-box ul li.select {
     color: #FF7C00;
   }
-  .album-page .album-page-section .section-wrapper-vertical .bottom-nav ul li:last-child {
+  .album-page .album-page-section .section-wrapper-vertical .bottom-nav .bottom-nav-box ul li:last-child {
     padding-right: 0;
   }
   .album-page .album-page-section .section-wrapper-transverse {
@@ -185,6 +188,7 @@ li {
     height: 100%;
     background: #333333;
     position: relative;
+    z-index: -999;
   }
   .album-page .album-page-section .section-wrapper-transverse .top-txt {
     width: 50%;
@@ -295,30 +299,34 @@ li {
   }
   .album-page .album-page-section .section-wrapper-transverse .bottom-nav {
     width: 100%;
-    height: 0.6rem;
-    line-height: 0.6rem;
+    height: 0.9rem;
+    line-height: 0.9rem;
     text-align: center;
     position: absolute;
     bottom: 0.5rem;
   }
-  .album-page .album-page-section .section-wrapper-transverse .bottom-nav ul {
-    display: inline-block;
-    height: 0.6rem;
+  .album-page .album-page-section .section-wrapper-transverse .bottom-nav .bottom-nav-box {
+    width: 100%;
+    height: 100%;
   }
-  .album-page .album-page-section .section-wrapper-transverse .bottom-nav ul li {
+  .album-page .album-page-section .section-wrapper-transverse .bottom-nav .bottom-nav-box ul {
+    display: inline-block;
+    height: 0.9rem;
+  }
+  .album-page .album-page-section .section-wrapper-transverse .bottom-nav .bottom-nav-box ul li {
     display: inline-block;
     float: left;
     padding-right: 0.75rem;
     font-family: PingFangSC-Medium;
     font-size: 0.6rem;
-    line-height: 0.6rem;
+    line-height: 0.9rem;
     text-align: center;
     color: #ffffff;
   }
-  .album-page .album-page-section .section-wrapper-transverse .bottom-nav ul li.select {
+  .album-page .album-page-section .section-wrapper-transverse .bottom-nav .bottom-nav-box ul li.select {
     color: #FF7C00;
   }
-  .album-page .album-page-section .section-wrapper-transverse .bottom-nav ul li:last-child {
+  .album-page .album-page-section .section-wrapper-transverse .bottom-nav .bottom-nav-box ul li:last-child {
     padding-right: 0;
   }
   .album-page .album-page-section .section-wrapper-vertical {

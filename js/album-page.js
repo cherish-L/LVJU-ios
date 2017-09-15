@@ -37,4 +37,11 @@ $(function() {
 		$(this).addClass("select").siblings().removeClass("select")
 		$(".album-page-section .section-wrapper-vertical .bottom-nav-ul li").eq(_this_index).addClass("select").siblings().removeClass("select")
 	})
+	
+	
+	var verticalS = new IScroll('.section-wrapper-vertical .bottom-nav .bottom-nav-box', {
+		scrollbars: false,
+		scrollX: true,
+		scrollY: false
+	})
 })
