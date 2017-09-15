@@ -1,0 +1,330 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+::-moz-placeholder {
+    color: #999999;
+}
+
+::-webkit-input-placeholder {
+    color: #999999;
+}
+
+:-ms-input-placeholder {
+    color: #999999;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: PingFangSC-Regular;
+    background: #FAFAFA;
+}
+
+input,
+textarea {
+    outline: none;
+    border: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+li {
+    list-style: none;
+}
+
+$sc:20;
+@media screen and (orientation: portrait) {
+    /*竖屏 css*/
+    .album-page {
+        width: 100%;
+        height: 100%;
+        background: #333333;
+        display: flex;
+        flex-direction: column;
+        .album-page-header {
+            width: 100%;
+            background: #47464b;
+            .title_bar {
+                width: 100%;
+                height: 44/$sc+rem;
+                line-height: 44/$sc+rem;
+                position: relative;
+                .title_txt {
+                    font-size: 17/$sc+rem;
+                    color: #FFFFFF;
+                    text-align: center;
+                    font-weight: normal;
+                }
+                .return {
+                    display: block;
+                    height: 18/$sc+rem;
+                    line-height: 18/$sc+rem;
+                    padding-left: 16/$sc+rem;
+                    font-size: 17/$sc+rem;
+                    color: #ffffff;
+                    background: url(../img/return.png) no-repeat;
+                    background-size: 9/$sc+rem 16/$sc+rem;
+                    background-position-x: left;
+                    background-position-y: 1/$sc+rem;
+                    position: absolute;
+                    top: 14/$sc+rem;
+                    left: 8/$sc+rem;
+                }
+                .more {
+                    display: block;
+                    height: 20/$sc+rem;
+                    width: 20/$sc+rem;
+                    background: url(../img/more.png) no-repeat;
+                    background-size: 20/$sc+rem 20/$sc+rem;
+                    position: absolute;
+                    top: 13/$sc+rem;
+                    right: 8/$sc+rem;
+                }
+            }
+        }
+        .album-page-section {
+            flex: 1;
+            -webkit-flex: 1;
+            overflow: hidden;
+            background: #333333;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            position: relative;
+            .section-wrapper-vertical{
+                width: 100%;
+                height: 100%;
+                position: relative;
+                background: #333333;
+                display: flex;
+                flex-direction: column;
+                .top-txt {
+                    width: 100%;
+                    display: -webkit-flex;
+                    justify-content: center;
+                    align-items: center;
+                    .top-txt-box {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        span {
+                            font-family: PingFangSC-Medium;
+                            font-size: 13/$sc+rem;
+                            line-height: 18/$sc+rem;
+                            color: #FFFFFF;
+                        }
+                        .sale-name {
+                            margin-right: 8/$sc+rem;
+                        }
+                    }
+                }
+                .img-box {
+                    width: 100%;
+                    .img-box-ul{
+                        width: 100%;
+                        height: 210/$sc+rem;
+                        background: #ffffff;
+                        
+                    }
+                }
+                .bottom-nav {
+                    width: 100%;
+                    height: 18/$sc+rem;
+                    overflow-x: auto;
+                    padding: 0 12/$sc+rem;
+                    position: absolute;
+                    bottom: 20%;
+                    box-sizing: border-box;
+                    ul {
+                        height: 18/$sc+rem;
+                        padding-left: 5px;
+                        padding-right: 12/$sc+rem;
+                        li {
+                            display: inline-block;
+                            float: left;
+                            padding-right: 15/$sc+rem;
+                            font-family: PingFangSC-Medium;
+                            font-size: 12/$sc+rem;
+                            line-height: 18/$sc+rem;
+                            text-align: center;
+                            color: #ffffff;
+                        }
+                        li.select{
+                            color: #FF7C00;
+                        }
+                        li:last-child{
+                            padding-right: 0;
+                        }
+                    }
+                }
+            }
+            .section-wrapper-transverse{
+                width: 100%;
+                height: 100%;
+                background: #333333;
+                position: relative;
+                .top-txt {
+                    width: 50%;
+                    position: absolute;
+                    top: 10/$sc+rem;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    .top-txt-box {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        span {
+                            font-family: PingFangSC-Medium;
+                            font-size: 13/$sc+rem;
+                            line-height: 18/$sc+rem;
+                            color: #FFFFFF;
+                        }
+                        .sale-name {
+                            padding-right: 8/$sc+rem;
+                        }
+                    }
+                }
+                .img-box {
+                    width: 85%;
+                    height: 100%;
+                    margin: 0 auto;
+                    background: skyblue;
+                }
+                .bottom-nav {
+                    width: 100%;
+                    position: absolute;
+                    bottom: 10/$sc+rem;
+                    ul {
+                        display: inline-block;
+                        height: 12/$sc+rem;
+                        
+                        li {
+                            display: inline-block;
+                            float: left;
+                            padding-right: 15/$sc+rem;
+                            font-family: PingFangSC-Medium;
+                            font-size: 12/$sc+rem;
+                            line-height: 12/$sc+rem;
+                            text-align: center;
+                            color: #ffffff;
+                        }
+                        li.select{
+                            color: #FF7C00;
+                        }
+                        li:last-child{
+                            padding-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (orientation: landscape) {
+    /*横屏 css*/
+    .album-page {
+        width: 100%;
+        height: 100%;
+        background: #333333;
+        .album-page-header {
+            display: none;
+        }
+        .album-page-section {
+            width: 100%;
+            height: 100%;
+            background: #333333;
+            .section-wrapper-transverse {
+                width: 100%;
+                height: 100%;
+                background: #333333;
+                position: relative;
+                .top-txt {
+                    position: absolute;
+                    top: 10/$sc+rem;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    .top-txt-box {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        span {
+                            font-family: PingFangSC-Medium;
+                            font-size: 13/$sc+rem;
+                            line-height: 18/$sc+rem;
+                            color: #FFFFFF;
+                        }
+                        .sale-name {
+                            padding-right: 8/$sc+rem;
+                        }
+                    }
+                }
+                .img-box {
+                    width: 85%;
+                    height: 100%;
+                    margin: 0 auto;
+                    background: skyblue;
+                }
+                .bottom-nav {
+                    width: 100%;
+                    height: 12/$sc+rem;
+                    line-height: 12/$sc+rem;
+                    text-align: center;
+                    position: absolute;
+                    bottom: 10/$sc+rem;
+                    ul {
+                        display: inline-block;
+                        height: 12/$sc+rem;
+                        
+                        li {
+                            display: inline-block;
+                            float: left;
+                            padding-right: 15/$sc+rem;
+                            font-family: PingFangSC-Medium;
+                            font-size: 12/$sc+rem;
+                            line-height: 12/$sc+rem;
+                            text-align: center;
+                            color: #ffffff;
+                        }
+                        li.select{
+                            color: #FF7C00;
+                        }
+                        li:last-child{
+                            padding-right: 0;
+                        }
+                    }
+                }
+            }
+            .section-wrapper-vertical{
+                display: none;
+            }
+        }
+    }
+}

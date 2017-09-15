@@ -8,8 +8,7 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
 		<title>楼盘列表(相册)</title>
 		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
-		<link rel="stylesheet" type="text/css" media="all and (orientation:portrait)" href="css/album-page-vertical.css">
-		<link rel="stylesheet" type="text/css" media="all and (orientation:landscape)" href="css/album-page-transverse.css">
+		<link rel="stylesheet" type="text/css" href="css/album-page.css">
 		<link rel="stylesheet" type="text/css" href="plugins/animate.min.css" />
 		<script type="text/javascript" src="plugins/zepto.min.js"></script>
 		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>
@@ -32,7 +31,29 @@
 				</div>
 			</header>
 			<section class="album-page-section">
-				<div class="section-wrapper">
+				<div class="section-wrapper-vertical">
+					<div class="top-txt">
+						<div class="top-txt-box">
+							<span class="sale-name">南国威尼斯城</span>
+							<span class="current-page">1/20</span>
+						</div>
+					</div>
+					<div class="img-box">
+						<ul class="img-box-ul">
+							<li></li>
+						</ul>
+					</div>
+					<div class="bottom-nav">
+						<ul class="bottom-nav-ul">
+							<li class="select">效果图(6)</li>
+							<li>户型图(6)</li>
+							<li>样板间(4)</li>
+							<li>区位图(2)</li>
+							<li>实景视频(2)</li>
+						</ul>
+					</div>
+				</div>
+				<div class="section-wrapper-transverse">
 					<div class="top-txt">
 						<div class="top-txt-box">
 							<span class="sale-name">南国威尼斯城</span>
@@ -44,29 +65,17 @@
 					</div>
 					<div class="bottom-nav">
 						<ul class="bottom-nav-ul">
-							<li>第三方大姑父厚爱</li>
+							<li class="select">效果图(6)</li>
+							<li>户型图(6)</li>
+							<li>样板间(4)</li>
+							<li>区位图(2)</li>
+							<li>实景视频(2)</li>
 						</ul>
 					</div>
 				</div>
 			</section>
 		</div>
 	</body>
-	<script>
-		function hengshuping() {
-
-			setTimeout(function() {
-				if(window.orientation == 180 || window.orientation == 0 || window.orientation == 90 || window.orientation == -90) {
-
-					var liwc = (($(window).width()));
-				}
-			}, 500);
-		}
-
-		$(window).bind('orientationchange', function(e) {
-			hengshuping();
-		});
-		// window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", hengshuping, true);
-	</script>
 	<script type="text/javascript">
 		var myVue = new Vue({
 			el: ".album-page",
