@@ -144,9 +144,27 @@ $sc:20;
                     background: #333333;
                     .img-box-ul{
                         width: 100%;
-                        height: 210/$sc+rem;
-                        background: #ffffff;
-                        
+                        height: 100%;
+                        li{
+                            width: 100%;
+                            height: 210/$sc+rem;
+                            position: relative;
+                            img{
+                                width: 100%;
+                            }
+                            .startUp-btn{
+                                width: 50/$sc+rem;
+                                height: 50/$sc+rem;
+                                background: url(../img/play.png) no-repeat;
+                                background-size: cover;
+                                position: absolute;
+                                top: 0;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                margin: auto;
+                            }
+                        }
                     }
                 }
                 .bottom-nav {
@@ -156,6 +174,7 @@ $sc:20;
                     position: absolute;
                     bottom: 20%;
                     box-sizing: border-box;
+                    z-index: 999;
                     .bottom-nav-box{
                        width: 100%;
                        height: 100%;
@@ -273,6 +292,7 @@ $sc:20;
                     left: 0;
                     right: 0;
                     margin: auto;
+                    z-index: 999;
                     .top-txt-box {
                         width: 100%;
                         height: 100%;
@@ -291,10 +311,37 @@ $sc:20;
                     }
                 }
                 .img-box {
-                    width: 85%;
+                    width: 100;
                     height: 100%;
                     margin: 0 auto;
-                    background: skyblue;
+                    background: #333333;
+                    .img-box-ul{
+                        width: 100%;
+                        height: 100%;
+                        li{
+                            width: 100%;
+                            height: 100%;
+                            position: relative;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            img{
+                                height: 100%;
+                            }
+                            .startUp-btn{
+                                width: 50/$sc+rem;
+                                height: 50/$sc+rem;
+                                background: url(../img/play.png) no-repeat;
+                                background-size: cover;
+                                position: absolute;
+                                top: 0;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                margin: auto;
+                            }
+                        }
+                    }
                 }
                 .bottom-nav {
                     width: 100%;
@@ -303,6 +350,7 @@ $sc:20;
                     text-align: center;
                     position: absolute;
                     bottom: 10/$sc+rem;
+                    z-index: 999;
                     .bottom-nav-box{
                         width: 100%;
                         height: 100%;

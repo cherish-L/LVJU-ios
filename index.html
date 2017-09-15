@@ -35,12 +35,27 @@
 					<div class="top-txt">
 						<div class="top-txt-box">
 							<span class="sale-name">南国威尼斯城</span>
-							<span class="current-page">1/20</span>
+							<span class="current-page"></span>
 						</div>
 					</div>
 					<div class="img-box">
-						<ul class="img-box-ul">
-							<li></li>
+						<ul class="img-box-ul  swiper-wrapper">
+							<li class="effect-pic swiper-slide" v-for="list in effect">
+								<img :src="list.src"/>
+							</li>
+							<li class="houseTyle-pic swiper-slide" v-for="list in houseTyle">
+								<img :src="list.src"/>
+							</li>
+							<li class="model-pic swiper-slide" v-for="list in model">
+								<img :src="list.src"/>
+							</li>
+							<li class="location-pic swiper-slide" v-for="list in locations">
+								<img :src="list.src"/>
+							</li>
+							<li class="liveVideo-pic swiper-slide" v-for="list in liveVideo">
+								<img :src="list.src"/>
+								<span class="startUp-btn"></span>
+							</li>
 						</ul>
 					</div>
 					<div class="bottom-nav">
@@ -63,7 +78,24 @@
 						</div>
 					</div>
 					<div class="img-box">
-
+						<ul class="img-box-ul  swiper-wrapper">
+							<li class="effect-pic swiper-slide" v-for="list in effect">
+								<img :src="list.src"/>
+							</li>
+							<li class="houseTyle-pic swiper-slide" v-for="list in houseTyle">
+								<img :src="list.src"/>
+							</li>
+							<li class="model-pic swiper-slide" v-for="list in model">
+								<img :src="list.src"/>
+							</li>
+							<li class="location-pic swiper-slide" v-for="list in locations">
+								<img :src="list.src"/>
+							</li>
+							<li class="liveVideo-pic swiper-slide" v-for="list in liveVideo">
+								<img :src="list.src"/>
+								<span class="startUp-btn"></span>
+							</li>
+						</ul>
 					</div>
 					<div class="bottom-nav">
 						<div class="bottom-nav-box">
@@ -85,77 +117,43 @@
 		var myVue = new Vue({
 			el: ".album-page",
 			data: {
-				banners: [{
-						src: "img/style.png"
-					},
-					{
-						src: "img/style.png"
-					},
-					{
-						src: "img/style.png"
-					},
-					{
-						src: "img/style.png"
-					},
-					{
-						src: "img/style.png"
-					},
-					{
-						src: "img/style.png"
-					},
-					{
-						src: "img/style.png"
-					},
-					{
-						src: "img/style.png"
-					},
-					{
-						src: "img/style.png"
-					},
-					{
-						src: "img/style.png"
-					},
-					{
-						src: "img/style.png"
-					},
-					{
-						src: "img/style.png"
-					},
-					{
-						src: "img/style.png"
-					},
-					{
-						src: "img/style.png"
-					},
-					{
-						src: "img/style.png"
-					},
-					{
-						src: "img/style.png"
-					},
-					{
-						src: "img/style.png"
-					},
-					{
-						src: "img/style.png"
-					},
-					{
-						src: "img/style.png"
-					},
-					{
-						src: "img/style.png"
-					}
+				effect: [
+					{src: 'img/timg.png'},
+					{src: 'img/timg.png'},
+					{src: 'img/timg.png'},
+					{src: 'img/timg.png'},
+					{src: 'img/timg.png'},
+					{src: 'img/timg.png'}
+				],
+				houseTyle: [
+					{src: 'img/timg.png'},
+					{src: 'img/timg.png'},
+					{src: 'img/timg.png'},
+					{src: 'img/timg.png'},
+					{src: 'img/timg.png'},
+					{src: 'img/timg.png'}
+				],
+				model: [
+					{src: 'img/timg.png'},
+					{src: 'img/timg.png'},
+					{src: 'img/timg.png'},
+					{src: 'img/timg.png'}
+				],
+				locations: [
+					{src: 'img/timg.png'},
+					{src: 'img/timg.png'}
+				],
+				liveVideo: [
+					{src: 'img/timg.png'},
+					{src: 'img/timg.png'}
 				]
 			}
 		})
 	</script>
 	<script src="plugins/swiper-3.4.2.min.js"></script>
-	<!--<script type="text/javascript">
-		var mySwiper = new Swiper('.swiper-container', {
-			pagination: '.swiper-pagination',
-			paginationType: 'fraction'
-		})
-	</script>-->
+	<script type="text/javascript">
+		var verticalSwiper = new Swiper('.section-wrapper-vertical .img-box', {})
+	</script>
 	<script type="text/javascript" src="js/album-page.js"></script>
 
 </html>
