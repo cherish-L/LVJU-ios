@@ -84,9 +84,9 @@ li {
 
 .album-page .album-page-section .section-wrapper .top-txt {
   width: 50%;
-  height: 0.9rem;
+  height: 0.50704rem;
   position: absolute;
-  top: 0.5rem;
+  top: 0.28169rem;
   left: 0;
   right: 0;
   margin: auto;
@@ -103,13 +103,13 @@ li {
 .album-page .album-page-section .section-wrapper .top-txt .top-txt-box span {
   float: left;
   font-family: PingFangSC-Medium;
-  font-size: 0.65rem;
-  line-height: 0.9rem;
+  font-size: 0.3662rem;
+  line-height: 0.50704rem;
   color: #FFFFFF;
 }
 
 .album-page .album-page-section .section-wrapper .top-txt .top-txt-box .sale-name {
-  padding-right: 0.4rem;
+  padding-right: 0.22535rem;
 }
 
 .album-page .album-page-section .section-wrapper .img-box {
@@ -121,7 +121,7 @@ li {
 
 .album-page .album-page-section .section-wrapper .bottom-nav {
   width: 100%;
-  height: 1rem;
+  height: 0.56338rem;
   position: relative;
   position: absolute;
   bottom: 0;
@@ -129,15 +129,15 @@ li {
 
 .album-page .album-page-section .section-wrapper .bottom-nav ul {
   width: 100%;
-  height: 0.8rem;
+  height: 0.4507rem;
   position: absolute;
   top: 25%;
 }
 
 .album-page .album-page-section .section-wrapper .bottom-nav ul li {
   font-family: PingFangSC-Medium;
-  font-size: 0.6rem;
-  line-height: 0.8rem;
+  font-size: 0.33803rem;
+  line-height: 0.4507rem;
   text-align: center;
   color: #ffffff;
 }
