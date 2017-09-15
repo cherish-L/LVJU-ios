@@ -329,6 +329,21 @@ li {
   .album-page .album-page-section .section-wrapper-transverse .bottom-nav .bottom-nav-box ul li:last-child {
     padding-right: 0;
   }
+  .album-page .album-page-section .section-wrapper-transverse .return {
+    display: block;
+    width: 1.75rem;
+    height: 1.75rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .album-page .album-page-section .section-wrapper-transverse .return img {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
   .album-page .album-page-section .section-wrapper-vertical {
     display: none;
   }

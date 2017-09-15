@@ -329,6 +329,21 @@ $sc:20;
                         }
                     }
                 }
+                .return{
+                    display: block;
+                    width: 35/$sc+rem;
+                    height: 35/$sc+rem;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    img{
+                        width: 15/$sc+rem;
+                        height: 15/$sc+rem;
+                    }
+                }
             }
             .section-wrapper-vertical{
                 display: none;
