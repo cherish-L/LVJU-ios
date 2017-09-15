@@ -38,8 +38,8 @@ $(function() {
 	
 	var T_discount_max=0;
 	var T_discount_min=0;
-	var T_discounth=$(".album-page").height()
-	var T_discountw=$(".album-page").width()
+	var T_discounth=$("html").height()
+	var T_discountw=$("html").width()
 	if(T_discounth > T_discountw){
 		T_discount_max=T_discounth
 		T_discount_min=T_discountw
@@ -54,7 +54,7 @@ $(function() {
 	$(".section-wrapper-transverse .top-txt .current-page").text('1/'+verticalli_len)
 	
 	//获取效果图length
-	var effect_len=$(".section-wrapper-vertical .img-box .img-box-ul .effect-pic").length+1
+	var effect_len=$(".section-wrapper-vertical .img-box .img-box-ul .effect-pic").length
 	//获取户型图length
 	var houseTyle_len=$(".section-wrapper-vertical .img-box .img-box-ul .houseTyle-pic").length
 	//获取样板图length
@@ -69,17 +69,17 @@ $(function() {
 		var _this_index=$(this).index()
 		$(this).addClass("select").siblings().removeClass("select")
 		$(".album-page-section .section-wrapper-transverse .bottom-nav-ul li").eq(_this_index).addClass("select").siblings().removeClass("select")
-		if(_this_index==0)var objindex=0
-		if(_this_index==1)var objindex=effect_len-1
-		if(_this_index==2)var objindex=effect_len+houseTyle_len-1
-		if(_this_index==3)var objindex=effect_len+houseTyle_len+model_len-1
-		if(_this_index==4)var objindex=effect_len+houseTyle_len+model_len+location_len-1
+		if(_this_index==0)var objindex=0+1
+		if(_this_index==1)var objindex=effect_len+1
+		if(_this_index==2)var objindex=effect_len+houseTyle_len+1
+		if(_this_index==3)var objindex=effect_len+houseTyle_len+model_len+1
+		if(_this_index==4)var objindex=effect_len+houseTyle_len+model_len+location_len+1
 		
-		$(".section-wrapper-vertical .top-txt .current-page").text(objindex+1+'/'+verticalli_len)
-		$(".section-wrapper-transverse .top-txt .current-page").text(objindex+1+'/'+verticalli_len)
+		$(".section-wrapper-vertical .top-txt .current-page").text(objindex+'/'+verticalli_len)
+		$(".section-wrapper-transverse .top-txt .current-page").text(objindex+'/'+verticalli_len)
 		
-		$(".section-wrapper-vertical .img-box .img-box-ul").css("transform","translate3d(-"+T_discount_min*objindex+"px, 0px, 0px)")
-		$(".section-wrapper-transverse .img-box .img-box-ul").css("transform","translate3d(-"+T_discount_max*objindex+"px, 0px, 0px)")
+		$(".section-wrapper-vertical .img-box .img-box-ul").css("transform","translate3d(-"+T_discount_min*(objindex-1)+"px, 0px, 0px)")
+		$(".section-wrapper-transverse .img-box .img-box-ul").css("transform","translate3d(-"+T_discount_max*(objindex-1)+"px, 0px, 0px)")
 		verticalSwiper.realIndex=objindex
 	})
 	//滑动获取当前图片的realIndex 改变导航的样式
@@ -87,24 +87,24 @@ $(function() {
 		var index = verticalSwiper.realIndex+1
 		$(".section-wrapper-vertical .top-txt .current-page").text(index+'/'+verticalli_len)
 		$(".section-wrapper-transverse .top-txt .current-page").text(index+'/'+verticalli_len)
-		$(".section-wrapper-transverse .img-box .img-box-ul").css("transform","translate3d(-"+T_discount_max*(index-1)+"px, 0px, 0px)")
-		if(index>=0 && index<effect_len){
+		$(".section-wrapper-transverse .img-box .img-box-ul").css("transform","translate3d(-"+T_discount_max*index+"px, 0px, 0px)")
+		if(index>=0 && index<=effect_len){
 			$(".section-wrapper-vertical .bottom-nav li").eq(0).addClass("select").siblings().removeClass("select")
 			$(".section-wrapper-transverse .bottom-nav li").eq(0).addClass("select").siblings().removeClass("select")
 		}
-		if(index>=effect_len && index<houseTyle_len+effect_len){
+		if(index>effect_len && index<=houseTyle_len+effect_len){
 			$(".section-wrapper-vertical .bottom-nav li").eq(1).addClass("select").siblings().removeClass("select")
 			$(".section-wrapper-transverse .bottom-nav li").eq(1).addClass("select").siblings().removeClass("select")
 		}
-		if(index>=houseTyle_len+effect_len && index<houseTyle_len+effect_len+model_len){
+		if(index>houseTyle_len+effect_len && index<=houseTyle_len+effect_len+model_len){
 			$(".section-wrapper-vertical .bottom-nav li").eq(2).addClass("select").siblings().removeClass("select")
 			$(".section-wrapper-transverse .bottom-nav li").eq(2).addClass("select").siblings().removeClass("select")
 		}
-		if(index>=houseTyle_len+effect_len+model_len && index<houseTyle_len+effect_len+model_len+location_len){
+		if(index>houseTyle_len+effect_len+model_len && index<=houseTyle_len+effect_len+model_len+location_len){
 			$(".section-wrapper-vertical .bottom-nav li").eq(3).addClass("select").siblings().removeClass("select")
 			$(".section-wrapper-transverse .bottom-nav li").eq(3).addClass("select").siblings().removeClass("select")
 		}
-		if(index>=houseTyle_len+effect_len+model_len+location_len && index<verticalli_len){
+		if(index>houseTyle_len+effect_len+model_len+location_len && index<=verticalli_len){
 			$(".section-wrapper-vertical .bottom-nav li").eq(4).addClass("select").siblings().removeClass("select")
 			$(".section-wrapper-transverse .bottom-nav li").eq(4).addClass("select").siblings().removeClass("select")
 		}
@@ -121,7 +121,7 @@ $(function() {
 	$(".section-wrapper-transverse .top-txt .current-page").text('1/'+transverse_len)
 	
 	//获取效果图length
-	var T_effect_len=$(".section-wrapper-transverse .img-box .img-box-ul .effect-pic").length+1
+	var T_effect_len=$(".section-wrapper-transverse .img-box .img-box-ul .effect-pic").length
 	//获取户型图length
 	var T_houseTyle_len=$(".section-wrapper-transverse .img-box .img-box-ul .houseTyle-pic").length
 	//获取样板图length
@@ -139,16 +139,16 @@ $(function() {
 		var _this_index=$(this).index()
 		$(this).addClass("select").siblings().removeClass("select")
 		$(".album-page-section .section-wrapper-vertical .bottom-nav-ul li").eq(_this_index).addClass("select").siblings().removeClass("select")
-		if(_this_index==0)var objindex=0
-		if(_this_index==1)var objindex=T_effect_len-1
-		if(_this_index==2)var objindex=T_effect_len+T_houseTyle_len-1
-		if(_this_index==3)var objindex=T_effect_len+T_houseTyle_len+T_model_len-1
-		if(_this_index==4)var objindex=T_effect_len+T_houseTyle_len+T_model_len+T_location_len-1
+		if(_this_index==0)var objindex=0+1
+		if(_this_index==1)var objindex=T_effect_len+1
+		if(_this_index==2)var objindex=T_effect_len+T_houseTyle_len+1
+		if(_this_index==3)var objindex=T_effect_len+T_houseTyle_len+T_model_len+1
+		if(_this_index==4)var objindex=T_effect_len+T_houseTyle_len+T_model_len+T_location_len+1
 		
-		$(".section-wrapper-transverse .top-txt .current-page").text(objindex+1+'/'+verticalli_len)
-		$(".section-wrapper-vertical .top-txt .current-page").text(objindex+1+'/'+verticalli_len)
-		$(".section-wrapper-transverse .img-box .img-box-ul").css("transform","translate3d(-"+T_discount_max*objindex+"px, 0px, 0px)")
-		$(".section-wrapper-vertical .img-box .img-box-ul").css("transform","translate3d(-"+T_discount_min*objindex+"px, 0px, 0px)")
+		$(".section-wrapper-transverse .top-txt .current-page").text(objindex+'/'+verticalli_len)
+		$(".section-wrapper-vertical .top-txt .current-page").text(objindex+'/'+verticalli_len)
+		$(".section-wrapper-transverse .img-box .img-box-ul").css("transform","translate3d(-"+T_discount_max*(objindex-1)+"px, 0px, 0px)")
+		$(".section-wrapper-vertical .img-box .img-box-ul").css("transform","translate3d(-"+T_discount_min*(objindex-1)+"px, 0px, 0px)")
 		transverseSwiper.realIndex=objindex
 	})
 	//滑动获取当前图片的realIndex 改变导航的样式
@@ -156,24 +156,24 @@ $(function() {
 		var index = transverseSwiper.realIndex+1
 		$(".section-wrapper-vertical .top-txt .current-page").text(index+'/'+verticalli_len)
 		$(".section-wrapper-transverse .top-txt .current-page").text(index+'/'+verticalli_len)
-		$(".section-wrapper-vertical .img-box .img-box-ul").css("transform","translate3d(-"+T_discount_min*(index-1)+"px, 0px, 0px)")
-		if(index>=0 && index<T_effect_len){
+		$(".section-wrapper-vertical .img-box .img-box-ul").css("transform","translate3d(-"+T_discount_min*index+"px, 0px, 0px)")
+		if(index>=0 && index<=T_effect_len){
 			$(".section-wrapper-vertical .bottom-nav li").eq(0).addClass("select").siblings().removeClass("select")
 			$(".section-wrapper-transverse .bottom-nav li").eq(0).addClass("select").siblings().removeClass("select")
 		}
-		if(index>=T_effect_len && index<T_houseTyle_len+T_effect_len){
+		if(index>T_effect_len && index<=T_houseTyle_len+T_effect_len){
 			$(".section-wrapper-vertical .bottom-nav li").eq(1).addClass("select").siblings().removeClass("select")
 			$(".section-wrapper-transverse .bottom-nav li").eq(1).addClass("select").siblings().removeClass("select")
 		}
-		if(index>=T_houseTyle_len+T_effect_len && index<T_houseTyle_len+T_effect_len+T_model_len){
+		if(index>T_houseTyle_len+T_effect_len && index<=T_houseTyle_len+T_effect_len+T_model_len){
 			$(".section-wrapper-vertical .bottom-nav li").eq(2).addClass("select").siblings().removeClass("select")
 			$(".section-wrapper-transverse .bottom-nav li").eq(2).addClass("select").siblings().removeClass("select")
 		}
-		if(index>=T_houseTyle_len+T_effect_len+T_model_len && index<T_houseTyle_len+T_effect_len+T_model_len+T_location_len){
+		if(index>T_houseTyle_len+T_effect_len+T_model_len && index<=T_houseTyle_len+T_effect_len+T_model_len+T_location_len){
 			$(".section-wrapper-vertical .bottom-nav li").eq(3).addClass("select").siblings().removeClass("select")
 			$(".section-wrapper-transverse .bottom-nav li").eq(3).addClass("select").siblings().removeClass("select")
 		}
-		if(index>=T_houseTyle_len+T_effect_len+T_model_len+T_location_len && index<verticalli_len){
+		if(index>T_houseTyle_len+T_effect_len+T_model_len+T_location_len && index<=verticalli_len){
 			$(".section-wrapper-vertical .bottom-nav li").eq(4).addClass("select").siblings().removeClass("select")
 			$(".section-wrapper-transverse .bottom-nav li").eq(4).addClass("select").siblings().removeClass("select")
 		}
