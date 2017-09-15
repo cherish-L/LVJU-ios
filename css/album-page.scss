@@ -387,6 +387,7 @@ $sc:20;
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    z-index: 999;
                     img{
                         width: 15/$sc+rem;
                         height: 15/$sc+rem;
