@@ -1,4 +1,10 @@
 $(function() {
+	var section_h=$(".section-wrapper").height()
+	$(".top-txt-vertical").css("top",section_h*0.11)
+	$(".bottom-nav-vertical").css("top",section_h*0.78)
+	$(".img-box .img-box-ul li .li_box").css("top",section_h*0.23)
+	
+	
 	var vertical_li_len=$(".bottom-nav-vertical .bottom-nav-ul li").length
 	var vertical_li_w=$(".bottom-nav-vertical .bottom-nav-ul li").width()
 	$(".bottom-nav-vertical .bottom-nav-ul").width(vertical_li_len*vertical_li_w+12)
