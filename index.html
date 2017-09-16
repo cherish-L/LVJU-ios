@@ -31,47 +31,14 @@
 				</div>
 			</header>
 			<section class="album-page-section">
-				<div class="section-wrapper-vertical">
-					<div class="top-txt">
+				<div class="section-wrapper">
+					<div class="top-txt-vertical">
 						<div class="top-txt-box">
 							<span class="sale-name">南国威尼斯城</span>
-							<span class="current-page"></span>
+							<span class="current-page">1/20</span>
 						</div>
 					</div>
-					<div class="img-box">
-						<ul class="img-box-ul  swiper-wrapper">
-							<li class="effect-pic swiper-slide" v-for="list in effect">
-								<img :src="list.src"/>
-							</li>
-							<li class="houseTyle-pic swiper-slide" v-for="list in houseTyle">
-								<img :src="list.src"/>
-							</li>
-							<li class="model-pic swiper-slide" v-for="list in model">
-								<img :src="list.src"/>
-							</li>
-							<li class="location-pic swiper-slide" v-for="list in locations">
-								<img :src="list.src"/>
-							</li>
-							<li class="liveVideo-pic swiper-slide" v-for="list in liveVideo">
-								<img :src="list.src"/>
-								<span class="startUp-btn"></span>
-							</li>
-						</ul>
-					</div>
-					<div class="bottom-nav">
-						<div class="bottom-nav-box">
-							<ul class="bottom-nav-ul">
-								<li class="select">效果图(6)</li>
-								<li>户型图(6)</li>
-								<li>样板间(4)</li>
-								<li>区位图(2)</li>
-								<li>实景视频(2)</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="section-wrapper-transverse">
-					<div class="top-txt">
+					<div class="top-txt-transverse">
 						<div class="top-txt-box">
 							<span class="sale-name">南国威尼斯城</span>
 							<span class="current-page">1/20</span>
@@ -97,14 +64,25 @@
 							</li>
 						</ul>
 					</div>
-					<div class="bottom-nav">
+					<div class="bottom-nav-vertical">
 						<div class="bottom-nav-box">
 							<ul class="bottom-nav-ul">
-								<li class="select">效果图(6)</li>
-								<li>户型图(6)</li>
-								<li>样板间(4)</li>
-								<li>区位图(2)</li>
-								<li>实景视频(2)</li>
+								<li class="effect select">效果图(6)</li>
+								<li class="houseTyle">户型图(6)</li>
+								<li class="model">样板间(4)</li>
+								<li class="locations">区位图(2)</li>
+								<li class="liveVideo">实景视频(2)</li>
+							</ul>
+						</div>
+					</div>
+					<div class="bottom-nav-transverse">
+						<div class="bottom-nav-box">
+							<ul class="bottom-nav-ul">
+								<li class="effect select">效果图(6)</li>
+								<li class="houseTyle">户型图(6)</li>
+								<li class="model">样板间(4)</li>
+								<li class="locations">区位图(2)</li>
+								<li class="liveVideo">实景视频(2)</li>
 							</ul>
 						</div>
 					</div>
@@ -152,9 +130,7 @@
 	</script>
 	<script src="plugins/swiper-3.4.2.min.js"></script>
 	<script type="text/javascript">
-		var verticalSwiper = new Swiper('.section-wrapper-vertical .img-box', {})
-		var transverseSwiper = new Swiper('.section-wrapper-transverse .img-box', {})
+		var mySwiper = new Swiper('.section-wrapper .img-box', {})
 	</script>
 	<script type="text/javascript" src="js/album-page.js"></script>
-
 </html>
