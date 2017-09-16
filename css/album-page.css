@@ -245,8 +245,6 @@ li {
   .album-page .album-page-section .section-wrapper .bottom-nav-transverse .bottom-nav-box {
     width: 100%;
     height: 100%;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
     display: flex;
     justify-content: center;
     align-items: center;

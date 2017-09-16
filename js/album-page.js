@@ -1,8 +1,4 @@
 $(function() {
-//	var section_h=$(".section-wrapper").height()
-//	$(".top-txt-vertical").css("top",section_h*0.11)
-//	$(".bottom-nav-vertical").css("top",section_h*0.78)
-//	$(".img-box .img-box-ul li .li_box").css("top",section_h*0.23)
 	
 	
 	var vertical_li_len=$(".bottom-nav-vertical .bottom-nav-ul li").length
@@ -30,5 +26,9 @@ $(function() {
 		$(".bottom-nav-vertical .bottom-nav-ul li").eq(index).addClass("select").siblings().removeClass("select")
 	})
 	
-	
+	var houseStyleS = new IScroll('.bottom-nav-vertical .bottom-nav-box', {
+		scrollbars: false,
+		scrollX: true,
+		scrollY: false
+	})
 })

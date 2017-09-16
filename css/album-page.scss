@@ -241,12 +241,9 @@ $sc:20;
                     .bottom-nav-box{
                        width: 100%;
                        height: 100%;
-                       overflow: auto;
-                       -webkit-overflow-scrolling: touch;
                        display: flex;
                        justify-content: center;
                        align-items: center;
-                       
                         ul {
                             display: inline-block;
                             height: 18/$sc+rem;
@@ -416,7 +413,6 @@ $sc:20;
                        display: flex;
                        justify-content: center;
                        align-items: center;
-                       
                         ul {
                             display: inline-block;
                             height: 18/$sc+rem;
