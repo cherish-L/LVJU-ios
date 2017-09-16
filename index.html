@@ -47,20 +47,30 @@
 					<div class="img-box">
 						<ul class="img-box-ul  swiper-wrapper">
 							<li class="effect-pic swiper-slide" v-for="list in effect">
-								<img :src="list.src"/>
+								<div class="li_box">
+									<img :src="list.src"/>
+								</div>
 							</li>
 							<li class="houseTyle-pic swiper-slide" v-for="list in houseTyle">
-								<img :src="list.src"/>
+								<div class="li_box">
+									<img :src="list.src"/>
+								</div>
 							</li>
 							<li class="model-pic swiper-slide" v-for="list in model">
-								<img :src="list.src"/>
+								<div class="li_box">
+									<img :src="list.src"/>
+								</div>
 							</li>
 							<li class="location-pic swiper-slide" v-for="list in locations">
-								<img :src="list.src"/>
+								<div class="li_box">
+									<img :src="list.src"/>
+								</div>
 							</li>
 							<li class="liveVideo-pic swiper-slide" v-for="list in liveVideo">
-								<img :src="list.src"/>
-								<span class="startUp-btn"></span>
+								<div class="li_box">
+									<img :src="list.src"/>
+									<span class="startUp-btn"></span>
+								</div>
 							</li>
 						</ul>
 					</div>
