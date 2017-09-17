@@ -435,7 +435,21 @@ $sc:20;
                     }
                 }
                 .return{
-                    display: none;
+                    display: block;
+                    width: 35/$sc+rem;
+                    height: 35/$sc+rem;
+                    z-index: 999;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    img{
+                        display: block;
+                        width: 15/$sc+rem;
+                        height: 15/$sc+rem;
+                    }
                 }
             }
         }

@@ -66,9 +66,6 @@ $(function() {
 	
 	
 	
-	
-	
-	
 	//------  横屏_nav  ------
 	$(".bottom-nav-vertical .bottom-nav-ul li").tap(function(){
 		var index = $(this).index()
