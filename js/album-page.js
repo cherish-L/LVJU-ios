@@ -87,7 +87,7 @@ $(function() {
 			mySwiper.slideTo(effect_len+houseTyle_len+model_len);
 		}
 		if(index==4){
-			mySwiper.slideTo(effect_len+houseTyle_len+model_len+liveVideo_len);
+			mySwiper.slideTo(effect_len+houseTyle_len+model_len+liveVideo_len+1);
 		}
 		
 		var _this_realIndex=mySwiper.realIndex+1
@@ -113,7 +113,7 @@ $(function() {
 			mySwiper.slideTo(effect_len+houseTyle_len+model_len);
 		}
 		if(index==4){
-			mySwiper.slideTo(effect_len+houseTyle_len+model_len+liveVideo_len);
+			mySwiper.slideTo(effect_len+houseTyle_len+model_len+liveVideo_len+1);
 		}
 		
 		var _this_realIndex=mySwiper.realIndex+1
