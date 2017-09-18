@@ -306,6 +306,241 @@ $(function(){
 	var screenS = new IScroll('.screen-push-section', {
 		scrollbars: false
 	})
+
+
+//房贷计算器
+	//AF与CI版面交互
+	$(".AF-money .AF-calculate-select span").tap(function(){
+		$(this).addClass("select").siblings().removeClass("select")
+	})
+	$(".AF-area .AF-calculate-select span").tap(function(){
+		$(this).addClass("select").siblings().removeClass("select")
+	})
+	$(".CL-area .CL-calculate-select span").tap(function(){
+		$(this).addClass("select").siblings().removeClass("select")
+	})
+	$(".CL-money .CL-calculate-select span").tap(function(){
+		$(this).addClass("select").siblings().removeClass("select")
+	})
+	$(".CombinationL .CombinationL-calculate-select span").tap(function(){
+		$(this).addClass("select").siblings().removeClass("select")
+	})
+	$(".R-details .details-calculate-select span").tap(function(){
+		$(this).addClass("select").siblings().removeClass("select")
+		detailS.refresh()
+	})
+	
+	//input获得焦点是光标始终在内容后面
+	$(".loanHome-calculator-section .name").focus(function(){
+		var t=$(this).val(); 
+		$(this).css("color","#6C7072")
+		$(this).val("").focus().val(t); 
+	})
+	
+	//遮罩
+	$(".loanHome-calculator-Mask").tap(function(){
+		$(this).removeClass("show")
+		$(".loanHome-calculator .bomb-wrap .frame").css("height","0")
+	})
+
+	//计算类型弹框
+	$(".loanHome-calculator .bomb-wrap .calculation-type li").tap(function(){
+		$(".loanHome-calculator .bomb-wrap .calculation-type").css("height","0")
+		$(".loanHome-calculator-Mask").removeClass("show")
+	})
+	//购房类型
+	$(".loanHome-calculator .bomb-wrap .house-type li").tap(function(){
+		$(".loanHome-calculator .bomb-wrap .house-type").css("height","0")
+		$(".loanHome-calculator-Mask").removeClass("show")
+	})
+	//首付比重
+	$(".loanHome-calculator .bomb-wrap .down-payments li").tap(function(){
+		$(".loanHome-calculator .bomb-wrap .down-payments").css("height","0")
+		$(".loanHome-calculator-Mask").removeClass("show")
+	})
+	//公积金利率
+	$(".loanHome-calculator .bomb-wrap .gong-rate li").tap(function(){
+		$(".loanHome-calculator .bomb-wrap .gong-rate").css("height","0")
+		$(".loanHome-calculator-Mask").removeClass("show")
+	})
+	//贷款年限
+	$(".loanHome-calculator .bomb-wrap .loan-term li").tap(function(){
+		$(".loanHome-calculator .bomb-wrap .loan-term").css("height","0")
+		$(".loanHome-calculator-Mask").removeClass("show")
+	})
+	//住宅类型
+	$(".loanHome-calculator .bomb-wrap .housing-type li").tap(function(){
+		$(".loanHome-calculator .bomb-wrap .housing-type").css("height","0")
+		$(".loanHome-calculator-Mask").removeClass("show")
+	})
+
+	//----------------计算类型---------------------------------------------------
+	//计算类型弹框
+	$(".loanHome-calculator-section .credit .typebox .jisuan").tap(function(){
+		var lih=$(".loanHome-calculator .bomb-wrap .calculation-type li").height()
+		var lilen=$(".loanHome-calculator .bomb-wrap .calculation-type li").length
+		$(".loanHome-calculator .bomb-wrap .calculation-type").css("height",lih*lilen)
+		$(".loanHome-calculator-Mask").addClass("show")
+		loanHomeS.refresh()
+	})
+	//计算类型选择
+	$(".loanHome-calculator .bomb-wrap .calculation-type li").tap(function(){
+		var ct_index=$(this).index()
+		var ct_txt=$(this).text()
+		if(!$(this).hasClass("select")){
+			$(".bomb-wrap .frame li").removeClass("select")
+			$(this).addClass("select").siblings().removeClass("select")
+			$(".loanHome-calculator-section .credit").eq(ct_index).css("display","block").siblings().css("display","none")
+			$(".jisuan .returnright").html(ct_txt)
+			$(".loanHome-calculator-section .null").html('')
+			$(".loanHome-calculator-section .name").val('')
+			$(".loanHome-calculator .bomb-wrap .calculation-type").css("height","0")
+			$(".loanHome-calculator-Mask").removeClass("show")
+		}
+		loanHomeS.refresh()
+	})
 	
 	
+	//----------------购房性质---------------------------------------------------
+	//购房性质弹框
+	$(".loanHome-calculator-section .credit .typebox .goufang").tap(function(){
+		var lih=$(".loanHome-calculator .bomb-wrap .house-type li").height()
+		var lilen=$(".loanHome-calculator .bomb-wrap .house-type li").length
+		$(".loanHome-calculator .bomb-wrap .house-type").css("height",lih*lilen)
+		$(".loanHome-calculator-Mask").addClass("show")
+	})
+	//购房性质选择
+	$(".loanHome-calculator .bomb-wrap .house-type li").tap(function(){
+		var ht_index=$(this).index()
+		var ht_txt=$(this).text()
+		$(this).addClass("select").siblings().removeClass("select")
+		$(".goufang .returnright").html(ht_txt)
+		$(".loanHome-calculator .bomb-wrap .house-type").css("height","0")
+		$(".loanHome-calculator-Mask").removeClass("show")
+	})
+	
+	
+	//----------------首付-------------------------------------------------
+	//首付弹框
+	$(".loanHome-calculator-section .credit .typebox .shoufu").tap(function(){
+		var lih=$(".loanHome-calculator .bomb-wrap .down-payments li").height()
+		var lilen=$(".loanHome-calculator .bomb-wrap .down-payments li").length
+		$(".loanHome-calculator .bomb-wrap .down-payments").css("height",lih*lilen)
+		$(".loanHome-calculator-Mask").addClass("show")
+	})
+	//首付选择
+	$(".loanHome-calculator .bomb-wrap .down-payments li").tap(function(){
+		var dp_index=$(this).index()
+		var dp_txt=$(this).text()
+		$(this).addClass("select").siblings().removeClass("select")
+		$(".shoufu .returnright").html(dp_txt)
+		$(".loanHome-calculator .bomb-wrap .down-payments").css("height","0")
+		$(".loanHome-calculator-Mask").removeClass("show")
+	})
+	
+	
+	//----------------公积金利率--------------------------------------------------
+	//公积金利率弹框
+	$(".loanHome-calculator-section .credit .typebox .gongjijin").tap(function(){
+		var lih=$(".loanHome-calculator .bomb-wrap .gong-rate li").height()
+		var lilen=$(".loanHome-calculator .bomb-wrap .gong-rate li").length
+		$(".loanHome-calculator .bomb-wrap .gong-rate").css("height",lih*lilen)
+		$(".loanHome-calculator-Mask").addClass("show")
+	})
+	//公积金利率选择
+	$(".loanHome-calculator .bomb-wrap .gong-rate li").tap(function(){
+		var gr_index=$(this).index()
+		var gr_txt=$(this).text()
+		$(this).addClass("select").siblings().removeClass("select")
+		$(".gongjijin .returnright").html(gr_txt)
+		$(".loanHome-calculator .bomb-wrap .gong-rate").css("height","0")
+		$(".loanHome-calculator-Mask").removeClass("show")
+	})
+	
+	
+	//----------------贷款年限------------------------------------------------
+	//贷款年限弹框
+	$(".loanHome-calculator-section .credit .typebox .nianxian").tap(function(){
+		var lih=$(".loanHome-calculator .bomb-wrap .loan-term li").height()
+		var lilen=$(".loanHome-calculator .bomb-wrap .loan-term li").length
+		$(".loanHome-calculator .bomb-wrap .loan-term").css("height",lih*lilen)
+		$(".loanHome-calculator-Mask").addClass("show")
+	})
+	//贷款年限选择
+	$(".loanHome-calculator .bomb-wrap .loan-term li").tap(function(){
+		var lt_index=$(this).index()
+		var lt_txt=$(this).text()
+		$(this).addClass("select").siblings().removeClass("select")
+		$(".nianxian .returnright").html(lt_txt)
+		$(".loanHome-calculator .bomb-wrap .loan-term").css("height","0")
+		$(".loanHome-calculator-Mask").removeClass("show")
+	})
+	
+	
+	//----------------商业贷利率------------------------------------------------
+	//商业贷利率弹框
+	$(".loanHome-calculator-section .credit .typebox .shanye").tap(function(){
+		var lih=$(".loanHome-calculator .bomb-wrap .shan-rate li").height()
+		var lilen=$(".loanHome-calculator .bomb-wrap .shan-rate li").length
+		$(".loanHome-calculator .bomb-wrap .shan-rate").css("height",lih*lilen)
+		$(".loanHome-calculator-Mask").addClass("show")
+	})
+	//商业贷利率选择
+	$(".loanHome-calculator .bomb-wrap .shan-rate li").tap(function(){
+		var sr_index=$(this).index()
+		var sr_txt=$(this).text()
+		$(this).addClass("select").siblings().removeClass("select")
+		$(".shanye .returnright").html(sr_txt)
+		$(".loanHome-calculator .bomb-wrap .shan-rate").css("height","0")
+		$(".loanHome-calculator-Mask").removeClass("show")
+	})
+	
+	
+	//----------------住宅类型------------------------------------------------
+	//住宅类型弹框
+	$(".loanHome-calculator-section .credit .typebox .zhuzhai").tap(function(){
+		var lih=$(".loanHome-calculator .bomb-wrap .housing-type li").height()
+		var lilen=$(".loanHome-calculator .bomb-wrap .housing-type li").length
+		$(".loanHome-calculator .bomb-wrap .housing-type").css("height",lih*lilen)
+		$(".loanHome-calculator-Mask").addClass("show")
+	})
+	//住宅类型选择
+	$(".loanHome-calculator .bomb-wrap .housing-type li").tap(function(){
+		var ht_index=$(this).index()
+		var ht_txt=$(this).text()
+		$(this).addClass("select").siblings().removeClass("select")
+		$(".zhuzhai .returnright").html(ht_txt)
+		$(".loanHome-calculator .bomb-wrap .housing-type").css("height","0")
+		$(".loanHome-calculator-Mask").removeClass("show")
+	})
+	
+	
+	//还款明细推行框
+	var metaw=$("html").width()
+	$(".loanHome-calculator-section .push").tap(function(){
+		$(this).css("color","#999999")
+		$(".R-details").css("left","0")
+	})
+	
+	$(".R-details .return").tap(function(){
+		$(".loanHome-calculator-section .push").css("color","#0099eb")
+		$(".R-details").css("left",metaw+5)
+	})
+	
+	//房贷计算器推行框
+	$(".Home-page-section .section-nav-ul .calculator").tap(function(){
+		$(".loanHome-calculator").css("left","0")
+	})
+	
+	$(".loanHome-calculator-header .return").tap(function(){
+		$(".loanHome-calculator").css("left",metaw+5)
+	})
+	
+
+	var loanHomeS = new IScroll('.loanHome-calculator-section', {
+		scrollbars: false
+	})
+	var R_detailsS = new IScroll('.R-details .details-wrapper-body', {
+		scrollbars: false
+	})
 })
