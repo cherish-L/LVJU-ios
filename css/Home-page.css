@@ -83,18 +83,14 @@ li {
   position: absolute;
   top: 0.4rem;
   left: 0.64rem;
-  background: url(../img/down1.png) no-repeat;
-  background-size: 0.44rem 0.24rem;
-  background-position-x: right;
-  background-position-y: 0.4rem;
+  background: url(../img/down1.png) right center no-repeat;
+  background-size: 0.48rem 0.24rem;
 }
 
 .Home-page-container .Home-page-header .header-box .Search_bar .Search-form .current-location.state {
   color: #394043;
-  background: url(../img/down2.png) no-repeat;
-  background-size: 0.44rem 0.24rem;
-  background-position-x: right;
-  background-position-y: 0.4rem;
+  background: url(../img/down2.png) right center no-repeat;
+  background-size: 0.48rem 0.24rem;
 }
 
 .Home-page-container .Home-page-header .header-box .Search_bar .Search-form .Search-frame {

@@ -73,17 +73,13 @@ $sc:25;
                         position: absolute;
                         top: 10/$sc+rem;
                         left: 16/$sc+rem;
-                        background: url(../img/down1.png) no-repeat;
-                        background-size: 11/$sc+rem 6/$sc+rem;
-                        background-position-x: right;
-                        background-position-y: 10/$sc+rem;
+                        background: url(../img/down1.png) right center no-repeat;
+                        background-size: 12/$sc+rem 6/$sc+rem;
                     }
                     .current-location.state {
                         color: #394043;
-                        background: url(../img/down2.png) no-repeat;
-                        background-size: 11/$sc+rem 6/$sc+rem;
-                        background-position-x: right;
-                        background-position-y: 10/$sc+rem;
+                        background: url(../img/down2.png) right center no-repeat;
+                        background-size: 12/$sc+rem 6/$sc+rem;
                     }
                     .Search-frame {
                         display: block;
