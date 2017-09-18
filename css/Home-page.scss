@@ -34,11 +34,11 @@ $sc:25;
     width: 100%;
     height: 100%;
     display: flex;
+    overflow: hidden;
     position: relative;
     display: -webkit-flex;
     flex-direction: column;
     background-color: #f4f4f4;
-    //-----------------内    容----------------------
     .Home-page-header {
         width: 100%;
         overflow: hidden;
@@ -177,7 +177,7 @@ $sc:25;
                         height: 100%;
                         float: left;
                         -webkit-flex-shrink: 0;
-                        img{
+                        img {
                             width: 100%;
                             height: 100%;
                         }
@@ -467,7 +467,7 @@ $sc:25;
                                         display: flex;
                                         justify-content: center;
                                         align-items: center;
-                                        span{
+                                        span {
                                             padding: 0 4/$sc+rem;
                                             font-size: 10/$sc+rem;
                                             color: #0099EB;
@@ -543,7 +543,6 @@ $sc:25;
             }
         }
     }
-    //-----------------底    部----------------------
     .Home-page-footer {
         width: 100%;
         height: 50/$sc+rem;
@@ -707,6 +706,7 @@ $sc:25;
             }
         }
     }
+    //------房价走势-------
     .houseprice-trend {
         width: 100%;
         height: 100%;
@@ -719,6 +719,7 @@ $sc:25;
         .trend-wrapper {
             width: 100%;
             height: 100%;
+            overflow: hidden;
             position: relative;
             background: #f4f4f4;
             display: flex;
@@ -961,7 +962,7 @@ $sc:25;
                                         height: 32/$sc+rem;
                                         box-shadow: inset 0 -1/$sc+rem 0 0 #EEEEEE;
                                         -webkit-box-shadow: inset 0 -1/$sc+rem 0 0 #EEEEEE;
-                                        .pri-li-wrapper{
+                                        .pri-li-wrapper {
                                             width: 100%;
                                             div {
                                                 float: left;
@@ -1036,7 +1037,262 @@ $sc:25;
             }
         }
     }
+    //------城市定位--------
+    .city-position {
+        width: 100%;
+        height: 100%;
+        background: #f4f4f4;
+        transition: all .3s;
+        position: absolute;
+        top: 0;
+        left: 380/$sc+rem;
+        z-index: 30;
+        .city-position-wrapper {
+            width: 100%;
+            height: 100%;
+            background: #f4f4f4;
+            display: flex;
+            overflow: hidden;
+            display: -webkit-flex;
+            flex-direction: column;
+            //-----------------头    部----------------------
+            .city-position-header {
+                width: 100%;
+                background: #f6f6f6;
+                z-index: 10;
+                .signal_bar {
+                    width: 100%;
+                    height: 20/$sc+rem;
+                }
+                .title_bar {
+                    width: 100%;
+                    height: 44/$sc+rem;
+                    line-height: 44/$sc+rem;
+                    position: relative;
+                    box-shadow: 0 1px 0 0 #CCCCCC;
+                    -webkit-box-shadow: 0 1px 0 0 #CCCCCC;
+                    .title_txt {
+                        font-size: 18/$sc+rem;
+                        color: #394043;
+                        letter-spacing: 0;
+                        text-align: center;
+                        font-weight: normal;
+                    }
+                    .del {
+                        display: block;
+                        height: 22/$sc+rem;
+                        width: 22/$sc+rem;
+                        background: url(../img/del.png);
+                        background-size: 22/$sc+rem 22/$sc+rem;
+                        position: absolute;
+                        top: 11/$sc+rem;
+                        left: 16/$sc+rem;
+                    }
+                }
+                .current_location {
+                    width: 100%;
+                    height: 44/$sc+rem;
+                    line-height: 44/$sc+rem;
+                    background: #FFFFFF;
+                    padding-left: 16/$sc+rem;
+                    font-size: 14/$sc+rem;
+                    color: #394043;
+                    font-weight: bold;
+                    box-sizing: border-box;
+                    -webkit-box-sizing: border-box;
+                }
+            }
+            .city-position-section {
+                flex: 1;
+                -webkit-flex: 1;
+                overflow: auto;
+                -webkit-overflow-scrolling: touch;
+                background: #f4f4f4;
+                .location_content {
+                    padding-bottom: 32/$sc+rem;
+                    .located {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        padding: 12/$sc+rem 0 12/$sc+rem 16/$sc+rem;
+                        box-sizing: border-box;
+                        -webkit-box-sizing: border-box;
+                        .located_title {
+                            width: 100%;
+                            height: 48/$sc+rem;
+                            line-height: 48/$sc+rem;
+                            font-size: 14/$sc+rem;
+                            color: #999999;
+                            font-weight: normal;
+                            box-sizing: border-box;
+                            -webkit-box-sizing: border-box;
+                        }
+                        .wraps {
+                            .located_city {
+                                width: 100/$sc+rem;
+                                height: 38/$sc+rem;
+                                opacity: 0.6;
+                                float: left;
+                                background: #FFFFFF;
+                                border: 1/$sc+rem solid #CCCCCC;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                .cityed {
+                                    display: inline-block;
+                                    padding-left: 18/$sc+rem;
+                                    font-size: 14/$sc+rem;
+                                    color: #6C7072;
+                                    background: url(../img/positioning.png) left center no-repeat;
+                                    background-size: 14/$sc+rem 14/$sc+rem;
+                                }
+                            }
+                            .not_opened {
+                                display: block;
+                                float: left;
+                                height: 100%;
+                                line-height: 38/$sc+rem;
+                                font-size: 14/$sc+rem;
+                                color: #999999;
+                                margin-left: 20/$sc+rem;
+                            }
+                        }
+                    }
+                    .history_location {
+                        display: none;
+                        width: 100%;
+                        padding-left: 16/$sc+rem;
+                        box-sizing: border-box;
+                        -webkit-box-sizing: border-box;
+                        .history_title {
+                            width: 100%;
+                            height: 48/$sc+rem;
+                            line-height: 48/$sc+rem;
+                            font-size: 14/$sc+rem;
+                            color: #999999;
+                            font-weight: normal;
+                        }
+                        .wrap {
+                            .history_city {
+                                width: 100/$sc+rem;
+                                height: 38/$sc+rem;
+                                line-height: 38/$sc+rem;
+                                margin: 0 12/$sc+rem 12/$sc+rem 0;
+                                opacity: 0.6;
+                                float: left;
+                                background: #FFFFFF;
+                                border: 1/$sc+rem solid #CCCCCC;
+                                text-align: center;
+                                font-size: 14/$sc+rem;
+                                color: #6C7072;
+                            }
+                        }
+                    }
+                    .hot_location {
+                        width: 100%;
+                        padding-left: 16/$sc+rem;
+                        box-sizing: border-box;
+                        -webkit-box-sizing: border-box;
+                        .hot_title {
+                            width: 100%;
+                            height: 48/$sc+rem;
+                            line-height: 48/$sc+rem;
+                            font-size: 14/$sc+rem;
+                            color: #999999;
+                            font-weight: normal;
+                        }
+                        .wrap {
+                            .hot_city {
+                                width: 100/$sc+rem;
+                                height: 38/$sc+rem;
+                                line-height: 38/$sc+rem;
+                                margin: 0 12/$sc+rem 12/$sc+rem 0;
+                                opacity: 0.6;
+                                float: left;
+                                background: #FFFFFF;
+                                border: 1/$sc+rem solid #CCCCCC;
+                                text-align: center;
+                                font-size: 14/$sc+rem;
+                                color: #6C7072;
+                            }
+                            .hot_city.lick {}
+                        }
+                    }
+                    .letter {
+                        width: 100%;
+                        .letter_title {
+                            width: 100%;
+                            height: 44/$sc+rem;
+                            line-height: 44/$sc+rem;
+                            padding-left: 16/$sc+rem;
+                            font-size: 14/$sc+rem;
+                            color: #999999;
+                            font-weight: normal;
+                            box-sizing: border-box;
+                            -webkit-box-sizing: border-box;
+                        }
+                        .wrap {
+                            width: 100%;
+                            background: #FFFFFF;
+                            .letter_city {
+                                height: 44/$sc+rem;
+                                line-height: 44/$sc+rem;
+                                width: 325/$sc+rem;
+                                background: #FFFFFF;
+                                font-size: 14/$sc+rem;
+                                color: #6C7072;
+                                border-bottom: 1/$sc+rem solid #ededed;
+                                margin-right: 33/$sc+rem;
+                                padding-left: 16/$sc+rem;
+                            }
+                            .letter_city:last-child {
+                                border-bottom: none;
+                            }
+                            .letter_city.lick {}
+                        }
+                    }
+                }
+                .location_list {
+                    width: 20/$sc+rem;
+                    position: absolute;
+                    right: 5/$sc+rem;
+                    top: 25%;
+                    .classification {
+                        li {
+                            width: 100%;
+                            height: 14/$sc+rem;
+                            text-align: center;
+                            font-weight: bold;
+                            line-height: 14/$sc+rem;
+                            font-size: 10/$sc+rem;
+                            a {
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                                color: #394043;
+                            }
+                        }
+                        span {
+                            width: 100%;
+                            height: 14/$sc+rem;
+                            text-align: center;
+                            font-weight: bold;
+                            line-height: 14/$sc+rem;
+                            font-size: 10/$sc+rem;
+                            a {
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                                color: #394043;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
+
 .swiper-container-horizontal>.swiper-pagination-bullets,
 .swiper-pagination-custom,
 .swiper-pagination-fraction {

@@ -33,6 +33,7 @@ li {
   width: 100%;
   height: 100%;
   display: flex;
+  overflow: hidden;
   position: relative;
   display: -webkit-flex;
   flex-direction: column;
@@ -814,6 +815,7 @@ li {
 .Home-page-container .houseprice-trend .trend-wrapper {
   width: 100%;
   height: 100%;
+  overflow: hidden;
   position: relative;
   background: #f4f4f4;
   display: flex;
@@ -1173,6 +1175,279 @@ li {
 
 .Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-body .pri-ul .pri-li .pri-li-wrapper .styletwo span {
   color: #8AD246;
+}
+
+.Home-page-container .city-position {
+  width: 100%;
+  height: 100%;
+  background: #f4f4f4;
+  transition: all .3s;
+  position: absolute;
+  top: 0;
+  left: 15.2rem;
+  z-index: 30;
+}
+
+.Home-page-container .city-position .city-position-wrapper {
+  width: 100%;
+  height: 100%;
+  background: #f4f4f4;
+  display: flex;
+  overflow: hidden;
+  display: -webkit-flex;
+  flex-direction: column;
+}
+
+.Home-page-container .city-position .city-position-wrapper .city-position-header {
+  width: 100%;
+  background: #f6f6f6;
+  z-index: 10;
+}
+
+.Home-page-container .city-position .city-position-wrapper .city-position-header .signal_bar {
+  width: 100%;
+  height: 0.8rem;
+}
+
+.Home-page-container .city-position .city-position-wrapper .city-position-header .title_bar {
+  width: 100%;
+  height: 1.76rem;
+  line-height: 1.76rem;
+  position: relative;
+  box-shadow: 0 1px 0 0 #CCCCCC;
+  -webkit-box-shadow: 0 1px 0 0 #CCCCCC;
+}
+
+.Home-page-container .city-position .city-position-wrapper .city-position-header .title_bar .title_txt {
+  font-size: 0.72rem;
+  color: #394043;
+  letter-spacing: 0;
+  text-align: center;
+  font-weight: normal;
+}
+
+.Home-page-container .city-position .city-position-wrapper .city-position-header .title_bar .del {
+  display: block;
+  height: 0.88rem;
+  width: 0.88rem;
+  background: url(../img/del.png);
+  background-size: 0.88rem 0.88rem;
+  position: absolute;
+  top: 0.44rem;
+  left: 0.64rem;
+}
+
+.Home-page-container .city-position .city-position-wrapper .city-position-header .current_location {
+  width: 100%;
+  height: 1.76rem;
+  line-height: 1.76rem;
+  background: #FFFFFF;
+  padding-left: 0.64rem;
+  font-size: 0.56rem;
+  color: #394043;
+  font-weight: bold;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.Home-page-container .city-position .city-position-wrapper .city-position-section {
+  flex: 1;
+  -webkit-flex: 1;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  background: #f4f4f4;
+}
+
+.Home-page-container .city-position .city-position-wrapper .city-position-section .location_content {
+  padding-bottom: 1.28rem;
+}
+
+.Home-page-container .city-position .city-position-wrapper .city-position-section .location_content .located {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0.48rem 0 0.48rem 0.64rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.Home-page-container .city-position .city-position-wrapper .city-position-section .location_content .located .located_title {
+  width: 100%;
+  height: 1.92rem;
+  line-height: 1.92rem;
+  font-size: 0.56rem;
+  color: #999999;
+  font-weight: normal;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.Home-page-container .city-position .city-position-wrapper .city-position-section .location_content .located .wraps .located_city {
+  width: 4rem;
+  height: 1.52rem;
+  opacity: 0.6;
+  float: left;
+  background: #FFFFFF;
+  border: 0.04rem solid #CCCCCC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Home-page-container .city-position .city-position-wrapper .city-position-section .location_content .located .wraps .located_city .cityed {
+  display: inline-block;
+  padding-left: 0.72rem;
+  font-size: 0.56rem;
+  color: #6C7072;
+  background: url(../img/positioning.png) left center no-repeat;
+  background-size: 0.56rem 0.56rem;
+}
+
+.Home-page-container .city-position .city-position-wrapper .city-position-section .location_content .located .wraps .not_opened {
+  display: block;
+  float: left;
+  height: 100%;
+  line-height: 1.52rem;
+  font-size: 0.56rem;
+  color: #999999;
+  margin-left: 0.8rem;
+}
+
+.Home-page-container .city-position .city-position-wrapper .city-position-section .location_content .history_location {
+  display: none;
+  width: 100%;
+  padding-left: 0.64rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.Home-page-container .city-position .city-position-wrapper .city-position-section .location_content .history_location .history_title {
+  width: 100%;
+  height: 1.92rem;
+  line-height: 1.92rem;
+  font-size: 0.56rem;
+  color: #999999;
+  font-weight: normal;
+}
+
+.Home-page-container .city-position .city-position-wrapper .city-position-section .location_content .history_location .wrap .history_city {
+  width: 4rem;
+  height: 1.52rem;
+  line-height: 1.52rem;
+  margin: 0 0.48rem 0.48rem 0;
+  opacity: 0.6;
+  float: left;
+  background: #FFFFFF;
+  border: 0.04rem solid #CCCCCC;
+  text-align: center;
+  font-size: 0.56rem;
+  color: #6C7072;
+}
+
+.Home-page-container .city-position .city-position-wrapper .city-position-section .location_content .hot_location {
+  width: 100%;
+  padding-left: 0.64rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.Home-page-container .city-position .city-position-wrapper .city-position-section .location_content .hot_location .hot_title {
+  width: 100%;
+  height: 1.92rem;
+  line-height: 1.92rem;
+  font-size: 0.56rem;
+  color: #999999;
+  font-weight: normal;
+}
+
+.Home-page-container .city-position .city-position-wrapper .city-position-section .location_content .hot_location .wrap .hot_city {
+  width: 4rem;
+  height: 1.52rem;
+  line-height: 1.52rem;
+  margin: 0 0.48rem 0.48rem 0;
+  opacity: 0.6;
+  float: left;
+  background: #FFFFFF;
+  border: 0.04rem solid #CCCCCC;
+  text-align: center;
+  font-size: 0.56rem;
+  color: #6C7072;
+}
+
+.Home-page-container .city-position .city-position-wrapper .city-position-section .location_content .letter {
+  width: 100%;
+}
+
+.Home-page-container .city-position .city-position-wrapper .city-position-section .location_content .letter .letter_title {
+  width: 100%;
+  height: 1.76rem;
+  line-height: 1.76rem;
+  padding-left: 0.64rem;
+  font-size: 0.56rem;
+  color: #999999;
+  font-weight: normal;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.Home-page-container .city-position .city-position-wrapper .city-position-section .location_content .letter .wrap {
+  width: 100%;
+  background: #FFFFFF;
+}
+
+.Home-page-container .city-position .city-position-wrapper .city-position-section .location_content .letter .wrap .letter_city {
+  height: 1.76rem;
+  line-height: 1.76rem;
+  width: 13rem;
+  background: #FFFFFF;
+  font-size: 0.56rem;
+  color: #6C7072;
+  border-bottom: 0.04rem solid #ededed;
+  margin-right: 1.32rem;
+  padding-left: 0.64rem;
+}
+
+.Home-page-container .city-position .city-position-wrapper .city-position-section .location_content .letter .wrap .letter_city:last-child {
+  border-bottom: none;
+}
+
+.Home-page-container .city-position .city-position-wrapper .city-position-section .location_list {
+  width: 0.8rem;
+  position: absolute;
+  right: 0.2rem;
+  top: 25%;
+}
+
+.Home-page-container .city-position .city-position-wrapper .city-position-section .location_list .classification li {
+  width: 100%;
+  height: 0.56rem;
+  text-align: center;
+  font-weight: bold;
+  line-height: 0.56rem;
+  font-size: 0.4rem;
+}
+
+.Home-page-container .city-position .city-position-wrapper .city-position-section .location_list .classification li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #394043;
+}
+
+.Home-page-container .city-position .city-position-wrapper .city-position-section .location_list .classification span {
+  width: 100%;
+  height: 0.56rem;
+  text-align: center;
+  font-weight: bold;
+  line-height: 0.56rem;
+  font-size: 0.4rem;
+}
+
+.Home-page-container .city-position .city-position-wrapper .city-position-section .location_list .classification span a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #394043;
 }
 
 .swiper-container-horizontal > .swiper-pagination-bullets,

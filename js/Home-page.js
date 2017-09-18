@@ -6,7 +6,7 @@ $(function(){
 		preventDefault:false,
 		probeType: 3
 	})
-	
+	var homePage_headerh=$(".Home-page-header").height()
 	//上拉加载等待
 	var angle_hp=0;
 	var angle_hp_time=0;
@@ -32,7 +32,7 @@ $(function(){
 			}
 		}
 		if(homePage_sectionS.y >= 0){
-			$(".Home-page-container .Home-page-header").css("opacity",(100-homePage_sectionS.y)/100)
+			$(".Home-page-container .Home-page-header").css("opacity",(homePage_headerh-homePage_sectionS.y)/homePage_headerh)
 			$(".Home-page-container .Home-page-header").css("background","rgba(246, 246, 246,0)")
 			$(".Home-page-container .Home-page-header").css("box-shadow","0 1px 0 0 rgba(204,204,204,0)")
 		}
@@ -44,6 +44,8 @@ $(function(){
 				}
 			}
 		})
+		
+//<----------------------  上拉加载  --------------------------->
 //		$(".Home-page-section .section-wrapper").on("touchmove", function(e) {
 //			clearTimeout(upDated)
 //			$(".Home-page-section .section-load").css("display", "block")
@@ -89,7 +91,7 @@ $(function(){
 		$(".trend-section").css("display","block")
 	})
 	
-	//房价走势交互效果
+//房价走势交互效果
 	var trend_h=$(".trend-section").height()
 	var tcw_ht=$(".houseprice-trend").width()
 	$(".trend-section .loading-fail").height(trend_h)
@@ -97,6 +99,45 @@ $(function(){
 		$(".houseprice-trend").css("left","0")
 	})
 	$(".trend-header .return").tap(function(){
-		$(".houseprice-trend").css("left",tcw_ht)
+		$(".houseprice-trend").css("left",tcw_ht+5)
+	})
+	
+	
+//城市定位
+	//字母开头城市为0的时候移除 当前字母title
+	$(".classify").each(function(){
+		var _index=$(this).index()
+		var letter_len=$(".classify").eq(_index).find(".wrap li").length
+		if(letter_len==0){
+			var classify_index=$(this).index()
+			$(".classify").eq(classify_index).remove()
+			$(".location_list .classification li").eq(classify_index).remove()
+		}
+	})
+	$(".classify .city").tap(function(){
+		var txt=$(this).text()
+		$(".Home-page-header .Search_bar .current-location").text(txt)
+		$(".city-position-header .current_location").text("当前: "+txt)
+		$(".located .wraps").find(".located_city .cityed").text(txt)
+		if(!$(this).hasClass("lick")){
+			$(".history_location .wrap").prepend("<li class='city history_city'>"+txt+"</li>")
+			$(this).addClass("lick")
+		}
+		$(".history_city").tap(function(){
+			var txts_hc=$(this).text()
+			$(".Home-page-header .Search_bar .current-location").text(txts_hc)
+			$(".current_location").text("当前: "+txts_hc)
+			$(".located .wraps").find(".located_city .cityed").text(txts_hc)
+		})
+		if($(".history_location .wrap").children().length>=2){
+			$(".history_location").css("display","block")
+		}
+	})
+	//点击弹出城市定位
+	$(".Home-page-header .Search_bar .current-location").tap(function(){
+		$(".city-position").css("left","0")
+		$(".city-position-header .title_bar .del").tap(function(){
+			$(".city-position").css("left",tcw_ht+5)
+		})
 	})
 })
