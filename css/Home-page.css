@@ -1600,10 +1600,7 @@ li {
 }
 
 .Home-page-container .map-house .map-house-wrapper .section-map-list .map-list-wrapper .map-list-btn li .num span {
-  display: inline-block;
   font-family: PingFang-SC-Medium;
-  height: 0.64rem;
-  line-height: 0.64rem;
   font-size: 0.4rem;
   color: #F6F6F6;
 }
