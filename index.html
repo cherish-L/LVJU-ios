@@ -176,90 +176,90 @@
 					</li>
 				</ul>
 			</footer>
-		</div>
-		<div class="houseprice-trend">
-			<div class="trend-wrapper">
-				<header class="trend-header">
-					<div class="signal_bar"></div>
-					<div class="title_bar">
-						<h3 class="title_txt">房价走势</h3>
-						<a class="return" href="javascript:;"></a>
-					</div>
-				</header>
-				<section class="trend-section">
-					<div class="trend-section-wrapper">
-						<div class="loading-fail">
-							<img src="img/fail.png" />
-							<div class="failalert">
-								<p class="failtxt">加载失败</p>
-								<p class="inspect">请检查您的网络是否连接</p>
-							</div>
+			<div class="houseprice-trend">
+				<div class="trend-wrapper">
+					<header class="trend-header">
+						<div class="signal_bar"></div>
+						<div class="title_bar">
+							<h3 class="title_txt">房价走势</h3>
+							<a class="return" href="javascript:;"></a>
 						</div>
-						<div class="trend-content">
-							<div class="content-banner">
-								<div class="left">
-									<span class="leftlocation">海口</span>
-									<span class="leftpinyin">HaiKou</span>
-								</div>
-								<div class="right">
-									<span>切换城市</span>
+					</header>
+					<section class="trend-section">
+						<div class="trend-section-wrapper">
+							<div class="loading-fail">
+								<img src="img/fail.png" />
+								<div class="failalert">
+									<p class="failtxt">加载失败</p>
+									<p class="inspect">请检查您的网络是否连接</p>
 								</div>
 							</div>
-							<div class="content-data">
-								<div class="content-data-header">
-									<div class="this month-average">
-										<span>本月均价</span>
-										<span>16000</span>
+							<div class="trend-content">
+								<div class="content-banner">
+									<div class="left">
+										<span class="leftlocation">海口</span>
+										<span class="leftpinyin">HaiKou</span>
 									</div>
-									<div class="this month-volume">
-										<span>本月销售套数</span>
-										<span>743</span>
+									<div class="right">
+										<span>切换城市</span>
 									</div>
 								</div>
-								<div class="content-data-pic"></div>
-								<div class="content-data-more">左右滑动可查看更多月份价格</div>
-							</div>
-							<div class="content-contrast">
-								<h3>海南城市房价对比</h3>
-								<div class="content-contrast-top">
-									<ul>
-										<li>
-											<span>城市</span>
-											<span>名称</span>
-										</li>
-										<li>
-											<span>上月</span>
-											<span>均价/销售套数</span>
-										</li>
-										<li>
-											<span>本月</span>
-											<span>均价/销售套数</span>
-										</li>
-									</ul>
+								<div class="content-data">
+									<div class="content-data-header">
+										<div class="this month-average">
+											<span>本月均价</span>
+											<span>16000</span>
+										</div>
+										<div class="this month-volume">
+											<span>本月销售套数</span>
+											<span>743</span>
+										</div>
+									</div>
+									<div class="content-data-pic"></div>
+									<div class="content-data-more">左右滑动可查看更多月份价格</div>
 								</div>
-								<div class="content-contrast-body">
-									<ul class="pri-ul">
-										<li class="pri-li" v-for="list in contrastdata">
-											<div class="pri-li-wrapper" v-for="items in list.data">
-												<div class="allregion" v-text="items.city"></div>
-												<div class="lastdata">
-													<span v-text="items.lastprice"></span>
-													<span>/</span>
-													<span v-text="items.lastnum"></span>
+								<div class="content-contrast">
+									<h3>海南城市房价对比</h3>
+									<div class="content-contrast-top">
+										<ul>
+											<li>
+												<span>城市</span>
+												<span>名称</span>
+											</li>
+											<li>
+												<span>上月</span>
+												<span>均价/销售套数</span>
+											</li>
+											<li>
+												<span>本月</span>
+												<span>均价/销售套数</span>
+											</li>
+										</ul>
+									</div>
+									<div class="content-contrast-body">
+										<ul class="pri-ul">
+											<li class="pri-li" v-for="list in contrastdata">
+												<div class="pri-li-wrapper" v-for="items in list.data">
+													<div class="allregion" v-text="items.city"></div>
+													<div class="lastdata">
+														<span v-text="items.lastprice"></span>
+														<span>/</span>
+														<span v-text="items.lastnum"></span>
+													</div>
+													<div class="thisdata" :class="items.className">
+														<span v-text="items.thisprice"></span>
+														<span>/</span>
+														<span v-text="items.thisnum"></span>
+													</div>
 												</div>
-												<div class="thisdata" :class="items.className">
-													<span v-text="items.thisprice"></span>
-													<span>/</span>
-													<span v-text="items.thisnum"></span>
-												</div>
-											</div>
-										</li>
-									</ul>
+											</li>
+										</ul>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-				</section>
+					</section>
+				</div>
 			</div>
 		</div>
 		<script type="text/javascript">
@@ -269,7 +269,7 @@
 			})
 		</script>
 		<script type="text/javascript">
-			var myVue1 = new Vue({
+			var myVue = new Vue({
 				el: ".Home-page-container",
 				data: {
 					groomhouse: [{
@@ -338,12 +338,7 @@
 							price: '12000元/㎡',
 							tags: ['住宅','养生社区','海景房','公寓']
 						}
-					]
-				}
-			})
-			var myVue2 = new Vue({
-				el: ".houseprice-trend",
-				data: {
+					],
 					contrastdata: [
 						{
 							data: [
@@ -408,5 +403,4 @@
 			})
 		</script>
 	</body>
-
 </html>

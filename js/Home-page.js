@@ -6,14 +6,13 @@ $(function(){
 		preventDefault:false,
 		probeType: 3
 	})
-	document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false)
 	
+	//上拉加载等待
 	var angle_hp=0;
-	setInterval(function() {
-		angle_hp += 4
-		$(".Home-page-section .section-loading i").css("transform", "rotate(" + angle_hp + "deg)");
-	}, 20)
+	var angle_hp_time=0;
 	
+	
+	//滚动头部透明度变化
 	var upDated=null;
 	homePage_sectionS.on('scroll',function(){
 		if(homePage_sectionS.y < 0){
@@ -62,10 +61,16 @@ $(function(){
 				$(".Home-page-section .section-load").text("上拉加载更多")
 				$(".Home-page-section .section-loading").css("display", "block")
 			 	upDated=setTimeout(function() {
+					clearTimeout(angle_hp_time)
 					$(".Home-page-section .section-loading").css("display", "none")
 					$(".Home-page-section .section-loadnone").css("display", "block")
 				}, 1500)	
+				angle_hp_time=setInterval(function() {
+					angle_hp += 4
+					$(".Home-page-section .section-loading i").css("transform", "rotate(" + angle_hp + "deg)");
+				}, 20)
 			}
+			
 		})
 	});
 	

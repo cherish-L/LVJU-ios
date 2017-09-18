@@ -800,18 +800,18 @@ li {
   color: #0099EB;
 }
 
-.houseprice-trend {
+.Home-page-container .houseprice-trend {
   width: 100%;
   height: 100%;
   background: #f4f4f4;
   transition: all .3s;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 15.2rem;
   z-index: 30;
 }
 
-.houseprice-trend .trend-wrapper {
+.Home-page-container .houseprice-trend .trend-wrapper {
   width: 100%;
   height: 100%;
   position: relative;
@@ -821,7 +821,7 @@ li {
   flex-direction: column;
 }
 
-.houseprice-trend .trend-wrapper .trend-header {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-header {
   width: 100%;
   background: #f6f6f6;
   box-shadow: 0 1px 0 0 #CCCCCC;
@@ -829,19 +829,19 @@ li {
   z-index: 10;
 }
 
-.houseprice-trend .trend-wrapper .trend-header .signal_bar {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-header .signal_bar {
   width: 100%;
   height: 0.8rem;
 }
 
-.houseprice-trend .trend-wrapper .trend-header .title_bar {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-header .title_bar {
   width: 100%;
   height: 1.76rem;
   line-height: 1.76rem;
   position: relative;
 }
 
-.houseprice-trend .trend-wrapper .trend-header .title_bar .title_txt {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-header .title_bar .title_txt {
   font-size: 0.72rem;
   color: #394043;
   letter-spacing: 0;
@@ -849,7 +849,7 @@ li {
   font-weight: normal;
 }
 
-.houseprice-trend .trend-wrapper .trend-header .title_bar .return {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-header .title_bar .return {
   display: block;
   height: 0.88rem;
   width: 0.88rem;
@@ -860,24 +860,24 @@ li {
   left: 0.64rem;
 }
 
-.houseprice-trend .trend-wrapper .trend-section {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section {
   flex: 1;
   -webkit-flex: 1;
   overflow: hidden;
   background: #f4f4f4;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper {
   padding-bottom: 1.28rem;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .loading-fail {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .loading-fail {
   display: none;
   width: 100%;
   height: 100%;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .loading-fail img {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .loading-fail img {
   display: block;
   width: 3.84rem;
   height: 3.84rem;
@@ -885,29 +885,29 @@ li {
   padding-top: 6.8rem;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .loading-fail .failalert {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .loading-fail .failalert {
   margin-top: 0.16rem;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .loading-fail .failalert .failtxt {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .loading-fail .failalert .failtxt {
   font-size: 0.64rem;
   color: #EF7747;
   line-height: 0.88rem;
   text-align: center;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .loading-fail .failalert .inspect {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .loading-fail .failalert .inspect {
   font-size: 0.48rem;
   line-height: 0.64rem;
   text-align: center;
   color: #6C7072;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content {
   width: 100%;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-banner {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-banner {
   width: 100%;
   height: 3.2rem;
   padding: 1rem 0.64rem;
@@ -917,11 +917,11 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-banner .left {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-banner .left {
   float: left;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-banner .left .leftlocation {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-banner .left .leftlocation {
   display: block;
   float: left;
   line-height: 1.2rem;
@@ -930,7 +930,7 @@ li {
   color: #F6F6F6;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-banner .left .leftpinyin {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-banner .left .leftpinyin {
   display: block;
   float: left;
   line-height: 1.2rem;
@@ -938,11 +938,11 @@ li {
   color: #F6F6F6;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-banner .right {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-banner .right {
   float: right;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-banner .right span {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-banner .right span {
   display: block;
   line-height: 1.2rem;
   font-size: 0.56rem;
@@ -955,23 +955,23 @@ li {
   background-position-y: 0.32rem;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-data {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-data {
   width: 100%;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-data .content-data-header {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-data .content-data-header {
   width: 100%;
   height: 2.24rem;
   background: #FFFFFF;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-data .content-data-header .this {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-data .content-data-header .this {
   width: 50%;
   float: left;
   height: 2.24rem;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-data .content-data-header .month-average span:first-child {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-data .content-data-header .month-average span:first-child {
   display: block;
   text-align: center;
   line-height: 0.64rem;
@@ -980,7 +980,7 @@ li {
   color: #999999;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-data .content-data-header .month-average span:last-child {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-data .content-data-header .month-average span:last-child {
   display: block;
   text-align: center;
   line-height: 1.12rem;
@@ -988,7 +988,7 @@ li {
   color: #0099EB;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-data .content-data-header .month-volume span:first-child {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-data .content-data-header .month-volume span:first-child {
   display: block;
   text-align: center;
   line-height: 0.64rem;
@@ -997,7 +997,7 @@ li {
   color: #999999;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-data .content-data-header .month-volume span:last-child {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-data .content-data-header .month-volume span:last-child {
   display: block;
   text-align: center;
   line-height: 1.12rem;
@@ -1005,13 +1005,13 @@ li {
   color: #63b516;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-data .content-data-pic {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-data .content-data-pic {
   width: 100%;
   background: red;
   height: 11.12rem;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-data .content-data-more {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-data .content-data-more {
   width: 100%;
   line-height: 0.64rem;
   padding: 0.68rem 0.64rem;
@@ -1021,11 +1021,11 @@ li {
   letter-spacing: 0.0084rem;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast {
   width: 100%;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast h3 {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast h3 {
   width: 100%;
   height: 2.24rem;
   line-height: 0.96rem;
@@ -1037,22 +1037,22 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-top {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-top {
   width: 100%;
   background: #E6F6FF;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-top ul {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-top ul {
   width: 100%;
   height: 2.24rem;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-top ul li {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-top ul li {
   float: left;
   height: 2.24rem;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-top ul li span:nth-child(1) {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-top ul li span:nth-child(1) {
   display: block;
   line-height: 0.64rem;
   font-size: 0.48rem;
@@ -1060,54 +1060,54 @@ li {
   margin-top: 0.48rem;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-top ul li span:nth-child(2) {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-top ul li span:nth-child(2) {
   display: block;
   line-height: 0.64rem;
   font-size: 0.48rem;
   color: #0099EB;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-top ul li:nth-child(1) {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-top ul li:nth-child(1) {
   width: 24%;
   padding-left: 0.64rem;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-top ul li:nth-child(2) {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-top ul li:nth-child(2) {
   width: 38%;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-top ul li:nth-child(3) {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-top ul li:nth-child(3) {
   width: 38%;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-body {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-body {
   width: 100%;
   background: #FFFFFF;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-body .pri-ul {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-body .pri-ul {
   width: 100%;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-body .pri-ul .pri-li:last-child {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-body .pri-ul .pri-li:last-child {
   box-shadow: none;
   -webkit-box-shadow: none;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-body .pri-ul .pri-li {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-body .pri-ul .pri-li {
   width: 100%;
   height: 1.28rem;
   box-shadow: inset 0 -0.04rem 0 0 #EEEEEE;
   -webkit-box-shadow: inset 0 -0.04rem 0 0 #EEEEEE;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-body .pri-ul .pri-li .pri-li-wrapper {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-body .pri-ul .pri-li .pri-li-wrapper {
   width: 100%;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-body .pri-ul .pri-li .pri-li-wrapper div {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-body .pri-ul .pri-li .pri-li-wrapper div {
   float: left;
   height: 1.28rem;
   line-height: 0.64rem;
@@ -1116,18 +1116,18 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-body .pri-ul .pri-li .pri-li-wrapper .allregion {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-body .pri-ul .pri-li .pri-li-wrapper .allregion {
   width: 24%;
   font-size: 0.48rem;
   color: #0099EB;
   padding-left: 0.64rem;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-body .pri-ul .pri-li .pri-li-wrapper .lastdata {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-body .pri-ul .pri-li .pri-li-wrapper .lastdata {
   width: 38%;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-body .pri-ul .pri-li .pri-li-wrapper .lastdata span {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-body .pri-ul .pri-li .pri-li-wrapper .lastdata span {
   display: block;
   float: left;
   font-size: 0.48rem;
@@ -1135,12 +1135,12 @@ li {
   color: #0099EB;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-body .pri-ul .pri-li .pri-li-wrapper .lastdata span:nth-child(2) {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-body .pri-ul .pri-li .pri-li-wrapper .lastdata span:nth-child(2) {
   margin: 0 0.2rem;
   font-size: 0.56rem;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-body .pri-ul .pri-li .pri-li-wrapper .thisdata {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-body .pri-ul .pri-li .pri-li-wrapper .thisdata {
   width: 38%;
   padding-left: 0.56rem;
   background: url(../img/up.png) no-repeat;
@@ -1148,7 +1148,7 @@ li {
   background-position: 0 0.36rem;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-body .pri-ul .pri-li .pri-li-wrapper .thisdata span {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-body .pri-ul .pri-li .pri-li-wrapper .thisdata span {
   display: block;
   float: left;
   font-size: 0.48rem;
@@ -1156,22 +1156,22 @@ li {
   color: #0099EB;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-body .pri-ul .pri-li .pri-li-wrapper .thisdata span:nth-child(2) {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-body .pri-ul .pri-li .pri-li-wrapper .thisdata span:nth-child(2) {
   margin: 0 0.2rem;
   font-size: 0.56rem;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-body .pri-ul .pri-li .pri-li-wrapper .styleone span {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-body .pri-ul .pri-li .pri-li-wrapper .styleone span {
   color: #0099EB;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-body .pri-ul .pri-li .pri-li-wrapper .styletwo {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-body .pri-ul .pri-li .pri-li-wrapper .styletwo {
   background: url(../img/down.png) no-repeat;
   background-size: 0.36rem 0.4rem;
   background-position: 0 0.36rem;
 }
 
-.houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-body .pri-ul .pri-li .pri-li-wrapper .styletwo span {
+.Home-page-container .houseprice-trend .trend-wrapper .trend-section .trend-section-wrapper .trend-content .content-contrast .content-contrast-body .pri-ul .pri-li .pri-li-wrapper .styletwo span {
   color: #8AD246;
 }
 
