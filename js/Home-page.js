@@ -3,8 +3,10 @@ $(function(){
 	//首页头部滚动监听事件
 	var homePage_sectionS = new IScroll('.Home-page-section', {
 		scrollbars: false,
+		preventDefault:false,
 		probeType: 3
-	});
+	})
+	document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false)
 	
 	var angle_hp=0;
 	setInterval(function() {
@@ -75,8 +77,7 @@ $(function(){
 	//房价走势头部滚动监听事件
 	var trendS = new IScroll('.trend-section', {
 		scrollbars: false
-	});
-	
+	})
 	
 	$(".trend-section .loading-fail").tap(function(){
 		$(".trend-section .loading-fail").css("display","none")
@@ -86,7 +87,6 @@ $(function(){
 	//房价走势交互效果
 	var trend_h=$(".trend-section").height()
 	var tcw_ht=$(".houseprice-trend").width()
-	
 	$(".trend-section .loading-fail").height(trend_h)
 	$(".historicalprice-title span").tap(function(){
 		$(".houseprice-trend").css("left","0")
