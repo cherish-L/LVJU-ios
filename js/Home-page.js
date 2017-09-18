@@ -44,35 +44,35 @@ $(function(){
 				}
 			}
 		})
-		$(".Home-page-section .section-wrapper").on("touchmove", function(e) {
-			clearTimeout(upDated)
-			$(".Home-page-section .section-load").css("display", "block")
-			$(".Home-page-section .section-loading").css("display", "none")
-			$(".Home-page-section .section-loadnone").css("display", "none")
-			if(maxY >= 40) {
-				$(".Home-page-section .section-load").text("松开加载更多...")
-				$(".Home-page-section .section-load").css("display", "block")
-				$(".Home-page-section .section-loadnone").css("display", "none")
-			}
-		})
-		$(".Home-page-section .section-wrapper").on("touchend", function(e) {
-			if($(".Home-page-section .section-load").text()=="松开加载更多..."){
-				$(".Home-page-section .section-load").css("display", "none")
-				$(".Home-page-section .section-load").text("上拉加载更多")
-				$(".Home-page-section .section-loading").css("display", "block")
-			 	upDated=setTimeout(function() {
-					clearTimeout(angle_hp_time)
-					$(".Home-page-section .section-loading").css("display", "none")
-					$(".Home-page-section .section-loadnone").css("display", "block")
-				}, 1500)	
-				angle_hp_time=setInterval(function() {
-					angle_hp += 4
-					$(".Home-page-section .section-loading i").css("transform", "rotate(" + angle_hp + "deg)");
-				}, 20)
-			}
-			
-		})
-	});
+//		$(".Home-page-section .section-wrapper").on("touchmove", function(e) {
+//			clearTimeout(upDated)
+//			$(".Home-page-section .section-load").css("display", "block")
+//			$(".Home-page-section .section-loading").css("display", "none")
+//			$(".Home-page-section .section-loadnone").css("display", "none")
+//			if(maxY >= 40) {
+//				$(".Home-page-section .section-load").text("松开加载更多...")
+//				$(".Home-page-section .section-load").css("display", "block")
+//				$(".Home-page-section .section-loadnone").css("display", "none")
+//			}
+//		})
+//		$(".Home-page-section .section-wrapper").on("touchend", function(e) {
+//			if($(".Home-page-section .section-load").text()=="松开加载更多..."){
+//				$(".Home-page-section .section-load").css("display", "none")
+//				$(".Home-page-section .section-load").text("上拉加载更多")
+//				$(".Home-page-section .section-loading").css("display", "block")
+//			 	upDated=setTimeout(function() {
+//					clearTimeout(angle_hp_time)
+//					$(".Home-page-section .section-loading").css("display", "none")
+//					$(".Home-page-section .section-loadnone").css("display", "block")
+//				}, 1500)	
+//				angle_hp_time=setInterval(function() {
+//					angle_hp += 4
+//					$(".Home-page-section .section-loading i").css("transform", "rotate(" + angle_hp + "deg)");
+//				}, 20)
+//			}
+//			
+//		})
+	})
 	
 	//底部点击切换页面
 	$(".Home-page-footer .footer-nav-li").tap(function(){
