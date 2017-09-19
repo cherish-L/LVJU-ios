@@ -103,7 +103,7 @@ $(function(){
 	})
 	
 	
-//城市定位
+//城市定位----------------------------------------------------------------------
 	//字母开头城市为0的时候移除 当前字母title
 	$(".classify").each(function(){
 		var _index=$(this).index()
@@ -142,7 +142,7 @@ $(function(){
 	})
 	
 	
-//地图找房
+//地图找房----------------------------------------------------------------------
 	$(".Home-page-section .section-nav .map_house").tap(function(){
 		$(".map-house").css("left",0)
 		$(".map-house-header .title_bar .return").tap(function(){
@@ -308,7 +308,7 @@ $(function(){
 	})
 
 
-//房贷计算器
+//房贷计算器----------------------------------------------------------------------
 	//AF与CI版面交互
 	$(".AF-money .AF-calculate-select span").tap(function(){
 		$(this).addClass("select").siblings().removeClass("select")
@@ -543,4 +543,9 @@ $(function(){
 	var R_detailsS = new IScroll('.R-details .details-wrapper-body', {
 		scrollbars: false
 	})
+	
+	
+//购房需求----------------------------------------------------------------------	
+	
+
 })
