@@ -546,6 +546,107 @@ $(function(){
 	
 	
 //购房需求----------------------------------------------------------------------	
-	
+	var housing_demandS = new IScroll('.housing-demand-section', {
+		scrollbars: false
+	})
+	var hd_index=0;
+	var bomb_formula=0;
+	$(".housing-demand-section .information_wrap li").tap(function() {
+		hd_index = $(this).index();
+		bomb_formula = $(".bomb_wrap .bomb").eq(hd_index);
+		var bomb_formulah = bomb_formula.find(".d_content").height();
+		bomb_formula.css("height", bomb_formulah);
+		
+		if($(this).hasClass("int")) {
+			$(".housing-demand-Mask").removeClass("show")
+		} else if(!$(this).hasClass("int")) {
+			$(".housing-demand-Mask").addClass("show")
+		}
+		
+		$(".bomb_wrap .bomb .d_content li").tap(function() {
+			var ind = $(this).index();
+			var txt = $(this).html();
+			bomb_formula.css("height", "0");
+			bomb_formula.find(".bomb_wrap .bomb .d_content li").eq(ind).addClass("select").siblings().removeClass("select");
+			$(".housing-demand-Mask").removeClass("show")
+			var ddd = $(".housing-demand-section .information_wrap li").eq(hd_index).find(".selecttxt");
+			if(ddd) {
+				ddd.remove()
+				$(".housing-demand-section .information_wrap li").eq(hd_index).find(".returnright").prepend("<span class='selecttxt'>" + txt + "</span>")
+			}
+			hd_index = null;
+			housing_demandS.refresh()
+		})
 
+		$(".bomb_wrap .selectmore span").tap(function() {
+			if(!$(this).hasClass("on")) {
+				var arr = $(this).text()
+				$(this).addClass("on")
+				$(".housing-demand-section .information_wrap li").eq(hd_index).find(".returnright .txt_wrap").prepend("<span class='selectwrap'>" + arr + "</span>");
+			}
+			var hhh = $(".housing-demand-section .information_wrap li").eq(hd_index).find(".returnright .txt_wrap").height()
+			$(".housing-demand-section .information_wrap li").eq(hd_index).height(hhh)
+			$(".housing-demand-section .information_wrap li").eq(hd_index).find(".returnright i").height(hhh)
+			housing_demandS.refresh()
+		})
+
+		$(".bomb_wrap .btns .reset").tap(function() {
+			$(this).parent().siblings(".selectmore").find("span").removeClass("on")
+			$(".housing-demand-section .information_wrap li").eq(hd_index).find(".returnright .txt_wrap").html('')
+			$(".housing-demand-section .information_wrap li").eq(hd_index).find(".returnright .txt_wrap").prepend("<div style='clear: both;'></div>");
+			var liheight = $(".housing-demand-section .information_wrap li").eq(0).height()
+			$(".housing-demand-section .information_wrap li").eq(hd_index).height(liheight)
+			housing_demandS.refresh()
+		})
+
+		$(".bomb_wrap .btns .determine").tap(function() {
+			$(".housing-demand-Mask").removeClass("show")
+			bomb_formula.css("height", "0");
+			housing_demandS.refresh()
+		})
+
+		$(".housing-demand-Mask").tap(function() {
+			$(".housing-demand-Mask").removeClass("show")
+			bomb_formula.css("height", "0");
+			$(".click_sub .fail").removeClass("show")
+			$(".click_sub .success").removeClass("show")
+			index = null;
+			housing_demandS.refresh()
+		})
+	})
+
+	$(".housing-demand-section .information_wrap .name").focus(function() {
+		$(this).css("color", "#6C7072")
+		var t = $(this).val();
+		$(this).val("").focus().val(t)
+	})
+
+	//提交按钮（随时改动）
+	$(".housing-demand-footer .submit").tap(function() {
+		$(".housing-demand-Mask").addClass("show")
+		$(".click_sub .fail").addClass("show")
+		
+		$(".click_sub .fail .again").tap(function() {
+			$(".housing-demand .click_sub .fail").removeClass("show")
+			$(".housing-demand .click_sub .success").addClass("show")
+		})
+		
+		$(".housing-demand .click_sub .success .know").tap(function() {
+			$(".housing-demand .click_sub .success").removeClass("show")
+			$(".housing-demand-Mask").removeClass("show")
+		})
+		
+		$(".housing-demand-Mask").tap(function() {
+		$(".housing-demand-Mask").removeClass("show")
+		$(".click_sub .fail").removeClass("show")
+		$(".click_sub .success").removeClass("show")
+		})
+	})
+
+	$(".Home-page-section .section-nav-ul .housing_demand").tap(function(){
+		$(".housing-demand").css("left","0")
+		$(".housing-demand-header .return").tap(function(){
+			$(".housing-demand").css("left",tcw_ht+5)
+		})
+	})
 })
