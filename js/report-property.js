@@ -17,7 +17,23 @@ $(function(){
 		$(this).addClass("select").siblings().removeClass("select")
 	})
 	
+	$(".report-property-section").tap(function(){
+		$(".search_ipt").blur()
+	})
+	$(".report-property-header").tap(function(){
+		$(".search_ipt").blur()
+	})
+	
 	$(".report-property-personally .report-property-li").tap(function(){
+		if(!$(this).find(".report-property-li-btn").hasClass("select")){
+			$(this).find(".report-property-li-btn").addClass("select")
+		}
+		else{
+			$(this).find(".report-property-li-btn").removeClass("select")
+		}
+	})
+	
+	$(".report-property-ground .report-property-li").tap(function(){
 		if(!$(this).find(".report-property-li-btn").hasClass("select")){
 			$(this).find(".report-property-li-btn").addClass("select")
 		}

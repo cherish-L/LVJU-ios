@@ -183,7 +183,7 @@ li {
   left: 0;
   right: 0;
   margin: auto;
-  z-index: 1;
+  z-index: 999;
 }
 
 .report-property-container .report-property-section {
