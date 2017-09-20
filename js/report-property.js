@@ -17,10 +17,13 @@ $(function(){
 		$(this).addClass("select").siblings().removeClass("select")
 	})
 	
-	$(".report-property-section").tap(function(){
+	$(".report-property-section").bind("touchstart",function(){
 		$(".search_ipt").blur()
 	})
-	$(".report-property-header").tap(function(){
+	$(".report-property-search .content-nav").bind("touchstart",function(){
+		$(".search_ipt").blur()
+	})
+	$(".report-property-header").bind("touchstart",function(){
 		$(".search_ipt").blur()
 	})
 	
