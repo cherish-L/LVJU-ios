@@ -12,6 +12,8 @@ $(function(){
 	})
 	
 	$(".report-property-search .content-nav-li").tap(function(){
+		var index=$(this).index()
+		reportSwiper.slideTo(index, 300, false)
 		$(this).addClass("select").siblings().removeClass("select")
 	})
 	
@@ -23,4 +25,10 @@ $(function(){
 			$(this).find(".report-property-li-btn").removeClass("select")
 		}
 	})
+	
+	$(".report-property-section").bind("touchend",function(){
+		var index=reportSwiper.realIndex
+		$(".report-property-search .content-nav-li").eq(index).addClass("select").siblings().removeClass("select")
+	})
+	
 })

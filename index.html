@@ -265,9 +265,13 @@
 	<script src="plugins/swiper-3.4.2.min.js"></script>
 	<script>
 		var reportSwiper = new Swiper('.report-property-section', {
-			
-			pagination : '.swiper-pagination',
-			paginationType : 'fraction'
+			passiveListeners: false,
+			touchMoveStopPropagation : false,
+			freeMode : false,
+			freeModeMomentumBounce : false,
+			preventLinksPropagation : false,
+			longSwipesRatio : 0.5,
+			touchAngle : 15
 		})
 	</script>
 	<script type="text/javascript" src="js/report-property.js"></script>
