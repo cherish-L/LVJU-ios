@@ -4,10 +4,12 @@
 		<meta charset="utf-8" />
 		<meta content="email=no" name="format-detection" />
 		<meta http-equiv="Cache-Control" content="no-cache" />
+		 <meta name="format-detection" content="telephone=no">
+		<meta http-equiv="x-rim-auto-match" content="none">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>报备客户</title>
+		<title>报备楼盘</title>
 		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/report-customer.css" />
+		<link rel="stylesheet" type="text/css" href="css/report-property.css" />
 		<script type="text/javascript" src="plugins/zepto.min.js"></script>
 		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>      
 		<script type="text/javascript" src="vue/vue.js"></script>
@@ -17,83 +19,256 @@
 		</script>
 	</head>
 	<body>
-		<div class="report-customer-container" v-cloak>
-			<header class="report-customer-header">
+		<div class="report-property-container" v-cloak>
+			<header class="report-property-header">
 				<div class="signal_bar"></div>
 				<div class="title_bar">
-					<h3 class="title_txt">报备客户</h3>
+					<h3 class="title_txt">选择报备楼盘</h3>
 					<a class="return" href="javascript:;"></a>
 					<a class="more" href="javascript:;"></a>
 				</div>
 			</header>
-			<section class="report-customer-section">
-				<div class="section-wrapper">
-					<div class="salesperson-info">
-						<ul class="salesperson-info-wrapper">
-							<li class="name">
-								<input class="name_ipt" type="text" name="" id="" placeholder="带看人姓名"/>
-								<a href="javascript:;"></a>
+			<div class="report-property-search">
+				<div class="search-box">
+					<span>区域</span>
+					<input class="search_ipt" type="text" name="" id="" placeholder="请输入楼盘名称"/>
+				</div>
+				<div class="content-nav">
+					<ul class="content-nav-ul">
+						<li class="content-nav-li select">亲自带看</li>
+						<li class="content-nav-li">地接带看</li>
+					</ul>
+				</div>
+			</div>
+			<section class="report-property-section">
+				<div class="section-wrapper swiper-wrapper">
+					<div class="section-wrapper-personally swiper-slide">
+						<ul class="report-property-personally">
+							<li class="report-property-li">
+								<div class="report-property-li-left">
+									<h3 class="title">三亚-卓达东方巴哈马</h3>
+									<span class="term">保护期：30天</span>
+									<span class="advance">提前一小时报备</span>
+									<span class="other">暂无</span>
+								</div>
+								<div class="report-property-li-right">
+									<span class="commission">佣金2%</span>
+									<span class="state">全号报备</span>
+								</div>
+								<div class="report-property-li-btn"></div>
 							</li>
-							<li class="phone">
-								<input class="phone_ipt" type="text" name="" id="" placeholder="带看人电话"/>
+							<li class="report-property-li">
+								<div class="report-property-li-left">
+									<h3 class="title">海口-四季华庭阳光</h3>
+									<span class="term">保护期：30天</span>
+									<span class="advance">提前一小时报备</span>
+									<span class="other">暂无</span>
+								</div>
+								<div class="report-property-li-right">
+									<span class="commission">佣金2%</span>
+									<span class="state">全号报备</span>
+								</div>
+								<div class="report-property-li-btn"></div>
 							</li>
-							<li class="num">
-								<input class="num" type="text" name="" id="" placeholder="带看人数"/>
+							<li class="report-property-li">
+								<div class="report-property-li-left">
+									<h3 class="title">陵水-雅居乐清水湾</h3>
+									<span class="term">保护期：30天</span>
+									<span class="advance">提前一小时报备</span>
+									<span class="other">暂无</span>
+								</div>
+								<div class="report-property-li-right">
+									<span class="commission">佣金3%，扣10%</span>
+									<span class="state">全号报备</span>
+								</div>
+								<div class="report-property-li-btn"></div>
+							</li>
+							<li class="report-property-li">
+								<div class="report-property-li-left">
+									<h3 class="title">陵水-雅居乐清水湾</h3>
+									<span class="term">保护期：30天</span>
+									<span class="advance">提前一小时报备</span>
+									<span class="other">暂无</span>
+								</div>
+								<div class="report-property-li-right">
+									<span class="commission">佣金3%，扣10%</span>
+									<span class="state">全号报备</span>
+								</div>
+								<div class="report-property-li-btn"></div>
+							</li>
+							<li class="report-property-li">
+								<div class="report-property-li-left">
+									<h3 class="title">陵水-雅居乐清水湾</h3>
+									<span class="term">保护期：30天</span>
+									<span class="advance">提前一小时报备</span>
+									<span class="other">暂无</span>
+								</div>
+								<div class="report-property-li-right">
+									<span class="commission">佣金3%，扣10%</span>
+									<span class="state">全号报备</span>
+								</div>
+								<div class="report-property-li-btn"></div>
+							</li>
+							<li class="report-property-li">
+								<div class="report-property-li-left">
+									<h3 class="title">陵水-雅居乐清水湾</h3>
+									<span class="term">保护期：30天</span>
+									<span class="advance">提前一小时报备</span>
+									<span class="other">暂无</span>
+								</div>
+								<div class="report-property-li-right">
+									<span class="commission">佣金3%，扣10%</span>
+									<span class="state">全号报备</span>
+								</div>
+								<div class="report-property-li-btn"></div>
 							</li>
 						</ul>
 					</div>
-					<div class="property-info">
-						<ul class="property-info-wrapper">
-							<li class="time">预计看房时间</li>
-							<li class="property">选择报备楼盘</li>
-							<li class="tags-box">
-								<ul class="tags-box-ul">
-									<li>
-										<img src="img/banner.png"/>
-										<p class="title">冠永凤凰城</p>
-										<span class="delete"></span>
-									</li>
-									<li>
-										<img src="img/banner.png"/>
-										<p class="title">冠永凤凰城</p>
-										<span class="delete"></span>
-									</li>
-									<li>
-										<img src="img/banner.png"/>
-										<p class="title">冠永凤凰城</p>
-										<span class="delete"></span>
-									</li>
-								</ul>
+					<div class="section-wrapper-ground swiper-slide">
+						<ul class="report-property-ground">
+							<li class="report-property-li">
+								<div class="report-property-li-left">
+									<h3 class="title">三亚-卓达东方巴哈马</h3>
+									<span class="term">保护期：30天</span>
+									<span class="advance">提前一小时报备</span>
+									<span class="other">暂无</span>
+								</div>
+								<div class="report-property-li-right">
+									<span class="commission">佣金2%</span>
+									<span class="state">全号报备</span>
+								</div>
+								<div class="report-property-li-btn"></div>
+							</li>
+							<li class="report-property-li">
+								<div class="report-property-li-left">
+									<h3 class="title">海口-四季华庭阳光</h3>
+									<span class="term">保护期：30天</span>
+									<span class="advance">提前一小时报备</span>
+									<span class="other">暂无</span>
+								</div>
+								<div class="report-property-li-right">
+									<span class="commission">佣金2%</span>
+									<span class="state">全号报备</span>
+								</div>
+								<div class="report-property-li-btn"></div>
+							</li>
+							<li class="report-property-li">
+								<div class="report-property-li-left">
+									<h3 class="title">陵水-雅居乐清水湾</h3>
+									<span class="term">保护期：30天</span>
+									<span class="advance">提前一小时报备</span>
+									<span class="other">暂无</span>
+								</div>
+								<div class="report-property-li-right">
+									<span class="commission">佣金3%，扣10%</span>
+									<span class="state">全号报备</span>
+								</div>
+								<div class="report-property-li-btn"></div>
+							</li>
+							<li class="report-property-li">
+								<div class="report-property-li-left">
+									<h3 class="title">陵水-雅居乐清水湾</h3>
+									<span class="term">保护期：30天</span>
+									<span class="advance">提前一小时报备</span>
+									<span class="other">暂无</span>
+								</div>
+								<div class="report-property-li-right">
+									<span class="commission">佣金3%，扣10%</span>
+									<span class="state">全号报备</span>
+								</div>
+								<div class="report-property-li-btn"></div>
+							</li>
+							<li class="report-property-li">
+								<div class="report-property-li-left">
+									<h3 class="title">陵水-雅居乐清水湾</h3>
+									<span class="term">保护期：30天</span>
+									<span class="advance">提前一小时报备</span>
+									<span class="other">暂无</span>
+								</div>
+								<div class="report-property-li-right">
+									<span class="commission">佣金3%，扣10%</span>
+									<span class="state">全号报备</span>
+								</div>
+								<div class="report-property-li-btn"></div>
+							</li>
+							<li class="report-property-li">
+								<div class="report-property-li-left">
+									<h3 class="title">陵水-雅居乐清水湾</h3>
+									<span class="term">保护期：30天</span>
+									<span class="advance">提前一小时报备</span>
+									<span class="other">暂无</span>
+								</div>
+								<div class="report-property-li-right">
+									<span class="commission">佣金3%，扣10%</span>
+									<span class="state">全号报备</span>
+								</div>
+								<div class="report-property-li-btn"></div>
 							</li>
 						</ul>
 					</div>
-					<div class="customer-phone">
-						<ul class="customer-phone-wrapper">
-							<li class="customer-phone-li">
-								<ul class="customer-phone-li-box">
-									<li class="name">
-										<input class="name_ipt" type="text" name="" id="" placeholder="客户姓名"/>
-										<a href="javascript:;"></a>
-									</li>
-									<li class="phone">
-										<input class="phone_ipt" type="text" name="" id="" placeholder="客户电话"/>
-									</li>
-								</ul>
-								<div class="add-btn"><span>添加</span></div>
-							</li>
-						</ul>
-					</div>
-					<div class="customer-info">
-						<ul class="customer-info-wrapper">
-							<li class="info">
-								<input class="info_ipt" type="text" name="" id="" placeholder="请输入客户信息"/>
-							</li>
-						</ul></div>
-					<div class="submit-btn">提交</div>
 				</div>
 			</section> 
-		</div>
+			<footer class="report-property-footer">
+				<ul class="footer-ul">
+				 	<li class="footer-li">
+				 		<span>报备楼盘</span>
+				 	</li>
+				 	<li class="footer-li">
+				 		<span>马上报备</span>
+				 	</li>
+				 	<li class="footer-li">
+				 		<span>客户管理</span>
+				 	</li>
+				</ul>
+			</footer> 
+			</div>
 	</body>
+	<script type="text/javascript">
+		var myVue = new Vue({
+			el: ".report-property-container",
+			data: {
+				property: [
+					{
+						src: 'img/banner.png',
+						tags: '在售',
+						txt: '项目目前洋房33、34号楼在售中，一梯六户，7层高，一梯六户，7层高',
+						title: '冠永凤凰城',
+						address: '老城经济开发区南一环路北侧',
+						commission: '佣金6%起，提前一小时报备，个人成交奖',
+						details: '公寓38-53㎡开间，51-59㎡1房；住宅60-64㎡1房，81-95㎡2房，117-123㎡3房',
+						price: '18000'
+					},
+					{
+						src: 'img/banner.png',
+						tags: '在售',
+						txt: '项目目前洋房33、34号楼在售中，一梯六户，7层高，一梯六户，7层高',
+						title: '冠永凤凰城',
+						address: '老城经济开发区南一环路北侧',
+						commission: '佣金6%起，提前一小时报备，个人成交奖',
+						details: '公寓38-53㎡开间，51-59㎡1房；住宅60-64㎡1房，81-95㎡2房，117-123㎡3房',
+						price: '18000'
+					},
+					{
+						src: 'img/banner.png',
+						tags: '在售',
+						txt: '项目目前洋房33、34号楼在售中，一梯六户，7层高，一梯六户，7层高',
+						title: '冠永凤凰城',
+						address: '老城经济开发区南一环路北侧',
+						commission: '佣金6%起，提前一小时报备，个人成交奖',
+						details: '公寓38-53㎡开间，51-59㎡1房；住宅60-64㎡1房，81-95㎡2房，117-123㎡3房',
+						price: '18000'
+					}
+				]
+			}
+		})
+	</script>
 	<script src="plugins/swiper-3.4.2.min.js"></script>
-	<script type="text/javascript" src="js/report-customer.js"></script>
+	<script>
+		var reportSwiper = new Swiper('.report-property-section', {
+			
+			pagination : '.swiper-pagination',
+			paginationType : 'fraction'
+		})
+	</script>
+	<script type="text/javascript" src="js/report-property.js"></script>
 </html>

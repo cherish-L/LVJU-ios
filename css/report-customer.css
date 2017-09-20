@@ -207,23 +207,24 @@ li {
   padding-left: 2px;
 }
 
-.report-customer-container .report-customer-section .section-wrapper .property-info .property-info-wrapper .tags-box .tags-box-ul li {
+.report-customer-container .report-customer-section .section-wrapper .property-info .property-info-wrapper .tags-box .tags-box-ul .tags-box-li {
   float: left;
   padding: 0;
   position: relative;
   margin-top: 0.25rem;
+  border-bottom: none;
   padding-right: 0.55rem;
   width: 5.5rem;
   height: 2.7rem;
 }
 
-.report-customer-container .report-customer-section .section-wrapper .property-info .property-info-wrapper .tags-box .tags-box-ul li img {
+.report-customer-container .report-customer-section .section-wrapper .property-info .property-info-wrapper .tags-box .tags-box-ul .tags-box-li img {
   width: 100%;
   height: 100%;
   border-radius: 0.2rem;
 }
 
-.report-customer-container .report-customer-section .section-wrapper .property-info .property-info-wrapper .tags-box .tags-box-ul li .title {
+.report-customer-container .report-customer-section .section-wrapper .property-info .property-info-wrapper .tags-box .tags-box-ul .tags-box-li .title {
   padding-left: 0.35rem;
   line-height: 1rem;
   font-size: 0.5rem;
@@ -235,7 +236,7 @@ li {
   left: 0;
 }
 
-.report-customer-container .report-customer-section .section-wrapper .property-info .property-info-wrapper .tags-box .tags-box-ul li .delete {
+.report-customer-container .report-customer-section .section-wrapper .property-info .property-info-wrapper .tags-box .tags-box-ul .tags-box-li .delete {
   display: block;
   width: 0.85rem;
   height: 0.85rem;

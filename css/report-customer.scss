@@ -182,11 +182,12 @@ $sc:20;
                         .tags-box-ul{
                             display: inline-block;
                             padding-left: 2px;
-                            li{
+                            .tags-box-li{
                                 float: left;
                                 padding: 0;
                                 position: relative;
                                 margin-top: 5/$sc+rem;
+                                border-bottom: none;
                                 padding-right: 11/$sc+rem;
                                 width: 110/$sc+rem;
                                 height: 54/$sc+rem;

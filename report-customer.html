@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta content="email=no" name="format-detection" />
+		<meta http-equiv="Cache-Control" content="no-cache" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>报备客户</title>
+		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/report-customer.css" />
+		<script type="text/javascript" src="plugins/zepto.min.js"></script>
+		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>      
+		<script type="text/javascript" src="vue/vue.js"></script>
+		<script>
+			//适配
+			document.documentElement.style.fontSize = innerWidth / 16 + "px";
+		</script>
+	</head>
+	<body>
+		<div class="report-customer-container" v-cloak>
+			<header class="report-customer-header">
+				<div class="signal_bar"></div>
+				<div class="title_bar">
+					<h3 class="title_txt">报备客户</h3>
+					<a class="return" href="javascript:;"></a>
+					<a class="more" href="javascript:;"></a>
+				</div>
+			</header>
+			<section class="report-customer-section">
+				<div class="section-wrapper">
+					<div class="salesperson-info">
+						<ul class="salesperson-info-wrapper">
+							<li class="name">
+								<input class="name_ipt" type="text" name="" id="" placeholder="带看人姓名"/>
+								<a href="javascript:;"></a>
+							</li>
+							<li class="phone">
+								<input class="phone_ipt" type="text" name="" id="" placeholder="带看人电话"/>
+							</li>
+							<li class="num">
+								<input class="num" type="text" name="" id="" placeholder="带看人数"/>
+							</li>
+						</ul>
+					</div>
+					<div class="property-info">
+						<ul class="property-info-wrapper">
+							<li class="time">预计看房时间</li>
+							<li class="property">选择报备楼盘</li>
+							<li class="tags-box">
+								<ul class="tags-box-ul">
+									<li class="tags-box-li">
+										<img src="img/banner.png"/>
+										<p class="title">冠永凤凰城</p>
+										<span class="delete"></span>
+									</li>
+									<li class="tags-box-li">
+										<img src="img/banner.png"/>
+										<p class="title">冠永凤凰城</p>
+										<span class="delete"></span>
+									</li>
+									<li class="tags-box-li">
+										<img src="img/banner.png"/>
+										<p class="title">冠永凤凰城</p>
+										<span class="delete"></span>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div class="customer-phone">
+						<ul class="customer-phone-wrapper">
+							<li class="customer-phone-li">
+								<ul class="customer-phone-li-box">
+									<li class="name">
+										<input class="name_ipt" type="text" name="" id="" placeholder="客户姓名"/>
+										<a href="javascript:;"></a>
+									</li>
+									<li class="phone">
+										<input class="phone_ipt" type="text" name="" id="" placeholder="客户电话"/>
+									</li>
+								</ul>
+								<div class="add-btn"><span>添加</span></div>
+							</li>
+						</ul>
+					</div>
+					<div class="customer-info">
+						<ul class="customer-info-wrapper">
+							<li class="info">
+								<input class="info_ipt" type="text" name="" id="" placeholder="请输入客户信息"/>
+							</li>
+						</ul></div>
+					<div class="submit-btn">提交</div>
+				</div>
+			</section> 
+		</div>
+	</body>
+	<script src="plugins/swiper-3.4.2.min.js"></script>
+	<script type="text/javascript" src="js/report-customer.js"></script>
+</html>
