@@ -5,9 +5,9 @@
 		<meta content="email=no" name="format-detection" />
 		<meta http-equiv="Cache-Control" content="no-cache" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>佣金详情</title>
+		<title>报备客户</title>
 		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/commission-details.css" />
+		<link rel="stylesheet" type="text/css" href="css/report-customer.css" />
 		<script type="text/javascript" src="plugins/zepto.min.js"></script>
 		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>      
 		<script type="text/javascript" src="vue/vue.js"></script>
@@ -17,38 +17,83 @@
 		</script>
 	</head>
 	<body>
-		<div class="commission-details-container" v-cloak>
-			<header class="commission-details-header">
+		<div class="report-customer-container" v-cloak>
+			<header class="report-customer-header">
 				<div class="signal_bar"></div>
 				<div class="title_bar">
-					<h3 class="title_txt">佣金详情</h3>
+					<h3 class="title_txt">报备客户</h3>
 					<a class="return" href="javascript:;"></a>
 					<a class="more" href="javascript:;"></a>
 				</div>
 			</header>
-			<section class="commission-details-section">
-				<ul class="section-wrapper">
-					<li class="rebate">
-						<h3>楼盘返点</h3>
-						<p>6%起，提前一小时报备</p>
-						<p>当月认购＜3套，按6%结算；3套≦当月认购≦6套，当月成交的全部按6.5%；当月认购＞6套，当月成交的全部按7%　</p>
-					</li>
-					<li class="show_award">
-						<h3>带看奖</h3>
-						<p>暂无</p>
-					</li>
-					<li class="deal_prize">
-						<h3>个人成交奖</h3>
-						<p>2017年6月1日-2017年9月30日</br>一房3000元，两房5000元，酒店5000元</p>
-					</li>
-					<li class="developer">
-						<h3>开发商说明</h3>
-						<p>带看前提前一小时报备到项目</p>
-					</li>
-				</ul>
+			<section class="report-customer-section">
+				<div class="section-wrapper">
+					<div class="salesperson-info">
+						<ul class="salesperson-info-wrapper">
+							<li class="name">
+								<input class="name_ipt" type="text" name="" id="" placeholder="带看人姓名"/>
+								<a href="javascript:;"></a>
+							</li>
+							<li class="phone">
+								<input class="phone_ipt" type="text" name="" id="" placeholder="带看人电话"/>
+							</li>
+							<li class="num">
+								<input class="num" type="text" name="" id="" placeholder="带看人数"/>
+							</li>
+						</ul>
+					</div>
+					<div class="property-info">
+						<ul class="property-info-wrapper">
+							<li class="time">预计看房时间</li>
+							<li class="property">选择报备楼盘</li>
+							<li class="tags-box">
+								<ul class="tags-box-ul">
+									<li>
+										<img src="img/banner.png"/>
+										<p class="title">冠永凤凰城</p>
+										<span class="delete"></span>
+									</li>
+									<li>
+										<img src="img/banner.png"/>
+										<p class="title">冠永凤凰城</p>
+										<span class="delete"></span>
+									</li>
+									<li>
+										<img src="img/banner.png"/>
+										<p class="title">冠永凤凰城</p>
+										<span class="delete"></span>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div class="customer-phone">
+						<ul class="customer-phone-wrapper">
+							<li class="customer-phone-li">
+								<ul class="customer-phone-li-box">
+									<li class="name">
+										<input class="name_ipt" type="text" name="" id="" placeholder="客户姓名"/>
+										<a href="javascript:;"></a>
+									</li>
+									<li class="phone">
+										<input class="phone_ipt" type="text" name="" id="" placeholder="客户电话"/>
+									</li>
+								</ul>
+								<div class="add-btn"><span>添加</span></div>
+							</li>
+						</ul>
+					</div>
+					<div class="customer-info">
+						<ul class="customer-info-wrapper">
+							<li class="info">
+								<input class="info_ipt" type="text" name="" id="" placeholder="请输入客户信息"/>
+							</li>
+						</ul></div>
+					<div class="submit-btn">提交</div>
+				</div>
 			</section> 
 		</div>
 	</body>
 	<script src="plugins/swiper-3.4.2.min.js"></script>
-	<script type="text/javascript" src="js/commission-details.js"></script>
+	<script type="text/javascript" src="js/report-customer.js"></script>
 </html>
