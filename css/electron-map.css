@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+
+::-moz-placeholder {
+  color: #999999;
+}
+
+::-webkit-input-placeholder {
+  color: #999999;
+}
+
+:-ms-input-placeholder {
+  color: #999999;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: PingFangSC-Regular;
+  background: #FAFAFA;
+}
+
+input,
+textarea {
+  outline: none;
+  border: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+li {
+  list-style: none;
+}
+
+.electron-map-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+}
+
+.electron-map-container .electron-map-header {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.electron-map-container .electron-map-header .title_bar {
+  width: 100%;
+  height: 2.2rem;
+  line-height: 2.2rem;
+  position: relative;
+}
+
+.electron-map-container .electron-map-header .title_bar .title_txt {
+  font-size: 0.85rem;
+  color: #FFFFFF;
+  text-align: center;
+  font-weight: normal;
+}
+
+.electron-map-container .electron-map-header .title_bar .return {
+  display: block;
+  height: 2.2rem;
+  width: 2.2rem;
+  background: url(../img/leftt.png) center center no-repeat;
+  background-size: 0.8rem 0.8rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.electron-map-container .electron-map-header .title_bar .more {
+  display: block;
+  height: 2.2rem;
+  width: 2.2rem;
+  background: url(../img/more.png) center center no-repeat;
+  background-size: 1rem 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.electron-map-container .electron-map-section {
+  flex: 1;
+  -webkit-flex: 1;
+  overflow: hidden;
+  background: #F6F6F6;
+  position: relative;
+}
+
+.electron-map-container .electron-map-section .section-wrapper {
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+.electron-map-container .electron-map-section .section-wrapper .rebate {
+  width: 100%;
+  padding: 0.75rem;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.electron-map-container .electron-map-section .section-wrapper .rebate h3 {
+  width: 100%;
+  font-weight: normal;
+  font-size: 0.75rem;
+  color: #4A4A4A;
+}
+
+.electron-map-container .electron-map-section .section-wrapper .rebate p {
+  width: 100%;
+  margin-top: 0.6rem;
+  font-size: 0.6rem;
+  color: #9EA3A7;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+}
+
+.electron-map-container .electron-map-section .section-wrapper .show_award {
+  width: 100%;
+  padding: 0.75rem;
+  background: #ffffff;
+  margin-top: 0.75rem;
+  box-sizing: border-box;
+}
+
+.electron-map-container .electron-map-section .section-wrapper .show_award h3 {
+  width: 100%;
+  font-weight: normal;
+  font-size: 0.75rem;
+  color: #4A4A4A;
+}
+
+.electron-map-container .electron-map-section .section-wrapper .show_award p {
+  width: 100%;
+  margin-top: 0.6rem;
+  font-size: 0.6rem;
+  color: #9EA3A7;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+}
+
+.electron-map-container .electron-map-section .section-wrapper .deal_prize {
+  width: 100%;
+  padding: 0.75rem;
+  background: #ffffff;
+  margin-top: 0.75rem;
+  box-sizing: border-box;
+}
+
+.electron-map-container .electron-map-section .section-wrapper .deal_prize h3 {
+  width: 100%;
+  font-weight: normal;
+  font-size: 0.75rem;
+  color: #4A4A4A;
+}
+
+.electron-map-container .electron-map-section .section-wrapper .deal_prize p {
+  width: 100%;
+  margin-top: 0.6rem;
+  font-size: 0.6rem;
+  color: #9EA3A7;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+}
+
+.electron-map-container .electron-map-section .section-wrapper .developer {
+  width: 100%;
+  padding: 0.75rem;
+  background: #ffffff;
+  margin-top: 0.75rem;
+  box-sizing: border-box;
+}
+
+.electron-map-container .electron-map-section .section-wrapper .developer h3 {
+  width: 100%;
+  font-weight: normal;
+  font-size: 0.75rem;
+  color: #4A4A4A;
+}
+
+.electron-map-container .electron-map-section .section-wrapper .developer p {
+  width: 100%;
+  margin-top: 0.6rem;
+  font-size: 0.6rem;
+  color: #9EA3A7;
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+}
+
+.iScrollVerticalScrollbar {
+  width: 0.2rem !important;
+  z-index: 1 !important;
+}
