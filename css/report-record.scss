@@ -148,6 +148,7 @@ $sc:20;
                     width: 100%;
                     position: absolute;
                     .refreshing-record {
+                        display: none;
                         width: 100%;
                         height: 70/$sc+rem;
                         position: relative;
@@ -355,6 +356,7 @@ $sc:20;
                         -webkit-box-sizing: border-box;
                         overflow: hidden;
                         .loading-record-wrapper {
+                            display: none;
                             height: 70/$sc+rem;
                             box-sizing: border-box;
                             -webkit-box-sizing: border-box;

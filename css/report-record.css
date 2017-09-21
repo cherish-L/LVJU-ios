@@ -163,6 +163,7 @@ li {
 }
 
 .report-record-container .report-record-section .report-record-section-nav .swiper-slide .report-record-wrapper .refreshing-record {
+  display: none;
   width: 100%;
   height: 3.5rem;
   position: relative;
@@ -403,6 +404,7 @@ li {
 }
 
 .report-record-container .report-record-section .report-record-section-nav .swiper-slide .report-record-wrapper .loading-record .loading-record-wrapper {
+  display: none;
   height: 3.5rem;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;

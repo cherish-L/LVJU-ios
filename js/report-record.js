@@ -21,21 +21,6 @@ function load() {
 	})
 
 	report_allS.on('scroll', function() {
-		if(report_allS.y >= 0 && report_allS.y <= 10) {
-			$('.report-record-all .refresh-record-wrapper span').text("")
-		}
-		if(report_allS.y > 10 && report_allS.y <= 25) {
-			$('.report-record-all .refresh-record-wrapper span').text("下")
-		}
-		if(report_allS.y > 25 && report_allS.y <= 40) {
-			$('.report-record-all .refresh-record-wrapper span').text("下拉")
-		}
-		if(report_allS.y > 40 && report_allS.y <= 55) {
-			$('.report-record-all .refresh-record-wrapper span').text("下拉刷")
-		}
-		if(report_allS.y > 55 && report_allS.y <= 70) {
-			$('.report-record-all .refresh-record-wrapper span').text("下拉刷新")
-		}
 		if(loadingStep == 0 && !$(".report-record-all .refreshing-record").hasClass("refresh") && !$(".report-record-all .loading-record").hasClass("refresh")) {
 			if(report_allS.y > 70) {
 				//下拉刷新操作  
@@ -96,6 +81,7 @@ function load() {
 			sectionh = $(".report-record-section").height()
 			allh = $(".report-record-all .report-record-wrapper .record-content-wrapper .record-content").height()
 			if(allh <= sectionh) {
+				report_allS.refresh();
 				$(".report-record-all .report-record-wrapper .record-content-wrapper").height(sectionh + 1-lr_lrw)
 			}
 		 	else if(allh > sectionh) {
@@ -123,6 +109,7 @@ function load() {
 			sectionh = $(".report-record-section").height()
 			allh = $(".report-record-all .report-record-wrapper .record-content-wrapper .record-content").height()
 			if(allh <= sectionh) {
+				report_allS.refresh();
 				$(".report-record-all .report-record-wrapper .record-content-wrapper").height(sectionh + 1-lr_lrw)
 			}
 			else if(allh > sectionh) {
@@ -148,21 +135,6 @@ function load() {
 	})
 
 	report_yibaobeiS.on('scroll', function() {
-		if(report_yibaobeiS.y >= 0 && report_yibaobeiS.y <= 10) {
-			$('.report-record-yibaobei .refresh-record-wrapper span').text("")
-		}
-		if(report_yibaobeiS.y > 10 && report_yibaobeiS.y <= 25) {
-			$('.report-record-yibaobei .refresh-record-wrapper span').text("下")
-		}
-		if(report_yibaobeiS.y > 25 && report_yibaobeiS.y <= 40) {
-			$('.report-record-yibaobei .refresh-record-wrapper span').text("下拉")
-		}
-		if(report_yibaobeiS.y > 40 && report_yibaobeiS.y <= 55) {
-			$('.report-record-yibaobei .refresh-record-wrapper span').text("下拉刷")
-		}
-		if(report_yibaobeiS.y > 55 && report_yibaobeiS.y <= 70) {
-			$('.report-record-yibaobei .refresh-record-wrapper span').text("下拉刷新")
-		}
 		if(loadingStep == 0 && !$(".report-record-yibaobei .refreshing-record").hasClass("refresh") && !$(".report-record-yibaobei .loading-record").hasClass("refresh")) {
 			if(report_yibaobeiS.y > 70) {
 				//下拉刷新操作  
@@ -223,6 +195,7 @@ function load() {
 			sectionh = $(".report-record-section").height()
 			yibaobeih = $(".report-record-yibaobei .report-record-wrapper .record-content-wrapper .record-content").height()
 			if(yibaobeih <= sectionh) {
+				report_yibaobeiS.refresh();
 				$(".report-record-yibaobei .report-record-wrapper .record-content-wrapper").height(sectionh + 1-lr_lrw)
 			}
 		 	else if(yibaobeih > sectionh) {
@@ -249,6 +222,7 @@ function load() {
 			sectionh = $(".report-record-section").height()
 			yibaobeih = $(".report-record-yibaobei .report-record-wrapper .record-content-wrapper .record-content").height()
 			if(yibaobeih <= sectionh) {
+				report_yibaobeiS.refresh();
 				$(".report-record-yibaobei .report-record-wrapper .record-content-wrapper").height(sectionh + 1-lr_lrw)
 			}
 		 	else if(yibaobeih > sectionh) {
@@ -274,21 +248,6 @@ function load() {
 	})
 
 	report_yidaikanS.on('scroll', function() {
-		if(report_yidaikanS.y >= 0 && report_yidaikanS.y <= 10) {
-			$('.report-record-yidaikan .refresh-record-wrapper span').text("")
-		}
-		if(report_yidaikanS.y > 10 && report_yidaikanS.y <= 25) {
-			$('.report-record-yidaikan .refresh-record-wrapper span').text("下")
-		}
-		if(report_yidaikanS.y > 25 && report_yidaikanS.y <= 40) {
-			$('.report-record-yidaikan .refresh-record-wrapper span').text("下拉")
-		}
-		if(report_yidaikanS.y > 40 && report_yidaikanS.y <= 55) {
-			$('.report-record-yidaikan .refresh-record-wrapper span').text("下拉刷")
-		}
-		if(report_yidaikanS.y > 55 && report_yidaikanS.y <= 70) {
-			$('.report-record-yidaikan .refresh-record-wrapper span').text("下拉刷新")
-		}
 		if(loadingStep == 0 && !$(".report-record-yidaikan .refreshing-record").hasClass("refresh") && !$(".report-record-yidaikan .loading-record").hasClass("refresh")) {
 			if(report_yidaikanS.y > 70) {
 				//下拉刷新操作  
@@ -349,6 +308,7 @@ function load() {
 			sectionh = $(".report-record-section").height()
 			yidaikanh = $(".report-record-yidaikan .report-record-wrapper .record-content-wrapper .record-content").height()
 			if(yidaikanh <= sectionh) {
+				report_yidaikanS.refresh();
 				$(".report-record-yidaikan .report-record-wrapper .record-content-wrapper").height(sectionh + 1-lr_lrw)
 			}
 		 	else if(yidaikanh > sectionh) {
@@ -375,6 +335,7 @@ function load() {
 			sectionh = $(".report-record-section").height()
 			yidaikanh = $(".report-record-yidaikan .report-record-wrapper .record-content-wrapper .record-content").height()
 			if(yidaikanh <= sectionh) {
+				report_yidaikanS.refresh();
 				$(".report-record-yidaikan .report-record-wrapper .record-content-wrapper").height(sectionh + 1-lr_lrw)
 			}
 		 	else if(yidaikanh > sectionh) {
@@ -400,21 +361,6 @@ function load() {
 	})
 
 	report_yichengjiaoS.on('scroll', function() {
-		if(report_yichengjiaoS.y >= 0 && report_yichengjiaoS.y <= 10) {
-			$('.report-record-yichengjiao .refresh-record-wrapper span').text("")
-		}
-		if(report_yichengjiaoS.y > 10 && report_yichengjiaoS.y <= 25) {
-			$('.report-record-yichengjiao .refresh-record-wrapper span').text("下")
-		}
-		if(report_yichengjiaoS.y > 25 && report_yichengjiaoS.y <= 40) {
-			$('.report-record-yichengjiao .refresh-record-wrapper span').text("下拉")
-		}
-		if(report_yichengjiaoS.y > 40 && report_yichengjiaoS.y <= 55) {
-			$('.report-record-yichengjiao .refresh-record-wrapper span').text("下拉刷")
-		}
-		if(report_yichengjiaoS.y > 55 && report_yichengjiaoS.y <= 70) {
-			$('.report-record-yichengjiao .refresh-record-wrapper span').text("下拉刷新")
-		}
 		if(loadingStep == 0 && !$(".report-record-yichengjiao .refreshing-record").hasClass("refresh") && !$(".report-record-yichengjiao .loading-record").hasClass("refresh")) {
 			if(report_yichengjiaoS.y > 70) {
 				//下拉刷新操作  
@@ -475,6 +421,7 @@ function load() {
 			sectionh = $(".report-record-section").height()
 			yichengjiaoh = $(".report-record-yichengjiao .report-record-wrapper .record-content-wrapper .record-content").height()
 			if(yichengjiaoh <= sectionh) {
+				report_yichengjiaoS.refresh();
 				$(".report-record-yichengjiao .report-record-wrapper .record-content-wrapper").height(sectionh + 1-lr_lrw)
 			}
 		 	else if(yichengjiaoh > sectionh) {
@@ -501,6 +448,7 @@ function load() {
 			sectionh = $(".report-record-section").height()
 			yichengjiaoh = $(".report-record-yichengjiao .report-record-wrapper .record-content-wrapper .record-content").height()
 			if(yichengjiaoh <= sectionh) {
+				report_yichengjiaoS.refresh();
 				$(".report-record-yichengjiao .report-record-wrapper .record-content-wrapper").height(sectionh + 1-lr_lrw)
 			}
 		 	else if(yichengjiaoh > sectionh) {
@@ -526,21 +474,6 @@ function load() {
 	})
 
 	report_wuxiaoS.on('scroll', function() {
-		if(report_wuxiaoS.y >= 0 && report_wuxiaoS.y <= 10) {
-			$('.report-record-wuxiao .refresh-record-wrapper span').text("")
-		}
-		if(report_wuxiaoS.y > 10 && report_wuxiaoS.y <= 25) {
-			$('.report-record-wuxiao .refresh-record-wrapper span').text("下")
-		}
-		if(report_wuxiaoS.y > 25 && report_wuxiaoS.y <= 40) {
-			$('.report-record-wuxiao .refresh-record-wrapper span').text("下拉")
-		}
-		if(report_wuxiaoS.y > 40 && report_wuxiaoS.y <= 55) {
-			$('.report-record-wuxiao .refresh-record-wrapper span').text("下拉刷")
-		}
-		if(report_wuxiaoS.y > 55 && report_wuxiaoS.y <= 70) {
-			$('.report-record-wuxiao .refresh-record-wrapper span').text("下拉刷新")
-		}
 		if(loadingStep == 0 && !$(".report-record-wuxiao .refreshing-record").hasClass("refresh") && !$(".report-record-wuxiao .loading-record").hasClass("refresh")) {
 			if(report_wuxiaoS.y > 70) {
 				//下拉刷新操作  
@@ -601,6 +534,7 @@ function load() {
 			sectionh = $(".report-record-section").height()
 			wuxiaoh = $(".report-record-wuxiao .report-record-wrapper .record-content-wrapper .record-content").height()
 			if(wuxiaoh <= sectionh) {
+				report_wuxiaoS.refresh();
 				$(".report-record-wuxiao .report-record-wrapper .record-content-wrapper").height(sectionh + 1-lr_lrw)
 			}
 		 	else if(wuxiaoh > sectionh) {
@@ -627,6 +561,7 @@ function load() {
 			sectionh = $(".report-record-section").height()
 			wuxiaoh = $(".report-record-wuxiao .report-record-wrapper .record-content-wrapper .record-content").height()
 			if(wuxiaoh <= sectionh) {
+				report_wuxiaoS.refresh();
 				$(".report-record-wuxiao .report-record-wrapper .record-content-wrapper").height(sectionh + 1-lr_lrw)
 			}
 		 	else if(wuxiaoh > sectionh) {
