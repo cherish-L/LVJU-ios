@@ -1,262 +1,170 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8" />
 		<meta content="email=no" name="format-detection" />
 		<meta http-equiv="Cache-Control" content="no-cache" />
-		 <meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="telephone=no">
 		<meta http-equiv="x-rim-auto-match" content="none">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>报备楼盘</title>
+		<title>报备记录</title>
 		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/report-property.css" />
+		<link rel="stylesheet" type="text/css" href="css/report-record.css" />
 		<script type="text/javascript" src="plugins/zepto.min.js"></script>
-		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>      
+		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>
 		<script type="text/javascript" src="vue/vue.js"></script>
 		<script>
 			//适配
 			document.documentElement.style.fontSize = innerWidth / 16 + "px";
 		</script>
 	</head>
-	<body>
-		<div class="report-property-container" v-cloak>
-			<header class="report-property-header">
+	<body onload="load()">
+		<div class="report-record-container" v-cloak>
+			<header class="report-record-header">
 				<div class="signal_bar"></div>
 				<div class="title_bar">
-					<h3 class="title_txt">选择报备楼盘</h3>
+					<h3 class="title_txt">报备记录</h3>
 					<a class="return" href="javascript:;"></a>
 					<a class="more" href="javascript:;"></a>
 				</div>
 			</header>
-			<div class="report-property-search">
-				<div class="search-box">
-					<span>区域</span>
-					<input class="search_ipt" type="text" name="" id="" placeholder="请输入楼盘名称"/>
-				</div>
-				<div class="content-nav">
-					<ul class="content-nav-ul">
-						<li class="content-nav-li select">亲自带看</li>
-						<li class="content-nav-li">地接带看</li>
+			<ul class="report-record-nav">
+				<li class="select">全部</li>
+				<li>已报备</li>
+				<li>已带看</li>
+				<li>已成交</li>
+				<li>无效客户</li>
+			</ul>
+			<section class="report-record-section">
+				<div class="report-record-wrapper">
+					<div class="refreshing-record">
+						<div class="refreshing-record-wrapper">
+							<i></i>
+							<span>刷新中...</span>
+						</div>
+					</div>
+					<div class="refresh-record">
+						<div class="refresh-record-wrapper">
+							<i></i>
+							<span></span>
+						</div>
+					</div>
+					<ul class="record-content">
+						<li class="record-content-li" v-for="list in reportRecord">
+							<div class="head-portrait">
+								<img :src="list.head_portrait" />
+							</div>
+							<div class="user-name">
+								<p class="name" v-text="list.name"></p>
+								<p class="property" v-text="list.property"></p>
+							</div>
+							<div class="user-phone">
+								<p class="phone" v-text="list.phone"></p>
+								<p :class="{
+										'queren': list.state === '报备确认',
+										'daikan': list.state === '带看确认',
+										'chengjiao': list.state === '成交客户',
+										'wuxiao': list.state === '无效客户'
+												}">
+									<span class="state" v-text="list.state"></span>
+									<span class="state-txt" v-text="list.state_txt"></span>
+								</p>
+							</div>
+						</li>
 					</ul>
-				</div>
-			</div>
-			<section class="report-property-section">
-				<div class="section-wrapper swiper-wrapper">
-					<div class="section-wrapper-personally swiper-slide">
-						<ul class="report-property-personally">
-							<li class="report-property-li">
-								<div class="report-property-li-left">
-									<h3 class="title">三亚-卓达东方巴哈马</h3>
-									<span class="term">保护期：30天</span>
-									<span class="advance">提前一小时报备</span>
-									<span class="other">暂无</span>
-								</div>
-								<div class="report-property-li-right">
-									<span class="commission">佣金2%</span>
-									<span class="state">全号报备</span>
-								</div>
-								<div class="report-property-li-btn"></div>
-							</li>
-							<li class="report-property-li">
-								<div class="report-property-li-left">
-									<h3 class="title">海口-四季华庭阳光</h3>
-									<span class="term">保护期：30天</span>
-									<span class="advance">提前一小时报备</span>
-									<span class="other">暂无</span>
-								</div>
-								<div class="report-property-li-right">
-									<span class="commission">佣金2%</span>
-									<span class="state">全号报备</span>
-								</div>
-								<div class="report-property-li-btn"></div>
-							</li>
-							<li class="report-property-li">
-								<div class="report-property-li-left">
-									<h3 class="title">陵水-雅居乐清水湾</h3>
-									<span class="term">保护期：30天</span>
-									<span class="advance">提前一小时报备</span>
-									<span class="other">暂无</span>
-								</div>
-								<div class="report-property-li-right">
-									<span class="commission">佣金3%，扣10%</span>
-									<span class="state">全号报备</span>
-								</div>
-								<div class="report-property-li-btn"></div>
-							</li>
-							<li class="report-property-li">
-								<div class="report-property-li-left">
-									<h3 class="title">陵水-雅居乐清水湾</h3>
-									<span class="term">保护期：30天</span>
-									<span class="advance">提前一小时报备</span>
-									<span class="other">暂无</span>
-								</div>
-								<div class="report-property-li-right">
-									<span class="commission">佣金3%，扣10%</span>
-									<span class="state">全号报备</span>
-								</div>
-								<div class="report-property-li-btn"></div>
-							</li>
-							<li class="report-property-li">
-								<div class="report-property-li-left">
-									<h3 class="title">陵水-雅居乐清水湾</h3>
-									<span class="term">保护期：30天</span>
-									<span class="advance">提前一小时报备</span>
-									<span class="other">暂无</span>
-								</div>
-								<div class="report-property-li-right">
-									<span class="commission">佣金3%，扣10%</span>
-									<span class="state">全号报备</span>
-								</div>
-								<div class="report-property-li-btn"></div>
-							</li>
-							<li class="report-property-li">
-								<div class="report-property-li-left">
-									<h3 class="title">陵水-雅居乐清水湾</h3>
-									<span class="term">保护期：30天</span>
-									<span class="advance">提前一小时报备</span>
-									<span class="other">暂无</span>
-								</div>
-								<div class="report-property-li-right">
-									<span class="commission">佣金3%，扣10%</span>
-									<span class="state">全号报备</span>
-								</div>
-								<div class="report-property-li-btn"></div>
-							</li>
-						</ul>
+					<div class="loading-record">
+						<div class="loading-record-wrapper">
+							<i></i>
+							<span>努力加载中...</span>
+						</div>
 					</div>
-					<div class="section-wrapper-ground swiper-slide">
-						<ul class="report-property-ground">
-							<li class="report-property-li">
-								<div class="report-property-li-left">
-									<h3 class="title">三亚-卓达东方巴哈马</h3>
-									<span class="term">保护期：30天</span>
-									<span class="advance">提前一小时报备</span>
-									<span class="other">暂无</span>
-								</div>
-								<div class="report-property-li-right">
-									<span class="commission">佣金2%</span>
-									<span class="state">全号报备</span>
-								</div>
-								<div class="report-property-li-btn"></div>
-							</li>
-							<li class="report-property-li">
-								<div class="report-property-li-left">
-									<h3 class="title">海口-四季华庭阳光</h3>
-									<span class="term">保护期：30天</span>
-									<span class="advance">提前一小时报备</span>
-									<span class="other">暂无</span>
-								</div>
-								<div class="report-property-li-right">
-									<span class="commission">佣金2%</span>
-									<span class="state">全号报备</span>
-								</div>
-								<div class="report-property-li-btn"></div>
-							</li>
-							<li class="report-property-li">
-								<div class="report-property-li-left">
-									<h3 class="title">陵水-雅居乐清水湾</h3>
-									<span class="term">保护期：30天</span>
-									<span class="advance">提前一小时报备</span>
-									<span class="other">暂无</span>
-								</div>
-								<div class="report-property-li-right">
-									<span class="commission">佣金3%，扣10%</span>
-									<span class="state">全号报备</span>
-								</div>
-								<div class="report-property-li-btn"></div>
-							</li>
-							<li class="report-property-li">
-								<div class="report-property-li-left">
-									<h3 class="title">陵水-雅居乐清水湾</h3>
-									<span class="term">保护期：30天</span>
-									<span class="advance">提前一小时报备</span>
-									<span class="other">暂无</span>
-								</div>
-								<div class="report-property-li-right">
-									<span class="commission">佣金3%，扣10%</span>
-									<span class="state">全号报备</span>
-								</div>
-								<div class="report-property-li-btn"></div>
-							</li>
-							<li class="report-property-li">
-								<div class="report-property-li-left">
-									<h3 class="title">陵水-雅居乐清水湾</h3>
-									<span class="term">保护期：30天</span>
-									<span class="advance">提前一小时报备</span>
-									<span class="other">暂无</span>
-								</div>
-								<div class="report-property-li-right">
-									<span class="commission">佣金3%，扣10%</span>
-									<span class="state">全号报备</span>
-								</div>
-								<div class="report-property-li-btn"></div>
-							</li>
-							<li class="report-property-li">
-								<div class="report-property-li-left">
-									<h3 class="title">陵水-雅居乐清水湾</h3>
-									<span class="term">保护期：30天</span>
-									<span class="advance">提前一小时报备</span>
-									<span class="other">暂无</span>
-								</div>
-								<div class="report-property-li-right">
-									<span class="commission">佣金3%，扣10%</span>
-									<span class="state">全号报备</span>
-								</div>
-								<div class="report-property-li-btn"></div>
-							</li>
-						</ul>
+					<div class="load-record">
+						<div class="loading-record-wrapper">
+							<i></i>
+							<span>上拉加载</span>
+						</div>
 					</div>
 				</div>
-			</section> 
-			<footer class="report-property-footer">
+			</section>
+			<footer class="report-record-footer">
 				<ul class="footer-ul">
-				 	<li class="footer-li">
-				 		<span>报备楼盘</span>
-				 	</li>
-				 	<li class="footer-li">
-				 		<span>马上报备</span>
-				 	</li>
-				 	<li class="footer-li">
-				 		<span>客户管理</span>
-				 	</li>
+					<li class="footer-li">
+						<span>报备楼盘</span>
+					</li>
+					<li class="footer-li">
+						<span>马上报备</span>
+					</li>
+					<li class="footer-li">
+						<span>客户管理</span>
+					</li>
 				</ul>
-			</footer> 
-			</div>
+			</footer>
+		</div>
 	</body>
 	<script type="text/javascript">
 		var myVue = new Vue({
-			el: ".report-property-container",
+			el: ".report-record-container",
 			data: {
-				property: [
-					{
-						src: 'img/banner.png',
-						tags: '在售',
-						txt: '项目目前洋房33、34号楼在售中，一梯六户，7层高，一梯六户，7层高',
-						title: '冠永凤凰城',
-						address: '老城经济开发区南一环路北侧',
-						commission: '佣金6%起，提前一小时报备，个人成交奖',
-						details: '公寓38-53㎡开间，51-59㎡1房；住宅60-64㎡1房，81-95㎡2房，117-123㎡3房',
-						price: '18000'
+				reportRecord: [{
+						head_portrait: 'img/img.png',
+						name: '刘女士',
+						property: '海口-冠永凤凰城',
+						phone: '18976257695',
+						state: '报备确认',
+						state_txt: '（报备已过期）'
 					},
 					{
-						src: 'img/banner.png',
-						tags: '在售',
-						txt: '项目目前洋房33、34号楼在售中，一梯六户，7层高，一梯六户，7层高',
-						title: '冠永凤凰城',
-						address: '老城经济开发区南一环路北侧',
-						commission: '佣金6%起，提前一小时报备，个人成交奖',
-						details: '公寓38-53㎡开间，51-59㎡1房；住宅60-64㎡1房，81-95㎡2房，117-123㎡3房',
-						price: '18000'
+						head_portrait: 'img/img.png',
+						name: '刘女士',
+						property: '海口-冠永凤凰城',
+						phone: '18976257695',
+						state: '报备确认',
+						state_txt: '（报备已过期）'
 					},
 					{
-						src: 'img/banner.png',
-						tags: '在售',
-						txt: '项目目前洋房33、34号楼在售中，一梯六户，7层高，一梯六户，7层高',
-						title: '冠永凤凰城',
-						address: '老城经济开发区南一环路北侧',
-						commission: '佣金6%起，提前一小时报备，个人成交奖',
-						details: '公寓38-53㎡开间，51-59㎡1房；住宅60-64㎡1房，81-95㎡2房，117-123㎡3房',
-						price: '18000'
+						head_portrait: 'img/img.png',
+						name: '刘女士',
+						property: '海口-冠永凤凰城',
+						phone: '18976257695',
+						state: '带看确认',
+						state_txt: '（保护期剩余30天）'
+					},
+					{
+						head_portrait: 'img/img.png',
+						name: '刘女士',
+						property: '海口-冠永凤凰城',
+						phone: '18976257695',
+						state: '成交客户'
+					},
+					{
+						head_portrait: 'img/img.png',
+						name: '刘女士',
+						property: '海口-冠永凤凰城',
+						phone: '18976257695',
+						state: '无效客户'
+					},
+					{
+						head_portrait: 'img/img.png',
+						name: '刘女士',
+						property: '海口-冠永凤凰城',
+						phone: '18976257695',
+						state: '带看确认',
+						state_txt: '（保护期剩余7天）'
+					},
+					{
+						head_portrait: 'img/img.png',
+						name: '刘女士',
+						property: '海口-冠永凤凰城',
+						phone: '18976257695',
+						state: '成交客户'
+					},
+					{
+						head_portrait: 'img/img.png',
+						name: '刘女士',
+						property: '海口-冠永凤凰城',
+						phone: '18976257695',
+						state: '无效客户'
 					}
 				]
 			}
@@ -264,15 +172,16 @@
 	</script>
 	<script src="plugins/swiper-3.4.2.min.js"></script>
 	<script>
-		var reportSwiper = new Swiper('.report-property-section', {
+		var reportSwiper = new Swiper('.report-record-section', {
 			passiveListeners: false,
-			touchMoveStopPropagation : false,
-			freeMode : false,
-			freeModeMomentumBounce : false,
-			preventLinksPropagation : false,
-			longSwipesRatio : 0.5,
-			touchAngle : 15
+			touchMoveStopPropagation: false,
+			freeMode: false,
+			freeModeMomentumBounce: false,
+			preventLinksPropagation: false,
+			longSwipesRatio: 0.5,
+			touchAngle: 15
 		})
 	</script>
-	<script type="text/javascript" src="js/report-property.js"></script>
+	<script type="text/javascript" src="js/report-record.js"></script>
+
 </html>
