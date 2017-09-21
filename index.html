@@ -19,6 +19,7 @@
 			document.documentElement.style.fontSize = innerWidth / 16 + "px";
 		</script>
 	</head>
+
 	<body onload="load()">
 		<div class="report-record-container" v-cloak>
 			<header class="report-record-header">
@@ -37,52 +38,260 @@
 				<li>无效客户</li>
 			</ul>
 			<section class="report-record-section">
-				<div class="report-record-wrapper">
-					<div class="refreshing-record">
-						<div class="refreshing-record-wrapper">
-							<i></i>
-							<span>刷新中...</span>
-						</div>
-					</div>
-					<div class="refresh-record">
-						<div class="refresh-record-wrapper">
-							<i></i>
-							<span></span>
-						</div>
-					</div>
-					<ul class="record-content">
-						<li class="record-content-li" v-for="list in reportRecord">
-							<div class="head-portrait">
-								<img :src="list.head_portrait" />
+				<div class="report-record-section-nav swiper-wrapper">
+					<div class="report-record-all swiper-slide">
+						<div class="report-record-wrapper">
+							<div class="refreshing-record">
+								<div class="refreshing-record-wrapper">
+									<i></i>
+									<span>刷新中...</span>
+								</div>
 							</div>
-							<div class="user-name">
-								<p class="name" v-text="list.name"></p>
-								<p class="property" v-text="list.property"></p>
+							<div class="refresh-record">
+								<div class="refresh-record-wrapper">
+									<i></i>
+									<span></span>
+								</div>
 							</div>
-							<div class="user-phone">
-								<p class="phone" v-text="list.phone"></p>
-								<p :class="{
+							<ul class="record-content">
+								<li class="record-content-li" :class="list.nav_state" v-for="list in reportRecord">
+									<div class="head-portrait">
+										<img :src="list.head_portrait" />
+									</div>
+									<div class="user-name">
+										<p class="name" v-text="list.name"></p>
+										<p class="property" v-text="list.property"></p>
+									</div>
+									<div class="user-phone">
+										<p class="phone" v-text="list.phone"></p>
+										<p :class="{
 										'queren': list.state === '报备确认',
 										'daikan': list.state === '带看确认',
 										'chengjiao': list.state === '成交客户',
 										'wuxiao': list.state === '无效客户'
 												}">
-									<span class="state" v-text="list.state"></span>
-									<span class="state-txt" v-text="list.state_txt"></span>
-								</p>
+											<span class="state" v-text="list.state"></span>
+											<span class="state-txt" v-text="list.state_txt"></span>
+										</p>
+									</div>
+								</li>
+							</ul>
+							<div class="loading-record">
+								<div class="loading-record-wrapper">
+									<i></i>
+									<span>努力加载中...</span>
+								</div>
 							</div>
-						</li>
-					</ul>
-					<div class="loading-record">
-						<div class="loading-record-wrapper">
-							<i></i>
-							<span>努力加载中...</span>
+							<div class="load-record">
+								<div class="loading-record-wrapper">
+									<i></i>
+									<span>上拉加载</span>
+								</div>
+							</div>
 						</div>
 					</div>
-					<div class="load-record">
-						<div class="loading-record-wrapper">
-							<i></i>
-							<span>上拉加载</span>
+					<div class="report-record-yibaobei swiper-slide">
+						<div class="report-record-wrapper">
+							<div class="refreshing-record">
+								<div class="refreshing-record-wrapper">
+									<i></i>
+									<span>刷新中...</span>
+								</div>
+							</div>
+							<div class="refresh-record">
+								<div class="refresh-record-wrapper">
+									<i></i>
+									<span></span>
+								</div>
+							</div>
+							<ul class="record-content">
+								<li class="record-content-li" :class="list.nav_state" v-for="list in reportRecord">
+									<div class="head-portrait">
+										<img :src="list.head_portrait" />
+									</div>
+									<div class="user-name">
+										<p class="name" v-text="list.name"></p>
+										<p class="property" v-text="list.property"></p>
+									</div>
+									<div class="user-phone">
+										<p class="phone" v-text="list.phone"></p>
+										<p :class="{
+										'queren': list.state === '报备确认',
+										'daikan': list.state === '带看确认',
+										'chengjiao': list.state === '成交客户',
+										'wuxiao': list.state === '无效客户'
+												}">
+											<span class="state" v-text="list.state"></span>
+											<span class="state-txt" v-text="list.state_txt"></span>
+										</p>
+									</div>
+								</li>
+							</ul>
+							<div class="loading-record">
+								<div class="loading-record-wrapper">
+									<i></i>
+									<span>努力加载中...</span>
+								</div>
+							</div>
+							<div class="load-record">
+								<div class="loading-record-wrapper">
+									<i></i>
+									<span>上拉加载</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="report-record-yidaikan swiper-slide">
+						<div class="report-record-wrapper">
+							<div class="refreshing-record">
+								<div class="refreshing-record-wrapper">
+									<i></i>
+									<span>刷新中...</span>
+								</div>
+							</div>
+							<div class="refresh-record">
+								<div class="refresh-record-wrapper">
+									<i></i>
+									<span></span>
+								</div>
+							</div>
+							<ul class="record-content">
+								<li class="record-content-li" :class="list.nav_state" v-for="list in reportRecord">
+									<div class="head-portrait">
+										<img :src="list.head_portrait" />
+									</div>
+									<div class="user-name">
+										<p class="name" v-text="list.name"></p>
+										<p class="property" v-text="list.property"></p>
+									</div>
+									<div class="user-phone">
+										<p class="phone" v-text="list.phone"></p>
+										<p :class="{
+										'queren': list.state === '报备确认',
+										'daikan': list.state === '带看确认',
+										'chengjiao': list.state === '成交客户',
+										'wuxiao': list.state === '无效客户'
+												}">
+											<span class="state" v-text="list.state"></span>
+											<span class="state-txt" v-text="list.state_txt"></span>
+										</p>
+									</div>
+								</li>
+							</ul>
+							<div class="loading-record">
+								<div class="loading-record-wrapper">
+									<i></i>
+									<span>努力加载中...</span>
+								</div>
+							</div>
+							<div class="load-record">
+								<div class="loading-record-wrapper">
+									<i></i>
+									<span>上拉加载</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="report-record-yichengjiao swiper-slide">
+						<div class="report-record-wrapper">
+							<div class="refreshing-record">
+								<div class="refreshing-record-wrapper">
+									<i></i>
+									<span>刷新中...</span>
+								</div>
+							</div>
+							<div class="refresh-record">
+								<div class="refresh-record-wrapper">
+									<i></i>
+									<span></span>
+								</div>
+							</div>
+							<ul class="record-content">
+								<li class="record-content-li" :class="list.nav_state" v-for="list in reportRecord">
+									<div class="head-portrait">
+										<img :src="list.head_portrait" />
+									</div>
+									<div class="user-name">
+										<p class="name" v-text="list.name"></p>
+										<p class="property" v-text="list.property"></p>
+									</div>
+									<div class="user-phone">
+										<p class="phone" v-text="list.phone"></p>
+										<p :class="{
+										'queren': list.state === '报备确认',
+										'daikan': list.state === '带看确认',
+										'chengjiao': list.state === '成交客户',
+										'wuxiao': list.state === '无效客户'
+												}">
+											<span class="state" v-text="list.state"></span>
+											<span class="state-txt" v-text="list.state_txt"></span>
+										</p>
+									</div>
+								</li>
+							</ul>
+							<div class="loading-record">
+								<div class="loading-record-wrapper">
+									<i></i>
+									<span>努力加载中...</span>
+								</div>
+							</div>
+							<div class="load-record">
+								<div class="loading-record-wrapper">
+									<i></i>
+									<span>上拉加载</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="report-record-wuxiao swiper-slide">
+						<div class="report-record-wrapper">
+							<div class="refreshing-record">
+								<div class="refreshing-record-wrapper">
+									<i></i>
+									<span>刷新中...</span>
+								</div>
+							</div>
+							<div class="refresh-record">
+								<div class="refresh-record-wrapper">
+									<i></i>
+									<span></span>
+								</div>
+							</div>
+							<ul class="record-content">
+								<li class="record-content-li" :class="list.nav_state" v-for="list in reportRecord">
+									<div class="head-portrait">
+										<img :src="list.head_portrait" />
+									</div>
+									<div class="user-name">
+										<p class="name" v-text="list.name"></p>
+										<p class="property" v-text="list.property"></p>
+									</div>
+									<div class="user-phone">
+										<p class="phone" v-text="list.phone"></p>
+										<p :class="{
+										'queren': list.state === '报备确认',
+										'daikan': list.state === '带看确认',
+										'chengjiao': list.state === '成交客户',
+										'wuxiao': list.state === '无效客户'
+												}">
+											<span class="state" v-text="list.state"></span>
+											<span class="state-txt" v-text="list.state_txt"></span>
+										</p>
+									</div>
+								</li>
+							</ul>
+							<div class="loading-record">
+								<div class="loading-record-wrapper">
+									<i></i>
+									<span>努力加载中...</span>
+								</div>
+							</div>
+							<div class="load-record">
+								<div class="loading-record-wrapper">
+									<i></i>
+									<span>上拉加载</span>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -107,6 +316,7 @@
 			el: ".report-record-container",
 			data: {
 				reportRecord: [{
+						nav_state: 'yibaobei',
 						head_portrait: 'img/img.png',
 						name: '刘女士',
 						property: '海口-冠永凤凰城',
@@ -115,6 +325,7 @@
 						state_txt: '（报备已过期）'
 					},
 					{
+						nav_state: 'yibaobei',
 						head_portrait: 'img/img.png',
 						name: '刘女士',
 						property: '海口-冠永凤凰城',
@@ -123,6 +334,7 @@
 						state_txt: '（报备已过期）'
 					},
 					{
+						nav_state: 'yidaikan',
 						head_portrait: 'img/img.png',
 						name: '刘女士',
 						property: '海口-冠永凤凰城',
@@ -131,6 +343,7 @@
 						state_txt: '（保护期剩余30天）'
 					},
 					{
+						nav_state: 'yichengjiao',
 						head_portrait: 'img/img.png',
 						name: '刘女士',
 						property: '海口-冠永凤凰城',
@@ -138,6 +351,7 @@
 						state: '成交客户'
 					},
 					{
+						nav_state: 'wuxiao',
 						head_portrait: 'img/img.png',
 						name: '刘女士',
 						property: '海口-冠永凤凰城',
@@ -145,6 +359,7 @@
 						state: '无效客户'
 					},
 					{
+						nav_state: 'yidaikan',
 						head_portrait: 'img/img.png',
 						name: '刘女士',
 						property: '海口-冠永凤凰城',
@@ -153,6 +368,7 @@
 						state_txt: '（保护期剩余7天）'
 					},
 					{
+						nav_state: 'yichengjiao',
 						head_portrait: 'img/img.png',
 						name: '刘女士',
 						property: '海口-冠永凤凰城',
@@ -160,6 +376,7 @@
 						state: '成交客户'
 					},
 					{
+						nav_state: 'wuxiao',
 						head_portrait: 'img/img.png',
 						name: '刘女士',
 						property: '海口-冠永凤凰城',
