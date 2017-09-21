@@ -1,13 +1,16 @@
-
 function load() {
-	loadingStep = 0; //加载状态0默认，1显示加载状态，2执行加载数据，只有当为0时才能再次加载，这是防止过快拉动刷新 
 	
-//1. 导航栏--全部的上、下拉刷新数据
+		var lr=$(".loading-record").height()
+		var lrw=$(".loading-record-wrapper").height()
+		var lr_lrw=lr-lrw
+	loadingStep = 0; //加载状态0默认，1显示加载状态，2执行加载数据，只有当为0时才能再次加载，这是防止过快拉动刷新 
+
+	//1. 导航栏--全部的上、下拉刷新数据
 	$(".report-record-all .refreshing-record").hide();
 	$(".report-record-all .loading-record .loading-record-wrapper").hide();
-	
+
 	var report_allS = new IScroll(".report-record-all", {
-		scrollbars: true,
+		scrollbars: false,
 		mouseWheel: false,
 		interactiveScrollbars: true,
 		shrinkScrollbars: 'scale',
@@ -52,6 +55,12 @@ function load() {
 				loadingStep = 1;
 				report_allS.refresh();
 			}
+			if(report_allS.y < (report_allS.maxScrollY - 5)) {
+				$(".report-record-all .load-record").css("opacity","1")
+			}
+			if(report_allS.y > (report_allS.maxScrollY - 5)) {
+				$(".report-record-all .load-record").css("opacity","0")
+			}
 		}
 	})
 
@@ -71,6 +80,8 @@ function load() {
 	})
 
 	function all_pullDownAction() {
+		var sectionh = 0;
+		var allh = 0;
 		setTimeout(function() {
 			var li, i;
 			for(i = 0, li = ""; i < 3; i++) {
@@ -81,18 +92,23 @@ function load() {
 			report_allS.refresh();
 			loadingStep = 0;
 			$(".report-record-all .refresh-record").show();
-//			var section_h=$(".report-record-section").height()
-//			var all_h=$(".report-record-all .report-record-wrapper .record-content").height()
-//			if(all_h<section_h){
-//				$(".report-record-all .report-record-wrapper").height(section_h+1)
-//			}
-//			else if(all_h>=section_h){
-//				$(".report-record-all .report-record-wrapper").height(all_h)
-//				report_allS.refresh();
-//			}
+
+			sectionh = $(".report-record-section").height()
+			allh = $(".report-record-all .report-record-wrapper .record-content-wrapper .record-content").height()
+			if(allh <= sectionh) {
+				$(".report-record-all .report-record-wrapper .record-content-wrapper").height(sectionh + 1-lr_lrw)
+			}
+		 	else if(allh > sectionh) {
+				$(".report-record-all .report-record-wrapper .record-content-wrapper").height(allh)
+				report_allS.refresh();
+			}
+
 		}, 1000);
 	}
+
 	function all_pullUpAction() {
+		var sectionh = 0;
+		var allh = 0;
 		setTimeout(function() {
 			var li, i;
 			for(i = 0, li = ""; i < 3; i++) {
@@ -104,17 +120,24 @@ function load() {
 			loadingStep = 0;
 			$(".report-record-all .load-record").show();
 
+			sectionh = $(".report-record-section").height()
+			allh = $(".report-record-all .report-record-wrapper .record-content-wrapper .record-content").height()
+			if(allh <= sectionh) {
+				$(".report-record-all .report-record-wrapper .record-content-wrapper").height(sectionh + 1-lr_lrw)
+			}
+			else if(allh > sectionh) {
+				$(".report-record-all .report-record-wrapper .record-content-wrapper").height(allh)
+				report_allS.refresh();
+			}
 		}, 1000);
 	}
-	
-	
-	
-//2. 导航栏--已报备的上、下拉刷新数据
+
+	//2. 导航栏--已报备的上、下拉刷新数据
 	$(".report-record-yibaobei .refreshing-record").hide();
 	$(".report-record-yibaobei .loading-record .loading-record-wrapper").hide();
-	
+
 	var report_yibaobeiS = new IScroll(".report-record-yibaobei", {
-		scrollbars: true,
+		scrollbars: false,
 		mouseWheel: false,
 		interactiveScrollbars: true,
 		shrinkScrollbars: 'scale',
@@ -159,6 +182,12 @@ function load() {
 				loadingStep = 1;
 				report_yibaobeiS.refresh();
 			}
+			if(report_yibaobeiS.y < (report_yibaobeiS.maxScrollY - 5)) {
+				$(".report-record-yibaobei .load-record").css("opacity","1")
+			}
+			if(report_yibaobeiS.y > (report_yibaobeiS.maxScrollY - 5)) {
+				$(".report-record-yibaobei .load-record").css("opacity","0")
+			}
 		}
 	})
 
@@ -178,40 +207,63 @@ function load() {
 	})
 
 	function yibaobei_pullDownAction() {
+		var sectionh = 0;
+		var yibaobeih = 0;
 		setTimeout(function() {
 			var li, i;
 			for(i = 0, li = ""; i < 3; i++) {
-				li += "<li class='record-content-li yidaikan'><div class='head-portrait'><img src='img/img.png' /></div><div class='user-name'><p class='name'>刘男士</p><p class='property'>三亚-海豚湾海景房</p></div><div class='user-phone'><p class='phone'>12345678901</p><p class='daikan'><span class='state'>带看确认</span><span class='state-txt'>（保护期剩余30天）</span></p></div></li>";
+				li += "<li class='record-content-li yibaobei'><div class='head-portrait'><img src='img/img.png' /></div><div class='user-name'><p class='name'>刘男士</p><p class='property'>三亚-海豚湾海景房</p></div><div class='user-phone'><p class='phone'>12345678901</p><p class='queren'><span class='state'>报备确认</span><span class='state-txt'>（报备已过期）</span></p></div></li>";
 			}
 			$('.report-record-yibaobei .record-content').prepend(li);
 			$(".report-record-yibaobei .refreshing-record").hide();
 			report_yibaobeiS.refresh();
 			loadingStep = 0;
 			$(".report-record-yibaobei .refresh-record").show();
+			
+			sectionh = $(".report-record-section").height()
+			yibaobeih = $(".report-record-yibaobei .report-record-wrapper .record-content-wrapper .record-content").height()
+			if(yibaobeih <= sectionh) {
+				$(".report-record-yibaobei .report-record-wrapper .record-content-wrapper").height(sectionh + 1-lr_lrw)
+			}
+		 	else if(yibaobeih > sectionh) {
+				$(".report-record-yibaobei .report-record-wrapper .record-content-wrapper").height(yibaobeih)
+				report_yibaobeiS.refresh();
+			}
 		}, 1000);
 	}
+
 	function yibaobei_pullUpAction() {
+		var sectionh = 0;
+		var yibaobeih = 0;
 		setTimeout(function() {
 			var li, i;
 			for(i = 0, li = ""; i < 3; i++) {
-				li += "<li class='record-content-li yidaikan'><div class='head-portrait'><img src='img/img.png' /></div><div class='user-name'><p class='name'>刘男士</p><p class='property'>三亚-海豚湾海景房</p></div><div class='user-phone'><p class='phone'>12345678901</p><p class='daikan'><span class='state'>带看确认</span><span class='state-txt'>（保护期剩余30天）</span></p></div></li>";
+				li += "<li class='record-content-li yibaobei'><div class='head-portrait'><img src='img/img.png' /></div><div class='user-name'><p class='name'>刘男士</p><p class='property'>三亚-海豚湾海景房</p></div><div class='user-phone'><p class='phone'>12345678901</p><p class='queren'><span class='state'>报备确认</span><span class='state-txt'>（报备已过期）</span></p></div></li>";
 			}
 			$('.report-record-yibaobei .record-content').append(li);
 			$(".report-record-yibaobei .loading-record .loading-record-wrapper").hide();
 			report_yibaobeiS.refresh();
 			loadingStep = 0;
 			$(".report-record-yibaobei .load-record").show();
+			
+			sectionh = $(".report-record-section").height()
+			yibaobeih = $(".report-record-yibaobei .report-record-wrapper .record-content-wrapper .record-content").height()
+			if(yibaobeih <= sectionh) {
+				$(".report-record-yibaobei .report-record-wrapper .record-content-wrapper").height(sectionh + 1-lr_lrw)
+			}
+		 	else if(yibaobeih > sectionh) {
+				$(".report-record-yibaobei .report-record-wrapper .record-content-wrapper").height(yibaobeih)
+				report_yibaobeiS.refresh();
+			}
 		}, 1000);
 	}
-	
-	
-	
-//3. 导航栏--已带看的上、下拉刷新数据
+
+	//3. 导航栏--已带看的上、下拉刷新数据
 	$(".report-record-yidaikan .refreshing-record").hide();
 	$(".report-record-yidaikan .loading-record .loading-record-wrapper").hide();
-	
+
 	var report_yidaikanS = new IScroll(".report-record-yidaikan", {
-		scrollbars: true,
+		scrollbars: false,
 		mouseWheel: false,
 		interactiveScrollbars: true,
 		shrinkScrollbars: 'scale',
@@ -256,6 +308,12 @@ function load() {
 				loadingStep = 1;
 				report_yidaikanS.refresh();
 			}
+			if(report_yidaikanS.y < (report_yidaikanS.maxScrollY - 5)) {
+				$(".report-record-yidaikan .load-record").css("opacity","1")
+			}
+			if(report_yidaikanS.y > (report_yidaikanS.maxScrollY - 5)) {
+				$(".report-record-yidaikan .load-record").css("opacity","0")
+			}
 		}
 	})
 
@@ -275,6 +333,8 @@ function load() {
 	})
 
 	function yidaikan_pullDownAction() {
+		var sectionh = 0;
+		var yidaikanh = 0;
 		setTimeout(function() {
 			var li, i;
 			for(i = 0, li = ""; i < 3; i++) {
@@ -285,9 +345,22 @@ function load() {
 			report_yidaikanS.refresh();
 			loadingStep = 0;
 			$(".report-record-yidaikan .refresh-record").show();
+			
+			sectionh = $(".report-record-section").height()
+			yidaikanh = $(".report-record-yidaikan .report-record-wrapper .record-content-wrapper .record-content").height()
+			if(yidaikanh <= sectionh) {
+				$(".report-record-yidaikan .report-record-wrapper .record-content-wrapper").height(sectionh + 1-lr_lrw)
+			}
+		 	else if(yidaikanh > sectionh) {
+				$(".report-record-yidaikan .report-record-wrapper .record-content-wrapper").height(yidaikanh)
+				report_yidaikanS.refresh();
+			}
 		}, 1000);
 	}
+
 	function yidaikan_pullUpAction() {
+		var sectionh = 0;
+		var yidaikanh = 0;
 		setTimeout(function() {
 			var li, i;
 			for(i = 0, li = ""; i < 3; i++) {
@@ -298,17 +371,25 @@ function load() {
 			report_yidaikanS.refresh();
 			loadingStep = 0;
 			$(".report-record-yidaikan .load-record").show();
+			
+			sectionh = $(".report-record-section").height()
+			yidaikanh = $(".report-record-yidaikan .report-record-wrapper .record-content-wrapper .record-content").height()
+			if(yidaikanh <= sectionh) {
+				$(".report-record-yidaikan .report-record-wrapper .record-content-wrapper").height(sectionh + 1-lr_lrw)
+			}
+		 	else if(yidaikanh > sectionh) {
+				$(".report-record-yidaikan .report-record-wrapper .record-content-wrapper").height(yidaikanh)
+				report_yidaikanS.refresh();
+			}
 		}, 1000);
 	}
-	
-	
-	
-//4. 导航栏--已成交的上、下拉刷新数据
+
+	//4. 导航栏--已成交的上、下拉刷新数据
 	$(".report-record-yichengjiao .refreshing-record").hide();
 	$(".report-record-yichengjiao .loading-record .loading-record-wrapper").hide();
-	
+
 	var report_yichengjiaoS = new IScroll(".report-record-yichengjiao", {
-		scrollbars: true,
+		scrollbars: false,
 		mouseWheel: false,
 		interactiveScrollbars: true,
 		shrinkScrollbars: 'scale',
@@ -353,6 +434,12 @@ function load() {
 				loadingStep = 1;
 				report_yichengjiaoS.refresh();
 			}
+			if(report_yichengjiaoS.y < (report_yichengjiaoS.maxScrollY - 5)) {
+				$(".report-record-yichengjiao .load-record").css("opacity","1")
+			}
+			if(report_yichengjiaoS.y > (report_yichengjiaoS.maxScrollY - 5)) {
+				$(".report-record-yichengjiao .load-record").css("opacity","0")
+			}
 		}
 	})
 
@@ -372,40 +459,63 @@ function load() {
 	})
 
 	function yichengjiao_pullDownAction() {
+		var sectionh = 0;
+		var yichengjiaoh = 0;
 		setTimeout(function() {
 			var li, i;
 			for(i = 0, li = ""; i < 3; i++) {
-				li += "<li class='record-content-li yidaikan'><div class='head-portrait'><img src='img/img.png' /></div><div class='user-name'><p class='name'>刘男士</p><p class='property'>三亚-海豚湾海景房</p></div><div class='user-phone'><p class='phone'>12345678901</p><p class='daikan'><span class='state'>带看确认</span><span class='state-txt'>（保护期剩余30天）</span></p></div></li>";
+				li += "<li class='record-content-li yichengjiao'><div class='head-portrait'><img src='img/img.png' /></div><div class='user-name'><p class='name'>刘男士</p><p class='property'>三亚-海豚湾海景房</p></div><div class='user-phone'><p class='phone'>12345678901</p><p class='chengjiao'><span class='state'>成交客户</span><span class='state-txt'></span></p></div></li>";
 			}
 			$('.report-record-yichengjiao .record-content').prepend(li);
 			$(".report-record-yichengjiao .refreshing-record").hide();
 			report_yichengjiaoS.refresh();
 			loadingStep = 0;
 			$(".report-record-yichengjiao .refresh-record").show();
+			
+			sectionh = $(".report-record-section").height()
+			yichengjiaoh = $(".report-record-yichengjiao .report-record-wrapper .record-content-wrapper .record-content").height()
+			if(yichengjiaoh <= sectionh) {
+				$(".report-record-yichengjiao .report-record-wrapper .record-content-wrapper").height(sectionh + 1-lr_lrw)
+			}
+		 	else if(yichengjiaoh > sectionh) {
+				$(".report-record-yichengjiao .report-record-wrapper .record-content-wrapper").height(yichengjiaoh)
+				report_yichengjiaoS.refresh();
+			}
 		}, 1000);
 	}
+
 	function yichengjiao_pullUpAction() {
+		var sectionh = 0;
+		var yichengjiaoh = 0;
 		setTimeout(function() {
 			var li, i;
 			for(i = 0, li = ""; i < 3; i++) {
-				li += "<li class='record-content-li yidaikan'><div class='head-portrait'><img src='img/img.png' /></div><div class='user-name'><p class='name'>刘男士</p><p class='property'>三亚-海豚湾海景房</p></div><div class='user-phone'><p class='phone'>12345678901</p><p class='daikan'><span class='state'>带看确认</span><span class='state-txt'>（保护期剩余30天）</span></p></div></li>";
+				li += "<li class='record-content-li yichengjiao'><div class='head-portrait'><img src='img/img.png' /></div><div class='user-name'><p class='name'>刘男士</p><p class='property'>三亚-海豚湾海景房</p></div><div class='user-phone'><p class='phone'>12345678901</p><p class='chengjiao'><span class='state'>成交客户</span><span class='state-txt'></span></p></div></li>";
 			}
 			$('.report-record-yichengjiao .record-content').append(li);
 			$(".report-record-yichengjiao .loading-record .loading-record-wrapper").hide();
 			report_yichengjiaoS.refresh();
 			loadingStep = 0;
 			$(".report-record-yichengjiao .load-record").show();
+			
+			sectionh = $(".report-record-section").height()
+			yichengjiaoh = $(".report-record-yichengjiao .report-record-wrapper .record-content-wrapper .record-content").height()
+			if(yichengjiaoh <= sectionh) {
+				$(".report-record-yichengjiao .report-record-wrapper .record-content-wrapper").height(sectionh + 1-lr_lrw)
+			}
+		 	else if(yichengjiaoh > sectionh) {
+				$(".report-record-yichengjiao .report-record-wrapper .record-content-wrapper").height(yichengjiaoh)
+				report_yichengjiaoS.refresh();
+			}
 		}, 1000);
 	}
-	
-	
-	
-//5. 导航栏--无效客户的上、下拉刷新数据
+
+	//5. 导航栏--无效客户的上、下拉刷新数据
 	$(".report-record-wuxiao .refreshing-record").hide();
 	$(".report-record-wuxiao .loading-record .loading-record-wrapper").hide();
-	
+
 	var report_wuxiaoS = new IScroll(".report-record-wuxiao", {
-		scrollbars: true,
+		scrollbars: false,
 		mouseWheel: false,
 		interactiveScrollbars: true,
 		shrinkScrollbars: 'scale',
@@ -450,6 +560,12 @@ function load() {
 				loadingStep = 1;
 				report_wuxiaoS.refresh();
 			}
+			if(report_wuxiaoS.y < (report_wuxiaoS.maxScrollY - 5)) {
+				$(".report-record-wuxiao .load-record").css("opacity","1")
+			}
+			if(report_wuxiaoS.y > (report_wuxiaoS.maxScrollY - 5)) {
+				$(".report-record-wuxiao .load-record").css("opacity","0")
+			}
 		}
 	})
 
@@ -469,29 +585,54 @@ function load() {
 	})
 
 	function wuxiao_pullDownAction() {
+		var sectionh = 0;
+		var wuxiaoh = 0;
 		setTimeout(function() {
 			var li, i;
 			for(i = 0, li = ""; i < 3; i++) {
-				li += "<li class='record-content-li yidaikan'><div class='head-portrait'><img src='img/img.png' /></div><div class='user-name'><p class='name'>刘男士</p><p class='property'>三亚-海豚湾海景房</p></div><div class='user-phone'><p class='phone'>12345678901</p><p class='daikan'><span class='state'>带看确认</span><span class='state-txt'>（保护期剩余30天）</span></p></div></li>";
+				li += "<li class='record-content-li wuxiao'><div class='head-portrait'><img src='img/img.png' /></div><div class='user-name'><p class='name'>刘男士</p><p class='property'>三亚-海豚湾海景房</p></div><div class='user-phone'><p class='phone'>12345678901</p><p class='wuxiao'><span class='state'>无效客户</span><span class='state-txt'></span></p></div></li>";
 			}
 			$('.report-record-wuxiao .record-content').prepend(li);
 			$(".report-record-wuxiao .refreshing-record").hide();
 			report_wuxiaoS.refresh();
 			loadingStep = 0;
 			$(".report-record-wuxiao .refresh-record").show();
+			
+			sectionh = $(".report-record-section").height()
+			wuxiaoh = $(".report-record-wuxiao .report-record-wrapper .record-content-wrapper .record-content").height()
+			if(wuxiaoh <= sectionh) {
+				$(".report-record-wuxiao .report-record-wrapper .record-content-wrapper").height(sectionh + 1-lr_lrw)
+			}
+		 	else if(wuxiaoh > sectionh) {
+				$(".report-record-wuxiao .report-record-wrapper .record-content-wrapper").height(wuxiaoh)
+				report_wuxiaoS.refresh();
+			}
 		}, 1000);
 	}
+
 	function wuxiao_pullUpAction() {
+		var sectionh = 0;
+		var wuxiaoh = 0;
 		setTimeout(function() {
 			var li, i;
 			for(i = 0, li = ""; i < 3; i++) {
-				li += "<li class='record-content-li yidaikan'><div class='head-portrait'><img src='img/img.png' /></div><div class='user-name'><p class='name'>刘男士</p><p class='property'>三亚-海豚湾海景房</p></div><div class='user-phone'><p class='phone'>12345678901</p><p class='daikan'><span class='state'>带看确认</span><span class='state-txt'>（保护期剩余30天）</span></p></div></li>";
+				li += "<li class='record-content-li wuxiao'><div class='head-portrait'><img src='img/img.png' /></div><div class='user-name'><p class='name'>刘男士</p><p class='property'>三亚-海豚湾海景房</p></div><div class='user-phone'><p class='phone'>12345678901</p><p class='wuxiao'><span class='state'>无效客户</span><span class='state-txt'></span></p></div></li>";
 			}
 			$('.report-record-wuxiao .record-content').append(li);
 			$(".report-record-wuxiao .loading-record .loading-record-wrapper").hide();
 			report_wuxiaoS.refresh();
 			loadingStep = 0;
 			$(".report-record-wuxiao .load-record").show();
+			
+			sectionh = $(".report-record-section").height()
+			wuxiaoh = $(".report-record-wuxiao .report-record-wrapper .record-content-wrapper .record-content").height()
+			if(wuxiaoh <= sectionh) {
+				$(".report-record-wuxiao .report-record-wrapper .record-content-wrapper").height(sectionh + 1-lr_lrw)
+			}
+		 	else if(wuxiaoh > sectionh) {
+				$(".report-record-wuxiao .report-record-wrapper .record-content-wrapper").height(wuxiaoh)
+				report_wuxiaoS.refresh();
+			}
 		}, 1000);
 	}
 	document.addEventListener('touchmove', function(e) {
@@ -499,16 +640,75 @@ function load() {
 	}, false);
 }
 
+
+var lr=$(".loading-record").height()
+var lrw=$(".loading-record-wrapper").height()
+var lr_lrw=lr-lrw
+var section_h = $(".report-record-section").height()
+//nav-全部 记录没有一页时 自适应回弹上拉加载。。。。
+	var all_h = $(".report-record-all .report-record-wrapper .record-content-wrapper .record-content").height()
+	if(all_h <= section_h) {
+		$(".report-record-all .report-record-wrapper .record-content-wrapper").height(section_h + 1-lr_lrw)
+	}
+	else if(all_h > section_h) {
+		$(".report-record-all .report-record-wrapper .record-content-wrapper").height(all_h)
+		report_allS.refresh();
+	}
+//nav-已报备 记录没有一页时 自适应回弹上拉加载。。。。
+	var yibaobei_h = $(".report-record-yibaobei .report-record-wrapper .record-content-wrapper .record-content").height()
+	if(yibaobei_h <= section_h) {
+		$(".report-record-yibaobei .report-record-wrapper .record-content-wrapper").height(section_h + 1-lr_lrw)
+	}
+	else if(yibaobei_h > section_h) {
+		$(".report-record-yibaobei .report-record-wrapper .record-content-wrapper").height(yibaobei_h)
+		report_yibaobeiS.refresh();
+	}
+//nav-已带看 记录没有一页时 自适应回弹上拉加载。。。。
+	var yidaikan_h = $(".report-record-yidaikan .report-record-wrapper .record-content-wrapper .record-content").height()
+	if(yidaikan_h <= section_h) {
+		$(".report-record-yidaikan .report-record-wrapper .record-content-wrapper").height(section_h + 1-lr_lrw)
+	}
+	else if(yidaikan_h > section_h) {
+		$(".report-record-yidaikan .report-record-wrapper .record-content-wrapper").height(yidaikan_h)
+		report_allS.refresh();
+	}
+//nav-已成交 记录没有一页时 自适应回弹上拉加载。。。。
+	var yichengjiao_h = $(".report-record-yichengjiao .report-record-wrapper .record-content-wrapper .record-content").height()
+	if(yichengjiao_h <= section_h) {
+		$(".report-record-yichengjiao .report-record-wrapper .record-content-wrapper").height(section_h + 1-lr_lrw)
+	}
+	else if(yichengjiao_h > section_h) {
+		$(".report-record-yichengjiao .report-record-wrapper .record-content-wrapper").height(yichengjiao_h)
+		report_allS.refresh();
+	}
+//nav-无效客户 记录没有一页时 自适应回弹上拉加载。。。。
+	var wuxiao_h = $(".report-record-wuxiao .report-record-wrapper .record-content-wrapper .record-content").height()
+	if(wuxiao_h <= section_h) {
+		$(".report-record-wuxiao .report-record-wrapper .record-content-wrapper").height(section_h + 1-lr_lrw)
+	}
+	else if(wuxiao_h > section_h) {
+		$(".report-record-wuxiao .report-record-wrapper .record-content-wrapper").height(wuxiao_h)
+		report_allS.refresh();
+	}
+
 $(function() {
-	$(".report-record-section").bind("touchend",function(){
-		var index=reportSwiper.realIndex
+	$(".report-record-section").bind("touchend", function() {
+		var index = reportSwiper.realIndex
 		$(".report-record-nav li").eq(index).addClass("select").siblings().removeClass("select")
 	})
-	
-	$(".report-record-nav li").tap(function(){
-		var index=$(this).index()
+
+	$(".report-record-nav li").tap(function() {
+		var index = $(this).index()
 		reportSwiper.slideTo(index, 300, false)
 		$(this).addClass("select").siblings().removeClass("select")
 	})
 	
+
+	var all_li=$(".report-record-all .record-content li").length
+	if(all_li==0){
+		$(".report-record-section").css("display","none")
+		$(".report-record-nav").css("display","none")
+		$(".report-record-load-failed").css("display","none")
+		$(".no-record").css("display","block")
+	}
 })
