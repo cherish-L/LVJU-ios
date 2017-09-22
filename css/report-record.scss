@@ -140,13 +140,12 @@ $sc:20;
         .report-record-section-nav {
             width: 100%;
             height: 100%;
+            position: absolute;
             .swiper-slide {
                 width: 100%;
                 height: 100%;
-                position: relative;
                 .report-record-wrapper {
                     width: 100%;
-                    position: absolute;
                     .refreshing-record {
                         display: none;
                         width: 100%;
