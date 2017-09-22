@@ -646,4 +646,6 @@ $(function() {
 		$(".report-record-load-failed").css("display","none")
 		$(".no-record").css("display","block")
 	}
+	
+	
 })
