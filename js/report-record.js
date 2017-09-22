@@ -612,7 +612,6 @@ var section_h = $(".report-record-section").height()
 	}
 	else if(all_h > section_h) {
 		$(".report-record-all .report-record-wrapper .record-content-wrapper").height(all_h)
-		report_allS.refresh();
 	}
 //nav-已报备 记录没有一页时 自适应回弹上拉加载。。。。
 	var yibaobei_h = $(".report-record-yibaobei .report-record-wrapper .record-content-wrapper .record-content").height()
@@ -621,7 +620,6 @@ var section_h = $(".report-record-section").height()
 	}
 	else if(yibaobei_h > section_h) {
 		$(".report-record-yibaobei .report-record-wrapper .record-content-wrapper").height(yibaobei_h)
-		report_yibaobeiS.refresh();
 	}
 //nav-已带看 记录没有一页时 自适应回弹上拉加载。。。。
 	var yidaikan_h = $(".report-record-yidaikan .report-record-wrapper .record-content-wrapper .record-content").height()
@@ -630,7 +628,6 @@ var section_h = $(".report-record-section").height()
 	}
 	else if(yidaikan_h > section_h) {
 		$(".report-record-yidaikan .report-record-wrapper .record-content-wrapper").height(yidaikan_h)
-		report_allS.refresh();
 	}
 //nav-已成交 记录没有一页时 自适应回弹上拉加载。。。。
 	var yichengjiao_h = $(".report-record-yichengjiao .report-record-wrapper .record-content-wrapper .record-content").height()
@@ -639,7 +636,6 @@ var section_h = $(".report-record-section").height()
 	}
 	else if(yichengjiao_h > section_h) {
 		$(".report-record-yichengjiao .report-record-wrapper .record-content-wrapper").height(yichengjiao_h)
-		report_allS.refresh();
 	}
 //nav-无效客户 记录没有一页时 自适应回弹上拉加载。。。。
 	var wuxiao_h = $(".report-record-wuxiao .report-record-wrapper .record-content-wrapper .record-content").height()
@@ -648,6 +644,5 @@ var section_h = $(".report-record-section").height()
 	}
 	else if(wuxiao_h > section_h) {
 		$(".report-record-wuxiao .report-record-wrapper .record-content-wrapper").height(wuxiao_h)
-		report_allS.refresh();
 	}
 

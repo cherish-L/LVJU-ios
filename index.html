@@ -108,7 +108,7 @@
 							</div>
 							<div class="record-content-wrapper">
 								<ul class="record-content">
-									<li class="record-content-li" :class="list.nav_state" v-for="list in reportRecord">
+									<li class="record-content-li" :class="list.nav_state" v-for="list in yibaobei">
 										<div class="head-portrait">
 											<img :src="list.head_portrait" />
 										</div>
@@ -161,7 +161,7 @@
 							</div>
 							<div class="record-content-wrapper">
 								<ul class="record-content">
-									<li class="record-content-li" :class="list.nav_state" v-for="list in reportRecord">
+									<li class="record-content-li" :class="list.nav_state" v-for="list in yidaikan">
 										<div class="head-portrait">
 											<img :src="list.head_portrait" />
 										</div>
@@ -215,7 +215,7 @@
 							
 							<div class="record-content-wrapper">
 								<ul class="record-content">
-									<li class="record-content-li" :class="list.nav_state" v-for="list in reportRecord">
+									<li class="record-content-li" :class="list.nav_state" v-for="list in yichengjiao">
 										<div class="head-portrait">
 											<img :src="list.head_portrait" />
 										</div>
@@ -269,7 +269,7 @@
 							
 							<div class="record-content-wrapper">
 								<ul class="record-content">
-									<li class="record-content-li" :class="list.nav_state" v-for="list in reportRecord">
+									<li class="record-content-li" :class="list.nav_state" v-for="list in wuxiao">
 										<div class="head-portrait">
 											<img :src="list.head_portrait" />
 										</div>
@@ -342,7 +342,7 @@
 					{
 						nav_state: 'yibaobei',
 						head_portrait: 'img/img.png',
-						name: '刘女士',
+						name: '刘男士',
 						property: '海口-冠永凤凰城',
 						phone: '18976257695',
 						state: '报备确认',
@@ -376,12 +376,70 @@
 					{
 						nav_state: 'yidaikan',
 						head_portrait: 'img/img.png',
+						name: '刘男士',
+						property: '海口-冠永凤凰城',
+						phone: '18976257695',
+						state: '带看确认',
+						state_txt: '（保护期剩余7天）'
+					},
+					{
+						nav_state: 'yichengjiao',
+						head_portrait: 'img/img.png',
+						name: '刘男士',
+						property: '海口-冠永凤凰城',
+						phone: '18976257695',
+						state: '成交客户'
+					},
+					{
+						nav_state: 'wuxiao',
+						head_portrait: 'img/img.png',
+						name: '刘男士',
+						property: '海口-冠永凤凰城',
+						phone: '18976257695',
+						state: '无效客户'
+					}
+				],
+				yibaobei: [
+					{
+						nav_state: 'yibaobei',
+						head_portrait: 'img/img.png',
+						name: '刘女士',
+						property: '海口-冠永凤凰城',
+						phone: '18976257695',
+						state: '报备确认',
+						state_txt: '（报备已过期）'
+					},
+					{
+						nav_state: 'yibaobei',
+						head_portrait: 'img/img.png',
+						name: '刘男士',
+						property: '海口-冠永凤凰城',
+						phone: '18976257695',
+						state: '报备确认',
+						state_txt: '（报备已过期）'
+					}
+				],
+				yidaikan: [
+					{
+						nav_state: 'yidaikan',
+						head_portrait: 'img/img.png',
 						name: '刘女士',
 						property: '海口-冠永凤凰城',
 						phone: '18976257695',
 						state: '带看确认',
 						state_txt: '（保护期剩余7天）'
 					},
+					{
+						nav_state: 'yidaikan',
+						head_portrait: 'img/img.png',
+						name: '刘男士',
+						property: '海口-冠永凤凰城',
+						phone: '18976257695',
+						state: '带看确认',
+						state_txt: '（保护期剩余30天）'
+					}
+				],
+				yichengjiao: [
 					{
 						nav_state: 'yichengjiao',
 						head_portrait: 'img/img.png',
@@ -391,17 +449,30 @@
 						state: '成交客户'
 					},
 					{
+						nav_state: 'yichengjiao',
+						head_portrait: 'img/img.png',
+						name: '刘男士',
+						property: '海口-冠永凤凰城',
+						phone: '18976257695',
+						state: '成交客户'
+					}
+				],
+				wuxiao: [
+					{
 						nav_state: 'wuxiao',
 						head_portrait: 'img/img.png',
 						name: '刘女士',
 						property: '海口-冠永凤凰城',
 						phone: '18976257695',
 						state: '无效客户'
-					}
-				],
-				yibaobei:[
+					},
 					{
-						
+						nav_state: 'wuxiao',
+						head_portrait: 'img/img.png',
+						name: '刘男士',
+						property: '海口-冠永凤凰城',
+						phone: '18976257695',
+						state: '无效客户'
 					}
 				]
 			}
