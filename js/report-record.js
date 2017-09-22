@@ -1,3 +1,28 @@
+$(function() {
+	$(".report-record-section").bind("touchend", function() {
+		var index = reportSwiper.realIndex
+		$(".report-record-nav li").eq(index).addClass("select").siblings().removeClass("select")
+	})
+
+	$(".report-record-nav li").tap(function() {
+		var index = $(this).index()
+		reportSwiper.slideTo(index, 300, false)
+		$(this).addClass("select").siblings().removeClass("select")
+	})
+	
+
+	var all_li=$(".report-record-all .record-content li").length
+	if(all_li==0){
+		$(".report-record-section").css("display","none")
+		$(".report-record-nav").css("display","none")
+		$(".report-record-load-failed").css("display","none")
+		$(".no-record").css("display","block")
+	}
+	
+	
+})
+
+
 function load() {
 	
 		var lr=$(".loading-record").height()
@@ -626,26 +651,3 @@ var section_h = $(".report-record-section").height()
 		report_allS.refresh();
 	}
 
-$(function() {
-	$(".report-record-section").bind("touchend", function() {
-		var index = reportSwiper.realIndex
-		$(".report-record-nav li").eq(index).addClass("select").siblings().removeClass("select")
-	})
-
-	$(".report-record-nav li").tap(function() {
-		var index = $(this).index()
-		reportSwiper.slideTo(index, 300, false)
-		$(this).addClass("select").siblings().removeClass("select")
-	})
-	
-
-	var all_li=$(".report-record-all .record-content li").length
-	if(all_li==0){
-		$(".report-record-section").css("display","none")
-		$(".report-record-nav").css("display","none")
-		$(".report-record-load-failed").css("display","none")
-		$(".no-record").css("display","block")
-	}
-	
-	
-})
