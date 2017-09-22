@@ -6,9 +6,9 @@
 		<meta content="email=no" name="format-detection" />
 		<meta http-equiv="Cache-Control" content="no-cache" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>客户报备详情</title>
+		<title>报备信息</title>
 		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/report-details.css" />
+		<link rel="stylesheet" type="text/css" href="css/report-info.css" />
 		<script type="text/javascript" src="plugins/zepto.min.js"></script>
 		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>
 		<script type="text/javascript" src="vue/vue.js"></script>
@@ -19,98 +19,81 @@
 	</head>
 
 	<body>
-		<div class="report-details-container" v-cloak>
-			<header class="report-details-header">
+		<div class="report-info-container" v-cloak>
+			<header class="report-info-header">
 				<div class="signal_bar"></div>
 				<div class="title_bar">
-					<h3 class="title_txt">客户报备详情</h3>
+					<h3 class="title_txt">报备信息</h3>
 					<a class="return" href="javascript:;"></a>
 					<a class="more" href="javascript:;"></a>
 				</div>
 			</header>
-			<div class="customer-info">
-				<div class="head-portrait"><img src="img/img.png" /></div>
-				<div class="info">
-					<span>刘男士</span>
-					<span>18976257695</span>
-				</div>
-				<div class="phone-pic"></div>
-			</div>
-			<section class="report-details-section">
+			<section class="report-info-section">
 				<div class="section-wrapper">
-					<div class="section-wrapper-box">
-						<ul class="report-schedule-ul">
-							<li class="report-schedule-li" v-for="list in report_details">
-								<div class="step-title">
-									<span v-text="list.title"></span>
-									<span v-text="list.report_time"></span>
-								</div>
-								<div class="step-bar">
-									<ul class="step-bar-ul" :class="{
-										'first_step': list.current_step === '报备',
-										'second_step': list.current_step === '初步确认',
-										'third_step': list.current_step === '带看',
-										'fourth_step': list.current_step === '成交',
-										'fifth_step': list.current_step === '确认成交'
-									}">
-										<li class="null">
-											<i></i>
-											<span>报备</span>
-										</li>
-										<li class="step-bar-li">
-											<i></i>
-											<span>初步确认</span>
-										</li>
-										<li class="step-bar-li">
-											<i></i>
-											<span>带看</span>
-										</li>
-										<li class="step-bar-li">
-											<i></i>
-											<span>成交</span>
-										</li>
-										<li class="step-bar-li">
-											<i></i>
-											<span>确认成交</span>
-										</li>
-									</ul>
-									<span class="enter"></span>
-								</div>
-							</li>
-						</ul>
+					<div class="report-schedule-div">
+						<div class="step-title">
+							<span>冠永凤凰城</span>
+							<span>2017.09.08 17:52</span>
+						</div>
+						<div class="step-bar">
+							<ul class="step-bar-ul third_step">
+								<li class="null">
+									<i></i>
+									<span>报备</span>
+								</li>
+								<li class="step-bar-li">
+									<i></i>
+									<span>初步确认</span>
+								</li>
+								<li class="step-bar-li">
+									<i></i>
+									<span>带看</span>
+								</li>
+								<li class="step-bar-li">
+									<i></i>
+									<span>成交</span>
+								</li>
+								<li class="step-bar-li">
+									<i></i>
+									<span>确认成交</span>
+								</li>
+							</ul>
+						</div>
+						<div class="report-overdue">（报备已过期）</div>
 					</div>
-					<div class="continue-report-btn">
-						<span>继续报备其他楼盘</span>
+					<div class="take-looker">
+						<p class="name">
+							<span>带看人姓名：</span>
+							<span>陈开栋</span>
+						</p>
+						<p class="phone">
+							<span>带看人电话：</span>
+							<span>18976257695</span>
+						</p>
+						<p class="num">
+							<span>带看人数：</span>
+							<span>2</span>
+						</p>
 					</div>
+					<ul class="report-customer">
+						<li>
+							<p>
+								报备客户
+							</p>
+							<p>2017.09.08 17:52</p>
+						</li>
+						<li>
+							<p>
+								报备客户
+								<span class="tags">已报</span>
+							</p>
+							<p>2017.09.08 17:52</p>
+						</li>
+					</ul>
 				</div>
 			</section>
 		</div>
 	</body>
-	<script type="text/javascript">
-		var myVue = new Vue({
-			el: ".report-details-container",
-			data: {
-				report_details: [
-					{
-						title: '冠永凤凰城',
-						report_time: '2017.09.08 17:52',
-						current_step: '带看',
-					},
-					{
-						title: '开维生态城',
-						report_time: '2017.09.08 17:52',
-						current_step: '初步确认',
-					},
-					{
-						title: '冠永凤凰城',
-						report_time: '2017.09.08 17:52',
-						current_step: '确认成交',
-					}
-				]
-			}
-		})
-	</script>
 	<script src="plugins/swiper-3.4.2.min.js"></script>
-	<script type="text/javascript" src="js/report-details.js"></script>
-
+	<script type="text/javascript" src="js/report-info.js"></script>
 </html>
