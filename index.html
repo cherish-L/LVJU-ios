@@ -5,6 +5,7 @@
 		<meta content="email=no" name="format-detection" />
 		<meta http-equiv="Cache-Control" content="no-cache" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	    <meta content="telephone=no" name="format-detection">
 		<title>报备客户</title>
 		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/report-customer.css" />
@@ -44,10 +45,28 @@
 					</div>
 					<div class="property-info">
 						<ul class="property-info-wrapper">
-							<li class="time">预计看房时间</li>
+							<li class="time">
+								预计看房时间
+								<span></span>
+							</li>
 							<li class="property">选择报备楼盘</li>
 							<li class="tags-box">
 								<ul class="tags-box-ul">
+									<li class="tags-box-li">
+										<img src="img/banner.png"/>
+										<p class="title">冠永凤凰城</p>
+										<span class="delete"></span>
+									</li>
+									<li class="tags-box-li">
+										<img src="img/banner.png"/>
+										<p class="title">冠永凤凰城</p>
+										<span class="delete"></span>
+									</li>
+									<li class="tags-box-li">
+										<img src="img/banner.png"/>
+										<p class="title">冠永凤凰城</p>
+										<span class="delete"></span>
+									</li>
 									<li class="tags-box-li">
 										<img src="img/banner.png"/>
 										<p class="title">冠永凤凰城</p>
@@ -95,5 +114,17 @@
 		</div>
 	</body>
 	<script src="plugins/swiper-3.4.2.min.js"></script>
+	<script src="plugins/mui.min.js"></script>
+	<script src="plugins/mui.picker.min.js"></script>
 	<script type="text/javascript" src="js/report-customer.js"></script>
+	<script>
+		var start_time_picker = new mui.DtPicker({"type":"date","beginYear":1960,"endYear":2020});
+		$(".report-customer-section .property-info-wrapper .time").on("tap", function(){
+			setTimeout(function(){
+				start_time_picker.show(function(items){
+					$(".report-customer-section .property-info-wrapper .time").text("预计看房时间："+items.text);
+				});
+			},200);
+		});
+	</script>
 </html>
