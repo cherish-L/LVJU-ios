@@ -4,11 +4,12 @@
 		<meta charset="utf-8" />
 		<meta content="email=no" name="format-detection" />
 		<meta http-equiv="Cache-Control" content="no-cache" />
+		 <meta name="format-detection" content="telephone=no">
+		<meta http-equiv="x-rim-auto-match" content="none">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-	    <meta content="telephone=no" name="format-detection">
-		<title>报备客户</title>
+		<title>楼盘列表</title>
 		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/report-customer.css" />
+		<link rel="stylesheet" type="text/css" href="css/property-list.css" />
 		<script type="text/javascript" src="plugins/zepto.min.js"></script>
 		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>      
 		<script type="text/javascript" src="vue/vue.js"></script>
@@ -18,113 +19,102 @@
 		</script>
 	</head>
 	<body>
-		<div class="report-customer-container" v-cloak>
-			<header class="report-customer-header">
+		<div class="property-list-container" v-cloak>
+			<header class="property-list-header">
 				<div class="signal_bar"></div>
 				<div class="title_bar">
-					<h3 class="title_txt">报备客户</h3>
+					<h3 class="title_txt">楼盘列表</h3>
 					<a class="return" href="javascript:;"></a>
 					<a class="more" href="javascript:;"></a>
 				</div>
 			</header>
-			<section class="report-customer-section">
+			<section class="property-list-section">
 				<div class="section-wrapper">
-					<div class="salesperson-info">
-						<ul class="salesperson-info-wrapper">
-							<li class="name">
-								<input class="name_ipt" type="text" name="" id="" placeholder="带看人姓名"/>
-								<a href="javascript:;"></a>
-							</li>
-							<li class="phone">
-								<input class="phone_ipt" type="text" name="" id="" placeholder="带看人电话"/>
-							</li>
-							<li class="num">
-								<input class="num" type="text" name="" id="" placeholder="带看人数"/>
-							</li>
-						</ul>
-					</div>
-					<div class="property-info">
-						<ul class="property-info-wrapper">
-							<li class="time">
-								预计看房时间
-								<span></span>
-							</li>
-							<li class="property">选择报备楼盘</li>
-							<li class="tags-box">
-								<ul class="tags-box-ul">
-									<li class="tags-box-li">
-										<img src="img/banner.png"/>
-										<p class="title">冠永凤凰城</p>
-										<span class="delete"></span>
-									</li>
-									<li class="tags-box-li">
-										<img src="img/banner.png"/>
-										<p class="title">冠永凤凰城</p>
-										<span class="delete"></span>
-									</li>
-									<li class="tags-box-li">
-										<img src="img/banner.png"/>
-										<p class="title">冠永凤凰城</p>
-										<span class="delete"></span>
-									</li>
-									<li class="tags-box-li">
-										<img src="img/banner.png"/>
-										<p class="title">冠永凤凰城</p>
-										<span class="delete"></span>
-									</li>
-									<li class="tags-box-li">
-										<img src="img/banner.png"/>
-										<p class="title">冠永凤凰城</p>
-										<span class="delete"></span>
-									</li>
-									<li class="tags-box-li">
-										<img src="img/banner.png"/>
-										<p class="title">冠永凤凰城</p>
-										<span class="delete"></span>
-									</li>
+					<ul class="property-list-details">
+						<li class="details-li" v-for="list in property">
+							<div class="details-li-banner">
+								<img :src="list.src"/>
+								<span class="tags" v-text="list.tags"></span>
+								<p class="txt" v-text="list.txt"></p>
+							</div>
+							<div class="details-li-info">
+								<h3 class="title" v-text="list.title"></h3>
+								<ul class="info-ul">
+									<li v-text="list.address"></li>
+									<li><a href="commission-details.html" v-text="list.commission"></a></li>
+									<li v-text="list.details"></li>
 								</ul>
-							</li>
-						</ul>
-					</div>
-					<div class="customer-phone">
-						<ul class="customer-phone-wrapper">
-							<li class="customer-phone-li">
-								<ul class="customer-phone-li-box">
-									<li class="name">
-										<input class="name_ipt" type="text" name="" id="" placeholder="客户姓名"/>
-										<a href="javascript:;"></a>
-									</li>
-									<li class="phone">
-										<input class="phone_ipt" type="text" name="" id="" placeholder="客户电话"/>
-									</li>
-								</ul>
-								<div class="add-btn"><span>添加</span></div>
-							</li>
-						</ul>
-					</div>
-					<div class="customer-info">
-						<ul class="customer-info-wrapper">
-							<li class="info">
-								<input class="info_ipt" type="text" name="" id="" placeholder="请输入客户信息"/>
-							</li>
-						</ul></div>
-					<div class="submit-btn">提交</div>
+								<div class="price"><span v-text="list.price"></span>元/㎡</div>
+							</div>
+							<ul class="details-li-tags">
+								<li class="electron">
+									<a href="electron-map.html">电子地图</a>
+								</li>
+								<li class="phone">
+									<a href="wtai://wp//mc;13812345678">13812345678</a> 
+								</li>
+								<li class="immediately">
+									<a href="../P2客户报备/report-customer.html">马上报备</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
 				</div>
 			</section> 
-		</div>
+			<footer class="property-list-footer">
+				<ul class="footer-ul">
+				 	<li class="footer-li">
+				 		<a href="../P2客户报备/report-property.html">报备楼盘</a>
+				 	</li>
+				 	<li class="footer-li">
+				 		<a href="../P2客户报备/report-customer.html">马上报备</a>
+				 	</li>
+				 	<li class="footer-li">
+				 		<a href="../P3报备记录/report-record.html">客户管理</a>
+				 	</li>
+				</ul>
+			</footer> 
+			</div>
 	</body>
-	<script src="plugins/swiper-3.4.2.min.js"></script>
-	<script src="plugins/mui.min.js"></script>
-	<script src="plugins/mui.picker.min.js"></script>
-	<script type="text/javascript" src="js/report-customer.js"></script>
-	<script>
-		var start_time_picker = new mui.DtPicker({"type":"date","beginYear":1960,"endYear":2020});
-		$(".report-customer-section .property-info-wrapper .time").on("tap", function(){
-			setTimeout(function(){
-				start_time_picker.show(function(items){
-					$(".report-customer-section .property-info-wrapper .time").text("预计看房时间："+items.text);
-				});
-			},200);
-		});
+	<script type="text/javascript">
+		var myVue = new Vue({
+			el: ".property-list-container",
+			data: {
+				property: [
+					{
+						src: 'img/banner.png',
+						tags: '在售',
+						txt: '项目目前洋房33、34号楼在售中，一梯六户，7层高，一梯六户，7层高',
+						title: '冠永凤凰城',
+						address: '老城经济开发区南一环路北侧',
+						commission: '佣金6%起，提前一小时报备，个人成交奖',
+						details: '公寓38-53㎡开间，51-59㎡1房；住宅60-64㎡1房，81-95㎡2房，117-123㎡3房',
+						price: '18000'
+					},
+					{
+						src: 'img/banner.png',
+						tags: '在售',
+						txt: '项目目前洋房33、34号楼在售中，一梯六户，7层高，一梯六户，7层高',
+						title: '冠永凤凰城',
+						address: '老城经济开发区南一环路北侧',
+						commission: '佣金6%起，提前一小时报备，个人成交奖',
+						details: '公寓38-53㎡开间，51-59㎡1房；住宅60-64㎡1房，81-95㎡2房，117-123㎡3房',
+						price: '18000'
+					},
+					{
+						src: 'img/banner.png',
+						tags: '在售',
+						txt: '项目目前洋房33、34号楼在售中，一梯六户，7层高，一梯六户，7层高',
+						title: '冠永凤凰城',
+						address: '老城经济开发区南一环路北侧',
+						commission: '佣金6%起，提前一小时报备，个人成交奖',
+						details: '公寓38-53㎡开间，51-59㎡1房；住宅60-64㎡1房，81-95㎡2房，117-123㎡3房',
+						price: '18000'
+					}
+				]
+			}
+		})
 	</script>
+	<script src="plugins/swiper-3.4.2.min.js"></script>
+	<script type="text/javascript" src="js/property-list.js"></script>
 </html>

@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+
+::-moz-placeholder {
+  color: #999999;
+}
+
+::-webkit-input-placeholder {
+  color: #999999;
+}
+
+:-ms-input-placeholder {
+  color: #999999;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: PingFangSC-Regular;
+  background: #FAFAFA;
+}
+
+input,
+textarea {
+  outline: none;
+  border: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+li {
+  list-style: none;
+}
+
+.electron-map-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+}
+
+.electron-map-container .electron-map-header {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.electron-map-container .electron-map-header .title_bar {
+  width: 100%;
+  height: 2.2rem;
+  line-height: 2.2rem;
+  position: relative;
+}
+
+.electron-map-container .electron-map-header .title_bar .title_txt {
+  font-size: 0.85rem;
+  color: #FFFFFF;
+  text-align: center;
+  font-weight: normal;
+}
+
+.electron-map-container .electron-map-header .title_bar .return {
+  display: block;
+  height: 2.2rem;
+  width: 2.2rem;
+  background: url(../img/leftt.png) center center no-repeat;
+  background-size: 0.8rem 0.8rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.electron-map-container .electron-map-header .title_bar .more {
+  display: block;
+  height: 2.2rem;
+  width: 2.2rem;
+  background: url(../img/more.png) center center no-repeat;
+  background-size: 1rem 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.electron-map-container .electron-map-section {
+  flex: 1;
+  -webkit-flex: 1;
+  overflow: hidden;
+  background: #F6F6F6;
+  position: relative;
+}
+
+.electron-map-container .electron-map-section .map-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.electron-map-container .electron-map-section .property-indicator {
+  width: 6.8rem;
+  height: 3.15rem;
+  background: #FFFFFF;
+  box-shadow: 0 3px 10px 0 rgba(143, 143, 143, 0.5);
+  border-radius: 7px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+.electron-map-container .electron-map-section .property-indicator .indicator-box {
+  width: 100%;
+  height: 100%;
+  padding: 0.4rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  position: relative;
+}
+
+.electron-map-container .electron-map-section .property-indicator .indicator-box .indicator {
+  width: 100%;
+}
+
+.electron-map-container .electron-map-section .property-indicator .indicator-box .indicator p:first-child {
+  line-height: 0.6rem;
+  font-size: 0.6rem;
+  color: #394043;
+}
+
+.electron-map-container .electron-map-section .property-indicator .indicator-box .indicator p:last-child {
+  line-height: 0.7rem;
+  margin-top: 0.35rem;
+  font-size: 0.5rem;
+  color: #9EA3A7;
+}
+
+.electron-map-container .electron-map-section .property-indicator .indicator-box .red-spot {
+  width: 0.6rem;
+  height: 0.6rem;
+  background: #FF6A70;
+  border: 0.125rem solid #FFFFFF;
+  border-radius: 50%;
+  position: absolute;
+  top: -0.425rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.electron-map-container .electron-map-section .property-indicator .indicator-box .indicator-img {
+  width: 3rem;
+  height: 3.25rem;
+  background: url(../img/frame.png) no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: -3.25rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.electron-map-container .electron-map-section .property-indicator .indicator-box .indicator-img span {
+  display: block;
+  overflow: hidden;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  margin: 0.2rem auto;
+}
+
+.electron-map-container .electron-map-section .property-indicator .indicator-box .indicator-img span img {
+  height: 100%;
+}
+
+.iScrollVerticalScrollbar {
+  width: 0.2rem !important;
+  z-index: 1 !important;
+}
