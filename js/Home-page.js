@@ -2,7 +2,7 @@ $(function() {
 	var homePage_headerh = $(".Home-page-header").height()
 	//首页头部滚动监听事件
 	var homePage_sectionS = new IScroll('.Home-page-section', {
-		scrollbars: false
+		scrollbars: false,
 		probeType: 3
 	})
 
