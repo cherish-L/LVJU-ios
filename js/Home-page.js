@@ -5,7 +5,6 @@ $(function() {
 		scrollbars: false,
 		preventDefault: false,
 		probeType: 3,
-		preventDefault: false,
 		preventDefaultException: {
 			tagName: /^(INPUT|TEXTAREA|BUTTON|SELECT|A)$/
 		}
@@ -86,7 +85,6 @@ $(function() {
 	//房价走势头部滚动监听事件
 	var trendS = new IScroll('.trend-section', {
 		scrollbars: false,
-		preventDefault: false,
 		preventDefaultException: {
 			tagName: /^(INPUT|TEXTAREA|BUTTON|SELECT|A)$/
 		}
@@ -302,7 +300,6 @@ $(function() {
 	//筛选滚动监听事件
 	var screenS = new IScroll('.screen-push-section', {
 		scrollbars: false,
-		preventDefault: false,
 		preventDefaultException: {
 			tagName: /^(INPUT|TEXTAREA|BUTTON|SELECT|A)$/
 		}
