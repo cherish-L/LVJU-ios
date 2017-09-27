@@ -4954,7 +4954,7 @@ li {
 .Home-page-container .search-page .search-page-wrapper .search-page-section .search-section-waiting {
   width: 100%;
   height: 100%;
-  display: block;
+  display: none;
   background: #FFFFFF;
 }
 
