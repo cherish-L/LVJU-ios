@@ -653,145 +653,154 @@ $(function() {
 		})
 	})
 
-	//搜索页面----------------------------------------------------------------------
-
-	var angle = 0;
-	var spin = 0;
-	var timer = null;
-	var timer1 = null;
-	var timer2 = null;
-	var timer3 = null;
-	var i = 0;
-	setInterval(function() {
-		angle += 4
-		$(".search-page .section-loading i").css("transform", "rotate(" + angle + "deg)");
-	}, 20)
-
-	setInterval(function() {
-		spin += 4
-		$(".search-page .search-section-waiting i").css("transform", "rotate(" + spin + "deg)");
-	}, 20)
-
-	$(".search-page .hot-search-title .title-load").tap(function() {
-		clearInterval(timer)
-		timer = setInterval(function() {
-			i += 4
-			$(".search-page .hot-search-title .title-load").css("transform", "rotate(" + i + "deg)");
-		}, 20);
+//搜索页面----------------------------------------------------------------------
+	var search_header_h=$(".search-page-wrapper .search-page-header").height()
+	var search_section_h=$(".search-page-wrapper .search-page-section").height()
+	$(".search-page-wrapper .search-page-header").css("top",-search_header_h-5)
+	$(".search-page-wrapper .search-page-section").css("bottom",-search_section_h-5)
+	
+	$(".Home-page-header .Search-form .Search-frame").tap(function(){
+		$(".Home-page-container .search-page").css("left","0")
+		$(".search-page-wrapper .search-page-header").css("top","0")
+		$(".search-page-wrapper .search-page-section").css("bottom","0")
+		$(".search-page .search-page-header .Search-inpt").focus()
+		$(".Home-page-container .search-page-header .cancle").tap(function() {
+			$(".Home-page-container .search-page").css("left", tcw_ht + 5)
+			$(".search-page-wrapper .search-page-header").css("top",-search_header_h-5)
+			$(".search-page-wrapper .search-page-section").css("bottom",-search_section_h-5)
+		})
 	})
-
-	//输入搜索
-	$(".search-page .Search-form .Search-inpt").focus(function() {
-		clearTimeout(timer1)
-		clearTimeout(timer2)
-		clearTimeout(timer3)
-		$(".search-page .Search-inpt-wrapper .delete").css("display", "block")
-		$(".search-page .search-section-state").addClass("switch").siblings(".page").removeClass("switch")
-		stateS.refresh()
-	})
-	$(".search-page .Search-form .Search-inpt").blur(function() {
-		$(".Search-inpt-wrapper .delete").css("display", "none")
-		stateS.refresh()
-	})
-	$(".search-page .Search-inpt-wrapper .delete").tap(function() {
-		$(".Search-form .Search-inpt").val("")
-		$(".Search-form .Search-inpt").focus()
-		stateS.refresh()
-	})
-
-	$(".search-page .Search-inpt-wrapper .fdj").tap(function() {
-		var inpttxt = $(".search-page .Search-form .Search-inpt").val()
-		if(!inpttxt == "") {
-			var datatxt = "<li class='history-search-li'><span>" + inpttxt + "</span><span>/</span><span>楼盘</span></li>"
-			$(".search-page .history-search-ul").prepend(datatxt)
-			$(".search-page .search-section-state").removeClass("switch")
-			$(".search-page .search-section-waiting").addClass("switch")
-			timer1 = setTimeout(function() {
-				$(".search-page .search-section-waiting").removeClass("switch")
-				$(".search-page .search-section-fail").addClass("switch")
-			}, 1500)
-			$(".search-section-fail").tap(function() {
-				$(".search-page .search-section-waiting").addClass("switch")
-				$(".search-page .search-section-fail").removeClass("switch")
-				timer2 = setTimeout(function() {
-					$(".search-page .search-section-waiting").removeClass("switch")
-					$(".search-page .search-section-none").addClass("switch")
-				}, 1500)
-			})
-			$(".search-page .search-section-none").tap(function() {
-				$(".search-page .search-section-waiting").addClass("switch")
-				$(".search-page .search-section-none").removeClass("switch")
-				timer3 = setTimeout(function() {
-					$(".search-page .search-section-waiting").removeClass("switch")
-					$(".search-page .search-section-wrapper").addClass("switch")
-				}, 1500)
-
-			})
-
-			if($(".search-page .history-search-li").length > 0) {
-				$(".search-page .title-Trash").css("display", "block")
-				$(".search-page .history-search-no").css("display", "none")
-			}
+	
+	//点击热门刷新
+	var hot_search_angle=0;
+	var hot_search_time=null;
+	
+	$(".hot-search .hot-search-title .title-load").tap(function(){
+		if(!$(".hot-search .hot-search-title .title-load").hasClass("refresh")){
+			$(".hot-search .hot-search-title .title-load").addClass("refresh")
+			hot_search_time=setInterval(function() {
+				hot_search_angle += 5
+				$(".hot-search .hot-search-title .title-load").css("transform", "rotate(" + hot_search_angle + "deg)");
+			}, 20)
+			setTimeout(function(){
+				clearInterval(hot_search_time)
+				$(".hot-search .hot-search-title .title-load").removeClass("refresh")
+			},4000)
 		}
 	})
-
-	//历史记录
-	$(".search-page .title-Trash").tap(function() {
-		$(".search-page .title-Trash").css("display", "none")
-		$(".search-page .history-search-no").css("display", "block")
-		$(".search-page .history-search-li").remove()
-		stateS.refresh()
-	})
-
+	
 	//点击热门搜索
 	$(".search-page .hot-search-label span").tap(function() {
 		var labeltxt = $(this).text()
 		$(".search-page .Search-form .Search-inpt").val(labeltxt)
-		$(".search-page .Search-form .Search-inpt").focus()
-		stateS.refresh()
+		$(".search-page .Search-form .Search-inpt").blur()
+		$(".search-page-section .search-section-list").addClass("switch").siblings(".page").removeClass("switch")
+	})
+	
+	//点击list
+	$(".search-section-list .list-ul li").tap(function() {
+		var labeltxt = $(this).text()
+		$(".search-page .Search-form .Search-inpt").val(labeltxt)
+		search_stateS.refresh()
+	})
+	
+	//输入搜索
+	$(".search-page .Search-form .Search-inpt").bind('input propertychange', function() {
+		if($(this).val() !== "") {
+			$(".search-page-section .search-section-list").addClass("switch").siblings(".page").removeClass("switch")
+			$(".Home-page-container .search-page-header .cancle").tap(function() {
+				$(".search-page .Search-form .Search-inpt").val("")
+				$(".search-page-section .search-section-state").addClass("switch").siblings(".page").removeClass("switch")
+			})
+		} else if($(this).val() == "") {
+			$(".search-page-section .search-section-state").addClass("switch").siblings(".page").removeClass("switch")
+			
+		}
+	})
+	
+	$(".search-page .Search-form .Search-inpt").on('keypress',function(e) {  
+        var keycode = e.keyCode;  
+        var searchName = $(this).val();  
+         if(keycode=='13') {  
+         	e.preventDefault()
+            	var datatxt = "<li class='history-search-li'><span>" + searchName + "</span><span>/</span><span>楼盘</span></li>"
+            	$(".search-page-section .search-section-wrapper").addClass("switch").siblings(".page").removeClass("switch")   
+            	$(".search-page .history-search-ul").prepend(datatxt)
+            	search_stateS.refresh()
+         }  
+     })
+	
+	//点击历史记录垃圾桶
+	$(".search-page .history-search-li").tap(function() {
+		var span_txt=$(this).find("span:first-child").text()
+		$(".search-page .Search-form .Search-inpt").val(span_txt)
+		$(".search-page .Search-form .Search-inpt").blur()
+		$(".search-page-section .search-section-list").addClass("switch").siblings(".page").removeClass("switch")
+	})
+	
+	//点击历史记录垃圾桶
+	$(".search-page .title-Trash").tap(function() {
+		$(".search-page .title-Trash").css("display", "none")
+		$(".search-page .history-search-no").css("display", "block")
+		$(".search-page .history-search-li").remove()
+		search_stateS.refresh()
 	})
 
+
 	//搜索页面滚动监听事件
-	var searchS = new IScroll('.search-section-wrapper', {
+	var search_pageS = new IScroll('.search-section-wrapper', {
 		scrollbars: false,
 		probeType: 3
-	});
-	var stateS = new IScroll('.search-section-state', {
+	})
+	
+	var search_listS = new IScroll('.search-section-list', {
 		scrollbars: false
-	});
-
-	var upD = null;
-	searchS.on('scroll', function() {
-		maxY = this.maxScrollY - this.y
-		$(".search-section-box").on("touchstart", function(e) {
-			if(e.cancelable) {
-				if(!e.defaultPrevented) {
-					e.preventDefault();
-				}
+	})
+	
+	var search_stateS = new IScroll('.search-section-state', {
+		scrollbars: false
+	})
+	
+	var angle_search = 0;
+	var angle_search_time = 0;
+	//滚动头部透明度变化
+	search_pageS.on('scroll', function() {
+		if(loadingStep == 0 && !$(".search-page .section-load").hasClass("refresh")) {
+			if(search_pageS.y < (search_pageS.maxScrollY - 10) && search_pageS.y > (search_pageS.maxScrollY - 60)) {
+				$(".search-page .section-load").text("上拉加载更多...")
 			}
-		})
-		$(".search-page .search-section-box").on("touchmove", function(e) {
-			clearTimeout(upD)
-			$(".search-page .section-load").css("display", "block")
-			$(".search-page .section-loading").css("display", "none")
-			$(".search-page .section-loadnone").css("display", "none")
-			if(maxY >= 40) {
+			if(search_pageS.y < (search_pageS.maxScrollY - 60)) {
+				$(".search-page .section-load").addClass("refresh")
 				$(".search-page .section-load").text("松开加载更多...")
-				$(".search-page .section-load").css("display", "block")
-				$(".search-page .section-loadnone").css("display", "none")
+				loadingStep = 1;
 			}
-		})
-		$(".search-page .search-section-box").on("touchend", function(e) {
-			if($(".search-page .section-load").text() == "松开加载更多...") {
-				$(".search-page .section-load").css("display", "none")
-				$(".search-page .section-load").text("上拉加载更多")
-				$(".search-page .section-loading").css("display", "block")
-				upD = setTimeout(function() {
-					$(".search-page .section-loading").css("display", "none")
-					$(".search-page .section-loadnone").css("display", "block")
-				}, 1500)
-			}
-		})
-	});
+		}
+	})
+
+	search_pageS.on("scrollEnd", function() {
+		if($(".search-page .section-load").hasClass("refresh")) { //下拉刷新操作 
+			$(".search-page .section-load").removeClass("refresh")
+			$(".search-page .section-load").text("上拉加载更多...")
+			$(".search-page .section-load").hide()
+			$(".search-page .section-loading").show()
+			angle_search_time = setInterval(function() {
+				angle_search += 5
+				$(".search-page .section-loading i").css("transform", "rotate(" + angle_search + "deg)");
+			}, 20)
+			loadingStep = 2;
+			sp_pullUpAction();
+		}
+	})
+
+	function sp_pullUpAction() {
+		setTimeout(function() {
+			$(".search-page .section-load").show()
+			$(".search-page .section-loading").hide()
+			$(".search-page .section-load").text("没有更多内容加载")
+			search_pageS.refresh();
+			loadingStep = 0;
+			clearInterval(angle_search_time)
+		}, 2000);
+	}
 
 })

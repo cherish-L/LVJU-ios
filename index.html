@@ -25,7 +25,7 @@
 					<div class="Search_bar">
 						<form class="Search-form" action="">
 							<a class="current-location" href="javascript:;">海口</a>
-							<input class="Search-frame" type="text" placeholder="输入楼盘名或楼盘地址" />
+							<a class="Search-frame" href="javascript:;">输入楼盘名或楼盘地址</a>
 							<a class="current-map" href="javascript:;"></a>
 						</form>
 					</div>
@@ -1548,116 +1548,124 @@
 			</div>
 			<!-------------- 搜索页面 ---------------->
 			<div class="search-page">
-				<header class="search-page-header">
-					<div class="signal_bar"></div>
-					<div class="Search_bar">
-						<form class="Search-form" action="">
-							<div class="Search-inpt-box">
-								<div class="Search-inpt-wrapper">
-									<a class="fdj" href="javascript:;"></a>
-									<input class="Search-inpt" type="text" placeholder="输入楼盘名或楼盘地址" />
-									<a class="delete" href="javascript:;"></a>
+				<div class="search-page-wrapper">
+					<header class="search-page-header">
+						<div class="signal_bar"></div>
+						<div class="Search_bar">
+							<form class="Search-form" action="">
+								<div class="Search-inpt-box">
+									<div class="Search-inpt-wrapper">
+										<a class="fdj" href="javascript:;"></a>
+										<input class="Search-inpt" type="search" placeholder="输入楼盘名或楼盘地址" />
+										<a class="delete" href="javascript:;"></a>
+									</div>
+								</div>
+								<a class="cancle" href="javascript:;">取消</a>
+							</form>
+						</div>
+					</header>
+					<div class="search-page-section">
+						<div class="page search-section-wrapper">
+							<div class="search-section-box">
+								<div class="search-section-info">
+									<ul class="section-info-data-ul">
+										<li class="section-info-data-li" v-for="list in groomhouse">
+											<div class="datasearch">
+												<div class="section-info-img">
+													<img :src="list.img" />
+													<span class="biaoqian"></span>
+													<span class="ghtxt" v-text="list.sell"></span>
+												</div>
+												<div class="section-info-txt">
+													<span class="title">
+														<span class="position" v-text="list.positions"></span>
+													<span class="region" v-text="list.region"></span>
+													</span>
+													<span class="address" v-text="list.address"></span>
+													<span class="openprice" v-text="list.openprice"></span>
+													<span class="averageprice">
+															<span class="averag" v-text="list.averag"></span>
+													<span class="price" v-text="list.price"></span>
+													</span>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="section-load">
+									上拉加载更多
+								</div>
+								<div class="section-loading">
+									<i></i>
+									<span>正在加载更多</span>
 								</div>
 							</div>
-							<a class="cancle" href="javascript:;">取消</a>
-						</form>
-					</div>
-				</header>
-				<div class="page search-section-wrapper switch">
-					<div class="search-section-box">
-						<div class="search-section-info">
-							<ul class="section-info-data-ul">
-								<li class="section-info-data-li" v-for="list in groomhouse">
-									<div class="datasearch">
-										<div class="section-info-img">
-											<img :src="list.img" />
-											<span class="biaoqian"></span>
-											<span class="ghtxt" v-text="list.sell"></span>
-										</div>
-										<div class="section-info-txt">
-											<span class="title">
-												<span class="position" v-text="list.positions"></span>
-											<span class="region" v-text="list.region"></span>
-											</span>
-											<span class="address" v-text="list.address"></span>
-											<span class="openprice" v-text="list.openprice"></span>
-											<span class="averageprice">
-													<span class="averag" v-text="list.averag"></span>
-											<span class="price" v-text="list.price"></span>
-											</span>
-										</div>
-									</div>
-								</li>
-							</ul>
 						</div>
-						<div class="section-load">
-							上拉加载更多
-						</div>
-						<div class="section-loading">
+						<!--<div class="page search-section-waiting">
 							<i></i>
-							<span>正在加载更多</span>
 						</div>
-						<div class="section-loadnone">
-							没有更多内容
-						</div>
-					</div>
-				</div>
-				<div class="page search-section-waiting">
-					<i></i>
-				</div>
-				<div class="page search-section-fail">
-					<div class="section-fail-box">
-						<i></i>
-						<p>搜索失败，请检查网络连接</p>
-					</div>
-				</div>
-				<div class="page search-section-none">
-					<div class="section-none-box">
-						<i></i>
-						<p>搜索暂无结果</p>
-					</div>
-				</div>
-				<div class="page search-section-state">
-					<div class="history-search-box">
-						<div class="hot-search">
-							<h3 class="hot-search-title">
-								<span class="title-txt">热门搜索</span>
-								<i class="title-hot"></i>
-								<i class="title-load"></i>
-							</h3>
-							<div class="hot-search-label">
-								<span>热门住宅</span>
-								<span>热门养生社区</span>
-								<span>热门别墅</span>
-								<span>热门海景房</span>
-								<span>热门海滨社区</span>
-								<span>热门小区</span>
-								<div style="clear: both;"></div>
+						<div class="page search-section-fail">
+							<div class="section-fail-box">
+								<i></i>
+								<p>搜索失败，请检查网络连接</p>
 							</div>
 						</div>
-						<div class="history-search">
-							<h3 class="history-search-title">
-										<span class="title-txt">历史记录</span>
-										<i class="title-Trash"></i>
-									</h3>
-							<div class="history-search-no">当前暂无历史记录</div>
-							<ul class="history-search-ul">
-								<li class="history-search-li">
-									<span>富力红树湾</span>
-									<span>/</span>
-									<span>楼盘</span>
-								</li>
-								<li class="history-search-li">
-									<span>富力盈溪谷</span>
-									<span>/</span>
-									<span>二手房</span>
-								</li>
-								<li class="history-search-li">
-									<span>养生社区</span>
-									<span>/</span>
-									<span>资讯</span>
-								</li>
+						<div class="page search-section-none">
+							<div class="section-none-box">
+								<i></i>
+								<p>搜索暂无结果</p>
+							</div>
+						</div>-->
+						<div class="page search-section-list">
+							<ul class="list-ul">
+								<li class="list-li">富力红树湾</li>
+								<li class="list-li">富力盈溪谷</li>
+								<li class="list-li">富力养生社区</li>
 							</ul>
+						</div>
+						<div class="page search-section-state switch">
+							<div class="history-search-box">
+								<div class="hot-search">
+									<h3 class="hot-search-title">
+										<span class="title-txt">热门搜索</span>
+										<i class="title-hot"></i>
+										<i class="title-load"></i>
+									</h3>
+									<div class="hot-search-label">
+										<span>热门住宅</span>
+										<span>热门养生社区</span>
+										<span>热门别墅</span>
+										<span>热门海景房</span>
+										<span>热门海滨社区</span>
+										<span>热门小区</span>
+										<div style="clear: both;"></div>
+									</div>
+								</div>
+								<div class="history-search">
+									<h3 class="history-search-title">
+												<span class="title-txt">历史记录</span>
+												<i class="title-Trash"></i>
+											</h3>
+									<div class="history-search-no">当前暂无历史记录</div>
+									<ul class="history-search-ul">
+										<li class="history-search-li">
+											<span>富力红树湾</span>
+											<span>/</span>
+											<span>楼盘</span>
+										</li>
+										<li class="history-search-li">
+											<span>富力盈溪谷</span>
+											<span>/</span>
+											<span>二手房</span>
+										</li>
+										<li class="history-search-li">
+											<span>养生社区</span>
+											<span>/</span>
+											<span>资讯</span>
+										</li>
+									</ul>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
