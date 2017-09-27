@@ -759,10 +759,10 @@ $(function() {
 						clearInterval(waiting_time)
 						$(".hot-search .hot-search-title .title-load").removeClass("refresh")
 						$(".search-page-section .search-section-wrapper").addClass("switch").siblings(".page").removeClass("switch")
+						search_pageS.refresh()
+						search_listS.refresh()
+						search_stateS.refresh()
 					}, 4000)
-					search_pageS.refresh()
-					search_listS.refresh()
-					search_stateS.refresh()
 				}
 				$(".search-page .history-search-li").tap(function() {
 					var span_txt = $(this).find("span:first-child").text()
