@@ -3,6 +3,7 @@ $(function() {
 	//首页头部滚动监听事件
 	var homePage_sectionS = new IScroll('.Home-page-section', {
 		scrollbars: false,
+		preventDefault: false,
 		probeType: 3
 	})
 
@@ -633,114 +634,145 @@ $(function() {
 		})
 	})
 
-//搜索页面----------------------------------------------------------------------
-	var search_header_h=$(".search-page-wrapper .search-page-header").height()
-	var search_section_h=$(".search-page-wrapper .search-page-section").height()
-	$(".search-page-wrapper .search-page-header").css("top",-search_header_h-5)
-	$(".search-page-wrapper .search-page-section").css("bottom",-search_section_h-5)
-	
-	$(".Home-page-header .Search-form .Search-frame").tap(function(){
-		$(".Home-page-container .search-page").css("left","0")
-		$(".search-page-wrapper .search-page-header").css("top","0")
-		$(".search-page-wrapper .search-page-section").css("bottom","0")
+	//搜索页面----------------------------------------------------------------------
+	var search_header_h = $(".search-page-wrapper .search-page-header").height()
+	var search_section_h = $(".search-page-wrapper .search-page-section").height()
+	$(".search-page-wrapper .search-page-header").css("top", -search_header_h - 5)
+	$(".search-page-wrapper .search-page-section").css("bottom", -search_section_h - 5)
+
+	$(".Home-page-header .Search-form .Search-frame").tap(function() {
+		$(".Home-page-container .search-page").css("left", "0")
+		$(".search-page-wrapper .search-page-header").css("top", "0")
+		$(".search-page-wrapper .search-page-section").css("bottom", "0")
 		$(".search-page .search-page-header .Search-inpt").focus()
 		$(".Home-page-container .search-page-header .cancle").tap(function() {
 			$(".Home-page-container .search-page").css("left", tcw_ht + 5)
-			$(".search-page-wrapper .search-page-header").css("top",-search_header_h-5)
-			$(".search-page-wrapper .search-page-section").css("bottom",-search_section_h-5)
+			$(".search-page-wrapper .search-page-header").css("top", -search_header_h - 5)
+			$(".search-page-wrapper .search-page-section").css("bottom", -search_section_h - 5)
+			$(".search-page-section .search-section-state").addClass("switch").siblings(".page").removeClass("switch")
 		})
 	})
-	
-	//点击热门刷新
-	var hot_search_angle=0;
-	var hot_search_time=null;
-	
-	$(".hot-search .hot-search-title .title-load").tap(function(){
-		if(!$(".hot-search .hot-search-title .title-load").hasClass("refresh")){
-			$(".hot-search .hot-search-title .title-load").addClass("refresh")
-			hot_search_time=setInterval(function() {
-				hot_search_angle += 5
-				$(".hot-search .hot-search-title .title-load").css("transform", "rotate(" + hot_search_angle + "deg)");
-			}, 20)
-			setTimeout(function(){
-				clearInterval(hot_search_time)
-				$(".hot-search .hot-search-title .title-load").removeClass("refresh")
-			},4000)
-		}
+
+	var hot_search_angle = 0;
+	var hot_search_time = null;
+
+	//点击x
+	$(".search-page .Search-inpt-wrapper .delete").tap(function() {
+		$(".search-page .Search-form .Search-inpt").val("")
+		$(".search-page .Search-form .Search-inpt").focus()
+		$(this).css("display", "none")
+		$(".search-page-section .search-section-state").addClass("switch").siblings(".page").removeClass("switch")
+		search_pageS.refresh()
+		search_listS.refresh()
+		search_stateS.refresh()
+	})
+
+	//点击热门搜索
+	var search_pageS = new IScroll('.search-section-wrapper', {
+		scrollbars: false,
+		probeType: 3
+	})
+
+	var search_listS = new IScroll('.search-section-list', {
+		scrollbars: false
+	})
+
+	var search_stateS = new IScroll('.search-section-state', {
+		scrollbars: false
 	})
 	
-	//点击热门搜索
+	
 	$(".search-page .hot-search-label span").tap(function() {
 		var labeltxt = $(this).text()
 		$(".search-page .Search-form .Search-inpt").val(labeltxt)
 		$(".search-page .Search-form .Search-inpt").blur()
+		$(".search-page .Search-inpt-wrapper .delete").css("display", "block")
 		$(".search-page-section .search-section-list").addClass("switch").siblings(".page").removeClass("switch")
+		search_pageS.refresh()
+		search_listS.refresh()
+		search_stateS.refresh()
 	})
-	
+	//点击热门刷新
+	$(".hot-search .hot-search-title .title-load").tap(function() {
+		if(!$(".hot-search .hot-search-title .title-load").hasClass("refresh")) {
+			$(".hot-search .hot-search-title .title-load").addClass("refresh")
+			hot_search_time = setInterval(function() {
+				hot_search_angle += 5
+				$(".hot-search .hot-search-title .title-load").css("transform", "rotate(" + hot_search_angle + "deg)");
+			}, 20)
+			setTimeout(function() {
+				clearInterval(hot_search_time)
+				$(".hot-search .hot-search-title .title-load").removeClass("refresh")
+			}, 4000)
+		}
+	})
+
 	//点击list
 	$(".search-section-list .list-ul li").tap(function() {
 		var labeltxt = $(this).text()
 		$(".search-page .Search-form .Search-inpt").val(labeltxt)
+		$(".search-page .Search-inpt-wrapper .delete").css("display", "block")
+		search_pageS.refresh()
+		search_listS.refresh()
 		search_stateS.refresh()
 	})
-	
+
 	//输入搜索
 	$(".search-page .Search-form .Search-inpt").bind('input propertychange', function() {
 		if($(this).val() !== "") {
 			$(".search-page-section .search-section-list").addClass("switch").siblings(".page").removeClass("switch")
+			$(".search-page .Search-inpt-wrapper .delete").css("display", "block")
 			$(".Home-page-container .search-page-header .cancle").tap(function() {
 				$(".search-page .Search-form .Search-inpt").val("")
 				$(".search-page-section .search-section-state").addClass("switch").siblings(".page").removeClass("switch")
 			})
 		} else if($(this).val() == "") {
 			$(".search-page-section .search-section-state").addClass("switch").siblings(".page").removeClass("switch")
-			
+			$(".search-page .Search-inpt-wrapper .delete").css("display", "none")
 		}
+		search_pageS.refresh()
+		search_listS.refresh()
+		search_stateS.refresh()
 	})
-	
-	$(".search-page .Search-form .Search-inpt").on('keypress',function(e) {  
-        var keycode = e.keyCode;  
-        var searchName = $(this).val();  
-         if(keycode=='13') {  
-         	e.preventDefault()
-            	var datatxt = "<li class='history-search-li'><span>" + searchName + "</span><span>/</span><span>楼盘</span></li>"
-            	$(".search-page-section .search-section-wrapper").addClass("switch").siblings(".page").removeClass("switch")   
-            	$(".search-page .history-search-ul").prepend(datatxt)
-            	search_stateS.refresh()
-         }  
-     })
-	
-	//点击历史记录垃圾桶
+
+	$(".search-page .Search-form .Search-inpt").on('keypress', function(e) {
+		var keycode = e.keyCode;
+		var searchName = $(this).val();
+		if(keycode == '13') {
+			e.preventDefault()
+			var datatxt = "<li class='history-search-li'><span>" + searchName + "</span><span>/</span><span>楼盘</span></li>"
+			$(".search-page-section .search-section-wrapper").addClass("switch").siblings(".page").removeClass("switch")
+			$(".search-page .history-search-ul").prepend(datatxt)
+		}
+		search_pageS.refresh()
+		search_listS.refresh()
+		search_stateS.refresh()
+	})
+
+	//点击历史记录
 	$(".search-page .history-search-li").tap(function() {
-		var span_txt=$(this).find("span:first-child").text()
+		var span_txt = $(this).find("span:first-child").text()
 		$(".search-page .Search-form .Search-inpt").val(span_txt)
 		$(".search-page .Search-form .Search-inpt").blur()
+		$(".search-page .Search-inpt-wrapper .delete").css("display", "block")
 		$(".search-page-section .search-section-list").addClass("switch").siblings(".page").removeClass("switch")
+		search_pageS.refresh()
+		search_listS.refresh()
+		search_stateS.refresh()
 	})
-	
+
 	//点击历史记录垃圾桶
 	$(".search-page .title-Trash").tap(function() {
 		$(".search-page .title-Trash").css("display", "none")
 		$(".search-page .history-search-no").css("display", "block")
 		$(".search-page .history-search-li").remove()
+		search_pageS.refresh()
+		search_listS.refresh()
 		search_stateS.refresh()
 	})
 
-
 	//搜索页面滚动监听事件
-	var search_pageS = new IScroll('.search-section-wrapper', {
-		scrollbars: false,
-		probeType: 3
-	})
-	
-	var search_listS = new IScroll('.search-section-list', {
-		scrollbars: false
-	})
-	
-	var search_stateS = new IScroll('.search-section-state', {
-		scrollbars: false
-	})
-	
+
 	var angle_search = 0;
 	var angle_search_time = 0;
 	//滚动头部透明度变化

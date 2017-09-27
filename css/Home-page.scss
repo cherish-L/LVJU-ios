@@ -4143,8 +4143,6 @@ $sc:25;
                                     flex: 1;
                                     -webkit-flex: 1;
                                     display: block;
-                                    float: left;
-                                    width: 80%;
                                     height: 100%;
                                     padding: 8/$sc+rem 0 8/$sc+rem 30/$sc+rem;
                                     font-size: 12/$sc+rem;
@@ -4161,13 +4159,14 @@ $sc:25;
                                 }
                                 input[type=search]::-webkit-search-cancel-button{
                                     -webkit-appearance: none;
-                                    position: relative;
-                                    height: 20/$sc+rem;
-                                    width: 20/$sc+rem;
-                                    margin-right: 5/$sc+rem;
-                                    border-radius: 50%;
+                                }
+                                .delete {
+                                    display: none;
+                                    width: 30/$sc+rem;
+                                    height: 32/$sc+rem;
                                     background: url(../img/empty.png) no-repeat;
                                     background-size: 20/$sc+rem 20/$sc+rem;
+                                    background-position: 5/$sc+rem 6/$sc+rem;
                                 }
                             }
                         }
