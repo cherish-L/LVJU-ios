@@ -3,7 +3,7 @@ $(function() {
 	//首页头部滚动监听事件
 	var homePage_sectionS = new IScroll('.Home-page-section', {
 		scrollbars: false,
-		preventDefault: false,
+//		preventDefault: false,
 		probeType: 3
 	})
 
@@ -81,8 +81,7 @@ $(function() {
 
 	//房价走势头部滚动监听事件
 	var trendS = new IScroll('.trend-section', {
-		scrollbars: false,
-		preventDefault: false
+		scrollbars: false
 	})
 
 	$(".trend-section .loading-fail").tap(function() {
@@ -294,8 +293,7 @@ $(function() {
 
 	//筛选滚动监听事件
 	var screenS = new IScroll('.screen-push-section', {
-		scrollbars: false,
-		preventDefault: false
+		scrollbars: false
 	})
 
 	//房贷计算器----------------------------------------------------------------------
@@ -520,18 +518,15 @@ $(function() {
 	})
 
 	var loanHomeS = new IScroll('.loanHome-calculator-section', {
-		scrollbars: false,
-		preventDefault: false
+		scrollbars: false
 	})
 	var R_detailsS = new IScroll('.R-details .details-wrapper-body', {
-		scrollbars: false,
-		preventDefault: false
+		scrollbars: false
 	})
 
 	//购房需求----------------------------------------------------------------------	
 	var housing_demandS = new IScroll('.housing-demand-section', {
-		scrollbars: false,
-		preventDefault: false
+		scrollbars: false
 	})
 	var hd_index = 0;
 	var bomb_formula = 0;
