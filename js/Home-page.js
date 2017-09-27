@@ -630,6 +630,20 @@ $(function() {
 	})
 
 	//搜索页面----------------------------------------------------------------------
+	var search_pageS = new IScroll('.search-section-wrapper', {
+		scrollbars: false,
+		probeType: 3
+	})
+
+	var search_listS = new IScroll('.search-section-list', {
+		scrollbars: false
+	})
+
+	var search_stateS = new IScroll('.search-section-state', {
+		scrollbars: false
+	})
+	
+	
 	var search_header_h = $(".search-page-wrapper .search-page-header").height()
 	var search_section_h = $(".search-page-wrapper .search-page-section").height()
 	$(".search-page-wrapper .search-page-header").css("top", -search_header_h - 5)
@@ -663,18 +677,7 @@ $(function() {
 	})
 
 	//点击热门搜索
-	var search_pageS = new IScroll('.search-section-wrapper', {
-		scrollbars: false,
-		probeType: 3
-	})
-
-	var search_listS = new IScroll('.search-section-list', {
-		scrollbars: false
-	})
-
-	var search_stateS = new IScroll('.search-section-state', {
-		scrollbars: false
-	})
+	
 	
 	
 	$(".search-page .hot-search-label span").tap(function() {

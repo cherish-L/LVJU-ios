@@ -4198,13 +4198,10 @@ $sc:25;
                 position: absolute;
                 left: 0;
                 .search-section-wrapper {
-                    flex: 1;
-                    -webkit-flex: 1;
-                    padding-top: 64/$sc+rem;
+                    width: 100%;
+                    height: 100%;
                     display: none;
-                    overflow: hidden;
-                    background: #F4F4F4;
-                    padding-top: 64/$sc+rem;
+                    background: #FFFFFF;
                     .search-section-box {
                         width: 100%;
                         padding-bottom: 32/$sc+rem;
@@ -4380,12 +4377,10 @@ $sc:25;
                     }
                 }
                 .search-section-waiting {
-                    flex: 1;
-                    -webkit-flex: 1;
+                    width: 100%;
+                    height: 100%;
                     display: none;
                     background: #FFFFFF;
-                    position: relative;
-                    padding-top: 64/$sc+rem;
                     i {
                         display: block;
                         width: 32/$sc+rem;
@@ -4397,12 +4392,10 @@ $sc:25;
                     }
                 }
                 .search-section-fail {
-                    flex: 1;
-                    -webkit-flex: 1;
+                    width: 100%;
+                    height: 100%;
                     display: none;
                     background: #FFFFFF;
-                    position: relative;
-                    padding-top: 64/$sc+rem;
                     .section-fail-box {
                         width: 100%;
                         position: absolute;
@@ -4426,12 +4419,10 @@ $sc:25;
                     }
                 }
                 .search-section-none {
-                    flex: 1;
-                    -webkit-flex: 1;
+                    width: 100%;
+                    height: 100%;
                     display: none;
                     background: #FFFFFF;
-                    position: relative;
-                    padding-top: 64/$sc+rem;
                     .section-none-box {
                         width: 100%;
                         position: absolute;

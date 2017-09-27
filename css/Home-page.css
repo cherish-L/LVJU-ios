@@ -4749,13 +4749,10 @@ li {
 }
 
 .Home-page-container .search-page .search-page-wrapper .search-page-section .search-section-wrapper {
-  flex: 1;
-  -webkit-flex: 1;
-  padding-top: 2.56rem;
+  width: 100%;
+  height: 100%;
   display: none;
-  overflow: hidden;
-  background: #F4F4F4;
-  padding-top: 2.56rem;
+  background: #FFFFFF;
 }
 
 .Home-page-container .search-page .search-page-wrapper .search-page-section .search-section-wrapper .search-section-box {
@@ -4955,12 +4952,10 @@ li {
 }
 
 .Home-page-container .search-page .search-page-wrapper .search-page-section .search-section-waiting {
-  flex: 1;
-  -webkit-flex: 1;
+  width: 100%;
+  height: 100%;
   display: none;
   background: #FFFFFF;
-  position: relative;
-  padding-top: 2.56rem;
 }
 
 .Home-page-container .search-page .search-page-wrapper .search-page-section .search-section-waiting i {
@@ -4974,12 +4969,10 @@ li {
 }
 
 .Home-page-container .search-page .search-page-wrapper .search-page-section .search-section-fail {
-  flex: 1;
-  -webkit-flex: 1;
+  width: 100%;
+  height: 100%;
   display: none;
   background: #FFFFFF;
-  position: relative;
-  padding-top: 2.56rem;
 }
 
 .Home-page-container .search-page .search-page-wrapper .search-page-section .search-section-fail .section-fail-box {
@@ -5007,12 +5000,10 @@ li {
 }
 
 .Home-page-container .search-page .search-page-wrapper .search-page-section .search-section-none {
-  flex: 1;
-  -webkit-flex: 1;
+  width: 100%;
+  height: 100%;
   display: none;
   background: #FFFFFF;
-  position: relative;
-  padding-top: 2.56rem;
 }
 
 .Home-page-container .search-page .search-page-wrapper .search-page-section .search-section-none .section-none-box {
