@@ -660,6 +660,9 @@ $(function() {
 			$(".search-page-wrapper .search-page-section").css("bottom", -search_section_h - 5)
 			$(".search-page-section .search-section-state").addClass("switch").siblings(".page").removeClass("switch")
 		})
+		search_pageS.refresh()
+		search_listS.refresh()
+		search_stateS.refresh()
 	})
 
 	var hot_search_angle = 0;
@@ -736,15 +739,17 @@ $(function() {
 	$(".search-page .Search-form .Search-inpt").on('keypress', function(e) {
 		var keycode = e.keyCode;
 		var searchName = $(this).val();
-		if(keycode == '13') {
-			e.preventDefault()
-			var datatxt = "<li class='history-search-li'><span>" + searchName + "</span><span>/</span><span>楼盘</span></li>"
-			$(".search-page-section .search-section-wrapper").addClass("switch").siblings(".page").removeClass("switch")
-			$(".search-page .history-search-ul").prepend(datatxt)
+		if($(".search-page .Search-form .Search-inpt").val() !== ""){
+			if(keycode == '13') {
+				e.preventDefault()
+				var datatxt = "<li class='history-search-li'><span>" + searchName + "</span><span>/</span><span>楼盘</span></li>"
+				$(".search-page-section .search-section-wrapper").addClass("switch").siblings(".page").removeClass("switch")
+				$(".search-page .history-search-ul").prepend(datatxt)
+				search_pageS.refresh()
+				search_listS.refresh()
+				search_stateS.refresh()
+			}
 		}
-		search_pageS.refresh()
-		search_listS.refresh()
-		search_stateS.refresh()
 	})
 
 	//点击历史记录
