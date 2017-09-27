@@ -648,12 +648,13 @@ $(function() {
 	var search_section_h = $(".search-page-wrapper .search-page-section").height()
 	$(".search-page-wrapper .search-page-header").css("top", -search_header_h - 5)
 	$(".search-page-wrapper .search-page-section").css("bottom", -search_section_h - 5)
-
+	
 	$(".Home-page-header .Search-form .Search-frame").tap(function() {
 		$(".Home-page-container .search-page").css("left", "0")
 		$(".search-page-wrapper .search-page-header").css("top", "0")
 		$(".search-page-wrapper .search-page-section").css("bottom", "0")
-		$(".search-page .search-page-header .Search-inpt").focus()
+		$(".search-page .Search-form .Search-inpt").focus()
+		$(".search-page .Search-form .Search-inpt").val("")
 		$(".Home-page-container .search-page-header .cancle").tap(function() {
 			$(".Home-page-container .search-page").css("left", tcw_ht + 5)
 			$(".search-page-wrapper .search-page-header").css("top", -search_header_h - 5)
@@ -735,6 +736,9 @@ $(function() {
 		search_listS.refresh()
 		search_stateS.refresh()
 	})
+	
+	var waiting_angle = 0;
+	var waiting_time = null;
 
 	$(".search-page .Search-form .Search-inpt").on('keypress', function(e) {
 		var keycode = e.keyCode;
@@ -743,8 +747,20 @@ $(function() {
 			if(keycode == '13') {
 				e.preventDefault()
 				var datatxt = "<li class='history-search-li'><span>" + searchName + "</span><span>/</span><span>楼盘</span></li>"
-				$(".search-page-section .search-section-wrapper").addClass("switch").siblings(".page").removeClass("switch")
+				$(".search-page-section .search-section-waiting").addClass("switch").siblings(".page").removeClass("switch")
 				$(".search-page .history-search-ul").prepend(datatxt)
+				if(!$(".search-section-waiting i").hasClass("refresh")) {
+					$(".search-section-waiting i").addClass("refresh")
+					waiting_time = setInterval(function() {
+						waiting_angle += 5
+						$(".search-section-waiting i").css("transform", "rotate(" + waiting_angle + "deg)");
+					}, 20)
+					setTimeout(function() {
+						clearInterval(waiting_time)
+						$(".hot-search .hot-search-title .title-load").removeClass("refresh")
+						$(".search-page-section .search-section-wrapper").addClass("switch").siblings(".page").removeClass("switch")
+					}, 4000)
+				}
 				search_pageS.refresh()
 				search_listS.refresh()
 				search_stateS.refresh()
