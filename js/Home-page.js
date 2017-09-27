@@ -739,7 +739,7 @@ $(function() {
 	
 	var waiting_angle = 0;
 	var waiting_time = null;
-
+	
 	$(".search-page .Search-form .Search-inpt").on('keypress', function(e) {
 		var keycode = e.keyCode;
 		var searchName = $(this).val();
@@ -761,6 +761,13 @@ $(function() {
 						$(".search-page-section .search-section-wrapper").addClass("switch").siblings(".page").removeClass("switch")
 					}, 4000)
 				}
+				$(".search-page .history-search-li").tap(function() {
+					var span_txt = $(this).find("span:first-child").text()
+					$(".search-page .Search-form .Search-inpt").val(span_txt)
+					$(".search-page .Search-form .Search-inpt").blur()
+					$(".search-page .Search-inpt-wrapper .delete").css("display", "block")
+					$(".search-page-section .search-section-list").addClass("switch").siblings(".page").removeClass("switch")
+				})
 				search_pageS.refresh()
 				search_listS.refresh()
 				search_stateS.refresh()
