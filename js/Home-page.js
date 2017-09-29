@@ -70,7 +70,7 @@ $(function() {
 			homePage_sectionS.refresh();
 			loadingStep = 0;
 			clearInterval(angle_hp_time)
-		}, 2000);
+		}, 4000);
 	}
 
 	//底部点击切换页面
@@ -857,7 +857,7 @@ $(function() {
 			search_pageS.refresh();
 			loadingStep = 0;
 			clearInterval(angle_search_time)
-		}, 2000);
+		}, 4000);
 	}
 
 })
