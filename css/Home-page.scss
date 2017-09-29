@@ -1033,9 +1033,9 @@ $sc:25;
         height: 100%;
         background: #f4f4f4;
         transition: all .3s;
+        transform: translateX(380/$sc+rem);
         position: fixed;
         top: 0;
-        left: 380/$sc+rem;
         z-index: 30;
         .city-position-wrapper {
             width: 100%;

@@ -85,7 +85,7 @@ $(function() {
 	
 	//房价走势交互效果
 	var trend_h = $(".trend-section").height()
-	var tcw_ht = $(".houseprice-trend").width()
+	var tcw_ht = $(".houseprice-trend").width()+5
 	$(".trend-section .loading-fail").height(trend_h)
 	
 	$(".historicalprice-title span").tap(function() {
@@ -130,12 +130,12 @@ $(function() {
 	})
 	//点击弹出城市定位
 	$(".Home-page-header .Search_bar .current-location").tap(function() {
-		$(".city-position").css("left", "0")
+		$(".city-position").css("transform", "translateX(0)")
 		$(".Home-page-Mask").fadeIn(200)
 	})
-	
+	alert(tcw_ht)
 	$(".city-position-header .title_bar .del").tap(function() {
-		$(".city-position").css("left", tcw_ht + 5)
+		$(".city-position").css("transform", "translateX("+tcw_ht+"px)")
 		$(".Home-page-Mask").fadeOut(200)
 	})
 	
