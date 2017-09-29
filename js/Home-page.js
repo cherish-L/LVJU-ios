@@ -89,11 +89,11 @@ $(function() {
 	$(".trend-section .loading-fail").height(trend_h)
 	
 	$(".historicalprice-title span").tap(function() {
-		$(".houseprice-trend").css("left", "0")
+		$(".houseprice-trend").css("transform", "translateX(0)")
 		$(".Home-page-Mask").fadeIn(200)
 	})
 	$(".trend-header .return").tap(function() {
-		$(".houseprice-trend").css("left", tcw_ht + 5)
+		$(".houseprice-trend").css("transform", "translateX("+tcw_ht+"px)")
 		$(".Home-page-Mask").fadeOut(200)
 	})
 
@@ -133,7 +133,7 @@ $(function() {
 		$(".city-position").css("transform", "translateX(0)")
 		$(".Home-page-Mask").fadeIn(200)
 	})
-	alert(tcw_ht)
+	
 	$(".city-position-header .title_bar .del").tap(function() {
 		$(".city-position").css("transform", "translateX("+tcw_ht+"px)")
 		$(".Home-page-Mask").fadeOut(200)
@@ -142,12 +142,12 @@ $(function() {
 	
 //地图找房----------------------------------------------------------------------
 	$(".Home-page-section .section-nav .map_house").tap(function() {
-		$(".map-house").css("left", 0)
+		$(".map-house").css("transform", "translateX(0)")
 		$(".Home-page-Mask").fadeIn(200)
 	})
 	
 	$(".map-house-header .title_bar .return").tap(function() {
-		$(".map-house").css("left", tcw_ht + 5)
+		$(".map-house").css("transform", "translateX("+tcw_ht+"px)")
 		$(".Home-page-Mask").fadeOut(200)
 	})
 	
@@ -503,27 +503,27 @@ $(function() {
 	})
 
 	//还款明细推行框
-	var metaw = $("html").width()
+	var metaw = $("html").width()+5
 	$(".loanHome-calculator-section .push").tap(function() {
 		$(this).css("color", "#999999")
-		$(".R-details").css("left", "0")
+		$(".R-details").css("transform", "translateX(0)")
 		$(".calculator-Mask").fadeIn(200)
 	})
 
 	$(".R-details .return").tap(function() {
 		$(".loanHome-calculator-section .push").css("color", "#0099eb")
-		$(".R-details").css("left", metaw + 5)
+		$(".R-details").css("transform", "translateX("+metaw+"px)")
 		$(".calculator-Mask").fadeOut(200)
 	})
 
 	//房贷计算器推行框
 	$(".Home-page-section .section-nav-ul .calculator").tap(function() {
-		$(".loanHome-calculator").css("left", "0")
+		$(".loanHome-calculator").css("transform", "translateX(0)")
 		$(".Home-page-Mask").fadeIn(200)
 	})
 
 	$(".loanHome-calculator-header .return").tap(function() {
-		$(".loanHome-calculator").css("left", metaw + 5)
+		$(".loanHome-calculator").css("transform", "translateX("+metaw+"px)")
 		$(".Home-page-Mask").fadeOut(200)
 	})
 
@@ -634,11 +634,11 @@ $(function() {
 	})
 	
 	$(".Home-page-section .section-nav-ul .housing_demand").tap(function() {
-		$(".housing-demand").css("left", "0")
+		$(".housing-demand").css("transform", "translateX(0)")
 		$('.Home-page-Mask').fadeIn(200)
 	})
 	$(".housing-demand-header .return").tap(function() {
-		$(".housing-demand").css("left", tcw_ht + 5)
+		$(".housing-demand").css("transform", "translateX("+metaw+"px)")
 		$('.Home-page-Mask').fadeOut(200)
 	})
 	
