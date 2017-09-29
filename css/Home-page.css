@@ -2497,13 +2497,11 @@ li {
 
 .Home-page-container .loanHome-calculator .loanHome-calculator-section .section-wrapper .AF-money .AF-rDetails span {
   display: inline-block;
-  margin: 0.16rem auto;
-  height: 0.64rem;
-  line-height: 0.64rem;
+  height: 1.28rem;
+  line-height: 1.28rem;
   padding-right: 0.64rem;
-  background: url(../img/right.png) no-repeat;
+  background: url(../img/right.png) 3.92rem center no-repeat;
   background-size: 0.48rem 0.48rem;
-  background-position: 3.92rem 0.12rem;
   font-size: 0.48rem;
   color: #0099EB;
   position: absolute;
