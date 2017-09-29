@@ -8,7 +8,7 @@ $(function() {
 		disableMouse: false,
 		probeType: 3
 	})
-
+	alert("已改")
 	var angle_hp = 0;
 	var angle_hp_time = 0;
 	var loadingStep = 0;
