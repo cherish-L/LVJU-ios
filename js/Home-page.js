@@ -3,7 +3,6 @@ $(function() {
 	//首页头部滚动监听事件
 	var homePage_sectionS = new IScroll('.Home-page-section', {
 		scrollbars: false,
-//		preventDefault: false,
 		probeType: 3
 	})
 
@@ -83,48 +82,47 @@ $(function() {
 	var trendS = new IScroll('.trend-section', {
 		scrollbars: false
 	})
-
-	$(".trend-section .loading-fail").tap(function() {
-		$(".trend-section .loading-fail").css("display", "none")
-		$(".trend-section").css("display", "block")
-	})
-
+	
 	//房价走势交互效果
 	var trend_h = $(".trend-section").height()
 	var tcw_ht = $(".houseprice-trend").width()
 	$(".trend-section .loading-fail").height(trend_h)
+	
 	$(".historicalprice-title span").tap(function() {
 		$(".houseprice-trend").css("left", "0")
+		$(".Home-page-Mask").fadeIn(200)
 	})
 	$(".trend-header .return").tap(function() {
 		$(".houseprice-trend").css("left", tcw_ht + 5)
+		$(".Home-page-Mask").fadeOut(200)
 	})
 
-	//城市定位----------------------------------------------------------------------
+//城市定位----------------------------------------------------------------------
 	//字母开头城市为0的时候移除 当前字母title
-	$(".classify").each(function() {
+	$(".city-position .classify").each(function() {
 		var _index = $(this).index()
-		var letter_len = $(".classify").eq(_index).find(".wrap li").length
+		var letter_len = $(".city-position .classify").eq(_index).find(".wrap li").length
 		if(letter_len == 0) {
 			var classify_index = $(this).index()
-			$(".classify").eq(classify_index).remove()
-			$(".location_list .classification li").eq(classify_index).remove()
+			$(".city-position .classify").eq(classify_index).remove()
+			$(".city-position .location_list .classification li").eq(classify_index).remove()
 		}
 	})
-	$(".classify .city").tap(function() {
+	$(".city-position .classify .city").tap(function() {
 		var txt = $(this).text()
 		$(".Home-page-header .Search_bar .current-location").text(txt)
-		$(".city-position-header .current_location").text("当前: " + txt)
-		$(".located .wraps").find(".located_city .cityed").text(txt)
+		$(".city-position .city-position-header .current_location").text("当前: " + txt)
+		$(".city-position .located .wraps").find(".located_city .cityed").text(txt)
 		if(!$(this).hasClass("lick")) {
 			$(".history_location .wrap").prepend("<li class='city history_city'>" + txt + "</li>")
 			$(this).addClass("lick")
 		}
+		
 		$(".history_city").tap(function() {
 			var txts_hc = $(this).text()
 			$(".Home-page-header .Search_bar .current-location").text(txts_hc)
-			$(".current_location").text("当前: " + txts_hc)
-			$(".located .wraps").find(".located_city .cityed").text(txts_hc)
+			$(".city-position .current_location").text("当前: " + txts_hc)
+			$(".city-position .located .wraps").find(".located_city .cityed").text(txts_hc)
 		})
 		if($(".history_location .wrap").children().length >= 2) {
 			$(".history_location").css("display", "block")
@@ -133,19 +131,27 @@ $(function() {
 	//点击弹出城市定位
 	$(".Home-page-header .Search_bar .current-location").tap(function() {
 		$(".city-position").css("left", "0")
-		$(".city-position-header .title_bar .del").tap(function() {
-			$(".city-position").css("left", tcw_ht + 5)
-		})
+		$(".Home-page-Mask").fadeIn(200)
 	})
-
-	//地图找房----------------------------------------------------------------------
+	
+	$(".city-position-header .title_bar .del").tap(function() {
+		$(".city-position").css("left", tcw_ht + 5)
+		$(".Home-page-Mask").fadeOut(200)
+	})
+	
+	
+//地图找房----------------------------------------------------------------------
 	$(".Home-page-section .section-nav .map_house").tap(function() {
 		$(".map-house").css("left", 0)
-		$(".map-house-header .title_bar .return").tap(function() {
-			$(".map-house").css("left", tcw_ht + 5)
-		})
+		$(".Home-page-Mask").fadeIn(200)
 	})
-
+	
+	$(".map-house-header .title_bar .return").tap(function() {
+		$(".map-house").css("left", tcw_ht + 5)
+		$(".Home-page-Mask").fadeOut(200)
+	})
+	
+	
 	$(".map-house-wrapper .section-map-list .map-list-trand").tap(function() {
 		if($(this).hasClass("click")) {
 			$(this).removeClass("click")
@@ -296,7 +302,7 @@ $(function() {
 		scrollbars: false
 	})
 
-	//房贷计算器----------------------------------------------------------------------
+//房贷计算器----------------------------------------------------------------------
 	//AF与CI版面交互
 	$(".AF-money .AF-calculate-select span").tap(function() {
 		$(this).addClass("select").siblings().removeClass("select")
@@ -501,20 +507,24 @@ $(function() {
 	$(".loanHome-calculator-section .push").tap(function() {
 		$(this).css("color", "#999999")
 		$(".R-details").css("left", "0")
+		$(".calculator-Mask").fadeIn(200)
 	})
 
 	$(".R-details .return").tap(function() {
 		$(".loanHome-calculator-section .push").css("color", "#0099eb")
 		$(".R-details").css("left", metaw + 5)
+		$(".calculator-Mask").fadeOut(200)
 	})
 
 	//房贷计算器推行框
 	$(".Home-page-section .section-nav-ul .calculator").tap(function() {
 		$(".loanHome-calculator").css("left", "0")
+		$(".Home-page-Mask").fadeIn(200)
 	})
 
 	$(".loanHome-calculator-header .return").tap(function() {
 		$(".loanHome-calculator").css("left", metaw + 5)
+		$(".Home-page-Mask").fadeOut(200)
 	})
 
 	var loanHomeS = new IScroll('.loanHome-calculator-section', {
@@ -524,10 +534,11 @@ $(function() {
 		scrollbars: false
 	})
 
-	//购房需求----------------------------------------------------------------------	
+//购房需求----------------------------------------------------------------------	
 	var housing_demandS = new IScroll('.housing-demand-section', {
 		scrollbars: false
 	})
+	
 	var hd_index = 0;
 	var bomb_formula = 0;
 	$(".housing-demand-section .information_wrap li").tap(function() {
@@ -621,15 +632,20 @@ $(function() {
 			$(".click_sub .success").removeClass("show")
 		})
 	})
-
+	
 	$(".Home-page-section .section-nav-ul .housing_demand").tap(function() {
 		$(".housing-demand").css("left", "0")
-		$(".housing-demand-header .return").tap(function() {
-			$(".housing-demand").css("left", tcw_ht + 5)
-		})
+		$('.Home-page-Mask').fadeIn(200)
 	})
-
-	//搜索页面----------------------------------------------------------------------
+	$(".housing-demand-header .return").tap(function() {
+		$(".housing-demand").css("left", tcw_ht + 5)
+		$('.Home-page-Mask').fadeOut(200)
+	})
+	
+	
+	
+	
+//搜索页面----------------------------------------------------------------------
 	var search_pageS = new IScroll('.search-section-wrapper', {
 		scrollbars: false,
 		probeType: 3

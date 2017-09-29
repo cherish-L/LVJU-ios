@@ -502,7 +502,7 @@ li {
 .Home-page-container .Home-page-section .section-wrapper .section-groomhouse .groomhouse-data .groomhouse-data-ul .groomhouse-data-li .dataBrowse .Browsecount {
   width: 4.32rem;
   height: 100%;
-  line-height: 0.76rem;
+  line-height: 0.64rem;
   padding-left: 0.8rem;
   font-size: 0.48rem;
   color: #0099EB;
@@ -774,12 +774,23 @@ li {
   color: #0099EB;
 }
 
+.Home-page-container .Home-page-Mask {
+  display: none;
+  width: 100%;
+  height: 100%;
+  z-index: 25;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: inset 0 0 4.8rem 0.8rem rgba(0, 0, 0, 0.2);
+}
+
 .Home-page-container .houseprice-trend {
   width: 100%;
   height: 100%;
   background: #f4f4f4;
   transition: all .3s;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 15.2rem;
   z-index: 30;
@@ -1155,7 +1166,7 @@ li {
   height: 100%;
   background: #f4f4f4;
   transition: all .3s;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 15.2rem;
   z-index: 30;
@@ -1428,7 +1439,7 @@ li {
   height: 100%;
   background: #f4f4f4;
   transition: all .3s;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 15.2rem;
   z-index: 30;
@@ -2304,7 +2315,7 @@ li {
   display: -webkit-flex;
   flex-direction: column;
   transition: all .3s;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 15.2rem;
   z-index: 30;
@@ -3693,6 +3704,17 @@ li {
   color: #3F3F3F;
 }
 
+.Home-page-container .loanHome-calculator .calculator-Mask {
+  display: none;
+  width: 100%;
+  height: 100%;
+  z-index: 25;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: inset 0 0 4.8rem 0.8rem rgba(0, 0, 0, 0.2);
+}
+
 .Home-page-container .loanHome-calculator .R-details {
   width: 100%;
   height: 100%;
@@ -3701,6 +3723,7 @@ li {
   position: absolute;
   left: 15.2rem;
   top: 0;
+  z-index: 30;
 }
 
 .Home-page-container .loanHome-calculator .R-details .details-wrapper {
@@ -4182,7 +4205,7 @@ li {
   display: -webkit-flex;
   flex-direction: column;
   transition: all .3s;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 15.2rem;
   z-index: 30;
@@ -4628,7 +4651,7 @@ li {
   width: 100%;
   height: 100%;
   background: #f4f4f4;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 15.2rem;
   z-index: 30;
@@ -5230,24 +5253,24 @@ li {
   display: block;
 }
 
-.swiper-container-horizontal > .swiper-pagination-bullets,
-.swiper-pagination-custom,
-.swiper-pagination-fraction {
+.Home-page-container .swiper-container-horizontal > .swiper-pagination-bullets,
+.Home-page-container .swiper-pagination-custom,
+.Home-page-container .swiper-pagination-fraction {
   display: inline-block;
   width: auto;
   left: auto;
   right: 0;
 }
 
-.swiper-pagination,
-.swiper-pagination-bullets {
+.Home-page-container .swiper-pagination,
+.Home-page-container .swiper-pagination-bullets {
   margin-right: 0.44rem;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
 
-.swiper-pagination .swiper-pagination-bullet,
-.swiper-pagination-bullets .swiper-pagination-bullet {
+.Home-page-container .swiper-pagination .swiper-pagination-bullet,
+.Home-page-container .swiper-pagination-bullets .swiper-pagination-bullet {
   float: left;
   width: 0.32rem;
   height: 0.32rem;
@@ -5256,8 +5279,8 @@ li {
   opacity: .7;
 }
 
-.swiper-pagination .swiper-pagination-bullet-active,
-.swiper-pagination-bullets .swiper-pagination-bullet-active {
+.Home-page-container .swiper-pagination .swiper-pagination-bullet-active,
+.Home-page-container .swiper-pagination-bullets .swiper-pagination-bullet-active {
   background: #0099eb;
   opacity: .8;
 }

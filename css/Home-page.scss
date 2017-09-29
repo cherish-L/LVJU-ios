@@ -436,7 +436,7 @@ $sc:25;
                                 .Browsecount {
                                     width: 108/$sc+rem;
                                     height: 100%;
-                                    line-height: 19/$sc+rem;
+                                    line-height: 16/$sc+rem;
                                     padding-left: 20/$sc+rem;
                                     font-size: 12/$sc+rem;
                                     color: #0099EB;
@@ -686,13 +686,23 @@ $sc:25;
             }
         }
     }
+    .Home-page-Mask{
+        display: none;
+        width: 100%;
+        height: 100%;
+        z-index: 25;
+        position: absolute;
+        top: 0;
+        left: 0;
+        box-shadow: inset 0 0 120/$sc+rem 20/$sc+rem rgba(0,0,0,.2);
+    }
     //------房价走势-------
     .houseprice-trend {
         width: 100%;
         height: 100%;
         background: #f4f4f4;
         transition: all .3s;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 380/$sc+rem; //-------------------------------
         z-index: 30;
@@ -1023,7 +1033,7 @@ $sc:25;
         height: 100%;
         background: #f4f4f4;
         transition: all .3s;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 380/$sc+rem;
         z-index: 30;
@@ -1277,7 +1287,7 @@ $sc:25;
         height: 100%;
         background: #f4f4f4;
         transition: all .3s;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 380/$sc+rem;
         z-index: 30;
@@ -2077,7 +2087,7 @@ $sc:25;
         display: -webkit-flex;
         flex-direction: column;
         transition: all .3s;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 380/$sc+rem;
         z-index: 30;
@@ -3276,6 +3286,16 @@ $sc:25;
                 }
             }
         }
+        .calculator-Mask{
+            display: none;
+            width: 100%;
+            height: 100%;
+            z-index: 25;
+            position: absolute;
+            top: 0;
+            left: 0;
+            box-shadow: inset 0 0 120/$sc+rem 20/$sc+rem rgba(0,0,0,.2);
+        }
         .R-details {
             width: 100%;
             height: 100%;
@@ -3284,6 +3304,7 @@ $sc:25;
             position: absolute;
             left: 380/$sc+rem;
             top: 0;
+            z-index: 30;
             .details-wrapper {
                 width: 100%;
                 height: 100%;
@@ -3699,7 +3720,7 @@ $sc:25;
         display: -webkit-flex;
         flex-direction: column;
         transition: all .3s;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 380/$sc+rem;
         z-index: 30;
@@ -4093,7 +4114,7 @@ $sc:25;
         width: 100%;
         height: 100%;
         background: #f4f4f4;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 380/$sc+rem;
         z-index: 30;
@@ -4628,17 +4649,17 @@ $sc:25;
     }
 }
 
-.swiper-container-horizontal>.swiper-pagination-bullets,
-.swiper-pagination-custom,
-.swiper-pagination-fraction {
+.Home-page-container .swiper-container-horizontal>.swiper-pagination-bullets,
+.Home-page-container .swiper-pagination-custom,
+.Home-page-container .swiper-pagination-fraction {
     display: inline-block;
     width: auto;
     left: auto;
     right: 0;
 }
 
-.swiper-pagination,
-.swiper-pagination-bullets {
+.Home-page-container .swiper-pagination,
+.Home-page-container .swiper-pagination-bullets {
     margin-right: 11/$sc+rem;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
