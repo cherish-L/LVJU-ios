@@ -5282,3 +5282,13 @@ li {
   background: #0099eb;
   opacity: .8;
 }
+
+input[type='text'] {
+  -moz-appearance: textfield;
+}
+
+input[type=text]::-webkit-inner-spin-button,
+input[type=text]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
