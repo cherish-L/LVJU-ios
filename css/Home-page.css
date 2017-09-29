@@ -37,7 +37,8 @@ body {
 
 input {
   outline: none;
-  border: none;
+  border: 0;
+  -webkit-appearance: none;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -5281,14 +5282,4 @@ li {
 .Home-page-container .swiper-pagination-bullets .swiper-pagination-bullet-active {
   background: #0099eb;
   opacity: .8;
-}
-
-input[type='text'] {
-  -moz-appearance: textfield;
-}
-
-input[type=text]::-webkit-inner-spin-button,
-input[type=text]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
 }
