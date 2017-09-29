@@ -819,6 +819,9 @@ $(function() {
 				search_stateS.refresh()
 			}
 		}
+		else($(".search-page .Search-form .Search-inpt").val() == "")){
+			alert("请输入关键字")
+		}
 	})
 
 	//点击历史记录
