@@ -1395,14 +1395,14 @@ li {
   border-bottom: none;
 }
 
-.Home-page-container .city-position .city-position-wrapper .city-position-section .location_list {
+.Home-page-container .city-position .city-position-wrapper .location_list {
   width: 0.8rem;
   position: absolute;
   right: 0.2rem;
   top: 25%;
 }
 
-.Home-page-container .city-position .city-position-wrapper .city-position-section .location_list .classification li {
+.Home-page-container .city-position .city-position-wrapper .location_list .classification li {
   width: 100%;
   height: 0.56rem;
   text-align: center;
@@ -1411,14 +1411,14 @@ li {
   font-size: 0.4rem;
 }
 
-.Home-page-container .city-position .city-position-wrapper .city-position-section .location_list .classification li a {
+.Home-page-container .city-position .city-position-wrapper .location_list .classification li a {
   display: block;
   width: 100%;
   height: 100%;
   color: #394043;
 }
 
-.Home-page-container .city-position .city-position-wrapper .city-position-section .location_list .classification span {
+.Home-page-container .city-position .city-position-wrapper .location_list .classification span {
   width: 100%;
   height: 0.56rem;
   text-align: center;
@@ -1427,7 +1427,7 @@ li {
   font-size: 0.4rem;
 }
 
-.Home-page-container .city-position .city-position-wrapper .city-position-section .location_list .classification span a {
+.Home-page-container .city-position .city-position-wrapper .location_list .classification span a {
   display: block;
   width: 100%;
   height: 100%;

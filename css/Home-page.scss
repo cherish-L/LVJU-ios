@@ -1242,39 +1242,39 @@ $sc:25;
                         }
                     }
                 }
-                .location_list {
-                    width: 20/$sc+rem;
-                    position: absolute;
-                    right: 5/$sc+rem;
-                    top: 25%;
-                    .classification {
-                        li {
+            }
+            .location_list {
+                width: 20/$sc+rem;
+                position: absolute;
+                right: 5/$sc+rem;
+                top: 25%;
+                .classification {
+                    li {
+                        width: 100%;
+                        height: 14/$sc+rem;
+                        text-align: center;
+                        font-weight: bold;
+                        line-height: 14/$sc+rem;
+                        font-size: 10/$sc+rem;
+                        a {
+                            display: block;
                             width: 100%;
-                            height: 14/$sc+rem;
-                            text-align: center;
-                            font-weight: bold;
-                            line-height: 14/$sc+rem;
-                            font-size: 10/$sc+rem;
-                            a {
-                                display: block;
-                                width: 100%;
-                                height: 100%;
-                                color: #394043;
-                            }
+                            height: 100%;
+                            color: #394043;
                         }
-                        span {
+                    }
+                    span {
+                        width: 100%;
+                        height: 14/$sc+rem;
+                        text-align: center;
+                        font-weight: bold;
+                        line-height: 14/$sc+rem;
+                        font-size: 10/$sc+rem;
+                        a {
+                            display: block;
                             width: 100%;
-                            height: 14/$sc+rem;
-                            text-align: center;
-                            font-weight: bold;
-                            line-height: 14/$sc+rem;
-                            font-size: 10/$sc+rem;
-                            a {
-                                display: block;
-                                width: 100%;
-                                height: 100%;
-                                color: #394043;
-                            }
+                            height: 100%;
+                            color: #394043;
                         }
                     }
                 }
