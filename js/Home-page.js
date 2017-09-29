@@ -820,7 +820,10 @@ $(function() {
 			}
 		}
 		else if($(".search-page .Search-form .Search-inpt").val() == ""){
-			alert("请输入关键字")
+			if(keycode == '13') {
+				e.preventDefault()
+				alert("请输入关键字")
+			}
 		}
 	})
 
