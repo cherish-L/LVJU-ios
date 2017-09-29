@@ -1,5 +1,5 @@
 $(function() {
-	self.textfield.autocorrectionType = UITextAutocorrectionTypeNo;
+	
 	var homePage_headerh = $(".Home-page-header").height()
 	//首页头部滚动监听事件
 	var homePage_sectionS = new IScroll('.Home-page-section', {
@@ -9,7 +9,6 @@ $(function() {
 		disableMouse: false,
 		probeType: 3
 	})
-	alert("已改")
 	var angle_hp = 0;
 	var angle_hp_time = 0;
 	var loadingStep = 0;
