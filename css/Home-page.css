@@ -4773,6 +4773,7 @@ li {
   width: 100%;
   height: 100%;
   display: none;
+  position: relative;
   background: #FFFFFF;
 }
 
@@ -4972,14 +4973,17 @@ li {
   -webkit-box-sizing: border-box;
 }
 
-.Home-page-container .search-page .search-page-wrapper .search-page-section .search-section-waiting {
+.Home-page-container .search-page .search-page-wrapper .search-page-section .search-section-wrapper .search-section-waiting {
   width: 100%;
   height: 100%;
-  display: none;
+  display: block;
   background: #FFFFFF;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-.Home-page-container .search-page .search-page-wrapper .search-page-section .search-section-waiting i {
+.Home-page-container .search-page .search-page-wrapper .search-page-section .search-section-wrapper .search-section-waiting i {
   display: block;
   width: 1.28rem;
   height: 1.28rem;

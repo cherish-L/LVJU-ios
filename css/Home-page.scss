@@ -4220,6 +4220,7 @@ $sc:25;
                     width: 100%;
                     height: 100%;
                     display: none;
+                    position: relative;
                     background: #FFFFFF;
                     .search-section-box {
                         width: 100%;
@@ -4394,20 +4395,23 @@ $sc:25;
                             -webkit-box-sizing: border-box;
                         }
                     }
-                }
-                .search-section-waiting {
-                    width: 100%;
-                    height: 100%;
-                    display: none;
-                    background: #FFFFFF;
-                    i {
+                    .search-section-waiting {
+                        width: 100%;
+                        height: 100%;
                         display: block;
-                        width: 32/$sc+rem;
-                        height: 32/$sc+rem;
+                        background: #FFFFFF;
                         position: absolute;
-                        top: 40%;
-                        left: 45%;
-                        background: url(../img/waiting.png) no-repeat;
+                        top: 0;
+                        left: 0;
+                        i {
+                            display: block;
+                            width: 32/$sc+rem;
+                            height: 32/$sc+rem;
+                            position: absolute;
+                            top: 40%;
+                            left: 45%;
+                            background: url(../img/waiting.png) no-repeat;
+                        }
                     }
                 }
                 .search-section-fail {

@@ -830,40 +830,45 @@ $(function() {
 	$(".search-page .Search-form .Search-inpt").on('keypress', function(e) {
 		var keycode = e.keyCode;
 		var searchName = $(this).val();
-		if($(".search-page .Search-form .Search-inpt").val() !== ""){
+		if($("#Search-inpt").val() !== ""){
 			if(keycode == '13') {
 				e.preventDefault()
 				var datatxt = "<li class='history-search-li'><span>" + searchName + "</span><span>/</span><span>楼盘</span></li>"
-				$(".search-page-section .search-section-waiting").addClass("switch").siblings(".page").removeClass("switch")
+				$(".search-page-section .search-section-wrapper").addClass("switch").siblings(".page").removeClass("switch")
+				$(".search-page-section .search-section-waiting").css("display","block")
 				$(".search-page .history-search-ul").prepend(datatxt)
-				if(!$(".search-section-waiting i").hasClass("refresh")) {
-					$(".search-section-waiting i").addClass("refresh")
-					waiting_time = setInterval(function() {
-						waiting_angle += 5
-						$(".search-section-waiting i").css("transform", "rotate(" + waiting_angle + "deg)");
-					}, 20)
-					setTimeout(function() {
-						clearInterval(waiting_time)
-						$(".hot-search .hot-search-title .title-load").removeClass("refresh")
-						$(".search-page-section .search-section-wrapper").addClass("switch").siblings(".page").removeClass("switch")
-						search_pageS.refresh()
-						search_listS.refresh()
-						search_stateS.refresh()
-					}, 4000)
-				}
+				
+				waiting_time = setInterval(function() {
+					waiting_angle += 5
+					$(".search-section-waiting i").css("transform", "rotate(" + waiting_angle + "deg)");
+				}, 20)
+				
+				setTimeout(function() {
+					clearInterval(waiting_time)
+					$(".search-page-section .search-section-waiting").css("display","none")
+					search_pageS.refresh()
+					search_listS.refresh()
+					search_stateS.refresh()
+				}, 4000)
+					
+					
 				$(".search-page .history-search-li").tap(function() {
 					var span_txt = $(this).find("span:first-child").text()
-					$(".search-page .Search-form .Search-inpt").val(span_txt)
-					$(".search-page .Search-form .Search-inpt").blur()
+					$("#Search-inpt").val(span_txt)
+					$("#Search-inpt").blur()
 					$(".search-page .Search-inpt-wrapper .delete").css("display", "block")
 					$(".search-page-section .search-section-list").addClass("switch").siblings(".page").removeClass("switch")
+					
+					search_pageS.refresh()
+					search_listS.refresh()
+					search_stateS.refresh()
 				})
 				search_pageS.refresh()
 				search_listS.refresh()
 				search_stateS.refresh()
 			}
 		}
-		else if($(".search-page .Search-form .Search-inpt").val() == ""){
+		else if($("#Search-inpt").val() == ""){
 			if(keycode == '13') {
 				e.preventDefault()
 				alert("请输入关键字")
