@@ -854,10 +854,21 @@ $(function() {
 					search_stateS.refresh()
 				}, 4000)
 				$("#Search-inpt").tap(function(){
-					$(".search-page-section .search-section-list").addClass("switch").siblings(".page").removeClass("switch")
-					search_pageS.refresh()
-					search_listS.refresh()
-					search_stateS.refresh()
+					if($(this).val() !== "") {
+						$(".search-page-section .search-section-list").addClass("switch").siblings(".page").removeClass("switch")
+						$(".search-page .Search-inpt-wrapper .delete").css("display", "block")
+						$(".Home-page-container .search-page-header .cancle").tap(function() {
+							$(".search-page .Search-form .Search-inpt").val("")
+							$(".search-page-section .search-section-state").addClass("switch").siblings(".page").removeClass("switch")
+							
+							search_pageS.refresh()
+							search_listS.refresh()
+							search_stateS.refresh()
+						})
+					} else if($(this).val() == "") {
+						$(".search-page-section .search-section-state").addClass("switch").siblings(".page").removeClass("switch")
+						$(".search-page .Search-inpt-wrapper .delete").css("display", "none")
+					}
 				})
 				$(".search-page .title-Trash").tap(function() {
 					$("#Search-inpt").blur()
