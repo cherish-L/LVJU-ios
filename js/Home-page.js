@@ -736,7 +736,9 @@ $(function() {
 		search_listS.refresh()
 		search_stateS.refresh()
 	})
-	
+	$(".search-page .hot-search-label span").mouseup(function(e){
+	    e.preventDefault();
+	});
 	//点击热门刷新
 	$(".hot-search .hot-search-title .title-load").tap(function() {
 		if(!$(".hot-search .hot-search-title .title-load").hasClass("refresh")) {
