@@ -823,7 +823,7 @@ $(function() {
 	})
 	
 	
-	
+	alert("1")
 	var waiting_angle = 0;
 	var waiting_time = null;
 	
