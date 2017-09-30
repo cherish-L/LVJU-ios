@@ -5255,6 +5255,25 @@ li {
   display: block;
 }
 
+.Home-page-container .search-page .search-page-wrapper .search-page-bomb {
+  display: none;
+  width: 6.4rem;
+  height: 1.44rem;
+  line-height: 1.44rem;
+  z-index: 35;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 0.56rem;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 0.2rem;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
 .Home-page-container .swiper-container-horizontal > .swiper-pagination-bullets,
 .Home-page-container .swiper-pagination-custom,
 .Home-page-container .swiper-pagination-fraction {

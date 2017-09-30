@@ -4647,6 +4647,24 @@ $sc:25;
                     display: block;
                 }
             }
+            .search-page-bomb{
+                display: none;
+                width: 160/$sc+rem;
+                height: 36/$sc+rem;
+                line-height: 36/$sc+rem;
+                z-index: 35;
+                text-align: center;
+                color: #FFFFFF;
+                font-size: 14/$sc+rem;
+                background: rgba(0,0,0,.6);
+                border-radius: 5/$sc+rem;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
         }
     }
 }

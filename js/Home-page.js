@@ -839,6 +839,7 @@ $(function() {
 				$(".search-page .history-search-ul").prepend(datatxt)
 				$(".search-page .title-Trash").css("display", "block")
 				$(".search-page .history-search-no").css("display", "none")
+				$("#Search-inpt").blur()
 				
 				waiting_time = setInterval(function() {
 					waiting_angle += 5
@@ -881,7 +882,12 @@ $(function() {
 		else if($("#Search-inpt").val() == ""){
 			if(keycode == '13') {
 				e.preventDefault()
-				alert("请输入关键字")
+				$("#Search-inpt").blur()
+				$(".search-page-bomb").css("display","block")
+				$(".search-page-bomb").css("opacity","1")
+				setTimeout(function(){
+					$(".search-page-bomb").fadeOut(300)
+				},1200)
 			}
 		}
 	})
