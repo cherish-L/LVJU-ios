@@ -4650,9 +4650,9 @@ li {
   width: 100%;
   height: 100%;
   background: #f4f4f4;
+  transform: translateX(15.2rem);
   position: fixed;
   top: 0;
-  left: 15.2rem;
   z-index: 30;
 }
 

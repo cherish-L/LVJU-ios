@@ -4113,9 +4113,9 @@ $sc:25;
         width: 100%;
         height: 100%;
         background: #f4f4f4;
+        transform: translateX(380/$sc+rem);
         position: fixed;
         top: 0;
-        left: 380/$sc+rem;
         z-index: 30;
         .search-page-wrapper {
             width: 100%;
