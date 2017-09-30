@@ -685,7 +685,9 @@ $(function() {
 		disableTouch: false,
 		disableMouse: false,
 	})
-	alert("refresh")
+	
+	
+	
 	var search_h = $(".search-page-wrapper").height()
 	var search_header_h = -($(".search-page-wrapper .search-page-header").height())
 	var search_section_h = search_h + search_header_h
@@ -695,6 +697,9 @@ $(function() {
 	
 	$(".Home-page-header .Search-form .Search-frame").tap(function() {
 		$("#Search-inpt").val("")
+		setTimeout(function(){
+			$("#Search-inpt").focus()
+		},300)
 		$(".Home-page-container .search-page").css("transform", "translateX(0px)")
 		$(".search-page-wrapper .search-page-header").css("transform", "translateY(0px)")
 		$(".search-page-wrapper .search-page-section").css("transform", "translateY("+ -search_header_h +"px)")
@@ -743,6 +748,7 @@ $(function() {
 	
 	//点击热门刷新
 	$(".hot-search .hot-search-title .title-load").tap(function() {
+		$("#Search-inpt").blur()
 		if(!$(".hot-search .hot-search-title .title-load").hasClass("refresh")) {
 			$(".hot-search .hot-search-title .title-load").addClass("refresh")
 			hot_search_time = setInterval(function() {
@@ -784,6 +790,7 @@ $(function() {
 	
 	//点击历史记录垃圾桶
 	$(".search-page .title-Trash").tap(function() {
+		$("#Search-inpt").blur()
 		$(".search-page .title-Trash").css("display", "none")
 		$(".search-page .history-search-no").css("display", "block")
 		$(".search-page .history-search-li").remove()
