@@ -837,6 +837,8 @@ $(function() {
 				$(".search-page-section .search-section-wrapper").addClass("switch").siblings(".page").removeClass("switch")
 				$(".search-page-section .search-section-waiting").css("display","block")
 				$(".search-page .history-search-ul").prepend(datatxt)
+				$(".search-page .title-Trash").css("display", "block")
+				$(".search-page .history-search-no").css("display", "none")
 				
 				waiting_time = setInterval(function() {
 					waiting_angle += 5
@@ -851,7 +853,15 @@ $(function() {
 					search_stateS.refresh()
 				}, 4000)
 					
-					
+				$(".search-page .title-Trash").tap(function() {
+					$("#Search-inpt").blur()
+					$(".search-page .title-Trash").css("display", "none")
+					$(".search-page .history-search-no").css("display", "block")
+					$(".search-page .history-search-li").remove()
+					search_pageS.refresh()
+					search_listS.refresh()
+					search_stateS.refresh()
+				})	
 				$(".search-page .history-search-li").tap(function() {
 					var span_txt = $(this).find("span:first-child").text()
 					$("#Search-inpt").val(span_txt)
