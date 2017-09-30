@@ -685,7 +685,7 @@ $(function() {
 		disableTouch: false,
 		disableMouse: false,
 	})
-	alert("refreshed")
+	alert("refresh")
 	var search_h = $(".search-page-wrapper").height()
 	var search_header_h = -($(".search-page-wrapper .search-page-header").height())
 	var search_section_h = search_h + search_header_h
@@ -801,6 +801,10 @@ $(function() {
 			$(".Home-page-container .search-page-header .cancle").tap(function() {
 				$(".search-page .Search-form .Search-inpt").val("")
 				$(".search-page-section .search-section-state").addClass("switch").siblings(".page").removeClass("switch")
+				
+				search_pageS.refresh()
+				search_listS.refresh()
+				search_stateS.refresh()
 			})
 		} else if($(this).val() == "") {
 			$(".search-page-section .search-section-state").addClass("switch").siblings(".page").removeClass("switch")

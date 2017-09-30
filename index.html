@@ -1556,10 +1556,11 @@
 					<header class="search-page-header">
 						<div class="signal_bar"></div>
 						<div class="Search_bar">
-							<form class="Search-form" action="">
+							<form class="Search-form" id="search_from" action="">
 								<div class="Search-inpt-box">
 									<div class="Search-inpt-wrapper">
 										<input class="Search-inpt" id="Search-inpt" type="search" placeholder="输入楼盘名或楼盘地址" />
+										<iframe name='frameFile' style="display: none;"></iframe>
 										<a class="delete" href="javascript:;"></a>
 									</div>
 								</div>
@@ -2177,6 +2178,12 @@
 					]
 				}
 			})
+		</script>
+		<script>
+			document.getElementById('search_from').onsubmit = function(e){
+			    yourfun();
+			    document.activeElement.blur();//软键盘收起
+			}
 		</script>
 	</body>
 </html>
