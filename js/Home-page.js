@@ -725,20 +725,18 @@ $(function() {
 
 
 	//点击热门搜索
-	alert("0")
+	alert("3")
 	$(".search-page .hot-search-label span").tap(function() {
 		var labeltxt = $(this).text()
-		$(".search-page .Search-form .Search-inpt").focus()
+		$(".search-page .Search-form .Search-inpt").click()
 		$(".search-page .Search-form .Search-inpt").val(labeltxt)
 		$(".search-page .Search-inpt-wrapper .delete").css("display", "block")
 		$(".search-page-section .search-section-list").addClass("switch").siblings(".page").removeClass("switch")
+		
 		search_pageS.refresh()
 		search_listS.refresh()
 		search_stateS.refresh()
 	})
-	$(".search-page .hot-search-label span").mouseup(function(e){
-	    e.preventDefault();
-	});
 	//点击热门刷新
 	$(".hot-search .hot-search-title .title-load").tap(function() {
 		if(!$(".hot-search .hot-search-title .title-load").hasClass("refresh")) {
