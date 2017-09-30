@@ -693,17 +693,20 @@ $(function() {
 	$(".search-page-wrapper .search-page-section").css("bottom", -search_section_h - 5)
 	
 	$(".Home-page-header .Search-form .Search-frame").tap(function() {
+		$("#Search-inpt").focus()
+		$("#Search-inpt").val("")
 		$(".Home-page-container .search-page").css("left", "0")
 		$(".search-page-wrapper .search-page-header").css("top", "0")
 		$(".search-page-wrapper .search-page-section").css("bottom", "0")
-		$(".search-page .Search-form .Search-inpt").focus()
-		$(".search-page .Search-form .Search-inpt").val("")
+		
 		$(".Home-page-container .search-page-header .cancle").tap(function() {
+			$(".search-page .Search-form .Search-inpt").blur()
 			$(".Home-page-container .search-page").css("left", tcw_ht + 5)
 			$(".search-page-wrapper .search-page-header").css("top", -search_header_h - 5)
 			$(".search-page-wrapper .search-page-section").css("bottom", -search_section_h - 5)
 			$(".search-page-section .search-section-state").addClass("switch").siblings(".page").removeClass("switch")
 		})
+		
 		search_pageS.refresh()
 		search_listS.refresh()
 		search_stateS.refresh()
@@ -725,7 +728,6 @@ $(function() {
 
 
 	//点击热门搜索
-	alert("3")
 	$(".search-page .hot-search-label span").tap(function() {
 		var labeltxt = $(this).text()
 		$(".search-page .Search-form .Search-inpt").click()
