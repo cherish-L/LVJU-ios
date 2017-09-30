@@ -5258,12 +5258,12 @@ li {
 .Home-page-container .search-page .search-page-wrapper .search-page-bomb {
   display: none;
   width: 6.4rem;
-  height: 1.44rem;
-  line-height: 1.44rem;
+  height: 1.8rem;
+  line-height: 1.8rem;
   z-index: 35;
   text-align: center;
   color: #FFFFFF;
-  font-size: 0.56rem;
+  font-size: 0.64rem;
   background: rgba(0, 0, 0, 0.6);
   border-radius: 0.2rem;
   position: absolute;
