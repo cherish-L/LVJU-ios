@@ -694,7 +694,6 @@ $(function() {
 	
 	$(".Home-page-header .Search-form .Search-frame").tap(function() {
 		$("#Search-inpt").val("")
-		$(".history-search-box").css("transform","translate(0px, 0px)")
 		$(".Home-page-container .search-page").css("transform", "translateX(0)")
 		$(".search-page-wrapper .search-page-header").css("transform", "translateY(0)")
 		$(".search-page-wrapper .search-page-section").css("transform", "translateY(0)")
@@ -708,7 +707,6 @@ $(function() {
 			search_listS.refresh()
 			search_stateS.refresh()
 		})
-		
 		search_pageS.refresh()
 		search_listS.refresh()
 		search_stateS.refresh()
@@ -719,8 +717,8 @@ $(function() {
 
 	//点击x
 	$(".search-page .Search-inpt-wrapper .delete").tap(function() {
-		$(".search-page .Search-form .Search-inpt").val("")
-		$(".search-page .Search-form .Search-inpt").focus()
+		$("#Search-inpt").val("")
+		$("#Search-inpt").focus()
 		$(this).css("display", "none")
 		$(".search-page-section .search-section-state").addClass("switch").siblings(".page").removeClass("switch")
 		search_pageS.refresh()
@@ -732,15 +730,16 @@ $(function() {
 	//点击热门搜索
 	$(".search-page .hot-search-label span").tap(function() {
 		var labeltxt = $(this).text()
-		$(".search-page .Search-form .Search-inpt").click()
-		$(".search-page .Search-form .Search-inpt").val(labeltxt)
+		$("#Search-inpt").focus()
+		$("#Search-inpt").val(labeltxt)
 		$(".search-page .Search-inpt-wrapper .delete").css("display", "block")
 		$(".search-page-section .search-section-list").addClass("switch").siblings(".page").removeClass("switch")
-		
 		search_pageS.refresh()
 		search_listS.refresh()
 		search_stateS.refresh()
 	})
+	
+	
 	//点击热门刷新
 	$(".hot-search .hot-search-title .title-load").tap(function() {
 		if(!$(".hot-search .hot-search-title .title-load").hasClass("refresh")) {
@@ -755,16 +754,43 @@ $(function() {
 			}, 4000)
 		}
 	})
-
+	
+	
 	//点击list
 	$(".search-section-list .list-ul li").tap(function() {
 		var labeltxt = $(this).text()
+		$("#Search-inpt").focus()
 		$(".search-page .Search-form .Search-inpt").val(labeltxt)
 		$(".search-page .Search-inpt-wrapper .delete").css("display", "block")
 		search_pageS.refresh()
 		search_listS.refresh()
 		search_stateS.refresh()
 	})
+	
+	
+	//点击历史记录
+	$(".search-page .history-search-li").tap(function() {
+		var span_txt = $(this).find("span:first-child").text()
+		$("#Search-inpt").focus()
+		$("#Search-inpt").val(span_txt)
+		$(".search-page .Search-inpt-wrapper .delete").css("display", "block")
+		$(".search-page-section .search-section-list").addClass("switch").siblings(".page").removeClass("switch")
+		search_pageS.refresh()
+		search_listS.refresh()
+		search_stateS.refresh()
+	})
+
+	
+	//点击历史记录垃圾桶
+	$(".search-page .title-Trash").tap(function() {
+		$(".search-page .title-Trash").css("display", "none")
+		$(".search-page .history-search-no").css("display", "block")
+		$(".search-page .history-search-li").remove()
+		search_pageS.refresh()
+		search_listS.refresh()
+		search_stateS.refresh()
+	})
+
 
 	//输入搜索
 	$(".search-page .Search-form .Search-inpt").bind('input propertychange', function() {
@@ -830,28 +856,7 @@ $(function() {
 			}
 		}
 	})
-
-	//点击历史记录
-	$(".search-page .history-search-li").tap(function() {
-		var span_txt = $(this).find("span:first-child").text()
-		$(".search-page .Search-form .Search-inpt").val(span_txt)
-		$(".search-page .Search-form .Search-inpt").blur()
-		$(".search-page .Search-inpt-wrapper .delete").css("display", "block")
-		$(".search-page-section .search-section-list").addClass("switch").siblings(".page").removeClass("switch")
-		search_pageS.refresh()
-		search_listS.refresh()
-		search_stateS.refresh()
-	})
-
-	//点击历史记录垃圾桶
-	$(".search-page .title-Trash").tap(function() {
-		$(".search-page .title-Trash").css("display", "none")
-		$(".search-page .history-search-no").css("display", "block")
-		$(".search-page .history-search-li").remove()
-		search_pageS.refresh()
-		search_listS.refresh()
-		search_stateS.refresh()
-	})
+	
 
 	//搜索页面滚动监听事件
 
