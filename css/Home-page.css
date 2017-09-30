@@ -4666,7 +4666,7 @@ li {
 .Home-page-container .search-page .search-page-wrapper .search-page-header {
   width: 100%;
   background: #F6F6F6;
-  z-index: 10;
+  z-index: 30;
   transition: all .3s;
   box-shadow: 0 1px 0 0 #CCCCCC;
   -webkit-box-shadow: 0 1px 0 0 #CCCCCC;
@@ -4768,6 +4768,7 @@ li {
   -webkit-box-sizing: border-box;
   position: absolute;
   left: 0;
+  z-index: 10;
 }
 
 .Home-page-container .search-page .search-page-wrapper .search-page-section .search-section-wrapper {
