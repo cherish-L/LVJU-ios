@@ -733,9 +733,9 @@ $(function() {
 		$(".search-page-section .search-section-list").addClass("switch").siblings(".page").removeClass("switch")
 		
 		$(".search-page .Search-form .Search-inpt").on('keypress', function(e) {
-			var keycode = e.keyCode = '13';
+			var keycode = e.keyCode = '13'
+			
 		})
-		
 		search_pageS.refresh()
 		search_listS.refresh()
 		search_stateS.refresh()
