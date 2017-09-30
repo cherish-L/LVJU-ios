@@ -853,7 +853,7 @@ $(function() {
 					search_listS.refresh()
 					search_stateS.refresh()
 				}, 4000)
-				$("#Search-inpt").focus(function(){
+				$("#Search-inpt").tap(function(){
 					$(".search-page-section .search-section-list").addClass("switch").siblings(".page").removeClass("switch")
 					search_pageS.refresh()
 					search_listS.refresh()
