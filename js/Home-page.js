@@ -685,7 +685,7 @@ $(function() {
 		disableTouch: false,
 		disableMouse: false,
 	})
-	alert("refresh")
+	alert("refreshed")
 	var search_h = $(".search-page-wrapper").height()
 	var search_header_h = -($(".search-page-wrapper .search-page-header").height())
 	var search_section_h = search_h + search_header_h
