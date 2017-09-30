@@ -869,6 +869,9 @@ $(function() {
 						$(".search-page-section .search-section-state").addClass("switch").siblings(".page").removeClass("switch")
 						$(".search-page .Search-inpt-wrapper .delete").css("display", "none")
 					}
+					search_pageS.refresh()
+					search_listS.refresh()
+					search_stateS.refresh()
 				})
 				$(".search-page .title-Trash").tap(function() {
 					$("#Search-inpt").blur()
