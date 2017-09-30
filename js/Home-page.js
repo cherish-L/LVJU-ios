@@ -725,11 +725,11 @@ $(function() {
 
 
 	//点击热门搜索
-	alert("1")
+	alert("0")
 	$(".search-page .hot-search-label span").tap(function() {
 		var labeltxt = $(this).text()
-		$(".search-page .Search-form .Search-inpt").val(labeltxt)
 		$(".search-page .Search-form .Search-inpt").focus()
+		$(".search-page .Search-form .Search-inpt").val(labeltxt)
 		$(".search-page .Search-inpt-wrapper .delete").css("display", "block")
 		$(".search-page-section .search-section-list").addClass("switch").siblings(".page").removeClass("switch")
 		search_pageS.refresh()
