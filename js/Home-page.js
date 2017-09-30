@@ -790,8 +790,8 @@ $(function() {
 		search_listS.refresh()
 		search_stateS.refresh()
 	})
-
-
+	
+	
 	//输入搜索
 	$(".search-page .Search-form .Search-inpt").bind('input propertychange', function() {
 		if($(this).val() !== "") {
