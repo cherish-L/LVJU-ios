@@ -725,6 +725,7 @@ $(function() {
 
 
 	//点击热门搜索
+	alert("1")
 	$(".search-page .hot-search-label span").tap(function() {
 		var labeltxt = $(this).text()
 		$(".search-page .Search-form .Search-inpt").val(labeltxt)
