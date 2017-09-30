@@ -685,24 +685,25 @@ $(function() {
 		disableTouch: false,
 		disableMouse: false,
 	})
-	alert("1")
-	var search_h = $(".search-page-wrapper").height()+5
-	var search_header_h = -($(".search-page-wrapper .search-page-header").height()+5)
 	
-	$(".search-page-wrapper .search-page-header").css("top", search_header_h)
-	$(".search-page-wrapper .search-page-section").css("transform", "translateY("+search_h+"px)")
+	var search_h = $(".search-page-wrapper").height()
+	var search_header_h = -($(".search-page-wrapper .search-page-header").height())
+	var search_section_h = search_h + search_header_h
+	$(".search-page-wrapper .search-page-section").height(search_section_h)
+	$(".search-page-wrapper .search-page-header").css("transform", "translateY("+search_header_h+"px)")
+	$(".search-page-wrapper .search-page-section").css("transform", "translateY("+ search_section_h +"px)")
 	
 	$(".Home-page-header .Search-form .Search-frame").tap(function() {
 		$("#Search-inpt").val("")
 		$(".Home-page-container .search-page").css("transform", "translateX(0px)")
-		$(".search-page-wrapper .search-page-header").css("top", "0")
-		$(".search-page-wrapper .search-page-section").css("transform", "translateY(0px)")
+		$(".search-page-wrapper .search-page-header").css("transform", "translateY(0px)")
+		$(".search-page-wrapper .search-page-section").css("transform", "translateY("+ -search_header_h +"px)")
 		$(".search-page-section .search-section-state").addClass("switch").siblings(".page").removeClass("switch")
 		$(".Home-page-container .search-page-header .cancle").tap(function() {
 			$("#Search-inpt").blur()
 			$(".Home-page-container .search-page").css("transform", "translateX("+tcw_ht+"px)")
-			$(".search-page-wrapper .search-page-header").css("top", search_header_h)
-			$(".search-page-wrapper .search-page-section").css("transform", "translateY("+search_h+"px)")
+			$(".search-page-wrapper .search-page-header").css("transform", "translateY("+search_header_h+"px)")
+			$(".search-page-wrapper .search-page-section").css("transform", "translateY("+search_section_h+"px)")
 			search_pageS.refresh()
 			search_listS.refresh()
 			search_stateS.refresh()
