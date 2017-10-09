@@ -685,7 +685,7 @@ $(function() {
 		disableTouch: false,
 		disableMouse: false,
 	})
-	alert("1")
+	alert("2")
 	
 	
 	var search_h = $(".search-page-wrapper").height()
@@ -694,6 +694,10 @@ $(function() {
 	$(".search-page-wrapper .search-page-section").height(search_section_h)
 	$(".search-page-wrapper .search-page-header").css("transform", "translateY("+search_header_h+"px)")
 	$(".search-page-wrapper .search-page-section").css("transform", "translateY("+ search_section_h +"px)")
+	
+	$(".hot-search-title").tap(function() {
+		$("#Search-inpt").focus()
+	})
 	
 	$(".Home-page-header .Search-form .Search-frame").tap(function() {
 		$("#Search-inpt").val("")
