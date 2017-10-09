@@ -2716,13 +2716,11 @@ li {
 
 .Home-page-container .loanHome-calculator .loanHome-calculator-section .section-wrapper .AF-area .AF-rDetails span {
   display: inline-block;
-  margin: 0.16rem auto;
-  height: 0.64rem;
-  line-height: 0.64rem;
+  height: 1.28rem;
+  line-height: 1.28rem;
   padding-right: 0.64rem;
-  background: url(../img/right.png) no-repeat;
+  background: url(../img/right.png) 3.92rem center no-repeat;
   background-size: 0.48rem 0.48rem;
-  background-position: 3.92rem 0.12rem;
   font-size: 0.48rem;
   color: #0099EB;
   position: absolute;
@@ -2936,13 +2934,11 @@ li {
 
 .Home-page-container .loanHome-calculator .loanHome-calculator-section .section-wrapper .CL-money .CL-rDetails span {
   display: inline-block;
-  margin: 0.16rem auto;
-  height: 0.64rem;
-  line-height: 0.64rem;
+  height: 1.28rem;
+  line-height: 1.28rem;
   padding-right: 0.64rem;
-  background: url(../img/right.png) no-repeat;
+  background: url(../img/right.png) 3.92rem center no-repeat;
   background-size: 0.48rem 0.48rem;
-  background-position: 3.92rem 0.12rem;
   font-size: 0.48rem;
   color: #0099EB;
   position: absolute;
@@ -3156,13 +3152,11 @@ li {
 
 .Home-page-container .loanHome-calculator .loanHome-calculator-section .section-wrapper .CL-area .CL-rDetails span {
   display: inline-block;
-  margin: 0.16rem auto;
-  height: 0.64rem;
-  line-height: 0.64rem;
+  height: 1.28rem;
+  line-height: 1.28rem;
   padding-right: 0.64rem;
-  background: url(../img/right.png) no-repeat;
+  background: url(../img/right.png) 3.92rem center no-repeat;
   background-size: 0.48rem 0.48rem;
-  background-position: 3.92rem 0.12rem;
   font-size: 0.48rem;
   color: #0099EB;
   position: absolute;
@@ -3376,13 +3370,11 @@ li {
 
 .Home-page-container .loanHome-calculator .loanHome-calculator-section .section-wrapper .CombinationL .CombinationL-rDetails span {
   display: inline-block;
-  margin: 0.16rem auto;
-  height: 0.64rem;
-  line-height: 0.64rem;
+  height: 1.28rem;
+  line-height: 1.28rem;
   padding-right: 0.64rem;
-  background: url(../img/right.png) no-repeat;
+  background: url(../img/right.png) 3.92rem center no-repeat;
   background-size: 0.48rem 0.48rem;
-  background-position: 3.92rem 0.12rem;
   font-size: 0.48rem;
   color: #0099EB;
   position: absolute;
@@ -3592,13 +3584,11 @@ li {
 
 .Home-page-container .loanHome-calculator .loanHome-calculator-section .section-wrapper .Taxation .Taxation-rDetails span {
   display: inline-block;
-  margin: 0.16rem auto;
-  height: 0.64rem;
-  line-height: 0.64rem;
+  height: 1.28rem;
+  line-height: 1.28rem;
   padding-right: 0.64rem;
-  background: url(../img/right.png) no-repeat;
+  background: url(../img/right.png) 3.92rem center no-repeat;
   background-size: 0.48rem 0.48rem;
-  background-position: 3.92rem 0.12rem;
   font-size: 0.48rem;
   color: #0099EB;
   position: absolute;
@@ -4651,7 +4641,7 @@ li {
   height: 100%;
   background: #f4f4f4;
   transform: translateX(15.2rem);
-  position: fixed;
+  position: absolute;
   top: 0;
   z-index: 30;
 }
