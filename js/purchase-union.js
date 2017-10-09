@@ -3,6 +3,7 @@ $(function() {
 	var purchaseS = new IScroll('.purchase-union-section', {
 		scrollbars: false
 	})
+	
 	//点击切换服务内容 联盟优势
 	$(".purchase-union-list .list-nav li").tap(function() {
 		var index = $(this).index()
@@ -11,35 +12,40 @@ $(function() {
 		purchaseS.refresh()
 	})
 
+
 	//联盟动态
-	
-	
 	var dynamicS = new IScroll('.union-dynamic-pushsection', {
 		scrollbars: true,
 		fadeScrollbars: true,
 		shrinkScrollbars: 'clip'
 		
 	})
-	var unionW = $(".union-dynamic-push").width()
-	$(".synopsis-link").tap(function() {
-		$(".union-dynamic-push").css("left", "0")
-		$(".union-dynamic-pushheader .return").tap(function() {
-			$(".union-dynamic-push").css("left", unionW + 5)
-		})
+	
+	var unionW = $(".union-dynamic-push").width()+5
+	$(".purchase-union-section .synopsis-link").tap(function() {
+		$(".purchase-union-shadow").fadeIn(200)
+		$(".union-dynamic-push").css("transform", "translateX(0px)")
+		
 	})
-
+	
+	$(".union-dynamic-pushheader .return").tap(function() {
+		$(".purchase-union-shadow").fadeOut(200)
+		$(".union-dynamic-push").css("transform", "translateX("+unionW+"px)")
+	})
+	
+	
 	//报名
 	$(".purchase-union-container .signUp-btn").tap(function() {
-		$(".purchase-union-Mask").addClass("show")
+		$(".purchase-union-Mask").fadeIn(300)
 		$(".purchase-union-signUp .signUp-push").addClass("show")
 
 		$(".purchase-union-Mask").tap(function() {
-			$(".purchase-union-Mask").removeClass("show")
+			$(".purchase-union-Mask").fadeOut(300)
 			$(".purchase-union-signUp .signUp-push").removeClass("show")
 		})
 
 		$(".purchase-union-signUp .signUp-delete-box i").tap(function() {
-			$(".purchase-union-Mask").removeClass("show")
+			$(".purchase-union-Mask").fadeOut(300)
 			$(".purchase-union-signUp .signUp-push").removeClass("show")
 		})
 
@@ -56,10 +62,11 @@ $(function() {
 					$(".purchase-union-signUp .enroll-success").addClass("show")
 					$(".purchase-union-signUp .enroll-success .suc-button").tap(function() {
 						$(".purchase-union-signUp .enroll-success").removeClass("show")
-						$(".purchase-union-Mask").removeClass("show")
+						$(".purchase-union-Mask").fadeOut(300)
 					})
 				})
-			} else {
+			}
+			else {
 				if($(".signUp-username input").val() == "") {
 					$(".signUp-username input").addClass("animated shake")
 					setTimeout(function() {
@@ -81,6 +88,7 @@ $(function() {
 			}
 		})
 	})
+	
 	
 	//实时监听input的变化 获取焦点 logo .3s后消失
 	$(".signUp-username input").focus(function() {
@@ -104,8 +112,8 @@ $(function() {
 		})
 	})
 		
+		
 	//联盟优势
-	
 	var advantageS = new IScroll('.advantage-push-wrapper', {
 		scrollbars: true,
 		fadeScrollbars: true,
@@ -113,34 +121,34 @@ $(function() {
 	})
 	
 	$(".purchase-union-list .advantage-list li").tap(function() {
-		$(".purchase-union-Mask").addClass("show")
+		$(".purchase-union-Mask").fadeIn(300)
 		$(".union-advantage-push").addClass("show")
 
 		$(".purchase-union-Mask").tap(function() {
-			$(".purchase-union-Mask").removeClass("show")
+			$(".purchase-union-Mask").fadeOut(300)
 			$(".union-advantage-push").removeClass("show")
 		})
 
 		$(".union-advantage-push .advantage-delete-box i").tap(function() {
-			$(".purchase-union-Mask").removeClass("show")
+			$(".purchase-union-Mask").fadeOut(300)
 			$(".union-advantage-push").removeClass("show")
 		})
 
 	})
 	
-	//联系置业顾问
 	
+	//联系置业顾问
 	$(".customService-data-li").tap(function() {
-		$(".purchase-union-Mask").addClass("show")
+		$(".purchase-union-Mask").fadeIn(300)
 		$(".contact-adviser-push").addClass("show")
 
 		$(".purchase-union-Mask").tap(function() {
-			$(".purchase-union-Mask").removeClass("show")
+			$(".purchase-union-Mask").fadeOut(300)
 			$(".contact-adviser-push").removeClass("show")
 		})
 
 		$(".contact-adviser-push .cancel").tap(function() {
-			$(".purchase-union-Mask").removeClass("show")
+			$(".purchase-union-Mask").fadeOut(300)
 			$(".contact-adviser-push").removeClass("show")
 		})
 

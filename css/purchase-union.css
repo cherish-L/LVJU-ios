@@ -67,7 +67,7 @@ li {
   background: #f6f6f6;
   box-shadow: 0 1px 0 0 #CCCCCC;
   -webkit-box-shadow: 0 1px 0 0 #CCCCCC;
-  z-index: 1;
+  z-index: 10;
 }
 
 .purchase-union-container .purchase-union-header .signal_bar {
@@ -112,7 +112,7 @@ li {
 
 .purchase-union-container .purchase-union-section .section-wrapper {
   width: 100%;
-  padding-bottom: 1.28rem;
+  padding-bottom: 0.64rem;
 }
 
 .purchase-union-container .purchase-union-section .section-wrapper .purchase-union-banner {
@@ -598,21 +598,27 @@ li {
   background-position-x: right;
 }
 
-.purchase-union-container .purchase-union-Mask {
+.purchase-union-container .purchase-union-shadow {
+  display: none;
   width: 100%;
   height: 100%;
-  transition: all .3s;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: -1;
-  opacity: 0;
+  z-index: 25;
   position: absolute;
   top: 0;
   left: 0;
+  box-shadow: inset 0 0 4.8rem 0.8rem rgba(0, 0, 0, 0.3);
 }
 
-.purchase-union-container .purchase-union-Mask.show {
-  z-index: 25;
-  opacity: 1;
+.purchase-union-container .purchase-union-Mask {
+  display: none;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  transition: all .3s;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .purchase-union-container .signUp-btn {
@@ -631,9 +637,10 @@ li {
   height: 100%;
   transition: all .3s;
   background: #f4f4f4;
-  position: absolute;
-  left: 15.2rem;
+  transform: translateX(15.2rem);
+  position: fixed;
   top: 0;
+  z-index: 30;
   display: flex;
   display: -webkit-flex;
   flex-direction: column;

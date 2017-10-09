@@ -6,12 +6,10 @@
 		<meta http-equiv="Cache-Control" content="no-cache" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title>购房联盟</title>
-		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/purchase-union.css" />
 		<link rel="stylesheet" type="text/css" href="plugins/animate.min.css" />
 		<script type="text/javascript" src="plugins/zepto.min.js"></script>
 		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>
-		<script src="plugins/swiper-3.4.2.min.js"></script>
 		<script type="text/javascript" src="vue/vue.js"></script>
 		<script>
 			//适配
@@ -151,6 +149,9 @@
 				</div>
 			</section>
 			<div class="signUp-btn"></div>
+			<!---------- 弹框阴影 ------------->
+			<div class="purchase-union-shadow"></div>
+			<!---------- 弹框遮罩 ------------->
 			<div class="purchase-union-Mask"></div>
 			<!---------- 联盟动态 ------------->
 			<div class="union-dynamic-push">
@@ -217,7 +218,7 @@
 					</div>
 					<div class="signUp-line"></div>
 					<div class="signUp-userphone">
-						<input type="text" name="" id="" value="" placeholder="您的手机号码" />
+						<input type="number" name="" id="" value="" placeholder="您的手机号码" />
 					</div>
 					<div class="signUp-line"></div>
 					<div class="signUp-message">
@@ -275,7 +276,7 @@
 		</div>
 	</body>
 	<script type="text/javascript">
-		var myVue1 = new Vue({
+		var myVue = new Vue({
 			el: ".purchase-union-container",
 			data: {
 				recommendHouse: [{
