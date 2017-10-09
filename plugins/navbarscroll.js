@@ -42,7 +42,7 @@
             _init(_obj_li.eq(_opt.defaultSelect));
             
             
-			var discount = new Swiper(".building-information-section",{
+			var discount = new Swiper(".section",{
 				passiveListeners: false,
 				touchMoveStopPropagation : false,
 				freeMode : false,
@@ -52,27 +52,27 @@
 				touchAngle : 20
 			})
 			
-            var firstPageS = new IScroll('.building-information-container .firstPage', {
+            var firstPageS = new IScroll('.firstPage', {
 				scrollbars: false,
 				momentum: true
 			})
-			var secondPageS = new IScroll('.building-information-container .secondPage', {
+			var secondPageS = new IScroll('.secondPage', {
 				scrollbars: false,
 				momentum: true
 			})
-			var thirdPageS = new IScroll('.building-information-container .thirdPage', {
+			var thirdPageS = new IScroll('.thirdPage', {
 				scrollbars: false,
 				momentum: true
 			})
-			var fourthPageS = new IScroll('.building-information-container .fourthPage', {
+			var fourthPageS = new IScroll('.fourthPage', {
 				scrollbars: false,
 				momentum: true
 			})
-			var fifthPageS = new IScroll('.building-information-container .fifthPage', {
+			var fifthPageS = new IScroll('.fifthPage', {
 				scrollbars: false,
 				momentum: true
 			})
-			$(".building-information-section").bind("touchstart",function(e){
+			$("section").bind("touchstart",function(e){
 				e.preventDefault()
 				firstPageS.refresh()
 				secondPageS.refresh()
@@ -88,7 +88,7 @@
                 discount.realIndex=objindex
             });
             
-            $(".building-information-section").bind("touchend",function(){
+            $(".section").bind("touchend",function(){
 				var indexS=discount.realIndex
 				var $this_obj=_obj_li.eq(indexS);
                 var duibi=_opt.duibiScreenWidth*_win_width/10,indexS=$this_obj.index(),this_off_left=$this_obj.offset().left,this_pos_left=$this_obj.position().left,this_width=$this_obj.width(),this_prev_width=$this_obj.prev('li').width(),this_next_width=$this_obj.next('li').width();
