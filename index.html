@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8" />
 		<meta content="email=no" name="format-detection" />
@@ -19,9 +20,10 @@
 			document.documentElement.style.fontSize = innerWidth / 15 + "px";
 		</script>
 	</head>
+
 	<body>
-		<div class="container" v-cloak>
-			<header class="header">
+		<div class="building-information-container" v-cloak>
+			<header class="building-information-header">
 				<div class="signal_bar"></div>
 				<div class="property-information">
 					<h3 class="property-information-title">楼市资讯</h3>
@@ -38,171 +40,171 @@
 					</div>
 				</div>
 			</header>
-			<section class="section">
-					<ul class="section-ul swiper-wrapper">
-						<li class="section-li swiper-slide firstPage">
-							<div class="pushsection-wrapper">
-								<div class="scrollPage">
-									<ul class="pri-ul">
-										<li class="pri-li" v-for="item in items">
-											<div class="style" :class="item.className">
-												<div class="style-left">
-													<img v-bind:src="item.img" />
+			<section class="building-information-section">
+				<ul class="section-ul swiper-wrapper">
+					<li class="section-li swiper-slide firstPage">
+						<div class="pushsection-wrapper">
+							<div class="scrollPage">
+								<ul class="pri-ul">
+									<li class="pri-li" v-for="item in items">
+										<div class="style" :class="item.className">
+											<div class="style-left">
+												<img v-bind:src="item.img" />
+											</div>
+											<div class="style-right">
+												<div class="style-title">
+													<p>
+														<span class="title-txt" v-text='item.title'></span>
+														<span class="title-content" v-text='item.content'></span>
+													</p>
 												</div>
-												<div class="style-right">
-													<div class="style-title">
-														<p>
-															<span class="title-txt" v-text='item.title'></span>
-															<span class="title-content" v-text='item.content'></span>
-														</p>
-													</div>
-													<div class="style-img">
-														<img v-bind:src="item.detailed.imgone" />
-														<img v-bind:src="item.detailed.imgtwo" />
-														<img v-bind:src="item.detailed.imgthird" />
-													</div>
-													<div class="style-info">
-														<span class="style-copyright" v-text='item.from'></span>
-														<span class="style-time" v-text='item.time'></span>
-													</div>
+												<div class="style-img">
+													<img v-bind:src="item.detailed.imgone" />
+													<img v-bind:src="item.detailed.imgtwo" />
+													<img v-bind:src="item.detailed.imgthird" />
+												</div>
+												<div class="style-info">
+													<span class="style-copyright" v-text='item.from'></span>
+													<span class="style-time" v-text='item.time'></span>
 												</div>
 											</div>
-										</li>
-									</ul>
-								</div>
+										</div>
+									</li>
+								</ul>
 							</div>
-						</li>
-						<li class="section-li swiper-slide secondPage">
-							<div class="pushsection-wrapper">
-								<div class="scrollPage">
-									<ul class="pri-ul">
-										<li class="pri-li" v-for="item in items">
-											<div class="style" :class="item.className">
-												<div class="style-left">
-													<img v-bind:src="item.img" />
+						</div>
+					</li>
+					<li class="section-li swiper-slide secondPage">
+						<div class="pushsection-wrapper">
+							<div class="scrollPage">
+								<ul class="pri-ul">
+									<li class="pri-li" v-for="item in items">
+										<div class="style" :class="item.className">
+											<div class="style-left">
+												<img v-bind:src="item.img" />
+											</div>
+											<div class="style-right">
+												<div class="style-title">
+													<p>
+														<span class="title-txt" v-text='item.title'></span>
+														<span class="title-content" v-text='item.content'></span>
+													</p>
 												</div>
-												<div class="style-right">
-													<div class="style-title">
-														<p>
-															<span class="title-txt" v-text='item.title'></span>
-															<span class="title-content" v-text='item.content'></span>
-														</p>
-													</div>
-													<div class="style-img">
-														<img v-bind:src="item.detailed.imgone" />
-														<img v-bind:src="item.detailed.imgtwo" />
-														<img v-bind:src="item.detailed.imgthird" />
-													</div>
-													<div class="style-info">
-														<span class="style-copyright" v-text='item.from'></span>
-														<span class="style-time" v-text='item.time'></span>
-													</div>
+												<div class="style-img">
+													<img v-bind:src="item.detailed.imgone" />
+													<img v-bind:src="item.detailed.imgtwo" />
+													<img v-bind:src="item.detailed.imgthird" />
+												</div>
+												<div class="style-info">
+													<span class="style-copyright" v-text='item.from'></span>
+													<span class="style-time" v-text='item.time'></span>
 												</div>
 											</div>
-										</li>
-									</ul>
-								</div>
+										</div>
+									</li>
+								</ul>
 							</div>
-						</li>
-						<li class="section-li swiper-slide thirdPage">
-							<div class="pushsection-wrapper">
-								<div class="scrollPage">
-									<ul class="pri-ul">
-										<li class="pri-li" v-for="item in items">
-											<div class="style" :class="item.className">
-												<div class="style-left">
-													<img v-bind:src="item.img" />
+						</div>
+					</li>
+					<li class="section-li swiper-slide thirdPage">
+						<div class="pushsection-wrapper">
+							<div class="scrollPage">
+								<ul class="pri-ul">
+									<li class="pri-li" v-for="item in items">
+										<div class="style" :class="item.className">
+											<div class="style-left">
+												<img v-bind:src="item.img" />
+											</div>
+											<div class="style-right">
+												<div class="style-title">
+													<p>
+														<span class="title-txt" v-text='item.title'></span>
+														<span class="title-content" v-text='item.content'></span>
+													</p>
 												</div>
-												<div class="style-right">
-													<div class="style-title">
-														<p>
-															<span class="title-txt" v-text='item.title'></span>
-															<span class="title-content" v-text='item.content'></span>
-														</p>
-													</div>
-													<div class="style-img">
-														<img v-bind:src="item.detailed.imgone" />
-														<img v-bind:src="item.detailed.imgtwo" />
-														<img v-bind:src="item.detailed.imgthird" />
-													</div>
-													<div class="style-info">
-														<span class="style-copyright" v-text='item.from'></span>
-														<span class="style-time" v-text='item.time'></span>
-													</div>
+												<div class="style-img">
+													<img v-bind:src="item.detailed.imgone" />
+													<img v-bind:src="item.detailed.imgtwo" />
+													<img v-bind:src="item.detailed.imgthird" />
+												</div>
+												<div class="style-info">
+													<span class="style-copyright" v-text='item.from'></span>
+													<span class="style-time" v-text='item.time'></span>
 												</div>
 											</div>
-										</li>
-									</ul>
-								</div>
+										</div>
+									</li>
+								</ul>
 							</div>
-						</li>
-						<li class="section-li swiper-slide fourthPage">
-							<div class="pushsection-wrapper">
-								<div class="scrollPage">
-									<ul class="pri-ul">
-										<li class="pri-li" v-for="item in items">
-											<div class="style" :class="item.className">
-												<div class="style-left">
-													<img v-bind:src="item.img" />
+						</div>
+					</li>
+					<li class="section-li swiper-slide fourthPage">
+						<div class="pushsection-wrapper">
+							<div class="scrollPage">
+								<ul class="pri-ul">
+									<li class="pri-li" v-for="item in items">
+										<div class="style" :class="item.className">
+											<div class="style-left">
+												<img v-bind:src="item.img" />
+											</div>
+											<div class="style-right">
+												<div class="style-title">
+													<p>
+														<span class="title-txt" v-text='item.title'></span>
+														<span class="title-content" v-text='item.content'></span>
+													</p>
 												</div>
-												<div class="style-right">
-													<div class="style-title">
-														<p>
-															<span class="title-txt" v-text='item.title'></span>
-															<span class="title-content" v-text='item.content'></span>
-														</p>
-													</div>
-													<div class="style-img">
-														<img v-bind:src="item.detailed.imgone" />
-														<img v-bind:src="item.detailed.imgtwo" />
-														<img v-bind:src="item.detailed.imgthird" />
-													</div>
-													<div class="style-info">
-														<span class="style-copyright" v-text='item.from'></span>
-														<span class="style-time" v-text='item.time'></span>
-													</div>
+												<div class="style-img">
+													<img v-bind:src="item.detailed.imgone" />
+													<img v-bind:src="item.detailed.imgtwo" />
+													<img v-bind:src="item.detailed.imgthird" />
+												</div>
+												<div class="style-info">
+													<span class="style-copyright" v-text='item.from'></span>
+													<span class="style-time" v-text='item.time'></span>
 												</div>
 											</div>
-										</li>
-									</ul>
-								</div>
+										</div>
+									</li>
+								</ul>
 							</div>
-						</li>
-						<li class="section-li swiper-slide fifthPage">
-							<div class="pushsection-wrapper">
-								<div class="scrollPage">
-									<ul class="pri-ul">
-										<li class="pri-li" v-for="item in items">
-											<div class="style" :class="item.className">
-												<div class="style-left">
-													<img v-bind:src="item.img" />
+						</div>
+					</li>
+					<li class="section-li swiper-slide fifthPage">
+						<div class="pushsection-wrapper">
+							<div class="scrollPage">
+								<ul class="pri-ul">
+									<li class="pri-li" v-for="item in items">
+										<div class="style" :class="item.className">
+											<div class="style-left">
+												<img v-bind:src="item.img" />
+											</div>
+											<div class="style-right">
+												<div class="style-title">
+													<p>
+														<span class="title-txt" v-text='item.title'></span>
+														<span class="title-content" v-text='item.content'></span>
+													</p>
 												</div>
-												<div class="style-right">
-													<div class="style-title">
-														<p>
-															<span class="title-txt" v-text='item.title'></span>
-															<span class="title-content" v-text='item.content'></span>
-														</p>
-													</div>
-													<div class="style-img">
-														<img v-bind:src="item.detailed.imgone" />
-														<img v-bind:src="item.detailed.imgtwo" />
-														<img v-bind:src="item.detailed.imgthird" />
-													</div>
-													<div class="style-info">
-														<span class="style-copyright" v-text='item.from'></span>
-														<span class="style-time" v-text='item.time'></span>
-													</div>
+												<div class="style-img">
+													<img v-bind:src="item.detailed.imgone" />
+													<img v-bind:src="item.detailed.imgtwo" />
+													<img v-bind:src="item.detailed.imgthird" />
+												</div>
+												<div class="style-info">
+													<span class="style-copyright" v-text='item.from'></span>
+													<span class="style-time" v-text='item.time'></span>
 												</div>
 											</div>
-										</li>
-									</ul>
-								</div>
+										</div>
+									</li>
+								</ul>
 							</div>
-						</li>
-					</ul>
+						</div>
+					</li>
+				</ul>
 			</section>
-			<footer class="footer">
+			<footer class="building-information-footer">
 				<ul class="footer-nav">
 					<li class="footer-nav-li">
 						<a href="javascript:;">
@@ -237,133 +239,140 @@
 					</li>
 				</ul>
 			</footer>
-		</div>
-		<div class="zhezhao"></div>
-		<div class="article-push">
-			<div class="article-push-box">
-				<header class="article-push-header">
-					<div class="signal_bar"></div>
-					<div class="article-push-header-wrapper">
-						<a class="return" href="javascript:;"></a>
-						<span class="comment">8742点评</span>
-					</div>
-				</header>
-				<section class="article-push-body">
-					<div class="article-push-wrapper">
-						<div class="article-push-content">
-							<div class="article-push-content-header">
-								<p><span class="title">[鲁能山海天]</span>客户看中四季康城二期高性价比小苏助力连签四房</p>
-								<div class="article-push-article-info">
-									<span class="copyright">旅居网</span>
-									<span class="time">2017-06-20</span>
-								</div>
-							</div>
-							<div class="article-push-content-body">
-								<p>在经过一月到五月的集中放量和各大节日的优惠活动后，海南楼市迎来了暂时的间隙期，不少开发商暂时冷却下来，减少了楼盘的各种暖场营销活动。那么这个时候购房者来海南买房会不会没办法买到优惠的房源呢？当然不会！本期旅居网小编就来盘点一下6月初儋州楼盘推出的特价房优惠活动，为近期想来海南买优惠房源的购房者提供一份置业参考。</p>
-								<img src="img/massage-subject3.png" alt="" />
-								<p>在经过一月到五月的集中放量和各大节日的优惠活动后，海南楼市迎来了暂时的间隙期，不少开发商暂时冷却下来，减少了楼盘的各种暖场营销活动。那么这个时候购房者来海南买房会不会没办法买到优惠的房源呢？当然不会！本期旅居网小编就来盘点一下6月初儋州楼盘推出的特价房优惠活动，为近期想来海南买优惠房源的购房者提供一份置业参考。</p>
-								<p>在经过一月到五月的集中放量和各大节日的优惠活动后，海南楼市迎来了暂时的间隙期，不少开发商暂时冷却下来，减少了楼盘的各种暖场营销活动。那么这个时候购房者来海南买房会不会没办法买到优惠的房源呢？当然不会！本期旅居网小编就来盘点一下6月初儋州楼盘推出的特价房优惠活动，为近期想来海南买优惠房源的购房者提供一份置业参考。</p>
-								<p class="indent"><span>我是小标题</span>在经过一月到五月的集中放量和各大节日的优惠活动后，海南楼市迎来了暂时的间隙期，不少开发商暂时冷却下来，减少了楼盘的各种暖场营销活动。那么这个时候购房者来海南买房会不会没办法买到优惠的房源呢？当然不会！本期旅居网小编就来盘点一下6月初儋州楼盘推出的特价房优惠活动，为近期想来海南买优惠房源的购房者提供一份置业参考。</p>
-								<div class="edit">编辑：卤鸭卤鸭</div>
-								<div class="share">
-									<span>分享到</span>
-								</div>
-								<div class="shareway">
-									<div class="way weixin">
-										<i></i>
-										<span>微信好友</span>
-									</div>
-									<div class="way friendcircle">
-										<i></i>
-										<span>朋友圈</span>
-									</div>
-									<div class="way xinlang">
-										<i></i>
-										<span>新浪微博</span>
-									</div>
-								</div>
-								<div class="jumpPage">
-									<span class="previous">上一篇</span>
-									<span class="next">下一篇</span>
-								</div>
-							</div>
+			<!--------------  楼盘遮罩  ---------------->
+			<div class="building-information-Mask"></div>
+			<!--------------  资讯详情  ---------------->
+			<div class="article-push">
+				<div class="article-push-box">
+					<header class="article-push-header">
+						<div class="signal_bar"></div>
+						<div class="article-push-header-wrapper">
+							<a class="return" href="javascript:;"></a>
+							<span class="comment">8742点评</span>
 						</div>
-						<div class="article-push-hotThread">
-							<h3 class="hotThread-header">热门跟帖</h3>
-							<ul class="hotThread-ul">
-								<li class="hotThread-li" v-for="user in commention">
-									<div class="hotThread-li-box">
-										<div class="user-avatar">
-											<img class="user-avatar-img" :src="user.avatar"></img>
+					</header>
+					<section class="article-push-body">
+						<div class="article-push-wrapper">
+							<div class="article-push-content">
+								<div class="article-push-content-header">
+									<p><span class="title">[鲁能山海天]</span>客户看中四季康城二期高性价比小苏助力连签四房</p>
+									<div class="article-push-article-info">
+										<span class="copyright">旅居网</span>
+										<span class="time">2017-06-20</span>
+									</div>
+								</div>
+								<div class="article-push-content-body">
+									<p>在经过一月到五月的集中放量和各大节日的优惠活动后，海南楼市迎来了暂时的间隙期，不少开发商暂时冷却下来，减少了楼盘的各种暖场营销活动。那么这个时候购房者来海南买房会不会没办法买到优惠的房源呢？当然不会！本期旅居网小编就来盘点一下6月初儋州楼盘推出的特价房优惠活动，为近期想来海南买优惠房源的购房者提供一份置业参考。</p>
+									<img src="img/massage-subject3.png" alt="" />
+									<p>在经过一月到五月的集中放量和各大节日的优惠活动后，海南楼市迎来了暂时的间隙期，不少开发商暂时冷却下来，减少了楼盘的各种暖场营销活动。那么这个时候购房者来海南买房会不会没办法买到优惠的房源呢？当然不会！本期旅居网小编就来盘点一下6月初儋州楼盘推出的特价房优惠活动，为近期想来海南买优惠房源的购房者提供一份置业参考。</p>
+									<p>在经过一月到五月的集中放量和各大节日的优惠活动后，海南楼市迎来了暂时的间隙期，不少开发商暂时冷却下来，减少了楼盘的各种暖场营销活动。那么这个时候购房者来海南买房会不会没办法买到优惠的房源呢？当然不会！本期旅居网小编就来盘点一下6月初儋州楼盘推出的特价房优惠活动，为近期想来海南买优惠房源的购房者提供一份置业参考。</p>
+									<p class="indent"><span>我是小标题</span>在经过一月到五月的集中放量和各大节日的优惠活动后，海南楼市迎来了暂时的间隙期，不少开发商暂时冷却下来，减少了楼盘的各种暖场营销活动。那么这个时候购房者来海南买房会不会没办法买到优惠的房源呢？当然不会！本期旅居网小编就来盘点一下6月初儋州楼盘推出的特价房优惠活动，为近期想来海南买优惠房源的购房者提供一份置业参考。</p>
+									<div class="edit">编辑：卤鸭卤鸭</div>
+									<div class="share">
+										<span>分享到</span>
+									</div>
+									<div class="shareway">
+										<div class="way weixin">
+											<i></i>
+											<span>微信好友</span>
 										</div>
-										<div class="user-comments">
-											<div class="user-name" v-text='user.name'></div>
-											<div class="user-info">
-												<span class="user-info-from" v-text='user.froms'></span>
-												<span class="user-info-time" v-text='user.time'></span>
-											</div>
-											<p class="user-say" v-text='user.say'></p>
-											<div class="showall">
-												<div class="showall-wrapper">
-													<span class="showall-wrapper-txt">显示全部</span>
-													<i class="showall-wrapper-img"></i>
-												</div>
-											</div>
-											<div class="CService" v-for="str in user.CService">
-												<div class="CService-name" v-text='str.Sname'></div>
-												<div class="CService-info">
-													<span class="CService-info-from" v-text='str.Sfroms'></span>
-													<span class="CService-info-time" v-text='str.Stime'></span>
-												</div>
-												<div class="CService-phone" v-text='str.Sphone'></div>
-												<p class="CService-say" v-text='str.Ssay'></p>
-											</div>
+										<div class="way friendcircle">
+											<i></i>
+											<span>朋友圈</span>
+										</div>
+										<div class="way xinlang">
+											<i></i>
+											<span>新浪微博</span>
 										</div>
 									</div>
-								</li>
-							</ul>
+									<div class="jumpPage">
+										<span class="previous">上一篇</span>
+										<span class="next">下一篇</span>
+									</div>
+								</div>
+							</div>
+							<div class="article-push-hotThread">
+								<h3 class="hotThread-header">热门跟帖</h3>
+								<ul class="hotThread-ul">
+									<li class="hotThread-li" v-for="user in commention">
+										<div class="hotThread-li-box">
+											<div class="user-avatar">
+												<img class="user-avatar-img" :src="user.avatar"></img>
+											</div>
+											<div class="user-comments">
+												<div class="user-name" v-text='user.name'></div>
+												<div class="user-info">
+													<span class="user-info-from" v-text='user.froms'></span>
+													<span class="user-info-time" v-text='user.time'></span>
+												</div>
+												<div class="user-say-box">
+													<p class="user-say" v-text='user.say'></p>
+												</div>
+												<div class="showall">
+													<div class="showall-wrapper">
+														<span class="showall-wrapper-txt">显示全部</span>
+														<i class="showall-wrapper-img"></i>
+													</div>
+												</div>
+												<div class="CService" v-for="str in user.CService">
+													<div class="CService-name" v-text='str.Sname'></div>
+													<div class="CService-info">
+														<span class="CService-info-from" v-text='str.Sfroms'></span>
+														<span class="CService-info-time" v-text='str.Stime'></span>
+													</div>
+													<div class="CService-phone" v-text='str.Sphone'></div>
+													<p class="CService-say" v-text='str.Ssay'></p>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="article-push-moreAbout">
+								<h3 class="moreAbout-header">更多关于“海滨国际”的资讯</h3>
+								<ul class="moreAbout-ul">
+									<li class="moreAbout-li" v-for="link in moreAbout">
+										<p v-text='link.txt'></p>
+										<span v-text='link.time'></span>
+									</li>
+								</ul>
+							</div>
 						</div>
-						<div class="article-push-moreAbout">
-							<h3 class="moreAbout-header">更多关于“海滨国际”的资讯</h3>
-							<ul class="moreAbout-ul">
-								<li class="moreAbout-li" v-for="link in moreAbout">
-									<p v-text='link.txt'></p>
-									<span v-text='link.time'></span>
-								</li>
-							</ul>
-						</div>
-					</div>
 
-				</section>
-				<footer class="article-push-footer">
-					<div class="write-reviews">
-						<span>写点评咨询</span>
+					</section>
+					<footer class="article-push-footer">
+						<div class="write-reviews">
+							<span>写点评咨询</span>
+						</div>
+						<div class="show-reviews">
+							<i></i>
+							<span>8742</span>
+						</div>
+					</footer>
+					<!--------------  输 写 框  ---------------->
+					<div class="article-push-Mask"></div>
+					<!--------------  输 写 框  ---------------->
+					<div class="writing-box">
+						<div class="writing-panel">
+							<div class="writing-panel-header">
+								<span class="cancel">取消</span>
+								<span class="hader-txt">写点评咨询</span>
+								<span class="send_hide">发送</span>
+								<span class="send_show">发送</span>
+							</div>
+							<textarea class="text-box" autofocus="autofocus" name=""></textarea>
+						</div>
 					</div>
-					<div class="show-reviews">
-						<i></i>
-						<span>8742</span>
-					</div>
-				</footer>
-			</div>
-			<div class="comment-failed">评论提交失败，请检查网络</div>
-			<div class="comment-success">评论提交成功</div>
-		</div>
-		<div class="writing-box">
-			<div class="writing-panel">
-				<div class="writing-panel-header">
-					<span class="cancel">取消</span>
-					<span class="hader-txt">写点评咨询</span>
-					<span class="send">发送</span>
 				</div>
-				<textarea class="text-box" autofocus name=""></textarea>
+				<div class="comment-failed">评论提交失败，请检查网络</div>
+				<div class="comment-success">评论提交成功</div>
 			</div>
+			
 		</div>
 		<script type="text/javascript">
-			$('.container .wrapper').navbarscroll();
-		</script>
-		<script type="text/javascript">
-			var myVue1 = new Vue({
-				el: ".container",
+			$('.building-information-container .wrapper').navbarscroll();
+			var myVue = new Vue({
+				el: ".building-information-container",
 				data: {
 					items: [{
 							img: 'img/imgbox.png',
@@ -485,12 +494,7 @@
 								fourthstyle: true
 							}
 						}
-					]
-				}
-			})
-			var myVues2 = new Vue({
-				el: ".article-push",
-				data: {
+					],
 					moreAbout: [{
 							txt: '文昌度假两房户型推假两房户型推假两房户型推假两房户型推荐 雅居乐月亮湾两居室度假宜居雅居乐月亮湾两居室度假宜居',
 							time: '2017-06-21'
@@ -538,4 +542,5 @@
 		</script>
 	</body>
 	<script type="text/javascript" src="js/building-information.js"></script>
+
 </html>

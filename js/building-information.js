@@ -1,96 +1,101 @@
 $(function() {
-	//定义navsub-ul 的宽度
-	var liwidth = $(".navsub-ul li").width()
-	var lilen = $(".navsub-ul li").length
-	$(".navsub-ul").width(liwidth * lilen)
 	//navsub-ul点击效果
-	$(".navsub-ul li").tap(function() {
+	$(".building-information-header .navsub-ul li").tap(function() {
 		$(this).addClass("navsub-ul-active").siblings().removeClass("navsub-ul-active")
 	})
-
+	
+	
 	//article-push
-	var metaw = $(".section-content-body").width()
-	$(".article-push").css("left", metaw)
-	$(".section-ul .pri-li").tap(function() {
-		$(".article-push").css("left", "0")
+	var metaw = $(".building-information-section").width()
+	$(".building-information-container .article-push").css("transform", "translateX("+metaw+"px)")
+	
+	$(".building-information-container .section-ul .pri-li").tap(function() {
+		$(".building-information-container .article-push").css("transform", "translateX(0px)")
+		$(".building-information-container .building-information-Mask").fadeIn(200)
 		atPushS.refresh()
 	})
-
-	$(".article-push-header-wrapper .return").tap(function() {
-		$(".article-push").css("left", metaw)
+	
+	$(".building-information-container .article-push-header-wrapper .return").tap(function() {
+		$(".building-information-container .article-push").css("transform", "translateX("+metaw+"px)")
+		$(".building-information-container .building-information-Mask").fadeOut(200)
 	})
 	
 	//input文本框
-	var panelw = $(".writing-panel").height()
-	$(".article-push-footer .write-reviews").tap(function() {
-		$(".zhezhao").css("z-index", "50")
-		$(".zhezhao").css("opacity", "1")
-		$(".writing-box .text-box").focus()
-		$(".writing-box").css("bottom", "0")
+	var panelw = $(".building-information-container .writing-panel").height()
+	$(".building-information-container .article-push-footer .write-reviews").tap(function() {
+		$(".building-information-container .article-push-Mask").fadeIn(300)
+		$(".building-information-container .writing-box .text-box").focus()
+		$(".building-information-container .writing-box").css("bottom", "0")
 	})
-	$('.zhezhao').bind("touchstart", function(event) {
-		$(".writing-box .text-box").blur()
-		$(".zhezhao").css("z-index", "-1")
-		$(".zhezhao").css("opacity", "0")
-		$(".writing-box").css("bottom", -panelw)
-	});
-	$(".cancel").tap(function() {
-
-		$(".writing-box .text-box").blur()
-		$(".zhezhao").css("z-index", "-1")
-		$(".zhezhao").css("opacity", "0")
-		$(".writing-box").css("bottom", -panelw)
+	
+	$('.building-information-container .article-push-Mask').bind("touchstart", function(event) {
+		$(".building-information-container .writing-box .text-box").blur()
+		$(".building-information-container .article-push-Mask").fadeOut(300)
+		$(".building-information-container .writing-box").css("bottom", -panelw+5)
 	})
-	$(".writing-box .send").tap(function() {
-		if($(".writing-box .text-box").val() !== "") {
-			$(".writing-box .text-box").blur()
-			$(".zhezhao").css("z-index", "-1")
-			$(".zhezhao").css("opacity", "0")
-			$(".writing-box").css("bottom", -panelw)
-			$(".text-box").val("")
-			$(".comment-success").css("display", "none")
-			$(".comment-failed").css("display", "block")
-			$(".comment-failed").css("opacity", "1")
+	
+	$(".building-information-container .cancel").tap(function() {
+		$(".building-information-container .writing-box .text-box").blur()
+		$(".building-information-container .article-push-Mask").fadeOut(300)
+		$(".building-information-container .writing-box").css("bottom", -panelw+5)
+	})
+	
+	$(".building-information-container .writing-box .send_show").tap(function() {
+		if($(".building-information-container .writing-box .text-box").val() !== "") {
+			$(".building-information-container .writing-box .text-box").blur()
+			$(".building-information-container .article-push-Mask").fadeOut(300)
+			$(".building-information-container .writing-box").css("bottom", -panelw)
+			$(".building-information-container .text-box").val("")
+			$(".building-information-container .comment-success").css("display", "none")
+			$(".building-information-container .comment-failed").css("display", "block")
+			$(".building-information-container .comment-failed").css("opacity", "1")
+			$(".building-information-container .writing-box .writing-panel-header .send_show").css("display","none")
+			$(".building-information-container .writing-box .writing-panel-header .send_hide").css("display","block")
 			setTimeout(function() {
-				$(".comment-failed").fadeOut(500)
-			}, 1500)
+				$(".building-information-container .comment-failed").fadeOut(300)
+			}, 1700)
 			setTimeout(function() {
-				$(".comment-success").css("display", "block")
-				$(".comment-success").css("opacity", "1")
+				$(".building-information-container .comment-success").css("display", "block")
+				$(".building-information-container .comment-success").css("opacity", "1")
 				setTimeout(function() {
-					$(".comment-success").fadeOut(500)
-				}, 1500)
-			}, 2000)
+					$(".building-information-container .comment-success").fadeOut(300)
+				}, 1700)
+			}, 2300)
 		} else {
-			alert("发送内容不能为空")
 			$(".writing-box .text-box").focus()
 		}
 	})
-
-	//导航滑动
-	var _thisli_w = $(".header-nav .nav-list li").width()
-	var _thisli_len = $(".header-nav .nav-list li").length
-	$(".header-nav .nav-list").width(_thisli_w * _thisli_len)
-
-	var testh=$(".section").height()
-	$(".section-li").height(testh)
 	
-	var atPushS = new IScroll('.article-push-body', {
+	$(".building-information-container .writing-box .text-box").bind('input propertychange', function() {
+		if($(this).val() !== "") {
+			$(".building-information-container .writing-box .writing-panel-header .send_show").css("display","block")
+			$(".building-information-container .writing-box .writing-panel-header .send_hide").css("display","none")
+		} 
+		else if($(this).val() == "") {
+			$(".building-information-container .writing-box .writing-panel-header .send_show").css("display","none")
+			$(".building-information-container .writing-box .writing-panel-header .send_hide").css("display","block")
+		}
+	})
+	
+	
+	var atPushS = new IScroll('.building-information-container .article-push-body', {
 		scrollbars: false
 	})
 	
 	
 	//资讯评论样式
 	var hoth = 0;
-	$(".hotThread-li").each(function() {
+	var hotn = 0;
+	$(".building-information-container .hotThread-li").each(function() {
 		hoth = $(this).find(".user-say").height()
-		if(hoth >= 78) {
+		hotn = $(this).find(".user-name").height()+3
+		if(hoth > 3*hotn) {
 			$(this).find(".user-say").addClass("showmore")
 			$(this).find(".showall").css("display", "block")
-			$(".hotThread-li .showall-wrapper").tap(function() {
+			$(".building-information-container .hotThread-li .showall-wrapper").tap(function() {
 				var Hindex = $(this).parents(".hotThread-li").index()
-				$(".hotThread-li").eq(Hindex).find(".user-say").removeClass("showmore")
-				$(".hotThread-li").eq(Hindex).find(".showall").css("display", "none")
+				$(".building-information-container .hotThread-li").eq(Hindex).find(".user-say").removeClass("showmore")
+				$(".building-information-container .hotThread-li").eq(Hindex).find(".showall").css("display", "none")
 				atPushS.refresh()
 			})
 		}
