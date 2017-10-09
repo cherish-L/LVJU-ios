@@ -685,7 +685,7 @@ $(function() {
 		disableTouch: false,
 		disableMouse: false,
 	})
-	
+	alert("1")
 	
 	
 	var search_h = $(".search-page-wrapper").height()
