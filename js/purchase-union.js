@@ -42,6 +42,8 @@ $(function() {
 		$(".purchase-union-Mask").tap(function() {
 			$(".purchase-union-Mask").fadeOut(300)
 			$(".purchase-union-signUp .signUp-push").removeClass("show")
+			$(".purchase-union-signUp .enroll-fail").removeClass("show")
+			$(".purchase-union-signUp .signUp-push").removeClass("show")
 		})
 
 		$(".purchase-union-signUp .signUp-delete-box i").tap(function() {
@@ -54,6 +56,9 @@ $(function() {
 				$(".signUp-username input").val("")
 				$(".signUp-userphone input").val("")
 				$(".signUp-message input").val("")
+				$(".signUp-username input").blur()
+				$(".signUp-userphone input").blur()
+				$(".signUp-message input").blur()
 				$(".purchase-union-signUp .signUp-push").removeClass("show")
 				$(".purchase-union-signUp .enroll-fail").addClass("show")
 				
