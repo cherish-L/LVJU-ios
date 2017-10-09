@@ -699,7 +699,7 @@ $(function() {
 		$("#Search-inpt").val("")
 		setTimeout(function(){
 			$("#Search-inpt").focus()
-		},300)
+		},500)
 		$(".Home-page-container .search-page").css("transform", "translateX(0px)")
 		$(".search-page-wrapper .search-page-header").css("transform", "translateY(0px)")
 		$(".search-page-wrapper .search-page-section").css("transform", "translateY("+ -search_header_h +"px)")
