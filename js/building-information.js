@@ -100,4 +100,10 @@ $(function() {
 			})
 		}
 	})
+	
+	
+	$(".building-information-footer .footer-nav-li").tap(function(){
+		$(this).addClass("select").siblings().removeClass("select")
+	})
+	
 })
