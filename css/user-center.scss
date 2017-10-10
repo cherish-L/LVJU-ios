@@ -406,7 +406,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            box-shadow: inset 0 0 120/$sc+rem 20/$sc+rem rgba(0,0,0,.3);
+            background: rgba(0,0,0,.45);
         }
         //<----------- 提示请登录 ----------->
         .please-login-account {
@@ -584,7 +584,7 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                box-shadow: inset 0 0 120/$sc+rem 20/$sc+rem rgba(0,0,0,.3);
+                background: rgba(0,0,0,.45);
             }
             .message-management-push {
                 width: 100%;
@@ -2131,7 +2131,9 @@
                     }
                 }
             }
-            .login-fail-push {}
+            .login-fail-push {
+                
+            }
             .modify-success {
                 display: none;
                 opacity: 0;
