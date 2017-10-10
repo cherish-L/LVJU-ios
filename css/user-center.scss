@@ -65,7 +65,7 @@
         flex-direction: column;
         .user-center-header {
             width: 100%;
-            z-index: 1;
+            z-index: 10;
             position: fixed;
             top: 0;
             left: 0;
@@ -80,15 +80,15 @@
                 position: relative;
                 .setUp {
                     display: block;
-                    line-height: 22/$sc+rem;
+                    line-height: 30/$sc+rem;
                     padding-left: 26/$sc+rem;
                     font-size: 16/$sc+rem;
                     color: #FFFFFF;
-                    background: url(../img/SetUp.png) no-repeat;
+                    background: url(../img/SetUp.png) left center no-repeat;
                     background-size: 22/$sc+rem 22/$sc+rem;
                     background-position-x: left;
                     position: absolute;
-                    top: 11/$sc+rem;
+                    top: 7/$sc+rem;
                     right: 16/$sc+rem;
                 }
             }
@@ -397,6 +397,17 @@
                 }
             }
         }
+        //<----------- 个人中心阴影 ----------->
+        .user-center-shadow{
+            display: none;
+            width: 100%;
+            height: 100%;
+            z-index: 20;
+            position: absolute;
+            top: 0;
+            left: 0;
+            box-shadow: inset 0 0 120/$sc+rem 20/$sc+rem rgba(0,0,0,.3);
+        }
         //<----------- 提示请登录 ----------->
         .please-login-account {
             display: none;
@@ -407,7 +418,7 @@
             color: #FFFFFF;
             line-height: 48/$sc+rem;
             background: rgba(0, 0, 0, .8);
-            border-radius: 2/$sc+rem;
+            border-radius: 4/$sc+rem;
             position: absolute;
             top: 0;
             bottom: 0;
@@ -422,10 +433,10 @@
             transition: all .3s;
             overflow: hidden;
             background: #f4f4f4;
+            transform: translateX(380/$sc+rem);
             position: fixed;
-            left: 380/$sc+rem;
             top: 0;
-            z-index: 10;
+            z-index: 30;
             display: flex;
             display: -webkit-flex;
             flex-direction: column;
@@ -433,7 +444,7 @@
                 width: 100%;
                 background-color: #f6f6f6;
                 box-shadow: 0 1px 0 0 #cccccc;
-                z-index: 1;
+                z-index: 10;
                 .signal_bar {
                     width: 100%;
                     height: 20/$sc+rem;
@@ -565,16 +576,26 @@
                     }
                 }
             }
+            .set-up-shadow{
+                display: none;
+                width: 100%;
+                height: 100%;
+                z-index: 20;
+                position: absolute;
+                top: 0;
+                left: 0;
+                box-shadow: inset 0 0 120/$sc+rem 20/$sc+rem rgba(0,0,0,.3);
+            }
             .message-management-push {
                 width: 100%;
                 height: 100%;
                 transition: all .3s;
                 background: #f4f4f4;
                 overflow: hidden;
+                transform: translateX(380/$sc+rem);
                 position: absolute;
-                left: 380/$sc+rem;
                 top: 0;
-                z-index: 10;
+                z-index: 30;
                 display: flex;
                 display: -webkit-flex;
                 flex-direction: column;
@@ -763,10 +784,10 @@
                 transition: all .3s;
                 overflow: hidden;
                 background: #f4f4f4;
+                transform: translateX(380/$sc+rem);
                 position: absolute;
-                left: 380/$sc+rem;
                 top: 0;
-                z-index: 10;
+                z-index: 30;
                 display: flex;
                 display: -webkit-flex;
                 flex-direction: column;
@@ -935,10 +956,10 @@
                 transition: all .3s;
                 overflow: hidden;
                 background: #f4f4f4;
+                transform: translateX(380/$sc+rem);
                 position: absolute;
-                left: 380/$sc+rem;
                 top: 0;
-                z-index: 10;
+                z-index: 30;
                 display: flex;
                 display: -webkit-flex;
                 flex-direction: column;
@@ -1135,10 +1156,10 @@
                 transition: all .3s;
                 overflow: hidden;
                 background: #f4f4f4;
+                transform: translateX(380/$sc+rem);
                 position: absolute;
-                left: 380/$sc+rem;
                 top: 0;
-                z-index: 10;
+                z-index: 30;
                 display: flex;
                 display: -webkit-flex;
                 flex-direction: column;
@@ -1297,7 +1318,7 @@
             position: fixed;
             left: 380/$sc+rem;
             top: 0;
-            z-index: 15;
+            z-index: 30;
             display: flex;
             display: -webkit-flex;
             flex-direction: column;
@@ -2422,7 +2443,7 @@
             position: fixed;
             left: 380/$sc+rem;
             top: 0;
-            z-index: 10;
+            z-index: 30;
             display: flex;
             display: -webkit-flex;
             flex-direction: column;
@@ -3495,10 +3516,10 @@
             transition: all .3s;
             overflow: hidden;
             background: #f4f4f4;
+            transform: translateX(380/$sc+rem);
             position: fixed;
-            left: 380/$sc+rem;
             top: 0;
-            z-index: 10;
+            z-index: 30;
             display: flex;
             display: -webkit-flex;
             flex-direction: column;
@@ -3767,10 +3788,10 @@
             transition: all .3s;
             overflow: hidden;
             background: #f4f4f4;
+            transform: translateX(380/$sc+rem);
             position: fixed;
-            left: 380/$sc+rem;
             top: 0;
-            z-index: 10;
+            z-index: 30;
             display: flex;
             display: -webkit-flex;
             flex-direction: column;
@@ -4039,10 +4060,10 @@
             transition: all .3s;
             overflow: hidden;
             background: #f4f4f4;
+            transform: translateX(380/$sc+rem);
             position: fixed;
-            left: 380/$sc+rem;
             top: 0;
-            z-index: 10;
+            z-index: 30;
             display: flex;
             display: -webkit-flex;
             flex-direction: column;
@@ -4379,10 +4400,10 @@
             transition: all .3s;
             overflow: hidden;
             background: #f4f4f4;
+            transform: translateX(380/$sc+rem);
             position: fixed;
-            left: 380/$sc+rem;
             top: 0;
-            z-index: 10;
+            z-index: 30;
             display: flex;
             display: -webkit-flex;
             flex-direction: column;

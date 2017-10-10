@@ -66,7 +66,7 @@ li {
 
 .user-center-container .user-center-header {
   width: 100%;
-  z-index: 1;
+  z-index: 10;
   position: fixed;
   top: 0;
   left: 0;
@@ -86,15 +86,15 @@ li {
 
 .user-center-container .user-center-header .title_bar .setUp {
   display: block;
-  line-height: 0.88rem;
+  line-height: 1.2rem;
   padding-left: 1.04rem;
   font-size: 0.64rem;
   color: #FFFFFF;
-  background: url(../img/SetUp.png) no-repeat;
+  background: url(../img/SetUp.png) left center no-repeat;
   background-size: 0.88rem 0.88rem;
   background-position-x: left;
   position: absolute;
-  top: 0.44rem;
+  top: 0.28rem;
   right: 0.64rem;
 }
 
@@ -444,6 +444,17 @@ li {
   color: #0099EB;
 }
 
+.user-center-container .user-center-shadow {
+  display: none;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: inset 0 0 4.8rem 0.8rem rgba(0, 0, 0, 0.3);
+}
+
 .user-center-container .please-login-account {
   display: none;
   width: 11.2rem;
@@ -453,7 +464,7 @@ li {
   color: #FFFFFF;
   line-height: 1.92rem;
   background: rgba(0, 0, 0, 0.8);
-  border-radius: 0.08rem;
+  border-radius: 0.16rem;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -468,10 +479,10 @@ li {
   transition: all .3s;
   overflow: hidden;
   background: #f4f4f4;
+  transform: translateX(15.2rem);
   position: fixed;
-  left: 15.2rem;
   top: 0;
-  z-index: 10;
+  z-index: 30;
   display: flex;
   display: -webkit-flex;
   flex-direction: column;
@@ -481,7 +492,7 @@ li {
   width: 100%;
   background-color: #f6f6f6;
   box-shadow: 0 1px 0 0 #cccccc;
-  z-index: 1;
+  z-index: 10;
 }
 
 .user-center-container .set-up-push .set-up-pushheader .signal_bar {
@@ -632,16 +643,27 @@ li {
   color: #0099EB;
 }
 
+.user-center-container .set-up-push .set-up-shadow {
+  display: none;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: inset 0 0 4.8rem 0.8rem rgba(0, 0, 0, 0.3);
+}
+
 .user-center-container .set-up-push .message-management-push {
   width: 100%;
   height: 100%;
   transition: all .3s;
   background: #f4f4f4;
   overflow: hidden;
+  transform: translateX(15.2rem);
   position: absolute;
-  left: 15.2rem;
   top: 0;
-  z-index: 10;
+  z-index: 30;
   display: flex;
   display: -webkit-flex;
   flex-direction: column;
@@ -855,10 +877,10 @@ li {
   transition: all .3s;
   overflow: hidden;
   background: #f4f4f4;
+  transform: translateX(15.2rem);
   position: absolute;
-  left: 15.2rem;
   top: 0;
-  z-index: 10;
+  z-index: 30;
   display: flex;
   display: -webkit-flex;
   flex-direction: column;
@@ -1050,10 +1072,10 @@ li {
   transition: all .3s;
   overflow: hidden;
   background: #f4f4f4;
+  transform: translateX(15.2rem);
   position: absolute;
-  left: 15.2rem;
   top: 0;
-  z-index: 10;
+  z-index: 30;
   display: flex;
   display: -webkit-flex;
   flex-direction: column;
@@ -1277,10 +1299,10 @@ li {
   transition: all .3s;
   overflow: hidden;
   background: #f4f4f4;
+  transform: translateX(15.2rem);
   position: absolute;
-  left: 15.2rem;
   top: 0;
-  z-index: 10;
+  z-index: 30;
   display: flex;
   display: -webkit-flex;
   flex-direction: column;
@@ -1457,7 +1479,7 @@ li {
   position: fixed;
   left: 15.2rem;
   top: 0;
-  z-index: 15;
+  z-index: 30;
   display: flex;
   display: -webkit-flex;
   flex-direction: column;
@@ -2739,7 +2761,7 @@ li {
   position: fixed;
   left: 15.2rem;
   top: 0;
-  z-index: 10;
+  z-index: 30;
   display: flex;
   display: -webkit-flex;
   flex-direction: column;
@@ -3943,10 +3965,10 @@ li {
   transition: all .3s;
   overflow: hidden;
   background: #f4f4f4;
+  transform: translateX(15.2rem);
   position: fixed;
-  left: 15.2rem;
   top: 0;
-  z-index: 10;
+  z-index: 30;
   display: flex;
   display: -webkit-flex;
   flex-direction: column;
@@ -4249,10 +4271,10 @@ li {
   transition: all .3s;
   overflow: hidden;
   background: #f4f4f4;
+  transform: translateX(15.2rem);
   position: fixed;
-  left: 15.2rem;
   top: 0;
-  z-index: 10;
+  z-index: 30;
   display: flex;
   display: -webkit-flex;
   flex-direction: column;
@@ -4555,10 +4577,10 @@ li {
   transition: all .3s;
   overflow: hidden;
   background: #f4f4f4;
+  transform: translateX(15.2rem);
   position: fixed;
-  left: 15.2rem;
   top: 0;
-  z-index: 10;
+  z-index: 30;
   display: flex;
   display: -webkit-flex;
   flex-direction: column;
@@ -4945,10 +4967,10 @@ li {
   transition: all .3s;
   overflow: hidden;
   background: #f4f4f4;
+  transform: translateX(15.2rem);
   position: fixed;
-  left: 15.2rem;
   top: 0;
-  z-index: 10;
+  z-index: 30;
   display: flex;
   display: -webkit-flex;
   flex-direction: column;

@@ -35,7 +35,6 @@ $(function() {
 			if($(".user-center-container .Not-logged").hasClass("show")){
 				clearTimeout(please_login)
 				$(".user-center-container .message-prompt").css("display","none")
-				$(".set-up-push .login-status .login-box").css("display","none")
 				$(".set-up-pushsection .login-box").css("display","none")
 				$(".please-login-account").show()
 				please_login=setTimeout(function(){
@@ -46,11 +45,13 @@ $(function() {
 				$(".user-center-container .message-prompt").css("display","block")
 				$(".set-up-push .login-status .login-box").css("display","block")
 				$(".set-up-pushsection .login-box").css("display","block")
-				$(".personal-collection-push").css("left","0")
+				$(".personal-collection-push").css("transform", "translateX(0px)")
+				$(".user-center-shadow").fadeIn(200)
 			}
 		})
 		$(".personal-collection-pushheader .return").tap(function(){
-			$(".personal-collection-push").css("left",setw+5)
+			$(".personal-collection-push").css("transform", "translateX("+setw+"px)")
+			$(".user-center-shadow").fadeOut(200)
 		})
 		
 		//我的足迹弹框
@@ -67,11 +68,13 @@ $(function() {
 			if(!$(".user-center-container .Not-logged").hasClass("show")){
 				$(".user-center-container .message-prompt").css("display","block")
 				$(".set-up-pushsection .login-box").css("display","block")
-				$(".personal-footprint-push").css("left","0")
+				$(".personal-footprint-push").css("transform", "translateX(0px)")
+				$(".user-center-shadow").fadeIn(200)
 			}
 		})
 		$(".personal-footprint-pushheader .return").tap(function(){
-			$(".personal-footprint-push").css("left",setw+5)
+			$(".personal-footprint-push").css("transform", "translateX("+setw+"px)")
+			$(".user-center-shadow").fadeOut(200)
 		})
 		
 		//我的消息弹框
@@ -88,11 +91,13 @@ $(function() {
 			if(!$(".user-center-container .Not-logged").hasClass("show")){
 				$(".user-center-container .message-prompt").css("display","block")
 				$(".set-up-pushsection .login-box").css("display","block")
-				$(".personal-news-push").css("left","0")
+				$(".personal-news-push").css("transform", "translateX(0px)")
+				$(".user-center-shadow").fadeIn(200)
 			}
 		})
 		$(".personal-news-pushheader .return").tap(function(){
-			$(".personal-news-push").css("left",setw+5)
+			$(".personal-news-push").css("transform", "translateX("+setw+"px)")
+			$(".user-center-shadow").fadeOut(200)
 		})
 		
 		//我的优惠券弹框
@@ -109,11 +114,13 @@ $(function() {
 			if(!$(".user-center-container .Not-logged").hasClass("show")){
 				$(".user-center-container .message-prompt").css("display","block")
 				$(".set-up-pushsection .login-box").css("display","block")
-				$(".personal-coupon-push").css("left","0")
+				$(".personal-coupon-push").css("transform", "translateX(0px)")
+				$(".user-center-shadow").fadeIn(200)
 			}
 		})
 		$(".personal-coupon-pushheader .return").tap(function(){
-			$(".personal-coupon-push").css("left",setw+5)
+			$(".personal-coupon-push").css("transform", "translateX("+setw+"px)")
+			$(".user-center-shadow").fadeOut(200)
 		})
 	
 	
@@ -126,20 +133,44 @@ $(function() {
 		scrollbars: false
 	})
 
-	var setw = $(".set-up-push").width()
+	var setw = $(".set-up-push").width()+5
 	$(".user-center-header .setUp").tap(function() {
-		$(".set-up-push").css("left", "0")
+		$(".set-up-push").css("transform", "translateX(0px)")
+		$(".user-center-shadow").fadeIn(200)
 		if($(".user-center-container .Not-logged").hasClass("show")){
 		$(".set-up-pushsection .login-box").css("display","none")
 		}
 		if(!$(".user-center-container .Not-logged").hasClass("show")){
 			$(".set-up-pushsection .login-box").css("display","block")
 		}
-		$(".set-up-pushheader .return").tap(function() {
-			$(".set-up-push").css("left", setw + 5)
-		})
 	})
-
+	$(".set-up-pushheader .return").tap(function() {
+		$(".set-up-push").css("transform", "translateX("+setw+"px)")
+		$(".user-center-shadow").fadeOut(200)
+	})
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	//用户中心--设置弹框--消息管理
 	var managementH = $(".message-management-pushsection").height()
 	$(".message-management-pushsection .pushsection-wrapper").height(managementH + 1)
@@ -149,12 +180,15 @@ $(function() {
 	})
 
 	$(".set-up-pushsection .message-management").tap(function() {
-		$(".message-management-push").css("left", "0")
-		$(".message-management-pushheader .return").tap(function() {
-			$(".message-management-push").css("left", setw + 5)
-		})
+		$(".message-management-push").css("transform", "translateX(0px)")
+		$(".set-up-shadow").fadeIn(200)
 	})
-
+	
+	$(".message-management-pushheader .return").tap(function() {
+		$(".message-management-push").css("transform", "translateX("+setw+"px)")
+		$(".set-up-shadow").fadeOut(200)
+	})
+	
 	//用户中心--设置弹框--关于我们
 	var abouth = $(".about-us-pushsection").height()
 	var about_wh = $(".about-us-pushsection .pushsection-wrapper").height()
@@ -168,12 +202,15 @@ $(function() {
 	})
 
 	$(".set-up-pushsection .about-us").tap(function() {
-		$(".about-us-push").css("left", "0")
-		$(".about-us-pushheader .return").tap(function() {
-			$(".about-us-push").css("left", setw + 5)
-		})
+		$(".about-us-push").css("transform", "translateX(0px)")
+		$(".set-up-shadow").fadeIn(200)
 	})
-
+	$(".about-us-pushheader .return").tap(function() {
+		$(".about-us-push").css("transform", "translateX("+setw+"px)")
+		$(".set-up-shadow").fadeOut(200)
+	})
+	
+	
 	//用户中心--设置弹框--帮助说明
 	var descriptionH = $(".help-description-pushsection").height()
 	$(".help-description-pushsection .pushsection-wrapper").height(descriptionH + 1)
@@ -183,12 +220,15 @@ $(function() {
 	})
 
 	$(".set-up-pushsection .help-description").tap(function() {
-		$(".help-description-push").css("left", "0")
-		$(".help-description-pushheader .return").tap(function() {
-			$(".help-description-push").css("left", setw + 5)
-		})
+		$(".help-description-push").css("transform", "translateX(0px)")
+		$(".set-up-shadow").fadeIn(200)
 	})
-
+	$(".help-description-pushheader .return").tap(function() {
+		$(".help-description-push").css("transform", "translateX("+setw+"px)")
+		$(".set-up-shadow").fadeOut(200)
+	})
+	
+	
 	//用户中心--设置弹框--帮助说明--怎么注册成为用户
 	var registerH = $(".how-register-pushsection").height()
 	$(".how-register-pushsection .pushsection-wrapper").height(registerH + 1)
@@ -209,14 +249,18 @@ $(function() {
 	$(".feedback-pushsection .pushsection-wrapper").height(feedbackH + 1)
 
 	$(".set-up-push .feedback").tap(function() {
-		$(".feedback-push").css("left", "0")
-		$(".feedback-pushheader .return").tap(function() {
-			$(".feedback-push").css("left", setw + 5)
-		})
+		$(".feedback-push").css("transform", "translateX(0px)")
+		$(".set-up-shadow").fadeIn(200)
 	})
-
+	
+	$(".feedback-pushheader .return").tap(function() {
+		$(".feedback-push").css("transform", "translateX("+setw+"px)")
+		$(".set-up-shadow").fadeOut(200)
+	})
 	var Tarealen = $(".textarea").val().length
 	$(".Surplus-character").text(200 - Tarealen + "字")
+	
+	
 	
 	//用户中心--登录界面
 	var loginH = $(".login-page-pushsection").height()
@@ -227,6 +271,9 @@ $(function() {
 		preventDefault: true
 	})
 
+
+
+	
 	//登录点击显示新密码
 	$(".login-page-pushsection .login-page-Password .showPassword").tap(function(){
 		if(!$(this).hasClass("show") && $("#l-Password").attr("type") == "password"){
