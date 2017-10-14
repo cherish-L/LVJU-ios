@@ -1,6 +1,4 @@
 $(function() {
-	
-	
 	var vertical_li_len=$(".bottom-nav-vertical .bottom-nav-ul li").length
 	var vertical_li_w=$(".bottom-nav-vertical .bottom-nav-ul li").width()
 	$(".bottom-nav-vertical .bottom-nav-ul").width(vertical_li_len*vertical_li_w+12)
