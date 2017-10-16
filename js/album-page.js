@@ -1,7 +1,7 @@
 $(function() {
 	
 	
-//Swiper滑动判断导航选择状态
+//Swiper滑动判断导航选择
 	//相册标题显示起始页数
 	var img_box_num = $(".img-box-ul li").length
 	$(".section-wrapper .top-txt-vertical .current-page").text(1 + '/' + img_box_num)
@@ -66,7 +66,7 @@ $(function() {
 	
 			//判断对比swiper滑动的当前页数 与 页数范围自动切换选择状态
 			if(nav_index==i){
-				mySwiper.slideTo(p_num,0);
+				mySwiper.slideTo(p_num,1500);
 			}
 			var _this_realIndex=mySwiper.realIndex+1
 			$(".section-wrapper .top-txt-vertical .current-page").text(_this_realIndex+'/'+img_box_num)
@@ -91,7 +91,7 @@ $(function() {
 	
 			//判断对比swiper滑动的当前页数 与 页数范围自动切换选择状态
 			if(nav_index==i){
-				mySwiper.slideTo(p_num,0);
+				mySwiper.slideTo(p_num,1500);
 			}
 			var _this_realIndex=mySwiper.realIndex+1
 			$(".section-wrapper .top-txt-vertical .current-page").text(_this_realIndex+'/'+img_box_num)
