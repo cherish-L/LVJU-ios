@@ -84,7 +84,7 @@ li {
     height: 0.9rem;
     width: 100%;
     position: absolute;
-    top: 10%;
+    top: 12%;
     left: 0;
     right: 0;
     margin: auto;
@@ -132,7 +132,7 @@ li {
     width: 100%;
     height: 42%;
     position: absolute;
-    top: 23%;
+    top: 25%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -163,15 +163,13 @@ li {
   .album-page .album-page-section .section-wrapper .bottom-nav-vertical .bottom-nav-box {
     width: 100%;
     height: 100%;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
   }
   .album-page .album-page-section .section-wrapper .bottom-nav-vertical .bottom-nav-box ul {
     height: 0.9rem;
     padding-left: 12px;
   }
   .album-page .album-page-section .section-wrapper .bottom-nav-vertical .bottom-nav-box ul li {
-    width: 3.5rem;
+    display: inline-block;
     float: left;
     font-family: PingFangSC-Medium;
     font-size: 0.6rem;
@@ -179,6 +177,25 @@ li {
     color: #ffffff;
     overflow: hidden;
     text-align: center;
+  }
+  .album-page .album-page-section .section-wrapper .bottom-nav-vertical .bottom-nav-box ul li .bottom-nav-li-txt {
+    display: block;
+    padding: 0 0.35rem;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .album-page .album-page-section .section-wrapper .bottom-nav-vertical .bottom-nav-box ul li .bottom-nav-li-txt span {
+    display: inline-block;
+  }
+  .album-page .album-page-section .section-wrapper .bottom-nav-vertical .bottom-nav-box ul li ._this_num {
+    display: none;
+  }
+  .album-page .album-page-section .section-wrapper .bottom-nav-vertical .bottom-nav-box ul li ._this_num-txt {
+    display: none;
   }
   .album-page .album-page-section .section-wrapper .bottom-nav-vertical .bottom-nav-box ul li.select {
     color: #FF7C00;
@@ -213,13 +230,31 @@ li {
   .album-page .album-page-section .section-wrapper .bottom-nav-transverse .bottom-nav-box ul li {
     display: inline-block;
     float: left;
-    width: 3.5rem;
     font-family: PingFangSC-Medium;
     font-size: 0.6rem;
     line-height: 0.9rem;
     color: #ffffff;
     overflow: hidden;
     text-align: center;
+  }
+  .album-page .album-page-section .section-wrapper .bottom-nav-transverse .bottom-nav-box ul li .bottom-nav-li-txt {
+    display: block;
+    padding: 0 0.35rem;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .album-page .album-page-section .section-wrapper .bottom-nav-transverse .bottom-nav-box ul li .bottom-nav-li-txt span {
+    display: inline-block;
+  }
+  .album-page .album-page-section .section-wrapper .bottom-nav-transverse .bottom-nav-box ul li ._this_num {
+    display: none;
+  }
+  .album-page .album-page-section .section-wrapper .bottom-nav-transverse .bottom-nav-box ul li ._this_num-txt {
+    display: none;
   }
   .album-page .album-page-section .section-wrapper .bottom-nav-transverse .bottom-nav-box ul li.select {
     color: #FF7C00;
@@ -341,7 +376,7 @@ li {
     padding-left: 12px;
   }
   .album-page .album-page-section .section-wrapper .bottom-nav-vertical .bottom-nav-box ul li {
-    width: 3.5rem;
+    display: inline-block;
     float: left;
     font-family: PingFangSC-Medium;
     font-size: 0.6rem;
@@ -349,6 +384,25 @@ li {
     color: #ffffff;
     overflow: hidden;
     text-align: center;
+  }
+  .album-page .album-page-section .section-wrapper .bottom-nav-vertical .bottom-nav-box ul li .bottom-nav-li-txt {
+    display: block;
+    padding: 0 0.35rem;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .album-page .album-page-section .section-wrapper .bottom-nav-vertical .bottom-nav-box ul li .bottom-nav-li-txt span {
+    display: inline-block;
+  }
+  .album-page .album-page-section .section-wrapper .bottom-nav-vertical .bottom-nav-box ul li ._this_num {
+    display: none;
+  }
+  .album-page .album-page-section .section-wrapper .bottom-nav-vertical .bottom-nav-box ul li ._this_num-txt {
+    display: none;
   }
   .album-page .album-page-section .section-wrapper .bottom-nav-vertical .bottom-nav-box ul li.select {
     color: #FF7C00;
@@ -383,13 +437,31 @@ li {
   .album-page .album-page-section .section-wrapper .bottom-nav-transverse .bottom-nav-box ul li {
     display: inline-block;
     float: left;
-    width: 3.5rem;
     font-family: PingFangSC-Medium;
     font-size: 0.6rem;
     line-height: 0.9rem;
     color: #ffffff;
     overflow: hidden;
     text-align: center;
+  }
+  .album-page .album-page-section .section-wrapper .bottom-nav-transverse .bottom-nav-box ul li .bottom-nav-li-txt {
+    display: block;
+    padding: 0 0.35rem;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .album-page .album-page-section .section-wrapper .bottom-nav-transverse .bottom-nav-box ul li .bottom-nav-li-txt span {
+    display: inline-block;
+  }
+  .album-page .album-page-section .section-wrapper .bottom-nav-transverse .bottom-nav-box ul li ._this_num {
+    display: none;
+  }
+  .album-page .album-page-section .section-wrapper .bottom-nav-transverse .bottom-nav-box ul li ._this_num-txt {
+    display: none;
   }
   .album-page .album-page-section .section-wrapper .bottom-nav-transverse .bottom-nav-box ul li.select {
     color: #FF7C00;

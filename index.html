@@ -36,27 +36,27 @@
 					</div>
 					<div class="img-box">
 						<ul class="img-box-ul  swiper-wrapper">
-							<li class="effect-pic swiper-slide" v-for="list in effect">
+							<li class="img-box-li swiper-slide" v-for="list in effect">
 								<div class="li_box">
 									<img :src="list.src"/>
 								</div>
 							</li>
-							<li class="houseTyle-pic swiper-slide" v-for="list in houseTyle">
+							<li class="img-box-li swiper-slide" v-for="list in houseTyle">
 								<div class="li_box">
 									<img :src="list.src"/>
 								</div>
 							</li>
-							<li class="model-pic swiper-slide" v-for="list in model">
+							<li class="img-box-li swiper-slide" v-for="list in model">
 								<div class="li_box">
 									<img :src="list.src"/>
 								</div>
 							</li>
-							<li class="locations-pic swiper-slide" v-for="list in locations">
+							<li class="img-box-li swiper-slide" v-for="list in locations">
 								<div class="li_box">
 									<img :src="list.src"/>
 								</div>
 							</li>
-							<li class="liveVideo-pic swiper-slide" v-for="list in liveVideo">
+							<li class="img-box-li swiper-slide" v-for="list in liveVideo">
 								<div class="li_box">
 									<img :src="list.src"/>
 									<span class="startUp-btn"></span>
@@ -67,26 +67,95 @@
 					<div class="bottom-nav-vertical">
 						<div class="bottom-nav-box">
 							<ul class="bottom-nav-ul">
-								<li class="effect select"></li>
-								<li class="houseTyle"></li>
-								<li class="model"></li>
-								<li class="locations"></li>
-								<li class="liveVideo"></li>
+								<li class="bottom-nav-li">
+									<div class="bottom-nav-li-txt">
+										<span class="group_name">效果图</span>
+										<span class="group_num"></span>
+									</div>
+									<div class="_this_num">
+										<img v-for="list in effect"/>
+									</div>
+									<span class="_this_num-txt"></span>
+								</li>
+								<li class="bottom-nav-li">
+									<div class="bottom-nav-li-txt">
+										<span class="group_name">户型图</span>
+										<span class="group_num"></span>
+									</div>
+									<div class="_this_num">
+										<img v-for="list in houseTyle"/>
+									</div>
+									<span class="_this_num-txt"></span>
+								</li>
+								<li class="bottom-nav-li">
+									<div class="bottom-nav-li-txt">
+										<span class="group_name">样板图</span>
+										<span class="group_num"></span>
+									</div>
+									<div class="_this_num">
+										<img v-for="list in model"/>
+									</div>
+									<span class="_this_num-txt"></span>
+								</li>
+								<li class="bottom-nav-li">
+									<div class="bottom-nav-li-txt">
+										<span class="group_name">区位图</span>
+										<span class="group_num"></span>
+									</div>
+									<div class="_this_num">
+										<img v-for="list in locations"/>
+									</div>
+									<span class="_this_num-txt"></span>
+								</li>
+								<li class="bottom-nav-li">
+									<div class="bottom-nav-li-txt">
+										<span class="group_name">实景视频</span>
+										<span class="group_num"></span>
+									</div>
+									<div class="_this_num">
+										<img v-for="list in liveVideo"/>
+									</div>
+									<span class="_this_num-txt"></span>
+								</li>
 							</ul>
 						</div>
 					</div>
 					<div class="bottom-nav-transverse">
 						<div class="bottom-nav-box">
 							<ul class="bottom-nav-ul">
-								<li class="effect select"></li>
-								<li class="houseTyle"></li>
-								<li class="model"></li>
-								<li class="locations"></li>
-								<li class="liveVideo"></li>
+								<li class="bottom-nav-li">
+									<div class="bottom-nav-li-txt">
+										<span class="group_name">效果图</span>
+										<span class="group_num"></span>
+									</div>
+								</li>
+								<li class="bottom-nav-li">
+									<div class="bottom-nav-li-txt">
+										<span class="group_name">户型图</span>
+										<span class="group_num"></span>
+									</div>
+								</li>
+								<li class="bottom-nav-li">
+									<div class="bottom-nav-li-txt">
+										<span class="group_name">样板图</span>
+										<span class="group_num"></span>
+									</div>
+								</li>
+								<li class="bottom-nav-li">
+									<div class="bottom-nav-li-txt">
+										<span class="group_name">区位图</span>
+										<span class="group_num"></span>
+									</div>
+								</li>
+								<li class="bottom-nav-li">
+									<div class="bottom-nav-li-txt">
+										<span class="group_name">实景视频</span>
+										<span class="group_num"></span>
+									</div>
+								</li>
 							</ul>
 						</div>
 					</div>
-					<a class="return" href="javascripe:;"><img src="img/B-picture-off.png"/></a>
 				</div>
 			</section>
 		</div>
@@ -100,8 +169,6 @@
 					{src: 'img/timg.png'},
 					{src: 'img/timg.png'},
 					{src: 'img/timg.png'},
-					{src: 'img/timg.png'},
-					{src: 'img/timg.png'},
 					{src: 'img/timg.png'}
 				],
 				houseTyle: [
@@ -110,17 +177,9 @@
 					{src: 'img/timg.png'},
 					{src: 'img/timg.png'},
 					{src: 'img/timg.png'},
-					{src: 'img/timg.png'},
-					{src: 'img/timg.png'},
-					{src: 'img/timg.png'},
-					{src: 'img/timg.png'},
 					{src: 'img/timg.png'}
 				],
 				model: [
-					{src: 'img/timg.png'},
-					{src: 'img/timg.png'},
-					{src: 'img/timg.png'},
-					{src: 'img/timg.png'},
 					{src: 'img/timg.png'},
 					{src: 'img/timg.png'},
 					{src: 'img/timg.png'},
@@ -134,13 +193,10 @@
 					{src: 'img/timg.png'},
 					{src: 'img/timg.png'},
 					{src: 'img/timg.png'},
+					{src: 'img/timg.png'},
 					{src: 'img/timg.png'}
 				],
 				liveVideo: [
-					{src: 'img/timg.png'},
-					{src: 'img/timg.png'},
-					{src: 'img/timg.png'},
-					{src: 'img/timg.png'},
 					{src: 'img/timg.png'},
 					{src: 'img/timg.png'},
 					{src: 'img/timg.png'}

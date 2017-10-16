@@ -81,7 +81,7 @@ $sc:20;
                     height: 18/$sc+rem;
                     width: 100%;
                     position: absolute;
-                    top: 10%;
+                    top: 12%;
                     left: 0;
                     right: 0;
                     margin: auto;
@@ -126,7 +126,7 @@ $sc:20;
                                 width: 100%;
                                 height: 42%;
                                 position: absolute;
-                                top: 23%;
+                                top: 25%;
                                 display: flex;
                                 justify-content: center;
                                 align-items: center;
@@ -159,13 +159,11 @@ $sc:20;
                     .bottom-nav-box{
                        width: 100%;
                        height: 100%;
-                       overflow: auto;
-                       -webkit-overflow-scrolling: touch;
                         ul {
                             height: 18/$sc+rem;
                             padding-left: 12px;
                             li {
-                                width: 70/$sc+rem;
+                                display: inline-block;
                                 float: left;
                                 font-family: PingFangSC-Medium;
                                 font-size: 12/$sc+rem;
@@ -173,6 +171,25 @@ $sc:20;
                                 color: #ffffff;
                                 overflow: hidden;
                                 text-align: center;
+                                .bottom-nav-li-txt{
+                                    display: block;
+                                    padding: 0 7/$sc+rem;
+                                    box-sizing: border-box;
+                                    width: 100%;
+                                    height: 100%;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    span{
+                                        display: inline-block;
+                                    }
+                                }
+                                ._this_num{
+                                    display: none;
+                                }
+                                ._this_num-txt{
+                                    display: none;
+                                }
                             }
                             li.select{
                                 color: #FF7C00;
@@ -207,13 +224,31 @@ $sc:20;
                             li {
                                 display: inline-block;
                                 float: left;
-                                width: 70/$sc+rem;
                                 font-family: PingFangSC-Medium;
                                 font-size: 12/$sc+rem;
                                 line-height: 18/$sc+rem;
                                 color: #ffffff;
                                 overflow: hidden;
                                 text-align: center;
+                                .bottom-nav-li-txt{
+                                    display: block;
+                                    padding: 0 7/$sc+rem;
+                                    box-sizing: border-box;
+                                    width: 100%;
+                                    height: 100%;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    span{
+                                        display: inline-block;
+                                    }
+                                }
+                                ._this_num{
+                                    display: none;
+                                }
+                                ._this_num-txt{
+                                    display: none;
+                                }
                             }
                             li.select{
                                 color: #FF7C00;
@@ -335,7 +370,7 @@ $sc:20;
                             height: 18/$sc+rem;
                             padding-left: 12px;
                             li {
-                                width: 70/$sc+rem;
+                                display: inline-block;
                                 float: left;
                                 font-family: PingFangSC-Medium;
                                 font-size: 12/$sc+rem;
@@ -343,6 +378,25 @@ $sc:20;
                                 color: #ffffff;
                                 overflow: hidden;
                                 text-align: center;
+                                .bottom-nav-li-txt{
+                                    display: block;
+                                    padding: 0 7/$sc+rem;
+                                    box-sizing: border-box;
+                                    width: 100%;
+                                    height: 100%;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    span{
+                                        display: inline-block;
+                                    }
+                                }
+                                ._this_num{
+                                    display: none;
+                                }
+                                ._this_num-txt{
+                                    display: none;
+                                }
                             }
                             li.select{
                                 color: #FF7C00;
@@ -377,13 +431,31 @@ $sc:20;
                             li {
                                 display: inline-block;
                                 float: left;
-                                width: 70/$sc+rem;
                                 font-family: PingFangSC-Medium;
                                 font-size: 12/$sc+rem;
                                 line-height: 18/$sc+rem;
                                 color: #ffffff;
                                 overflow: hidden;
                                 text-align: center;
+                                .bottom-nav-li-txt{
+                                    display: block;
+                                    padding: 0 7/$sc+rem;
+                                    box-sizing: border-box;
+                                    width: 100%;
+                                    height: 100%;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    span{
+                                        display: inline-block;
+                                    }
+                                }
+                                ._this_num{
+                                    display: none;
+                                }
+                                ._this_num-txt{
+                                    display: none;
+                                }
                             }
                             li.select{
                                 color: #FF7C00;
