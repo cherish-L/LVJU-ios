@@ -339,8 +339,8 @@ $sc:20;
                                 .startUp-btn{
                                     width: 50/$sc+rem;
                                     height: 50/$sc+rem;
-                                    background: url(../img/play.png) no-repeat;
-                                    background-size: cover;
+                                    background: url(../img/play.png) center center no-repeat;
+                                    background-size: 50/$sc+rem 50/$sc+rem;
                                     position: absolute;
                                     top: 0;
                                     bottom: 0;
