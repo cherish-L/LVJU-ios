@@ -38,7 +38,7 @@ $(function() {
 				$(".set-up-pushsection .login-box").css("display","none")
 				$(".please-login-account").show()
 				please_login=setTimeout(function(){
-					$(".please-login-account").fadeOut(200)
+					$(".please-login-account").fadeOut(250)
 				},1800)
 			}
 			if(!$(".user-center-container .Not-logged").hasClass("show")){
@@ -46,12 +46,12 @@ $(function() {
 				$(".set-up-push .login-status .login-box").css("display","block")
 				$(".set-up-pushsection .login-box").css("display","block")
 				$(".personal-collection-push").css("transform", "translateX(0px)")
-				$(".user-center-shadow").fadeIn(200)
+				$(".user-center-shadow").fadeIn(250)
 			}
 		})
 		$(".personal-collection-pushheader .return").tap(function(){
 			$(".personal-collection-push").css("transform", "translateX("+setw+"px)")
-			$(".user-center-shadow").fadeOut(200)
+			$(".user-center-shadow").fadeOut(250)
 		})
 		
 		//我的足迹弹框
@@ -62,19 +62,19 @@ $(function() {
 				$(".set-up-pushsection .login-box").css("display","none")
 				$(".please-login-account").show()
 				please_login=setTimeout(function(){
-					$(".please-login-account").fadeOut(200)
+					$(".please-login-account").fadeOut(250)
 				},1800)
 			}
 			if(!$(".user-center-container .Not-logged").hasClass("show")){
 				$(".user-center-container .message-prompt").css("display","block")
 				$(".set-up-pushsection .login-box").css("display","block")
 				$(".personal-footprint-push").css("transform", "translateX(0px)")
-				$(".user-center-shadow").fadeIn(200)
+				$(".user-center-shadow").fadeIn(250)
 			}
 		})
 		$(".personal-footprint-pushheader .return").tap(function(){
 			$(".personal-footprint-push").css("transform", "translateX("+setw+"px)")
-			$(".user-center-shadow").fadeOut(200)
+			$(".user-center-shadow").fadeOut(250)
 		})
 		
 		//我的消息弹框
@@ -85,19 +85,19 @@ $(function() {
 				$(".set-up-pushsection .login-box").css("display","none")
 				$(".please-login-account").show()
 				please_login=setTimeout(function(){
-					$(".please-login-account").fadeOut(200)
+					$(".please-login-account").fadeOut(250)
 				},1800)
 			}
 			if(!$(".user-center-container .Not-logged").hasClass("show")){
 				$(".user-center-container .message-prompt").css("display","block")
 				$(".set-up-pushsection .login-box").css("display","block")
 				$(".personal-news-push").css("transform", "translateX(0px)")
-				$(".user-center-shadow").fadeIn(200)
+				$(".user-center-shadow").fadeIn(250)
 			}
 		})
 		$(".personal-news-pushheader .return").tap(function(){
 			$(".personal-news-push").css("transform", "translateX("+setw+"px)")
-			$(".user-center-shadow").fadeOut(200)
+			$(".user-center-shadow").fadeOut(250)
 		})
 		
 		//我的优惠券弹框
@@ -115,12 +115,12 @@ $(function() {
 				$(".user-center-container .message-prompt").css("display","block")
 				$(".set-up-pushsection .login-box").css("display","block")
 				$(".personal-coupon-push").css("transform", "translateX(0px)")
-				$(".user-center-shadow").fadeIn(200)
+				$(".user-center-shadow").fadeIn(250)
 			}
 		})
 		$(".personal-coupon-pushheader .return").tap(function(){
 			$(".personal-coupon-push").css("transform", "translateX("+setw+"px)")
-			$(".user-center-shadow").fadeOut(200)
+			$(".user-center-shadow").fadeOut(250)
 		})
 	
 	
@@ -136,7 +136,7 @@ $(function() {
 	var setw = $(".set-up-push").width()+5
 	$(".user-center-header .setUp").tap(function() {
 		$(".set-up-push").css("transform", "translateX(0px)")
-		$(".user-center-shadow").fadeIn(200)
+		$(".user-center-shadow").fadeIn(250)
 		if($(".user-center-container .Not-logged").hasClass("show")){
 		$(".set-up-pushsection .login-box").css("display","none")
 		}
@@ -146,29 +146,8 @@ $(function() {
 	})
 	$(".set-up-pushheader .return").tap(function() {
 		$(".set-up-push").css("transform", "translateX("+setw+"px)")
-		$(".user-center-shadow").fadeOut(200)
+		$(".user-center-shadow").fadeOut(250)
 	})
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	//用户中心--设置弹框--消息管理
@@ -181,12 +160,12 @@ $(function() {
 
 	$(".set-up-pushsection .message-management").tap(function() {
 		$(".message-management-push").css("transform", "translateX(0px)")
-		$(".set-up-shadow").fadeIn(200)
+		$(".set-up-shadow").fadeIn(250)
 	})
 	
 	$(".message-management-pushheader .return").tap(function() {
 		$(".message-management-push").css("transform", "translateX("+setw+"px)")
-		$(".set-up-shadow").fadeOut(200)
+		$(".set-up-shadow").fadeOut(250)
 	})
 	
 	//用户中心--设置弹框--关于我们
@@ -203,11 +182,11 @@ $(function() {
 
 	$(".set-up-pushsection .about-us").tap(function() {
 		$(".about-us-push").css("transform", "translateX(0px)")
-		$(".set-up-shadow").fadeIn(200)
+		$(".set-up-shadow").fadeIn(250)
 	})
 	$(".about-us-pushheader .return").tap(function() {
 		$(".about-us-push").css("transform", "translateX("+setw+"px)")
-		$(".set-up-shadow").fadeOut(200)
+		$(".set-up-shadow").fadeOut(250)
 	})
 	
 	
@@ -221,11 +200,11 @@ $(function() {
 
 	$(".set-up-pushsection .help-description").tap(function() {
 		$(".help-description-push").css("transform", "translateX(0px)")
-		$(".set-up-shadow").fadeIn(200)
+		$(".set-up-shadow").fadeIn(250)
 	})
 	$(".help-description-pushheader .return").tap(function() {
 		$(".help-description-push").css("transform", "translateX("+setw+"px)")
-		$(".set-up-shadow").fadeOut(200)
+		$(".set-up-shadow").fadeOut(250)
 	})
 	
 	
@@ -238,10 +217,13 @@ $(function() {
 	})
 
 	$(".help-description-push .how-register").tap(function() {
-		$(".how-register-push").css("left", "0")
-		$(".how-register-pushheader .return").tap(function() {
-			$(".how-register-push").css("left", setw + 5)
-		})
+		$(".how-register-push").css("transform", "translateX(0px)")
+		$(".help-description-shadow").fadeIn(250)
+	})
+	
+	$(".how-register-pushheader .return").tap(function() {
+		$(".how-register-push").css("transform", "translateX("+setw+"px)")
+		$(".help-description-shadow").fadeOut(250)
 	})
 
 	//用户中心--设置弹框--意见反馈
@@ -250,12 +232,12 @@ $(function() {
 
 	$(".set-up-push .feedback").tap(function() {
 		$(".feedback-push").css("transform", "translateX(0px)")
-		$(".set-up-shadow").fadeIn(200)
+		$(".set-up-shadow").fadeIn(250)
 	})
 	
 	$(".feedback-pushheader .return").tap(function() {
 		$(".feedback-push").css("transform", "translateX("+setw+"px)")
-		$(".set-up-shadow").fadeOut(200)
+		$(".set-up-shadow").fadeOut(250)
 	})
 	var Tarealen = $(".textarea").val().length
 	$(".Surplus-character").text(200 - Tarealen + "字")
@@ -272,9 +254,7 @@ $(function() {
 	})
 
 
-
-	
-	//登录点击显示新密码
+	//登录点击显示密码
 	$(".login-page-pushsection .login-page-Password .showPassword").tap(function(){
 		if(!$(this).hasClass("show") && $("#l-Password").attr("type") == "password"){
 			$(this).addClass("show")
@@ -285,8 +265,8 @@ $(function() {
 			$("#l-Password").attr("type", "password")
 		}
 	})
-
-	//注册点击显示新密码
+	
+	//注册点击显示密码
 	$(".login-page-pushsection .registered-Password .showPassword").tap(function(){
 		if(!$(this).hasClass("show") && $("#r-Password").attr("type") == "password"){
 			$(this).addClass("show")
@@ -298,7 +278,7 @@ $(function() {
 		}
 	})
 	
-	//找回密码 点击显示新密码
+	//找回密码 点击显示密码
 	var retrieveh = $(".retrieve-password-pushsection").height()
 	$(".retrieve-password-pushsection .pushsection-wrapper").height(loginH + 1)
 	
@@ -319,20 +299,24 @@ $(function() {
 	})
 	
 	
+	
+	
 	//找回密码获取验证
+	var this_ipt_retrieve=0;
+	var setTime_retrieve=null;
 	$(".retrieve-password-pushsection .retrieve-p").bind('input propertychange', function() {
-		if($(this).val()!==""){
+		this_ipt_retrieve = $(this).val()
+		if((/^1[3|4|5|8]\d{9}$/.test(this_ipt_retrieve))){
 			$(".retrieve-password-pushsection .Verificationbtn").addClass("light")
 			if($(".retrieve-password-pushsection .Verificationbtn").hasClass("light")){
 				$(".retrieve-password-pushsection .Verificationbtn").tap(function(){
 					$(".retrieve-password-pushsection .Verificationbtn-box-wrapper .click").css("display","block")
 					$(".retrieve-password-pushsection .Verificationbtn").removeClass("light")
-					var setTime;
 			        $(document).ready(function(){
 			            var time=60;
-			            setTime=setInterval(function(){
+			            setTime_retrieve=setInterval(function(){
 			                if(time<=0){
-			                    clearInterval(setTime);
+			                    clearInterval(setTime_retrieve);
 			            			$(".retrieve-password-pushsection .Verificationbtn").addClass("light")
 			            			$(".retrieve-password-pushsection .Verificationbtn").text("重新获取");
 			            			$(".retrieve-password-pushsection .Verificationbtn-box-wrapper .click").css("display","none")
@@ -347,7 +331,7 @@ $(function() {
 				})
 			}
 		}
-		else if($(this).val()==""){
+		else if(!(/^1[3|4|5|8]\d{9}$/.test(this_ipt_retrieve))){
 			$(".retrieve-password-pushsection .Verificationbtn").removeClass("light")
 		}
 	})
@@ -355,7 +339,7 @@ $(function() {
 	//修改密码失败
 	var retrievenum=0;
 	$(".retrieve-password-pushsection .retrieve-btn").tap(function(){
-		if($(".retrieve-password-pushsection .retrieve-p").val()!=="" && $(".retrieve-password-pushsection .retrieve_v").val()!=="" && $(".retrieve-password-pushsection .retrieve-n").val()!==""){
+		if(   (/^1[3|4|5|8]\d{9}$/.test($(".retrieve-password-pushsection .retrieve-p").val())) && $(".retrieve-password-pushsection .retrieve_v").val()!=="" && $(".retrieve-password-pushsection .retrieve-n").val()!==""){
 			if(retrievenum%2==0){
 				$(".retrieve-password-push .retrieve-failed").show()
 				setTimeout(function(){
@@ -363,10 +347,11 @@ $(function() {
 				},1700)
 			}
 			else{
-				$(".retrieve-password-push").css("left",setw+5)
+				$(".retrieve-password-push").css("transform", "translateX("+setw+"px)")
+				$(".login-page-shadow").fadeOut(250)
+				
 				setTimeout(function(){
 					$(".login-page-push .retrieve-success").show()
-					
 					$(".retrieve-password-pushsection .retrieve-p").val("").blur()
 					$(".retrieve-password-pushsection .retrieve-v").val("").blur()
 					$(".retrieve-password-pushsection .retrieve-n").val("").blur()
@@ -381,19 +366,21 @@ $(function() {
 	
 	//点击忘记密码
 	$(".login-page-pushsection .login-page-way .forgot-password").tap(function(){
-		$(".retrieve-password-push").css("left", "0")
-		$(".retrieve-password-pushheader .return").tap(function() {
-			$(".retrieve-password-push").css("left", setw + 5)
-		})
+		$(".retrieve-password-push").css("transform", "translateX(0px)")
+		$(".login-page-shadow").fadeIn(250)
 	})
-	
+	$(".retrieve-password-pushheader .return").tap(function() {
+		$(".retrieve-password-push").css("transform", "translateX("+setw+"px)")
+		$(".login-page-shadow").fadeOut(250)
+	})
 	
 	//点击登录账号
 	$(".login-page-pushsection .account-login .login-page-btn").tap(function(){
 		if($(".login-page-pushsection .account-login .login-page-Username .Username").val()!=="" && $(".login-page-pushsection .account-login .login-page-Password .Password").val()!==""){
 			$(".login-page-pushsection .account-login .login-page-Username .Username").val("").blur()
 			$(".login-page-pushsection .account-login .login-page-Password .Password").val("").blur()
-			$(".login-page-push").css("left",setw + 5)
+			$(".login-page-push").css("transform", "translateX("+setw+"px)")
+			$(".user-center-shadow").fadeOut(250)
 			$(".user-center-section .Not-logged").removeClass("show")
 			$(".user-center-section .Logged-in").addClass("show")
 			$(".message-prompt").css("display","block")
@@ -401,36 +388,39 @@ $(function() {
 	})
 	
 	
+
 	//用户中心--登录界面  input获取焦点页面状态改变
-	
+	var this_ipt=0;
+	var setTime_login=null;
 	$(".login-page-phone .Userphone").bind('input propertychange', function() {
-		if($(this).val()!==""){
+		this_ipt = $(this).val()
+		if((/^1[3|4|5|8]\d{9}$/.test(this_ipt))){
 			$(".login-page-phone .Verificationbtn").addClass("light")
-			if($(".login-page-phone .Verificationbtn").hasClass("light")){
-				$(".login-page-phone .Verificationbtn").tap(function(){
+			$(".login-page-phone .Verificationbtn").tap(function(){
+				if($(this).hasClass("light") && (/^1[3|4|5|8]\d{9}$/.test(this_ipt))){
+					
 					$(".login-page-phone .Verificationbtn-box-wrapper .click").css("display","block")
 					$(".login-page-phone .Verificationbtn").removeClass("light")
-					var setTime;
-			        $(document).ready(function(){
-			            var time=60;
-			            setTime=setInterval(function(){
-			                if(time<=0){
-			                    clearInterval(setTime);
-			            			$(".login-page-phone .Verificationbtn").addClass("light")
-			            			$(".login-page-phone .Verificationbtn").text("重新获取");
-			            			$(".login-page-phone .Verificationbtn-box-wrapper .click").css("display","none")
-			                }
-			                if(time>0){
-			                		$(".login-page-phone .Verificationbtn").text("("+time+")"+"重新获取");
-			            			$(".login-page-phone .Verificationbtn-box-wrapper .click").css("display","block")
-			                }
-			                time--;
-			            },1000)
-			        })
-				})
-			}
+				    $(document).ready(function(){
+				        var time=60;
+				        setTime_login=setInterval(function(){
+				            if(time<=0){
+				                clearInterval(setTime_login);
+				           		$(".login-page-phone .Verificationbtn").addClass("light")
+				            		$(".login-page-phone .Verificationbtn").text("获取验证码");
+				            		$(".login-page-phone .Verificationbtn-box-wrapper .click").css("display","none")
+				            }
+				            if(time>0){
+				                $(".login-page-phone .Verificationbtn").text("("+time+")"+"重新获取");
+				            	    $(".login-page-phone .Verificationbtn-box-wrapper .click").css("display","block")
+				            }
+				            time--;
+				        },1000)
+				    })
+				}
+			})
 		}
-		else if($(this).val()==""){
+		else if(!(/^1[3|4|5|8]\d{9}$/.test(this_ipt))){
 			$(".login-page-phone .Verificationbtn").removeClass("light")
 		}
 	})
@@ -459,18 +449,14 @@ $(function() {
 	
 	$(".account-login .dynamic-login").tap(function(){
 		$(".phone-dynamic-login").fadeIn()
-		$(".account-login").css("display","none")
-		$(".account-login").css("opacity","0")
-		$(".registered-account").css("display","none")
-		$(".registered-account").css("opacity","0")
+		$(".account-login").fadeOut(0)
+		$(".registered-account").fadeOut(0)
 		$(".login-page-pushheader .title_txt").addClass("show")
 	})
 	$(".phone-dynamic-login .dynamic-login").tap(function(){
 		$(".account-login").fadeIn()
-		$(".phone-dynamic-login").css("display","none")
-		$(".phone-dynamic-login").css("opacity","0")
-		$(".registered-account").css("display","none")
-		$(".registered-account").css("opacity","0")
+		$(".phone-dynamic-login").fadeOut(0)
+		$(".registered-account").fadeOut(0)
 		$(".login-page-pushheader .title_txt").removeClass("show")
 	})
 	
@@ -478,10 +464,8 @@ $(function() {
 		$(".login-page-pushheader .register").css("display","none")
 		$(".login-page-pushheader .login").css("display","block")
 		$(".registered-account").fadeIn()
-		$(".phone-dynamic-login").css("display","none")
-		$(".phone-dynamic-login").css("opacity","0")
-		$(".account-login").css("display","none")
-		$(".account-login").css("opacity","0")
+		$(".phone-dynamic-login").fadeOut(0)
+		$(".account-login").fadeOut(0)
 		$(".login-page-pushheader .title_txt").removeClass("show")
 	})
 	
@@ -489,10 +473,8 @@ $(function() {
 		$(".login-page-pushheader .register").css("display","block")
 		$(".login-page-pushheader .login").css("display","none")
 		$(".account-login").fadeIn()
-		$(".phone-dynamic-login").css("display","none")
-		$(".phone-dynamic-login").css("opacity","0")
-		$(".registered-account").css("display","none")
-		$(".registered-account").css("opacity","0")
+		$(".phone-dynamic-login").fadeOut(0)
+		$(".registered-account").fadeOut(0)
 		$(".login-page-pushheader .title_txt").removeClass("show")
 	})
 	
@@ -516,38 +498,41 @@ $(function() {
 	})
 
 	$(".user-center-section .Not-logged").tap(function(){
-		$(".login-page-push").css("left","0")
+		$(".login-page-push").css("transform", "translateX(0px)")
+		$(".user-center-shadow").fadeIn(250)
 	})
+	
 	$(".login-page-pushheader .return").tap(function(){
-		$(".login-page-push").css("left",setw+5)
+		$(".login-page-push").css("transform", "translateX("+setw+"px)")
+		$(".user-center-shadow").fadeOut(250)
 		
 		$(".login-page-pushheader .register").css("display","block")
 		$(".login-page-pushheader .login").css("display","none")
 		$(".account-login").fadeIn()
-		$(".phone-dynamic-login").css("display","none")
-		$(".phone-dynamic-login").css("opacity","0")
-		$(".registered-account").css("display","none")
-		$(".registered-account").css("opacity","0")
+		$(".phone-dynamic-login").fadeOut(0)
+		$(".registered-account").fadeOut(0)
 		$(".login-page-pushheader .title_txt").removeClass("show")
 	})
 	
 	//用户中心--注册页面
+	var this_ipt_register=0;
+	var setTime_registered=null;
 	$(".registered-phone .Userphone").bind('input propertychange', function() {
-		if($(this).val()!==""){
+		this_ipt_register = $(this).val()
+		if((/^1[3|4|5|8]\d{9}$/.test(this_ipt_register))){
 			$(".registered-phone .Verificationbtn").addClass("light")
-			if($(".registered-phone .Verificationbtn").hasClass("light")){
-				$(".registered-phone .Verificationbtn").tap(function(){
+			$(".registered-phone .Verificationbtn").tap(function(){
+				if($(".registered-phone .Verificationbtn").hasClass("light")){
 					$(".registered-phone .Userphone").blur()
 					$(".registered-phone .Verificationbtn-box-wrapper .click").css("display","block")
 					$(".registered-phone .Verificationbtn").removeClass("light")
-					var setTime;
 			        $(document).ready(function(){
 			            var time=60;
-			            setTime=setInterval(function(){
+			            setTime_registered=setInterval(function(){
 			                if(time<=0){
-			                    clearInterval(setTime);
+			                    clearInterval(setTime_registered);
 			            			$(".registered-phone .Verificationbtn").addClass("light")
-			            			$(".registered-phone .Verificationbtn").text("重新获取");
+			            			$(".registered-phone .Verificationbtn").text("获取验证码");
 			            			$(".Verificationbtn-box-wrapper .click").css("display","none")
 			                }
 			                if(time>0){
@@ -557,14 +542,14 @@ $(function() {
 			                time--;
 			            },1000)
 			        })
-				})
-			}
+				}
+			})
 		}
-		else if($(this).val()==""){
+		else if(!(/^1[3|4|5|8]\d{9}$/.test(this_ipt_register))){
 			$(".registered-phone .Verificationbtn").removeClass("light")
 		}
 	})
-	
+			
 	//用户中心--注册页面  注册成功弹框
 	
 	var registerstateH = $(".register-state-pushsection").height()
@@ -579,24 +564,45 @@ $(function() {
 	var inputV=$(".registered-account .Verification")
 	var inputP=$(".registered-account .Password")
 	
-	$(".registered-account input").bind('input propertychange', function() {
-		if(inputU.val()!=="" && inputV.val()!=="" && inputP.val()!=="" ){
+	
+			
+			
+		$(".registered-account input").bind('input propertychange', function() {
 			$(".registered-account .registered-btn").tap(function(){
-				$(".register-state-push").css("left","0")
-				$(".register-fail-box").css("display","block")
-				$(".register-success-box").css("display","none")
-				inputP.val("")
-				$(".register-state-pushheader .return").tap(function(){
-					$(".register-state-push").css("left",setw+5)
-				})
-				
-				$(".register-fail-box .Re-registration").tap(function(){
-					$(".register-fail-box").css("display","none")
-					$(".register-success-box").css("display","block")
-				})
+				if((/^1[3|4|5|8]\d{9}$/.test(inputU.val())) && inputV.val()!=="" && inputP.val()!=="" ){
+					$(".register-state-push").css("transform", "translateX(0px)")
+					$(".login-page-shadow").fadeIn(250)
+					$(".register-fail-box").css("display","block")
+					$(".register-success-box").css("display","none")
+					inputU.val("")
+					inputV.val("")
+					inputP.val("")
+					
+				    clearInterval(setTime_registered);
+				    $(".registered-phone .Verificationbtn").removeClass("light")
+				    $(".registered-phone .Verificationbtn").text("获取验证码");
+				    $(".Verificationbtn-box-wrapper .click").css("display","none")
+				    
+					$(".registered-account .registered-phone .Verificationbtn").removeClass("light")
+					$(".register-state-pushheader .return").tap(function(){
+						$(".register-state-push").css("transform", "translateX("+setw+"px)")
+						$(".login-page-shadow").fadeOut(250)
+					})
+								
+					$(".register-fail-box .Re-registration").tap(function(){
+						$(".register-fail-box").css("display","none")
+						$(".register-success-box").css("display","block")
+					})
+				}
 			})
-		}
-	})
+		})
+			
+			
+			
+			
+		
+	
+				
 	
 	//用户中心--个人资料设置
 	
@@ -604,10 +610,12 @@ $(function() {
 		scrollbars: false
 	})
 	$(".user-center-section .Logged-in").tap(function(){
-		$(".personal-data-push").css("left","0")
+		$(".personal-data-push").css("transform", "translateX(0px)")
+		$(".user-center-shadow").fadeIn(250)
 	})
 	$(".personal-data-pushheader .return").tap(function(){
-		$(".personal-data-push").css("left",setw+5)
+		$(".personal-data-push").css("transform", "translateX("+setw+"px)")
+		$(".user-center-shadow").fadeOut(250)
 	})
 	
 	//用户中心--个人资料设置--修改用户名弹框
