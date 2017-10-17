@@ -298,9 +298,6 @@ $(function() {
 		}
 	})
 	
-	
-	
-	
 	//找回密码获取验证
 	var this_ipt_retrieve=0;
 	var setTime_retrieve=null;
@@ -341,20 +338,29 @@ $(function() {
 	$(".retrieve-password-pushsection .retrieve-btn").tap(function(){
 		if(   (/^1[3|4|5|8]\d{9}$/.test($(".retrieve-password-pushsection .retrieve-p").val())) && $(".retrieve-password-pushsection .retrieve_v").val()!=="" && $(".retrieve-password-pushsection .retrieve-n").val()!==""){
 			if(retrievenum%2==0){
+				clearInterval(setTime_retrieve);
+				$(".retrieve-password-pushsection .Verificationbtn").addClass("light")
+				$(".retrieve-password-pushsection .Verificationbtn").text("获取验证码");
+				$(".retrieve-password-pushsection .Verificationbtn-box-wrapper .click").css("display","none")
 				$(".retrieve-password-push .retrieve-failed").show()
 				setTimeout(function(){
 					$(".retrieve-password-push .retrieve-failed").fadeOut(300)
 				},1700)
 			}
 			else{
+				clearInterval(setTime_retrieve);
+				$(".retrieve-password-pushsection .Verificationbtn").removeClass("light")
+				$(".retrieve-password-pushsection .Verificationbtn").text("获取验证码");
+				$(".retrieve-password-pushsection .Verificationbtn-box-wrapper .click").css("display","none")
+				
 				$(".retrieve-password-push").css("transform", "translateX("+setw+"px)")
 				$(".login-page-shadow").fadeOut(250)
 				
 				setTimeout(function(){
 					$(".login-page-push .retrieve-success").show()
-					$(".retrieve-password-pushsection .retrieve-p").val("").blur()
-					$(".retrieve-password-pushsection .retrieve-v").val("").blur()
-					$(".retrieve-password-pushsection .retrieve-n").val("").blur()
+					$("#retrieve-p").val("").blur()
+					$("#retrieve_v").val("").blur()
+					$("#retrieve-n").val("").blur()
 					setTimeout(function(){
 						$(".login-page-push .retrieve-success").fadeOut(300)
 					},1700)
@@ -398,7 +404,6 @@ $(function() {
 			$(".login-page-phone .Verificationbtn").addClass("light")
 			$(".login-page-phone .Verificationbtn").tap(function(){
 				if($(this).hasClass("light") && (/^1[3|4|5|8]\d{9}$/.test(this_ipt))){
-					
 					$(".login-page-phone .Verificationbtn-box-wrapper .click").css("display","block")
 					$(".login-page-phone .Verificationbtn").removeClass("light")
 				    $(document).ready(function(){
