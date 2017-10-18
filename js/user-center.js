@@ -1,4 +1,8 @@
 $(function() {
+	$(".user-center-footer .footer-nav-li").tap(function(){
+		$(this).addClass("select").siblings().removeClass("select")
+	})
+	
 	//用户中心 下拉背景放大效果
 	var centerH = $(".user-center-section").height()
 	$(".user-center-section .section-wrapper").height(centerH + 1)
@@ -1308,12 +1312,12 @@ $(function() {
 
 	//用户中心--我的消息--消息详情
 	$(".personal-news-data .personal-news-datali .receiveNews-time-li").tap(function(){
-		$(".news-detail-push").css("left","0")
-		PdetailS.refresh()
+		$(".news-detail-push").css("transform","translateX(0px)")
+		$(".personal-news-shadow").fadeIn(250)
 	})
 	$(".news-detail-pushheader .return").tap(function(){
-		$(".news-detail-push").css("left",setw+5)
-		PdetailS.refresh()
+		$(".news-detail-push").css("transform","translateX("+setw+"px)")
+		$(".personal-news-shadow").fadeOut(250)
 	})
 	
 	var PdetailS = new IScroll('.news-detail-pushsection', {
@@ -1324,11 +1328,11 @@ $(function() {
 	
 	//用户中心--我的优惠券
 
-	$(".personal-coupon-pushsection .pushsection-wrapper").eq(0).css("left","0").siblings(".pushsection-wrapper").css("left",setw+5)
+	$(".personal-coupon-pushsection .pushsection-wrapper").eq(0).css("transform","translateX(0px)").siblings(".pushsection-wrapper").css("transform","translateX("+setw+"px)")
 	$(".personal-coupon-push .coupon-nav-li").tap(function(){
 		var index=$(this).index()
 		$(this).addClass("select").siblings().removeClass("select")
-		$(".personal-coupon-pushsection .pushsection-wrapper").eq(index).css("left","0").siblings(".pushsection-wrapper").css("left",setw+5)
+		$(".personal-coupon-pushsection .pushsection-wrapper").eq(index).css("transform","translateX(0px)").siblings(".pushsection-wrapper").css("transform","translateX("+setw+"px)")
 	})
 
 	//用户中心--我的优惠券--全部
@@ -1343,9 +1347,7 @@ $(function() {
 	}
 	
 	var CwholeS = new IScroll('.personal-coupon-pushsection .coupon-whole', {
-		scrollbars: true,
-		fadeScrollbars: true,
-		shrinkScrollbars: 'clip'
+		scrollbars: false
 	})
 	
 	//用户中心--我的优惠券--未使用
@@ -1361,9 +1363,7 @@ $(function() {
 	}
 	
 	var CnotUsedS = new IScroll('.personal-coupon-pushsection .coupon-notUsed', {
-		scrollbars: true,
-		fadeScrollbars: true,
-		shrinkScrollbars: 'clip'
+		scrollbars: false
 	})
 	
 	//用户中心--我的优惠券--已使用
@@ -1379,9 +1379,7 @@ $(function() {
 	}
 	
 	var CalreadyUsedS = new IScroll('.personal-coupon-pushsection .coupon-alreadyUsed', {
-		scrollbars: true,
-		fadeScrollbars: true,
-		shrinkScrollbars: 'clip'
+		scrollbars: false
 	})
 	
 	//用户中心--我的优惠券--已过期
@@ -1397,18 +1395,18 @@ $(function() {
 	}
 	
 	var CoverdueS = new IScroll('.personal-coupon-pushsection .coupon-overdue', {
-		scrollbars: true,
-		fadeScrollbars: true,
-		shrinkScrollbars: 'clip'
+		scrollbars: false
 	})
 	
 	
 	//用户中心--我的优惠券--优惠券使用教程弹框
 	$(".personal-coupon-pushfooter").tap(function(){
-		$(".using-tutorials-push").css("left","0")
+		$(".using-tutorials-push").css("transform","translateX(0px)")
+		$(".personal-coupon-shadow").fadeIn(250)
 	})
 	$(".using-tutorials-pushheader .return").tap(function(){
-		$(".using-tutorials-push").css("left",setw+5)
+		$(".using-tutorials-push").css("transform","translateX("+setw+"px)")
+		$(".personal-coupon-shadow").fadeOut(250)
 	})
 	
 	//用户中心--我的优惠券--优惠券使用教程弹框  优惠券使用流程居中
@@ -1446,11 +1444,13 @@ $(function() {
 		notUsed_Z.find(".footer-title").html(contentTitle)
 		notUsed_Z.find(".term-content").html(dataValidity)
 		
-		$(".coupon-details-push").css("left","0")
+		$(".coupon-details-push").css("transform","translateX(0px)")
+		$(".personal-coupon-shadow").fadeIn(250)
 		$(".coupon-details-pushsection .coupon-details-notUsed").css("display","block").siblings().css("display","none")
 	})
 	$(".coupon-details-pushheader .return").tap(function(){
-		$(".coupon-details-push").css("left",setw+5)
+		$(".coupon-details-push").css("transform","translateX("+setw+"px)")
+		$(".personal-coupon-shadow").fadeOut(250)
 	})
 	
 	
@@ -1472,11 +1472,13 @@ $(function() {
 		alreadyUsed_Z.find(".footer-title").html(contentTitle)
 		alreadyUsed_Z.find(".term-content").html(dataValidity)
 		
-		$(".coupon-details-push").css("left","0")
+		$(".coupon-details-push").css("transform","translateX(0px)")
+		$(".personal-coupon-shadow").fadeIn(250)
 		$(".coupon-details-pushsection .coupon-details-alreadyUsed").css("display","block").siblings().css("display","none")
 	})
 	$(".coupon-details-pushheader .return").tap(function(){
-		$(".coupon-details-push").css("left",setw+5)
+		$(".coupon-details-push").css("transform","translateX("+setw+"px)")
+		$(".personal-coupon-shadow").fadeOut(250)
 	})
 	
 	//用户中心--我的优惠券--优惠券详情  点击已过期优惠券
@@ -1497,11 +1499,13 @@ $(function() {
 		overdue_Z.find(".footer-title").html(contentTitle)
 		overdue_Z.find(".term-content").html(dataValidity)
 		
-		$(".coupon-details-push").css("left","0")
+		$(".coupon-details-push").css("transform","translateX(0px)")
+		$(".personal-coupon-shadow").fadeIn(250)
 		$(".coupon-details-pushsection .coupon-details-overdue").css("display","block").siblings().css("display","none")
 	})
 	$(".coupon-details-pushheader .return").tap(function(){
-		$(".coupon-details-push").css("left",setw+5)
+		$(".coupon-details-push").css("transform","translateX("+setw+"px)")
+		$(".personal-coupon-shadow").fadeOut(250)
 	})
 	
 	var Cdetailsh = $(".coupon-details-pushsection").height()
@@ -1542,78 +1546,80 @@ $(function() {
 				lookupS.refresh()
 			}
 		}
-	})
-	
-	$(".lookup-coupon-pushsection .lookup-coupon-btn").tap(function(){
-		clearTimeout(lookup_time)
-		$(".lookup-coupon-push .can_t-find").css("display","none")
-		$(".lookup-coupon-push .can_t-find").css("opacity","0")
-		
-		if(_lookupindex.val() !== "" && _lookupindex.val() == "123456"){
-			$(".lookup-coupon-pushsection .results-coupon li").remove()
-			$(".lookup-coupon-pushsection .lookup-coupon-results").css("display","block")
-			var lookup_notUsed=$(".personal-coupon-pushsection .coupon-whole-ul .notUsed").clone()
-			$(".lookup-coupon-pushsection .results-coupon").append(lookup_notUsed)
-			lookuph = $(".lookup-coupon-pushsection").height()
-			lookup_wh_b = $(".lookup-coupon-pushsection .pushsection-wrapper .pushsection-wrapper-box").height()
-			if($(".lookup-coupon-pushsection .results-coupon li").length==0){
+		$(".lookup-coupon-pushsection .lookup-coupon-btn").tap(function(){
+			clearTimeout(lookup_time)
+			$(".lookup-coupon-push .can_t-find").fadeOut(0)
+			
+			if(_lookupindex.val() !== "" || _lookupindex.val() == "123456"){
+				$(".lookup-coupon-pushsection .results-coupon li").remove()
+				$(".lookup-coupon-pushsection .lookup-coupon-results").css("display","block")
+				var lookup_notUsed=$(".personal-coupon-pushsection .coupon-whole-ul .notUsed").clone()
+				$(".lookup-coupon-pushsection .results-coupon").append(lookup_notUsed)
+				lookuph = $(".lookup-coupon-pushsection").height()
+				lookup_wh_b = $(".lookup-coupon-pushsection .pushsection-wrapper .pushsection-wrapper-box").height()
+				if($(".lookup-coupon-pushsection .results-coupon li").length==0){
+					clearTimeout(lookup_time)
+					$(".lookup-coupon-pushsection .lookup-coupon-results").css("display","none")
+					$(".lookup-coupon-push .can_t-find").show()
+					var lookup_time=setTimeout(function(){
+						$(".lookup-coupon-push .can_t-find").fadeOut(300)
+					},1700)
+				}
+				if(lookup_wh_b<=lookuph){
+					$(".lookup-coupon-pushsection .pushsection-wrapper").height(lookuph+1)
+				}
+				else if(lookup_wh_b>lookuph){
+					$(".lookup-coupon-pushsection .pushsection-wrapper").height(lookup_wh_b)
+					lookupS.refresh()
+				}
+				//点击查找的优惠券弹出优惠券详情
+				$(".personal-coupon-push .lookup-coupon-push .lookup-coupon-results .notUsed").tap(function(){
+					//获取优惠券数据
+					var dataTitle=$(this).find(".hide_data .dataTitle").html()
+					var dataDetailed=$(this).find(".hide_data .dataDetailed").html()
+					var dataCode=$(this).find(".hide_data .dataCode").html()
+					var dataQR_code=$(this).find(".hide_data .dataQR_code").html()
+					var dataValidity=$(this).find(".hide_data .dataValidity").html()
+					var contentTitle=$(this).find(".rightPart .content-title").html()
+					//渲染优惠券数据
+					notUsed_Z.find(".header-price").html(dataTitle)
+					notUsed_Z.find(".detailed-content").html(dataDetailed)
+					notUsed_Z.find(".code-content").html(dataCode)
+					notUsed_Z.find(".footer-QR_code").html(dataQR_code)
+					notUsed_Z.find(".footer-title").html(contentTitle)
+					notUsed_Z.find(".term-content").html(dataValidity)
+					
+					$(".coupon-details-push").css("transform","translateX(0px)")
+					$(".personal-coupon-shadow-lookup").fadeIn(250)
+					$(".coupon-details-pushsection .coupon-details-notUsed").css("display","block").siblings().css("display","none")
+				})
+				$(".coupon-details-pushheader .return").tap(function(){
+					$(".coupon-details-push").css("transform","translateX("+setw+"px)")
+					$(".personal-coupon-shadow-lookup").fadeOut(250)
+				})
+			}
+			else if(_lookupindex.val() !== "" && _lookupindex.val() !== "123456"){
 				clearTimeout(lookup_time)
 				$(".lookup-coupon-pushsection .lookup-coupon-results").css("display","none")
 				$(".lookup-coupon-push .can_t-find").show()
 				var lookup_time=setTimeout(function(){
 					$(".lookup-coupon-push .can_t-find").fadeOut(300)
 				},1700)
+				lookuph = $(".lookup-coupon-pushsection").height()
+				lookup_wh_b = $(".lookup-coupon-pushsection .pushsection-wrapper .pushsection-wrapper-box").height()
+				if(lookup_wh_b<=lookuph){
+					$(".lookup-coupon-pushsection .pushsection-wrapper").height(lookuph+1)
+					lookupS.refresh()
+				}
+				else if(lookup_wh_b>lookuph){
+					$(".lookup-coupon-pushsection .pushsection-wrapper").height(lookup_wh_b)
+					lookupS.refresh()
+				}
 			}
-			if(lookup_wh_b<=lookuph){
-				$(".lookup-coupon-pushsection .pushsection-wrapper").height(lookuph+1)
-			}
-			else if(lookup_wh_b>lookuph){
-				$(".lookup-coupon-pushsection .pushsection-wrapper").height(lookup_wh_b)
-				lookupS.refresh()
-			}
-			//点击查找的优惠券弹出优惠券详情
-			$(".personal-coupon-push .lookup-coupon-push .lookup-coupon-results .notUsed").tap(function(){
-				//获取优惠券数据
-				var dataTitle=$(this).find(".hide_data .dataTitle").html()
-				var dataDetailed=$(this).find(".hide_data .dataDetailed").html()
-				var dataCode=$(this).find(".hide_data .dataCode").html()
-				var dataQR_code=$(this).find(".hide_data .dataQR_code").html()
-				var dataValidity=$(this).find(".hide_data .dataValidity").html()
-				var contentTitle=$(this).find(".rightPart .content-title").html()
-				//渲染优惠券数据
-				notUsed_Z.find(".header-price").html(dataTitle)
-				notUsed_Z.find(".detailed-content").html(dataDetailed)
-				notUsed_Z.find(".code-content").html(dataCode)
-				notUsed_Z.find(".footer-QR_code").html(dataQR_code)
-				notUsed_Z.find(".footer-title").html(contentTitle)
-				notUsed_Z.find(".term-content").html(dataValidity)
-				
-				$(".coupon-details-push").css("left","0")
-				$(".coupon-details-pushsection .coupon-details-notUsed").css("display","block").siblings().css("display","none")
-			})
-			$(".coupon-details-pushheader .return").tap(function(){
-				$(".coupon-details-push").css("left",setw+5)
-			})
-		}
-		else if(_lookupindex.val() !== "" && _lookupindex.val() !== "123456"){
-			clearTimeout(lookup_time)
-			$(".lookup-coupon-pushsection .lookup-coupon-results").css("display","none")
-			$(".lookup-coupon-push .can_t-find").show()
-			var lookup_time=setTimeout(function(){
-				$(".lookup-coupon-push .can_t-find").fadeOut(300)
-			},1700)
-			lookuph = $(".lookup-coupon-pushsection").height()
-			lookup_wh_b = $(".lookup-coupon-pushsection .pushsection-wrapper .pushsection-wrapper-box").height()
-			if(lookup_wh_b<=lookuph){
-				$(".lookup-coupon-pushsection .pushsection-wrapper").height(lookuph+1)
-				lookupS.refresh()
-			}
-			else if(lookup_wh_b>lookuph){
-				$(".lookup-coupon-pushsection .pushsection-wrapper").height(lookup_wh_b)
-				lookupS.refresh()
-			}
-		}
+		})
 	})
+	
+	
 	
 	
 	
@@ -1635,10 +1641,18 @@ $(function() {
 	})
 	
 	$(".personal-coupon-pushheader .lookup").tap(function(){
-		$(".lookup-coupon-push").css("left","0")
+		$(".lookup-coupon-push").css("transform","translateX(0px)")
+		$(".personal-coupon-shadow").fadeIn(250)
 	})
 	$(".lookup-coupon-pushheader .return").tap(function(){
-		$(".lookup-coupon-push").css("left",setw+5)
+		$(".lookup-coupon-push").css("transform","translateX("+setw+"px)")
+		setTimeout(function(){
+			$(".personal-coupon-shadow").fadeIn(0)
+			setTimeout(function(){
+				$(".personal-coupon-shadow").fadeOut(240)
+			},0)
+		},10)
+		
 	})
 	
 	$(".lookup-coupon-pushsection .pushsection-wrapper").height(lookuph+1)

@@ -163,7 +163,7 @@
                             display: block;
                         }
                         .Logged-in {
-                            display: block;
+                            display: none;
                             font-family: PingFang-SC-Medium;
                             font-size: 16/$sc+rem;
                             padding: 0 10/$sc+rem;
@@ -3934,12 +3934,12 @@
                     }
                     .return {
                         display: block;
-                        height: 22/$sc+rem;
+                        height: 36/$sc+rem;
                         width: 22/$sc+rem;
-                        background: url(../img/returnleft.png);
+                        background: url(../img/returnleft.png) center center no-repeat;
                         background-size: 22/$sc+rem 22/$sc+rem;
                         position: absolute;
-                        top: 11/$sc+rem;
+                        top: 3/$sc+rem;
                         left: 16/$sc+rem;
                     }
                 }
@@ -4206,12 +4206,12 @@
                     }
                     .return {
                         display: block;
-                        height: 22/$sc+rem;
+                        height: 36/$sc+rem;
                         width: 22/$sc+rem;
-                        background: url(../img/returnleft.png);
+                        background: url(../img/returnleft.png) center center no-repeat;
                         background-size: 22/$sc+rem 22/$sc+rem;
                         position: absolute;
-                        top: 11/$sc+rem;
+                        top: 3/$sc+rem;
                         left: 16/$sc+rem;
                     }
                 }
@@ -4671,16 +4671,26 @@
                     }
                 }
             }
+            .personal-news-shadow{
+                display: none;
+                width: 100%;
+                height: 100%;
+                z-index: 20;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: rgba(0, 0, 0, .45);
+            }
             .news-detail-push {
                 width: 100%;
                 height: 100%;
                 transition: all .3s;
                 overflow: hidden;
                 background: #f4f4f4;
+                transform: translateX(380/$sc+rem);
                 position: absolute;
-                left: 380/$sc+rem;
                 top: 0;
-                z-index: 10;
+                z-index: 30;
                 display: flex;
                 display: -webkit-flex;
                 flex-direction: column;
@@ -4706,12 +4716,12 @@
                         }
                         .return {
                             display: block;
-                            height: 22/$sc+rem;
+                            height: 36/$sc+rem;
                             width: 22/$sc+rem;
-                            background: url(../img/returnleft.png);
+                            background: url(../img/returnleft.png) center center no-repeat;
                             background-size: 22/$sc+rem 22/$sc+rem;
                             position: absolute;
-                            top: 11/$sc+rem;
+                            top: 3/$sc+rem;
                             left: 16/$sc+rem;
                         }
                     }
@@ -4890,9 +4900,9 @@
                 .coupon-whole {
                     width: 100%;
                     height: 100%;
+                    transform: translateX(380/$sc+rem);
                     position: absolute;
                     top: 0;
-                    left: 0;
                     .coupon-whole-ul {
                         width: 100%;
                         padding: 16/$sc+rem 16/$sc+rem 32/$sc+rem;
@@ -5258,9 +5268,9 @@
                 .coupon-notUsed {
                     width: 100%;
                     height: 100%;
+                    transform: translateX(380/$sc+rem);
                     position: absolute;
                     top: 0;
-                    left: 0;
                     .coupon-notUsed-ul {
                         width: 100%;
                         padding: 16/$sc+rem 16/$sc+rem 32/$sc+rem;
@@ -5391,9 +5401,9 @@
                 .coupon-alreadyUsed {
                     width: 100%;
                     height: 100%;
+                    transform: translateX(380/$sc+rem);
                     position: absolute;
                     top: 0;
-                    left: 0;
                     .coupon-alreadyUsed-ul {
                         width: 100%;
                         padding: 16/$sc+rem 16/$sc+rem 32/$sc+rem;
@@ -5524,9 +5534,9 @@
                 .coupon-overdue {
                     width: 100%;
                     height: 100%;
+                    transform: translateX(380/$sc+rem);
                     position: absolute;
                     top: 0;
-                    left: 0;
                     .coupon-overdue-ul {
                         width: 100%;
                         padding: 16/$sc+rem 16/$sc+rem 32/$sc+rem;
@@ -5691,16 +5701,36 @@
                 box-shadow: 0 0 6/$sc+rem 0 rgba(0, 0, 0, 0.16);
                 -webkit-box-shadow: 0 0 6/$sc+rem 0 rgba(0, 0, 0, 0.16);
             }
+            .personal-coupon-shadow{
+                display: none;
+                width: 100%;
+                height: 100%;
+                z-index: 20;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: rgba(0, 0, 0, .45);
+            }
+            .personal-coupon-shadow-lookup{
+                display: none;
+                width: 100%;
+                height: 100%;
+                z-index: 27;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: rgba(0, 0, 0, .45);
+            }
             .using-tutorials-push {
                 width: 100%;
                 height: 100%;
                 transition: all .3s;
                 background: #f4f4f4;
                 overflow: hidden;
+                transform: translateX(380/$sc+rem);
                 position: absolute;
-                left: 380/$sc+rem;
                 top: 0;
-                z-index: 10;
+                z-index: 30;
                 display: flex;
                 display: -webkit-flex;
                 flex-direction: column;
@@ -5726,12 +5756,12 @@
                         }
                         .return {
                             display: block;
-                            height: 22/$sc+rem;
+                            height: 36/$sc+rem;
                             width: 22/$sc+rem;
-                            background: url(../img/returnleft.png);
+                            background: url(../img/returnleft.png) center center no-repeat;
                             background-size: 22/$sc+rem 22/$sc+rem;
                             position: absolute;
-                            top: 11/$sc+rem;
+                            top: 3/$sc+rem;
                             left: 16/$sc+rem;
                         }
                     }
@@ -5816,10 +5846,10 @@
                 overflow: hidden;
                 transition: all .3s;
                 background: #394043;
+                transform: translateX(380/$sc+rem);
                 position: absolute;
-                left: 380/$sc+rem;
                 top: 0;
-                z-index: 20;
+                z-index: 30;
                 display: flex;
                 display: -webkit-flex;
                 flex-direction: column;
@@ -5844,12 +5874,12 @@
                         }
                         .return {
                             display: block;
-                            height: 22/$sc+rem;
+                            height: 36/$sc+rem;
                             width: 22/$sc+rem;
-                            background: url(../img/leftt.png);
+                            background: url(../img/leftt.png) center center no-repeat;
                             background-size: 22/$sc+rem 22/$sc+rem;
                             position: absolute;
-                            top: 11/$sc+rem;
+                            top: 3/$sc+rem;
                             left: 16/$sc+rem;
                         }
                     }
@@ -6237,10 +6267,10 @@
                 transition: all .3s;
                 background: #f4f4f4;
                 overflow: hidden;
+                transform: translateX(380/$sc+rem);
                 position: absolute;
-                left: 380/$sc+rem;
                 top: 0;
-                z-index: 10;
+                z-index: 25;
                 display: flex;
                 display: -webkit-flex;
                 flex-direction: column;
@@ -6266,12 +6296,12 @@
                         }
                         .return {
                             display: block;
-                            height: 22/$sc+rem;
+                            height: 36/$sc+rem;
                             width: 22/$sc+rem;
-                            background: url(../img/returnleft.png);
+                            background: url(../img/returnleft.png) center center no-repeat;
                             background-size: 22/$sc+rem 22/$sc+rem;
                             position: absolute;
-                            top: 11/$sc+rem;
+                            top: 3/$sc+rem;
                             left: 16/$sc+rem;
                         }
                     }
