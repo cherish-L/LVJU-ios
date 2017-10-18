@@ -914,15 +914,31 @@ $(function() {
 	var birthdayS = new IScroll('.birthday-pushsection', {
 		scrollbars: false
 	})
-	
-	$(".personal-data-pushsection .birthday").tap(function(){
+	//用户中心--个人资料设置--生日弹框  
+	$(".birthday").tap(function(){
+		var Aname=$(".birthday .li-wrapper-info").text()
 		$(".birthday-push").css("transform", "translateX(0px)")
 		$(".personal-data-shadow").fadeIn(250)
+		$("#birthday-time").text(Aname)
+		
+		$(".birthday-pushheader .return").tap(function(){
+			$(".birthday-push").css("transform", "translateX("+setw+"px)")
+			$(".personal-data-shadow").fadeOut(250)
+			$(".personal-data-pushsection .birthday .li-wrapper-info").val(Aname)
+		})
+		
+		$(".birthday-pushheader .determine").tap(function(){
+			var inputtxt=$("#birthday-time").text()
+			$(".birthday-push").css("transform", "translateX("+setw+"px)")
+			$(".personal-data-shadow").fadeOut(250)
+			$(".birthday .li-wrapper-info").text(inputtxt)
+		})
 	})
-	$(".birthday-pushheader .return").tap(function(){
-		$(".birthday-push").css("transform", "translateX("+setw+"px)")
-		$(".personal-data-shadow").fadeOut(250)
-	})
+	
+	
+	
+	
+	
 	
 	//用户中心--个人资料设置--地区弹框
 	var regionH = $(".region-pushsection").height()
@@ -940,6 +956,29 @@ $(function() {
 		$(".region-push").css("transform", "translateX("+setw+"px)")
 		$(".personal-data-shadow").fadeOut(250)
 	})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

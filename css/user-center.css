@@ -3863,27 +3863,6 @@ li {
   background: #FFFFFF;
 }
 
-.user-center-container .personal-data-push .birthday-push .birthday-pushfooter {
-  width: 100%;
-  height: 8.8rem;
-}
-
-.user-center-container .personal-data-push .birthday-push .birthday-pushfooter .pushfooter-title {
-  width: 100%;
-  height: 1.4rem;
-  line-height: 1.4rem;
-  background: #EEEEEE;
-  text-align: center;
-  font-size: 0.56rem;
-  color: #999999;
-}
-
-.user-center-container .personal-data-push .birthday-push .birthday-pushfooter .pushfooter-content {
-  width: 100%;
-  height: 7.4rem;
-  background: #FFFFFF;
-}
-
 .user-center-container .personal-data-push .region-push {
   width: 100%;
   height: 100%;
@@ -7649,6 +7628,276 @@ li {
   left: 0;
   right: 0;
   margin: auto;
+}
+
+.mui-dtpicker {
+  position: fixed;
+  z-index: 999999;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: .3s;
+  width: 100%;
+  background-color: #FFFFFF;
+  -webkit-transform: translateY(12rem);
+}
+
+.mui-dtpicker .mui-dtpicker-header {
+  width: 100%;
+  height: 1.44rem;
+  background-color: #EEEEEE;
+}
+
+.mui-dtpicker .mui-dtpicker-header .mui-btn {
+  height: 100%;
+  float: left;
+  line-height: 1.44rem;
+  padding: 0 0.8rem;
+  font-size: 0.56rem;
+  color: #4A4A4A;
+  background: transparent;
+  border: 0;
+}
+
+.mui-dtpicker .mui-dtpicker-header .mui-btn-blue {
+  float: right;
+  color: #EB3038;
+}
+
+.mui-dtpicker .mui-dtpicker-title {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.mui-dtpicker .mui-dtpicker-title h5:first-child {
+  width: 40%;
+  height: 1.28rem;
+  line-height: 1.28rem;
+  text-align: center;
+  background: #FFFFFF;
+  color: #999999;
+  font-weight: normal;
+  font-size: 0.56rem;
+}
+
+.mui-dtpicker .mui-dtpicker-title h5:nth-child(2) {
+  width: 20%;
+  height: 1.28rem;
+  line-height: 1.28rem;
+  text-align: center;
+  background: #FFFFFF;
+  color: #999999;
+  font-weight: normal;
+  font-size: 0.56rem;
+}
+
+.mui-dtpicker .mui-dtpicker-title h5:nth-child(3) {
+  width: 40%;
+  height: 1.28rem;
+  line-height: 1.28rem;
+  text-align: center;
+  background: #FFFFFF;
+  color: #999999;
+  font-weight: normal;
+  font-size: 0.56rem;
+}
+
+.mui-dtpicker .mui-dtpicker-body {
+  position: relative;
+  width: 100%;
+  height: 7.4rem;
+  padding-bottom: 0.2rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.mui-dtpicker .mui-dtpicker-body .mui-picker {
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #FFFFFF;
+  position: relative;
+  -webkit-user-select: none;
+  user-select: none;
+  height: 100%;
+  float: left;
+  border: none;
+}
+
+.mui-dtpicker .mui-dtpicker-body .mui-picker .mui-picker-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-mask-box-image: -webkit-linear-gradient(bottom, transparent, transparent 5%, #fff 20%, #fff 80%, transparent 95%, transparent);
+  -webkit-mask-box-image: linear-gradient(top, transparent, transparent 5%, #fff 20%, #fff 80%, transparent 95%, transparent);
+}
+
+.mui-dtpicker .mui-dtpicker-body .mui-picker .mui-picker-inner .mui-pciker-rule,
+.mui-dtpicker .mui-dtpicker-body .mui-picker .mui-picker-inner .mui-pciker-list {
+  box-sizing: border-box;
+  padding: 0;
+  margin: -0.6rem 0;
+  width: 100%;
+  height: 1.44rem;
+  line-height: 1.44rem;
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+
+.mui-dtpicker .mui-dtpicker-body .mui-picker .mui-picker-inner .mui-pciker-rule-ft {
+  z-index: 2;
+  border-top: solid 1px #E8E8E8;
+  border-bottom: solid 1px #E8E8E8;
+}
+
+.mui-dtpicker .mui-dtpicker-body .mui-picker .mui-picker-inner .mui-pciker-rule-bg {
+  z-index: 0;
+}
+
+.mui-dtpicker .mui-dtpicker-body .mui-picker .mui-picker-inner .mui-pciker-list {
+  z-index: 1;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: perspective(750pt) rotateY(0) rotateX(0);
+  transform: perspective(750pt) rotateY(0) rotateX(0);
+}
+
+.mui-dtpicker .mui-dtpicker-body .mui-picker .mui-picker-inner .mui-pciker-list li {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  font-size: 0.64rem;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #4A4A4A;
+  white-space: nowrap;
+  -webkit-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  cursor: default;
+  visibility: hidden;
+}
+
+.mui-dtpicker .mui-dtpicker-body .mui-picker .mui-picker-inner .mui-pciker-list li.highlight,
+.mui-dtpicker .mui-dtpicker-body .mui-picker .mui-picker-inner .mui-pciker-list li.visible {
+  visibility: visible;
+}
+
+.mui-dtpicker .mui-dtpicker-body .mui-picker .mui-picker-inner .mui-pciker-list li.highlight {
+  color: #222;
+}
+
+.mui-dtpicker .mui-dtpicker-body .mui-picker:first-child {
+  width: 40%;
+}
+
+.mui-dtpicker .mui-dtpicker-body .mui-picker:nth-child(2) {
+  width: 20%;
+}
+
+.mui-dtpicker .mui-dtpicker-body .mui-picker:nth-child(3) {
+  width: 40%;
+}
+
+.mui-poppicker {
+  position: fixed;
+  z-index: 999;
+  border-top: solid 1px #ccc;
+  bottom: 0;
+  -webkit-transform: translateY(12rem);
+}
+
+.mui-poppicker.mui-active {
+  -webkit-transform: translateY(0);
+}
+
+.mui-android-5-1 .mui-poppicker {
+  bottom: -12rem;
+  -webkit-transition-property: bottom;
+  -webkit-transform: none;
+}
+
+.mui-android-5-1 .mui-poppicker.mui-active {
+  bottom: 0;
+  -webkit-transition-property: bottom;
+  -webkit-transform: none;
+}
+
+.mui-poppicker-header {
+  padding: 0.24rem;
+  font-size: 0.56rem;
+  color: #888;
+}
+
+.mui-poppicker-btn-cancel {
+  float: left;
+}
+
+.mui-poppicker-btn-ok {
+  float: right;
+}
+
+.mui-poppicker-clear {
+  clear: both;
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+  overflow: hidden;
+}
+
+.mui-dtpicker.mui-active {
+  -webkit-transform: translateY(0);
+}
+
+.mui-dtpicker-active-for-page {
+  overflow: hidden !important;
+}
+
+.mui-android-5-1 .mui-dtpicker {
+  bottom: -12rem;
+  -webkit-transition-property: bottom;
+  -webkit-transform: none;
+}
+
+.mui-android-5-1 .mui-dtpicker.mui-active {
+  bottom: 0;
+  -webkit-transition-property: bottom;
+  -webkit-transform: none;
+}
+
+[data-type=hour] [data-id=title-i],
+[data-type=hour] [data-id=picker-i],
+[data-type=month] [data-id=title-i],
+[data-type=month] [data-id=picker-d],
+[data-type=month] [data-id=title-d],
+[data-type=month] [data-id=picker-h],
+[data-type=month] [data-id=title-h],
+[data-type=month] [data-id=picker-i],
+[data-type=time] [data-id=picker-y],
+[data-type=time] [data-id=picker-m],
+[data-type=time] [data-id=picker-d],
+[data-type=time] [data-id=title-y],
+[data-type=time] [data-id=title-m],
+[data-type=time] [data-id=title-d],
+[data-type=date] [data-id=title-i],
+[data-type=date] [data-id=picker-h],
+[data-type=date] [data-id=title-h],
+[data-type=date] [data-id=picker-i] {
+  display: none;
+}
+
+.mui-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all .3s;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 99999;
 }
 
 .iScrollVerticalScrollbar {

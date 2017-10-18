@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8" />
 		<meta content="email=no" name="format-detection" />
@@ -10,7 +11,6 @@
 		<title>用户中心</title>
 		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/user-center.css" />
-		<link rel="stylesheet" type="text/css" href="plugins/animate.min.css" />
 		<link rel="stylesheet" type="text/css" href="plugins/Switch/switch.css" />
 		<script type="text/javascript" src="plugins/zepto.min.js"></script>
 		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>
@@ -746,17 +746,9 @@
 					</header>
 					<section class="birthday-pushsection">
 						<div class="pushsection-wrapper">
-							<div class="birthday-time" id="birthday-time">
-								1994年04月02日
-							</div>
+							<div class="birthday-time" id="birthday-time"></div>
 						</div>
 					</section>
-					<footer class="birthday-pushfooter">
-						<p class="pushfooter-title" id="pushfooter-title">选择您的生日</p>
-						<div class="pushfooter-content">
-
-						</div>
-					</footer>
 				</div>
 				<!-------------设置地区弹框------------->
 				<div class="region-push">
@@ -1253,8 +1245,8 @@
 					</div>
 					<div class="none-coupons">
 						<div class="none-coupon-wrapper">
-							<img src="img/Coupon.png"/>
-							<p>领取优惠券  购房更低价！</p>
+							<img src="img/Coupon.png" />
+							<p>领取优惠券 购房更低价！</p>
 						</div>
 					</div>
 				</section>
@@ -1310,7 +1302,7 @@
 									<span class="header-txt">未使用</span>
 								</div>
 								<div class="details-notUsed-line"></div>
-								<div  class="details-notUsed-footer">
+								<div class="details-notUsed-footer">
 									<p class="footer-title"></p>
 									<div class="footer-detailed">
 										<div class="detailed-title">详细详细：</div>
@@ -1333,7 +1325,7 @@
 									<span class="header-txt">已使用</span>
 								</div>
 								<div class="details-alreadyUsed-line"></div>
-								<div  class="details-alreadyUsed-footer">
+								<div class="details-alreadyUsed-footer">
 									<p class="footer-title">2000元旅居网会员购房红包</p>
 									<div class="footer-detailed">
 										<div class="detailed-title">详细详细：</div>
@@ -1348,7 +1340,7 @@
 										<div class="term-content">2018年12月01日（剩余501天）</div>
 									</div>
 									<div class="footer-QR_code">
-										<img src="img/QR_code.png"/>
+										<img src="img/QR_code.png" />
 									</div>
 								</div>
 							</div>
@@ -1358,7 +1350,7 @@
 									<span class="header-txt">已过期</span>
 								</div>
 								<div class="details-overdue-line"></div>
-								<div  class="details-overdue-footer">
+								<div class="details-overdue-footer">
 									<p class="footer-title">2000元旅居网会员购房红包</p>
 									<div class="footer-detailed">
 										<div class="detailed-title">详细详细：</div>
@@ -1373,7 +1365,7 @@
 										<div class="term-content">2018年12月01日（剩余0天）</div>
 									</div>
 									<div class="footer-QR_code">
-										<img src="img/QR_code.png"/>
+										<img src="img/QR_code.png" />
 									</div>
 								</div>
 							</div>
@@ -1735,4 +1727,25 @@
 		})
 	</script>
 	<script type="text/javascript" src="js/user-center.js"></script>
+	<script src="plugins/mui/mui.min.js"></script>
+	<script src="plugins/mui/mui.picker.min.js"></script>
+	<script>
+		var start_time_picker = new mui.DtPicker({"type":"date","beginYear":1960,"endYear":2020});
+		
+		$(".birthday").on("tap", function(){
+			setTimeout(function(){
+				start_time_picker.show(function(items){
+					$("#birthday-time").text(items.text);
+				});
+			},300);
+		});
+		$("#birthday-time").on("tap", function(){
+			setTimeout(function(){
+				start_time_picker.show(function(items){
+					$("#birthday-time").text(items.text);
+				});
+			},300);
+		});
+	</script>
+
 </html>
