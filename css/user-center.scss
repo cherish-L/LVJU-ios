@@ -140,7 +140,6 @@
                         }
                     }
                     .sign-in {
-                        display: block;
                         margin-top: 6/$sc+rem;
                         line-height: 24/$sc+rem;
                         text-align: center;
@@ -164,17 +163,14 @@
                             display: block;
                         }
                         .Logged-in {
-                            display: none;
+                            display: block;
                             font-family: PingFang-SC-Medium;
                             font-size: 16/$sc+rem;
-                            padding: 0 5/$sc+rem;
+                            padding: 0 10/$sc+rem;
                             color: #FFFFFF;
                             line-height: 24/$sc+rem;
-                            padding-right: 10/$sc+rem;
-                            background: url(../img/userInfo.png) no-repeat;
-                            background-size: 6/$sc+rem 12/$sc+rem;
-                            background-position-x: right;
-                            background-position-y: 5/$sc+rem;
+                            background: url(../img/userInfo.png) right center no-repeat;
+                            background-size: 7/$sc+rem 12/$sc+rem;
                         }
                         .Logged-in.show {
                             display: block;
@@ -2497,12 +2493,12 @@
                     }
                     .return {
                         display: block;
-                        height: 22/$sc+rem;
+                        height: 36/$sc+rem;
                         width: 22/$sc+rem;
-                        background: url(../img/returnleft.png);
+                        background: url(../img/returnleft.png) center center no-repeat;
                         background-size: 22/$sc+rem 22/$sc+rem;
                         position: absolute;
-                        top: 11/$sc+rem;
+                        top: 3/$sc+rem;
                         left: 16/$sc+rem;
                     }
                 }
@@ -2535,9 +2531,11 @@
                                     height: 100%;
                                     position: relative;
                                     overflow: hidden;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
                                     .li-wrapper-title {
                                         display: block;
-                                        float: left;
                                         width: 80/$sc+rem;
                                         height: 100%;
                                         font-size: 14/$sc+rem;
@@ -2545,14 +2543,17 @@
                                     }
                                     .li-wrapper-info {
                                         display: block;
-                                        float: left;
+                                        flex: 1;
+                                        -webkit-flex: 1;                                        
                                         height: 100%;
                                         font-size: 14/$sc+rem;
                                         color: #999999;
+                                        text-overflow: ellipsis;
+                                        white-space: nowrap;
+                                        overflow: hidden;
                                     }
                                     .li-wrapper-btn {
                                         display: block;
-                                        float: right;
                                         height: 100%;
                                         width: 14/$sc+rem;
                                         position: relative;
@@ -2691,9 +2692,11 @@
                                     height: 100%;
                                     position: relative;
                                     overflow: hidden;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
                                     .li-wrapper-title {
                                         display: block;
-                                        float: left;
                                         width: 80/$sc+rem;
                                         height: 100%;
                                         position: relative;
@@ -2710,14 +2713,17 @@
                                     }
                                     .li-wrapper-info {
                                         display: block;
-                                        float: left;
+                                        flex: 1;
+                                        -webkit-flex: 1;
                                         height: 100%;
                                         font-size: 14/$sc+rem;
                                         color: #999999;
+                                        text-overflow: ellipsis;
+                                        white-space: nowrap;
+                                        overflow: hidden;
                                     }
                                     .li-wrapper-btn {
                                         display: block;
-                                        float: right;
                                         height: 100%;
                                         width: 52/$sc+rem;
                                         position: relative;
@@ -2729,7 +2735,7 @@
                                             border: 1px solid #8ACDF2;
                                             border-radius: 2/$sc+rem;
                                             font-size: 14/$sc+rem;
-                                            line-height: 22/$sc+rem;
+                                            line-height: 20/$sc+rem;
                                             text-align: center;
                                             color: #0099EB;
                                             box-sizing: border-box;
@@ -2746,6 +2752,17 @@
                         }
                     }
                 }
+            }
+            //<!---------- 阴影 ------------->
+            .personal-data-shadow{
+                display: none;
+                width: 100%;
+                height: 100%;
+                z-index: 25;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: rgba(0, 0, 0, .45);
             }
             //<!---------- 遮罩 ------------->
             .personal-data-Mask {
@@ -2770,10 +2787,10 @@
                 transition: all .3s;
                 overflow: hidden;
                 background: #f4f4f4;
+                transform: translateX(380/$sc+rem);
                 position: absolute;
-                left: 380/$sc+rem;
                 top: 0;
-                z-index: 10;
+                z-index: 30;
                 display: flex;
                 display: -webkit-flex;
                 flex-direction: column;
@@ -2799,12 +2816,12 @@
                         }
                         .return {
                             display: block;
-                            height: 22/$sc+rem;
+                            height: 36/$sc+rem;
                             width: 22/$sc+rem;
-                            background: url(../img/returnleft.png);
+                            background: url(../img/returnleft.png) center center no-repeat;
                             background-size: 22/$sc+rem 22/$sc+rem;
                             position: absolute;
-                            top: 11/$sc+rem;
+                            top: 3/$sc+rem;
                             left: 16/$sc+rem;
                         }
                         .save {
@@ -2891,10 +2908,10 @@
                 transition: all .3s;
                 overflow: hidden;
                 background: #f4f4f4;
+                transform: translateX(380/$sc+rem);
                 position: absolute;
-                left: 380/$sc+rem;
                 top: 0;
-                z-index: 10;
+                z-index: 30;
                 display: flex;
                 display: -webkit-flex;
                 flex-direction: column;
@@ -2920,12 +2937,12 @@
                         }
                         .return {
                             display: block;
-                            height: 22/$sc+rem;
+                            height: 36/$sc+rem;
                             width: 22/$sc+rem;
-                            background: url(../img/returnleft.png);
+                            background: url(../img/returnleft.png) center center no-repeat;
                             background-size: 22/$sc+rem 22/$sc+rem;
                             position: absolute;
-                            top: 11/$sc+rem;
+                            top: 3/$sc+rem;
                             left: 16/$sc+rem;
                         }
                         .save {
@@ -3012,10 +3029,10 @@
                 transition: all .3s;
                 overflow: hidden;
                 background: #f4f4f4;
+                transform: translateX(380/$sc+rem);
                 position: absolute;
-                left: 380/$sc+rem;
                 top: 0;
-                z-index: 10;
+                z-index: 30;
                 display: flex;
                 display: -webkit-flex;
                 flex-direction: column;
@@ -3041,12 +3058,12 @@
                         }
                         .return {
                             display: block;
-                            height: 22/$sc+rem;
+                            height: 36/$sc+rem;
                             width: 22/$sc+rem;
-                            background: url(../img/returnleft.png);
+                            background: url(../img/returnleft.png) center center no-repeat;
                             background-size: 22/$sc+rem 22/$sc+rem;
                             position: absolute;
-                            top: 11/$sc+rem;
+                            top: 3/$sc+rem;
                             left: 16/$sc+rem;
                         }
                         .save {
@@ -3161,6 +3178,7 @@
                     }
                     .olduser {
                         border-radius: 2/$sc+rem 2/$sc+rem 0 0;
+                        border-bottom: 1px solid #E8E8E8;
                     }
                     .newuser {
                         border-radius: 0 0 2/$sc+rem 2/$sc+rem;
@@ -3174,10 +3192,10 @@
                 transition: all .3s;
                 overflow: hidden;
                 background: #F6F6F6;
+                transform: translateX(380/$sc+rem);
                 position: absolute;
-                left: 380/$sc+rem;
                 top: 0;
-                z-index: 10;
+                z-index: 30;
                 display: flex;
                 display: -webkit-flex;
                 flex-direction: column;
@@ -3203,12 +3221,12 @@
                         }
                         .del {
                             display: block;
-                            height: 22/$sc+rem;
+                            height: 36/$sc+rem;
                             width: 22/$sc+rem;
-                            background: url(../img/del.png) no-repeat;
+                            background: url(../img/del.png) center center no-repeat;
                             background-size: 22/$sc+rem 22/$sc+rem;
                             position: absolute;
-                            top: 11/$sc+rem;
+                            top: 3/$sc+rem;
                             left: 16/$sc+rem;
                         }
                     }
@@ -3317,6 +3335,7 @@
                     }
                     .male {
                         border-radius: 2/$sc+rem 2/$sc+rem 0 0;
+                        border-bottom: 1px solid #E8E8E8;
                     }
                     .female {
                         border-radius: 0 0 2/$sc+rem 2/$sc+rem;
@@ -3334,10 +3353,10 @@
                 transition: all .3s;
                 overflow: hidden;
                 background: #f4f4f4;
+                transform: translateX(380/$sc+rem);
                 position: absolute;
-                left: 380/$sc+rem;
                 top: 0;
-                z-index: 10;
+                z-index: 30;
                 display: flex;
                 display: -webkit-flex;
                 flex-direction: column;
@@ -3363,12 +3382,12 @@
                         }
                         .return {
                             display: block;
-                            height: 22/$sc+rem;
+                            height: 36/$sc+rem;
                             width: 22/$sc+rem;
-                            background: url(../img/returnleft.png);
+                            background: url(../img/returnleft.png) center center no-repeat;
                             background-size: 22/$sc+rem 22/$sc+rem;
                             position: absolute;
-                            top: 11/$sc+rem;
+                            top: 3/$sc+rem;
                             left: 16/$sc+rem;
                         }
                         .determine {
@@ -3430,10 +3449,10 @@
                 transition: all .3s;
                 overflow: hidden;
                 background: #f4f4f4;
+                transform: translateX(380/$sc+rem);
                 position: absolute;
-                left: 380/$sc+rem;
                 top: 0;
-                z-index: 10;
+                z-index: 30;
                 display: flex;
                 display: -webkit-flex;
                 flex-direction: column;
@@ -3459,12 +3478,12 @@
                         }
                         .return {
                             display: block;
-                            height: 22/$sc+rem;
+                            height: 36/$sc+rem;
                             width: 22/$sc+rem;
-                            background: url(../img/returnleft.png);
+                            background: url(../img/returnleft.png) center center no-repeat;
                             background-size: 22/$sc+rem 22/$sc+rem;
                             position: absolute;
-                            top: 11/$sc+rem;
+                            top: 3/$sc+rem;
                             left: 16/$sc+rem;
                         }
                         .determine {
@@ -3514,6 +3533,348 @@
                         width: 100%;
                         height: 185/$sc+rem;
                         background: #FFFFFF;
+                    }
+                }
+            }
+            //<!---------- 手机 ------------->
+            .pc_phone-push {
+                width: 100%;
+                height: 100%;
+                transition: all .3s;
+                overflow: hidden;
+                background: #f4f4f4;
+                transform: translateX(380/$sc+rem);
+                position: absolute;
+                top: 0;
+                z-index: 30;
+                display: flex;
+                display: -webkit-flex;
+                flex-direction: column;
+                .pc_phone-pushheader {
+                    width: 100%;
+                    background-color: #f6f6f6;
+                    box-shadow: 0 1px 0 0 #cccccc;
+                    z-index: 1;
+                    .signal_bar {
+                        width: 100%;
+                        height: 20/$sc+rem;
+                    }
+                    .title_bar {
+                        width: 100%;
+                        height: 44/$sc+rem;
+                        line-height: 44/$sc+rem;
+                        position: relative;
+                        .title_txt {
+                            font-size: 18/$sc+rem;
+                            color: #394043!important;
+                            text-align: center;
+                            font-weight: normal;
+                        }
+                        .return {
+                            display: block;
+                            height: 36/$sc+rem;
+                            width: 22/$sc+rem;
+                            background: url(../img/returnleft.png) center center no-repeat;
+                            background-size: 22/$sc+rem 22/$sc+rem;
+                            position: absolute;
+                            top: 3/$sc+rem;
+                            left: 16/$sc+rem;
+                        }
+                        .save {
+                            display: block;
+                            height: 20/$sc+rem;
+                            line-height: 20/$sc+rem;
+                            font-size: 14/$sc+rem;
+                            color: #6C7072;
+                            position: absolute;
+                            top: 11/$sc+rem;
+                            right: 16/$sc+rem;
+                        }
+                    }
+                }
+                .pc_phone-pushsection {
+                    flex: 1;
+                    -webkit-flex: 1;
+                    overflow: hidden;
+                    background: #F4F4F4;
+                    .pushsection-wrapper {
+                        width: 100%;
+                        .pc_phone-push-revise {
+                            width: 100%;
+                            height: 46/$sc+rem;
+                            line-height: 46/$sc+rem;
+                            margin-top: 10/$sc+rem;
+                            padding: 0 16/$sc+rem;
+                            background: #FFFFFF;
+                            display: flex;
+                            flex-direction: row;
+                            box-sizing: border-box;
+                            -webkit-box-sizing: border-box;
+                            box-shadow: inset 0 1px 0 0 #EEEEEE, inset 0 -1px 0 0 #EEEEEE;
+                            -webkit-box-shadow: inset 0 1px 0 0 #EEEEEE, inset 0 -1px 0 0 #EEEEEE;
+                            .title {
+                                height: 100%;
+                                font-size: 14/$sc+rem;
+                                color: #394043;
+                            }
+                            .pc_phone {
+                                flex: 1;
+                                -webkit-flex: 1;
+                                height: 100%;
+                                line-height: 20/$sc+rem;
+                                background: transparent;
+                                padding: 12/$sc+rem 0 14/$sc+rem 0;
+                                font-size: 14/$sc+rem;
+                                color: #6C7072;
+                                box-sizing: border-box;
+                                -webkit-box-sizing: border-box;
+                            }
+                            .delete {
+                                display: none;
+                                height: 100%;
+                                width: 22/$sc+rem;
+                                position: relative;
+                                img {
+                                    display: block;
+                                    float: right;
+                                    height: 22/$sc+rem;
+                                    width: 22/$sc+rem;
+                                    position: absolute;
+                                    top: 0;
+                                    bottom: 0;
+                                    right: 0;
+                                    margin: auto;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            //<!---------- 微信 ------------->
+            .weixin-push {
+                width: 100%;
+                height: 100%;
+                transition: all .3s;
+                overflow: hidden;
+                background: #f4f4f4;
+                transform: translateX(380/$sc+rem);
+                position: absolute;
+                top: 0;
+                z-index: 30;
+                display: flex;
+                display: -webkit-flex;
+                flex-direction: column;
+                .weixin-pushheader {
+                    width: 100%;
+                    background-color: #f6f6f6;
+                    box-shadow: 0 1px 0 0 #cccccc;
+                    z-index: 1;
+                    .signal_bar {
+                        width: 100%;
+                        height: 20/$sc+rem;
+                    }
+                    .title_bar {
+                        width: 100%;
+                        height: 44/$sc+rem;
+                        line-height: 44/$sc+rem;
+                        position: relative;
+                        .title_txt {
+                            font-size: 18/$sc+rem;
+                            color: #394043!important;
+                            text-align: center;
+                            font-weight: normal;
+                        }
+                        .return {
+                            display: block;
+                            height: 36/$sc+rem;
+                            width: 22/$sc+rem;
+                            background: url(../img/returnleft.png) center center no-repeat;
+                            background-size: 22/$sc+rem 22/$sc+rem;
+                            position: absolute;
+                            top: 3/$sc+rem;
+                            left: 16/$sc+rem;
+                        }
+                        .save {
+                            display: block;
+                            height: 20/$sc+rem;
+                            line-height: 20/$sc+rem;
+                            font-size: 14/$sc+rem;
+                            color: #6C7072;
+                            position: absolute;
+                            top: 11/$sc+rem;
+                            right: 16/$sc+rem;
+                        }
+                    }
+                }
+                .weixin-pushsection {
+                    flex: 1;
+                    -webkit-flex: 1;
+                    overflow: hidden;
+                    background: #F4F4F4;
+                    .pushsection-wrapper {
+                        width: 100%;
+                        .weixin-push-revise {
+                            width: 100%;
+                            height: 46/$sc+rem;
+                            line-height: 46/$sc+rem;
+                            margin-top: 10/$sc+rem;
+                            padding: 0 16/$sc+rem;
+                            background: #FFFFFF;
+                            display: flex;
+                            flex-direction: row;
+                            box-sizing: border-box;
+                            -webkit-box-sizing: border-box;
+                            box-shadow: inset 0 1px 0 0 #EEEEEE, inset 0 -1px 0 0 #EEEEEE;
+                            -webkit-box-shadow: inset 0 1px 0 0 #EEEEEE, inset 0 -1px 0 0 #EEEEEE;
+                            .title {
+                                height: 100%;
+                                font-size: 14/$sc+rem;
+                                color: #394043;
+                            }
+                            .weixin {
+                                flex: 1;
+                                -webkit-flex: 1;
+                                height: 100%;
+                                line-height: 20/$sc+rem;
+                                background: transparent;
+                                padding: 12/$sc+rem 0 14/$sc+rem 0;
+                                font-size: 14/$sc+rem;
+                                color: #6C7072;
+                                box-sizing: border-box;
+                                -webkit-box-sizing: border-box;
+                            }
+                            .delete {
+                                display: none;
+                                height: 100%;
+                                width: 22/$sc+rem;
+                                position: relative;
+                                img {
+                                    display: block;
+                                    float: right;
+                                    height: 22/$sc+rem;
+                                    width: 22/$sc+rem;
+                                    position: absolute;
+                                    top: 0;
+                                    bottom: 0;
+                                    right: 0;
+                                    margin: auto;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            //<!---------- 邮箱 ------------->
+            .modify-mailbox-push {
+                width: 100%;
+                height: 100%;
+                transition: all .3s;
+                overflow: hidden;
+                background: #f4f4f4;
+                transform: translateX(380/$sc+rem);
+                position: absolute;
+                top: 0;
+                z-index: 30;
+                display: flex;
+                display: -webkit-flex;
+                flex-direction: column;
+                .modify-mailbox-pushheader {
+                    width: 100%;
+                    background-color: #f6f6f6;
+                    box-shadow: 0 1px 0 0 #cccccc;
+                    z-index: 1;
+                    .signal_bar {
+                        width: 100%;
+                        height: 20/$sc+rem;
+                    }
+                    .title_bar {
+                        width: 100%;
+                        height: 44/$sc+rem;
+                        line-height: 44/$sc+rem;
+                        position: relative;
+                        .title_txt {
+                            font-size: 18/$sc+rem;
+                            color: #394043!important;
+                            text-align: center;
+                            font-weight: normal;
+                        }
+                        .return {
+                            display: block;
+                            height: 36/$sc+rem;
+                            width: 22/$sc+rem;
+                            background: url(../img/returnleft.png) center center no-repeat;
+                            background-size: 22/$sc+rem 22/$sc+rem;
+                            position: absolute;
+                            top: 3/$sc+rem;
+                            left: 16/$sc+rem;
+                        }
+                        .save {
+                            display: block;
+                            height: 20/$sc+rem;
+                            line-height: 20/$sc+rem;
+                            font-size: 14/$sc+rem;
+                            color: #6C7072;
+                            position: absolute;
+                            top: 11/$sc+rem;
+                            right: 16/$sc+rem;
+                        }
+                    }
+                }
+                .modify-mailbox-pushsection {
+                    flex: 1;
+                    -webkit-flex: 1;
+                    overflow: hidden;
+                    background: #F4F4F4;
+                    .pushsection-wrapper {
+                        width: 100%;
+                        .modify-mailbox-push-revise {
+                            width: 100%;
+                            height: 46/$sc+rem;
+                            line-height: 46/$sc+rem;
+                            margin-top: 10/$sc+rem;
+                            padding: 0 16/$sc+rem;
+                            background: #FFFFFF;
+                            display: flex;
+                            flex-direction: row;
+                            box-sizing: border-box;
+                            -webkit-box-sizing: border-box;
+                            box-shadow: inset 0 1px 0 0 #EEEEEE, inset 0 -1px 0 0 #EEEEEE;
+                            -webkit-box-shadow: inset 0 1px 0 0 #EEEEEE, inset 0 -1px 0 0 #EEEEEE;
+                            .title {
+                                height: 100%;
+                                font-size: 14/$sc+rem;
+                                color: #394043;
+                            }
+                            .mailbox {
+                                flex: 1;
+                                -webkit-flex: 1;
+                                height: 100%;
+                                line-height: 20/$sc+rem;
+                                background: transparent;
+                                padding: 12/$sc+rem 0 14/$sc+rem 0;
+                                font-size: 14/$sc+rem;
+                                color: #6C7072;
+                                box-sizing: border-box;
+                                -webkit-box-sizing: border-box;
+                            }
+                            .delete {
+                                display: none;
+                                height: 100%;
+                                width: 22/$sc+rem;
+                                position: relative;
+                                img {
+                                    display: block;
+                                    float: right;
+                                    height: 22/$sc+rem;
+                                    width: 22/$sc+rem;
+                                    position: absolute;
+                                    top: 0;
+                                    bottom: 0;
+                                    right: 0;
+                                    margin: auto;
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -4117,12 +4478,12 @@
                     }
                     .return {
                         display: block;
-                        height: 22/$sc+rem;
+                        height: 36/$sc+rem;
                         width: 22/$sc+rem;
-                        background: url(../img/returnleft.png);
+                        background: url(../img/returnleft.png) center center no-repeat;
                         background-size: 22/$sc+rem 22/$sc+rem;
                         position: absolute;
-                        top: 11/$sc+rem;
+                        top: 3/$sc+rem;
                         left: 16/$sc+rem;
                     }
                 }
@@ -4457,12 +4818,12 @@
                     }
                     .return {
                         display: block;
-                        height: 22/$sc+rem;
+                        height: 36/$sc+rem;
                         width: 22/$sc+rem;
-                        background: url(../img/returnleft.png);
+                        background: url(../img/returnleft.png) center center no-repeat;
                         background-size: 22/$sc+rem 22/$sc+rem;
                         position: absolute;
-                        top: 11/$sc+rem;
+                        top: 3/$sc+rem;
                         left: 16/$sc+rem;
                     }
                     .lookup {

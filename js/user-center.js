@@ -634,7 +634,8 @@ $(function() {
 	//用户中心--个人资料设置--修改用户名弹框  修改用户名返回键与保存键
 	$(".personal-data-pushsection .account-name").tap(function(){
 		var Aname=$(".personal-data-pushsection .account-name .li-wrapper-info").text()
-		$(".account-name-push").css("left","0")
+		$(".account-name-push").css("transform", "translateX(0px)")
+		$(".personal-data-shadow").fadeIn(250)
 		$(".account-name-pushsection .accountName").val(Aname)
 		
 		if($(".account-name-pushsection .accountName").val()!==""){
@@ -645,14 +646,16 @@ $(function() {
 		}
 		
 		$(".account-name-pushheader .return").tap(function(){
-			$(".account-name-push").css("left",setw+5)
+			$(".account-name-push").css("transform", "translateX("+setw+"px)")
+			$(".personal-data-shadow").fadeOut(250)
 			$(".account-name-pushsection .accountName").val(Aname)
 		})
 		
 		$(".account-name-pushheader .save").tap(function(){
 			var inputtxt=$(".account-name-pushsection .accountName").val()
 			if($(".account-name-pushsection .accountName").val()!==""){
-				$(".account-name-push").css("left",setw+5)
+				$(".account-name-push").css("transform", "translateX("+setw+"px)")
+				$(".personal-data-shadow").fadeOut(250)
 				$(".personal-data-pushsection .account-name .li-wrapper-info").text(inputtxt)
 			}
 		})
@@ -686,7 +689,8 @@ $(function() {
 	//用户中心--个人资料设置--修改昵称弹框  修改用户名返回键与保存键
 	$(".personal-data-pushsection .nickname").tap(function(){
 		var Aname=$(".personal-data-pushsection .nickname .li-wrapper-info").text()
-		$(".nickname-push").css("left","0")
+		$(".nickname-push").css("transform", "translateX(0px)")
+		$(".personal-data-shadow").fadeIn(250)
 		$(".nickname-pushsection .nickName").val(Aname)
 		
 		if($(".nickname-pushsection .nickName").val()!==""){
@@ -697,14 +701,16 @@ $(function() {
 		}
 		
 		$(".nickname-pushheader .return").tap(function(){
-			$(".nickname-push").css("left",setw+5)
+			$(".nickname-push").css("transform", "translateX("+setw+"px)")
+			$(".personal-data-shadow").fadeOut(250)
 			$(".nickname-pushsection .nickName").val(Aname)
 		})
 		
 		$(".nickname-pushheader .save").tap(function(){
 			var inputtxt=$(".nickname-pushsection .nickName").val()
 			if($(".nickname-pushsection .nickName").val()!==""){
-				$(".nickname-push").css("left",setw+5)
+				$(".nickname-push").css("transform", "translateX("+setw+"px)")
+				$(".personal-data-shadow").fadeOut(250)
 				$(".personal-data-pushsection .nickname .li-wrapper-info").text(inputtxt)
 			}
 		})
@@ -737,7 +743,8 @@ $(function() {
 	//用户中心--个人资料设置--填写真实姓名弹框  修改真实姓名返回键与保存键
 	$(".personal-data-pushsection .real-name").tap(function(){
 		var Aname=$(".personal-data-pushsection .real-name .li-wrapper-info").text()
-		$(".real-name-push").css("left","0")
+		$(".real-name-push").css("transform", "translateX(0px)")
+		$(".personal-data-shadow").fadeIn(250)
 		$(".real-name-pushsection .realName").val(Aname)
 		if($(".real-name-pushsection .realName").val()!==""){
 			$(".real-name-pushsection .delete").css("display","block")
@@ -746,14 +753,16 @@ $(function() {
 			$(".real-name-pushsection .delete").css("display","none")
 		}
 		$(".real-name-pushheader .return").tap(function(){
-			$(".real-name-push").css("left",setw+5)
+			$(".real-name-push").css("transform", "translateX("+setw+"px)")
+			$(".personal-data-shadow").fadeOut(250)
 			$(".real-name-pushsection .realName").val(Aname)
 		})
 		
 		$(".real-name-pushheader .save").tap(function(){
 			var inputtxt=$(".real-name-pushsection .realName").val()
-			if($(".real-name-pushsection .realName").val()!==""){
-				$(".real-name-push").css("left",setw+5)
+			if(!inputtxt==""){
+				$(".real-name-push").css("transform", "translateX("+setw+"px)")
+				$(".personal-data-shadow").fadeOut(250)
 				$(".personal-data-pushsection .real-name .li-wrapper-info").text(inputtxt)
 			}
 		})
@@ -806,16 +815,20 @@ $(function() {
 	})
 	
 	$(".personal-data-pushsection .account-management .Modify-password").tap(function(){
-		$(".modify-password-push").css("left","0")
+		$(".modify-password-push").css("transform", "translateX(0px)")
+				$(".personal-data-shadow").fadeIn(250)
 	})
 	$(".modify-password-pushheader .del").tap(function(){
-		$(".modify-password-push").css("left",setw+5)
+		$(".modify-password-push").css("transform", "translateX("+setw+"px)")
+				$(".personal-data-shadow").fadeOut(250)
 	})
+	
 	var modify=0;
 	$(".modify-password-pushsection .modify-btn").tap(function(){
 		if($(".modify-password-pushsection .old_P").val()!=="" && $(".modify-password-pushsection .new_P").val()!==""){
 			if(modify%2==0){
-				$(".modify-password-push").css("left",setw+5)
+				$(".modify-password-push").css("transform", "translateX("+setw+"px)")
+				$(".personal-data-shadow").fadeOut(250)
 				setTimeout(function(){
 					$(".personal-data-push .modify-failed").show()
 					$(".modify-password-pushsection .old_P").val("").blur()
@@ -826,10 +839,12 @@ $(function() {
 				},300)
 			}
 			else{
-				$(".login-page-push").css("left","0")
+				$(".login-page-push").css("transform", "translateX(0px)")
+					$(".user-center-shadow").fadeIn(250)
 				setTimeout(function(){
-					$(".personal-data-push").css("left",setw+5)
-					$(".modify-password-push").css("left",setw+5)
+					$(".personal-data-push").css("transform", "translateX("+setw+"px)")
+					$(".modify-password-push").css("transform", "translateX("+setw+"px)")
+					$(".personal-data-shadow").fadeOut(250)
 					$(".login-page-push .modify-success").show()
 					$(".modify-password-pushsection .old_P").val("").blur()
 					$(".modify-password-pushsection .new_P").val("").blur()
@@ -886,6 +901,8 @@ $(function() {
 		
 	})
 	
+					
+	
 	//用户中心--个人资料设置--生日弹框
 	var birthdayH = $(".birthday-pushsection").height()
 	$(".birthday-pushsection .pushsection-wrapper").height(birthdayH + 1)
@@ -895,10 +912,12 @@ $(function() {
 	})
 	
 	$(".personal-data-pushsection .birthday").tap(function(){
-		$(".birthday-push").css("left","0")
+		$(".birthday-push").css("transform", "translateX(0px)")
+		$(".personal-data-shadow").fadeIn(250)
 	})
 	$(".birthday-pushheader .return").tap(function(){
-		$(".birthday-push").css("left",setw+5)
+		$(".birthday-push").css("transform", "translateX("+setw+"px)")
+		$(".personal-data-shadow").fadeOut(250)
 	})
 	
 	//用户中心--个人资料设置--地区弹框
@@ -910,11 +929,218 @@ $(function() {
 	})
 	
 	$(".personal-data-pushsection .region").tap(function(){
-		$(".region-push").css("left","0")
+		$(".region-push").css("transform", "translateX(0px)")
+		$(".personal-data-shadow").fadeIn(250)
 	})
 	$(".region-pushheader .return").tap(function(){
-		$(".region-push").css("left",setw+5)
+		$(".region-push").css("transform", "translateX("+setw+"px)")
+		$(".personal-data-shadow").fadeOut(250)
 	})
+
+
+
+
+	
+	//用户中心--个人资料设置--邮箱绑定弹框
+	var mailboxH = $(".modify-mailbox-pushsection").height()
+	$(".modify-mailbox-pushsection .pushsection-wrapper").height(mailboxH + 1)
+	
+	var mailboxS = new IScroll('.modify-mailbox-pushsection', {
+		scrollbars: false
+	})
+	
+	//用户中心--个人资料设置--邮箱绑定弹框  邮箱绑定返回键与保存键
+	$(".personal-data-pushsection .bind_mailbox .btn").tap(function(){
+		var b_m=$(".personal-data-pushsection .bind_mailbox .li-wrapper-info").text()
+		$(".modify-mailbox-push").css("transform", "translateX(0px)")
+		$(".personal-data-shadow").fadeIn(250)
+		$(".modify-mailbox-pushsection .mailbox").val(b_m)
+		
+		if($(".modify-mailbox-pushsection .mailbox").val()!==""){
+			$(".modify-mailbox-pushsection .delete").css("display","block")
+		}
+		if($(".modify-mailbox-pushsection .mailbox").val()==""){
+			$(".modify-mailbox-pushsection .delete").css("display","none")
+		}
+		
+		$(".modify-mailbox-pushheader .return").tap(function(){
+			$(".modify-mailbox-push").css("transform", "translateX("+setw+"px)")
+			$(".personal-data-shadow").fadeOut(250)
+			$(".modify-mailbox-pushsection .mailbox").val(b_m)
+		})
+		
+		$(".modify-mailbox-pushheader .save").tap(function(){
+			var inputtxt=$(".modify-mailbox-pushsection .mailbox").val()
+			if((/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/.test(inputtxt)) || inputtxt == ""){
+//		        var myphone = inputtxt.substr(3, 4);  
+//		        var lphone = inputtxt.replace(myphone, "****"); 
+				$(".modify-mailbox-push").css("transform", "translateX("+setw+"px)")
+				$(".personal-data-shadow").fadeOut(250)
+				$(".binding-device .bind_mailbox .li-wrapper-info").text(inputtxt)
+				if(!$(".binding-device .bind_mailbox .li-wrapper-info").text() == "") {
+					$(".personal-data-pushsection .bind_mailbox .btn").text("换绑")
+				}
+				else{
+					$(".personal-data-pushsection .bind_mailbox .btn").text("绑定")
+				}
+			}
+		})
+	})
+	
+	//用户中心--个人资料设置--邮箱绑定弹框  监听input中的val
+	$(".modify-mailbox-pushsection .mailbox").bind('input propertychange', function() {
+		if($(".modify-mailbox-pushsection .mailbox").val()!==""){
+			$(".modify-mailbox-pushsection .delete").css("display","block")
+		}
+		if($(".modify-mailbox-pushsection .mailbox").val()==""){
+			$(".modify-mailbox-pushsection .delete").css("display","none")
+		}
+	})
+	//用户中心--个人资料设置--邮箱绑定弹框  清空键
+	$(".modify-mailbox-pushsection .delete").tap(function(){
+		$(".modify-mailbox-pushsection .mailbox").val("")
+		$(".modify-mailbox-pushsection .mailbox").focus()
+		$(".modify-mailbox-pushsection .delete").css("display","none")
+	})
+
+
+
+
+
+	
+	//用户中心--个人资料设置--微信绑定弹框
+	var weixinH = $(".weixin-pushsection").height()
+	$(".weixin-pushsection .pushsection-wrapper").height(weixinH + 1)
+	
+	var weixinS = new IScroll('.weixin-pushsection', {
+		scrollbars: false
+	})
+	
+	//用户中心--个人资料设置--微信绑定弹框  微信绑定返回键与保存键
+	$(".personal-data-pushsection .bind_weixin .btn").tap(function(){
+		var b_w=$(".personal-data-pushsection .bind_weixin .li-wrapper-info").text()
+		$(".weixin-push").css("transform", "translateX(0px)")
+		$(".personal-data-shadow").fadeIn(250)
+		$(".weixin-pushsection .weixin").val(b_w)
+		
+		if($(".weixin-pushsection .weixin").val()!==""){
+			$(".weixin-pushsection .delete").css("display","block")
+		}
+		if($(".weixin-pushsection .weixin").val()==""){
+			$(".weixin-pushsection .delete").css("display","none")
+		}
+		
+		$(".weixin-pushheader .return").tap(function(){
+			$(".weixin-push").css("transform", "translateX("+setw+"px)")
+			$(".personal-data-shadow").fadeOut(250)
+			$(".weixin-pushsection .weixin").val(b_w)
+		})
+		
+		$(".weixin-pushheader .save").tap(function(){
+			var inputtxt=$(".weixin-pushsection .weixin").val() 
+			$(".weixin-push").css("transform", "translateX("+setw+"px)")
+			$(".personal-data-shadow").fadeOut(250)
+			$(".binding-device .bind_weixin .li-wrapper-info").text(inputtxt)
+			if(!$(".binding-device .bind_weixin .li-wrapper-info").text() == "") {
+				$(".personal-data-pushsection .bind_weixin .btn").text("换绑")
+			}
+			else{
+				$(".personal-data-pushsection .bind_weixin .btn").text("绑定")
+			}
+		})
+	})
+	
+	//用户中心--个人资料设置--微信绑定弹框  监听input中的val
+	$(".weixin-pushsection .weixin").bind('input propertychange', function() {
+		if($(".weixin-pushsection .weixin").val()!==""){
+			$(".weixin-pushsection .delete").css("display","block")
+		}
+		if($(".weixin-pushsection .weixin").val()==""){
+			$(".weixin-pushsection .delete").css("display","none")
+		}
+	})
+	//用户中心--个人资料设置--微信绑定弹框  清空键
+	$(".weixin-pushsection .delete").tap(function(){
+		$(".weixin-pushsection .weixin").val("")
+		$(".weixin-pushsection .weixin").focus()
+		$(".weixin-pushsection .delete").css("display","none")
+	})
+
+
+
+
+	
+	//用户中心--个人资料设置--手机绑定弹框
+	var pc_phoneH = $(".pc_phone-pushsection").height()
+	$(".pc_phone-pushsection .pushsection-wrapper").height(pc_phoneH + 1)
+	
+	var pc_phoneS = new IScroll('.pc_phone-pushsection', {
+		scrollbars: false
+	})
+	
+	//用户中心--个人资料设置--手机绑定弹框  手机绑定返回键与保存键
+	$(".personal-data-pushsection .bind_phone .btn").tap(function(){
+		var b_p=$(".personal-data-pushsection .bind_phone .li-wrapper-info").attr("data-value")
+		$(".pc_phone-push").css("transform", "translateX(0px)")
+		$(".personal-data-shadow").fadeIn(250)
+		$(".pc_phone-pushsection .mailbox").val(b_p)
+		
+		if($(".pc_phone-pushsection .pc_phone").val()!==""){
+			$(".pc_phone-pushsection .delete").css("display","block")
+		}
+		if($(".pc_phone-pushsection .pc_phone").val()==""){
+			$(".pc_phone-pushsection .delete").css("display","none")
+		}
+		
+		$(".pc_phone-pushheader .return").tap(function(){
+			$(".pc_phone-push").css("transform", "translateX("+setw+"px)")
+			$(".personal-data-shadow").fadeOut(250)
+			$(".pc_phone-pushsection .pc_phone").val(b_p)
+		})
+		
+		$(".pc_phone-pushheader .save").tap(function(){
+			var inputtxt=$(".pc_phone-pushsection .pc_phone").val()
+			if((/^1[3|4|5|8]\d{9}$/.test(inputtxt)) || inputtxt == ""){
+		        var myphone = inputtxt.substr(3, 4);  
+		        var lphone = inputtxt.replace(myphone, "****"); 
+				$(".pc_phone-push").css("transform", "translateX("+setw+"px)")
+				$(".personal-data-shadow").fadeOut(250)
+				$(".binding-device .bind_phone .li-wrapper-info").text(lphone)
+				$(".personal-data-pushsection .bind_phone .li-wrapper-info").attr("data-value",inputtxt)
+				$(".personal-data-pushsection .bind_phone .btn").text("换绑")
+			}
+			if(inputtxt == ""){
+				$(".pc_phone-push").css("transform", "translateX("+setw+"px)")
+				$(".personal-data-shadow").fadeOut(250)
+				$(".binding-device .bind_phone .li-wrapper-info").text(inputtxt)
+				$(".personal-data-pushsection .bind_phone .li-wrapper-info").attr("data-value",inputtxt)
+				$(".personal-data-pushsection .bind_phone .btn").text("绑定")
+			}
+		})
+	})
+	
+	//用户中心--个人资料设置--手机绑定弹框  监听input中的val
+	$(".pc_phone-pushsection .pc_phone").bind('input propertychange', function() {
+		if($(".pc_phone-pushsection .pc_phone").val()!==""){
+			$(".pc_phone-pushsection .delete").css("display","block")
+		}
+		if($(".pc_phone-pushsection .pc_phone").val()==""){
+			$(".pc_phone-pushsection .delete").css("display","none")
+		}
+	})
+	//用户中心--个人资料设置--手机绑定弹框  清空键
+	$(".pc_phone-pushsection .delete").tap(function(){
+		$(".pc_phone-pushsection .pc_phone").val("")
+		$(".pc_phone-pushsection .pc_phone").focus()
+		$(".pc_phone-pushsection .delete").css("display","none")
+	})
+
+
+
+
+
+
+
 
 
 
@@ -945,6 +1171,8 @@ $(function() {
     })
     var newPwrapperh=0;
     var Dcollectionh=$(".delete-collection-push .push-wrapper").height()
+    
+    
     $('.personal-collection-pushsection .Pcollection-data-li .slide-delete-btn').live("tap",function(){ //删除
     		var _this=$(this) 
     		$(".personal-collection-Mask").addClass("show")

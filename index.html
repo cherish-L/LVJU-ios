@@ -593,28 +593,28 @@
 								</li>
 							</ul>
 							<ul class="binding-device">
-								<li>
+								<li class="bind_phone">
 									<div class="li-wrapper">
 										<span class="li-wrapper-title"><img src="img/bindingphone.png"/></span>
-										<span class="li-wrapper-info">173****8888</span>
+										<span class="li-wrapper-info" data-value=""></span>
 										<span class="li-wrapper-btn">
 											<span class="btn">绑定</span>
 										</span>
 									</div>
 								</li>
-								<li>
+								<li class="bind_weixin">
 									<div class="li-wrapper">
 										<span class="li-wrapper-title"><img src="img/bindingweix.png"/></span>
-										<span class="li-wrapper-info">lgylei</span>
+										<span class="li-wrapper-info"></span>
 										<span class="li-wrapper-btn">
 											<span class="btn">绑定</span>
 										</span>
 									</div>
 								</li>
-								<li>
+								<li class="bind_mailbox">
 									<div class="li-wrapper">
 										<span class="li-wrapper-title"><img src="img/bindingEmail.png"/></span>
-										<span class="li-wrapper-info">492718257@qq.com</span>
+										<span class="li-wrapper-info"></span>
 										<span class="li-wrapper-btn">
 											<span class="btn">绑定</span>
 										</span>
@@ -624,6 +624,7 @@
 						</div>
 					</div>
 				</section>
+				<div class="personal-data-shadow"></div>
 				<div class="personal-data-Mask"></div>
 				<!-------------修改用户名弹框------------->
 				<div class="account-name-push">
@@ -639,7 +640,7 @@
 						<div class="pushsection-wrapper">
 							<div class="account-name-revise">
 								<span class="title">修改用户名：</span>
-								<input class="accountName" type="text" name="" id="" />
+								<input class="accountName" type="text" name="" id="" maxlength="20" />
 								<span class="delete"><img src="img/empty.png"/></span>
 							</div>
 							<p>20个以内字符，仅可以使用汉字、字母、数字或下划线</p>
@@ -660,7 +661,7 @@
 						<div class="pushsection-wrapper">
 							<div class="nickname-push-revise">
 								<span class="title">昵称：</span>
-								<input class="nickName" type="text" name="" id="" />
+								<input class="nickName" type="text" name="" id="" maxlength="20" />
 								<span class="delete"><img src="img/empty.png"/></span>
 							</div>
 							<p>20个以内字符，仅可以使用汉字、字母、数字或下划线</p>
@@ -778,6 +779,66 @@
 						<p class="pushfooter-title">选择您的生日</p>
 						<div class="pushfooter-content"></div>
 					</footer>
+				</div>
+				<!-------------手机绑定弹框------------->
+				<div class="pc_phone-push">
+					<header class="pc_phone-pushheader">
+						<div class="signal_bar"></div>
+						<div class="title_bar">
+							<h3 class="title_txt">手机绑定</h3>
+							<a class="return" href="javascript:;"></a>
+							<a class="save" href="javascript:;">保存</a>
+						</div>
+					</header>
+					<section class="pc_phone-pushsection">
+						<div class="pushsection-wrapper">
+							<div class="pc_phone-push-revise">
+								<span class="title">手机号码：</span>
+								<input class="pc_phone" type="number" name="" id="" />
+								<span class="delete"><img src="img/empty.png"/></span>
+							</div>
+						</div>
+					</section>
+				</div>
+				<!-------------微信绑定弹框------------->
+				<div class="weixin-push">
+					<header class="weixin-pushheader">
+						<div class="signal_bar"></div>
+						<div class="title_bar">
+							<h3 class="title_txt">微信绑定</h3>
+							<a class="return" href="javascript:;"></a>
+							<a class="save" href="javascript:;">保存</a>
+						</div>
+					</header>
+					<section class="weixin-pushsection">
+						<div class="pushsection-wrapper">
+							<div class="weixin-push-revise">
+								<span class="title">微信号：</span>
+								<input class="weixin" type="text" name="" id="" />
+								<span class="delete"><img src="img/empty.png"/></span>
+							</div>
+						</div>
+					</section>
+				</div>
+				<!-------------邮箱绑定弹框------------->
+				<div class="modify-mailbox-push">
+					<header class="modify-mailbox-pushheader">
+						<div class="signal_bar"></div>
+						<div class="title_bar">
+							<h3 class="title_txt">邮箱绑定</h3>
+							<a class="return" href="javascript:;"></a>
+							<a class="save" href="javascript:;">保存</a>
+						</div>
+					</header>
+					<section class="modify-mailbox-pushsection">
+						<div class="pushsection-wrapper">
+							<div class="modify-mailbox-push-revise">
+								<span class="title">邮箱地址：</span>
+								<input class="mailbox" type="email" name="" id="" />
+								<span class="delete"><img src="img/empty.png"/></span>
+							</div>
+						</div>
+					</section>
 				</div>
 				<!-------------密码修改失败弹框------------->
 				<div class="modify-failed">密码修改失败，请检查网络</div>
