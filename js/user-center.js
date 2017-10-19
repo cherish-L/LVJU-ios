@@ -2,7 +2,6 @@ $(function() {
 	$(".user-center-footer .footer-nav-li").on("tap",function() {
 		$(this).addClass("select").siblings().removeClass("select")
 	})
-	alert("广发华福")
 	//用户中心 下拉背景放大效果
 	var centerH = $(".user-center-section").height()
 	$(".user-center-section .section-wrapper").height(centerH + 1)
@@ -915,6 +914,29 @@ $(function() {
 		$(".region-push").css("transform", "translateX(" + setw + "px)")
 		$(".personal-data-shadow").fadeOut(250)
 	})
+	
+	
+	$(".personal-data-pushsection .region").on("tap",function() {
+		var Aname = $(".personal-data-pushsection .region .li-wrapper-info").text()
+		$(".region-push").css("transform", "translateX(0px)")
+		$(".personal-data-shadow").fadeIn(250)
+		$("#region-place").text(Aname)
+
+		$(".region-pushheader .return").on("tap",function() {
+			$(".region-push").css("transform", "translateX(" + setw + "px)")
+			$(".personal-data-shadow").fadeOut(250)
+			$(".personal-data-pushsection .region .li-wrapper-info").val(Aname)
+		})
+
+		$(".region-pushheader .determine").on("tap",function() {
+			var inputtxt = $("#region-place").text()
+			$(".region-push").css("transform", "translateX(" + setw + "px)")
+			$(".personal-data-shadow").fadeOut(250)
+			$(".personal-data-pushsection .region .li-wrapper-info").text(inputtxt)
+		})
+	})
+
+
 
 	//用户中心--个人资料设置--邮箱绑定弹框
 	var mailboxH = $(".modify-mailbox-pushsection").height()

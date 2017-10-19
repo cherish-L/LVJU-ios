@@ -7805,9 +7805,134 @@ li {
 .mui-poppicker {
   position: fixed;
   z-index: 999;
-  border-top: solid 1px #ccc;
   bottom: 0;
+  left: 0;
+  -webkit-transition: .3s;
+  width: 100%;
+  background-color: #FFFFFF;
   -webkit-transform: translateY(12rem);
+}
+
+.mui-poppicker .mui-poppicker-header {
+  width: 100%;
+  height: 1.44rem;
+  background-color: #EEEEEE;
+}
+
+.mui-poppicker .mui-poppicker-header .mui-btn {
+  height: 100%;
+  float: left;
+  line-height: 1.44rem;
+  padding: 0 0.8rem;
+  font-size: 0.56rem;
+  color: #4A4A4A;
+  background: transparent;
+  border: 0;
+}
+
+.mui-poppicker .mui-poppicker-header .mui-btn-blue {
+  float: right;
+  color: #EB3038;
+}
+
+.mui-poppicker .mui-poppicker-body {
+  position: relative;
+  width: 100%;
+  height: 8.6rem;
+  padding-bottom: 0.2rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.mui-poppicker .mui-poppicker-body .mui-picker {
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #FFFFFF;
+  position: relative;
+  -webkit-user-select: none;
+  user-select: none;
+  height: 100%;
+  float: left;
+  border: none;
+}
+
+.mui-poppicker .mui-poppicker-body .mui-picker .mui-picker-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-mask-box-image: -webkit-linear-gradient(bottom, transparent, transparent 5%, #fff 20%, #fff 80%, transparent 95%, transparent);
+  -webkit-mask-box-image: linear-gradient(top, transparent, transparent 5%, #fff 20%, #fff 80%, transparent 95%, transparent);
+}
+
+.mui-poppicker .mui-poppicker-body .mui-picker .mui-picker-inner .mui-pciker-rule,
+.mui-poppicker .mui-poppicker-body .mui-picker .mui-picker-inner .mui-pciker-list {
+  box-sizing: border-box;
+  padding: 0;
+  margin: -0.6rem 0;
+  width: 100%;
+  height: 1.44rem;
+  line-height: 1.44rem;
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+
+.mui-poppicker .mui-poppicker-body .mui-picker .mui-picker-inner .mui-pciker-rule-ft {
+  z-index: 2;
+  border-top: solid 1px #E8E8E8;
+  border-bottom: solid 1px #E8E8E8;
+}
+
+.mui-poppicker .mui-poppicker-body .mui-picker .mui-picker-inner .mui-pciker-rule-bg {
+  z-index: 0;
+}
+
+.mui-poppicker .mui-poppicker-body .mui-picker .mui-picker-inner .mui-pciker-list {
+  z-index: 1;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: perspective(750pt) rotateY(0) rotateX(0);
+  transform: perspective(750pt) rotateY(0) rotateX(0);
+}
+
+.mui-poppicker .mui-poppicker-body .mui-picker .mui-picker-inner .mui-pciker-list li {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  font-size: 0.64rem;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #4A4A4A;
+  white-space: nowrap;
+  -webkit-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  cursor: default;
+  visibility: hidden;
+}
+
+.mui-poppicker .mui-poppicker-body .mui-picker .mui-picker-inner .mui-pciker-list li.highlight,
+.mui-poppicker .mui-poppicker-body .mui-picker .mui-picker-inner .mui-pciker-list li.visible {
+  visibility: visible;
+}
+
+.mui-poppicker .mui-poppicker-body .mui-picker .mui-picker-inner .mui-pciker-list li.highlight {
+  color: #222;
+}
+
+.mui-poppicker .mui-poppicker-body .mui-picker:first-child {
+  width: 40%;
+}
+
+.mui-poppicker .mui-poppicker-body .mui-picker:nth-child(2) {
+  width: 20%;
+}
+
+.mui-poppicker .mui-poppicker-body .mui-picker:nth-child(3) {
+  width: 40%;
 }
 
 .mui-poppicker.mui-active {
@@ -7824,12 +7949,6 @@ li {
   bottom: 0;
   -webkit-transition-property: bottom;
   -webkit-transform: none;
-}
-
-.mui-poppicker-header {
-  padding: 0.24rem;
-  font-size: 0.56rem;
-  color: #888;
 }
 
 .mui-poppicker-btn-cancel {
@@ -7897,7 +8016,7 @@ li {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.45);
-  z-index: 99999;
+  z-index: 99;
 }
 
 .iScrollVerticalScrollbar {

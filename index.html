@@ -760,15 +760,9 @@
 					</header>
 					<section class="region-pushsection">
 						<div class="pushsection-wrapper">
-							<div class="region-place">
-								海南省 海口市 龙华区
-							</div>
+							<div class="region-place" id="region-place"></div>
 						</div>
 					</section>
-					<footer class="region-pushfooter">
-						<p class="pushfooter-title">选择您的生日</p>
-						<div class="pushfooter-content"></div>
-					</footer>
 				</div>
 				<!-------------手机绑定弹框------------->
 				<div class="pc_phone-push">
@@ -1727,7 +1721,9 @@
 	<script type="text/javascript" src="js/user-center.js"></script>
 	<script src="plugins/mui/mui.min.js"></script>
 	<script src="plugins/mui/mui.picker.min.js"></script>
+	<script src="plugins/mui/data.city.js"></script>
 	<script>
+		//时间选择器(生日)
 		var start_time_picker = new mui.DtPicker({"type":"date","beginYear":1960,"endYear":2020});
 		
 		$(".birthday").on("tap", function(){
@@ -1744,6 +1740,29 @@
 				});
 			},300);
 		});
+		//地区选择器(地区)
+		var city_picker = new mui.PopPicker({layer:3});
+		city_picker.setData(init_city_picker);
+		$(".personal-data-box .region").on("tap",function(){
+			setTimeout(function(){
+				city_picker.show(function(items){
+					$(".region-place").html((items[0] || {}).text + " " + (items[1] || {}).text + " " + (items[2] || {}).text);
+				});
+			},300);
+		})
+		
+		$("#region-place").on("tap", function(){
+			setTimeout(function(){
+				city_picker.show(function(items){
+					$("#region-place").html((items[0] || {}).text + " " + (items[1] || {}).text + " " + (items[2] || {}).text);
+				});
+			},200);
+		});
+		
+		$(".mui-poppicker .mui-poppicker-header .mui-poppicker-btn-ok").on("tap",function(){
+			var rp_txt=$("#region-place").text()
+			$("#region-place").html(rp_txt.replace( undefined, ''))
+		})
 	</script>
 	
 </html>
