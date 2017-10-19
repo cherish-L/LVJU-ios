@@ -3994,7 +3994,7 @@
                                     padding: 24/$sc+rem 16/$sc+rem;
                                     position: absolute;
                                     top: 0;
-                                    left: 0;
+                                    transform: translateX(0/$sc+rem);
                                     display: flex;
                                     display: -webkit-flex;
                                     flex-direction: row;

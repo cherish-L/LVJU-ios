@@ -1743,30 +1743,34 @@
 		    }
 
 			var x;
+			var change_all=0;
+			alert("0")
 		    $('.Pcollection-data-ul .Pcollection-data-li .dataDetail')
 		        .on('touchstart', function(e) {
-		            $('.Pcollection-data-ul .Pcollection-data-li .dataDetail').css('left', '0px') // close em all
-		            $(e.currentTarget).addClass('open')
+		        		change_all=0;
+		            $('.Pcollection-data-ul .Pcollection-data-li .dataDetail').css('transform', 'translateX(0px)') // close em all
 		            x = e.originalEvent.targetTouches[0].pageX // anchor point
 		        })
 		        .on('touchmove', function(e) {
 		            var change = e.originalEvent.targetTouches[0].pageX - x
 		            change = Math.min(Math.max(-80, change), 0) // restrict to -100px left, 0px right
-		            e.currentTarget.style.left = change + 'px'
+//		            e.currentTarget.style.left = change + 'px'
+		            $(e.currentTarget).css('transform', 'translateX('+change+'px)')
+		            change_all=change
 		            if (change < -10) disable_scroll() // disable scroll once we hit 10px horizontal slide
 		        })
 		        .on('touchend', function(e) {
-		            var left = parseInt(e.currentTarget.style.left)
+		            var left = change_all
 		            var new_left;
-		            if (left < -30) {
+		            if (left < -40) {
 		                new_left = '-80px'
-		            } else if (left > 30) {
+		            } else if (left > 40) {
 		                new_left = '80px'
 		            } else {
 		                new_left = '0px'
 		            }
 		            // e.currentTarget.style.left = new_left
-		            $(e.currentTarget).animate({left: new_left}, 200)
+		            $(e.currentTarget).css('transform', 'translateX('+new_left+')')
 		            enable_scroll()
 		        });
 		
