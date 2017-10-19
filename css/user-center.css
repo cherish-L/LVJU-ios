@@ -4375,7 +4375,7 @@ li {
   transition: all .3s;
   overflow: hidden;
   background: #f4f4f4;
-  transform: translateX(0rem);
+  transform: translateX(15.2rem);
   position: fixed;
   top: 0;
   z-index: 30;
@@ -4455,8 +4455,7 @@ li {
   position: relative;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  box-shadow: inset 0 -0.04rem 0 0 #EEEEEE;
-  -webkit-box-shadow: inset 0 -0.04rem 0 0 #EEEEEE;
+  border-bottom: 1px solid #EEEEEE;
 }
 
 .user-center-container .personal-collection-push .personal-collection-pushsection .pushsection-wrapper .Pcollection-data .Pcollection-data-ul .Pcollection-data-li .slide-delete-btn {
@@ -4502,7 +4501,7 @@ li {
   padding: 0.96rem 0.64rem;
   position: absolute;
   top: 0;
-  left: 0;
+  transform: translateX(0rem);
   display: flex;
   display: -webkit-flex;
   flex-direction: row;
@@ -4597,8 +4596,7 @@ li {
 }
 
 .user-center-container .personal-collection-push .personal-collection-pushsection .pushsection-wrapper .Pcollection-data .Pcollection-data-ul .Pcollection-data-li:last-child {
-  box-shadow: none;
-  -webkit-box-shadow: none;
+  border-bottom: 0;
 }
 
 .user-center-container .personal-collection-push .personal-collection-Mask {
@@ -4684,7 +4682,7 @@ li {
   transition: all .3s;
   overflow: hidden;
   background: #f4f4f4;
-  transform: translateX(15.2rem);
+  transform: translateX(0rem);
   position: fixed;
   top: 0;
   z-index: 30;
@@ -4760,22 +4758,22 @@ li {
   width: 100%;
   height: 4.96rem;
   background: #FFFFFF;
-  transition: all .2s;
   overflow: hidden;
   position: relative;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  box-shadow: inset 0 -0.04rem 0 0 #EEEEEE;
-  -webkit-box-shadow: inset 0 -0.04rem 0 0 #EEEEEE;
+  border-bottom: 1px solid #EEEEEE;
 }
 
 .user-center-container .personal-footprint-push .personal-footprint-pushsection .pushsection-wrapper .Pfootprint-data .Pfootprint-data-ul .Pfootprint-data-li .slide-delete-btn {
-  height: 100%;
-  width: 0;
+  height: 4.8rem;
+  width: 3.2rem;
   overflow: hidden;
   position: absolute;
   top: 0;
+  bottom: 0;
   right: 0;
+  margin: auto;
 }
 
 .user-center-container .personal-footprint-push .personal-footprint-pushsection .pushsection-wrapper .Pfootprint-data .Pfootprint-data-ul .Pfootprint-data-li .slide-delete-btn .delete-btn {
@@ -4806,9 +4804,11 @@ li {
   width: 100%;
   height: 4.96rem;
   padding: 0.96rem 0.64rem;
+  background: #FFFFFF;
+  transition: all .2s;
   position: absolute;
   top: 0;
-  left: 0;
+  transform: translateX(0rem);
   display: flex;
   display: -webkit-flex;
   flex-direction: row;
@@ -4903,8 +4903,7 @@ li {
 }
 
 .user-center-container .personal-footprint-push .personal-footprint-pushsection .pushsection-wrapper .Pfootprint-data .Pfootprint-data-ul .Pfootprint-data-li:last-child {
-  box-shadow: none;
-  -webkit-box-shadow: none;
+  border-bottom: 0;
 }
 
 .user-center-container .personal-footprint-push .personal-footprint-Mask {

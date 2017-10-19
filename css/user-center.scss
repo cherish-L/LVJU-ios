@@ -3887,7 +3887,7 @@
             transition: all .3s;
             overflow: hidden;
             background: #f4f4f4;
-            transform: translateX(0/$sc+rem);
+            transform: translateX(380/$sc+rem);
             position: fixed;
             top: 0;
             z-index: 30;
@@ -3952,8 +3952,7 @@
                                 position: relative;
                                 box-sizing: border-box;
                                 -webkit-box-sizing: border-box;
-                                box-shadow: inset 0 -1/$sc+rem 0 0 #EEEEEE;
-                                -webkit-box-shadow: inset 0 -1/$sc+rem 0 0 #EEEEEE;
+                                border-bottom: 1px solid #EEEEEE;
                                 .slide-delete-btn {
                                     height: 120/$sc+rem;
                                     width: 80/$sc+rem;
@@ -4077,8 +4076,7 @@
                                 }
                             }
                             .Pcollection-data-li:last-child {
-                                box-shadow: none;
-                                -webkit-box-shadow: none;
+                                border-bottom: 0;
                             }
                         }
                     }
@@ -4162,7 +4160,7 @@
             transition: all .3s;
             overflow: hidden;
             background: #f4f4f4;
-            transform: translateX(380/$sc+rem);
+            transform: translateX(0/$sc+rem);
             position: fixed;
             top: 0;
             z-index: 30;
@@ -4223,20 +4221,20 @@
                                 width: 100%;
                                 height: 124/$sc+rem;
                                 background: #FFFFFF;
-                                transition: all .2s;
                                 overflow: hidden;
                                 position: relative;
                                 box-sizing: border-box;
                                 -webkit-box-sizing: border-box;
-                                box-shadow: inset 0 -1/$sc+rem 0 0 #EEEEEE;
-                                -webkit-box-shadow: inset 0 -1/$sc+rem 0 0 #EEEEEE;
+                                border-bottom: 1px solid #EEEEEE;
                                 .slide-delete-btn {
-                                    height: 100%;
-                                    width: 0;
+                                    height: 120/$sc+rem;
+                                    width: 80/$sc+rem;
                                     overflow: hidden;
                                     position: absolute;
                                     top: 0;
+                                    bottom: 0;
                                     right: 0;
+                                    margin: auto;
                                     .delete-btn {
                                         display: block;
                                         float: right;
@@ -4264,9 +4262,11 @@
                                     width: 100%;
                                     height: 124/$sc+rem;
                                     padding: 24/$sc+rem 16/$sc+rem;
+                                    background: #FFFFFF;
+                                    transition: all .2s;
                                     position: absolute;
                                     top: 0;
-                                    left: 0;
+                                    transform: translateX(0/$sc+rem);
                                     display: flex;
                                     display: -webkit-flex;
                                     flex-direction: row;
@@ -4349,8 +4349,7 @@
                                 }
                             }
                             .Pfootprint-data-li:last-child {
-                                box-shadow: none;
-                                -webkit-box-shadow: none;
+                                border-bottom: 0;
                             }
                         }
                     }
