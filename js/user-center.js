@@ -1577,7 +1577,7 @@ $(function() {
 		}, 10)
 
 	})
-
+	alert("0")
 	$(".lookup-coupon-pushsection .pushsection-wrapper").height(lookuph + 1)
 	var lookupS = new IScroll('.lookup-coupon-pushsection', {
 		scrollbars: false
