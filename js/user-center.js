@@ -1220,6 +1220,7 @@ $(function() {
 		$(this).parents('li').slideUp('fast', function() {
 			$(this).remove()
 			PfootprintS.refresh()
+			
 		})
 	})
 
