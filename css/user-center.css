@@ -66,7 +66,7 @@ li {
 
 .user-center-container .user-center-header {
   width: 100%;
-  z-index: 15;
+  z-index: 10;
   position: fixed;
   top: 0;
   left: 0;
@@ -103,10 +103,11 @@ li {
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
+  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
 }
 
 .user-center-container .user-center-Bg img {
@@ -118,10 +119,7 @@ li {
   flex: 1;
   -webkit-flex: 1;
   overflow: hidden;
-  display: flex;
-  top: 0;
-  left: 0;
-  z-index: 10;
+  background: #F4F4F4;
 }
 
 .user-center-container .user-center-section .section-wrapper {

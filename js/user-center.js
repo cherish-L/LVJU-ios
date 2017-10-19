@@ -2,7 +2,7 @@ $(function() {
 	$(".user-center-footer .footer-nav-li").on("tap",function() {
 		$(this).addClass("select").siblings().removeClass("select")
 	})
-	alert("沙发大山东")
+	alert("广发华福")
 	//用户中心 下拉背景放大效果
 	var centerH = $(".user-center-section").height()
 	$(".user-center-section .section-wrapper").height(centerH + 1)

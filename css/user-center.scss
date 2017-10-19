@@ -65,7 +65,7 @@
         flex-direction: column;
         .user-center-header {
             width: 100%;
-            z-index: 15;
+            z-index: 10;
             position: fixed;
             top: 0;
             left: 0;
@@ -98,10 +98,11 @@
             position: fixed;
             top: 0;
             left: 0;
+            right: 0;
+            margin: auto;
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 1;
             img {
                 width: 100%;
                 height: 210/$sc+rem;
@@ -111,10 +112,7 @@
             flex: 1;
             -webkit-flex: 1;
             overflow: hidden;
-            display: flex;
-            top: 0;
-            left: 0;
-            z-index: 10;
+            background: #F4F4F4;
             .section-wrapper {
                 width: 100%;
                 height: 100%;
@@ -4075,6 +4073,12 @@
                                     }
                                 }
                             }
+                            
+                            
+                            
+                            
+                            
+                            
                             .Pcollection-data-li:last-child {
                                 box-shadow: none;
                                 -webkit-box-shadow: none;
