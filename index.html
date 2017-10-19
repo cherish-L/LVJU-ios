@@ -1727,26 +1727,6 @@
 		})
 	</script>
 	<script type="text/javascript" src="js/user-center.js"></script>
-	<script src="plugins/mui/mui.min.js"></script>
-	<script src="plugins/mui/mui.picker.min.js"></script>
-	<script>
-		var start_time_picker = new mui.DtPicker({"type":"date","beginYear":1960,"endYear":2020});
-		
-		$(".birthday").on("tap", function(){
-			setTimeout(function(){
-				start_time_picker.show(function(items){
-					$("#birthday-time").text(items.text);
-				});
-			},300);
-		});
-		$("#birthday-time").on("tap", function(){
-			setTimeout(function(){
-				start_time_picker.show(function(items){
-					$("#birthday-time").text(items.text);
-				});
-			},300);
-		});
-	</script>
 	<script type="text/javascript">
 		$(function(){
 			
@@ -1778,9 +1758,9 @@
 		        .on('touchend', function(e) {
 		            var left = parseInt(e.currentTarget.style.left)
 		            var new_left;
-		            if (left < -10) {
+		            if (left < -30) {
 		                new_left = '-80px'
-		            } else if (left > 10) {
+		            } else if (left > 30) {
 		                new_left = '80px'
 		            } else {
 		                new_left = '0px'
@@ -1798,4 +1778,25 @@
 		    })
 		})	
 	</script>
+	<script src="plugins/mui/mui.min.js"></script>
+	<script src="plugins/mui/mui.picker.min.js"></script>
+	<script>
+		var start_time_picker = new mui.DtPicker({"type":"date","beginYear":1960,"endYear":2020});
+		
+		$(".birthday").on("tap", function(){
+			setTimeout(function(){
+				start_time_picker.show(function(items){
+					$("#birthday-time").text(items.text);
+				});
+			},300);
+		});
+		$("#birthday-time").on("tap", function(){
+			setTimeout(function(){
+				start_time_picker.show(function(items){
+					$("#birthday-time").text(items.text);
+				});
+			},300);
+		});
+	</script>
+	
 </html>
