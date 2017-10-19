@@ -2,7 +2,7 @@ $(function() {
 	$(".user-center-footer .footer-nav-li").on("click",function() {
 		$(this).addClass("select").siblings().removeClass("select")
 	})
-	
+	alert("111")
 	//用户中心 下拉背景放大效果
 	var centerH = $(".user-center-section").height()
 	$(".user-center-section .section-wrapper").height(centerH + 1)
@@ -1577,7 +1577,6 @@ $(function() {
 		}, 10)
 
 	})
-	alert("0")
 	$(".lookup-coupon-pushsection .pushsection-wrapper").height(lookuph + 1)
 	var lookupS = new IScroll('.lookup-coupon-pushsection', {
 		scrollbars: false
