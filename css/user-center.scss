@@ -98,8 +98,6 @@
             position: fixed;
             top: 0;
             left: 0;
-            right: 0;
-            margin: auto;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -114,7 +112,6 @@
             -webkit-flex: 1;
             overflow: hidden;
             display: flex;
-            
             top: 0;
             left: 0;
             z-index: 10;
