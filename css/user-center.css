@@ -120,6 +120,9 @@ li {
   flex: 1;
   -webkit-flex: 1;
   overflow: hidden;
+  display: flex;
+  top: 0;
+  left: 0;
   z-index: 10;
 }
 
