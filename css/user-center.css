@@ -105,10 +105,10 @@ li {
   left: 0;
   right: 0;
   margin: auto;
-  z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 
 .user-center-container .user-center-Bg img {
@@ -120,7 +120,7 @@ li {
   flex: 1;
   -webkit-flex: 1;
   overflow: hidden;
-  z-index: 13;
+  z-index: 10;
 }
 
 .user-center-container .user-center-section .section-wrapper {
