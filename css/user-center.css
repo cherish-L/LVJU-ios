@@ -66,7 +66,7 @@ li {
 
 .user-center-container .user-center-header {
   width: 100%;
-  z-index: 10;
+  z-index: 15;
   position: fixed;
   top: 0;
   left: 0;
@@ -105,6 +105,7 @@ li {
   left: 0;
   right: 0;
   margin: auto;
+  z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -119,7 +120,7 @@ li {
   flex: 1;
   -webkit-flex: 1;
   overflow: hidden;
-  background: #F4F4F4;
+  z-index: 13;
 }
 
 .user-center-container .user-center-section .section-wrapper {
@@ -4451,22 +4452,22 @@ li {
   width: 100%;
   height: 4.96rem;
   background: #FFFFFF;
+  transition: all .2s;
   overflow: hidden;
   position: relative;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  border-bottom: 1px solid #EEEEEE;
+  box-shadow: inset 0 -0.04rem 0 0 #EEEEEE;
+  -webkit-box-shadow: inset 0 -0.04rem 0 0 #EEEEEE;
 }
 
 .user-center-container .personal-collection-push .personal-collection-pushsection .pushsection-wrapper .Pcollection-data .Pcollection-data-ul .Pcollection-data-li .slide-delete-btn {
-  height: 4.8rem;
-  width: 3.2rem;
+  height: 100%;
+  width: 0;
   overflow: hidden;
   position: absolute;
   top: 0;
-  bottom: 0;
   right: 0;
-  margin: auto;
 }
 
 .user-center-container .personal-collection-push .personal-collection-pushsection .pushsection-wrapper .Pcollection-data .Pcollection-data-ul .Pcollection-data-li .slide-delete-btn .delete-btn {
@@ -4496,12 +4497,10 @@ li {
 .user-center-container .personal-collection-push .personal-collection-pushsection .pushsection-wrapper .Pcollection-data .Pcollection-data-ul .Pcollection-data-li .dataDetail {
   width: 100%;
   height: 4.96rem;
-  transition: all .2s;
-  background: #FFFFFF;
   padding: 0.96rem 0.64rem;
   position: absolute;
   top: 0;
-  transform: translateX(0rem);
+  left: 0;
   display: flex;
   display: -webkit-flex;
   flex-direction: row;
@@ -4596,7 +4595,8 @@ li {
 }
 
 .user-center-container .personal-collection-push .personal-collection-pushsection .pushsection-wrapper .Pcollection-data .Pcollection-data-ul .Pcollection-data-li:last-child {
-  border-bottom: 0;
+  box-shadow: none;
+  -webkit-box-shadow: none;
 }
 
 .user-center-container .personal-collection-push .personal-collection-Mask {
@@ -4758,22 +4758,22 @@ li {
   width: 100%;
   height: 4.96rem;
   background: #FFFFFF;
+  transition: all .2s;
   overflow: hidden;
   position: relative;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  border-bottom: 1px solid #EEEEEE;
+  box-shadow: inset 0 -0.04rem 0 0 #EEEEEE;
+  -webkit-box-shadow: inset 0 -0.04rem 0 0 #EEEEEE;
 }
 
 .user-center-container .personal-footprint-push .personal-footprint-pushsection .pushsection-wrapper .Pfootprint-data .Pfootprint-data-ul .Pfootprint-data-li .slide-delete-btn {
-  height: 4.8rem;
-  width: 3.2rem;
+  height: 100%;
+  width: 0;
   overflow: hidden;
   position: absolute;
   top: 0;
-  bottom: 0;
   right: 0;
-  margin: auto;
 }
 
 .user-center-container .personal-footprint-push .personal-footprint-pushsection .pushsection-wrapper .Pfootprint-data .Pfootprint-data-ul .Pfootprint-data-li .slide-delete-btn .delete-btn {
@@ -4804,11 +4804,9 @@ li {
   width: 100%;
   height: 4.96rem;
   padding: 0.96rem 0.64rem;
-  background: #FFFFFF;
-  transition: all .2s;
   position: absolute;
   top: 0;
-  transform: translateX(0rem);
+  left: 0;
   display: flex;
   display: -webkit-flex;
   flex-direction: row;
@@ -4903,7 +4901,8 @@ li {
 }
 
 .user-center-container .personal-footprint-push .personal-footprint-pushsection .pushsection-wrapper .Pfootprint-data .Pfootprint-data-ul .Pfootprint-data-li:last-child {
-  border-bottom: 0;
+  box-shadow: none;
+  -webkit-box-shadow: none;
 }
 
 .user-center-container .personal-footprint-push .personal-footprint-Mask {

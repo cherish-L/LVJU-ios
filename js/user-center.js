@@ -2,7 +2,7 @@ $(function() {
 	$(".user-center-footer .footer-nav-li").on("tap",function() {
 		$(this).addClass("select").siblings().removeClass("select")
 	})
-	alert("12345")
+	alert("来来来")
 	//用户中心 下拉背景放大效果
 	var centerH = $(".user-center-section").height()
 	$(".user-center-section .section-wrapper").height(centerH + 1)
@@ -1102,133 +1102,141 @@ $(function() {
 	//用户中心--我的收藏
 	var Pcollectionh = $(".personal-collection-pushsection").height()
 	var Pwrapperh = $(".personal-collection-pushsection .pushsection-wrapper").height()
-
-	if(Pwrapperh <= Pcollectionh) {
-		$(".personal-collection-pushsection .pushsection-wrapper").height(Pcollectionh + 1)
+	
+	if(Pwrapperh<=Pcollectionh){
+		$(".personal-collection-pushsection .pushsection-wrapper").height(Pcollectionh+1)
 	}
-
-	var del_box=$(".personal-footprint-push .Pfootprint-data-li .delete-btn").width()
+	
 	//用户中心--我的收藏 左滑出现删除键
-	function prevent_default(e) {
-		e.preventDefault();
-	}
-
-	function disable_scroll() {
-		$(document).on('touchmove', prevent_default);
-	}
-
-	function enable_scroll() {
-		$(document).unbind('touchmove', prevent_default)
-	}
-	var x;
-	var y;
-	var change_x;
-	var change_y;
-	$('.Pcollection-data-ul .Pcollection-data-li .dataDetail')
-		.on('touchstart', function(e) {
-			change_x = 0;
-			change_y = 0;
-			$('.Pcollection-data-ul .Pcollection-data-li .dataDetail').css('transform', 'translateX(0px)')
-			x = e.originalEvent.targetTouches[0].pageX
-			y = e.originalEvent.targetTouches[0].pageY
-		})
-		.on('touchmove', function(e) {
-			change_x = e.originalEvent.targetTouches[0].pageX - x
-			change_y = e.originalEvent.targetTouches[0].pageY - y
-			change_x = Math.min(Math.max(-del_box, change_x), 0)
-			if(change_x < -10) disable_scroll()
-		})
-		.on('touchend', function(e) {
-			var left = change_x
-			var top = change_y
-			var new_left;
-			if(top > -20 && top < 20) {
-				if(left < -del_box/2) {
-					new_left = -del_box
-				} else if(left > del_box/2) {
-					new_left = del_box
-				} else {
-					new_left = 0
+	var deletebtnw=$(".Pcollection-data-li .slide-delete-btn .delete-btn").width()
+	$('.personal-collection-pushsection .Pcollection-data-li .dataDetail').live("swipeLeft",function(){//左滑显示隐藏按键
+		
+        $(this).animate({left:-deletebtnw},200,'linear').siblings('.slide-delete-btn').animate({width:deletebtnw},200,'linear');
+        
+        $(this).parent('li').siblings('li').find('.dataDetail').animate({left:'0'},200).siblings('.slide-delete-btn').animate({width:'0'},200);
+    })
+	
+    $('.personal-collection-pushsection .Pcollection-data-li .dataDetail').live("swipeRight",function(){//右滑恢复 
+     	$(this).animate({left:'0'},200).siblings('.slide-delete-btn').animate({width:'0'},200);
+    })
+    
+   $('.personal-collection-pushsection .Pcollection-data-li .dataDetail').bind("touchstart",function(e){//点击其他的自动收回删除键
+    		e.preventDefault();
+     	$('.personal-collection-pushsection .Pcollection-data-li .dataDetail').animate({left:'0'},200).siblings('.slide-delete-btn').animate({width:'0'},200);
+    })
+    var newPwrapperh=0;
+    var Dcollectionh=$(".delete-collection-push .push-wrapper").height()
+    
+    
+    $('.personal-collection-pushsection .Pcollection-data-li .slide-delete-btn').live("tap",function(){ //删除
+    		var _this=$(this) 
+    		$(".personal-collection-Mask").addClass("show")
+    		$(".delete-collection-push").height(Dcollectionh)
+    		$(".delete-collection-push .determine").tap(function(){
+    			$(".personal-collection-Mask").removeClass("show")
+    			$(".delete-collection-push").height("0")
+    			_this.parent().css("height","0")
+    			setTimeout(function(){
+    				_this.parent().remove();
+	    			PcollectionS.refresh()
+	    			newPwrapperh=$(".personal-collection-pushsection .pushsection-wrapper .Pcollection-data").height()
+			  	if(newPwrapperh<=Pcollectionh){
+					$(".personal-collection-pushsection .pushsection-wrapper").height(Pcollectionh+1)
+			  		PcollectionS.refresh()
 				}
-			} else {
-				new_left = 0
-			}
-			$(e.currentTarget).css('transform', 'translateX(' + new_left + 'px)')
-			enable_scroll()
-		});
-
-	$('.Pcollection-data-ul .Pcollection-data-li .delete-btn').on('touchend', function(e) {
-		e.preventDefault()
-		$(this).parents('li').slideUp('fast', function() {
-			$(this).remove()
-			PcollectionS.refresh()
-		})
-	})
-
+			  	else if(newPwrapperh>Pcollectionh){
+					$(".personal-collection-pushsection .pushsection-wrapper").height(newPwrapperh)
+			  		PcollectionS.refresh()
+				}
+    			},200)
+    		})
+    		
+    		$(".delete-collection-push .cancle").tap(function(){
+    			$(".personal-collection-Mask").removeClass("show")
+    			$(".delete-collection-push").height("0")
+    			$('.personal-collection-pushsection .Pcollection-data-li .dataDetail').animate({left:'0'},200).siblings('.slide-delete-btn').animate({width:'0'},200);
+    		})
+    		
+    		$(".personal-collection-Mask").tap(function(){
+    			$(".personal-collection-Mask").removeClass("show")
+    			$(".delete-collection-push").height("0")
+    			$('.personal-collection-pushsection .Pcollection-data-li .dataDetail').animate({left:'0'},200).siblings('.slide-delete-btn').animate({width:'0'},200);
+    		})
+    })
+    
 	var PcollectionS = new IScroll('.personal-collection-pushsection', {
-		scrollbars: true,
-		fadeScrollbars: true,
-		shrinkScrollbars: 'clip'
+		scrollbars: false
 	})
-
+	
 	//用户中心--我的足迹
 	var Pfootprinth = $(".personal-footprint-pushsection").height()
 	var Fwrapperh = $(".personal-footprint-pushsection .pushsection-wrapper").height()
-
-	if(Fwrapperh <= Pfootprinth) {
-		$(".personal-footprint-pushsection .pushsection-wrapper").height(Pfootprinth + 1)
+	
+	if(Fwrapperh<=Pfootprinth){
+		$(".personal-footprint-pushsection .pushsection-wrapper").height(Pfootprinth+1)
 	}
-
+	
 	//用户中心--我的足迹  左滑出现删除键
-
-	$('.personal-footprint-push .Pfootprint-data-li .dataDetail')
-		.on('touchstart', function(e) {
-			change_x = 0;
-			change_y = 0;
-			$('.personal-footprint-push .Pfootprint-data-li .dataDetail').css('transform', 'translateX(0px)')
-			x = e.originalEvent.targetTouches[0].pageX
-			y = e.originalEvent.targetTouches[0].pageY
-			
-		})
-		.on('touchmove', function(e) {
-			change_x = e.originalEvent.targetTouches[0].pageX - x
-			change_y = e.originalEvent.targetTouches[0].pageY - y
-			change_x = Math.min(Math.max(-del_box, change_x), 0)
-			if(change_x < -10) disable_scroll()
-		})
-		.on('touchend', function(e) {
-			var left = change_x
-			var top = change_y
-			var new_left;
-			if(top > -20 && top < 20) {
-				if(left < -del_box/2) {
-					new_left = -del_box
-				} else if(left > del_box/2) {
-					new_left = del_box
-				} else {
-					new_left = 0
+	
+	var P_deletebtnw=$(".Pfootprint-data-li .slide-delete-btn .delete-btn").width()
+	$('.personal-footprint-pushsection .Pfootprint-data-li .dataDetail').live("swipeLeft",function(){//左滑显示隐藏按键
+		
+        $(this).animate({left:-P_deletebtnw},200,'linear').siblings('.slide-delete-btn').animate({width:P_deletebtnw},200,'linear');
+        
+        $(this).parent('li').siblings('li').find('.dataDetail').animate({left:'0'},200).siblings('.slide-delete-btn').animate({width:'0'},200);
+    })
+	
+    $('.personal-footprint-pushsection .Pfootprint-data-li .dataDetail').live("swipeRight",function(){//右滑恢复 
+     	$(this).animate({left:'0'},200).siblings('.slide-delete-btn').animate({width:'0'},200);
+    })
+    
+   $('.personal-footprint-pushsection .Pfootprint-data-li .dataDetail').bind("touchstart",function(e){//点击其他的自动收回删除键
+    		e.preventDefault();
+     	$('.personal-footprint-pushsection .Pfootprint-data-li .dataDetail').animate({left:'0'},200).siblings('.slide-delete-btn').animate({width:'0'},200);
+    })
+    var newFwrapperh=0;
+    var Footprinth=$(".delete-footprint-push .push-wrapper").height()
+    $('.personal-footprint-pushsection .Pfootprint-data-li .slide-delete-btn').live("tap",function(){ //删除
+    		var _this=$(this) 
+    		$(".personal-footprint-Mask").addClass("show")
+    		$(".delete-footprint-push").height(Footprinth)
+    		$(".delete-footprint-push .determine").tap(function(){
+    			$(".personal-footprint-Mask").removeClass("show")
+    			$(".delete-footprint-push").height("0")
+    			_this.parent().css("height","0")
+    			setTimeout(function(){
+    				_this.parent().remove();
+	    			PfootprintS.refresh()
+	    			newFwrapperh=$(".personal-footprint-pushsection .pushsection-wrapper .Pfootprint-data").height()
+			  	if(newFwrapperh<=Pfootprinth){
+					$(".personal-footprint-pushsection .pushsection-wrapper").height(Pfootprinth+1)
+			  		PfootprintS.refresh()
 				}
-			} else {
-				new_left = 0
-			}
-			$(e.currentTarget).css('transform', 'translateX(' + new_left + 'px)')
-			enable_scroll()
-		});
-
-	$('.personal-footprint-push .Pfootprint-data-li .delete-btn').on('touchend', function(e) {
-		e.preventDefault()
-		$(this).parents('li').slideUp('fast', function() {
-			$(this).remove()
-			PfootprintS.refresh()
-			
-		})
-	})
-
+			  	else if(newFwrapperh>Pfootprinth){
+					$(".personal-footprint-pushsection .pushsection-wrapper").height(newFwrapperh)
+			  		PfootprintS.refresh()
+				}
+    			},200)
+    		})
+    		
+    		$(".delete-footprint-push .cancle").tap(function(){
+    			$(".personal-footprint-Mask").removeClass("show")
+    			$(".delete-footprint-push").height("0")
+    			$('.personal-footprint-pushsection .Pfootprint-data-li .dataDetail').animate({left:'0'},200).siblings('.slide-delete-btn').animate({width:'0'},200);
+    		})
+    		
+    		$(".personal-footprint-Mask").tap(function(){
+    			$(".personal-footprint-Mask").removeClass("show")
+    			$(".delete-footprint-push").height("0")
+    			$('.personal-footprint-pushsection .Pfootprint-data-li .dataDetail').animate({left:'0'},200).siblings('.slide-delete-btn').animate({width:'0'},200);
+    		})
+    })
+    
+    
 	var PfootprintS = new IScroll('.personal-footprint-pushsection', {
-		scrollbars: true,
-		fadeScrollbars: true,
-		shrinkScrollbars: 'clip'
+		scrollbars: false
 	})
+	
 
 	//用户中心--我的消息
 
