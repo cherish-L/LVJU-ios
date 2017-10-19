@@ -3887,7 +3887,7 @@
             transition: all .3s;
             overflow: hidden;
             background: #f4f4f4;
-            transform: translateX(380/$sc+rem);
+            transform: translateX(0/$sc+rem);
             position: fixed;
             top: 0;
             z-index: 30;
@@ -3947,7 +3947,6 @@
                             .Pcollection-data-li {
                                 width: 100%;
                                 height: 124/$sc+rem;
-                                transition: all .2s;
                                 background: #FFFFFF;
                                 overflow: hidden;
                                 position: relative;
@@ -3956,12 +3955,14 @@
                                 box-shadow: inset 0 -1/$sc+rem 0 0 #EEEEEE;
                                 -webkit-box-shadow: inset 0 -1/$sc+rem 0 0 #EEEEEE;
                                 .slide-delete-btn {
-                                    height: 100%;
-                                    width: 0;
+                                    height: 120/$sc+rem;
+                                    width: 80/$sc+rem;
                                     overflow: hidden;
                                     position: absolute;
                                     top: 0;
+                                    bottom: 0;
                                     right: 0;
+                                    margin: auto;
                                     .delete-btn {
                                         display: block;
                                         float: right;
@@ -3988,6 +3989,8 @@
                                 .dataDetail {
                                     width: 100%;
                                     height: 124/$sc+rem;
+                                    transition: all .2s; 
+                                    background: #FFFFFF;
                                     padding: 24/$sc+rem 16/$sc+rem;
                                     position: absolute;
                                     top: 0;

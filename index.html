@@ -9,13 +9,13 @@
 		<meta name="description" content="switch,honeySwitch,switch button">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title>用户中心</title>
-		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/user-center.css" />
 		<link rel="stylesheet" type="text/css" href="plugins/Switch/switch.css" />
-		<script type="text/javascript" src="plugins/zepto.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="plugins/jq/jquery.mobile-1.4.5.min.css" />
+		<script type="text/javascript" src="plugins/jq/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="plugins/jq/jquery.mobile-1.4.5.min.js"></script>
 		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>
-		<script src="plugins/swiper-3.4.2.min.js"></script>
-		<script type="text/javascript" src="vue/vue.js"></script>
+		<script type="text/javascript" src="plugins/vue/vue.js"></script>
 		<script>
 			//适配
 			document.documentElement.style.fontSize = innerWidth / 15 + "px";
@@ -1747,5 +1747,55 @@
 			},300);
 		});
 	</script>
+	<script type="text/javascript">
+		$(function(){
+			
+		    function prevent_default(e) {
+		        e.preventDefault();
+		    }
+		
+		    function disable_scroll() {
+		        $(document).on('touchmove', prevent_default);
+		    }
+		
+		    function enable_scroll() {
+		        $(document).unbind('touchmove', prevent_default)
+		    }
 
+			var x;
+		    $('.Pcollection-data-ul .Pcollection-data-li .dataDetail')
+		        .on('touchstart', function(e) {
+		            $('.Pcollection-data-ul .Pcollection-data-li .dataDetail').css('left', '0px') // close em all
+		            $(e.currentTarget).addClass('open')
+		            x = e.originalEvent.targetTouches[0].pageX // anchor point
+		        })
+		        .on('touchmove', function(e) {
+		            var change = e.originalEvent.targetTouches[0].pageX - x
+		            change = Math.min(Math.max(-80, change), 0) // restrict to -100px left, 0px right
+		            e.currentTarget.style.left = change + 'px'
+		            if (change < -10) disable_scroll() // disable scroll once we hit 10px horizontal slide
+		        })
+		        .on('touchend', function(e) {
+		            var left = parseInt(e.currentTarget.style.left)
+		            var new_left;
+		            if (left < -10) {
+		                new_left = '-80px'
+		            } else if (left > 10) {
+		                new_left = '80px'
+		            } else {
+		                new_left = '0px'
+		            }
+		            // e.currentTarget.style.left = new_left
+		            $(e.currentTarget).animate({left: new_left}, 200)
+		            enable_scroll()
+		        });
+		
+		    $('li .delete-btn').on('touchend', function(e) {
+		        e.preventDefault()
+		        $(this).parents('li').slideUp('fast', function() {
+		            $(this).remove()
+		        })
+		    })
+		})	
+	</script>
 </html>
