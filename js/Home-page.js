@@ -1,10 +1,10 @@
 $(function() {
 	
 	//底部点击切换页面
-	$(".Home-page-footer .footer-nav-li").tap(function() {
+	$(".Home-page-footer .footer-nav-li").on("tap",function() {
 		$(this).addClass("select").siblings().removeClass("select")
 	})
-	
+	alert("0")
 	
 	var homePage_headerh = $(".Home-page-header").height()
 	//首页头部滚动监听事件
