@@ -703,22 +703,25 @@ $(function() {
 	
 	
 	
-	var search_h = $(".search-page").height()
-	var search_header_h = $(".search-page-wrapper .search-page-header").height()
-	var search_section_h = search_h-search_header_h
+	var search_h = $(".search-page-wrapper").height()
+	var search_header_h = -($(".search-page-wrapper .search-page-header").height())
+	var search_section_h = search_h + search_header_h
 	$(".search-page-wrapper .search-page-section").height(search_section_h)
+	$(".search-page-wrapper .search-page-header").css("transform", "translateY("+search_header_h+"px)")
+	$(".search-page-wrapper .search-page-section").css("transform", "translateY("+ search_section_h +"px)")
 	
-	$(".search-page-wrapper .search-page-header").css("transform", "translateY("+(-search_header_h-5)+"px)")
-	$(".search-page-wrapper .search-page-section").css("transform", "translateY("+search_header_h+5+"px)")
+	
+	
+	
 	
 	$(".hot-search-title").tap(function() {
 		$("#Search-inpt").focus()
 	})
 	
 	var state_h,state_h_h
-	
+	search_stateS.scrollToElement("#dingwei", 0)
 	$(".Home-page-header .Search-form .Search-frame").tap(function() {
-		search_stateS.scrollToElement(".history-search-box .hot-search", 0)
+		search_stateS.scrollToElement("#dingwei", 0)
 		state_h=$(".search-section-state").height()
 		state_h_h=$(".search-section-state .history-search-box").height()
 		
@@ -733,14 +736,15 @@ $(function() {
 		
 		$(".Home-page-container .search-page").addClass("show")
 		$(".search-page-wrapper .search-page-header").css("transform", "translateY(0px)")
-		$(".search-page-wrapper .search-page-section").css("transform", "translateY("+search_header_h+"px)")
+		$(".search-page-wrapper .search-page-section").css("transform", "translateY("+ -search_header_h +"px)")
 		$(".search-page-section .search-section-state").addClass("switch").siblings(".page").removeClass("switch")
 		
 		$(".Home-page-container .search-page-header .cancle").tap(function() {
 			$("#Search-inpt").blur()
 			$(".Home-page-container .search-page").removeClass("show")
-			$(".search-page-wrapper .search-page-header").css("transform", "translateY("+(-search_header_h-5)+"px)")
-			$(".search-page-wrapper .search-page-section").css("transform", "translateY("+search_header_h+5+"px)")
+			
+			$(".search-page-wrapper .search-page-header").css("transform", "translateY("+search_header_h+"px)")
+			$(".search-page-wrapper .search-page-section").css("transform", "translateY("+search_section_h+"px)")
 		})
 		search_pageS.refresh()
 		search_listS.refresh()
