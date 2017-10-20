@@ -928,6 +928,13 @@ $(function() {
 					$("#Search-inpt").blur()
 					$(".search-page .Search-inpt-wrapper .delete").css("display", "block")
 					$(".search-page-section .search-section-list").addClass("switch").siblings(".page").removeClass("switch")
+			
+					list_h=$(".search-section-list").height()
+					list_h_l=$(".search-section-list .list-ul").height()
+						
+					if(list_h_l<list_h){
+						$(".search-section-list .list-ul").height(list_h+1)
+					}
 					
 					search_pageS.refresh()
 					search_listS.refresh()
