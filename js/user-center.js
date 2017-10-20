@@ -3,7 +3,6 @@ $(function() {
 		$(this).addClass("select").siblings().removeClass("select")
 	})
 	
-	
 	//用户中心 下拉背景放大效果
 	var centerH = $(".user-center-section").height()
 	$(".user-center-section .section-wrapper").height(centerH + 1)
@@ -137,7 +136,7 @@ $(function() {
 	})
 
 	var setw = $(".set-up-push").width() + 5
-	$(".user-center-header .setUp").on("tap",function() {
+	$("#setUp").on("tap",function() {
 		$(".set-up-push").css("transform", "translateX(0px)")
 		$(".user-center-shadow").fadeIn(250)
 		if($(".user-center-container .Not-logged").hasClass("show")) {
