@@ -99,11 +99,11 @@ $(function() {
 	
 	$(".historicalprice-title span").tap(function() {
 		$(".houseprice-trend").css("transform", "translateX(0)")
-		$(".Home-page-Mask").fadeIn(200)
+		$(".Home-page-Mask").fadeIn(250)
 	})
 	$(".trend-header .return").tap(function() {
 		$(".houseprice-trend").css("transform", "translateX("+tcw_ht+"px)")
-		$(".Home-page-Mask").fadeOut(200)
+		$(".Home-page-Mask").fadeOut(250)
 	})
 
 //城市定位----------------------------------------------------------------------
@@ -666,6 +666,8 @@ $(function() {
 	
 	
 	
+	
+
 //搜索页面----------------------------------------------------------------------
 	var search_pageS = new IScroll('.search-section-wrapper', {
 		scrollbars: false,
