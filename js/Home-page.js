@@ -711,7 +711,7 @@ $(function() {
 	$(".search-page-wrapper .search-page-section").css("transform", "translateY("+ search_section_h +"px)")
 	
 	
-	
+	alert("0")
 	
 	
 	$(".hot-search-title").tap(function() {
