@@ -708,8 +708,8 @@ $(function() {
 	var search_section_h = search_h-search_header_h
 	$(".search-page-wrapper .search-page-section").height(search_section_h)
 	
-	$(".search-page-wrapper .search-page-header").css("top", -search_header_h-5)
-	$(".search-page-wrapper .search-page-section").css("bottom", -search_section_h-5)
+	$(".search-page-wrapper .search-page-header").css("transform", "translateY("+(-search_header_h-5)+"px)")
+	$(".search-page-wrapper .search-page-section").css("transform", "translateY("+search_header_h+5+"px)")
 	
 	$(".hot-search-title").tap(function() {
 		$("#Search-inpt").focus()
@@ -732,15 +732,15 @@ $(function() {
 		},500)
 		
 		$(".Home-page-container .search-page").addClass("show")
-		$(".search-page-wrapper .search-page-header").css("top", "0")
-		$(".search-page-wrapper .search-page-section").css("bottom", "0")
+		$(".search-page-wrapper .search-page-header").css("transform", "translateY(0px)")
+		$(".search-page-wrapper .search-page-section").css("transform", "translateY("+search_header_h+"px)")
 		$(".search-page-section .search-section-state").addClass("switch").siblings(".page").removeClass("switch")
 		
 		$(".Home-page-container .search-page-header .cancle").tap(function() {
 			$("#Search-inpt").blur()
 			$(".Home-page-container .search-page").removeClass("show")
-			$(".search-page-wrapper .search-page-header").css("top", -search_header_h-5)
-			$(".search-page-wrapper .search-page-section").css("bottom", -search_section_h-5)
+			$(".search-page-wrapper .search-page-header").css("transform", "translateY("+(-search_header_h-5)+"px)")
+			$(".search-page-wrapper .search-page-section").css("transform", "translateY("+search_header_h+5+"px)")
 		})
 		search_pageS.refresh()
 		search_listS.refresh()

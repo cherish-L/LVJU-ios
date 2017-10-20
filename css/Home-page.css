@@ -838,12 +838,12 @@ li {
 
 .Home-page-container .houseprice-trend .trend-wrapper .trend-header .title_bar .return {
   display: block;
-  height: 0.88rem;
+  height: 1.44rem;
   width: 0.88rem;
-  background: url(../img/returnleft.png) no-repeat;
+  background: url(../img/returnleft.png) center center no-repeat;
   background-size: 0.88rem 0.88rem;
   position: absolute;
-  top: 0.44rem;
+  top: 0.12rem;
   left: 0.64rem;
 }
 
@@ -1213,12 +1213,12 @@ li {
 
 .Home-page-container .city-position .city-position-wrapper .city-position-header .title_bar .del {
   display: block;
-  height: 0.88rem;
+  height: 1.44rem;
   width: 0.88rem;
-  background: url(../img/del.png);
+  background: url(../img/del.png) center center no-repeat;
   background-size: 0.88rem 0.88rem;
   position: absolute;
-  top: 0.44rem;
+  top: 0.12rem;
   left: 0.64rem;
 }
 
@@ -1487,23 +1487,23 @@ li {
 
 .Home-page-container .map-house .map-house-wrapper .map-house-header .title_bar .return {
   display: block;
-  height: 0.88rem;
+  height: 1.44rem;
   width: 0.88rem;
-  background: url(../img/returnleft.png) no-repeat;
+  background: url(../img/returnleft.png) center center no-repeat;
   background-size: 0.88rem 0.88rem;
   position: absolute;
-  top: 0.44rem;
+  top: 0.12rem;
   left: 0.64rem;
 }
 
 .Home-page-container .map-house .map-house-wrapper .map-house-header .title_bar .Showing {
   display: block;
-  height: 0.88rem;
+  height: 1.44rem;
   width: 0.88rem;
-  background: url(../img/Showing.png) no-repeat;
+  background: url(../img/Showing.png) center center no-repeat;
   background-size: 0.88rem 0.88rem;
   position: absolute;
-  top: 0.44rem;
+  top: 0.12rem;
   right: 0.64rem;
 }
 
@@ -2350,12 +2350,12 @@ li {
 
 .Home-page-container .loanHome-calculator .loanHome-calculator-header .title_bar .return {
   display: block;
-  height: 0.88rem;
+  height: 1.44rem;
   width: 0.88rem;
-  background: url(../img/returnleft.png) no-repeat;
+  background: url(../img/returnleft.png) center center no-repeat;
   background-size: 0.88rem 0.88rem;
   position: absolute;
-  top: 0.44rem;
+  top: 0.12rem;
   left: 0.64rem;
 }
 
@@ -3753,12 +3753,12 @@ li {
 
 .Home-page-container .loanHome-calculator .R-details .details-wrapper .details-wrapper-header .details-wrapper-header-wrapper .return {
   display: block;
-  height: 0.88rem;
+  height: 1.44rem;
   width: 0.88rem;
-  background: url(../img/returnleft.png) no-repeat;
+  background: url(../img/returnleft.png) center center no-repeat;
   background-size: 0.88rem 0.88rem;
   position: absolute;
-  top: 0.44rem;
+  top: 0.12rem;
   left: 0.64rem;
 }
 
@@ -4230,12 +4230,12 @@ li {
 
 .Home-page-container .housing-demand .housing-demand-header .title_bar .return {
   display: block;
-  height: 0.88rem;
+  height: 1.44rem;
   width: 0.88rem;
-  background: url(../img/returnleft.png) no-repeat;
+  background: url(../img/returnleft.png) center center no-repeat;
   background-size: 0.88rem 0.88rem;
   position: absolute;
-  top: 0.44rem;
+  top: 0.12rem;
   left: 0.64rem;
 }
 
