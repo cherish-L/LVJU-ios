@@ -140,24 +140,24 @@ $(function() {
 	//点击弹出城市定位
 	$(".Home-page-header .Search_bar .current-location").tap(function() {
 		$(".city-position").css("transform", "translateX(0)")
-		$(".Home-page-Mask").fadeIn(200)
+		$(".Home-page-Mask").fadeIn(250)
 	})
 	
 	$(".city-position-header .title_bar .del").tap(function() {
 		$(".city-position").css("transform", "translateX("+tcw_ht+"px)")
-		$(".Home-page-Mask").fadeOut(200)
+		$(".Home-page-Mask").fadeOut(250)
 	})
 	
 	
 //地图找房----------------------------------------------------------------------
 	$(".Home-page-section .section-nav .map_house").tap(function() {
 		$(".map-house").css("transform", "translateX(0)")
-		$(".Home-page-Mask").fadeIn(200)
+		$(".Home-page-Mask").fadeIn(250)
 	})
 	
 	$(".map-house-header .title_bar .return").tap(function() {
 		$(".map-house").css("transform", "translateX("+tcw_ht+"px)")
-		$(".Home-page-Mask").fadeOut(200)
+		$(".Home-page-Mask").fadeOut(250)
 	})
 	
 	
@@ -249,8 +249,14 @@ $(function() {
 	$(".region-push-header .return").tap(function() {
 		$(".region-push").css("bottom", -htmlh - 5)
 	})
+	
+	var click_num=1;
 	$(".map-house-wrapper .section-map-list .map-list-btn .regionli").tap(function() {
 		$(".region-push").css("bottom", "0")
+		if(click_num==1){
+			$(".region-push-section-wrapper .district-ul .district-li").removeClass("confirmthree")
+		}
+		click_num++
 	})
 
 	//区域分栏
@@ -519,24 +525,24 @@ $(function() {
 	$(".loanHome-calculator-section .push").tap(function() {
 		$(this).css("color", "#999999")
 		$(".R-details").css("transform", "translateX(0)")
-		$(".calculator-Mask").fadeIn(200)
+		$(".calculator-Mask").fadeIn(250)
 	})
 
 	$(".R-details .return").tap(function() {
 		$(".loanHome-calculator-section .push").css("color", "#0099eb")
 		$(".R-details").css("transform", "translateX("+metaw+"px)")
-		$(".calculator-Mask").fadeOut(200)
+		$(".calculator-Mask").fadeOut(250)
 	})
 
 	//房贷计算器推行框
 	$(".Home-page-section .section-nav-ul .calculator").tap(function() {
 		$(".loanHome-calculator").css("transform", "translateX(0)")
-		$(".Home-page-Mask").fadeIn(200)
+		$(".Home-page-Mask").fadeIn(250)
 	})
 
 	$(".loanHome-calculator-header .return").tap(function() {
 		$(".loanHome-calculator").css("transform", "translateX("+metaw+"px)")
-		$(".Home-page-Mask").fadeOut(200)
+		$(".Home-page-Mask").fadeOut(250)
 	})
 
 	var loanHomeS = new IScroll('.loanHome-calculator-section', {
@@ -551,6 +557,9 @@ $(function() {
 //		disableTouch: false,
 //		disableMouse: false,
 	})
+
+
+
 
 //购房需求----------------------------------------------------------------------	
 	var housing_demandS = new IScroll('.housing-demand-section', {
@@ -656,11 +665,12 @@ $(function() {
 	
 	$(".Home-page-section .section-nav-ul .housing_demand").tap(function() {
 		$(".housing-demand").css("transform", "translateX(0)")
-		$('.Home-page-Mask').fadeIn(200)
+		$('.Home-page-Mask').fadeIn(250)
+		housing_demandS.scrollToElement(".housing-demand-section .banner",0)
 	})
 	$(".housing-demand-header .return").tap(function() {
 		$(".housing-demand").css("transform", "translateX("+metaw+"px)")
-		$('.Home-page-Mask').fadeOut(200)
+		$('.Home-page-Mask').fadeOut(250)
 	})
 	
 	
