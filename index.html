@@ -1,74 +1,148 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<meta charset="utf-8" />
-		<meta content="email=no" name="format-detection" />
-		<meta http-equiv="Cache-Control" content="no-cache" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="description" content="switch,honeySwitch,switch button">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>用户中心</title>
-		<link rel="stylesheet" type="text/css" href="css/user-center.css" />
-		<link rel="stylesheet" type="text/css" href="plugins/Switch/switch.css" />
+		<title>首页</title>
+		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/Home-page.css" />
 		<script type="text/javascript" src="plugins/zepto.min.js"></script>
 		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>
-		<script type="text/javascript" src="plugins/vue/vue.js"></script>
+		<script src="plugins/swiper-3.4.2.min.js"></script>
+		<script type="text/javascript" src="vue/vue.js"></script>
+		<script type="text/javascript" src="js/Home-page.js"></script>
+		
 		<script>
 			//适配
 			document.documentElement.style.fontSize = innerWidth / 15 + "px";
+			window.PointerEvent = undefined;
 		</script>
 	</head>
-
 	<body>
-		<div class="user-center-container">
-			<a class="setUp" id="setUp" href="javascript:;">设置</a>
-			<div class="user-center-Bg">
-				<img src="img/userBg.png" alt="" />
-			</div>
-			<section class="user-center-section">
-				<div class="section-wrapper">
-					<div class="cushion">
-						<div class="cushion-wrapper">
-							<i class="head-portrait"><img src="img/head_portraitbig.png"/></i>
-						</div>
-						<p class="sign-in">
-							<span class="Not-logged show">登录</span>
-							<span class="Logged-in">哈利波特</span>
-						</p>
+		<div class="Home-page-container" v-cloak>
+			<header class="Home-page-header">
+				<div class="header-box">
+					<div class="signal_bar"></div>
+					<div class="Search_bar">
+						<form class="Search-form" action="">
+							<a class="current-location" href="javascript:;">海口</a>
+							<a class="Search-frame" href="javascript:;">输入楼盘名或楼盘地址</a>
+							<a class="current-map" href="javascript:;"></a>
+						</form>
 					</div>
-					<ul class="user-center-application">
-						<li class="collection">
-							<i><img src="img/myCollection.png"/></i>
-							<span class="li-txt">我的收藏</span>
-						</li>
-						<li class="footprint">
-							<i><img src="img/footprint.png"/></i>
-							<span class="li-txt">我的足迹</span>
-						</li>
-						<li class="news">
-							<i><img src="img/tidings.png"/></i>
-							<span class="li-txt">消息</span>
-							<div class="message-prompt">5</div>
-						</li>
-						<li class="Coupon">
-							<i><img src="img/Coupon.png"/></i>
-							<span class="li-txt">优惠券</span>
-						</li>
-						<li class="useCar">
-							<i><img src="img/myCar.png"/></i>
-							<span class="li-txt">我的用车</span>
-						</li>
-						<li class="calculator">
-							<i><img src="img/Computer.png"/></i>
-							<span class="li-txt">购房计算器</span>
-						</li>
-					</ul>
+				</div>
+			</header>
+			<section class="Home-page-section">
+				<div class="section-wrapper">
+					<div class="section-banner">
+						<ul class="banner-ul swiper-wrapper">
+							<li class="banner-li swiper-slide"><img src="img/banner_lunbo.png"/></li>
+							<li class="banner-li swiper-slide"><img src="img/timg.png"/></li>
+							<li class="banner-li swiper-slide"><img src="img/bigimg.png"/></li>
+						</ul>
+						<div class="swiper-pagination"></div>
+					</div>
+					<div class="section-nav">
+						<ul class="section-nav-ul">
+							<li>
+								<i><img src="img/Group1.png" alt="" /></i>
+								<span>楼盘大全</span>
+							</li>
+							<li>
+								<i><img src="img/Group2.png" alt="" /></i>
+								<span>楼市资讯</span>
+							</li>
+							<li>
+								<i><img src="img/Group3.png" alt="" /></i>
+								<span>购房联盟</span>
+							</li>
+							<li>
+								<i><img src="img/Group4.png" alt="" /></i>
+								<span>公益接机</span>
+							</li>
+							<li class="map_house">
+								<i><img src="img/Group5.png" alt="" /></i>
+								<span>地图找房</span>
+							</li>
+							<li class="calculator">
+								<i><img src="img/Group6.png" alt="" /></i>
+								<span>房贷计算</span>
+							</li>
+							<li>
+								<i><img src="img/Group7.png" alt="" /></i>
+								<span>在线咨询</span>
+							</li>
+							<li class="housing_demand">
+								<i><img src="img/Group8.png" alt="" /></i>
+								<span>购房需求</span>
+							</li>
+						</ul>
+						<div class="section-nav-push">
+							<div class="push-logo"></div>
+							<div class="push-content">
+								<p>相识即是有缘 甄姐夸赞顾问小陈服务好相识即是有缘</p>
+								<p>谢女士想海景房 小梁助其满意购下荣盛谢女士想海景房</p>
+							</div>
+						</div>
+					</div>
+					<div class="section-historicalprice">
+						<div class="historicalprice-title">
+							历史房价
+							<span>查看更多</span>
+						</div>
+						<div class="historicalprice-data"></div>
+					</div>
+					<div class="section-groomhouse">
+						<div class="groomhouse-title">
+							推荐房源
+							<span>查看更多</span>
+						</div>
+						<div class="groomhouse-data">
+							<ul class="groomhouse-data-ul">
+								<li class="groomhouse-data-li" v-for="list in groomhouse">
+									<div class="dataDetail">
+										<div class="groomhouse-img">
+											<img :src="list.img" />
+											<span class="biaoqian"></span>
+											<span class="ghtxt" v-text="list.sell"></span>
+										</div>
+										<div class="groomhouse-txt">
+											<span class="title">
+												<span class="position" v-text="list.positions"></span>
+												<span class="region" v-text="list.region"></span>
+											</span>
+											<span class="address" v-text="list.address"></span>
+											<span class="openprice" v-text="list.openprice"></span>
+											<span class="averageprice">
+												<span class="averag" v-text="list.averag"></span>
+											<span class="price" v-text="list.price"></span>
+											</span>
+										</div>
+									</div>
+									<div class="dataBrowse">
+										<div class="Browsecount">877451</div>
+										<ul class="classification">
+											<li class="style" v-for="item in list.tags">
+												<span v-text="item"></span>
+											</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="section-load">
+						上拉加载更多...
+					</div>
+					<div class="section-loading">
+						<i></i>
+						<span>正在加载更多...</span>
+					</div>
 				</div>
 			</section>
-			<footer class="user-center-footer">
+			<footer class="Home-page-footer">
 				<ul class="footer-nav">
-					<li class="footer-nav-li">
+					<li class="footer-nav-li select">
 						<a href="javascript:;">
 							<i></i>
 							<span>首页</span>
@@ -92,1672 +166,1949 @@
 							<span>公益接机</span>
 						</a>
 					</li>
-					<li class="footer-nav-li select">
+					<li class="footer-nav-li">
 						<a href="javascript:;">
 							<i></i>
 							<span>我的</span>
-							<div class="message-prompt">5</div>
 						</a>
 					</li>
 				</ul>
 			</footer>
-			<!-------------  个人中心阴影  ---------------->
-			<div class="user-center-shadow"></div>
-			<!-------------  提示请登录弹框  ---------------->
-			<div class="please-login-account">请登录账号</div>
-			<!-------------  设置弹框  ---------------->
-			<div class="set-up-push">
-				<header class="set-up-pushheader">
-					<div class="signal_bar"></div>
-					<div class="title_bar">
-						<h3 class="title_txt">设置</h3>
-						<a class="return" href="javascript:;"></a>
-					</div>
-				</header>
-				<section class="set-up-pushsection">
-					<div class="pushsection-wrapper">
-						<div class="administration">
-							<ul class="administration-ul">
-								<li class="message-management">
-									消息管理
-									<span></span>
-								</li>
-								<li class="clear-cache">
-									清除缓存
-									<span>41.40M</span>
-								</li>
-								<li class="Update-software">
-									更新软件
-									<span>可更新至V1.2</span>
-								</li>
-							</ul>
-						</div>
-						<div class="holders">
-							<ul class="holders-ul">
-								<li class="comment-us">
-									评论我们
-									<span></span>
-								</li>
-								<li class="about-us">
-									关于我们
-									<span></span>
-								</li>
-								<li class="feedback">
-									意见反馈
-									<span></span>
-								</li>
-								<li class="help-description">
-									帮助说明
-									<span></span>
-								</li>
-							</ul>
-						</div>
-						<div class="login-status">
-							<div class="login-box">退出登录</div>
-						</div>
-					</div>
-				</section>
-				<!----------  设置弹框阴影  ----------->
-				<div class="set-up-shadow"></div>
-				<!----------  消息管理  ----------->
-				<div class="message-management-push">
-					<header class="message-management-pushheader">
+			<!-------------- 遮罩 ---------------->
+			<div class="Home-page-Mask"></div>
+			<!-------------- 房价走势 ---------------->
+			<div class="houseprice-trend">
+				<div class="trend-wrapper">
+					<header class="trend-header">
 						<div class="signal_bar"></div>
 						<div class="title_bar">
-							<h3 class="title_txt">消息管理</h3>
+							<h3 class="title_txt">房价走势</h3>
 							<a class="return" href="javascript:;"></a>
 						</div>
 					</header>
-					<section class="message-management-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="receive-message">
-								<p class="receive-box">
-									<span class="receive-txt">接收推送</span>
-									<span class="receive-close">已经关闭</span>
-								</p>
-								<p class="close-prompt">您已在系统中关闭旅居的通知，无法收到任何提醒</p>
-								<p class="goOpen">
-									<span>去打开</span>
-								</p>
-							</div>
-							<div class="prompt-message">
-								<div class="prompt-message-txt">
-									<p>提示消息</p>
-									<p>系统通知、客服消息</p>
-								</div>
-								<div class="prompt-message-switch">
-									<label><input class="mui-switch mui-switch-anim" type="checkbox" checked disabled></label>
+					<section class="trend-section">
+						<div class="trend-section-wrapper">
+							<div class="loading-fail">
+								<img src="img/fail.png" />
+								<div class="failalert">
+									<p class="failtxt">加载失败</p>
+									<p class="inspect">请检查您的网络是否连接</p>
 								</div>
 							</div>
-							<div class="cue-tone">
-								<ul class="cue-tone-ul">
-									<li>
-										声音提示
-										<label><input class="mui-switch mui-switch-anim" type="checkbox" checked></label>
-									</li>
-									<li>
-										震动提示
-										<label><input class="mui-switch mui-switch-anim" type="checkbox"></label>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</section>
-				</div>
-				<!----------  关于我们  ----------->
-				<div class="about-us-push">
-					<header class="about-us-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<h3 class="title_txt">关于我们</h3>
-							<a class="return" href="javascript:;"></a>
-						</div>
-					</header>
-					<section class="about-us-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="logo-area">
-								<div class="logo-box">
-									<img src="img/logo.png" />
-									<span>V1.0</span>
+							<div class="trend-content">
+								<div class="content-banner">
+									<div class="left">
+										<span class="leftlocation">海口</span>
+										<span class="leftpinyin">HaiKou</span>
+									</div>
+									<div class="right">
+										<span>切换城市</span>
+									</div>
 								</div>
-							</div>
-							<div class="company-synopsis">
-								<ul class="company-synopsis-ul">
-									<li class="contact-us">
-										联系我们
-										<span class="change"></span>
-									</li>
-									<li class="concern-us">
-										关注我们
-										<span class="weix"><img src="img/weix.png"/></span>
-										<span class="change"></span>
-									</li>
-									<li class="synopsis-us">
-										<div class="synopsis-us-title">旅居简介</div>
-										<div class="synopsis-us-txt">
-											简介内容简介内容简介内容简介内容简介内容简介内容简介 内容简介内容简介内容简介内容简介内容简介内容简介内容 简介内容简介内容简介内容简介内容简介内容简介内容简介 内容简介内容简介内容简介内容简介内容简介内容简介内容 简介内容简介内容简介内容简介内容简介内容简介内容简介 内容简介内容简介内容简介内容简介内容简介内容简介内容 简介内容简介内容简介内容简介内容简介内容简介内容简介 内容简介内容简介内容简介内容
+								<div class="content-data">
+									<div class="content-data-header">
+										<div class="this month-average">
+											<span>本月均价</span>
+											<span>16000</span>
 										</div>
-									</li>
-								</ul>
+										<div class="this month-volume">
+											<span>本月销售套数</span>
+											<span>743</span>
+										</div>
+									</div>
+									<div class="content-data-pic"></div>
+									<div class="content-data-more">左右滑动可查看更多月份价格</div>
+								</div>
+								<div class="content-contrast">
+									<h3>海南城市房价对比</h3>
+									<div class="content-contrast-top">
+										<ul>
+											<li>
+												<span>城市</span>
+												<span>名称</span>
+											</li>
+											<li>
+												<span>上月</span>
+												<span>均价/销售套数</span>
+											</li>
+											<li>
+												<span>本月</span>
+												<span>均价/销售套数</span>
+											</li>
+										</ul>
+									</div>
+									<div class="content-contrast-body">
+										<ul class="pri-ul">
+											<li class="pri-li" v-for="list in contrastdata">
+												<div class="pri-li-wrapper" v-for="items in list.data">
+													<div class="allregion" v-text="items.city"></div>
+													<div class="lastdata">
+														<span v-text="items.lastprice"></span>
+														<span>/</span>
+														<span v-text="items.lastnum"></span>
+													</div>
+													<div class="thisdata" :class="items.className">
+														<span v-text="items.thisprice"></span>
+														<span>/</span>
+														<span v-text="items.thisnum"></span>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
 							</div>
 						</div>
 					</section>
 				</div>
-				<!----------  帮助说明  ----------->
-				<div class="help-description-push">
-					<header class="help-description-pushheader">
+			</div>
+			<!-------------- 城市定位 ---------------->
+			<div class="city-position">
+				<div class="city-position-wrapper">
+					<header class="city-position-header">
 						<div class="signal_bar"></div>
 						<div class="title_bar">
-							<h3 class="title_txt">帮助说明</h3>
-							<a class="return" href="javascript:;"></a>
+							<h3 class="title_txt">选择城市</h3>
+							<a class="del" href="javascript:;"></a>
 						</div>
+						<div class="current_location" id="current_location">当前: 海口</div>
 					</header>
-					<section class="help-description-pushsection">
-						<div class="pushsection-wrapper">
-							<ul class="pushsection-wrapper-ul">
-								<li class="how-register">
-									怎样注册成为用户
-									<span></span>
-								</li>
-								<li>
-									无法发布信息
-									<span></span>
-								</li>
-								<li>
-									无法删除信息
-									<span></span>
-								</li>
-								<li>
-									账号被冻结
-									<span></span>
-								</li>
-								<li>
-									提示非法用户
-									<span></span>
-								</li>
-								<li>
-									电话被骚扰，看这里！
-									<span></span>
-								</li>
-								<li>
-									其他异常反馈
-									<span></span>
-								</li>
-							</ul>
+					<section class="city-position-section">
+						<div class="location_content">
+							<div class="located" id="currented_location">
+								<h3 class="located_title">已定位城市</h3>
+								<div class="wraps">
+									<div class="located_city">
+										<span class="cityed">海口</span>
+									</div>
+									<span class="not_opened">( 暂未开通服务 )</span>
+									<div style="clear: both;"></div>
+								</div>
+							</div>
+							<div class="history_location classify" id="history_location">
+								<h3 class="history_title">历史记录</h3>
+								<ul class="wrap">
+									<div style="clear: both;"></div>
+								</ul>
+							</div>
+							<div class="hot_location classify" id="hot_location">
+								<h3 class="hot_title">热门城市</h3>
+								<ul class="wrap">
+									<li class="city hot_city" v-for="list in hot_city" v-text="list"></li>
+									<div style="clear: both;"></div>
+								</ul>
+							</div>
+							<div class="letter A classify" id="letterA">
+								<h3 class="letter_title"><span>A</span></h3>
+								<ul class="wrap">
+									<li class="city  letter_city" v-for="list in letterA" v-text="list"></li>
+								</ul>
+							</div>
+							<div class="letter B classify" id="letterB">
+								<h3 class="letter_title"><span>B</span></h3>
+								<ul class="wrap">
+									<li class="city  letter_city" v-for="list in letterB" v-text="list"></li>
+								</ul>
+							</div>
+							<div class="letter C classify" id="letterC">
+								<h3 class="letter_title"><span>C</span></h3>
+								<ul class="wrap">
+									<li class="city  letter_city" v-for="list in letterC" v-text="list"></li>
+								</ul>
+							</div>
+							<div class="letter D classify" id="letterD">
+								<h3 class="letter_title"><span>D</span></h3>
+								<ul class="wrap">
+									<li class="city  letter_city" v-for="list in letterD" v-text="list"></li>
+								</ul>
+							</div>
+							<div class="letter E classify" id="letterE">
+								<h3 class="letter_title"><span>E</span></h3>
+								<ul class="wrap">
+									<li class="city  letter_city" v-for="list in letterE" v-text="list"></li>
+								</ul>
+							</div>
+							<div class="letter F classify" id="letterF">
+								<h3 class="letter_title"><span>F</span></h3>
+								<ul class="wrap">
+									<li class="city  letter_city" v-for="list in letterF" v-text="list"></li>
+								</ul>
+							</div>
+							<div class="letter G classify" id="letterG">
+								<h3 class="letter_title"><span>G</span></h3>
+								<ul class="wrap">
+									<li class="city  letter_city" v-for="list in letterG" v-text="list"></li>
+								</ul>
+							</div>
+							<div class="letter H classify" id="letterH">
+								<h3 class="letter_title"><span>H</span></h3>
+								<ul class="wrap">
+									<li class="city  letter_city" v-for="list in letterH" v-text="list"></li>
+								</ul>
+							</div>
+							<div class="letter I classify" id="letterI">
+								<h3 class="letter_title"><span>I</span></h3>
+								<ul class="wrap">
+									<li class="city  letter_city" v-for="list in letterI" v-text="list"></li>
+								</ul>
+							</div>
+							<div class="letter J classify" id="letterJ">
+								<h3 class="letter_title"><span>J</span></h3>
+								<ul class="wrap">
+									<li class="city  letter_city" v-for="list in letterJ" v-text="list"></li>
+								</ul>
+							</div>
+							<div class="letter K classify" id="letterK">
+								<h3 class="letter_title"><span>K</span></h3>
+								<ul class="wrap">
+									<li class="city  letter_city" v-for="list in letterK" v-text="list"></li>
+								</ul>
+							</div>
+							<div class="letter L classify" id="letterL">
+								<h3 class="letter_title"><span>L</span></h3>
+								<ul class="wrap">
+									<li class="city  letter_city" v-for="list in letterL" v-text="list"></li>
+								</ul>
+							</div>
+							<div class="letter M classify" id="letterM">
+								<h3 class="letter_title"><span>M</span></h3>
+								<ul class="wrap">
+									<li class="city  letter_city" v-for="list in letterM" v-text="list"></li>
+								</ul>
+							</div>
+							<div class="letter N classify" id="letterN">
+								<h3 class="letter_title"><span>N</span></h3>
+								<ul class="wrap">
+									<li class="city  letter_city" v-for="list in letterN" v-text="list"></li>
+								</ul>
+							</div>
+							<div class="letter O classify" id="letterO">
+								<h3 class="letter_title"><span>O</span></h3>
+								<ul class="wrap">
+									<li class="city  letter_city" v-for="list in letterO" v-text="list"></li>
+								</ul>
+							</div>
+							<div class="letter P classify" id="letterP">
+								<h3 class="letter_title"><span>P</span></h3>
+								<ul class="wrap">
+									<li class="city  letter_city" v-for="list in letterP" v-text="list"></li>
+								</ul>
+							</div>
+							<div class="letter Q classify" id="letterQ">
+								<h3 class="letter_title"><span>Q</span></h3>
+								<ul class="wrap">
+									<li class="city  letter_city" v-for="list in letterQ" v-text="list"></li>
+								</ul>
+							</div>
+							<div class="letter R classify" id="letterR">
+								<h3 class="letter_title"><span>R</span></h3>
+								<ul class="wrap">
+									<li class="city  letter_city" v-for="list in letterR" v-text="list"></li>
+								</ul>
+							</div>
+							<div class="letter S classify" id="letterS">
+								<h3 class="letter_title"><span>S</span></h3>
+								<ul class="wrap">
+									<li class="city  letter_city" v-for="list in letterS" v-text="list"></li>
+								</ul>
+							</div>
+							<div class="letter T classify" id="letterT">
+								<h3 class="letter_title"><span>T</span></h3>
+								<ul class="wrap">
+									<li class="city  letter_city" v-for="list in letterT" v-text="list"></li>
+								</ul>
+							</div>
+							<div class="letter U classify" id="letterU">
+								<h3 class="letter_title"><span>U</span></h3>
+								<ul class="wrap">
+									<li class="city  letter_city" v-for="list in letterU" v-text="list"></li>
+								</ul>
+							</div>
+							<div class="letter V classify" id="letterV">
+								<h3 class="letter_title"><span>V</span></h3>
+								<ul class="wrap">
+									<li class="city  letter_city" v-for="list in letterV" v-text="list"></li>
+								</ul>
+							</div>
+							<div class="letter W classify" id="letterW">
+								<h3 class="letter_title"><span>W</span></h3>
+								<ul class="wrap">
+									<li class="city  letter_city" v-for="list in letterW" v-text="list"></li>
+								</ul>
+							</div>
+							<div class="letter X classify" id="letterX">
+								<h3 class="letter_title"><span>X</span></h3>
+								<ul class="wrap">
+									<li class="city  letter_city" v-for="list in letterX" v-text="list"></li>
+								</ul>
+							</div>
+							<div class="letter Y classify" id="letterY">
+								<h3 class="letter_title"><span>Y</span></h3>
+								<ul class="wrap">
+									<li class="city  letter_city" v-for="list in letterY" v-text="list"></li>
+								</ul>
+							</div>
+							<div class="letter Z classify" id="letterZ">
+								<h3 class="letter_title"><span>Z</span></h3>
+								<ul class="wrap">
+									<li class="city  letter_city" v-for="list in letterZ" v-text="list"></li>
+								</ul>
+							</div>
 						</div>
 					</section>
-					<div class="help-description-shadow"></div>
-					<div class="how-register-push">
-						<header class="how-register-pushheader">
+					<div class="location_list">
+						<ul class="classification">
+							<span>
+								<a href="#currented_location">定位</a>
+							</span>
+							<li>
+								<a href="#history_location">历史</a>
+							</li>
+							<li>
+								<a href="#hot_location">热门</a>
+							</li>
+							<li>
+								<a href="#letterA">A</a>
+							</li>
+							<li>
+								<a href="#letterB">B</a>
+							</li>
+							<li>
+								<a href="#letterC">C</a>
+							</li>
+							<li>
+								<a href="#letterD">D</a>
+							</li>
+							<li>
+								<a href="#letterE">E</a>
+							</li>
+							<li>
+								<a href="#letterF">F</a>
+							</li>
+							<li>
+								<a href="#letterG">G</a>
+							</li>
+							<li>
+								<a href="#letterH">H</a>
+							</li>
+							<li>
+								<a href="#letterI">I</a>
+							</li>
+							<li>
+								<a href="#letterJ">J</a>
+							</li>
+							<li>
+								<a href="#letterK">K</a>
+							</li>
+							<li>
+								<a href="#letterL">L</a>
+							</li>
+							<li>									
+								<a href="#letterM">M</a>
+							</li>
+							<li>
+								<a href="#letterN">N</a>
+							</li>
+							<li>
+								<a href="#letterO">O</a>
+							</li>
+							<li>
+								<a href="#letterP">P</a>
+							</li>
+							<li>
+								<a href="#letterQ">Q</a>
+							</li>
+							<li>
+								<a href="#letterR">R</a>
+							</li>
+							<li>
+								<a href="#letterS">S</a>
+							</li>
+							<li>
+								<a href="#letterT">T</a>
+							</li>
+							<li>
+								<a href="#letterU">U</a>
+							</li>
+							<li>
+								<a href="#letterV">V</a>
+							</li>
+							<li>
+								<a href="#letterW">W</a>
+							</li>
+							<li>
+								<a href="#letterX">X</a>
+							</li>
+							<li>
+								<a href="#letterY">Y</a>
+							</li>
+							<li>
+								<a href="#letterZ">Z</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-------------- 地图找房 ---------------->
+			<div class="map-house">
+				<div class="map-house-wrapper">
+					<header class="map-house-header">
+						<div class="signal_bar"></div>
+						<div class="title_bar">
+							<h3 class="title_txt">地图看房</h3>
+							<a class="return" href="javascript:;"></a>
+							<a class="Showing" href="javascript:;"></a>
+						</div>
+					</header>
+					<section class="map-house-section">
+						<div class="section-map"></div>
+					</section>
+					<div class="section-map-list">
+						<div class="map-list-wrapper">
+							<ul class="map-list-btn">
+								<li class="regionli">
+									<span class="btn pregion">区域</span>
+									<div class="num">
+										<span></span>
+									</div>
+								</li>
+								<li class="screenli">
+									<span class="btn pscreen">筛选</span>
+									<div class="num">
+										<span></span>
+									</div>
+								</li>
+								<li class="listli">
+									<span class="btn plist">列表</span>
+								</li>
+							</ul>
+							<div class="map-list-location"></div>
+							<div class="map-list-trand"></div>
+							<div class="map-list-tranddata">
+								<span class="regional">海口均价</span>
+								<span class="price">12000元/㎡</span>
+								<span class="rose">40.1%</span>
+							</div>
+						</div>
+					</div>
+					<div class="section-map-peripheral">
+						<div class="map-peripheral-wrapper">
+							<ul class="peripheral-ul">
+								<li class="peripheral-li">
+									<i></i>
+									<span>公交</span>
+								</li>
+								<li class="peripheral-li">
+									<i></i>
+									<span>医院</span>
+								</li>
+								<li class="peripheral-li">
+									<i></i>
+									<span>银行</span>
+								</li>
+								<li class="peripheral-li">
+									<i></i>
+									<span>超市</span>
+								</li>
+								<li class="peripheral-li">
+									<i></i>
+									<span>学校</span>
+								</li>
+							</ul>
+							<div class="peripheral-return"></div>
+						</div>
+					</div>
+					<div class="region-push">
+						<header class="region-push-header">
 							<div class="signal_bar"></div>
 							<div class="title_bar">
-								<h3 class="title_txt">怎么注册成为用户</h3>
+								<h3 class="title_txt">区域</h3>
 								<a class="return" href="javascript:;"></a>
 							</div>
 						</header>
-						<section class="how-register-pushsection">
-							<div class="pushsection-wrapper">
-								<div class="how-register-header">怎么注册成为用户</div>
-								<div class="how-register-txt">
-									详细内容详细内容详细内容详细内容详细内容详细内容 详细内容详细内容详细内容详细内容详细内容详细内容 详细内容详细内容详细内容详细内容详细内容详细内容 详细内容详细内容详细内容详细内容详细内容详细内容 详细内容详细内容详细内容详细内容详细内容详细内容 详细内容详细内容详细内容详细内容详细内容详细内容 详细内容详细内容详细内容详细内容详细内容详细内容 详细内容详细内容详细内容详细内容详细内容详细内容
+						<section class="region-push-section">
+							<div class="region-push-section-wrapper">
+								<div class="regionlist">
+									<ul class="regionlist-ul">
+										<li class="regionlist-li confirmone">区域</li>
+										<li class="regionlist-li">附近</li>
+									</ul>
 								</div>
-								<div class="how-register-box">
-									<div class="solve">
-										<i><img src="img/good.png"/></i>
-										<span>解决了我的问题</span>
+			
+								<div class="municipality">
+									<ul class="municipality-ul">
+										<li class="municipality-li" v-for="list in municipalitydata" v-text="list.city"></li>
+									</ul>
+								</div>
+								<div class="district">
+									<ul class="district-ul">
+										<li class="district-li" v-for="list in districtdata1">
+											<span v-text="list.district"></span>
+											<span class="check"></span>
+										</li>
+									</ul>
+			
+									<ul class="district-ul">
+										<li class="district-li" v-for="list in districtdata2">
+											<span v-text="list.district"></span>
+											<span class="check"></span>
+										</li>
+									</ul>
+			
+									<ul class="district-ul">
+										<li class="district-li" v-for="list in districtdata3">
+											<span v-text="list.district"></span>
+											<span class="check"></span>
+										</li>
+									</ul>
+			
+									<ul class="district-ul">
+										<li class="district-li" v-for="list in districtdata4">
+											<span v-text="list.district"></span>
+											<span class="check"></span>
+										</li>
+									</ul>
+			
+									<ul class="district-ul">
+										<li class="district-li" v-for="list in districtdata5">
+											<span v-text="list.district"></span>
+											<span class="check"></span>
+										</li>
+									</ul>
+			
+									<ul class="district-ul">
+										<li class="district-li" v-for="list in districtdata6">
+											<span v-text="list.district"></span>
+											<span class="check"></span>
+										</li>
+									</ul>
+			
+									<ul class="district-ul">
+										<li class="district-li" v-for="list in districtdata7">
+											<span v-text="list.district"></span>
+											<span class="check"></span>
+										</li>
+									</ul>
+								</div>
+								<p style="clear: both;"></p>
+							</div>
+			
+						</section>
+						<footer class="region-push-footer">
+							<span class="empty">清空条件</span>
+							<span class="determine">确定</span>
+						</footer>
+					</div>
+					<div class="screen-push">
+						<header class="screen-push-header">
+							<div class="signal_bar"></div>
+							<div class="title_bar">
+								<h3 class="title_txt">筛选</h3>
+								<a class="return" href="javascript:;"></a>
+							</div>
+						</header>
+						<section class="screen-push-section">
+							<div class="screen-push-section-wrapper">
+								<div class="average-price">
+									<h3 class="average-price-title">均价</h3>
+									<div class="average-price-num">
+										<span class="select">1万以下</span>
+										<span class="select">1-1.5万</span>
+										<span class="select">1.5-2万</span>
+										<span class="none select">2万以上</span>
+										<div style="clear: both;"></div>
 									</div>
-									<div class="noSolve">
-										<i><img src="img/bad.png"/></i>
-										<span>没有解决我的问题</span>
+									<div class="average-price-input">
+										<input class="minprice" type="number" placeholder="最低价格" />
+										<span></span>
+										<input class="maxprice" type="number" placeholder="最高价格" />
+									</div>
+								</div>
+								<div class="house-style">
+									<h3 class="house-style-title">户型</h3>
+									<div class="house-style-content">
+										<span class="select">一室</span>
+										<span class="select">二室</span>
+										<span class="select">三室</span>
+										<span class="select">四室</span>
+										<span class="select">五室以上</span>
+										<span class="select">别墅</span>
+										<div style="clear: both;"></div>
+									</div>
+								</div>
+								<div class="open-time">
+									<h3 class="open-time-title">开盘时间</h3>
+									<div class="open-time-content">
+										<span class="select">本月开盘</span>
+										<span class="select">下月开盘</span>
+										<span class="select">三个月内开盘</span>
+										<span class="select">六个月内开盘</span>
+										<span class="select">已开盘三个月</span>
+										<span class="select">已开票六个月</span>
+										<div style="clear: both;"></div>
+									</div>
+								</div>
+								<div class="characteristic">
+									<h3 class="characteristic-title">特色</h3>
+									<div class="characteristic-content">
+										<span class="select">打折优惠</span>
+										<span class="select">住宅</span>
+										<span class="select">养生社区</span>
+										<span class="select">花园洋房</span>
+										<span class="select">海景房</span>
+										<span class="select">河(江)景房</span>
+										<span class="select">温泉社区</span>
+										<span class="select">酒店式公寓</span>
+										<span class="select">商铺</span>
+										<span class="select">别墅</span>
+										<span class="select">公寓</span>
+										<span class="select">社区</span>
+										<span class="select">学区房</span>
+										<span class="select">湖景房</span>
+										<span class="select">写字楼</span>
+										<div style="clear: both;"></div>
 									</div>
 								</div>
 							</div>
 						</section>
+						<footer class="screen-push-footer">
+							<span class="empty">清空条件</span>
+							<span class="determine">确定</span>
+						</footer>
 					</div>
-				</div>
-				<!----------  意见反馈  ----------->
-				<div class="feedback-push">
-					<header class="feedback-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<h3 class="title_txt">意见反馈</h3>
-							<a class="return" href="javascript:;"></a>
-						</div>
-					</header>
-					<section class="feedback-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="feedback-textarea">
-								<div class="textarea-box">
-									<textarea class="textarea" tabindex name="" id="" onkeyup="this.value = this.value.substring(0,200)" placeholder="请填写您的意见"></textarea>
-								</div>
-								<span class="Surplus-character">184字</span>
-							</div>
-							<div class="feedback-img z_photo">
-								<div class="addbtn-box z_file">
-									<img src="img/add.png" />
-									<span>上传图片</span>
-									<input class="addbtn" type="file" name="file" id="file" value="" accept="image/*" multiple onchange="imgChange('z_photo','z_file');" />
-								</div>
-								<span class="upload">还可上传1张</span>
-							</div>
-						</div>
-					</section>
 				</div>
 			</div>
-			<!-------------  登录注册界面弹框  --------->
-			<div class="login-page-push">
-				<header class="login-page-pushheader">
+			<!-------------- 房贷计算机 ---------------->
+			<div class="loanHome-calculator">
+				<header class="loanHome-calculator-header">
 					<div class="signal_bar"></div>
 					<div class="title_bar">
-						<h3 class="title_txt">登录</h3>
-						<a class="return" href="javascript:;"></a>
-						<a class="register" href="javascript:;">注册</a>
-						<a class="login" href="javascript:;">登录</a>
-					</div>
-				</header>
-				<section class="login-page-pushsection">
-					<div class="pushsection-wrapper">
-						<div class="account-login">
-							<div class="login-page-logo"><img class="login-logo" src="img/lvjulogo.png" /></div>
-							<div class="login-page-input">
-								<form action="" method="post">
-									<div class="login-page-Username">
-										<input class="Username" type="text" name="" id="" value="" placeholder="手机号/用户名" />
-									</div>
-									<div class="login-page-Password">
-										<input class="Password" id="l-Password" type="password" name="" id="" value="" placeholder="密码" />
-										<a class="showPassword" id="showlPassword" href="javascript:;"></a>
-									</div>
-									<div class="login-page-btn">登录</div>
-								</form>
-							</div>
-							<div class="login-page-way">
-								<span class="dynamic-login">手机动态登录</span>
-								<span class="forgot-password">忘记密码</span>
-							</div>
-							<div class="log-in-anotherWay">
-								<div class="anotherWay-box">
-									<p>其他方法登录</p>
-									<div class="weix-login">
-										<i><img src="img/grayweixin.png"/></i>
-										<span>微信</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="phone-dynamic-login">
-							<div class="login-page-input">
-								<form action="" method="post">
-									<div class="login-page-phone">
-										<input class="Userphone" type="number" name="" id="" value="" placeholder="手机号" />
-										<div class="Verificationbtn-box">
-											<div class="Verificationbtn-box-wrapper">
-												<a class="Verificationbtn" href="javascript:;">获取验证码</a>
-												<div class="click"></div>
-											</div>
-										</div>
-									</div>
-									<div class="Verification-Code">
-										<input class="Verification" id="Verification" type="text" name="" id="" value="" placeholder="验证码" />
-									</div>
-									<div class="login-page-btn">登录</div>
-								</form>
-							</div>
-							<div class="login-page-way">
-								<span class="dynamic-login">旅居账号登录</span>
-							</div>
-							<div class="login-page-LogonFailure">登录失败，请检查网络</div>
-							<div class="login-page-VerifyCodeError">验证码错误</div>
-						</div>
-						<div class="registered-account">
-							<div class="registered-logo"><img class="registered-img" src="img/lvjulogo.png" /></div>
-							<div class="registered-input">
-								<div class="registered-phone">
-									<input class="Userphone" type="number" name="" id="" value="" placeholder="手机号" />
-									<div class="Verificationbtn-box">
-										<div class="Verificationbtn-box-wrapper">
-											<a class="Verificationbtn" href="javascript:;">获取验证码</a>
-											<div class="click"></div>
-										</div>
-									</div>
-								</div>
-								<div class="registered-Verification">
-									<input class="Verification" id="Verification" type="number" name="" id="" value="" placeholder="验证码" />
-								</div>
-								<div class="registered-Password">
-									<input class="Password" id="r-Password" type="password" name="" id="" value="" placeholder="密码" />
-									<a class="showPassword" id="showrPassword" href="javascript:;"></a>
-								</div>
-								<div class="registered-btn">注册</div>
-							</div>
-							<div class="registered-txt">点击注册按钮即代表<span class="dynamic-login">同意旅居网服务条款</span></div>
-						</div>
-					</div>
-				</section>
-				<div class="login-page-shadow"></div>
-				<div class="register-state-push">
-					<header class="register-state-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<a class="return" href="javascript:;"></a>
-						</div>
-					</header>
-					<section class="register-state-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="register-success-box">
-								<img class="suc-img" src="img/success.png" />
-								<p class="suc-txt">注册成功</p>
-								<p class="account-type">请设置您的账户类型</p>
-								<div class="new-account">
-									<p>新用户</p>
-									<span>第一次注册旅居网</span>
-								</div>
-								<div class="old-account">
-									<p>老用户</p>
-									<span>以前接触过旅居网</span>
-								</div>
-							</div>
-							<div class="register-fail-box">
-								<img class="fail-img" src="img/fail.png" />
-								<p class="fail-txt">注册失败</p>
-								<p class="check-network">请检查您的网络是否连接</p>
-								<div class="Re-registration">重新注册</div>
-							</div>
-						</div>
-					</section>
-				</div>
-				<div class="modify-success">密码修改成功，请重新登录</div>
-				<div class="retrieve-success">密码找回成功，请登录</div>
-				<!-------------找回密码------------->
-				<div class="retrieve-password-push">
-					<header class="retrieve-password-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<h3 class="title_txt">找回密码</h3>
-							<a class="return" href="javascript:;"></a>
-						</div>
-					</header>
-					<section class="retrieve-password-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="retrieve-password-box">
-								<div class="retrieve-phone">
-									<span>手机号</span>
-									<input class="retrieve-p" id="retrieve-p" type="number" name="" id="" value="" placeholder="请输入手机号">
-									<div class="Verificationbtn-box">
-										<div class="Verificationbtn-box-wrapper">
-											<a class="Verificationbtn" href="javascript:;">获取验证码</a>
-											<div class="click"></div>
-										</div>
-									</div>
-								</div>
-								<div class="retrieve-verification">
-									<span>验证码</span>
-									<input class="retrieve_v" id="retrieve_v" type="number" name="" id="" value="" placeholder="请输入验证码">
-								</div>
-								<div class="retrieve-new">
-									<span>新密码</span>
-									<input class="retrieve-n" id="retrieve-n" type="password" name="" id="" value="" placeholder="6~15位之间">
-									<a href="javascript:;"></a>
-								</div>
-								<div class="retrieve-btn">确定</div>
-							</div>
-						</div>
-					</section>
-					<div class="retrieve-failed">提交失败，请检查网络</div>
-				</div>
-			</div>
-			<!-------------  个人资料弹框  ------------->
-			<div class="personal-data-push">
-				<header class="personal-data-pushheader">
-					<div class="signal_bar"></div>
-					<div class="title_bar">
-						<h3 class="title_txt">设置</h3>
+						<h3 class="title_txt">计算器</h3>
 						<a class="return" href="javascript:;"></a>
 					</div>
 				</header>
-				<section class="personal-data-pushsection">
-					<div class="pushsection-wrapper">
-						<div class="personal-data-box">
-							<ul class="account-management">
-								<li class="head-portrait">
-									<div class="li-wrapper">
-										<span class="li-wrapper-title">头像</span>
-										<span class="li-wrapper-info"><img src="img/userimg2.png"/></span>
-										<span class="li-wrapper-btn"><img src="img/returnright.png"/></span>
+				<section class="loanHome-calculator-section">
+					<div class="section-wrapper">
+						<div class="AF-money credit">
+							<div class="AF-calculate">
+								<div class="AF-calculate-select">
+									<span class="interest select">等额本息</span>
+									<span class="principa">等额本金</span>
+								</div>
+								<div class="AF-calculate-forMonth">
+									<span class="forMonth">每月月供参考（元）</span>
+									<span class="forMonthnum">0.00</span>
+								</div>
+								<div class="AF-calculate-payment">
+									<div class="payment equal">
+										<span>支付利息（元）</span>
+										<span>0.00</span>
 									</div>
+									<div class="repayment equal">
+										<span>还款总额（元）</span>
+										<span>0.00</span>
+									</div>
+								</div>
+							</div>
+							<div class="AF-rDetails">
+								<span class="push">点击查看还款详情</span>
+							</div>
+							<ul class="AF-type typebox">
+								<li class="AF-type-li jisuan">
+									<div class="AF-type-info">
+										<span class="AF-type-infotitle">计算类型</span>
+									</div>
+									<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+									<div class="returnright">公积金贷款（按贷款金额）</div>
 								</li>
-								<li class="account-name">
-									<div class="li-wrapper">
-										<span class="li-wrapper-title">用户名</span>
-										<span class="li-wrapper-info">哈利波特</span>
-										<span class="li-wrapper-btn"><img src="img/returnright.png"/></span>
+								<li class="AF-type-li">
+									<div class="AF-type-info">
+										<span class="AF-type-infotitle">贷款金额（万）</span>
 									</div>
+									<input class="name" id="AF-money-pri" type="number" placeholder="请输入金额" />
 								</li>
-								<li class="nickname">
-									<div class="li-wrapper">
-										<span class="li-wrapper-title">昵称</span>
-										<span class="li-wrapper-info">哈利波特</span>
-										<span class="li-wrapper-btn"><img src="img/returnright.png"/></span>
+								<li class="AF-type-li goufang">
+									<div class="AF-type-info">
+										<span class="AF-type-infotitle">购房性质</span>
 									</div>
+									<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+									<div class="returnright null"></div>
 								</li>
-								<li class="real-name">
-									<div class="li-wrapper">
-										<span class="li-wrapper-title">真实姓名</span>
-										<span class="li-wrapper-info"></span>
-										<span class="li-wrapper-btn"><img src="img/returnright.png"/></span>
+								<li class="AF-type-li shoufu">
+									<div class="AF-type-info">
+										<span class="AF-type-infotitle">首付</span>
 									</div>
+									<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+									<div class="returnright null"></div>
 								</li>
-								<li class="account-type">
-									<div class="li-wrapper">
-										<span class="li-wrapper-title">账户类型</span>
-										<span class="li-wrapper-info"></span>
-										<span class="li-wrapper-btn"><img src="img/returnright.png"/></span>
+								<li class="AF-type-li gongjijin">
+									<div class="AF-type-info">
+										<span class="AF-type-infotitle">公积金贷利率</span>
 									</div>
+									<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+									<div class="returnright null"></div>
 								</li>
-								<li class="Modify-password">
-									<div class="li-wrapper">
-										<span class="li-wrapper-title">修改密码</span>
-										<span class="li-wrapper-info"></span>
-										<span class="li-wrapper-btn"><img src="img/returnright.png"/></span>
+								<li class="AF-type-li nianxian">
+									<div class="AF-type-info">
+										<span class="AF-type-infotitle">贷款年限（年）</span>
 									</div>
-								</li>
-							</ul>
-							<ul class="personal-info">
-								<li class="gender">
-									<div class="li-wrapper">
-										<span class="li-wrapper-title">性别</span>
-										<span class="li-wrapper-info"></span>
-										<span class="li-wrapper-btn"><img src="img/returnright.png"/></span>
-									</div>
-								</li>
-								<li class="birthday">
-									<div class="li-wrapper">
-										<span class="li-wrapper-title">生日</span>
-										<span class="li-wrapper-info"></span>
-										<span class="li-wrapper-btn"><img src="img/returnright.png"/></span>
-									</div>
-								</li>
-								<li class="region">
-									<div class="li-wrapper">
-										<span class="li-wrapper-title">地区</span>
-										<span class="li-wrapper-info"></span>
-										<span class="li-wrapper-btn"><img src="img/returnright.png"/></span>
-									</div>
-								</li>
-							</ul>
-							<ul class="binding-device">
-								<li class="bind_phone">
-									<div class="li-wrapper">
-										<span class="li-wrapper-title"><img src="img/bindingphone.png"/></span>
-										<span class="li-wrapper-info" data-value=""></span>
-										<span class="li-wrapper-btn">
-											<span class="btn">绑定</span>
-										</span>
-									</div>
-								</li>
-								<li class="bind_weixin">
-									<div class="li-wrapper">
-										<span class="li-wrapper-title"><img src="img/bindingweix.png"/></span>
-										<span class="li-wrapper-info"></span>
-										<span class="li-wrapper-btn">
-											<span class="btn">绑定</span>
-										</span>
-									</div>
-								</li>
-								<li class="bind_mailbox">
-									<div class="li-wrapper">
-										<span class="li-wrapper-title"><img src="img/bindingEmail.png"/></span>
-										<span class="li-wrapper-info"></span>
-										<span class="li-wrapper-btn">
-											<span class="btn">绑定</span>
-										</span>
-									</div>
+									<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+									<div class="returnright null"></div>
 								</li>
 							</ul>
+							<div class="AF-rule">以上为央行2016年最新公布的贷款基准利率</div>
+						</div>
+						<div class="AF-area credit">
+							<div class="AF-calculate">
+								<div class="AF-calculate-select">
+									<span class="interest select">等额本息</span>
+									<span class="principa">等额本金</span>
+								</div>
+								<div class="AF-calculate-forMonth">
+									<span class="forMonth">每月月供参考（元）</span>
+									<span class="forMonthnum">0.00</span>
+								</div>
+								<div class="AF-calculate-payment">
+									<div class="payment equal">
+										<span>支付利息（元）</span>
+										<span>0.00</span>
+									</div>
+									<div class="repayment equal">
+										<span>还款总额（元）</span>
+										<span>0.00</span>
+									</div>
+								</div>
+							</div>
+							<div class="AF-rDetails">
+								<span class="push">点击查看还款详情</span>
+							</div>
+							<ul class="AF-type typebox">
+								<li class="AF-type-li jisuan">
+									<div class="AF-type-info">
+										<span class="AF-type-infotitle">计算类型</span>
+									</div>
+									<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+									<div class="returnright">公积金贷款（按面积）</div>
+								</li>
+								<li class="AF-type-li">
+									<div class="AF-type-info">
+										<span class="AF-type-infotitle">单价</span>
+									</div>
+									<input class="name" id="AF-area-pri" type="number" placeholder="元/平方" />
+								</li>
+								<li class="AF-type-li">
+									<div class="AF-type-info">
+										<span class="AF-type-infotitle">面积</span>
+									</div>
+									<input class="name" id="AF-area-areas" type="number" placeholder="平方米" />
+								</li>
+								<li class="AF-type-li goufang">
+									<div class="AF-type-info">
+										<span class="AF-type-infotitle">购房性质</span>
+									</div>
+									<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+									<div class="returnright null"></div>
+								</li>
+								<li class="AF-type-li shoufu">
+									<div class="AF-type-info">
+										<span class="AF-type-infotitle">首付</span>
+									</div>
+									<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+									<div class="returnright null"></div>
+								</li>
+								<li class="AF-type-li gongjijin">
+									<div class="AF-type-info">
+										<span class="AF-type-infotitle">公积金贷利率</span>
+									</div>
+									<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+									<div class="returnright null"></div>
+								</li>
+								<li class="AF-type-li nianxian">
+									<div class="AF-type-info">
+										<span class="AF-type-infotitle">贷款年限（年）</span>
+									</div>
+									<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+									<div class="returnright null"></div>
+								</li>
+							</ul>
+							<div class="AF-rule">以上为央行2016年最新公布的贷款基准利率</div>
+						</div>
+						<div class="CL-money credit">
+							<div class="CL-calculate">
+								<div class="CL-calculate-select">
+									<span class="interest select">等额本息</span>
+									<span class="principa">等额本金</span>
+								</div>
+								<div class="CL-calculate-forMonth">
+									<span class="forMonth">每月月供参考（元）</span>
+									<span class="forMonthnum">0.00</span>
+								</div>
+								<div class="CL-calculate-payment">
+									<div class="payment equal">
+										<span>支付利息（元）</span>
+										<span>0.00</span>
+									</div>
+									<div class="repayment equal">
+										<span>还款总额（元）</span>
+										<span>0.00</span>
+									</div>
+								</div>
+							</div>
+							<div class="CL-rDetails">
+								<span class="push">点击查看还款详情</span>
+							</div>
+							<ul class="CL-type typebox">
+								<li class="CL-type-li jisuan">
+									<div class="CL-type-info">
+										<span class="CL-type-infotitle">计算类型</span>
+									</div>
+									<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+									<div class="returnright">商业贷款（按贷款金额）</div>
+								</li>
+								<li class="CL-type-li">
+									<div class="CL-type-info">
+										<span class="CL-type-infotitle">贷款金额金额（万）</span>
+									</div>
+									<input class="name" id="CL-money-pri" type="number" placeholder="请输入金额" />
+								</li>
+								<li class="CL-type-li goufang">
+									<div class="CL-type-info">
+										<span class="CL-type-infotitle">购房性质</span>
+									</div>
+									<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+									<div class="returnright null"></div>
+								</li>
+								<li class="CL-type-li shoufu">
+									<div class="CL-type-info">
+										<span class="CL-type-infotitle">首付</span>
+									</div>
+									<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+									<div class="returnright null"></div>
+								</li>
+								<li class="CL-type-li shanye">
+									<div class="CL-type-info">
+										<span class="CL-type-infotitle">商业贷利率</span>
+									</div>
+									<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+									<div class="returnright null"></div>
+								</li>
+								<li class="CL-type-li nianxian">
+									<div class="CL-type-info">
+										<span class="CL-type-infotitle">贷款年限（年）</span>
+									</div>
+									<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+									<div class="returnright null"></div>
+								</li>
+							</ul>
+							<div class="CL-rule">以上为央行2016年最新公布的贷款基准利率</div>
+						</div>
+						<div class="CL-area credit">
+							<div class="CL-calculate">
+								<div class="CL-calculate-select">
+									<span class="interest select">等额本息</span>
+									<span class="principa">等额本金</span>
+								</div>
+								<div class="CL-calculate-forMonth">
+									<span class="forMonth">每月月供参考（元）</span>
+									<span class="forMonthnum">0.00</span>
+								</div>
+								<div class="CL-calculate-payment">
+									<div class="payment equal">
+										<span>支付利息（元）</span>
+										<span>0.00</span>
+									</div>
+									<div class="repayment equal">
+										<span>还款总额（元）</span>
+										<span>0.00</span>
+									</div>
+								</div>
+							</div>
+							<div class="CL-rDetails">
+								<span class="push">点击查看还款详情</span>
+							</div>
+							<ul class="CL-type typebox">
+								<li class="CL-type-li jisuan">
+									<div class="CL-type-info">
+										<span class="CL-type-infotitle">计算类型</span>
+									</div>
+									<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+									<div class="returnright">商业贷款（按面积）</div>
+								</li>
+								<li class="CL-type-li">
+									<div class="CL-type-info">
+										<span class="CL-type-infotitle">单价</span>
+									</div>
+									<input class="name" id="CL-area-pri" type="number" placeholder="元/平方" />
+								</li>
+		
+								<li class="CL-type-li">
+									<div class="CL-type-info">
+										<span class="CL-type-infotitle">面积</span>
+									</div>
+									<input class="name" id="CL-area-areas" type="number" placeholder="平方米" />
+								</li>
+								<li class="CL-type-li goufang">
+									<div class="CL-type-info">
+										<span class="CL-type-infotitle">购房性质</span>
+									</div>
+									<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+									<div class="returnright null"></div>
+								</li>
+								<li class="CL-type-li shoufu">
+									<div class="CL-type-info">
+										<span class="CL-type-infotitle">首付</span>
+									</div>
+									<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+									<div class="returnright null"></div>
+								</li>
+								<li class="CL-type-li shanye">
+									<div class="CL-type-info">
+										<span class="CL-type-infotitle">商业贷利率</span>
+									</div>
+									<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+									<div class="returnright null"></div>
+								</li>
+								<li class="CL-type-li nianxian">
+									<div class="CL-type-info">
+										<span class="CL-type-infotitle">贷款年限（年）</span>
+									</div>
+									<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+									<div class="returnright null"></div>
+								</li>
+							</ul>
+							<div class="CL-rule">以上为央行2016年最新公布的贷款基准利率</div>
+						</div>
+						<div class="CombinationL credit">
+							<div class="CombinationL-calculate">
+								<div class="CombinationL-calculate-select">
+									<span class="interest select">等额本息</span>
+									<span class="principa">等额本金</span>
+								</div>
+								<div class="CombinationL-calculate-forMonth">
+									<span class="forMonth">每月月供参考（元）</span>
+									<span class="forMonthnum">0.00</span>
+								</div>
+								<div class="CombinationL-calculate-payment">
+									<div class="payment equal">
+										<span>支付利息（元）</span>
+										<span>0.00</span>
+									</div>
+									<div class="repayment equal">
+										<span>还款总额（元）</span>
+										<span>0.00</span>
+									</div>
+								</div>
+							</div>
+							<div class="CombinationL-rDetails">
+								<span class="push">点击查看还款详情</span>
+							</div>
+							<ul class="CombinationL-type typebox">
+								<li class="CombinationL-type-li jisuan">
+									<div class="CombinationL-type-info">
+										<span class="CombinationL-type-infotitle">计算类型</span>
+									</div>
+									<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+									<div class="returnright">组合贷款</div>
+								</li>
+								<li class="CombinationL-type-li">
+									<div class="CombinationL-type-info">
+										<span class="CombinationL-type-infotitle">商贷金额（万）</span>
+									</div>
+									<input class="name" id="CombinationL-pri1" type="number" placeholder="请输入金额" />
+								</li>
+								<li class="CombinationL-type-li">
+									<div class="CombinationL-type-info">
+										<span class="CombinationL-type-infotitle">公积金贷款金额（万）</span>
+									</div>
+									<input class="name" id="CombinationL-pri2" type="number" placeholder="请输入金额" />
+								</li>
+								<li class="CombinationL-type-li nianxian">
+									<div class="CombinationL-type-info">
+										<span class="CombinationL-type-infotitle">期限（年）</span>
+									</div>
+									<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+									<div class="returnright null"></div>
+								</li>
+								<li class="CombinationL-type-li shanye">
+									<div class="CombinationL-type-info">
+										<span class="CombinationL-type-infotitle">商贷利率（%）</span>
+									</div>
+									<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+									<div class="returnright null"></div>
+								</li>
+								<li class="CombinationL-type-li gongjijin">
+									<div class="CombinationL-type-info">
+										<span class="CombinationL-type-infotitle">公积金贷利率（%）</span>
+									</div>
+									<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+									<div class="returnright null"></div>
+								</li>
+							</ul>
+							<div class="CombinationL-rule">以上为央行2016年最新公布的贷款基准利率</div>
+						</div>
+						<div class="Taxation credit">
+						<div class="Taxation-calculate">
+							<div class="Taxation-calculate-fortax">
+								<div class="total-tax equal">
+									<span class="fortotal">税费总计</span>
+									<span class="fortotalnum">0.00</span>
+								</div>
+								<div class="house-tax equal">
+									<span class="forhouse">房屋总价</span>
+									<span class="forhousenum">0.00</span>
+								</div>
+							</div>
+							<div class="Taxation-calculate-payment">
+								<div class="payment equal">
+									<span>契税（元）</span>
+									<span>0.00</span>
+								</div>
+								<div class="repayment equal">
+									<span>印花税（元）</span>
+									<span>免征</span>
+								</div>
+							</div>
+						</div>
+						<div class="Taxation-rDetails">
+							<span class="push">点击查看还款详情</span>
+						</div>
+						<ul class="Taxation-type typebox">
+							<li class="Taxation-type-li jisuan">
+								<div class="Taxation-type-info">
+									<span class="Taxation-type-infotitle">计算类型</span>
+								</div>
+								<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+								<div class="returnright">税率计算</div>
+							</li>
+							<li class="Taxation-type-li zhuzhai">
+								<div class="Taxation-type-info">
+									<span class="Taxation-type-infotitle">住宅类型</span>
+								</div>
+								<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+								<div class="returnright null"></div>
+							</li>
+							<li class="Taxation-type-li goufang">
+								<div class="Taxation-type-info">
+									<span class="Taxation-type-infotitle">购房性质</span>
+								</div>
+								<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+								<div class="returnright null"></div>
+							</li>
+							<li class="Taxation-type-li">
+								<div class="Taxation-type-info">
+									<span class="Taxation-type-infotitle">单价</span>
+								</div>
+								<input class="name" id="Taxation-pri" type="number" placeholder="元/平方" />
+							</li>
+							<li class="Taxation-type-li">
+								<div class="Taxation-type-info">
+									<span class="Taxation-type-infotitle">面积</span>
+								</div>
+								<input class="name" id="Taxation-area" type="number" placeholder="平方米" />
+							</li>
+						</ul>
+						<div class="Taxation-rule">
+							<p><span>契税：</span>购买“非普通住宅”需缴纳总房价3%的契税，“普通住宅”税率减半至1.5%；个人首次购买90平方米以下的“普通住宅”，且属家庭首套房的，税率仅为1%。</p>
+							<p><span>印花税：</span>免征</p>
+							<p>购房过程中还会收取其他费用，不同楼盘收取费用不一致，详情请与开发商沟通。</p>
 						</div>
 					</div>
+					</div>
 				</section>
-				<div class="personal-data-shadow"></div>
-				<div class="personal-data-Mask"></div>
-				<!-------------修改用户名弹框------------->
-				<div class="account-name-push">
-					<header class="account-name-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<h3 class="title_txt">修改用户名</h3>
-							<a class="return" href="javascript:;"></a>
-							<a class="save" href="javascript:;">保存</a>
-						</div>
-					</header>
-					<section class="account-name-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="account-name-revise">
-								<span class="title">修改用户名：</span>
-								<input class="accountName" type="text" name="" id="" maxlength="20" />
-								<span class="delete"><img src="img/empty.png"/></span>
+				<!-------------- 弹框阴影 ---------------->
+				<div class="calculator-Mask"></div>
+				<!-------------- 还款明细 ---------------->
+				<div class="R-details">
+					<div class="details-wrapper">
+						<header class="details-wrapper-header">
+							<div class="signal_bar"></div>
+							<div class="details-wrapper-header-wrapper">
+								<h3 class="title_txt">还款明细</h3>
+								<a class="return" href="javascript:;"></a>
 							</div>
-							<p>20个以内字符，仅可以使用汉字、字母、数字或下划线</p>
+						</header>
+						<div class="details-wrapper-body">
+							<div class="details-wrapper-body-box">
+								<div class="details-wrapper-calculate">
+									<div class="details-calculate-select">
+										<span class="interest select">等额本息</span>
+										<span class="principa">等额本金</span>
+									</div>
+									<div class="details-calculate-payment">
+										<div class="total-r equal">
+											<span>总还款(万)</span>
+											<span>0.00</span>
+										</div>
+										<div class="total-i equal">
+											<span>总利息(万)</span>
+											<span>0.00</span>
+										</div>
+										<div class="total-l equal">
+											<span>总贷款(万)</span>
+											<span>0.00</span>
+										</div>
+										<div class="total-m equal">
+											<span>贷款月数</span>
+											<span>0</span>
+										</div>
+									</div>
+								</div>
+								<div class="details-wrapper-data">
+									<ul class="data-listheader">
+										<li>月份</li>
+										<li>月供本金</li>
+										<li>月供利息</li>
+										<li>剩余</li>
+									</ul>
+									<div class="data-listtable" v-for="list in detailslist">
+										<h3 class="year" v-text="list.title"></h3>
+										<ul class="month">
+											<li class="date" v-for="items in list.data">
+												<span v-text="items.month"></span>
+												<span v-text="items.principal"></span>
+												<span v-text="items.interest"></span>
+												<span v-text="items.surplus"></span>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
 						</div>
-					</section>
+					</div>
 				</div>
-				<!-------------修改昵称弹框------------->
-				<div class="nickname-push">
-					<header class="nickname-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<h3 class="title_txt">修改昵称</h3>
-							<a class="return" href="javascript:;"></a>
-							<a class="save" href="javascript:;">保存</a>
-						</div>
-					</header>
-					<section class="nickname-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="nickname-push-revise">
-								<span class="title">昵称：</span>
-								<input class="nickName" type="text" name="" id="" maxlength="20" />
-								<span class="delete"><img src="img/empty.png"/></span>
-							</div>
-							<p>20个以内字符，仅可以使用汉字、字母、数字或下划线</p>
-						</div>
-					</section>
-				</div>
-				<!-------------填写真实姓名弹框------------->
-				<div class="real-name-push">
-					<header class="real-name-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<h3 class="title_txt">填写真实姓名</h3>
-							<a class="return" href="javascript:;"></a>
-							<a class="save" href="javascript:;">保存</a>
-						</div>
-					</header>
-					<section class="real-name-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="realname-push-revise">
-								<span class="title">真实姓名：</span>
-								<input class="realName" type="text" name="" id="" />
-								<span class="delete"><img src="img/empty.png"/></span>
-							</div>
-							<div class="realname-push-prompt">
-								<p>1. 取票人姓名必须与所持证件一致。</p>
-								<p>2. 若姓名中包含生僻字，生僻字需更换为拼音。如“巘”为生僻字，姓名为“巘张君”请提交“yan张君”；姓名为“张巘君”，请提交“张yan君”；姓名为“张君巘”，请提交“张君yan”。</p>
-								<p>3. 姓名中不可含称谓等词语，如：小姐、先生、太太、夫人等。</p>
-								<p>4. 中文姓名不可少于2个汉字。</p>
-							</div>
-
-						</div>
-					</section>
-				</div>
-				<!-------------账户类型弹框------------->
-				<div class="account-type-push">
-					<ul class="push-wrapper">
-						<li class="olduser">老用户</li>
-						<li class="newuser">新用户</li>
+				<!-------------- 遮罩 ---------------->
+				<div class="loanHome-calculator-Mask"></div>
+				<!-------------- 选项弹框 ---------------->
+				<div class="bomb-wrap">
+					<ul class="calculation-type frame">
+						<li class="select">公积金贷款（按贷款金额）</li>
+						<li>公积金贷款（按面积）</li>
+						<li>商业贷款（按贷款金额）</li>
+						<li>商业贷款（面积）</li>
+						<li>组合贷款</li>
+						<li>税费计算</li>
+					</ul>
+					<ul class="house-type frame">
+						<li>首套房1</li>
+						<li>首套房2</li>
+						<li>首套房3</li>
+					</ul>
+					<ul class="down-payments frame">
+						<li>1成</li>
+						<li>2成</li>
+						<li>3成</li>
+						<li>4成</li>
+					</ul>
+					<ul class="gong-rate frame">
+						<li>4.7%</li>
+						<li>4.8%</li>
+						<li>4.9%</li>
+						<li>5.0%</li>
+					</ul>
+					<ul class="shan-rate frame">
+						<li>3.7%</li>
+						<li>3.8%</li>
+						<li>3.9%</li>
+						<li>4.0%</li>
+					</ul>
+					<ul class="loan-term frame">
+						<li>5年</li>
+						<li>10年</li>
+						<li>15年</li>
+						<li>20年</li>
+					</ul>
+					<ul class="housing-type frame">
+						<li>毛坯</li>
+						<li>普通住宅</li>
+						<li>豪华住宅</li>
+						<li>别墅</li>
 					</ul>
 				</div>
-				<!-------------修改密码------------->
-				<div class="modify-password-push">
-					<header class="modify-password-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<h3 class="title_txt">修改密码</h3>
-							<a class="del" href="javascript:;"></a>
-						</div>
-					</header>
-					<section class="modify-password-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="modify-password-box">
-								<div class="old-password">
-									<input class="old_P" id="old_P" type="password" name="" id="" value="" placeholder="旧密码">
-								</div>
-								<div class="new-password">
-									<input class="new_P" id="new_P" type="password" name="" id="" value="" placeholder="新密码">
-									<a href="javascript:;"></a>
-								</div>
-								<div class="modify-btn">确定</div>
-							</div>
-						</div>
-					</section>
-				</div>
-				<!-------------性别弹框------------->
-				<div class="gender-push">
-					<ul class="push-wrapper">
-						<li class="male">男</li>
-						<li class="female">女</li>
-						<li class="secrecy">保密</li>
-					</ul>
-				</div>
-				<!-------------设置生日弹框------------->
-				<div class="birthday-push">
-					<header class="birthday-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<h3 class="title_txt">设置生日</h3>
-							<a class="return" href="javascript:;"></a>
-							<a class="determine" href="javascript:;">确定</a>
-						</div>
-					</header>
-					<section class="birthday-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="birthday-time" id="birthday-time"></div>
-						</div>
-					</section>
-				</div>
-				<!-------------设置地区弹框------------->
-				<div class="region-push">
-					<header class="region-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<h3 class="title_txt">设置地区</h3>
-							<a class="return" href="javascript:;"></a>
-							<a class="determine" href="javascript:;">确定</a>
-						</div>
-					</header>
-					<section class="region-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="region-place" id="region-place"></div>
-						</div>
-					</section>
-				</div>
-				<!-------------手机绑定弹框------------->
-				<div class="pc_phone-push">
-					<header class="pc_phone-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<h3 class="title_txt">手机绑定</h3>
-							<a class="return" href="javascript:;"></a>
-							<a class="save" href="javascript:;">保存</a>
-						</div>
-					</header>
-					<section class="pc_phone-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="pc_phone-push-revise">
-								<span class="title">手机号码：</span>
-								<input class="pc_phone" type="number" name="" id="" />
-								<span class="delete"><img src="img/empty.png"/></span>
-							</div>
-						</div>
-					</section>
-				</div>
-				<!-------------微信绑定弹框------------->
-				<div class="weixin-push">
-					<header class="weixin-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<h3 class="title_txt">微信绑定</h3>
-							<a class="return" href="javascript:;"></a>
-							<a class="save" href="javascript:;">保存</a>
-						</div>
-					</header>
-					<section class="weixin-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="weixin-push-revise">
-								<span class="title">微信号：</span>
-								<input class="weixin" type="text" name="" id="" />
-								<span class="delete"><img src="img/empty.png"/></span>
-							</div>
-						</div>
-					</section>
-				</div>
-				<!-------------邮箱绑定弹框------------->
-				<div class="modify-mailbox-push">
-					<header class="modify-mailbox-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<h3 class="title_txt">邮箱绑定</h3>
-							<a class="return" href="javascript:;"></a>
-							<a class="save" href="javascript:;">保存</a>
-						</div>
-					</header>
-					<section class="modify-mailbox-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="modify-mailbox-push-revise">
-								<span class="title">邮箱地址：</span>
-								<input class="mailbox" type="email" name="" id="" />
-								<span class="delete"><img src="img/empty.png"/></span>
-							</div>
-						</div>
-					</section>
-				</div>
-				<!-------------密码修改失败弹框------------->
-				<div class="modify-failed">密码修改失败，请检查网络</div>
 			</div>
-			<!-------------  我的收藏弹框  ------------->
-			<div class="personal-collection-push">
-				<header class="personal-collection-pushheader">
+			<!-------------- 购房需求 ---------------->
+			<div class="housing-demand">
+				<header class="housing-demand-header">
 					<div class="signal_bar"></div>
 					<div class="title_bar">
-						<h3 class="title_txt">我的收藏</h3>
+						<h3 class="title_txt">购房需求</h3>
 						<a class="return" href="javascript:;"></a>
 					</div>
 				</header>
-				<section class="personal-collection-pushsection">
-					<div class="pushsection-wrapper">
-						<div class="Pcollection-data">
-							<ul class="Pcollection-data-ul">
-								<li class="Pcollection-data-li" v-for="list in Pcollection">
-									<div class="slide-delete-btn">
-										<a class="delete-btn" href="#">
-											<span>删除</span>
-										</a>
-									</div>
-									<div class="dataDetail">
-										<div class="Pcollection-img">
-											<img :src="list.img" />
-											<span class="ghtxt" v-text="list.sell"></span>
-										</div>
-										<div class="Pcollection-txt">
-											<span class="title">
-												<span class="position" v-text="list.positions"></span>
-											<span class="region" v-text="list.region"></span>
-											</span>
-											<span class="address" v-text="list.address"></span>
-											<span class="openprice" v-text="list.openprice"></span>
-											<span class="averageprice">
-												<span class="averag" v-text="list.averag"></span>
-											<span class="price" v-text="list.price"></span>
-											</span>
-										</div>
-									</div>
-								</li>
-							</ul>
+				<section class="housing-demand-section">
+					<div class="section-wrapper">
+						<div class="banner">
+							<img class="banner_img" src="img/banner.png" alt="" />
 						</div>
+						<ul class="information_wrap">
+							<li class="int">
+								<div class="information">
+									<span class="information_title">你的昵称</span>
+									<span class="required">(必填)</span>
+								</div>
+								<input class="name" id="name" type="text" placeholder="输入你的称呼" />
+							</li>
+							<li class="int">
+								<div class="information">
+									<span class="information_title">联系电话</span>
+									<span class="required">(必填)</span>
+								</div>
+								<input class="name" id="phone" type="text" placeholder="输入手机号码" />
+							</li>
+							<li class="other">
+								<div class="information">
+									<span class="information_title">意向城市</span>
+									<span class="required">(必填)</span>
+								</div>
+								<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+								<div class="returnright">
+									<div class="txt_wrap">
+										<div style="clear: both;"></div>
+									</div>
+								</div>
+							</li>
+							<li class="other">
+								<div class="information">
+									<span class="information_title">房屋类型</span>
+									<span class="required">(必填)</span>
+								</div>
+								<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+								<div class="returnright">
+									<div class="txt_wrap">
+										<div style="clear: both;"></div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="information">
+									<span class="information_title">意向户型</span>
+									<span class="required">(必填)</span>
+								</div>
+								<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+								<div class="returnright">
+								</div>
+							</li>
+							<li>
+								<div class="information">
+									<span class="information_title">置业面积</span>
+								</div>
+								<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+								<div class="returnright"></div>
+							</li>
+							<li>
+								<div class="information">
+									<span class="information_title">预算总价</span>
+								</div>
+								<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+								<div class="returnright">
+								</div>
+							</li>
+							<li>
+								<div class="information">
+									<span class="information_title">装修要求</span>
+								</div>
+								<div class="returnright_img"><img src="img/returnright.png" alt="" /></div>
+								<div class="returnright">
+								</div>
+							</li>
+							<li class="int">
+								<div class="information">
+									<span class="information_title">附加要求</span>
+								</div>
+								<input class="name" id="nead" type="text" placeholder="输入要求内容" />
+							</li>
+						</ul>
 					</div>
 				</section>
-				<div class="personal-collection-Mask"></div>
-				<div class="delete-collection-push">
-					<div class="push-wrapper">
-						<span class="prompt">确定要删除收藏吗？</span>
-						<span class="determine">确定</span>
-						<span class="cancle">取消</span>
+				<footer class="housing-demand-footer">
+					<input class="submit" id="submit" type="submit" value="提交购房需求" />
+				</footer>
+				<div class="housing-demand-Mask"></div>
+				<div class="click_sub">
+					<div class="success">
+						<img class="success_logo" src="img/success.png" alt="" />
+						<p class="congratulations">恭喜您，提交成功</p>
+						<p class="success_txt">专业置业顾问将会尽快与您联系</p>
+						<p class="success_txt">为您提供最佳的房产导购服务</p>
+						<div class="know">我知道了</div>
+					</div>
+					<div class="fail">
+						<img class="fail_logo" src="img/fail.png" alt="" />
+						<p class="failsay">报名失败</p>
+						<p class="fail_txt">请检查您的网络是否连接</p>
+						<div class="again">重新提交</div>
 					</div>
 				</div>
-			</div>
-			<!-------------  我的足迹弹框  ------------->
-			<div class="personal-footprint-push">
-				<header class="personal-footprint-pushheader">
-					<div class="signal_bar"></div>
-					<div class="title_bar">
-						<h3 class="title_txt">我的足迹</h3>
-						<a class="return" href="javascript:;"></a>
-					</div>
-				</header>
-				<section class="personal-footprint-pushsection">
-					<div class="pushsection-wrapper">
-						<div class="Pfootprint-data">
-							<ul class="Pfootprint-data-ul">
-								<li class="Pfootprint-data-li" v-for="list in Pfootprint">
-									<div class="slide-delete-btn">
-										<a class="delete-btn" href="#">
-											<span>删除</span>
-										</a>
-									</div>
-									<div class="dataDetail">
-										<div class="Pfootprint-img">
-											<img :src="list.img" />
-											<span class="ghtxt" v-text="list.sell"></span>
-										</div>
-										<div class="Pfootprint-txt">
-											<span class="title">
-												<span class="position" v-text="list.positions"></span>
-											<span class="region" v-text="list.region"></span>
-											</span>
-											<span class="address" v-text="list.address"></span>
-											<span class="openprice" v-text="list.openprice"></span>
-											<span class="averageprice">
-												<span class="averag" v-text="list.averag"></span>
-											<span class="price" v-text="list.price"></span>
-											</span>
-										</div>
-									</div>
-								</li>
-							</ul>
+				<div class="bomb_wrap">
+					<div class="bomb"></div>
+					<div class="bomb"></div>
+					<div class="bomb d_requirement">
+						<div class="d_content">
+							<div class="b_tltle">
+								<h3>意向城市</h3>
+								<span>(可多选)</span>
+							</div>
+							<div class="selectmore">
+								<span>海口</span>
+								<span>三亚</span>
+								<span>琼海</span>
+								<span>文昌</span>
+								<span>儋州</span>
+								<span>澄迈</span>
+								<span>万宁</span>
+								<span>陵水</span>
+								<span>临高</span>
+								<span>定安</span>
+								<span>保亭</span>
+								<span>五指山</span>
+								<span>东方</span>
+								<span>琼中</span>
+								<span>昌江</span>
+								<span>白沙</span>
+								<span>乐东</span>
+								<span>屯昌</span>
+							</div>
+							<div class="btns">
+								<span class="reset">重置</span>
+								<span class="determine">确实</span>
+							</div>
 						</div>
 					</div>
-				</section>
-				<div class="personal-footprint-Mask"></div>
-				<div class="delete-footprint-push">
-					<div class="push-wrapper">
-						<span class="prompt">确定要删除收藏吗？</span>
-						<span class="determine">确定</span>
-						<span class="cancle">取消</span>
+					<div class="bomb d_requirement">
+						<div class="d_content">
+							<div class="b_tltle">
+								<h3>房屋类型</h3>
+								<span>(可多选)</span>
+							</div>
+							<div class="selectmore">
+								<span>住宅</span>
+								<span>养生社区</span>
+								<span>花园洋房</span>
+								<span>海景房</span>
+								<span>河(江)景房</span>
+								<span>温泉社区</span>
+								<span>酒店式公寓</span>
+								<span>商铺</span>
+								<span>别墅</span>
+								<span>公寓</span>
+								<span>社区</span>
+								<span>学区房</span>
+								<span>湖景房</span>
+								<span>写字楼</span>
+							</div>
+							<div class="btns">
+								<span class="reset">重置</span>
+								<span class="determine">确实</span>
+							</div>
+						</div>
 					</div>
+					<div class="bomb d_requirement">
+						<ul class="d_content">
+							<li>一房户型</li>
+							<li>二房户型</li>
+							<li>三房户型</li>
+							<li>四房户型</li>
+							<li>五房户型</li>
+							<li>别墅</li>
+							<li>其他</li>
+						</ul>
+					</div>
+					<div class="bomb d_requirement">
+						<ul class="d_content">
+							<li>不限</li>
+							<li>50m<sup>2</sup> 以内</li>
+							<li>50-70m<sup>2</sup></li>
+							<li>70-100m<sup>2</sup></li>
+							<li>100-130m<sup>2</sup></li>
+							<li>130-160m<sup>2</sup></li>
+							<li>160-200m<sup>2</sup></li>
+							<li>200m<sup>2</sup> 以上</li>
+						</ul>
+					</div>
+					<div class="bomb d_requirement">
+						<ul class="d_content">
+							<li>不限</li>
+							<li>30万以下</li>
+							<li>30-50万</li>
+							<li>50-80万</li>
+							<li>80-120万</li>
+							<li>120-160万</li>
+							<li>160-200万</li>
+							<li>200-300万</li>
+							<li>300-500万</li>
+							<li>500-1000万</li>
+							<li>1000万以上</li>
+						</ul>
+					</div>
+					<div class="bomb d_requirement">
+						<ul class="d_content">
+							<li>不限</li>
+							<li>毛坯</li>
+							<li>简单装修</li>
+							<li>中档装修</li>
+							<li>精装修</li>
+						</ul>
+					</div>
+					<div class="bomb"></div>
 				</div>
 			</div>
-			<!-------------  我的消息弹框  ------------->
-			<div class="personal-news-push">
-				<header class="personal-news-pushheader">
-					<div class="signal_bar"></div>
-					<div class="title_bar">
-						<h3 class="title_txt">我的消息</h3>
-						<a class="return" href="javascript:;"></a>
-					</div>
-				</header>
-				<section class="personal-news-pushsection">
-					<div class="pushsection-wrapper">
-						<div class="personal-news-data">
-							<ul class="personal-news-dataul">
-								<li class="personal-news-datali" v-for="news in Pnews">
-									<span class="receiveNews-time" v-text="news.receiveNewsT"></span>
-									<ul class="receiveNews-time-ul">
-										<li class="receiveNews-time-li" v-for="items in news.list">
-											<div class="receiveNews-time-liwrapper" :class="items.className">
-												<h3 class="news-title" v-text="items.title"></h3>
-												<div class="news-bigimg">
-													<img :src="items.bigimg" />
+			<!-------------- 搜索页面 ---------------->
+			<div class="search-page">
+				<div class="search-page-wrapper">
+					<header class="search-page-header">
+						<div class="signal_bar"></div>
+						<div class="Search_bar">
+							<form class="Search-form" action="">
+								<div class="Search-inpt-box">
+									<div class="Search-inpt-wrapper">
+										<input class="Search-inpt" id="Search-inpt" type="search" placeholder="输入楼盘名或楼盘地址" />
+										<a class="delete" href="javascript:;"></a>
+									</div>
+								</div>
+								<a class="cancle" href="javascript:;">取消</a>
+							</form>
+						</div>
+					</header>
+					<div class="search-page-section">
+						<div class="page search-section-wrapper">
+							<div class="search-section-box">
+								<div class="search-section-info">
+									<ul class="section-info-data-ul">
+										<li class="section-info-data-li" v-for="list in groomhouse">
+											<div class="datasearch">
+												<div class="section-info-img">
+													<img :src="list.img" />
+													<span class="biaoqian"></span>
+													<span class="ghtxt" v-text="list.sell"></span>
 												</div>
-												<div class="news-content">
-													<div class="news-smallimg"><img :src="items.smallimg" /></div>
-													<div class="news-txt" v-text="items.txt"></div>
+												<div class="section-info-txt">
+													<span class="title">
+														<span class="position" v-text="list.positions"></span>
+													<span class="region" v-text="list.region"></span>
+													</span>
+													<span class="address" v-text="list.address"></span>
+													<span class="openprice" v-text="list.openprice"></span>
+													<span class="averageprice">
+															<span class="averag" v-text="list.averag"></span>
+													<span class="price" v-text="list.price"></span>
+													</span>
 												</div>
 											</div>
 										</li>
 									</ul>
-								</li>
+								</div>
+								<div class="section-load">
+									上拉加载更多
+								</div>
+								<div class="section-loading">
+									<i></i>
+									<span>正在加载更多</span>
+								</div>
+							</div>
+							<div class="search-section-waiting">
+								<i></i>
+							</div>
+						</div>
+						<!--<div class="page search-section-fail">
+							<div class="section-fail-box">
+								<i></i>
+								<p>搜索失败，请检查网络连接</p>
+							</div>
+						</div>
+						<div class="page search-section-none">
+							<div class="section-none-box">
+								<i></i>
+								<p>搜索暂无结果</p>
+							</div>
+						</div>-->
+						<div class="page search-section-list">
+							<ul class="list-ul">
+								<li class="list-li">富力红树湾</li>
+								<li class="list-li">富力盈溪谷</li>
+								<li class="list-li">富力养生社区</li>
+								<li class="list-li">富力红树湾</li>
+								<li class="list-li">富力盈溪谷</li>
+								<li class="list-li">富力养生社区</li>
+								<li class="list-li">富力红树湾</li>
+								<li class="list-li">富力盈溪谷</li>
+								<li class="list-li">富力养生社区</li>
+								<li class="list-li">富力红树湾</li>
 							</ul>
 						</div>
-					</div>
-				</section>
-				<!-------------  我的消息阴影  ------------->
-				<div class="personal-news-shadow"></div>
-				<!-------------  消息详情弹框  ------------->
-				<div class="news-detail-push">
-					<header class="news-detail-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<h3 class="title_txt">消息详情</h3>
-							<a class="return" href="javascript:;"></a>
-						</div>
-					</header>
-					<section class="news-detail-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="news-detail-content">
-								<div class="news-detail-header">
-									<p><span class="title"></span>消息标题消息标题消息标题消息标题消息标题消息标题消息标题消息标题</p>
-									<div class="news-detail-info">
-										<span class="copyright">旅居网</span>
-										<span class="time">2017-06-20</span>
+						<div class="page search-section-state switch">
+							<div class="history-search-box">
+								<div class="hot-search">
+									<h3 class="hot-search-title">
+										<span class="title-txt">热门搜索</span>
+										<i class="title-hot"></i>
+										<i class="title-load"></i>
+									</h3>
+									<div class="hot-search-label">
+										<span>热门住宅</span>
+										<span>热门养生社区</span>
+										<span>热门别墅</span>
+										<span>热门海景房</span>
+										<span>热门海滨社区</span>
+										<span>热门小区</span>
+										<div style="clear: both;"></div>
 									</div>
 								</div>
-								<div class="news-detail-body">
-									<p>在经过一月到五月的集中放量和各大节日的优惠活动后，海南楼市迎来了暂时的间隙期，不少开发商暂时冷却下来，减少了楼盘的各种暖场营销活动。那么这个时候购房者来海南买房会不会没办法买到优惠的房源呢？当然不会！本期旅居网小编就来盘点一下6月初儋州楼盘推出的特价房优惠活动，为近期想来海南买优惠房源的购房者提供一份置业参考。</p>
-									<img src="img/massage-subject3.png" alt="" />
-									<p>在经过一月到五月的集中放量和各大节日的优惠活动后，海南楼市迎来了暂时的间隙期，不少开发商暂时冷却下来，减少了楼盘的各种暖场营销活动。那么这个时候购房者来海南买房会不会没办法买到优惠的房源呢？当然不会！本期旅居网小编就来盘点一下6月初儋州楼盘推出的特价房优惠活动，为近期想来海南买优惠房源的购房者提供一份置业参考。</p>
-								</div>
-							</div>
-						</div>
-					</section>
-				</div>
-			</div>
-			<!-------------  我的优惠券弹框  ----------->
-			<div class="personal-coupon-push">
-				<header class="personal-coupon-pushheader">
-					<div class="signal_bar"></div>
-					<div class="title_bar">
-						<h3 class="title_txt">我的优惠券</h3>
-						<a class="return" href="javascript:;"></a>
-						<a class="lookup" href="javascript:;">查找</a>
-					</div>
-					<div class="coupon-nav">
-						<ul class="coupon-nav-ul">
-							<li class="coupon-nav-li select">
-								<span>全部</span>
-							</li>
-							<li class="coupon-nav-li">
-								<span>未使用</span>
-							</li>
-							<li class="coupon-nav-li">
-								<span>已使用</span>
-							</li>
-							<li class="coupon-nav-li">
-								<span>已过期</span>
-							</li>
-						</ul>
-					</div>
-				</header>
-				<section class="personal-coupon-pushsection">
-					<div class="pushsection-wrapper coupon-whole">
-						<ul class="coupon-whole-ul">
-							<li class="coupon-whole-li notUsed" v-for="list in notUsed">
-								<div class="leftPart">
-									<div class="leftPart-wrapper">
-										<img class="leftPart-img" src="img/no_bestow.png" />
-										<p class="leftPart-content">
-											<span class="currency" v-text="list.currency"></span>
-											<span class="content" v-text="list.content"></span>
-										</p>
-										<span class="leftPart-txt">未使用</span>
-									</div>
-								</div>
-								<div class="rightPart">
-									<div class="rightPart-wrapper">
-										<div class="rightPart-content">
-											<p class="content-title" v-text="list.title"></p>
-											<p class="termOf-validity" v-text="list.validity"></p>
-											<p class="remaining-time" v-text="list.remaining"></p>
-										</div>
-										<div class="rightPart-details">
-											<span>详情</span>
-										</div>
-									</div>
-								</div>
-								<div class="hide_data">
-									<span class="dataTitle" v-text="list.hide_data.dataTitle"></span>
-									<span class="dataDetailed" v-text="list.hide_data.dataDetailed"></span>
-									<span class="dataCode" v-text="list.hide_data.dataCode"></span>
-									<span class="dataValidity" v-text="list.hide_data.dataValidity"></span>
-									<span class="dataQR_code">
-										<img :src="list.hide_data.dataQR_code"/>
-									</span>
-								</div>
-							</li>
-							<li class="coupon-whole-li alreadyUsed" v-for="list in alreadyUsed">
-								<div class="leftPart">
-									<div class="leftPart-wrapper">
-										<img class="leftPart-img" src="img/bestow.png" />
-										<p class="leftPart-content">
-											<span class="currency" v-text="list.currency"></span>
-											<span class="content" v-text="list.content"></span>
-										</p>
-										<span class="leftPart-txt">已使用</span>
-									</div>
-								</div>
-								<div class="rightPart">
-									<div class="rightPart-wrapper">
-										<div class="rightPart-content">
-											<p class="content-title" v-text="list.title"></p>
-											<p class="termOf-validity" v-text="list.validity"></p>
-											<p class="remaining-time" v-text="list.remaining"></p>
-										</div>
-										<div class="rightPart-details">
-											<span>详情</span>
-										</div>
-									</div>
-								</div>
-								<div class="hide_data">
-									<span class="dataTitle" v-text="list.hide_data.dataTitle"></span>
-									<span class="dataDetailed" v-text="list.hide_data.dataDetailed"></span>
-									<span class="dataCode" v-text="list.hide_data.dataCode"></span>
-									<span class="dataValidity" v-text="list.hide_data.dataValidity"></span>
-									<span class="dataQR_code">
-										<img :src="list.hide_data.dataQR_code"/>
-									</span>
-								</div>
-							</li>
-							<li class="coupon-whole-li overdue" v-for="list in overdue">
-								<div class="leftPart">
-									<div class="leftPart-wrapper">
-										<img class="leftPart-img" src="img/overdue.png" />
-										<p class="leftPart-content">
-											<span class="currency" v-text="list.currency"></span>
-											<span class="content" v-text="list.content"></span>
-										</p>
-										<span class="leftPart-txt">已过期</span>
-									</div>
-								</div>
-								<div class="rightPart">
-									<div class="rightPart-wrapper">
-										<div class="rightPart-content">
-											<p class="content-title" v-text="list.title"></p>
-											<p class="termOf-validity" v-text="list.validity"></p>
-											<p class="remaining-time" v-text="list.remaining"></p>
-										</div>
-										<div class="rightPart-details">
-											<span>详情</span>
-										</div>
-									</div>
-								</div>
-								<div class="hide_data">
-									<span class="dataTitle" v-text="list.hide_data.dataTitle"></span>
-									<span class="dataDetailed" v-text="list.hide_data.dataDetailed"></span>
-									<span class="dataCode" v-text="list.hide_data.dataCode"></span>
-									<span class="dataValidity" v-text="list.hide_data.dataValidity"></span>
-									<span class="dataQR_code">
-										<img :src="list.hide_data.dataQR_code"/>
-									</span>
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="pushsection-wrapper coupon-notUsed">
-						<div class="coupon-notUsed-ul">
-							<div class="coupon-notUsed-li notUsed" v-for="list in notUsed">
-								<div class="leftPart">
-									<div class="leftPart-wrapper">
-										<img class="leftPart-img" src="img/no_bestow.png" />
-										<p class="leftPart-content">
-											<span class="currency" v-text="list.currency"></span>
-											<span class="content" v-text="list.content"></span>
-										</p>
-										<span class="leftPart-txt">未使用</span>
-									</div>
-								</div>
-								<div class="rightPart">
-									<div class="rightPart-wrapper">
-										<div class="rightPart-content">
-											<p class="content-title" v-text="list.title"></p>
-											<p class="termOf-validity" v-text="list.validity"></p>
-											<p class="remaining-time" v-text="list.remaining"></p>
-										</div>
-										<div class="rightPart-details">
-											<span>详情</span>
-										</div>
-									</div>
-								</div>
-								<div class="hide_data">
-									<span class="dataTitle" v-text="list.hide_data.dataTitle"></span>
-									<span class="dataDetailed" v-text="list.hide_data.dataDetailed"></span>
-									<span class="dataCode" v-text="list.hide_data.dataCode"></span>
-									<span class="dataValidity" v-text="list.hide_data.dataValidity"></span>
-									<span class="dataQR_code">
-										<img :src="list.hide_data.dataQR_code"/>
-									</span>
+								<div class="history-search">
+									<h3 class="history-search-title">
+												<span class="title-txt">历史记录</span>
+												<i class="title-Trash"></i>
+											</h3>
+									<div class="history-search-no">当前暂无历史记录</div>
+									<ul class="history-search-ul">
+										<li class="history-search-li">
+											<span>富力红树湾</span>
+											<span>/</span>
+											<span>楼盘</span>
+										</li>
+										<li class="history-search-li">
+											<span>富力盈溪谷</span>
+											<span>/</span>
+											<span>二手房</span>
+										</li>
+									</ul>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="pushsection-wrapper coupon-alreadyUsed">
-						<div class="coupon-alreadyUsed-ul">
-							<div class="coupon-alreadyUsed-li alreadyUsed" v-for="list in alreadyUsed">
-								<div class="leftPart">
-									<div class="leftPart-wrapper">
-										<img class="leftPart-img" src="img/bestow.png" />
-										<p class="leftPart-content">
-											<span class="currency" v-text="list.currency"></span>
-											<span class="content" v-text="list.content"></span>
-										</p>
-										<span class="leftPart-txt">已使用</span>
-									</div>
-								</div>
-								<div class="rightPart">
-									<div class="rightPart-wrapper">
-										<div class="rightPart-content">
-											<p class="content-title" v-text="list.title"></p>
-											<p class="termOf-validity" v-text="list.validity"></p>
-											<p class="remaining-time" v-text="list.remaining"></p>
-										</div>
-										<div class="rightPart-details">
-											<span>详情</span>
-										</div>
-									</div>
-								</div>
-								<div class="hide_data">
-									<span class="dataTitle" v-text="list.hide_data.dataTitle"></span>
-									<span class="dataDetailed" v-text="list.hide_data.dataDetailed"></span>
-									<span class="dataCode" v-text="list.hide_data.dataCode"></span>
-									<span class="dataValidity" v-text="list.hide_data.dataValidity"></span>
-									<span class="dataQR_code">
-										<img :src="list.hide_data.dataQR_code"/>
-									</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="pushsection-wrapper coupon-overdue">
-						<div class="coupon-overdue-ul">
-							<div class="coupon-overdue-li overdue" v-for="list in overdue">
-								<div class="leftPart">
-									<div class="leftPart-wrapper">
-										<img class="leftPart-img" src="img/overdue.png" />
-										<p class="leftPart-content">
-											<span class="currency" v-text="list.currency"></span>
-											<span class="content" v-text="list.content"></span>
-										</p>
-										<span class="leftPart-txt">已过期</span>
-									</div>
-								</div>
-								<div class="rightPart">
-									<div class="rightPart-wrapper">
-										<div class="rightPart-content">
-											<p class="content-title" v-text="list.title"></p>
-											<p class="termOf-validity" v-text="list.validity"></p>
-											<p class="remaining-time" v-text="list.remaining"></p>
-										</div>
-										<div class="rightPart-details">
-											<span>详情</span>
-										</div>
-									</div>
-								</div>
-								<div class="hide_data">
-									<span class="dataTitle" v-text="list.hide_data.dataTitle"></span>
-									<span class="dataDetailed" v-text="list.hide_data.dataDetailed"></span>
-									<span class="dataCode" v-text="list.hide_data.dataCode"></span>
-									<span class="dataValidity" v-text="list.hide_data.dataValidity"></span>
-									<span class="dataQR_code">
-										<img :src="list.hide_data.dataQR_code"/>
-									</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="none-coupons">
-						<div class="none-coupon-wrapper">
-							<img src="img/Coupon.png" />
-							<p>领取优惠券 购房更低价！</p>
-						</div>
-					</div>
-				</section>
-				<footer class="personal-coupon-pushfooter">查看优惠券使用流程</footer>
-				<div class="personal-coupon-shadow"></div>
-				<div class="personal-coupon-shadow-lookup"></div>
-				<div class="using-tutorials-push">
-					<header class="using-tutorials-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<h3 class="title_txt">优惠券使用流程</h3>
-							<a class="return" href="javascript:;"></a>
-						</div>
-					</header>
-					<section class="using-tutorials-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="using-tutorials-wrapper">
-								<div class="step-bar">
-									<span class="num">1</span>
-									<span class="bar"><img src="img/arrow.png"/></span>
-									<span class="num">2</span>
-									<span class="bar"><img src="img/arrow.png"/></span>
-									<span class="num">3</span>
-									<span class="bar"><img src="img/arrow.png"/></span>
-									<span class="num">4</span>
-									<span class="bar"><img src="img/arrow.png"/></span>
-									<span class="num">5</span>
-								</div>
-								<div class="step-content">
-									<span class="txt">网上筛选区域/楼盘</span>
-									<span class="txt">申请使用优惠券</span>
-									<span class="txt">专车接送实地看房</span>
-									<span class="txt">确定房源商定最终房款</span>
-									<span class="txt">验证券码兑现优惠</span>
-								</div>
-							</div>
-						</div>
-					</section>
-				</div>
-				<div class="coupon-details-push">
-					<header class="coupon-details-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<h3 class="title_txt">优惠券详情</h3>
-							<a class="return" href="javascript:;"></a>
-						</div>
-					</header>
-					<section class="coupon-details-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="coupon-details-notUsed">
-								<div class="details-notUsed-header">
-									<span class="header-price"></span>
-									<span class="header-txt">未使用</span>
-								</div>
-								<div class="details-notUsed-line"></div>
-								<div class="details-notUsed-footer">
-									<p class="footer-title"></p>
-									<div class="footer-detailed">
-										<div class="detailed-title">详细详细：</div>
-										<div class="detailed-content"></div>
-									</div>
-									<div class="footer-code">
-										<div class="code-title">验证劵码：</div>
-										<div class="code-content"></div>
-									</div>
-									<div class="footer-term">
-										<div class="term-title">有效期：</div>
-										<div class="term-content"></div>
-									</div>
-									<div class="footer-QR_code"></div>
-								</div>
-							</div>
-							<div class="coupon-details-alreadyUsed">
-								<div class="details-alreadyUsed-header">
-									<span class="header-price">¥2000</span>
-									<span class="header-txt">已使用</span>
-								</div>
-								<div class="details-alreadyUsed-line"></div>
-								<div class="details-alreadyUsed-footer">
-									<p class="footer-title">2000元旅居网会员购房红包</p>
-									<div class="footer-detailed">
-										<div class="detailed-title">详细详细：</div>
-										<div class="detailed-content">通过旅居网报名成功购房，即可凭券码申请返现，每套房限返一个红包。</div>
-									</div>
-									<div class="footer-code">
-										<div class="code-title">验证劵码：</div>
-										<div class="code-content">24587864538787</div>
-									</div>
-									<div class="footer-term">
-										<div class="term-title">有效期：</div>
-										<div class="term-content">2018年12月01日（剩余501天）</div>
-									</div>
-									<div class="footer-QR_code">
-										<img src="img/QR_code.png" />
-									</div>
-								</div>
-							</div>
-							<div class="coupon-details-overdue">
-								<div class="details-overdue-header">
-									<span class="header-price">¥2000</span>
-									<span class="header-txt">已过期</span>
-								</div>
-								<div class="details-overdue-line"></div>
-								<div class="details-overdue-footer">
-									<p class="footer-title">2000元旅居网会员购房红包</p>
-									<div class="footer-detailed">
-										<div class="detailed-title">详细详细：</div>
-										<div class="detailed-content">通过旅居网报名成功购房，即可凭券码申请返现，每套房限返一个红包。</div>
-									</div>
-									<div class="footer-code">
-										<div class="code-title">验证劵码：</div>
-										<div class="code-content">24587864538787</div>
-									</div>
-									<div class="footer-term">
-										<div class="term-title">有效期：</div>
-										<div class="term-content">2018年12月01日（剩余0天）</div>
-									</div>
-									<div class="footer-QR_code">
-										<img src="img/QR_code.png" />
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-				</div>
-				<div class="lookup-coupon-push">
-					<header class="lookup-coupon-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<h3 class="title_txt">查找优惠券</h3>
-							<a class="return" href="javascript:;"></a>
-						</div>
-					</header>
-					<section class="lookup-coupon-pushsection">
-						<div class="pushsection-wrapper">
-							<div class="pushsection-wrapper-box">
-								<div class="lookup-coupon-input">
-									<div class="input-wrapper">
-										<input class="lookup_ipt" type="number" name="" id="" value="" placeholder="输入查找信息">
-										<a href="javascript:;"></a>
-									</div>
-								</div>
-								<div class="lookup-coupon-btn">
-									<div class="btn-wrapper">立即查找</div>
-								</div>
-								<div class="lookup-coupon-results">
-									<h3 class="results-title">查找结果：</h3>
-									<div class="results-coupon"></div>
-								</div>
-							</div>
-						</div>
-					</section>
-					<div class="can_t-find">找不到相关优惠券</div>
+					<div class="search-page-bomb">请输入关键字</div>
 				</div>
 			</div>
 		</div>
+		<script type="text/javascript">
+			var mySwiper = new Swiper('.section-banner', {
+				autoplay: 5000,
+				autoplayDisableOnInteraction : false,
+				pagination: '.swiper-pagination',
+				preventClicks: true,
+				resistanceRatio: 0.7
+			})
+		</script>
+		<script type="text/javascript">
+			var myVue = new Vue({
+				el: ".Home-page-container",
+				data: {
+					groomhouse: [{
+							img: 'img/massage-subject3.png',
+							sell: '在售',
+							positions: '滨海博鳌小',
+							region: '[琼海]',
+							address: '琼海市博鳌滨海大道（潭门桥旁）',
+							openprice: '开盘：8000元/㎡',
+							averag: '均价：',
+							price: '12000元/㎡',
+							tags: ['住宅','养生社区','海景房','别墅','公寓']
+						},
+						{
+							img: 'img/massage-subject3.png',
+							sell: '在售',
+							positions: '滨海博鳌小',
+							region: '[琼海]',
+							address: '琼海市博鳌滨海大道（潭门桥旁）',
+							openprice: '开盘：8000元/㎡',
+							averag: '均价：',
+							price: '12000元/㎡',
+							tags: ['养生社区','海景房','别墅','公寓']
+						},
+						{
+							img: 'img/massage-subject3.png',
+							sell: '在售',
+							positions: '滨海博鳌小',
+							region: '[琼海]',
+							address: '琼海市博鳌滨海大道（潭门桥旁）',
+							openprice: '开盘：8000元/㎡',
+							averag: '均价：',
+							price: '12000元/㎡',
+							tags: ['住宅','养生社区','海景房','别墅']
+						},
+						{
+							img: 'img/massage-subject3.png',
+							sell: '在售',
+							positions: '滨海博鳌小',
+							region: '[琼海]',
+							address: '琼海市博鳌滨海大道（潭门桥旁）',
+							openprice: '开盘：8000元/㎡',
+							averag: '均价：',
+							price: '12000元/㎡',
+							tags: ['住宅','养生社区','别墅','公寓']
+						},
+						{
+							img: 'img/massage-subject3.png',
+							sell: '在售',
+							positions: '滨海博鳌小',
+							region: '[琼海]',
+							address: '琼海市博鳌滨海大道（潭门桥旁）',
+							openprice: '开盘：8000元/㎡',
+							averag: '均价：',
+							price: '12000元/㎡',
+							tags: ['住宅','海景房','别墅','公寓']
+						},
+						{
+							img: 'img/massage-subject3.png',
+							sell: '在售',
+							positions: '滨海博鳌小',
+							region: '[琼海]',
+							address: '琼海市博鳌滨海大道（潭门桥旁）',
+							openprice: '开盘：8000元/㎡',
+							averag: '均价：',
+							price: '12000元/㎡',
+							tags: ['住宅','养生社区','海景房','公寓']
+						}
+					],
+					contrastdata: [
+						{
+							data: [
+								{
+									city: '海口',
+									lastprice: '13.5k',
+									lastnum: '447',
+									thisprice: '15k',
+									thisnum: '341'
+								}
+							]
+						},
+						{
+							data: [
+								{
+									city: '三亚',
+									lastprice: '13.5k',
+									lastnum: '447',
+									thisprice: '12k',
+									thisnum: '341',
+									className: {
+										styletwo: true
+									}
+								}
+							]
+						},
+						{
+							data: [
+								{
+									city: '五指山',
+									lastprice: '13.5k',
+									lastnum: '447',
+									thisprice: '15k',
+									thisnum: '341'
+								}
+							]
+						},
+						{
+							data: [
+								{	
+									city: '陵水',
+									lastprice: '13.5k',
+									lastnum: '447',
+									thisprice: '15k',
+									thisnum: '341'
+								}
+							]
+						},
+						{
+							data: [
+								{
+									city: '琼海',
+									lastprice: '13.5k',
+									lastnum: '447',
+									thisprice: '15k',
+									thisnum: '341'
+								}
+							]
+						}
+					],
+					hot_city: ['海口','三亚','琼海','陵水','东方','万宁','澄迈','儋州','五指山'],
+					letterA: ['阿克苏','安宁','安庆','鞍山','安顺','安阳'],
+					letterB: ['白城','白山','白银','蚌埠','保定','宝鸡'],
+					letterC: ['沧州','常德','昌吉','常熟','常州','朝阳','承德','潮州','成都'],
+					letterD: ['大理','大连','丹东','丹阳','大庆','大同','德州','东莞'],
+					letterE: ['鄂尔多斯','恩施'],
+					letterF: ['防城港','肥城','奉化','抚顺','阜新','阜阳','富阳','福州','抚州'],
+					letterG: ['赣榆','赣州','高明','高邮','格尔木','个旧','巩义','广安','广元','桂林','贵阳'],
+					letterH: ['哈尔滨','海城','海口','海门','海宁','哈密','邯郸','杭州','汉中','衡水','怀化','衡阳'],
+					letterI: [],
+					letterJ: ['佳木斯','吉安','江都','江门','胶州','焦作','邯吉','济南','晋城','景德镇','荆门','济宁'],
+					letterK: ['开封','凯里','开平','开远','喀什','克拉玛依','库尔勒','奎屯','昆明','昆山'],
+					letterL: ['来宾','莱芜','莱西','莱州','廊坊','兰州'],
+					letterM: ['马鞍山','茂名','梅河口','眉山','梅州','勉县','绵阳','牡丹江'],
+					letterN: ['南安','南昌','南充','南京','南宁','南平','南通','南阳','宁波','宁德'],
+					letterO: [],
+					letterP: ['盘锦','攀枝花','蓬莱','平顶山','平度','平湖'],
+					letterQ: ['黔南','启东','青岛','庆阳','清远','青州','秦皇岛'],
+					letterR: ['日喀则','日照','荣成','如皋','乳山'],
+					letterS: ['三门峡','三明','三亚','汕头','石狮','朔州','随州','松原','沭阳'],
+					letterT: [],
+					letterU: [],
+					letterV: [],
+					letterW: ['瓦房店','潍坊','威海','渭南','文登'],
+					letterX: ['信阳','新余','忻州','许昌','徐州'],
+					letterY: ['宜宾','宜昌','宜春','伊春','银川','伊宁'],
+					letterZ: ['湛江','肇东','肇庆','昭通','郑州','镇江','中山','舟山','诸城','珠海'],
+					municipalitydata: [{
+							city: '不限'
+						},
+						{
+							city: '海口'
+
+						},
+						{
+							city: '三亚'
+
+						},
+						{
+							city: '儋州'
+
+						},
+						{
+							city: '文昌'
+
+						},
+						{
+							city: '陵水'
+
+						},
+						{
+							city: '琼海'
+
+						}
+					],
+					districtdata1: [{
+							district: '不限',
+						},
+						{
+							district: '美兰区',
+						},
+						{
+							district: '秀英区',
+						},
+						{
+							district: '龙华区',
+						},
+						{
+							district: '琼山区',
+						},
+						{
+							district: '西海岸'
+						}
+					],
+					districtdata2: [{
+							district: '不限',
+						},
+						{
+							district: '美兰区',
+						},
+						{
+							district: '秀英区',
+						},
+						{
+							district: '龙华区',
+						},
+						{
+							district: '琼山区'
+						}
+					],
+					districtdata3: [{
+							district: '不限',
+						},
+						{
+							district: '美兰区',
+						},
+						{
+							district: '秀英区',
+						},
+						{
+							district: '龙华区'
+						}
+					],
+					districtdata4: [{
+							district: '不限',
+						},
+						{
+							district: '美兰区'
+						},
+						{
+							district: '秀英区'
+						}
+					],
+					districtdata5: [{
+							district: '不限',
+						},
+						{
+							district: '美兰区',
+						}
+					],
+					districtdata6: [{
+							district: '不限',
+						},
+						{
+							district: '美兰区',
+						},
+						{
+							district: '秀英区',
+						},
+						{
+							district: '龙华区'
+						}
+					],
+					detailslist: [
+						{
+							title: '第一年',
+							data: [
+								{
+									month: '1月',
+									principal: '5,574.57',
+									interest: '5,574.57',
+									surplus: '7,587,774.57'
+								},
+								{
+									month: '2月',
+									principal: '5,574.57',
+									interest: '5,574.57',
+									surplus: '7,587,774.57'
+								},
+								{
+									month: '3月',
+									principal: '5,574.57',
+									interest: '5,574.57',
+									surplus: '7,587,774.57'
+								},
+								{
+									month: '4月',
+									principal: '5,574.57',
+									interest: '5,574.57',
+									surplus: '7,587,774.57'
+								},
+								{
+									month: '5月',
+									principal: '5,574.57',
+									interest: '5,574.57',
+									surplus: '7,587,774.57'
+								},
+								{
+									month: '6月',
+									principal: '5,574.57',
+									interest: '5,574.57',
+									surplus: '7,587,774.57'
+								},
+								{
+									month: '7月',
+									principal: '5,574.57',
+									interest: '5,574.57',
+									surplus: '7,587,774.57'
+								},
+								{
+									month: '8月',
+									principal: '5,574.57',
+									interest: '5,574.57',
+									surplus: '7,587,774.57'
+								},
+								{
+									month: '9月',
+									principal: '5,574.57',
+									interest: '5,574.57',
+									surplus: '7,587,774.57'
+								},
+								{
+									month: '10月',
+									principal: '5,574.57',
+									interest: '5,574.57',
+									surplus: '7,587,774.57'
+								},
+								{
+									month: '11月',
+									principal: '5,574.57',
+									interest: '5,574.57',
+									surplus: '7,587,774.57'
+								},
+								{
+									month: '12月',
+									principal: '5,574.57',
+									interest: '5,574.57',
+									surplus: '7,587,774.57'
+								}
+							]
+						},
+						{
+							title: '第二年',
+							data: [
+								{
+									month: '1月',
+									principal: '5,574.57',
+									interest: '5,574.57',
+									surplus: '7,587,774.57'
+								},
+								{
+									month: '2月',
+									principal: '5,574.57',
+									interest: '5,574.57',
+									surplus: '7,587,774.57'
+								},
+								{
+									month: '3月',
+									principal: '5,574.57',
+									interest: '5,574.57',
+									surplus: '7,587,774.57'
+								},
+								{
+									month: '4月',
+									principal: '5,574.57',
+									interest: '5,574.57',
+									surplus: '7,587,774.57'
+								},
+								{
+									month: '5月',
+									principal: '5,574.57',
+									interest: '5,574.57',
+									surplus: '7,587,774.57'
+								},
+								{
+									month: '6月',
+									principal: '5,574.57',
+									interest: '5,574.57',
+									surplus: '7,587,774.57'
+								},
+								{
+									month: '7月',
+									principal: '5,574.57',
+									interest: '5,574.57',
+									surplus: '7,587,774.57'
+								},
+								{
+									month: '8月',
+									principal: '5,574.57',
+									interest: '5,574.57',
+									surplus: '7,587,774.57'
+								},
+								{
+									month: '9月',
+									principal: '5,574.57',
+									interest: '5,574.57',
+									surplus: '7,587,774.57'
+								},
+								{
+									month: '10月',
+									principal: '5,574.57',
+									interest: '5,574.57',
+									surplus: '7,587,774.57'
+								},
+								{
+									month: '11月',
+									principal: '5,574.57',
+									interest: '5,574.57',
+									surplus: '7,587,774.57'
+								},
+								{
+									month: '12月',
+									principal: '5,574.57',
+									interest: '5,574.57',
+									surplus: '7,587,774.57'
+								}
+							]
+						}
+					]
+				}
+			})
+		</script>
 	</body>
-	<script type="text/javascript">
-		function imgChange(obj1, obj2) {
-			//获取点击的文本框
-			var file = document.getElementById("file");
-			//存放图片的父级元素
-			var imgContainer = document.getElementsByClassName(obj1)[0];
-			//获取的图片文件
-			var fileList = file.files;
-			//文本框的父级元素
-			var input = document.getElementsByClassName(obj2)[0];
-			var imgArr = [];
-			//遍历获取到得图片文件
-			for(var i = 0; i < fileList.length; i++) {
-				var imgUrl = window.URL.createObjectURL(file.files[i]);
-				imgArr.push(imgUrl);
-				var img = document.createElement("img");
-				img.setAttribute("src", imgArr[i]);
-				var imgAdd = document.createElement("div");
-				imgAdd.setAttribute("class", "z_addImg");
-				imgAdd.appendChild(img);
-				imgContainer.appendChild(imgAdd);
-			}
-		}
-	</script>
-	<script type="text/javascript">
-		var myVue = new Vue({
-			el: ".user-center-container",
-			data: {
-				Pcollection: [{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
-					},
-					{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
-					},
-					{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
-					},
-					{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
-					},
-					{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
-					},
-					{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
-					},
-					{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
-					},
-					{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
-					}
-				],
-				Pfootprint: [{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
-					},
-					{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
-					},
-					{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
-					},
-					{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
-					},
-					{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
-					},
-					{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
-					},
-					{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
-					},
-					{
-						img: 'img/massage-subject3.png',
-						positions: '滨海博鳌小',
-						region: '[琼海]',
-						address: '琼海市博鳌滨海大道（潭门桥旁）',
-						openprice: '开盘：8000元/㎡',
-						averag: '均价：',
-						price: '12000元/㎡'
-					}
-				],
-				Pnews: [{
-						receiveNewsT: '2017年07月11日',
-						list: [{
-							className: {
-								styletwo: true
-							},
-							title: '纯文字消息消息标题啊消息标题啊消息标题啊消息标题啊消息标题啊消息标题啊',
-							bigimg: 'img/bigimg.png',
-							smallimg: 'img/smallimg.png',
-							txt: '消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊'
-						}]
-					},
-					{
-						receiveNewsT: '2017年07月13日',
-						list: [{
-							className: {
-								styleone: true
-							},
-							title: '纯文字消息消息标题啊消息标题啊消息标题啊消息标题啊消息标题啊消息标题啊',
-							bigimg: 'img/bigimg.png',
-							smallimg: 'img/smallimg.png',
-							txt: '消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊'
-						}]
-					},
-					{
-						receiveNewsT: '2017年07月15日',
-						list: [{
-							className: {
-								stylethree: true
-							},
-							title: '纯文字消息消息标题啊消息标题啊消息标题啊消息标题啊消息标题啊消息标题啊',
-							bigimg: 'img/bigimg.png',
-							smallimg: 'img/smallimg.png',
-							txt: '消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊'
-						}]
-					},
-					{
-						receiveNewsT: '2017年07月17日',
-						list: [{
-							className: {
-								styletwo: true
-							},
-							title: '纯文字消息消息标题啊消息标题啊消息标题啊消息标题啊消息标题啊消息标题啊',
-							bigimg: 'img/bigimg.png',
-							smallimg: 'img/smallimg.png',
-							txt: '消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊'
-						}]
-					},
-					{
-						receiveNewsT: '2017年07月19日',
-						list: [{
-							className: {
-								styleone: true
-							},
-							title: '纯文字消息消息标题啊消息标题啊消息标题啊消息标题啊消息标题啊消息标题啊',
-							bigimg: 'img/bigimg.png',
-							smallimg: 'img/smallimg.png',
-							txt: '消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊消息简介啊'
-						}]
-					}
-				],
-				notUsed: [{
-						currency: '￥',
-						content: '2000',
-						title: '2000元旅居网会员购房优惠券',
-						validity: '有效期：2018年12月01日前',
-						remaining: '剩余：501天',
-						hide_data: {
-							dataTitle: '￥2000',
-							dataDetailed: '通过旅居网报名成功购房，即可凭券码申请返现，每套房限返一个红包。',
-							dataCode: '123456789876554321',
-							dataValidity: '2018年12月01日（剩余501天）',
-							dataQR_code: 'img/QR_code.png'
-						}
-					},
-					{
-						content: '9.8折',
-						title: '9.8折旅居网会员购房优惠券',
-						validity: '有效期：2018年12月01日前',
-						remaining: '剩余：501天',
-						hide_data: {
-							dataTitle: '9.8折',
-							dataDetailed: '通过旅居网报名成功购房，即可凭券码申请返现，每套房限返一个红包。',
-							dataCode: '98765432123456789',
-							dataValidity: '2018年12月01日（剩余501天）',
-							dataQR_code: 'img/QR_code.png'
-						}
-					}
-				],
-				alreadyUsed: [{
-						currency: '￥',
-						content: '2000',
-						title: '2000元旅居网会员购房优惠券',
-						validity: '有效期：2018年12月01日前',
-						remaining: '剩余：501天',
-						hide_data: {
-							dataTitle: '￥2000',
-							dataDetailed: '通过旅居网报名成功购房，即可凭券码申请返现，每套房限返一个红包。',
-							dataCode: 'dfjghkdjfbg4461432',
-							dataValidity: '2018年12月01日（剩余501天）',
-							dataQR_code: 'img/QR_code.png'
-						}
-					},
-					{
-						content: '9.8折',
-						title: '9.8折旅居网会员购房优惠券',
-						validity: '有效期：2018年12月01日前',
-						remaining: '剩余：501天',
-						hide_data: {
-							dataTitle: '9.8折',
-							dataDetailed: '通过旅居网报名成功购房，即可凭券码申请返现，每套房限返一个红包。',
-							dataCode: '564dfsg2132sdfgrgxz',
-							dataValidity: '2018年12月01日（剩余501天）',
-							dataQR_code: 'img/QR_code.png'
-						}
-					}
-				],
-				overdue: [{
-						currency: '￥',
-						content: '2000',
-						title: '2000元旅居网会员购房优惠券',
-						validity: '有效期：2018年12月01日前',
-						remaining: '剩余：0天',
-						hide_data: {
-							dataTitle: '￥2000',
-							dataDetailed: '通过旅居网报名成功购房，即可凭券码申请返现，每套房限返一个红包。',
-							dataCode: '978ewdfs847fv456',
-							dataValidity: '2018年12月01日（剩余0天）',
-							dataQR_code: 'img/QR_code.png'
-						}
-					},
-					{
-						content: '9.8折',
-						title: '9.8折旅居网会员购房优惠券',
-						validity: '有效期：2018年12月01日前',
-						remaining: '剩余：0天',
-						hide_data: {
-							dataTitle: '9.8折',
-							dataDetailed: '通过旅居网报名成功购房，即可凭券码申请返现，每套房限返一个红包。',
-							dataCode: 'd456v5613f9hj7r4',
-							dataValidity: '2018年12月01日（剩余0天）',
-							dataQR_code: 'img/QR_code.png'
-						}
-					}
-				]
-			}
-		})
-	</script>
-	<script type="text/javascript" src="js/user-center.js"></script>
-	<script src="plugins/mui/mui.min.js"></script>
-	<script src="plugins/mui/mui.picker.min.js"></script>
-	<script src="plugins/mui/data.city.js"></script>
-	<script>
-		//时间选择器(生日)
-		var start_time_picker = new mui.DtPicker({"type":"date","beginYear":1960,"endYear":2020});
-		
-		$(".birthday").on("tap", function(){
-			setTimeout(function(){
-				start_time_picker.show(function(items){
-					$("#birthday-time").text(items.text);
-				});
-			},300);
-		});
-		$("#birthday-time").on("tap", function(){
-			setTimeout(function(){
-				start_time_picker.show(function(items){
-					$("#birthday-time").text(items.text);
-				});
-			},300);
-		});
-		//地区选择器(地区)
-		var city_picker = new mui.PopPicker({layer:3});
-		city_picker.setData(init_city_picker);
-		$(".personal-data-box .region").on("tap",function(){
-			setTimeout(function(){
-				city_picker.show(function(items){
-					$(".region-place").html((items[0] || {}).text + " " + (items[1] || {}).text + " " + (items[2] || {}).text);
-				});
-			},300);
-		})
-		
-		$("#region-place").on("tap", function(){
-			setTimeout(function(){
-				city_picker.show(function(items){
-					$("#region-place").html((items[0] || {}).text + " " + (items[1] || {}).text + " " + (items[2] || {}).text);
-				});
-			},200);
-		});
-		
-		$(".mui-poppicker .mui-poppicker-header .mui-poppicker-btn-ok").on("tap",function(){
-			var rp_txt=$("#region-place").text()
-			$("#region-place").html(rp_txt.replace( undefined, ''))
-		})
-	</script>
-	
 </html>
