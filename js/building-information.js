@@ -1,4 +1,6 @@
 $(function() {
+	alert("0")
+	
 	//navsub-ul点击效果
 	$(".building-information-header .navsub-ul li").tap(function() {
 		$(this).addClass("navsub-ul-active").siblings().removeClass("navsub-ul-active")
