@@ -6,19 +6,6 @@ $(function() {
 	})
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	//楼盘页面  头部导航点击效果
 	$(".list-details-container .list-nav-litxt").tap(function() {
 		if($(this).hasClass("touch")) {
@@ -408,35 +395,7 @@ $(function() {
 		scrollbars: false,
 		probeType: 3
 	})
-	
-	
-	
-	
-	var moveX,moveY,startX,startY;
-	var dcon_h=$(".demand-condition .demand-condition-wrapper").height()
-	$(".list-details-section").on("touchstart",function(event){
 
-		var touchPros = event.touches[0];
-
-		startY = touchPros.pageY
-		
-	}).on("touchmove",function(event){
-
-		var touchPros = event.touches[0];
-
-		moveY = touchPros.pageY
-			
-		if(startY>moveY){
-			$(".demand-condition").height(dcon_h)
-		}
-		else{
-			$(".demand-condition").height("0")
-		}
-	});
-	
-	
-	
-	
 	var angle_ld = 0;
 	var angle_ld_time = 0;
 	var loadingStep = 0;
@@ -1000,7 +959,7 @@ $(function() {
 	var screenS = new IScroll('.screen-body', {
 		scrollbars: false
 	})
-	var demandS = new IScroll('.demand-condition-box', {
+	var demandS = new IScroll('.demand-condition', {
 		scrollbars: true,
 		scrollX: true,
 		scrollY: false,
