@@ -48,29 +48,35 @@
 				freeMode : false,
 				freeModeMomentumBounce : false,
 				preventLinksPropagation : false,
+
 				longSwipesRatio : 0.5,
-				touchAngle : 10
+				touchAngle : 20
 			})
 			
             var firstPageS = new IScroll('.building-information-container .firstPage', {
 				scrollbars: false,
-				momentum: true
+				momentum: true,
+				freeScroll: false
 			})
 			var secondPageS = new IScroll('.building-information-container .secondPage', {
 				scrollbars: false,
-				momentum: true
+				momentum: true,
+				freeScroll: false
 			})
 			var thirdPageS = new IScroll('.building-information-container .thirdPage', {
 				scrollbars: false,
-				momentum: true
+				momentum: true,
+				freeScroll: false
 			})
 			var fourthPageS = new IScroll('.building-information-container .fourthPage', {
 				scrollbars: false,
-				momentum: true
+				momentum: true,
+				freeScroll: false
 			})
 			var fifthPageS = new IScroll('.building-information-container .fifthPage', {
 				scrollbars: false,
-				momentum: true
+				momentum: true,
+				freeScroll: false
 			})
 			$(".building-information-section").bind("touchstart",function(e){
 				e.preventDefault()
@@ -80,6 +86,7 @@
 				fourthPageS.refresh()
 				fifthPageS.refresh()
 			})
+			
             _obj_li.click(function(){
                 _init($(this));
                 var objindex=$(this).index()
