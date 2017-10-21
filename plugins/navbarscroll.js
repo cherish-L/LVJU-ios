@@ -32,6 +32,7 @@
                 _scroller_w += _obj_li[i].offsetWidth;
             }
             _obj_scroller.width(_scroller_w+_opt.scrollerWidth);
+            
             var navScroll = new IScroll('#'+_wrapper.attr('id'), {
                 eventPassthrough: true,
                 scrollX: true,
@@ -41,62 +42,53 @@
             _init(_obj_li.eq(_opt.defaultSelect));
             
             
-			var discount = new Swiper(".historical-discount-pushsection",{
+			var discount = new Swiper(".building-information-section",{
 				passiveListeners: false,
+				touchMoveStopPropagation : false,
 				freeMode : false,
+				freeModeMomentumBounce : false,
 				preventLinksPropagation : false,
 				longSwipesRatio : 0.5,
 				touchAngle : 10
 			})
 			
-            var firstPageS = new IScroll('.firstPage', {
+            var firstPageS = new IScroll('.building-information-container .firstPage', {
 				scrollbars: false,
 				momentum: true
 			})
-			var secondPageS = new IScroll('.secondPage', {
+			var secondPageS = new IScroll('.building-information-container .secondPage', {
 				scrollbars: false,
 				momentum: true
 			})
-			var thirdPageS = new IScroll('.thirdPage', {
+			var thirdPageS = new IScroll('.building-information-container .thirdPage', {
 				scrollbars: false,
 				momentum: true
 			})
-			var fourthPageS = new IScroll('.fourthPage', {
+			var fourthPageS = new IScroll('.building-information-container .fourthPage', {
 				scrollbars: false,
 				momentum: true
 			})
-			var fifthPageS = new IScroll('.fifthPage', {
+			var fifthPageS = new IScroll('.building-information-container .fifthPage', {
 				scrollbars: false,
 				momentum: true
 			})
-			var sixthPageS = new IScroll('.sixthPage', {
-				scrollbars: false,
-				momentum: true
-			})
-			var seventhPageS = new IScroll('.seventhPage', {
-				scrollbars: false,
-				momentum: true
-			})
-			$(".historical-discount-pushsection").bind("touchstart",function(e){
+			$(".building-information-section").bind("touchstart",function(e){
 				e.preventDefault()
 				firstPageS.refresh()
 				secondPageS.refresh()
 				thirdPageS.refresh()
 				fourthPageS.refresh()
 				fifthPageS.refresh()
-				sixthPageS.refresh()
-				seventhPageS.refresh()
 			})
-			
             _obj_li.click(function(){
                 _init($(this));
                 var objindex=$(this).index()
-                var discountw=$(".historical-discount-li").width()
-                $(".historical-discount-ul").css("transform","translate3d(-"+discountw*objindex+"px, 0px, 0px)")
+                var discountw=$(".section-li").width()
+                discount.slideTo(objindex,0);
                 discount.realIndex=objindex
             });
             
-            $(".historical-discount-pushsection").bind("touchend",function(){
+            $(".building-information-section").bind("touchend",function(){
 				var indexS=discount.realIndex
 				var $this_obj=_obj_li.eq(indexS);
                 var duibi=_opt.duibiScreenWidth*_win_width/10,indexS=$this_obj.index(),this_off_left=$this_obj.offset().left,this_pos_left=$this_obj.position().left,this_width=$this_obj.width(),this_prev_width=$this_obj.prev('li').width(),this_next_width=$this_obj.next('li').width();
@@ -137,8 +129,8 @@
                 $this_obj.addClass(_opt.className).siblings('li').removeClass(_opt.className);
                 _opt.endClickScroll.call(this,$this_obj);
 			})
-			
-            
+//			
+//          
 			//解决PC端谷歌浏览器模拟的手机屏幕出现莫名的卡顿现象，滑动时禁止默认事件（2017-01-11）
 			_wrapper[0].addEventListener('touchmove',function (e){e.preventDefault();},false);
             function _init(thiObj){
