@@ -436,10 +436,10 @@
 						</div>
 						<div class="pushsection-houseStyle">
 							<h3 class="houseStyle-title">
-							<span>主力户型</span>
-							<span class="num"></span>
-							<span class="allstyle">全部户型</span>
-						</h3>
+								<span>主力户型</span>
+								<span class="num"></span>
+								<span class="allstyle">全部户型</span>
+							</h3>
 							<div class="houseStyle-content">
 								<ul class="houseStyle-content-ul">
 									<li v-for="style in houseStyle">
@@ -604,6 +604,8 @@
 					</div>
 					<div class="contact">联系置业顾问</div>
 				</footer>
+				<!-------- 阴影 -------->
+				<div class="list-push-shadow"></div>
 				<!-------- 楼盘页面 楼盘详情 遮罩 -------->
 				<div class="list-details-pushMask"></div>
 				<!-------- 楼盘页面 楼盘详情 楼盘位置弹框 -------->
@@ -827,6 +829,7 @@
 					<footer class="house-type-pushfooter">
 						<span>户型筛选</span>
 					</footer>
+					<div class="house-type-shadow"></div>
 					<div class="house-type-pushMask"></div>
 					<div class="screenlist">
 						<ul class="screenlist-ul">
@@ -901,6 +904,67 @@
 						</div>
 					</div>
 				</div>
+				<!-------- 楼盘页面 楼盘详情 主力户型 推荐户型弹框 -------->
+				<div class="house-type-detail-push">
+						<header class="house-type-detail-pushheader">
+							<div class="signal_bar"></div>
+							<div class="title_bar">
+								<h3 class="title_txt">户型详情</h3>
+								<a class="return" href="javascript:;"></a>
+								<a class="share" href="javascript:;"></a>
+							</div>
+						</header>
+						<section class="house-type-detail-pushsection">
+							<div class="pushsection-wrapper">
+								<div class="swiper-container house-type-detail-banner">
+									<ul class="swiper-wrapper type-detail-banner-ul">
+										<li class="swiper-slide"><img src="img/style.png" /></li>
+										<li class="swiper-slide"><img src="img/style.png" /></li>
+										<li class="swiper-slide"><img src="img/style.png" /></li>
+										<li class="swiper-slide"><img src="img/style.png" /></li>
+									</ul>
+									<div class="swiper-pagination"></div>
+								</div>
+								<div class="house-type-detail-info">
+									<div class="info-title">
+										<span>二期A1户型</span>
+										<span>在售</span>
+									</div>
+									<div class="member">
+										<span class="infoLable">户型：</span>
+										<div class="specific">1房2厅1卫1厨</div>
+									</div>
+									<div class="member">
+										<span class="infoLable">建筑面积：</span>
+										<div class="specific">56.70㎡</div>
+									</div>
+									<div class="member">
+										<span class="infoLable">参考均价：</span>
+										<div class="specific">18000元/㎡</div>
+										<i class="Prompt"></i>
+									</div>
+									<div class="member">
+										<span class="infoLable">参考总价：</span>
+										<div class="specific">1020600.00</div>
+									</div>
+									<div class="formula">参考总价=参考均价*建筑面积</div>
+								</div>
+								<div class="house-type-detail-discount">
+									<h3>
+									<span>优惠信息</span>
+									<span>查看详情</span>
+								</h3>
+									<div>
+										<p>项目目前洋房33、34号楼在售中，一梯六户，7层高，其主推户型面积约为63平、73平，购房全款可享9折优惠，按揭则享93折，折后均价约12000元/平，含1800元/平精装修。</p>
+									</div>
+								</div>
+							</div>
+						</section>
+						<div class="house-type-detail-Prompt">
+							<p>此价格为该楼盘均价</p>
+							<p>不作为具体户型和房号参考价格</p>
+						</div>
+					</div>
 				<!-------- 楼盘页面 楼盘详情 楼栋信息弹框 -------->
 				<div class="building-info-push">
 					<header class="building-info-pushheader">
@@ -1300,7 +1364,123 @@
 						</ul>
 					</div>
 				</div>
-				<!-------- 楼盘页面 楼盘详情 历史优惠动态 -------->
+				<!-------- 楼盘页面 楼盘详情 小弹框 -------->
+				<div class="push-bombBox">
+					<!-------- 收藏成功 -------->
+					<div class="collection-succeed">
+						<div class="succeed-img">
+							<img src="img/CollectionedSuc.png" alt="" />
+						</div>
+						<p class="succeed-txt">楼盘收藏成功</p>
+					</div>
+					<!-------- 取消收藏 -------->
+					<div class="collection-cancel">
+						<p class="cancel-txt">取消收藏</p>
+					</div>
+					<!-------- 降价通知 -------->
+					<div class="reducePrice-notice">
+						<form action="" method="post">
+							<div class="notice-txt">
+								<p class="writeNumber">填写手机号码</p>
+								<p class="writeinfo">用于接收<span>[融创美伦熙语]</span>的降价通知</p>
+							</div>
+							<div class="notice-user">
+								<input type="text" name="" id="" value="" placeholder="您的手机号码" />
+								<a href="javascript:;"></a>
+							</div>
+							<div class="notice-line"></div>
+							<div class="notice-button">确定</div>
+							<div class="notice-delete">
+								<div class="notice-delete-box">
+									<i></i>
+								</div>
+							</div>
+						</form>
+					</div>
+					<!-------- 优惠信息（立即参与） -------->
+					<div class="discount-info">
+						<form action="" method="post">
+							<div class="discount-txt">
+								<p class="writetext">
+									<span>看房·团购·独家优惠</span>
+								</p>
+								<p class="writenum">已有<span>420</span>人报名</p>
+							</div>
+							<div class="discount-username">
+								<input type="text" name="" id="" value="" placeholder="姓名/称呼" />
+								<a href="javascript:;"></a>
+							</div>
+							<div class="discount-line"></div>
+							<div class="discount-userphone">
+								<input type="text" name="" id="" value="" placeholder="您的手机号码" />
+								<a href="javascript:;"></a>
+							</div>
+							<div class="discount-line"></div>
+							<div class="discount-button">确定</div>
+							<div class="discount-delete">
+								<div class="discount-delete-box">
+									<i></i>
+								</div>
+							</div>
+						</form>
+					</div>
+					<!-------- 优惠信息（报名成功） -------->
+					<div class="enroll-success">
+						<div class="imgbox">
+							<img src="img/success.png" />
+						</div>
+						<div class="suc-txt">
+							<p>恭喜您，报名成功</p>
+							<p>专业置业顾问将会尽快与您联系</p>
+						</div>
+						<div class="suc-button">
+							我知道了
+						</div>
+					</div>
+					<!-------- 优惠信息（报名失败） -------->
+					<div class="enroll-fail">
+						<div class="imgbox">
+							<img src="img/fail.png" />
+						</div>
+						<div class="fail-txt">
+							<p>报名失败</p>
+							<p>请检查您的网络是否连接</p>
+						</div>
+						<div class="fail-button">
+							重新连接
+						</div>
+					</div>
+					<!-------- 联系置业顾问 -------->
+					<div class="contact-adviser">
+						<div class="portrait-box">
+							<img src="img/portrait.png" alt="" />
+						</div>
+						<div class="adviser-txt">
+							<p>景园悦海湾</p>
+							<p>我们将为您提供专业的置业顾问服务</p>
+						</div>
+						<div class="dial-hotline">
+							<div class="dial-hotline-box">
+								<p>拨打置业热线</p>
+								<p>400-155-3135 转 6676</p>
+							</div>
+							<a href="javascript:;"><img src="img/phone.png" /></a>
+						</div>
+						<div class="online-time">
+							<div class="online-time-box">
+								<p>在线时间 08:30-24:00</p>
+								<p>在线咨询</p>
+							</div>
+							<a href="javascript:;"><img src="img/info.png" /></a>
+						</div>
+						<div class="close-box">
+							<span><img src="img/bigdel.png"/></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-------- 历史优惠动态 -------->
 				<div class="historical-discount-push">
 					<header class="historical-discount-pushheader">
 						<div class="signal_bar"></div>
@@ -1432,118 +1612,6 @@
 						</ul>
 					</section>
 				</div>
-				<!-------- 楼盘页面 楼盘详情 小弹框 -------->
-				<div class="push-bombBox">
-					<!-------- 收藏成功 -------->
-					<div class="collection-succeed">
-						<div class="succeed-img">
-							<img src="img/CollectionedSuc.png" alt="" />
-						</div>
-						<p class="succeed-txt">楼盘收藏成功</p>
-					</div>
-					<!-------- 取消收藏 -------->
-					<div class="collection-cancel">
-						<p class="cancel-txt">取消收藏</p>
-					</div>
-					<!-------- 降价通知 -------->
-					<div class="reducePrice-notice">
-						<div class="notice-txt">
-							<p class="writeNumber">填写手机号码</p>
-							<p class="writeinfo">用于接收<span>[融创美伦熙语]</span>的降价通知</p>
-						</div>
-						<div class="notice-user">
-							<input type="text" name="" id="" value="" placeholder="您的手机号码" />
-							<a href="javascript:;"></a>
-						</div>
-						<div class="notice-line"></div>
-						<div class="notice-button">确定</div>
-						<div class="notice-delete">
-							<div class="notice-delete-box">
-								<i></i>
-							</div>
-						</div>
-					</div>
-					<!-------- 优惠信息（立即参与） -------->
-					<div class="discount-info">
-						<div class="discount-txt">
-							<p class="writetext">
-								<span>看房·团购·独家优惠</span>
-							</p>
-							<p class="writenum">已有<span>420</span>人报名</p>
-						</div>
-						<div class="discount-username">
-							<input type="text" name="" id="" value="" placeholder="姓名/称呼" />
-							<a href="javascript:;"></a>
-						</div>
-						<div class="discount-line"></div>
-						<div class="discount-userphone">
-							<input type="text" name="" id="" value="" placeholder="您的手机号码" />
-							<a href="javascript:;"></a>
-						</div>
-						<div class="discount-line"></div>
-						<div class="discount-button">确定</div>
-						<div class="discount-delete">
-							<div class="discount-delete-box">
-								<i></i>
-							</div>
-						</div>
-					</div>
-					<!-------- 优惠信息（报名成功） -------->
-					<div class="enroll-success">
-						<div class="imgbox">
-							<img src="img/success.png" />
-						</div>
-						<div class="suc-txt">
-							<p>恭喜您，报名成功</p>
-							<p>专业置业顾问将会尽快与您联系</p>
-						</div>
-						<div class="suc-button">
-							我知道了
-						</div>
-					</div>
-					<!-------- 优惠信息（报名失败） -------->
-					<div class="enroll-fail">
-						<div class="imgbox">
-							<img src="img/fail.png" />
-						</div>
-						<div class="fail-txt">
-							<p>报名失败</p>
-							<p>请检查您的网络是否连接</p>
-						</div>
-						<div class="fail-button">
-							重新连接
-						</div>
-					</div>
-					<!-------- 联系置业顾问 -------->
-					<div class="contact-adviser">
-						<div class="portrait-box">
-							<img src="img/portrait.png" alt="" />
-						</div>
-						<div class="adviser-txt">
-							<p>景园悦海湾</p>
-							<p>我们将为您提供专业的置业顾问服务</p>
-						</div>
-						<div class="dial-hotline">
-							<div class="dial-hotline-box">
-								<p>拨打置业热线</p>
-								<p>400-155-3135 转 6676</p>
-							</div>
-							<a href="javascript:;"><img src="img/phone.png" /></a>
-						</div>
-						<div class="online-time">
-							<div class="online-time-box">
-								<p>在线时间 08:30-24:00</p>
-								<p>在线咨询</p>
-							</div>
-							<a href="javascript:;"><img src="img/info.png" /></a>
-						</div>
-						<div class="close-box">
-							<span><img src="img/bigdel.png"/></span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 		<script type="text/javascript">
 			$('.historical-discount-pushheader .wrapper').navbarscroll();
 			var typeDetail = new Swiper(".swiper-container", {
@@ -1944,7 +2012,14 @@
 							source: '来源:旅居网',
 							dates: '2014年12月16日'
 						}
-					],
+					]
+				}
+			})
+			
+			
+			var myVuehistorical = new Vue({
+				el: ".historical-discount-push",
+				data: {
 					discount: [{
 							content: '项目目前洋房33、34号楼在售中，一梯六户，7层高，其主推户型面积约为63平、73平，购房全款可享9折优惠，按揭则享93折，折后均价约12000元/平，含1800元/平精装修。',
 							time: '07月05日'
@@ -1972,7 +2047,7 @@
 					]
 				}
 			})
-			</script>
+		</script>
 	</body>
 	<script type="text/javascript" src="js/list-details.js"></script>
 

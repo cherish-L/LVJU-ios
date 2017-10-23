@@ -46,7 +46,7 @@
 				freeMode : false,
 				preventLinksPropagation : false,
 				longSwipesRatio : 0.5,
-				touchAngle : 10
+				touchAngle : 15
 			})
 			
             var firstPageS = new IScroll('.firstPage', {
