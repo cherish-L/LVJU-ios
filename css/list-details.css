@@ -2660,13 +2660,13 @@ li {
   width: 100%;
   height: 100%;
   background: #f4f4f4;
-  position: absolute;
 }
 
 .list-details-container .list-details-push .property-album-push .property-album-pushsection .picture-wrapper .picture-wrapper-nav {
   display: none;
   width: 100%;
   height: 100%;
+  position: absolute;
 }
 
 .list-details-container .list-details-push .property-album-push .property-album-pushsection .picture-wrapper .picture-wrapper-nav .picture-wrapper-ul {
