@@ -722,7 +722,7 @@ $sc:25;
     .demand-condition {
         width: 100%;
         overflow: hidden;
-        height: 46/$sc+rem;
+        height: 0/$sc+rem;
         background: #F6F6F6;
         position: relative;
         .demand-condition-wrapper {
@@ -1201,7 +1201,7 @@ $sc:25;
         background: #f4f4f4;
         position: fixed;
         top: 0;
-        transform: translateX(380/$sc+rem);
+        transform: translateX(0/$sc+rem);
         z-index: 40;
         display: flex;
         display: -webkit-flex;
@@ -1383,6 +1383,7 @@ $sc:25;
                                 height: 20/$sc+rem;
                                 line-height: 20/$sc+rem;
                                 text-align: center;
+                                border-radius: 2/$sc+rem;
                                 background: #0099EB;
                                 border: 1/$sc+rem solid #0099EB;
                                 font-size: 12/$sc+rem;
@@ -2237,7 +2238,153 @@ $sc:25;
             opacity: 1;
             z-index: 25;
         }
-        //<!-------- 楼盘页面 楼盘详情 楼盘位置弹框 -------->有
+        //<!-------- 楼盘页面 楼盘详情 相册弹框 -------->
+        .property-album-push {
+            width: 100%;
+            height: 100%;
+            transition: all .3s;
+            background: #f4f4f4;
+            position: absolute;
+            top: 0;
+            transform: translateX(0/$sc+rem);
+            z-index: 20;
+            display: flex;
+            display: -webkit-flex;
+            flex-direction: column;
+            //-----------------头    部----------------------
+            .property-album-pushheader {
+                width: 100%;
+                background: #f6f6f6;
+                box-shadow: 0 1px 0 0 #CCCCCC;
+                -webkit-box-shadow: 0 1px 0 0 #CCCCCC;
+                z-index: 10;
+                .signal_bar {
+                    width: 100%;
+                    height: 20/$sc+rem;
+                }
+                .title_bar {
+                    width: 100%;
+                    height: 44/$sc+rem;
+                    line-height: 44/$sc+rem;
+                    position: relative;
+                    .return {
+                        display: block;
+                        height: 36/$sc+rem;
+                        width: 22/$sc+rem;
+                        background: url(../img/returnleft.png) center center no-repeat;
+                        background-size: 22/$sc+rem 22/$sc+rem;
+                        position: absolute;
+                        top: 3/$sc+rem;
+                        left: 16/$sc+rem;
+                    }
+                    .album-btn{
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        span{
+                            display: block;
+                            width: 80/$sc+rem;
+                            height: 26/$sc+rem;
+                            text-align: center;
+                            line-height: 26/$sc+rem;
+                            border: 1px solid #0099EB;
+                            font-weight: normal;
+                            color: #0099EB;
+                            background: #FFFFFF;
+                            font-size: 14/$sc+rem;
+                        }
+                        span:first-child{
+                            border-radius: 2px 0 0 2px;
+                        }
+                        span:last-child{
+                            border-radius: 0 2px 2px 0;
+                        }
+                        span.selected{
+                            color: #FFFFFF;
+                            background: #0099EB;
+                        }
+                    }
+                }
+                .pushheader-nav{
+                    width: 100%;
+                    height: 46/$sc+rem;
+                    background: #f6f6f6;
+                    overflow: hidden;
+                    .pushheader-nav-ul{
+                        height: 46/$sc+rem;
+                        padding-left: 5px;
+                        overflow: hidden;
+                        .pushheader-nav-li{
+                            height: 100%;
+                            width: 86/$sc+rem;
+                            float: left;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            span{
+                                display: inline-block;
+                                height: 100%;
+                                line-height: 46/$sc+rem;
+                                opacity: 0.8;
+                                font-size: 14/$sc+rem;
+                                color: #6C7072;
+                            }
+                        }
+                        .pushheader-nav-li.selected{
+                            span{
+                                color: #0099EB;
+                                height: 43/$sc+rem;
+                                line-height: 46/$sc+rem;
+                                border-bottom: 3/$sc+rem solid #0099EB;
+                                font-family: PingFang-SC-Medium;
+                            }
+                        }
+                    }
+                }
+            }
+            .property-album-pushsection {
+                flex: 1;
+                -webkit-flex: 1;
+                overflow: hidden;
+                background: #f4f4f4;
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                position: relative;
+                .picture-wrapper{
+                    width: 100%;
+                    height: 100%;
+                    background: red;
+                    .picture-wrapper-ul{
+                        width: 100%;
+                        padding: 24/$sc+rem 16/$sc+rem;
+                        box-sizing: border-box;
+                        li{
+                            display: inline-block;
+                            width: 70/$sc+rem;
+                            height: 70/$sc+rem;
+                            background: #000000;
+                            margin: 8/$sc+rem 12/$sc+rem 8/$sc+rem 0;
+                            float: left;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            img{
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+                .video-wrapper{
+                    display: none;
+                    width: 100%;
+                    height: 100%;
+                    background: darkblue;
+                }
+            }
+        }
+        //<!-------- 楼盘页面 楼盘详情 楼盘位置弹框 -------->
         .house-position-push {
             width: 100%;
             height: 100%;
@@ -2383,7 +2530,7 @@ $sc:25;
                 }
             }
         }
-        //<!-------- 楼盘页面 楼盘详情 楼盘参数弹框 -------->有
+        //<!-------- 楼盘页面 楼盘详情 楼盘参数弹框 -------->
         .Property-parameter-push {
             width: 100%;
             height: 100%;

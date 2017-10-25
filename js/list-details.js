@@ -399,6 +399,11 @@ $(function() {
 		$('.region-body-box div ul').html('')
 		fillData();
 		fillData(0);
+		municipalityS.scrollToElement(".municipality-li:first-child",0)
+		averagePriceS.scrollToElement(".averagePrice-body-ul li:first-child",0)
+		houseTypeS.scrollToElement(".houseType-body-ul li:first-child",0)
+		moreS.scrollToElement(".more-body-wrapper .open-time",0)
+		
 		$(".list-nav-pushli.more ul li").removeClass("selected")
 		$(".list-nav-pushli.more ul li").removeAttr("data-select")
 		$('.regionlist ul li:first-child').addClass("selected")
@@ -415,9 +420,6 @@ $(function() {
 		$(this).parent().remove()
 		$(".demand-condition-wrapper li i").dynamic()
 	})
-
-
-
 
 
 
@@ -607,7 +609,47 @@ $(function() {
 		}
 
 	});
+	
+	
+	
+	
+//楼盘页面--楼盘详情 相册弹框
+	var 	pushheader_nav_ulh=$('.pushheader-nav-ul').height()
 
+	$('.property-album-pushheader .album-btn span').on("tap",function(){
+		var thisIndex=$(this).index()
+		$(this).addClass("selected").siblings().removeClass("selected")
+		if(thisIndex==0){
+			$('.pushheader-nav').height(pushheader_nav_ulh)
+			$('.property-album-pushsection .picture-wrapper').css("display","block").siblings().css("display","none")
+		}
+		else{
+			$('.pushheader-nav').height("0")
+			$('.property-album-pushsection .video-wrapper').css("display","block").siblings().css("display","none")
+		}
+		
+	})
+	
+	var album_nav_w=$('.pushheader-nav-ul li').width()
+	var album_nav_len=$('.pushheader-nav-ul li').length
+	$('.pushheader-nav-ul').width(album_nav_w*album_nav_len+5)
+	
+	$('.pushheader-nav-ul li').on("tap",function(){
+		$(this).addClass("selected").siblings().removeClass("selected")
+	})
+	
+	var pushheader_navS = new IScroll('.pushheader-nav', {
+		scrollbars: false,
+		scrollX: true,
+		scrollY: false,
+	})
+	
+	var picture_wrapperS = new IScroll('.picture-wrapper', {
+		scrollbars: false
+	})
+	
+	
+	
 	//楼盘页面--楼盘详情 头部点击 收藏成功、取消收藏弹框代码
 	var Suctime = null;
 	var canceltime = null;
