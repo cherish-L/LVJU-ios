@@ -1,21 +1,357 @@
 $(function() {
-	
-	//底部点击切换页面
-	$(".list-details-footer .footer-nav-li").on("tap",function() {
+
+
+
+//底部点击切换页面
+	$(".list-details-footer .footer-nav-li").on("tap", function() {
 		$(this).addClass("select").siblings().removeClass("select")
 	})
+
+
+
+//筛选区域三联动
+	var l1 = 0,l2 = 0,rm, rm_ul, rd, rd_ul
+
+	//填充一级地址
+	$('.region-body-box div ul').html('')
+	fillData();
+	fillData(0);
 	
+	//点击一级填充二级
+	$('.regionlist ul').on('tap', 'li', function() {
+		
+		var _this = $(this).index()
+		$(this).addClass('selected').siblings().removeClass('selected');
+		$(this).attr("data-select", "true").siblings().removeAttr("data-select");
+		
+		//联动第三级隐藏
+		$('.district ul').html('');
+		fillData(_this);
+		$('.municipality ul li:first-child').addClass("selected")
+		$('.municipality ul li:first-child').attr("data-select", "true")
+		municipalityS.refresh()
+		
+	});
+
+	//点击二级填充三级
+	$('.municipality ul').on('tap', 'li', function() {
+		
+		var _this = $(this).index()
+		$(this).addClass('selected').siblings().removeClass('selected');
+		$(this).attr("data-select", "true").siblings().removeAttr("data-select");
+		fillData(l1, _this);
+		$('.district ul li:first-child').addClass("selected")
+		$('.district ul li:first-child').attr("data-select", "true")
+		districtS.refresh()
+		
+	});
+
+	//点击三级选择
+	$('.district ul').on('tap', 'li', function() {
+		var d_this = $(this).index()
+		if(d_this == 0) {
+			$(this).addClass('selected').siblings().removeClass('selected')
+			$(this).attr("data-select", "true").siblings().removeAttr("data-select");
+		} else {
+			$('.district ul li').eq(0).removeClass('selected')
+			if(!$(this).hasClass('selected')) {
+				$(this).addClass('selected')
+				$(this).attr("data-select", "true")
+			} else {
+				$(this).removeClass('selected')
+				$(this).removeAttr("data-select")
+			}
+		}
+
+	});
 	
-	//楼盘页面  头部导航点击效果
-	$(".list-details-container .list-nav-litxt").tap(function() {
+	//区域 点击重置
+	$('.list-nav-pushul .region .empty').on("tap", function() {
+		
+		$('.region-body-box div ul').html('')
+		fillData();
+		fillData(0);
+		$('.regionlist ul li:first-child').addClass("selected")
+		$('.regionlist ul li:first-child').attr("data-select","true")
+		$('.municipality ul li:first-child').addClass("selected")
+		$('.municipality ul li:first-child').attr("data-select","true")
+		
+	})
+
+	//区域 点击开始
+	var municipality_txt,district_len,district_this,district_txt,district_val
+	
+	$('.list-nav-pushul .region .determine').on("tap", function() {
+		
+		$('.district_tags').remove()
+		municipality_txt=$('.municipality .municipality-li.selected').text()
+		district_len=$('.district .district-li').length
+		
+		//循环第三联动级选中的需求后添加到需求滚动框中
+		for(var i=0;i<district_len;i++){
+			if($('.district .district-li').eq(i).hasClass("selected")){
+				
+				district_txt=$('.district .district-li').eq(i).text()
+				if(district_txt=="不限"){
+					$('.demand-condition-wrapper').append("<li class='district_tags'><span>" + municipality_txt + "</span><i></i></li>")
+				}
+				else{
+					$('.demand-condition-wrapper').append("<li class='district_tags'><span>" + district_txt + "</span><i></i></li>")
+				}
+				$(this).dynamic()
+				
+			}
+		}
+		
+		//收起
+		$(".list-details-header .list-nav-ul li").removeClass("touch")
+		$(".list-nav-pushul .list-nav-pushli").height("0")
+		$(".list-details-Mask").removeClass("show")
+		$(this).dynamic()
+		
+		//点击 X 删除当前tags
+		$(".demand-condition-wrapper li i").on("tap",function() {
+			$(this).parent().remove()
+			$(this).dynamic()
+		})
+	})
+	
+	//填充级联数据
+	function fillData(l1, l2) {
+		var temp_html = "";
+		if(arguments.length == 0) {
+			$.each(dataJson.option, function(i, pro) {
+				temp_html += '<li class="regionlist-li" val="' + pro.id + '" id="' + pro.id + '">' + pro.name + '</li>';
+			});
+		} else if(arguments.length == 1) {
+			$.each(dataJson.option[l1].child, function(i, pro) {
+				temp_html += '<li class="municipality-li" val="' + pro.id + '" id="' + pro.id + '">' + pro.name + '</li>';
+			});
+		} else if(arguments.length == 2) {
+			$.each(dataJson.option[l1].child[l2].child, function(i, pro) {
+
+				temp_html += '<li class="district-li" val="' + pro.id + '" id="' + pro.id + '">' + pro.name + '<span class="check"></span></li>';
+			});
+		}
+		$('.region-body-box div').eq(arguments.length).find("ul").html(temp_html);
+	}
+
+
+
+
+//筛选均价单选
+	$('.averagePrice ul li:first-child').addClass("selected")
+	$('.averagePrice ul li:first-child').attr("data-select", "true")
+
+	//点击单选收回
+	var averagePrice_txt,averagePrice_index
+	
+	$('.averagePrice ul').on("tap", "li", function() {
+		$('.averagePrice_tags').remove()
+		averagePrice_txt=$(this).text()
+		averagePrice_index=$(this).index()
+		if(averagePrice_index==0){
+			averagePrice_txt=""
+		}
+		else{
+			$('.demand-condition-wrapper').append("<li class='averagePrice_tags'><span>"+averagePrice_txt+"</span><i></i></li>")
+		}
+		$(this).dynamic()
+		$(this).addClass("selected").siblings().removeClass("selected")
+		$(this).attr("data-select", "true").siblings().removeAttr("data-select")
+		$(".list-details-header .list-nav-ul li").removeClass("touch")
+		$(".list-nav-pushul .list-nav-pushli").height("0")
+		$(".list-details-Mask").removeClass("show")
+		
+		//点击 X 删除当前tags
+		$(".demand-condition-wrapper li i").on("tap",function() {
+			$(this).parent().remove()
+			$(".demand-condition-wrapper li i").dynamic()
+			$('.averagePrice ul li:first-child').addClass("selected").siblings().removeClass("selected")
+			$('.averagePrice ul li:first-child').attr("data-select", "true").siblings().removeAttr("data-select")
+			
+		})
+	})
+
+	//输入价格点击确定
+	var min_p, max_p
+	$('.averagePrice .averagePrice-footer .determine').on("tap", function() {
+		
+		$('.averagePrice_tags').remove()
+		min_p = parseInt($('#minprice').val())
+		max_p = parseInt($('#maxprice').val())
+
+		if(!$('#minprice').val() == '' && !$('#maxprice').val() == '' && min_p <= max_p) {
+			
+			$('.demand-condition-wrapper').append("<li class='averagePrice_tags'><span>"+min_p+"-"+max_p+"万</span><i></i></li>")
+			$(this).dynamic()
+			$(".list-details-header .list-nav-ul li").removeClass("touch")
+			$(".list-nav-pushul .list-nav-pushli").height("0")
+			$(".list-details-Mask").removeClass("show")
+			$('.averagePrice ul li').removeClass("selected")
+			$('.averagePrice ul li').removeAttr("data-select")
+			$('#minprice').val("")
+			$('#maxprice').val("")
+		}
+		
+		//点击 X 删除当前tags
+		$(".demand-condition-wrapper li i").on("tap",function() {
+			$(this).parent().remove()
+			$(".demand-condition-wrapper li i").dynamic()
+			$('.averagePrice ul li:first-child').addClass("selected").siblings().removeClass("selected")
+			$('.averagePrice ul li:first-child').attr("data-select", "true").siblings().removeAttr("data-select")
+			
+		})
+	})
+
+
+
+//筛选户型多选
+	$('.houseType ul li:first-child').addClass("selected")
+	$('.houseType ul li:first-child').attr("data-select", "true")
+
+	//点击多选
+	$('.houseType ul').on("tap", "li", function() {
+		if($(this).index() == 0) {
+			if(!$(this).hasClass("selected")) {
+				$(this).addClass("selected").siblings().removeClass("selected")
+				$(this).attr("data-select", "true").siblings().removeAttr("data-select")
+			} else if($(this).hasClass("selected")) {
+				$(this).removeClass("selected")
+				$('.houseType ul li').attr("data-select", "true").siblings().removeAttr("data-select")
+			}
+		} else {
+			$('.houseType ul li:first-child').removeClass("selected")
+			$('.houseType ul li:first-child').removeAttr("data-select")
+			if(!$(this).hasClass("selected")) {
+				$(this).addClass("selected")
+				$(this).attr("data-select", "true")
+			} else if($(this).hasClass("selected")) {
+				$(this).removeClass("selected")
+				$(this).removeAttr("data-select")
+			}
+		}
+	})
+
+	//点击重置
+	$('.houseType .houseType-footer .empty').on("tap", function() {
+		$('.houseType ul li:first-child').addClass("selected").siblings().removeClass("selected")
+		$('.houseType ul li:first-child').attr("data-select", "true").siblings().removeAttr("data-select")
+	})
+
+	//点击确定
+	var houseType_len,houseType_this,houseType_txt,houseType_val
+	
+	$('.houseType .houseType-footer .determine').on("tap", function() {
+		
+		$('.houseType_tags').remove()
+		houseType_len=$('.houseType .houseType-body-ul li').length
+		
+		//循环第三联动级选中的需求后添加到需求滚动框中
+		for(var i=0;i<houseType_len;i++){
+			if($('.houseType .houseType-body-ul li').eq(i).hasClass("selected")){
+				
+				houseType_txt=$('.houseType .houseType-body-ul li').eq(i).text()
+				
+				if(i==0){
+					houseType_txt=""
+				}
+				else{
+					$('.demand-condition-wrapper').append("<li class='houseType_tags'><span>" + houseType_txt + "</span><i></i></li>")
+				}
+				$(this).dynamic()
+			}
+		}
+		
+		//收起
+		$(".list-details-header .list-nav-ul li").removeClass("touch")
+		$(".list-nav-pushul .list-nav-pushli").height("0")
+		$(".list-details-Mask").removeClass("show")
+		$(this).dynamic()
+		
+		//点击 X 删除当前tags
+		$(".demand-condition-wrapper li i").on("tap",function() {
+			$(this).parent().remove()
+			$(this).dynamic()
+		})
+		
+	})
+
+
+
+
+//筛选更多 多选
+	$('.list-nav-pushli.more ul').on("tap", "li", function() {
+		if(!$(this).hasClass("selected")) {
+			$(this).addClass("selected")
+			$(this).attr("data-select", "true")
+		} else if($(this).hasClass("selected")) {
+			$(this).removeClass("selected")
+			$(this).removeAttr("data-select")
+		}
+	})
+
+	//点击重置
+	$('.list-nav-pushli.more .more-footer .empty').on("tap", function() {
+		$('.list-nav-pushli.more ul li').removeAttr("data-select")
+		$('.list-nav-pushli.more ul li').removeClass("selected")
+	})
+
+	//点击确定
+	var more_len,more_this,more_txt,more_val
+	
+	$('.list-nav-pushli.more .more-footer .determine').on("tap", function() {
+		
+		$('.more_tags').remove()
+		more_len=$('.list-nav-pushli.more li').length
+		
+		//循环第三联动级选中的需求后添加到需求滚动框中
+		for(var i=0;i<more_len;i++){
+			if($('.list-nav-pushli.more li').eq(i).hasClass("selected")){
+				
+				more_txt=$('.list-nav-pushli.more li').eq(i).text()
+				
+				$('.demand-condition-wrapper').append("<li class='more_tags'><span>" + more_txt + "</span><i></i></li>")
+				
+				$(this).dynamic()
+			}
+		}
+		
+		//收起
+		$(".list-details-header .list-nav-ul li").removeClass("touch")
+		$(".list-nav-pushul .list-nav-pushli").height("0")
+		$(".list-details-Mask").removeClass("show")
+		$(this).dynamic()
+		
+		//点击 X 删除当前tags
+		$(".demand-condition-wrapper li i").on("tap",function() {
+			$(this).parent().remove()
+			$(this).dynamic()
+		})
+	})
+
+
+
+//筛选排序 单选
+	$(".screen .screen-body-ul").on("tap", "li", function() {
+		$(this).addClass("selected").siblings().removeClass("selected")
+		$(this).attr("data-select", "true").siblings().removeAttr("data-select")
+		$(".list-details-header .list-nav-ul li").removeClass("touch")
+		$(".list-nav-pushul .list-nav-pushli").height("0")
+		$(".list-details-Mask").removeClass("show")
+	})
+
+
+
+//楼盘页面  头部导航点击效果
+	$(".list-details-container .list-nav-litxt").on("tap", function() {
 		if($(this).hasClass("touch")) {
 			$(this).removeClass("touch")
 		} else if(!$(this).hasClass("touch")) {
 			$(this).addClass("touch").siblings().removeClass("touch")
 		}
 	})
-
-	$(".list-details-container .list-nav-liimg").tap(function() {
+	$(".list-details-container .list-nav-liimg").on("tap", function() {
 		if($(this).hasClass("touch")) {
 			$(this).removeClass("touch")
 		} else if(!$(this).hasClass("touch")) {
@@ -23,6 +359,67 @@ $(function() {
 			$(".list-details-container .list-nav-litxt").removeClass("touch")
 		}
 	})
+
+
+
+//筛选主要功能
+	var num_this = 0;
+	var pushlih = 0;
+	$(".list-nav-ul li").tap(function() {
+		num_this = $(this).index()
+		pushlih = $(".list-nav-pushul .list-nav-pushli").eq(num_this).find(".list-nav-pushli-wrapper").height()
+		$(".list-nav-pushul .list-nav-pushli").eq(num_this).css("transition", "all .3s").siblings().css("transition", "none")
+		$(".list-nav-pushul .list-nav-pushli").eq(num_this).siblings().height("0")
+		$(".list-nav-pushul .list-nav-pushli").eq(num_this).height(pushlih)
+		$(".list-details-header .form-ipt").tap(function() {
+			if($(this).focus()) {
+				$(".list-nav-pushul .list-nav-pushli").height("0")
+				$(".list-details-Mask").removeClass("show")
+				$(".list-nav-ul li").removeClass("touch")
+			}
+		})
+		if($(this).hasClass("touch")) {
+			$(".list-nav-pushul .list-nav-pushli").eq(num_this).css("transition", "all .3s")
+			$(".list-nav-pushul .list-nav-pushli").eq(num_this).height(pushlih)
+			$(".list-details-Mask").addClass("show")
+			moreS.refresh()
+		} else if(!$(this).hasClass("touch")) {
+			$(".list-nav-pushul .list-nav-pushli").eq(num_this).css("transition", "none")
+			$(".list-nav-pushul .list-nav-pushli").eq(num_this).height("0")
+			$(".list-details-Mask").removeClass("show")
+			moreS.refresh()
+		}
+		$(".list-details-Mask").tap(function() {
+			$(".list-nav-pushul .list-nav-pushli").css("transition", "none")
+			$(".list-nav-pushul .list-nav-pushli").height("0")
+			$(".list-details-Mask").removeClass("show")
+			$(".list-nav-ul li").removeClass("touch")
+			moreS.refresh()
+		})
+		$('.region-body-box div ul').html('')
+		fillData();
+		fillData(0);
+		$(".list-nav-pushli.more ul li").removeClass("selected")
+		$(".list-nav-pushli.more ul li").removeAttr("data-select")
+		$('.regionlist ul li:first-child').addClass("selected")
+		$('.municipality ul li:first-child').addClass("selected")
+		$('.houseType ul li:first-child').addClass("selected").siblings().removeClass("selected")
+		$('.houseType ul li:first-child').attr("data-select", "true").siblings().removeAttr("data-select")
+		$(this).dynamic()
+	})
+
+	
+
+//删除单个需求，刷新demand-condition-wrapper盒子的宽度
+	$(".demand-condition-wrapper li i").on("tap",function() {
+		$(this).parent().remove()
+		$(".demand-condition-wrapper li i").dynamic()
+	})
+
+
+
+
+
 
 	//资讯评论
 	var userh = 0;
@@ -54,298 +451,9 @@ $(function() {
 			})
 		}
 	})
-	
-	//楼盘页面 头部导航（区域功能明细）
-	$(".list-details-container .district-ul").css("display", "none")
-	$(".list-details-container .municipality-ul .municipality-li:first-child").addClass("confirmtwo")
-	$(".list-details-container .district-ul .district-li:first-child").addClass("confirmthree")
-	
-	$(".list-details-container .regionlist-ul .regionlist-li").tap(function() {
-		var index = $(this).index()
-		$(this).addClass("confirmone").siblings().removeClass("confirmone")
-		if(index == 1) {
-			$(".list-details-container .district-ul").css("display", "none")
-			$(".list-details-container .municipality-ul .municipality-li").removeClass("confirmtwo")
-			$(".list-details-container .district-ul .district-li").removeClass("confirmthree")
-			$(".list-details-container .municipality-ul .municipality-li:first-child").removeClass("confirmtwo")
-		} else {
-			$(".list-details-container .municipality-ul").css("display", "block")
-			$(".list-details-container .municipality-ul .municipality-li:first-child").addClass("confirmtwo")
-		}
-		municipalityS.refresh()
-		districtS.refresh()
-	})
-	
-	var municipalityindex = 0
-	$(".list-details-container .municipality-ul .municipality-li").tap(function() {
-		municipalityindex = $(this).index()
-		var selectclick = $(".list-details-container .district-ul").eq(municipalityindex - 1).find(".district-li")
-		selectclick.removeClass("confirmthree")
-		$(".list-details-container .district-ul").eq(municipalityindex - 1).css("display", "block").siblings().css("display", "none")
-		$(".list-details-container .regionlist-ul .regionlist-li").eq(0).addClass("confirmone").siblings().removeClass("confirmone")
-		$(".list-details-container .municipality-ul .municipality-li").eq(municipalityindex).addClass("confirmtwo").siblings().removeClass("confirmtwo")
-		$(".list-details-container .district-ul").find(".district-li").removeClass("confirmthree")
-		selectclick.tap(function() {
-			var ind = $(this).index()
-			selectclick.eq(ind).addClass("confirmthree")
-			if(selectclick.eq(0).hasClass("confirmthree")) {
-				$(this).siblings().removeClass("confirmthree")
-			} else {
-				selectclick.eq(ind).addClass("confirmthree")
-			}
-		})
 
-		$(".districtbox").remove()
-		$(".list-details-container .municipality-ul .municipality-li").dynamic()
-		municipalityS.refresh()
-		districtS.refresh()
-	})
 
-	$(".list-details-container .region-footer .empty").tap(function() {
-		$(".select").removeClass("selected")
-		$(".municipality-ul .municipality-li").removeClass("confirmtwo")
-		$(".municipality-ul .municipality-li:first-child").addClass("confirmtwo")
-		$(".district-ul .district-li").removeClass("confirmthree")
-		$(".regionlist-ul .regionlist-li").eq(0).addClass("confirmone").siblings().removeClass("confirmone")
-		$(".districtbox").remove()
-		$(".region-footer .empty").dynamic()
-		districtS.refresh()
-	})
-
-	//添加需求并显示在需求项目栏中
-	var districtTxt = null;
-	var municipalityTxt = null;
-	$(".district-li").tap(function() {
-		if(!$(this).hasClass("confirmthree")) {
-			districtTxt = $(this).find(".district-li-txt").text()
-			municipalityTxt = $(".confirmtwo").text()
-			if(districtTxt !== "不限") {
-				$(".demand-condition-wrapper").append("<li class='districtbox'><span>" + districtTxt + "</span><i></i></li>")
-			} else if(districtTxt == "不限") {
-				$(".demand-condition-wrapper").append("<li class='districtbox'><span>" + municipalityTxt + "</span><i></i></li>")
-			}
-			$(".district-li").dynamic()
-		}
-		$(".district-li").dynamic()
-		$(".demand-condition-wrapper .districtbox i").tap(function() {
-			var districtboxtxt = $(this).siblings("span").text()
-			//			var lenul=$(".district-ul").eq(municipalityindex-1).find(".district-li").length
-			var model = $(".district-ul").eq(municipalityindex - 1).find(".district-li")
-			//遍历后存放到数组中。。要用的时候再根据需要取.
-			var arr = new Array();
-			model.each(function(index) {
-				arr.push(model.eq(index).text());
-			})
-			console.log(arr)
-			//调用..---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-			//			for(var i in arr){
-			//			    console.log(arr[i]);
-			//			    if(arr[i]===districtboxtxt){
-			//			    		alert(i)
-			//			    }
-			//			}
-		})
-
-		$(".demand-condition-wrapper li i").tap(function() {
-			$(this).parent().remove()
-			$(".demand-condition-wrapper li i").dynamic()
-		})
-
-	})
-	
-	//楼盘页面 头部导航（均价功能明细）
-	var PriceTxt = 0;
-	$(".averagePrice-body-ul li").tap(function() {
-		var index = $(this).index()
-		$(".demand-condition-wrapper .Pricebox").remove()
-		//均价添加需求并显示在需求项目栏中
-		if(!$(this).hasClass("select")) {
-			$(".averagePrice-body-ul li").eq(index).addClass("select").siblings().removeClass("select")
-			PriceTxt = $(this).find("span").text()
-			if(PriceTxt !== "不限") {
-				$(".demand-condition-wrapper").append("<li class='Pricebox'><span>" + PriceTxt + "</span><i></i></li>")
-			}
-			$(".averagePrice-body-ul li").dynamic()
-		}
-		$(".averagePrice-body-ul li").dynamic()
-
-		$(".demand-condition-wrapper .Pricebox i").tap(function() {
-			$(this).parent().remove()
-			$(this).dynamic()
-			$(".averagePrice-body-ul li").eq(0).addClass("select").siblings().removeClass("select")
-		})
-	})
-	$(".averagePrice-footer .determine").tap(function() {
-		if($(".minprice").val() !== "" && $(".maxprice").val() !== "") {
-			var minpricetxt = $(".minprice").val()
-			var maxpricetxt = $(".maxprice").val()
-			$(".demand-condition-wrapper .Pricebox").remove()
-			$(".averagePrice-body-ul li").removeClass("select")
-			$(".demand-condition-wrapper").append("<li class='Pricebox'><span>" + minpricetxt + "-" + maxpricetxt + "万" + "</span><i></i></li>")
-			$(".minprice").val("")
-			$(".maxprice").val("")
-		}
-		$(".averagePrice-footer .determine").dynamic()
-
-		$(".demand-condition-wrapper .Pricebox i").tap(function() {
-			$(this).parent().remove()
-			$(this).dynamic()
-			$(".averagePrice-body-ul li").eq(0).addClass("select").siblings().removeClass("select")
-		})
-
-	})
-	
-	//楼盘页面 头部导航（户型功能明细）
-	var houseTypeTxt = 0;
-	$(".houseType-body-ul li").tap(function() {
-		$(".demand-condition-wrapper .houseTypebox").remove()
-		//户型添加需求并显示在需求项目栏中
-		if(!$(this).hasClass("select")) {
-			$(this).addClass("select").siblings().removeClass("select")
-			houseTypeTxt = $(this).find("span").text()
-			if(houseTypeTxt !== "不限") {
-				$(".demand-condition-wrapper").append("<li class='houseTypebox'><span>" + houseTypeTxt + "</span><i></i></li>")
-			}
-			$(".houseType-body-ul li").dynamic()
-		}
-		$(".houseType-body-ul li").dynamic()
-
-		$(".demand-condition-wrapper .houseTypebox i").tap(function() {
-			$(this).parent().remove()
-			$(this).dynamic()
-			$(".houseType-body-ul li").eq(0).addClass("select").siblings().removeClass("select")
-		})
-
-	})
-	$(".houseType-footer .empty").tap(function() {
-		$(".houseTypebox").remove()
-		$(".houseType-body-ul li").eq(0).addClass("select").siblings().removeClass("select")
-		$(".houseType-footer .empty").dynamic()
-		districtS.refresh()
-	})
-
-	//楼盘页面 头部导航（更多功能明细）
-	var opentimeTxt = 0;
-	var conditionh = $(".demand-condition").height()
-	var sectionh = $(".list-details-section").height()
-	var footerh = $(".footer").height()
-	$(".more .list-nav-pushli-wrapper").height(sectionh + footerh + conditionh)
-
-	//开盘时间
-	$(".open-time-content span").tap(function() {
-		$(".demand-condition-wrapper .opentimebox").remove()
-		//更多添加需求并显示在需求项目栏中
-		if(!$(this).hasClass("selected")) {
-			$(this).addClass("selected").siblings().removeClass("selected")
-			opentimeTxt = $(this).text()
-			if(opentimeTxt !== "不限") {
-				$(".demand-condition-wrapper").append("<li class='opentimebox'><span>" + opentimeTxt + "</span><i></i></li>")
-			}
-			$(".open-time-content span").dynamic()
-		}
-		$(".open-time-content span").dynamic()
-
-		$(".demand-condition-wrapper .opentimebox i").tap(function() {
-			$(this).parent().remove()
-			$(this).dynamic()
-			$(".open-time-content span").removeClass("selected")
-		})
-
-	})
-
-	//楼盘页面 头部导航（特色功能明细）
-	var characteristicTxt = null;
-	$(".characteristic-content .select").tap(function() {
-		if(!$(this).hasClass("selected")) {
-			$(this).addClass("selected")
-			characteristicTxt = $(this).text()
-			$(".demand-condition-wrapper").append("<li class='characteristicbox'><span>" + characteristicTxt + "</span><i></i></li>")
-			$(".characteristic-content .select").dynamic()
-		}
-		$(".characteristic-content .select").dynamic()
-
-		//		$(".demand-condition-wrapper .districtbox i").tap(function(){
-		//			var districtboxtxt=$(this).siblings("span").text()
-		////			var lenul=$(".district-ul").eq(municipalityindex-1).find(".district-li").length
-		//			var model=$(".district-ul").eq(municipalityindex-1).find(".district-li")
-		//			//遍历后存放到数组中。。要用的时候再根据需要取.
-		//			var arr = new Array();
-		//			model.each(function(index){
-		//			    arr.push(model.eq(index).text());
-		//			})
-		//			 console.log(arr)
-		//			//调用..---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-		////			for(var i in arr){
-		////			    console.log(arr[i]);
-		////			    if(arr[i]===districtboxtxt){
-		////			    		alert(i)
-		////			    }
-		////			}
-		//		})
-
-		$(".demand-condition-wrapper .characteristicbox i").tap(function() {
-			$(this).parent().remove()
-			$(this).dynamic()
-		})
-
-	})
-
-	$(".more-footer .empty").tap(function() {
-		$(".characteristic-content .select").removeClass("selected")
-		$(".open-time-content span").removeClass("selected")
-		$(".demand-condition-wrapper .opentimebox").remove()
-		$(".demand-condition-wrapper .characteristicbox").remove()
-		$(this).dynamic()
-	})
-
-	//楼盘页面 头部排序功能明细
-	$(".screen-body-ul li").tap(function() {
-		var index = $(this).index()
-		$(".screen-body-ul li").eq(index).addClass("select").siblings().removeClass("select")
-	})
-	//筛选主要功能
-	var num = 0;
-	var pushlih = 0;
-	$(".list-nav-ul li").tap(function() {
-		num = $(this).index()
-		pushlih = $(".list-nav-pushul .list-nav-pushli").eq(num).find(".list-nav-pushli-wrapper").height()
-		$(".list-nav-pushul .list-nav-pushli").eq(num).css("transition", "all .3s").siblings().css("transition", "none")
-		$(".list-nav-pushul .list-nav-pushli").eq(num).siblings().height("0")
-		$(".list-nav-pushul .list-nav-pushli").eq(num).height(pushlih)
-		$(".list-details-header .form-ipt").tap(function() {
-			if($(this).focus()) {
-				$(".list-nav-pushul .list-nav-pushli").height("0")
-				$(".list-details-Mask").removeClass("show")
-				$(".list-nav-ul li").removeClass("touch")
-			}
-		})
-		if($(this).hasClass("touch")) {
-			$(".list-nav-pushul .list-nav-pushli").eq(num).css("transition", "all .3s")
-			$(".list-nav-pushul .list-nav-pushli").eq(num).height(pushlih)
-			$(".list-details-Mask").addClass("show")
-			moreS.refresh()
-		} else if(!$(this).hasClass("touch")) {
-			$(".list-nav-pushul .list-nav-pushli").eq(num).css("transition", "none")
-			$(".list-nav-pushul .list-nav-pushli").eq(num).height("0")
-			$(".list-details-Mask").removeClass("show")
-			moreS.refresh()
-		}
-		$(".determine").tap(function() {
-			$(".list-nav-pushul .list-nav-pushli").height("0")
-			$(".list-details-Mask").removeClass("show")
-			$(".list-nav-ul li").removeClass("touch")
-			moreS.refresh()
-		})
-		$(".list-details-Mask").tap(function() {
-			$(".list-nav-pushul .list-nav-pushli").css("transition", "none")
-			$(".list-nav-pushul .list-nav-pushli").height("0")
-			$(".list-details-Mask").removeClass("show")
-			$(".list-nav-ul li").removeClass("touch")
-			moreS.refresh()
-		})
-	})
-
-	//楼盘页面 头部需求栏目水平滚动栏
+//楼盘页面 头部需求栏目水平滚动栏
 	//遍历当前以后的需求
 	var s = 0;
 	var demandh = $(".demand-condition-wrapper").height()
@@ -354,18 +462,12 @@ $(function() {
 		var liw = $(".demand-condition-wrapper li").eq(i).width() + 12
 		s = s + liw
 	}
-
+	
 	if($(".demand-condition-wrapper li").length <= 3) {
 		$(".demand-condition-wrapper").width("100%")
 	} else if($(".demand-condition-wrapper li").length > 3) {
 		$(".demand-condition-wrapper").width(sNew + 20)
 	}
-
-	//删除单个需求，刷新demand-condition-wrapper盒子的宽度
-	$(".demand-condition-wrapper li i").tap(function() {
-		$(this).parent().remove()
-		$(".demand-condition-wrapper li i").dynamic()
-	})
 
 	//楼盘页面 头部需求栏目水平滚动栏宽度的设定
 	$.fn.dynamic = function() {
@@ -389,7 +491,7 @@ $(function() {
 		list_detailsS.refresh()
 		demandS.refresh()
 	}
-	
+
 	//楼盘页面 底部上拉加载滚动监听事件
 	var list_detailsS = new IScroll('.list-details-section', {
 		scrollbars: false,
@@ -427,7 +529,7 @@ $(function() {
 			ld_pullUpAction();
 		}
 	})
-	
+
 	function ld_pullUpAction() {
 		setTimeout(function() {
 			$(".list-details-section .section-load").show()
@@ -440,24 +542,23 @@ $(function() {
 		}, 2000);
 	}
 
-	
 	//楼盘页面--楼盘详情 点击左滑弹框效果
 	var wrapw = $(".list-details-container").width() + 5
 	$(".listhouse-data-li").tap(function() {
-		pushS.scrollToElement(".pushsection-banner",0)
+		pushS.scrollToElement(".pushsection-banner", 0)
 		$(".list-details-pushheader").css("background-color", "rgba(246, 246, 246,0.0)")
 		$(".list-details-pushheader").css("box-shadow", "0 1px 0 0 rgba(204,204,204,0.0)")
 		$(".title_txt").css("color", "rgba(57, 64, 67,0.0)")
 		$(".return").removeClass("state")
 		$(".collection").removeClass("state")
 		$(".share").removeClass("state")
-		
-		$(".list-details-push").css("transform","translateX(0px)") 
+
+		$(".list-details-push").css("transform", "translateX(0px)")
 		$(".list-details-shadow").fadeIn(250)
 	})
-	
+
 	$(".list-details-pushheader .return").tap(function() {
-		$(".list-details-push").css("transform","translateX(" + wrapw + "px)") 
+		$(".list-details-push").css("transform", "translateX(" + wrapw + "px)")
 		$(".list-details-shadow").fadeOut(250)
 	})
 
@@ -478,7 +579,7 @@ $(function() {
 		scrollbars: false,
 		probeType: 3
 	});
-	
+
 	pushS.on('scroll', function() {
 		if(pushS.y < 0) {
 			$(".list-details-pushheader").css("opacity", "1")
@@ -498,7 +599,7 @@ $(function() {
 			}
 		}
 		if(pushS.y >= 0) {
-			
+
 			$(".list-details-pushheader").css("opacity", (50 - pushS.y) / 50)
 			$(".list-details-pushheader").css("background-color", "rgba(246, 246, 246,0.0)")
 			$(".list-details-pushheader").css("box-shadow", "0 1px 0 0 rgba(204,204,204,0.0)")
@@ -542,16 +643,15 @@ $(function() {
 	})
 
 	$(".pushsection-basicInfo .position").tap(function() {
-		$(".house-position-push").css("transform","translateX(0px)") 
+		$(".house-position-push").css("transform", "translateX(0px)")
 		$(".list-push-shadow").fadeIn(250)
 	})
 
 	$(".house-position-pushheader .return").tap(function() {
-		$(".house-position-push").css("transform","translateX(" + wrapw + "px)") 
+		$(".house-position-push").css("transform", "translateX(" + wrapw + "px)")
 		$(".list-push-shadow").fadeOut(250)
 	})
-	
-	
+
 	//楼盘页面--楼盘详情--降价通知弹框
 	$(".pushsection-basicInfo .notice").tap(function() {
 		$(".list-details-pushMask").addClass("show")
@@ -612,14 +712,14 @@ $(function() {
 		}
 	})
 	$(".ParameterDetails").tap(function() {
-		parameterS.scrollToElement(".Property-parameter-pushsection .pushsection-basicInfo",0)
-		$(".Property-parameter-push").css("transform","translateX(0px)") 
+		parameterS.scrollToElement(".Property-parameter-pushsection .pushsection-basicInfo", 0)
+		$(".Property-parameter-push").css("transform", "translateX(0px)")
 		$(".list-push-shadow").fadeIn(250)
 		$(".collection-cancel").css("display", "none")
 		$(".collection-succeed").css("display", "none")
 	})
 	$(".Property-parameter-pushheader .return").tap(function() {
-		$(".Property-parameter-push").css("transform","translateX(" + wrapw + "px)") 
+		$(".Property-parameter-push").css("transform", "translateX(" + wrapw + "px)")
 		$(".list-push-shadow").fadeOut(250)
 		$(".collection-cancel").css("display", "none")
 		$(".collection-succeed").css("display", "none")
@@ -661,7 +761,7 @@ $(function() {
 			$(".house-typeDetail-Prompt").fadeOut(300)
 		}, 1700)
 	})
-	
+
 	var prompt_time = null;
 	$(".house-type-detail-info .Prompt").tap(function() {
 		clearTimeout(prompt_time)
@@ -673,36 +773,34 @@ $(function() {
 	})
 
 	$(".list-details-pushsection .allstyle").tap(function() {
-		$(".house-type-push").css("transform","translateX(0px)") 
+		$(".house-type-push").css("transform", "translateX(0px)")
 		$(".list-push-shadow").fadeIn(250)
 	})
 
 	$(".house-type-pushheader .return").tap(function() {
-		$(".house-type-push").css("transform","translateX(" + wrapw + "px)") 
+		$(".house-type-push").css("transform", "translateX(" + wrapw + "px)")
 		$(".list-push-shadow").fadeOut(250)
 	})
 
-
 	$(".house-type-push .pushsection-li").tap(function() {
-		$(".house-typeDetail-push").css("transform","translateX(0px)") 
+		$(".house-typeDetail-push").css("transform", "translateX(0px)")
 		$(".house-type-shadow").fadeIn(250)
-		typeDetailS.scrollToElement(".house-typeDetail-pushsection .house-typeDetail-banner",0)
+		typeDetailS.scrollToElement(".house-typeDetail-pushsection .house-typeDetail-banner", 0)
 	})
 
 	$(".house-typeDetail-pushheader .return").tap(function() {
-		$(".house-typeDetail-push").css("transform","translateX(" + wrapw + "px)") 
+		$(".house-typeDetail-push").css("transform", "translateX(" + wrapw + "px)")
 		$(".house-type-shadow").fadeOut(250)
 	})
 
-
 	$(".pushsection-houseStyle .houseStyle-content-ul li").tap(function() {
-		$(".house-type-detail-push").css("transform","translateX(0px)") 
+		$(".house-type-detail-push").css("transform", "translateX(0px)")
 		$(".list-push-shadow").fadeIn(250)
-		type_detailS.scrollToElement(".house-type-detail-pushsection .house-type-detail-banner",0)
+		type_detailS.scrollToElement(".house-type-detail-pushsection .house-type-detail-banner", 0)
 	})
-//
+	//
 	$(".house-type-detail-pushheader .return").tap(function() {
-		$(".house-type-detail-push").css("transform","translateX(" + wrapw + "px)") 
+		$(".house-type-detail-push").css("transform", "translateX(" + wrapw + "px)")
 		$(".list-push-shadow").fadeOut(250)
 	})
 
@@ -715,15 +813,13 @@ $(function() {
 		$(".building-info-pushsection .buildingInfo-content-ul li").eq(index).addClass("switch").siblings().removeClass("switch")
 	})
 
-
-
 	$(".list-details-pushsection .pushsection-buildingInfo .details").tap(function() {
-		$(".building-info-push").css("transform","translateX(0px)") 
+		$(".building-info-push").css("transform", "translateX(0px)")
 		$(".list-push-shadow").fadeIn(250)
 	})
 
 	$(".building-info-pushheader .return").tap(function() {
-		$(".building-info-push").css("transform","translateX(" + wrapw + "px)") 
+		$(".building-info-push").css("transform", "translateX(" + wrapw + "px)")
 		$(".list-push-shadow").fadeOut(250)
 	})
 
@@ -732,7 +828,7 @@ $(function() {
 		$(".list-details-pushMask").addClass("show")
 		$(".discount-info").addClass("show")
 	})
-	
+
 	$(".list-details-pushfooter .signUp").tap(function() {
 		$(".list-details-pushMask").addClass("show")
 		$(".discount-info").addClass("show")
@@ -812,11 +908,11 @@ $(function() {
 
 	//楼盘页面--楼盘详情--历史价格弹框
 	$(".historicalPrice-content").tap(function() {
-		$(".historical-price-push").css("transform","translateX(0px)") 
+		$(".historical-price-push").css("transform", "translateX(0px)")
 		$(".list-push-shadow").fadeIn(250)
 	})
 	$(".historical-price-pushheader .return").tap(function() {
-		$(".historical-price-push").css("transform","translateX(" + wrapw + "px)") 
+		$(".historical-price-push").css("transform", "translateX(" + wrapw + "px)")
 		$(".list-push-shadow").fadeOut(250)
 	})
 
@@ -854,12 +950,12 @@ $(function() {
 
 	//楼盘页面--楼盘详情--资讯评论弹框
 	$(".list-details-pushsection .pushsection-propertyReview .view-all").tap(function() {
-		$(".info-review-push").css("transform","translateX(0px)") 
+		$(".info-review-push").css("transform", "translateX(0px)")
 		$(".list-push-shadow").fadeIn(250)
 	})
 
 	$(".info-review-pushheader .return").tap(function() {
-		$(".info-review-push").css("transform","translateX(" + wrapw + "px)") 
+		$(".info-review-push").css("transform", "translateX(" + wrapw + "px)")
 		$(".list-push-shadow").fadeOut(250)
 	})
 
@@ -941,12 +1037,12 @@ $(function() {
 	})
 
 	$(".pushsection-propertyInfo .enter").tap(function() {
-		$(".Property-info-push").css("transform","translateX(0px)") 
+		$(".Property-info-push").css("transform", "translateX(0px)")
 		$(".list-push-shadow").fadeIn(250)
 	})
 
 	$(".Property-info-pushheader .return").tap(function() {
-		$(".Property-info-push").css("transform","translateX(" + wrapw + "px)") 
+		$(".Property-info-push").css("transform", "translateX(" + wrapw + "px)")
 		$(".list-push-shadow").fadeOut(250)
 	})
 
@@ -968,22 +1064,22 @@ $(function() {
 		_thisul.css("width", _thisnav_w)
 		_thisli.css("width", "50%")
 	}
-	
+
 	var testh = $(".historical-discount-pushsection").height()
 	$(".historical-discount-li").height(testh)
 
-	$(".historical-discount-push").css("transform","translateX(" + wrapw + "px)") 
+	$(".historical-discount-push").css("transform", "translateX(" + wrapw + "px)")
 
 	$(".pushsection-dynamic .dynamic-btn").tap(function() {
 		$(".historical-discount-push").css("z-index", "40")
 		$(".historical-discount-push").css("transition", "all .3s")
-		$(".historical-discount-push").css("transform","translateX(0px)") 
+		$(".historical-discount-push").css("transform", "translateX(0px)")
 		$(".list-push-shadow").fadeIn(250)
 	})
 
 	$(".historical-discount-pushheader .return").tap(function() {
 		$(".historical-discount-push").css("transition", "all .3s")
-		$(".historical-discount-push").css("transform","translateX(" + wrapw + "px)") 
+		$(".historical-discount-push").css("transform", "translateX(" + wrapw + "px)")
 		$(".list-push-shadow").fadeOut(250)
 	})
 

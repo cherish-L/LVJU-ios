@@ -27,7 +27,6 @@
 				<div class="signal_bar"></div>
 				<div class="Search_bar">
 					<form class="list-details-form" action="">
-						<!--<a class="return" href="javascript:;"></a>-->
 						<input class="form-ipt" type="text" placeholder="输入楼盘名或楼盘地址" />
 						<a class="position" href="javascript:;"></a>
 					</form>
@@ -56,67 +55,13 @@
 								<div class="region-body">
 									<div class="region-body-box">
 										<div class="regionlist">
-											<ul class="regionlist-ul">
-												<li class="regionlist-li confirmone">区域</li>
-												<li class="regionlist-li">附近</li>
-											</ul>
+											<ul class="regionlist-ul"></ul>
 										</div>
 										<div class="municipality">
-											<ul class="municipality-ul">
-												<li class="municipality-li" v-for="list in municipalitydata" v-text="list.city"></li>
-											</ul>
+											<ul class="municipality-ul"></ul>
 										</div>
 										<div class="district">
-											<div class="district-wrapper">
-												<ul class="district-ul">
-													<li class="district-li" v-for="list in districtdata1">
-														<span class="district-li-txt" v-text="list.district"></span>
-														<span class="check"></span>
-													</li>
-												</ul>
-
-												<ul class="district-ul">
-													<li class="district-li" v-for="list in districtdata2">
-														<span class="district-li-txt" v-text="list.district"></span>
-														<span class="check"></span>
-													</li>
-												</ul>
-
-												<ul class="district-ul">
-													<li class="district-li" v-for="list in districtdata3">
-														<span class="district-li-txt" v-text="list.district"></span>
-														<span class="check"></span>
-													</li>
-												</ul>
-
-												<ul class="district-ul">
-													<li class="district-li" v-for="list in districtdata4">
-														<span class="district-li-txt" v-text="list.district"></span>
-														<span class="check"></span>
-													</li>
-												</ul>
-
-												<ul class="district-ul">
-													<li class="district-li" v-for="list in districtdata5">
-														<span class="district-li-txt" v-text="list.district"></span>
-														<span class="check"></span>
-													</li>
-												</ul>
-
-												<ul class="district-ul">
-													<li class="district-li" v-for="list in districtdata6">
-														<span class="district-li-txt" v-text="list.district"></span>
-														<span class="check"></span>
-													</li>
-												</ul>
-
-												<ul class="district-ul">
-													<li class="district-li" v-for="list in districtdata7">
-														<span class="district-li-txt" v-text="list.district"></span>
-														<span class="check"></span>
-													</li>
-												</ul>
-											</div>
+											<ul class="district-ul"></ul>
 										</div>
 									</div>
 								</div>
@@ -130,7 +75,7 @@
 							<div class="list-nav-pushli-wrapper">
 								<div class="averagePrice-body">
 									<ul class="averagePrice-body-ul">
-										<li class="select">
+										<li>
 											<span>不限</span>
 											<i></i>
 										</li>
@@ -154,9 +99,9 @@
 								</div>
 								<div class="averagePrice-footer">
 									<div class="price-input">
-										<input class="minprice" type="text" placeholder="最低价格" />
+										<input class="minprice" id="minprice" type="number" placeholder="最低价格" />
 										<span></span>
-										<input class="maxprice" type="text" placeholder="最高价格" />
+										<input class="maxprice" id="maxprice" type="number" placeholder="最高价格" />
 									</div>
 									<div class="determine">确定</div>
 								</div>
@@ -166,7 +111,7 @@
 							<div class="list-nav-pushli-wrapper">
 								<div class="houseType-body">
 									<ul class="houseType-body-ul">
-										<li class="select">
+										<li>
 											<span>不限</span>
 											<i></i>
 										</li>
@@ -208,36 +153,41 @@
 									<div class="more-body-wrapper">
 										<div class="open-time">
 											<h3 class="open-time-title">开盘时间</h3>
-											<div class="open-time-content">
-												<span>本月开盘</span>
-												<span>下月开盘</span>
-												<span>三个月内开盘</span>
-												<span>六个月内开盘</span>
-												<span>已开盘三个月</span>
-												<span>已开票六个月</span>
-												<div style="clear: both;"></div>
-											</div>
+											<ul class="open-time-content">
+												<li class="open-time-content-li">本月开盘</li>
+												<li class="open-time-content-li">下月开盘</li>
+												<li class="open-time-content-li">三个月内开盘</li>
+												<li class="open-time-content-li">六个月内开盘</li>
+												<li class="open-time-content-li">已开盘三个月</li>
+												<li class="open-time-content-li">已开票六个月</li>
+												<li style="clear: both; width: 0;"></li>
+											</ul>
 										</div>
 										<div class="characteristic">
 											<h3 class="characteristic-title">特色</h3>
-											<div class="characteristic-content">
-												<span class="select">打折优惠</span>
-												<span class="select">住宅</span>
-												<span class="select">养生社区</span>
-												<span class="select">花园洋房</span>
-												<span class="select">海景房</span>
-												<span class="select">河(江)景房</span>
-												<span class="select">温泉社区</span>
-												<span class="select">酒店式公寓</span>
-												<span class="select">商铺</span>
-												<span class="select">别墅</span>
-												<span class="select">公寓</span>
-												<span class="select">社区</span>
-												<span class="select">学区房</span>
-												<span class="select">湖景房</span>
-												<span class="select">写字楼</span>
-												<div style="clear: both;"></div>
-											</div>
+											<ul class="characteristic-content">
+												<li class="characteristic-content-li">打折优惠</li>
+												<li class="characteristic-content-li">住宅</li>
+												<li class="characteristic-content-li">养生社区</li>
+												<li class="characteristic-content-li">花园洋房</li>
+												<li class="characteristic-content-li">海景房</li>
+												<li class="characteristic-content-li">河(江)景房</li>
+												<li class="characteristic-content-li">温泉社区</li>
+												<li class="characteristic-content-li">酒店式公寓</li>
+												<li class="characteristic-content-li">商铺</li>
+												<li class="characteristic-content-li">别墅</li>
+												<li class="characteristic-content-li">公寓</li>
+												<li class="characteristic-content-li">社区</li>
+												<li class="characteristic-content-li">学区房</li>
+												<li class="characteristic-content-li">湖景房</li>
+												<li class="characteristic-content-li">写字楼</li>
+												<li class="characteristic-content-li">公寓</li>
+												<li class="characteristic-content-li">社区</li>
+												<li class="characteristic-content-li">学区房</li>
+												<li class="characteristic-content-li">湖景房</li>
+												<li class="characteristic-content-li">写字楼</li>
+												<li style="clear: both; width: 0;"></li>
+											</ul>
 										</div>
 									</div>
 								</div>
@@ -251,7 +201,7 @@
 							<div class="list-nav-pushli-wrapper">
 								<div class="screen-body">
 									<ul class="screen-body-ul">
-										<li class="select">默认排序</li>
+										<li class="selected">默认排序</li>
 										<li>开盘价从高到低</li>
 										<li>开盘价从低到高</li>
 										<li>均价从高到低</li>
@@ -906,65 +856,65 @@
 				</div>
 				<!-------- 楼盘页面 楼盘详情 主力户型 推荐户型弹框 -------->
 				<div class="house-type-detail-push">
-						<header class="house-type-detail-pushheader">
-							<div class="signal_bar"></div>
-							<div class="title_bar">
-								<h3 class="title_txt">户型详情</h3>
-								<a class="return" href="javascript:;"></a>
-								<a class="share" href="javascript:;"></a>
+					<header class="house-type-detail-pushheader">
+						<div class="signal_bar"></div>
+						<div class="title_bar">
+							<h3 class="title_txt">户型详情</h3>
+							<a class="return" href="javascript:;"></a>
+							<a class="share" href="javascript:;"></a>
+						</div>
+					</header>
+					<section class="house-type-detail-pushsection">
+						<div class="pushsection-wrapper">
+							<div class="swiper-container house-type-detail-banner">
+								<ul class="swiper-wrapper type-detail-banner-ul">
+									<li class="swiper-slide"><img src="img/style.png" /></li>
+									<li class="swiper-slide"><img src="img/style.png" /></li>
+									<li class="swiper-slide"><img src="img/style.png" /></li>
+									<li class="swiper-slide"><img src="img/style.png" /></li>
+								</ul>
+								<div class="swiper-pagination"></div>
 							</div>
-						</header>
-						<section class="house-type-detail-pushsection">
-							<div class="pushsection-wrapper">
-								<div class="swiper-container house-type-detail-banner">
-									<ul class="swiper-wrapper type-detail-banner-ul">
-										<li class="swiper-slide"><img src="img/style.png" /></li>
-										<li class="swiper-slide"><img src="img/style.png" /></li>
-										<li class="swiper-slide"><img src="img/style.png" /></li>
-										<li class="swiper-slide"><img src="img/style.png" /></li>
-									</ul>
-									<div class="swiper-pagination"></div>
+							<div class="house-type-detail-info">
+								<div class="info-title">
+									<span>二期A1户型</span>
+									<span>在售</span>
 								</div>
-								<div class="house-type-detail-info">
-									<div class="info-title">
-										<span>二期A1户型</span>
-										<span>在售</span>
-									</div>
-									<div class="member">
-										<span class="infoLable">户型：</span>
-										<div class="specific">1房2厅1卫1厨</div>
-									</div>
-									<div class="member">
-										<span class="infoLable">建筑面积：</span>
-										<div class="specific">56.70㎡</div>
-									</div>
-									<div class="member">
-										<span class="infoLable">参考均价：</span>
-										<div class="specific">18000元/㎡</div>
-										<i class="Prompt"></i>
-									</div>
-									<div class="member">
-										<span class="infoLable">参考总价：</span>
-										<div class="specific">1020600.00</div>
-									</div>
-									<div class="formula">参考总价=参考均价*建筑面积</div>
+								<div class="member">
+									<span class="infoLable">户型：</span>
+									<div class="specific">1房2厅1卫1厨</div>
 								</div>
-								<div class="house-type-detail-discount">
-									<h3>
+								<div class="member">
+									<span class="infoLable">建筑面积：</span>
+									<div class="specific">56.70㎡</div>
+								</div>
+								<div class="member">
+									<span class="infoLable">参考均价：</span>
+									<div class="specific">18000元/㎡</div>
+									<i class="Prompt"></i>
+								</div>
+								<div class="member">
+									<span class="infoLable">参考总价：</span>
+									<div class="specific">1020600.00</div>
+								</div>
+								<div class="formula">参考总价=参考均价*建筑面积</div>
+							</div>
+							<div class="house-type-detail-discount">
+								<h3>
 									<span>优惠信息</span>
 									<span>查看详情</span>
 								</h3>
-									<div>
-										<p>项目目前洋房33、34号楼在售中，一梯六户，7层高，其主推户型面积约为63平、73平，购房全款可享9折优惠，按揭则享93折，折后均价约12000元/平，含1800元/平精装修。</p>
-									</div>
+								<div>
+									<p>项目目前洋房33、34号楼在售中，一梯六户，7层高，其主推户型面积约为63平、73平，购房全款可享9折优惠，按揭则享93折，折后均价约12000元/平，含1800元/平精装修。</p>
 								</div>
 							</div>
-						</section>
-						<div class="house-type-detail-Prompt">
-							<p>此价格为该楼盘均价</p>
-							<p>不作为具体户型和房号参考价格</p>
 						</div>
+					</section>
+					<div class="house-type-detail-Prompt">
+						<p>此价格为该楼盘均价</p>
+						<p>不作为具体户型和房号参考价格</p>
 					</div>
+				</div>
 				<!-------- 楼盘页面 楼盘详情 楼栋信息弹框 -------->
 				<div class="building-info-push">
 					<header class="building-info-pushheader">
@@ -1481,137 +1431,137 @@
 			</div>
 		</div>
 		<!-------- 历史优惠动态 -------->
-				<div class="historical-discount-push">
-					<header class="historical-discount-pushheader">
-						<div class="signal_bar"></div>
-						<div class="title_bar">
-							<h3 class="title_txt">历史优惠动态</h3>
-							<a class="return" href="javascript:;"></a>
-						</div>
-						<div class="pushheader-nav wrapper" id="demo">
-							<div class="scroller">
-								<ul class="nav-list clearfix">
-									<li><span>2017</span></li>
-									<li><span>2016</span></li>
-									<li><span>2015</span></li>
-									<li><span>2014</span></li>
-									<li><span>2013</span></li>
-									<li><span>2012</span></li>
-									<li><span>2011</span></li>
+		<div class="historical-discount-push">
+			<header class="historical-discount-pushheader">
+				<div class="signal_bar"></div>
+				<div class="title_bar">
+					<h3 class="title_txt">历史优惠动态</h3>
+					<a class="return" href="javascript:;"></a>
+				</div>
+				<div class="pushheader-nav wrapper" id="demo">
+					<div class="scroller">
+						<ul class="nav-list clearfix">
+							<li><span>2017</span></li>
+							<li><span>2016</span></li>
+							<li><span>2015</span></li>
+							<li><span>2014</span></li>
+							<li><span>2013</span></li>
+							<li><span>2012</span></li>
+							<li><span>2011</span></li>
+						</ul>
+					</div>
+				</div>
+			</header>
+			<section class="historical-discount-pushsection">
+				<ul class="historical-discount-ul swiper-wrapper">
+					<li class="historical-discount-li swiper-slide firstPage" style="background: lemonchiffon;">
+						<div class="pushsection-wrapper">
+							<div class="scrollPage">
+								<div class="historical-discount-timeAxis">
+									<span class="line"></span>
+								</div>
+								<ul class="historical-discount-content">
+									<li v-for="list in discount">
+										<p v-text="list.content"></p>
+										<div class="time-box"><span v-text="list.time"></span></div>
+									</li>
 								</ul>
 							</div>
 						</div>
-					</header>
-					<section class="historical-discount-pushsection">
-						<ul class="historical-discount-ul swiper-wrapper">
-							<li class="historical-discount-li swiper-slide firstPage" style="background: lemonchiffon;">
-								<div class="pushsection-wrapper">
-									<div class="scrollPage">
-										<div class="historical-discount-timeAxis">
-											<span class="line"></span>
-										</div>
-										<ul class="historical-discount-content">
-											<li v-for="list in discount">
-												<p v-text="list.content"></p>
-												<div class="time-box"><span v-text="list.time"></span></div>
-											</li>
-										</ul>
-									</div>
+					</li>
+					<li class="historical-discount-li swiper-slide secondPage" style="background: silver;">
+						<div class="pushsection-wrapper">
+							<div class="scrollPage">
+								<div class="historical-discount-timeAxis">
+									<span class="line"></span>
 								</div>
-							</li>
-							<li class="historical-discount-li swiper-slide secondPage" style="background: silver;">
-								<div class="pushsection-wrapper">
-									<div class="scrollPage">
-										<div class="historical-discount-timeAxis">
-											<span class="line"></span>
-										</div>
-										<ul class="historical-discount-content">
-											<li v-for="list in discount">
-												<p v-text="list.content"></p>
-												<div class="time-box"><span v-text="list.time"></span></div>
-											</li>
-										</ul>
-									</div>
+								<ul class="historical-discount-content">
+									<li v-for="list in discount">
+										<p v-text="list.content"></p>
+										<div class="time-box"><span v-text="list.time"></span></div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li class="historical-discount-li swiper-slide thirdPage" style="background: darkkhaki;">
+						<div class="pushsection-wrapper">
+							<div class="scrollPage">
+								<div class="historical-discount-timeAxis">
+									<span class="line"></span>
 								</div>
-							</li>
-							<li class="historical-discount-li swiper-slide thirdPage" style="background: darkkhaki;">
-								<div class="pushsection-wrapper">
-									<div class="scrollPage">
-										<div class="historical-discount-timeAxis">
-											<span class="line"></span>
-										</div>
-										<ul class="historical-discount-content">
-											<li v-for="list in discount">
-												<p v-text="list.content"></p>
-												<div class="time-box"><span v-text="list.time"></span></div>
-											</li>
-										</ul>
-									</div>
+								<ul class="historical-discount-content">
+									<li v-for="list in discount">
+										<p v-text="list.content"></p>
+										<div class="time-box"><span v-text="list.time"></span></div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li class="historical-discount-li swiper-slide fourthPage" style="background: aquamarine;">
+						<div class="pushsection-wrapper">
+							<div class="scrollPage">
+								<div class="historical-discount-timeAxis">
+									<span class="line"></span>
 								</div>
-							</li>
-							<li class="historical-discount-li swiper-slide fourthPage" style="background: aquamarine;">
-								<div class="pushsection-wrapper">
-									<div class="scrollPage">
-										<div class="historical-discount-timeAxis">
-											<span class="line"></span>
-										</div>
-										<ul class="historical-discount-content">
-											<li v-for="list in discount">
-												<p v-text="list.content"></p>
-												<div class="time-box"><span v-text="list.time"></span></div>
-											</li>
-										</ul>
-									</div>
+								<ul class="historical-discount-content">
+									<li v-for="list in discount">
+										<p v-text="list.content"></p>
+										<div class="time-box"><span v-text="list.time"></span></div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li class="historical-discount-li swiper-slide fifthPage" style="background: skyblue;">
+						<div class="pushsection-wrapper">
+							<div class="scrollPage">
+								<div class="historical-discount-timeAxis">
+									<span class="line"></span>
 								</div>
-							</li>
-							<li class="historical-discount-li swiper-slide fifthPage" style="background: skyblue;">
-								<div class="pushsection-wrapper">
-									<div class="scrollPage">
-										<div class="historical-discount-timeAxis">
-											<span class="line"></span>
-										</div>
-										<ul class="historical-discount-content">
-											<li v-for="list in discount">
-												<p v-text="list.content"></p>
-												<div class="time-box"><span v-text="list.time"></span></div>
-											</li>
-										</ul>
-									</div>
+								<ul class="historical-discount-content">
+									<li v-for="list in discount">
+										<p v-text="list.content"></p>
+										<div class="time-box"><span v-text="list.time"></span></div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li class="historical-discount-li swiper-slide sixthPage" style="background: aqua;">
+						<div class="pushsection-wrapper">
+							<div class="scrollPage">
+								<div class="historical-discount-timeAxis">
+									<span class="line"></span>
 								</div>
-							</li>
-							<li class="historical-discount-li swiper-slide sixthPage" style="background: aqua;">
-								<div class="pushsection-wrapper">
-									<div class="scrollPage">
-										<div class="historical-discount-timeAxis">
-											<span class="line"></span>
-										</div>
-										<ul class="historical-discount-content">
-											<li v-for="list in discount">
-												<p v-text="list.content"></p>
-												<div class="time-box"><span v-text="list.time"></span></div>
-											</li>
-										</ul>
-									</div>
+								<ul class="historical-discount-content">
+									<li v-for="list in discount">
+										<p v-text="list.content"></p>
+										<div class="time-box"><span v-text="list.time"></span></div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li class="historical-discount-li swiper-slide seventhPage" style="background: navajowhite;">
+						<div class="pushsection-wrapper">
+							<div class="scrollPage">
+								<div class="historical-discount-timeAxis">
+									<span class="line"></span>
 								</div>
-							</li>
-							<li class="historical-discount-li swiper-slide seventhPage" style="background: navajowhite;">
-								<div class="pushsection-wrapper">
-									<div class="scrollPage">
-										<div class="historical-discount-timeAxis">
-											<span class="line"></span>
-										</div>
-										<ul class="historical-discount-content">
-											<li v-for="list in discount">
-												<p v-text="list.content"></p>
-												<div class="time-box"><span v-text="list.time"></span></div>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</section>
-				</div>
+								<ul class="historical-discount-content">
+									<li v-for="list in discount">
+										<p v-text="list.content"></p>
+										<div class="time-box"><span v-text="list.time"></span></div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</section>
+		</div>
 		<script type="text/javascript">
 			$('.historical-discount-pushheader .wrapper').navbarscroll();
 			var typeDetail = new Swiper(".swiper-container", {
@@ -1689,187 +1639,6 @@
 							averag: '均价：',
 							price: '12000元/㎡',
 							tags: ['住宅', '养生社区', '海景房', '公寓']
-						}
-					],
-					municipalitydata: [{
-							city: '不限'
-						},
-						{
-							city: '海口'
-
-						},
-						{
-							city: '三亚'
-
-						},
-						{
-							city: '儋州'
-
-						},
-						{
-							city: '文昌'
-
-						},
-						{
-							city: '陵水'
-
-						},
-						{
-							city: '琼海'
-
-						}
-					],
-					districtdata1: [{
-							district: '不限',
-						},
-						{
-							district: '美兰区',
-						},
-						{
-							district: '秀英区',
-						},
-						{
-							district: '龙华区',
-						},
-						{
-							district: '琼山区',
-						},
-						{
-							district: '西海岸'
-						},
-						{
-							district: '西海岸'
-						},
-						{
-							district: '西海岸'
-						}
-					],
-					districtdata2: [{
-							district: '不限',
-						},
-						{
-							district: '美兰区',
-						},
-						{
-							district: '秀英区',
-						},
-						{
-							district: '龙华区',
-						},
-						{
-							district: '琼山区'
-						},
-						{
-							district: '西海岸'
-						}
-					],
-					districtdata3: [{
-							district: '不限',
-						},
-						{
-							district: '美兰区',
-						},
-						{
-							district: '秀英区',
-						},
-						{
-							district: '龙华区'
-						},
-						{
-							district: '西海岸'
-						},
-						{
-							district: '龙华区',
-						},
-						{
-							district: '琼山区',
-						},
-						{
-							district: '西海岸'
-						},
-						{
-							district: '琼山区',
-						},
-						{
-							district: '西海岸'
-						}
-					],
-					districtdata4: [{
-							district: '不限',
-						},
-						{
-							district: '美兰区'
-						},
-						{
-							district: '秀英区'
-						},
-						{
-							district: '西海岸'
-						},
-						{
-							district: '龙华区',
-						},
-						{
-							district: '琼山区',
-						},
-						{
-							district: '西海岸'
-						},
-						{
-							district: '琼山区',
-						},
-						{
-							district: '西海岸'
-						}
-					],
-					districtdata5: [{
-							district: '不限',
-						},
-						{
-							district: '美兰区',
-						},
-						{
-							district: '西海岸'
-						},
-						{
-							district: '龙华区',
-						},
-						{
-							district: '琼山区',
-						},
-						{
-							district: '西海岸'
-						},
-						{
-							district: '琼山区',
-						},
-						{
-							district: '西海岸'
-						}
-					],
-					districtdata6: [{
-							district: '不限',
-						},
-						{
-							district: '美兰区',
-						},
-						{
-							district: '秀英区',
-						},
-						{
-							district: '龙华区'
-						},
-						{
-							district: '西海岸'
-						},
-						{
-							district: '西海岸'
-						},
-						{
-							district: '琼山区',
-						},
-						{
-							district: '西海岸'
 						}
 					],
 					commention: [{
@@ -2015,8 +1784,7 @@
 					]
 				}
 			})
-			
-			
+
 			var myVuehistorical = new Vue({
 				el: ".historical-discount-push",
 				data: {
@@ -2049,6 +1817,286 @@
 			})
 		</script>
 	</body>
+	<script>
+		var dataJson = {
+			"option": [
+					{
+						"id": "1",
+						"name": "区域",
+						"child": [
+							{
+								"id": "11",
+								"name": "不限",
+								"child": []
+							},
+							{
+								"id": "12",
+								"name": "海口",
+								"child": [
+									{
+										"id": "12_1",
+										"name": "不限"
+									}, {
+										"id": "12_2",
+										"name": "美兰区"
+									}, {
+										"id": "12_3",
+										"name": "秀英区"
+									}, {
+										"id": "12_4",
+										"name": "龙华区"
+									}, {
+										"id": "12_5",
+										"name": "琼山区"
+									}, {
+										"id": "12_6",
+										"name": "琼山区"
+									}, {
+										"id": "12_7",
+										"name": "琼山区"
+									}, {
+										"id": "12_8",
+										"name": "西海岸"
+									}, {
+										"id": "12_9",
+										"name": "西海岸"
+									}
+								]
+							}, 
+							{
+								"id": "13",
+								"name": "三亚",
+								"child": [
+									{
+										"id": "13_1",
+										"name": "不限"
+									}, {
+										"id": "13_2",
+										"name": "天涯区"
+									}, {
+										"id": "13_3",
+										"name": "海棠区"
+									}, {
+										"id": "13_4",
+										"name": "崖州区"
+									}, {
+										"id": "13_5",
+										"name": "河西区"
+									}, {
+										"id": "13_5",
+										"name": "吉阳区"
+									}
+								]
+							}, 
+							{
+								"id": "14",
+								"name": "儋州",
+								"child": [
+									{
+										"id": "14_1",
+										"name": "不限"
+									}, {
+										"id": "14_2",
+										"name": "南丰镇"
+									}, {
+										"id": "14_3",
+										"name": "雅星镇"
+									}, {
+										"id": "14_4",
+										"name": "和庆镇"
+									}, {
+										"id": "14_5",
+										"name": "大成镇"
+									}, {
+										"id": "14_6",
+										"name": "新州镇"
+									}, {
+										"id": "14_7",
+										"name": "新州镇"
+									}, {
+										"id": "14_8",
+										"name": "光村镇"
+									}, {
+										"id": "14_9",
+										"name": "东成镇"
+									}, {
+										"id": "14_10",
+										"name": "中和镇"
+									}, {
+										"id": "14_11",
+										"name": "峨蔓镇"
+									}, {
+										"id": "14_12",
+										"name": "兰洋镇"
+									}, {
+										"id": "14_13",
+										"name": "王五镇"
+									}, {
+										"id": "14_14",
+										"name": "排浦镇"
+									}, {
+										"id": "14_14",
+										"name": "那大镇"
+									}
+								]
+							}, 
+							{
+								"id": "15",
+								"name": "文昌",
+								"child": [
+									{
+										"id": "15_1",
+										"name": "不限"
+									}, {
+										"id": "15_2",
+										"name": "文城镇"
+									}, {
+										"id": "15_3",
+										"name": "重兴镇"
+									}, {
+										"id": "15_4",
+										"name": "蓬莱镇"
+									}, {
+										"id": "15_5",
+										"name": "会文镇"
+									}, {
+										"id": "15_6",
+										"name": "东路镇"
+									}, {
+										"id": "15_7",
+										"name": "潭牛镇"
+									}, {
+										"id": "15_8",
+										"name": "东阁镇"
+									}, {
+										"id": "15_9",
+										"name": "文教镇"
+									}, {
+										"id": "15_10",
+										"name": "东郊镇"
+									}, {
+										"id": "15_11",
+										"name": "龙楼镇"
+									}, {
+										"id": "15_12",
+										"name": "翁田镇"
+									}, {
+										"id": "15_13",
+										"name": "抱罗镇"
+									}, {
+										"id": "15_14",
+										"name": "冯坡镇"
+									}, {
+										"id": "15_15",
+										"name": "锦山镇"
+									}, {
+										"id": "15_16",
+										"name": "铺前镇"
+									}, {
+										"id": "15_16",
+										"name": "昌洒镇"
+									}
+								]
+							}, 
+							{
+								"id": "16",
+								"name": "陵水",
+								"child": [
+									{
+										"id": "16_1",
+										"name": "不限"
+									}, {
+										"id": "16_2",
+										"name": "光坡镇"
+									}, {
+										"id": "16_3",
+										"name": "三才镇"
+									}, {
+										"id": "16_4",
+										"name": "英州镇"
+									}, {
+										"id": "16_5",
+										"name": "隆广镇"
+									}, {
+										"id": "16_6",
+										"name": "文罗镇"
+									}, {
+										"id": "16_7",
+										"name": "本号镇"
+									}, {
+										"id": "16_8",
+										"name": "新村镇"
+									}, {
+										"id": "16_9",
+										"name": "黎安镇"
+									}, {
+										"id": "16_10",
+										"name": "提蒙乡"
+									}, {
+										"id": "16_11",
+										"name": "群英乡"
+									}, {
+										"id": "16_11",
+										"name": "椰林镇"
+									}
+								]
+							}, 
+							{
+								"id": "17",
+								"name": "琼海",
+								"child": [
+									{
+										"id": "17_1",
+										"name": "不限"
+									}, {
+										"id": "17_2",
+										"name": "万泉镇"
+									}, {
+										"id": "17_3",
+										"name": "石壁镇"
+									}, {
+										"id": "17_4",
+										"name": "中原镇"
+									}, {
+										"id": "17_5",
+										"name": "博敖镇"
+									}, {
+										"id": "17_6",
+										"name": "阳江镇"
+									}, {
+										"id": "17_7",
+										"name": "龙江镇"
+									}, {
+										"id": "17_8",
+										"name": "潭门镇"
+									}, {
+										"id": "17_9",
+										"name": "塔洋镇"
+									}, {
+										"id": "17_10",
+										"name": "长坡镇"
+									}, {
+										"id": "17_11",
+										"name": "大路镇"
+									}, {
+										"id": "17_12",
+										"name": "会山镇"
+									}, {
+										"id": "17_12",
+										"name": "嘉积镇"
+									}
+								]
+							}
+						]
+					},
+					{
+						"id": "2",
+						"name": "附近",
+						"child": []
+					}
+				]
+		}
+		
+	</script>
 	<script type="text/javascript" src="js/list-details.js"></script>
-
 </html>
