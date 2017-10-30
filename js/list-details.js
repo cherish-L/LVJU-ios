@@ -10,29 +10,33 @@ $(function() {
 		},100)
 	})
 	
+	var moves;
 	$('.picture-detail-pushsection').on("touchstart",function(e){
 		startX = e.touches[0].pageX;
 		startY = e.touches[0].pageY;
+		moves = false
 		
 		console.log(startX,startY)
 		
 	}).on("touchmove",function(e){
 		moveX = e.touches[0].pageX-startX;
 		moveY = e.touches[0].pageY-startY;
+		moves = true;
 		
 		console.log(moveX,moveY)
 		
 	}).on("touchend",function(){
-		if(moveX<5 && moveX>-5){
+		
+		if(moveX<5 && moveX>-5 && moveY<5 && moveY>-5){
 			setTimeout(function(){
 				$('.picture-detail-push').fadeOut(100)
 			},100)
 		}
-//		else if(moveY<5 && moveY>-5){
-//			setTimeout(function(){
-//				$('.picture-detail-push').fadeOut(100)
-//			},100)
-//		}
+		else if(moves==false){
+			setTimeout(function(){
+				$('.picture-detail-push').fadeOut(100)
+			},100)
+		}
 	})
 	
 	
@@ -49,7 +53,6 @@ $(function() {
 	
 	
 	
-	alert("123456")
 
 	var pushheader_nav_ulh = $('.pushheader-nav-ul').height()//相册导航水平滚动wrapper的高度
 
