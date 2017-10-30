@@ -38,22 +38,12 @@ $(function() {
 			},100)
 		}
 	})
+	alert("123456789")
 	
 	
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 	var pushheader_nav_ulh = $('.pushheader-nav-ul').height()//相册导航水平滚动wrapper的高度
 
 	var pic_wrapS = new IScroll('.property-album-pushsection .picture-wrapper', { // iscroll 设置 picture-wrapper 的上下边界回弹的滚动
