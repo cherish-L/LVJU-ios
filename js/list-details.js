@@ -1,6 +1,7 @@
 $(function() {
 
 //楼盘页面--楼盘详情 相册弹框
+	var startX,startY,moveX,moveY
 	$('.picture-detail-push').fadeOut(0)
 	//相册弹框---相册详图弹框
 	$('.property-album-pushsection .album-pic-items li').on("tap",function(){
@@ -9,11 +10,45 @@ $(function() {
 		},100)
 	})
 	
-	$('.picture-detail-pushsection').on("tap",function(){
-		setTimeout(function(){
-			$('.picture-detail-push').fadeOut(100)
-		},100)
+	$('.picture-detail-pushsection').on("touchstart",function(e){
+		startX = e.touches[0].pageX;
+		startY = e.touches[0].pageY;
+		
+		console.log(startX,startY)
+		
+	}).on("touchmove",function(e){
+		moveX = e.touches[0].pageX-startX;
+		moveY = e.touches[0].pageY-startY;
+		
+		console.log(moveX,moveY)
+		
+	}).on("touchend",function(){
+		if(moveX<5 && moveX>-5){
+			setTimeout(function(){
+				$('.picture-detail-push').fadeOut(100)
+			},100)
+		}
+//		else if(moveY<5 && moveY>-5){
+//			setTimeout(function(){
+//				$('.picture-detail-push').fadeOut(100)
+//			},100)
+//		}
 	})
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	alert("123456")
 
 	var pushheader_nav_ulh = $('.pushheader-nav-ul').height()//相册导航水平滚动wrapper的高度
