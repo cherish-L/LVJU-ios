@@ -2749,7 +2749,7 @@ li {
   overflow: hidden;
   border-radius: 0.08rem;
   margin: 0 0 1.2rem;
-  box-shadow: 0.08rem 0.08rem 0.12rem 0 #999999;
+  box-shadow: 0.04rem 0.04rem 0.12rem 0 #999999;
   display: flex;
   justify-content: center;
   align-items: center;
