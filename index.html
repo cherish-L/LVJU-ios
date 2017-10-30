@@ -15,6 +15,7 @@
 		<script src="plugins/swiper-3.4.2.min.js"></script>
 		<script type="text/javascript" src="vue/vue.js"></script>
 		<script type="text/javascript" src="plugins/navbarscroll.js"></script>
+		<script type="text/javascript" src="plugins/navbarscrollAlbum.js"></script>
 		<script>
 			//适配
 			document.documentElement.style.fontSize = innerWidth / 15 + "px";
@@ -226,9 +227,7 @@
 					</ul>
 				</div>
 			</header>
-			<div class="demand-condition">
-				<ul class="demand-condition-wrapper"></ul>
-			</div>
+			<div class="demand-condition"><ul class="demand-condition-wrapper"></ul></div>
 			<section class="list-details-section">
 				<div class="section-wrapper">
 					<div class="section-listhouse">
@@ -568,239 +567,644 @@
 								<span class="album-video">实景视频</span>
 							</div>
 						</div>
-						<div class="pushheader-nav">
-							<ul class="pushheader-nav-ul"> 
-								<li class="pushheader-nav-li selected">
-									<span>全部80</span>
-								</li>
-								<li class="pushheader-nav-li">
-									<span>实景图42</span>
-								</li>
-								<li class="pushheader-nav-li">
-									<span>效果图23</span>
-								</li>
-								<li class="pushheader-nav-li">
-									<span>样板图8</span>
-								</li>
-								<li class="pushheader-nav-li">
-									<span>配套图7</span>
-								</li>
-							</ul>
+						<div class="pushheader-nav" id="retr">
+							<div class="retr_scroller">
+								<ul class="pushheader-nav-ul">
+									<li class="pushheader-nav-li">
+										<a href="javascript:void(0)">全部49</a>
+									</li>
+									<li class="pushheader-nav-li">
+										<a href="javascript:void(0)">实景图5</a>
+									</li>
+									<li class="pushheader-nav-li">
+										<a href="javascript:void(0)">效果图6</a>
+									</li>
+									<li class="pushheader-nav-li">
+										<a href="javascript:void(0)">样板图7</a>
+									</li>
+									<li class="pushheader-nav-li">
+										<a href="javascript:void(0)">配套图8</a>
+									</li>
+									<li class="pushheader-nav-li">
+										<a href="javascript:void(0)">外景图9</a>
+									</li>
+									<li class="pushheader-nav-li">
+										<a href="javascript:void(0)">内景图4</a>
+									</li>
+									<li class="pushheader-nav-li">
+										<a href="javascript:void(0)">大厅图10</a>
+									</li>
+									<li class="pushheader-nav-li">
+										<a href="javascript:void(0)">test7</a>
+									</li>
+								</ul>
+							</div>
 						</div>
 					</header>
 					<section class="property-album-pushsection">
 						<div class="picture-wrapper">
-							<div class="picture-wrapper-nav">
-								<ul class="picture-wrapper-ul">
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-								</ul>
-							</div>
-							<div class="picture-wrapper-nav">
-								<ul class="picture-wrapper-ul">
-									<li><img src="img/massage-subject3.png"/></li>
-									<li><img src="img/massage-subject3.png"/></li>
-									<li><img src="img/massage-subject3.png"/></li>
-									<li><img src="img/massage-subject3.png"/></li>
-									<li><img src="img/massage-subject3.png"/></li>
-									<li><img src="img/massage-subject3.png"/></li>
-									<li><img src="img/massage-subject3.png"/></li>
-									<li><img src="img/massage-subject3.png"/></li>
-									<li><img src="img/massage-subject3.png"/></li>
-									<li><img src="img/massage-subject3.png"/></li>
-									<li><img src="img/massage-subject3.png"/></li>
-									<li><img src="img/massage-subject3.png"/></li>
-									<li><img src="img/massage-subject3.png"/></li>
-									<li><img src="img/massage-subject3.png"/></li>
-									<li><img src="img/massage-subject3.png"/></li>
-									<li><img src="img/massage-subject3.png"/></li>
-									<li><img src="img/massage-subject3.png"/></li>
-									<li><img src="img/massage-subject3.png"/></li>
-									<li><img src="img/massage-subject3.png"/></li>
-									<li><img src="img/massage-subject3.png"/></li>
-									<li><img src="img/massage-subject3.png"/></li>
-									<li><img src="img/massage-subject3.png"/></li>
-									<li><img src="img/massage-subject3.png"/></li>
-									<li><img src="img/massage-subject3.png"/></li>
-									<li><img src="img/massage-subject3.png"/></li>
-								</ul>
-							</div>
-							<div class="picture-wrapper-nav">
-								<ul class="picture-wrapper-ul">
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-									<li><img src="img/drawing.png"/></li>
-								</ul>
-							</div>
-							<div class="picture-wrapper-nav">
-								<ul class="picture-wrapper-ul">
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-									<li><img src="img/style.png"/></li>
-								</ul>
-							</div>
-							<div class="picture-wrapper-nav">
-								<ul class="picture-wrapper-ul">
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-									<li><img src="img/timg.png"/></li>
-								</ul>
+							<div class="picture-wrapper-scroll">
+								<div class="picture-wrapper-whole">
+									<div class="album-pic-items">
+										<h3 class="picture-wrapper-title">实景图</h3>
+										<ul class="picture-wrapper-ul">
+											<li><img src="img/album1.png" /></li>
+											<li><img src="img/album1.png" /></li>
+											<li><img src="img/album1.png" /></li>
+											<li><img src="img/album1.png" /></li>
+											<li><img src="img/album1.png" /></li>
+										</ul>
+									</div>
+									<div class="album-pic-items">
+										<h3 class="picture-wrapper-title">效果图</h3>
+										<ul class="picture-wrapper-ul">
+											<li><img src="img/album2.png" /></li>
+											<li><img src="img/album2.png" /></li>
+											<li><img src="img/album2.png" /></li>
+											<li><img src="img/album2.png" /></li>
+											<li><img src="img/album2.png" /></li>
+											<li><img src="img/album2.png" /></li>
+										</ul>
+									</div>
+									<div class="album-pic-items">
+										<h3 class="picture-wrapper-title">样板图</h3>
+										<ul class="picture-wrapper-ul">
+											<li><img src="img/album3.png" /></li>
+											<li><img src="img/album3.png" /></li>
+											<li><img src="img/album3.png" /></li>
+											<li><img src="img/album3.png" /></li>
+											<li><img src="img/album3.png" /></li>
+											<li><img src="img/album3.png" /></li>
+											<li><img src="img/album3.png" /></li>
+										</ul>
+									</div>
+									<div class="album-pic-items">
+										<h3 class="picture-wrapper-title">配套图</h3>
+										<ul class="picture-wrapper-ul">
+											<li><img src="img/album1.png" /></li>
+											<li><img src="img/album1.png" /></li>
+											<li><img src="img/album1.png" /></li>
+											<li><img src="img/album1.png" /></li>
+											<li><img src="img/album1.png" /></li>
+											<li><img src="img/album1.png" /></li>
+											<li><img src="img/album1.png" /></li>
+											<li><img src="img/album1.png" /></li>
+										</ul>
+									</div>
+									<div class="album-pic-items">
+										<h3 class="picture-wrapper-title">外景图</h3>
+										<ul class="picture-wrapper-ul">
+											<li><img src="img/timg.png" /></li>
+											<li><img src="img/timg.png" /></li>
+											<li><img src="img/timg.png" /></li>
+											<li><img src="img/timg.png" /></li>
+											<li><img src="img/timg.png" /></li>
+											<li><img src="img/timg.png" /></li>
+											<li><img src="img/timg.png" /></li>
+											<li><img src="img/timg.png" /></li>
+											<li><img src="img/timg.png" /></li>
+										</ul>
+									</div>
+									<div class="album-pic-items">
+										<h3 class="picture-wrapper-title">内景图</h3>
+										<ul class="picture-wrapper-ul">
+											<li><img src="img/timg.png" /></li>
+											<li><img src="img/timg.png" /></li>
+											<li><img src="img/timg.png" /></li>
+											<li><img src="img/timg.png" /></li>
+										</ul>
+									</div>
+									<div class="album-pic-items">
+										<h3 class="picture-wrapper-title">大厅图</h3>
+										<ul class="picture-wrapper-ul">
+											<li><img src="img/timg.png" /></li>
+											<li><img src="img/timg.png" /></li>
+											<li><img src="img/timg.png" /></li>
+											<li><img src="img/timg.png" /></li>
+											<li><img src="img/timg.png" /></li>
+											<li><img src="img/timg.png" /></li>
+											<li><img src="img/timg.png" /></li>
+											<li><img src="img/timg.png" /></li>
+											<li><img src="img/timg.png" /></li>
+											<li><img src="img/timg.png" /></li>
+										</ul>
+									</div>
+									<div class="album-pic-items">
+										<h3 class="picture-wrapper-title">test图</h3>
+										<ul class="picture-wrapper-ul">
+											<li><img src="img/timg.png" /></li>
+											<li><img src="img/timg.png" /></li>
+											<li><img src="img/timg.png" /></li>
+											<li><img src="img/timg.png" /></li>
+											<li><img src="img/timg.png" /></li>
+											<li><img src="img/timg.png" /></li>
+											<li><img src="img/timg.png" /></li>
+										</ul>
+									</div>
+								</div>
 							</div>
 						</div>
 						<div class="video-wrapper">
-							
+							<div class="video-wrapper-scroll">
+								<ul class="video-wrapper-whole">
+									<li>
+										<img src="img/banner_lunbo.png"/>
+										<div class="gradient">
+											<div class="gradient—txt">
+												<span>酒店式公寓F、H户型</span>
+											</div>
+										</div>
+										<i><img src="img/btn_play.png"/></i>
+									</li>
+									<li>
+										<img src="img/banner_lunbo.png"/>
+										<div class="gradient">
+											<div class="gradient—txt">
+												<span>酒店式公寓F、H户型</span>
+												<span>39.2-40.4㎡厨房与餐厅</span>
+											</div>
+										</div>
+										<i><img src="img/btn_play.png"/></i>
+									</li>
+									<li>
+										<img src="img/banner_lunbo.png"/>
+										<div class="gradient">
+											<div class="gradient—txt">
+												<span>酒店式公寓F、H户型</span>
+												<span>39.2-40.4㎡厨房与餐厅</span>
+											</div>
+										</div>
+										<i><img src="img/btn_play.png"/></i>
+									</li>
+									<li>
+										<img src="img/banner_lunbo.png"/>
+										<div class="gradient">
+											<div class="gradient—txt">
+												<span>酒店式公寓F、H户型</span>
+												<span>39.2-40.4㎡厨房与餐厅</span>
+											</div>
+										</div>
+										<i><img src="img/btn_play.png"/></i>
+									</li>
+									<li>
+										<img src="img/banner_lunbo.png"/>
+										<div class="gradient">
+											<div class="gradient—txt">
+												<span>酒店式公寓F、H户型</span>
+												<span>39.2-40.4㎡厨房与餐厅</span>
+											</div>
+										</div>
+										<i><img src="img/btn_play.png"/></i>
+									</li>
+								</ul>
+							</div>
 						</div>
 					</section>
+					<!-------- 楼盘页面 楼盘详情 相册弹框 图片详图-------->
+					<div class="picture-detail-push">
+						<header class="picture-detail-pushheader">
+							<div class="signal_bar"></div>
+							<div class="title_bar">
+								<i class="pre_btn"></i>
+								<ul class="picture-detail-title">
+									<li>
+										<span class="picTitle_txt">实景图</span>
+										<span class="picTitle_num"></span>
+									</li>
+									<li>
+										<span class="picTitle_txt">效果图</span>
+										<span class="picTitle_num"></span>
+									</li>
+									<li>
+										<span class="picTitle_txt">样板图</span>
+										<span class="picTitle_num"></span>
+									</li>
+									<li>
+										<span class="picTitle_txt">配套图</span>
+										<span class="picTitle_num"></span>
+									</li>
+									<li>
+										<span class="picTitle_txt">外景图</span>
+										<span class="picTitle_num"></span>
+									</li>
+									<li>
+										<span class="picTitle_txt">内景图</span>
+										<span class="picTitle_num"></span>
+									</li>
+									<li>
+										<span class="picTitle_txt">大厅图</span>
+										<span class="picTitle_num"></span>
+									</li>
+									<li>
+										<span class="picTitle_txt">test图</span>
+										<span class="picTitle_num"></span>
+									</li>
+								</ul>
+								<i class="next_btn"></i>
+							</div>
+						</header>
+						<section class="picture-detail-pushsection">
+							<div class="detail-swiper-wrapper">
+								<ul class="detail-swiper-ul swiper-wrapper">
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/banner_lunbo.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/album3.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/map.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/massage-subject3.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/style.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/timg.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="plugins/iscroll-master/demos/carousel/gaugin.jpg"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/banner_lunbo.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/album3.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/map.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/massage-subject3.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/style.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/timg.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="plugins/iscroll-master/demos/carousel/gaugin.jpg"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/banner_lunbo.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/album3.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/map.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/massage-subject3.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/style.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/timg.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="plugins/iscroll-master/demos/carousel/gaugin.jpg"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/banner_lunbo.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/album3.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/map.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/massage-subject3.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/style.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/timg.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="plugins/iscroll-master/demos/carousel/gaugin.jpg"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/timg.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="plugins/iscroll-master/demos/carousel/gaugin.jpg"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/timg.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="plugins/iscroll-master/demos/carousel/gaugin.jpg"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/timg.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="plugins/iscroll-master/demos/carousel/gaugin.jpg"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/timg.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="plugins/iscroll-master/demos/carousel/gaugin.jpg"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/timg.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="plugins/iscroll-master/demos/carousel/gaugin.jpg"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/timg.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="plugins/iscroll-master/demos/carousel/gaugin.jpg"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/timg.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="plugins/iscroll-master/demos/carousel/gaugin.jpg"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/timg.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="plugins/iscroll-master/demos/carousel/gaugin.jpg"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/timg.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="plugins/iscroll-master/demos/carousel/gaugin.jpg"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/timg.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="plugins/iscroll-master/demos/carousel/gaugin.jpg"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/timg.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/timg.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/timg.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/timg.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/timg.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/timg.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/timg.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/timg.png"/></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</section>
+					</div>
+					<!--<div class="video-detail-push">
+						
+					</div>-->
 				</div>
 				<!-------- 楼盘页面 楼盘详情 楼盘位置弹框 -------->
 				<div class="house-position-push">
@@ -1808,11 +2212,22 @@
 		</div>
 		<script type="text/javascript">
 			$('.historical-discount-pushheader .wrapper').navbarscroll();
+			
+			$('#retr').navbarscrollAlbum();
+			
 			var typeDetail = new Swiper(".swiper-container", {
 				pagination: '.swiper-pagination',
 				paginationType: 'fraction'
 			})
+			
 			var building = new Swiper(".building-info-switchBox", {})
+			
+			//相册左右滑切换
+			var picture_d = new Swiper('.detail-swiper-wrapper', {
+				preventClicksPropagation: true
+			})
+			
+			
 		</script>
 		<script type="text/javascript">
 			var myVueContainer = new Vue({
@@ -2063,284 +2478,270 @@
 	</body>
 	<script>
 		var dataJson = {
-			"option": [
-					{
-						"id": "1",
-						"name": "区域",
-						"child": [
-							{
-								"id": "11",
-								"name": "不限",
-								"child": []
-							},
-							{
-								"id": "12",
-								"name": "海口",
-								"child": [
-									{
-										"id": "12_1",
-										"name": "不限"
-									}, {
-										"id": "12_2",
-										"name": "美兰区"
-									}, {
-										"id": "12_3",
-										"name": "秀英区"
-									}, {
-										"id": "12_4",
-										"name": "龙华区"
-									}, {
-										"id": "12_5",
-										"name": "琼山区"
-									}, {
-										"id": "12_6",
-										"name": "琼山区"
-									}, {
-										"id": "12_7",
-										"name": "琼山区"
-									}, {
-										"id": "12_8",
-										"name": "西海岸"
-									}, {
-										"id": "12_9",
-										"name": "西海岸"
-									}
-								]
-							}, 
-							{
-								"id": "13",
-								"name": "三亚",
-								"child": [
-									{
-										"id": "13_1",
-										"name": "不限"
-									}, {
-										"id": "13_2",
-										"name": "天涯区"
-									}, {
-										"id": "13_3",
-										"name": "海棠区"
-									}, {
-										"id": "13_4",
-										"name": "崖州区"
-									}, {
-										"id": "13_5",
-										"name": "河西区"
-									}, {
-										"id": "13_5",
-										"name": "吉阳区"
-									}
-								]
-							}, 
-							{
-								"id": "14",
-								"name": "儋州",
-								"child": [
-									{
-										"id": "14_1",
-										"name": "不限"
-									}, {
-										"id": "14_2",
-										"name": "南丰镇"
-									}, {
-										"id": "14_3",
-										"name": "雅星镇"
-									}, {
-										"id": "14_4",
-										"name": "和庆镇"
-									}, {
-										"id": "14_5",
-										"name": "大成镇"
-									}, {
-										"id": "14_6",
-										"name": "新州镇"
-									}, {
-										"id": "14_7",
-										"name": "新州镇"
-									}, {
-										"id": "14_8",
-										"name": "光村镇"
-									}, {
-										"id": "14_9",
-										"name": "东成镇"
-									}, {
-										"id": "14_10",
-										"name": "中和镇"
-									}, {
-										"id": "14_11",
-										"name": "峨蔓镇"
-									}, {
-										"id": "14_12",
-										"name": "兰洋镇"
-									}, {
-										"id": "14_13",
-										"name": "王五镇"
-									}, {
-										"id": "14_14",
-										"name": "排浦镇"
-									}, {
-										"id": "14_14",
-										"name": "那大镇"
-									}
-								]
-							}, 
-							{
-								"id": "15",
-								"name": "文昌",
-								"child": [
-									{
-										"id": "15_1",
-										"name": "不限"
-									}, {
-										"id": "15_2",
-										"name": "文城镇"
-									}, {
-										"id": "15_3",
-										"name": "重兴镇"
-									}, {
-										"id": "15_4",
-										"name": "蓬莱镇"
-									}, {
-										"id": "15_5",
-										"name": "会文镇"
-									}, {
-										"id": "15_6",
-										"name": "东路镇"
-									}, {
-										"id": "15_7",
-										"name": "潭牛镇"
-									}, {
-										"id": "15_8",
-										"name": "东阁镇"
-									}, {
-										"id": "15_9",
-										"name": "文教镇"
-									}, {
-										"id": "15_10",
-										"name": "东郊镇"
-									}, {
-										"id": "15_11",
-										"name": "龙楼镇"
-									}, {
-										"id": "15_12",
-										"name": "翁田镇"
-									}, {
-										"id": "15_13",
-										"name": "抱罗镇"
-									}, {
-										"id": "15_14",
-										"name": "冯坡镇"
-									}, {
-										"id": "15_15",
-										"name": "锦山镇"
-									}, {
-										"id": "15_16",
-										"name": "铺前镇"
-									}, {
-										"id": "15_16",
-										"name": "昌洒镇"
-									}
-								]
-							}, 
-							{
-								"id": "16",
-								"name": "陵水",
-								"child": [
-									{
-										"id": "16_1",
-										"name": "不限"
-									}, {
-										"id": "16_2",
-										"name": "光坡镇"
-									}, {
-										"id": "16_3",
-										"name": "三才镇"
-									}, {
-										"id": "16_4",
-										"name": "英州镇"
-									}, {
-										"id": "16_5",
-										"name": "隆广镇"
-									}, {
-										"id": "16_6",
-										"name": "文罗镇"
-									}, {
-										"id": "16_7",
-										"name": "本号镇"
-									}, {
-										"id": "16_8",
-										"name": "新村镇"
-									}, {
-										"id": "16_9",
-										"name": "黎安镇"
-									}, {
-										"id": "16_10",
-										"name": "提蒙乡"
-									}, {
-										"id": "16_11",
-										"name": "群英乡"
-									}, {
-										"id": "16_11",
-										"name": "椰林镇"
-									}
-								]
-							}, 
-							{
-								"id": "17",
-								"name": "琼海",
-								"child": [
-									{
-										"id": "17_1",
-										"name": "不限"
-									}, {
-										"id": "17_2",
-										"name": "万泉镇"
-									}, {
-										"id": "17_3",
-										"name": "石壁镇"
-									}, {
-										"id": "17_4",
-										"name": "中原镇"
-									}, {
-										"id": "17_5",
-										"name": "博敖镇"
-									}, {
-										"id": "17_6",
-										"name": "阳江镇"
-									}, {
-										"id": "17_7",
-										"name": "龙江镇"
-									}, {
-										"id": "17_8",
-										"name": "潭门镇"
-									}, {
-										"id": "17_9",
-										"name": "塔洋镇"
-									}, {
-										"id": "17_10",
-										"name": "长坡镇"
-									}, {
-										"id": "17_11",
-										"name": "大路镇"
-									}, {
-										"id": "17_12",
-										"name": "会山镇"
-									}, {
-										"id": "17_12",
-										"name": "嘉积镇"
-									}
-								]
-							}
-						]
-					},
-					{
-						"id": "2",
-						"name": "附近",
-						"child": []
-					}
-				]
+			"option": [{
+					"id": "1",
+					"name": "区域",
+					"child": [{
+							"id": "11",
+							"name": "不限",
+							"child": []
+						},
+						{
+							"id": "12",
+							"name": "海口",
+							"child": [{
+								"id": "12_1",
+								"name": "不限"
+							}, {
+								"id": "12_2",
+								"name": "美兰区"
+							}, {
+								"id": "12_3",
+								"name": "秀英区"
+							}, {
+								"id": "12_4",
+								"name": "龙华区"
+							}, {
+								"id": "12_5",
+								"name": "琼山区"
+							}, {
+								"id": "12_6",
+								"name": "琼山区"
+							}, {
+								"id": "12_7",
+								"name": "琼山区"
+							}, {
+								"id": "12_8",
+								"name": "西海岸"
+							}, {
+								"id": "12_9",
+								"name": "西海岸"
+							}]
+						},
+						{
+							"id": "13",
+							"name": "三亚",
+							"child": [{
+								"id": "13_1",
+								"name": "不限"
+							}, {
+								"id": "13_2",
+								"name": "天涯区"
+							}, {
+								"id": "13_3",
+								"name": "海棠区"
+							}, {
+								"id": "13_4",
+								"name": "崖州区"
+							}, {
+								"id": "13_5",
+								"name": "河西区"
+							}, {
+								"id": "13_5",
+								"name": "吉阳区"
+							}]
+						},
+						{
+							"id": "14",
+							"name": "儋州",
+							"child": [{
+								"id": "14_1",
+								"name": "不限"
+							}, {
+								"id": "14_2",
+								"name": "南丰镇"
+							}, {
+								"id": "14_3",
+								"name": "雅星镇"
+							}, {
+								"id": "14_4",
+								"name": "和庆镇"
+							}, {
+								"id": "14_5",
+								"name": "大成镇"
+							}, {
+								"id": "14_6",
+								"name": "新州镇"
+							}, {
+								"id": "14_7",
+								"name": "新州镇"
+							}, {
+								"id": "14_8",
+								"name": "光村镇"
+							}, {
+								"id": "14_9",
+								"name": "东成镇"
+							}, {
+								"id": "14_10",
+								"name": "中和镇"
+							}, {
+								"id": "14_11",
+								"name": "峨蔓镇"
+							}, {
+								"id": "14_12",
+								"name": "兰洋镇"
+							}, {
+								"id": "14_13",
+								"name": "王五镇"
+							}, {
+								"id": "14_14",
+								"name": "排浦镇"
+							}, {
+								"id": "14_14",
+								"name": "那大镇"
+							}]
+						},
+						{
+							"id": "15",
+							"name": "文昌",
+							"child": [{
+								"id": "15_1",
+								"name": "不限"
+							}, {
+								"id": "15_2",
+								"name": "文城镇"
+							}, {
+								"id": "15_3",
+								"name": "重兴镇"
+							}, {
+								"id": "15_4",
+								"name": "蓬莱镇"
+							}, {
+								"id": "15_5",
+								"name": "会文镇"
+							}, {
+								"id": "15_6",
+								"name": "东路镇"
+							}, {
+								"id": "15_7",
+								"name": "潭牛镇"
+							}, {
+								"id": "15_8",
+								"name": "东阁镇"
+							}, {
+								"id": "15_9",
+								"name": "文教镇"
+							}, {
+								"id": "15_10",
+								"name": "东郊镇"
+							}, {
+								"id": "15_11",
+								"name": "龙楼镇"
+							}, {
+								"id": "15_12",
+								"name": "翁田镇"
+							}, {
+								"id": "15_13",
+								"name": "抱罗镇"
+							}, {
+								"id": "15_14",
+								"name": "冯坡镇"
+							}, {
+								"id": "15_15",
+								"name": "锦山镇"
+							}, {
+								"id": "15_16",
+								"name": "铺前镇"
+							}, {
+								"id": "15_16",
+								"name": "昌洒镇"
+							}]
+						},
+						{
+							"id": "16",
+							"name": "陵水",
+							"child": [{
+								"id": "16_1",
+								"name": "不限"
+							}, {
+								"id": "16_2",
+								"name": "光坡镇"
+							}, {
+								"id": "16_3",
+								"name": "三才镇"
+							}, {
+								"id": "16_4",
+								"name": "英州镇"
+							}, {
+								"id": "16_5",
+								"name": "隆广镇"
+							}, {
+								"id": "16_6",
+								"name": "文罗镇"
+							}, {
+								"id": "16_7",
+								"name": "本号镇"
+							}, {
+								"id": "16_8",
+								"name": "新村镇"
+							}, {
+								"id": "16_9",
+								"name": "黎安镇"
+							}, {
+								"id": "16_10",
+								"name": "提蒙乡"
+							}, {
+								"id": "16_11",
+								"name": "群英乡"
+							}, {
+								"id": "16_11",
+								"name": "椰林镇"
+							}]
+						},
+						{
+							"id": "17",
+							"name": "琼海",
+							"child": [{
+								"id": "17_1",
+								"name": "不限"
+							}, {
+								"id": "17_2",
+								"name": "万泉镇"
+							}, {
+								"id": "17_3",
+								"name": "石壁镇"
+							}, {
+								"id": "17_4",
+								"name": "中原镇"
+							}, {
+								"id": "17_5",
+								"name": "博敖镇"
+							}, {
+								"id": "17_6",
+								"name": "阳江镇"
+							}, {
+								"id": "17_7",
+								"name": "龙江镇"
+							}, {
+								"id": "17_8",
+								"name": "潭门镇"
+							}, {
+								"id": "17_9",
+								"name": "塔洋镇"
+							}, {
+								"id": "17_10",
+								"name": "长坡镇"
+							}, {
+								"id": "17_11",
+								"name": "大路镇"
+							}, {
+								"id": "17_12",
+								"name": "会山镇"
+							}, {
+								"id": "17_12",
+								"name": "嘉积镇"
+							}]
+						}
+					]
+				},
+				{
+					"id": "2",
+					"name": "附近",
+					"child": []
+				}
+			]
 		}
-		
 	</script>
 	<script type="text/javascript" src="js/list-details.js"></script>
+
 </html>

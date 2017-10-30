@@ -1,5 +1,225 @@
 $(function() {
 
+//楼盘页面--楼盘详情 相册弹框
+	$('.picture-detail-push').fadeOut(0)
+	//相册弹框---相册详图弹框
+	$('.property-album-pushsection .album-pic-items li').on("click",function(){
+		setTimeout(function(){
+			$('.picture-detail-push').fadeIn(100)
+		},100)
+	})
+	
+	$('.picture-detail-pushsection').on("click",function(){
+		setTimeout(function(){
+			$('.picture-detail-push').fadeOut(100)
+		},100)
+	})
+	
+
+	var pushheader_nav_ulh = $('.pushheader-nav-ul').height()//相册导航水平滚动wrapper的高度
+
+	var pic_wrapS = new IScroll('.property-album-pushsection .picture-wrapper', { // iscroll 设置 picture-wrapper 的上下边界回弹的滚动
+		scrollbars: true,
+		fadeScrollbars: true,
+		shrinkScrollbars: 'clip',
+		
+	})
+
+	var vid_wrapS = new IScroll('.property-album-pushsection .video-wrapper', { // iscroll 设置 video-wrapper 的上下边界回弹的滚动
+		scrollbars: true,
+		fadeScrollbars: true,
+		shrinkScrollbars: 'clip'
+	})
+	
+	$(".property-album-pushsection").bind("touchstart", function() { pic_wrapS.refresh(); })//触屏的开始就刷新 iscroll 的滚动区域
+	$(".property-album-pushsection").bind("touchstart", function() { vid_wrapS.refresh(); })//触屏的开始就刷新 iscroll 的滚动区域
+	
+	//实景视频的内容刷新
+	var whole_video_h, album_video_h
+	$('.property-album-pushheader .album-btn').on("tap", "span", function() {
+		var whole_video_h = $('.video-wrapper-whole').height()
+		var album_video_h = $('.property-album-pushsection .video-wrapper').height()
+		
+		if(whole_video_h <= album_video_h) {
+			$('.video-wrapper-scroll').height(album_video_h + 1)
+		} else if(whole_video_h > album_video_h) {
+			$('.video-wrapper-scroll').height(whole_video_h)
+		}
+		vid_wrapS.refresh()
+		
+	})
+	
+	//iscroll内容不超过一屏是实现回弹的（用户体验）
+	var whole_h = $('.picture-wrapper-whole').height()
+	var album_h = $('.property-album-pushsection .picture-wrapper').height()
+	if(whole_h <= album_h) {
+		$('.picture-wrapper-scroll').height(album_h + 1)
+	} else if(whole_h > album_h) {
+		$('.picture-wrapper-scroll').height(whole_h)
+	}
+	
+	//点击切换图片类型的导航 与 图片内容的 picture-wrapper-title 的隐藏和出现
+	$(".property-album-push .pushheader-nav .pushheader-nav-li").on("tap", function() {
+		//切换图片类型
+		var this_index = $(this).index()
+		if(this_index == 0) {
+			$('.property-album-pushsection .picture-wrapper-whole .album-pic-items').show()
+			$('.property-album-pushsection .picture-wrapper-whole .album-pic-items .picture-wrapper-title').show()
+		} else if(this_index !== 0) {
+			$('.property-album-pushsection .picture-wrapper-whole .album-pic-items').eq(this_index - 1).show().siblings().hide()
+			$('.property-album-pushsection .picture-wrapper-whole .album-pic-items .picture-wrapper-title').hide()
+		}
+
+		//滑块中的内容小于盒子高度是自动填充滑块高度，使其有回弹效果
+		var whole_h = $('.picture-wrapper-whole').height()
+		var album_h = $('.property-album-pushsection .picture-wrapper').height()
+		if(whole_h <= album_h) {
+			$('.picture-wrapper-scroll').height(album_h + 1)
+		} else if(whole_h > album_h) {
+			$('.picture-wrapper-scroll').height(whole_h)
+		}
+		pic_wrapS.refresh()
+
+	})
+	
+	//惯性滑动过程中  切换图片类型  重置滑块速度 与 滑块起始位置
+	$(".property-album-push .pushheader-nav").bind("touchend", function() {
+		$('.picture-wrapper-scroll').css("transform", "translate(0px, 0px)")
+		$('.picture-wrapper-scroll').css("transition-duration", "0ms")
+		pic_wrapS.refresh()
+	})
+
+	//点击切换 楼盘相册 与 实景视频的交互
+	$('.property-album-pushheader .album-btn span').on("tap", function() {
+		var thisIndex = $(this).index()
+		$(this).addClass("selected").siblings().removeClass("selected")
+		if(thisIndex == 0) {
+			$('.pushheader-nav').height(pushheader_nav_ulh)
+			$('.property-album-pushsection .picture-wrapper').css("display", "block").siblings().css("display", "none")
+		} else {
+			$('.pushheader-nav').height("0")
+			$('.property-album-pushsection .video-wrapper').css("display", "block").siblings().css("display", "none")
+		}
+
+	})
+
+
+
+//相册详图
+	$('.picture-detail-pushheader .picture-detail-title li:first-child').addClass("show")
+	
+	var items_li_len,album_s,p_index,double_p_index,items_li_num,li_show_index,items_li_index
+	var items_len=$('.picture-wrapper .album-pic-items').length
+	var pic_navThis = $('.property-album-pushsection .picture-wrapper-whole li')
+	
+	//主1.点击照片进入详图框内
+	pic_navThis.on("tap", function() {
+		//获取需要的变量
+		album_s = 0; //点击当前照片之前的图片总和
+		double_p_index = $(this).parent().parent().index(); //点击当前照片的 ( 父级-父级 ) 的对于父级兄弟的index
+		p_index = $(this).index() + 1 //点击当前照片的 ( 父级 ) 的对于父级兄弟的index
+		items_li_num=$('.picture-wrapper .album-pic-items').eq(double_p_index).find("li").length //点击当前照片的 ( 父级-父级 ) 的对于父级兄弟的index下子元素的个数
+		
+		$('.picture-detail-pushheader .picture-detail-title li').eq(double_p_index).find(".picTitle_num").text(" ("+p_index+"/"+items_li_num+")") 
+		$('.picture-detail-pushheader .picture-detail-title li').eq(double_p_index).addClass("show").siblings().removeClass("show")
+		
+		//循环点击盒子的当前index，累加之前index为0-i的所有图片
+		for(var i = 0; i < double_p_index; i++) {
+			
+			items_li_len = $('.picture-wrapper .album-pic-items').eq(i).find("li").length
+			album_s = album_s+items_li_len
+			
+		}
+		picture_d.slideTo(album_s+p_index-1,0);
+		
+	})
+
+	
+	
+	//主2.下一组按钮
+		$('.picture-detail-pushheader .next_btn').on("tap",function(){
+			album_s = 0
+			li_show_index=$('.picture-detail-pushheader .picture-detail-title li.show').index()
+			
+			if(li_show_index+1 == items_len){
+				li_show_index = -1
+			}
+			items_li_index=$('.picture-wrapper .album-pic-items').eq(li_show_index+1).find("li").length
+			
+			$('.picture-detail-pushheader .picture-detail-title li').eq(li_show_index+1).find(".picTitle_num").text("(1/"+items_li_index+")")
+			$('.picture-detail-pushheader .picture-detail-title li').eq(li_show_index+1).addClass("show").siblings().removeClass("show")
+			
+			for(var i = 0; i < li_show_index+1; i++) {
+			
+				items_li_len = $('.picture-wrapper .album-pic-items').eq(i).find("li").length
+				album_s = album_s+items_li_len
+			}
+			
+			console.log(album_s,items_li_len)
+			picture_d.slideTo(album_s,0);
+		})
+		
+		
+		
+	//主3.上一组按钮
+		$('.picture-detail-pushheader .pre_btn').on("tap",function(){
+			album_s = 0
+			li_show_index=$('.picture-detail-pushheader .picture-detail-title li.show').index()
+			
+			if(li_show_index == 0){
+				li_show_index = items_len
+			}
+			items_li_index=$('.picture-wrapper .album-pic-items').eq(li_show_index-1).find("li").length
+			
+			
+			$('.picture-detail-pushheader .picture-detail-title li').eq(li_show_index-1).find(".picTitle_num").text("(1/"+items_li_index+")")
+			$('.picture-detail-pushheader .picture-detail-title li').eq(li_show_index-1).addClass("show").siblings().removeClass("show")
+			
+			for(var i = 0; i < li_show_index-1; i++) {
+			
+				items_li_len = $('.picture-wrapper .album-pic-items').eq(i).find("li").length
+				album_s = album_s+items_li_len
+				
+			}
+			picture_d.slideTo(album_s,0);
+			
+		})
+	
+	
+	//主4.swiper滑动联动title 的变化 
+		//swiper获取当前滑动的页数  判断到达n页面后头部标题类别的切换
+	var p_realIndex;
+	
+	$(".picture-detail-pushsection .detail-swiper-wrapper").bind("touchend", function() {
+		var album_s_p=0;
+		var album_s_n=0;
+		p_realIndex = picture_d.realIndex + 1
+		
+		//循环  i 与 i-1 之前张数相加之和之间的范围好判断p_realIndex在第$(".picture-detail-pushheader .picture-detail-title li").eq(i)个出现，判断当i=0的时候也就是  $('.picture-wrapper .album-pic-items').eq(i-1).find("li").length的值为0  
+		for(var i = 0; i < items_len+1; i++) {
+			
+			//第 ( i-1 ) 之前图片的的张数  因为当i=0是  $('.picture-wrapper .album-pic-items').eq(i-1)为倒数第一个的元素
+			var items_li_len_p = $('.picture-wrapper .album-pic-items').eq(i-1).find("li").length
+			if(i==0){
+				items_li_len_p=0
+			}
+			album_s_p = album_s_p+items_li_len_p
+			
+			//第 i 之前图片的的张数
+			var items_li_len_n = $('.picture-wrapper .album-pic-items').eq(i).find("li").length
+			album_s_n = album_s_n+items_li_len_n
+			
+			
+			//判断p_realIndex的范围，确实头部标题第i个出现
+			if(p_realIndex>album_s_p && p_realIndex<=album_s_n){
+				
+				$(".picture-detail-pushheader .picture-detail-title li").eq(i).addClass("show").siblings().removeClass("show")
+				$(".picture-detail-pushheader .picture-detail-title li").eq(i).find(".picTitle_num").text("("+(p_realIndex-album_s_p)+"/"+(album_s_n-album_s_p)+")")
+				
+			}
+		}
+	})
+
 
 
 //底部点击切换页面
@@ -7,35 +227,35 @@ $(function() {
 		$(this).addClass("select").siblings().removeClass("select")
 	})
 
-
-
-//筛选区域三联动
-	var l1 = 0,l2 = 0,rm, rm_ul, rd, rd_ul
+	//筛选区域三联动
+	var l1 = 0,
+		l2 = 0,
+		rm, rm_ul, rd, rd_ul
 
 	//填充一级地址
 	$('.region-body-box div ul').html('')
 	fillData();
 	fillData(0);
-	
+
 	//点击一级填充二级
 	$('.regionlist ul').on('tap', 'li', function() {
-		
+
 		var _this = $(this).index()
 		$(this).addClass('selected').siblings().removeClass('selected');
 		$(this).attr("data-select", "true").siblings().removeAttr("data-select");
-		
+
 		//联动第三级隐藏
 		$('.district ul').html('');
 		fillData(_this);
 		$('.municipality ul li:first-child').addClass("selected")
 		$('.municipality ul li:first-child').attr("data-select", "true")
 		municipalityS.refresh()
-		
+
 	});
 
 	//点击二级填充三级
 	$('.municipality ul').on('tap', 'li', function() {
-		
+
 		var _this = $(this).index()
 		$(this).addClass('selected').siblings().removeClass('selected');
 		$(this).attr("data-select", "true").siblings().removeAttr("data-select");
@@ -43,7 +263,7 @@ $(function() {
 		$('.district ul li:first-child').addClass("selected")
 		$('.district ul li:first-child').attr("data-select", "true")
 		districtS.refresh()
-		
+
 	});
 
 	//点击三级选择
@@ -64,59 +284,58 @@ $(function() {
 		}
 
 	});
-	
+
 	//区域 点击重置
 	$('.list-nav-pushul .region .empty').on("tap", function() {
-		
+
 		$('.region-body-box div ul').html('')
 		fillData();
 		fillData(0);
 		$('.regionlist ul li:first-child').addClass("selected")
-		$('.regionlist ul li:first-child').attr("data-select","true")
+		$('.regionlist ul li:first-child').attr("data-select", "true")
 		$('.municipality ul li:first-child').addClass("selected")
-		$('.municipality ul li:first-child').attr("data-select","true")
-		
+		$('.municipality ul li:first-child').attr("data-select", "true")
+
 	})
 
 	//区域 点击开始
-	var municipality_txt,district_len,district_this,district_txt,district_val
-	
+	var municipality_txt, district_len, district_this, district_txt, district_val
+
 	$('.list-nav-pushul .region .determine').on("tap", function() {
-		
+
 		$('.district_tags').remove()
-		municipality_txt=$('.municipality .municipality-li.selected').text()
-		district_len=$('.district .district-li').length
-		
+		municipality_txt = $('.municipality .municipality-li.selected').text()
+		district_len = $('.district .district-li').length
+
 		//循环第三联动级选中的需求后添加到需求滚动框中
-		for(var i=0;i<district_len;i++){
-			if($('.district .district-li').eq(i).hasClass("selected")){
-				
-				district_txt=$('.district .district-li').eq(i).text()
-				if(district_txt=="不限"){
+		for(var i = 0; i < district_len; i++) {
+			if($('.district .district-li').eq(i).hasClass("selected")) {
+
+				district_txt = $('.district .district-li').eq(i).text()
+				if(district_txt == "不限") {
 					$('.demand-condition-wrapper').append("<li class='district_tags'><span>" + municipality_txt + "</span><i></i></li>")
-				}
-				else{
+				} else {
 					$('.demand-condition-wrapper').append("<li class='district_tags'><span>" + district_txt + "</span><i></i></li>")
 				}
 				$(this).dynamic()
-				
+
 			}
 		}
-		
+
 		//收起
 		$(".list-details-header .list-nav-ul li").removeClass("touch")
 		$(".list-nav-pushul .list-nav-pushli").height("0")
 		$(".list-details-Mask").removeClass("show")
 		$(this).dynamic()
-		
+
 		//点击 X 删除当前tags
-		$(".demand-condition-wrapper li i").on("tap",function() {
+		$(".demand-condition-wrapper li i").on("tap", function() {
 			$(this).parent().remove()
 			$(this).dynamic()
 		})
 	})
-	
-	//填充级联数据
+
+//填充级联数据
 	function fillData(l1, l2) {
 		var temp_html = "";
 		if(arguments.length == 0) {
@@ -136,25 +355,21 @@ $(function() {
 		$('.region-body-box div').eq(arguments.length).find("ul").html(temp_html);
 	}
 
-
-
-
 //筛选均价单选
 	$('.averagePrice ul li:first-child').addClass("selected")
 	$('.averagePrice ul li:first-child').attr("data-select", "true")
 
 	//点击单选收回
-	var averagePrice_txt,averagePrice_index
-	
+	var averagePrice_txt, averagePrice_index
+
 	$('.averagePrice ul').on("tap", "li", function() {
 		$('.averagePrice_tags').remove()
-		averagePrice_txt=$(this).text()
-		averagePrice_index=$(this).index()
-		if(averagePrice_index==0){
-			averagePrice_txt=""
-		}
-		else{
-			$('.demand-condition-wrapper').append("<li class='averagePrice_tags'><span>"+averagePrice_txt+"</span><i></i></li>")
+		averagePrice_txt = $(this).text()
+		averagePrice_index = $(this).index()
+		if(averagePrice_index == 0) {
+			averagePrice_txt = ""
+		} else {
+			$('.demand-condition-wrapper').append("<li class='averagePrice_tags'><span>" + averagePrice_txt + "</span><i></i></li>")
 		}
 		$(this).dynamic()
 		$(this).addClass("selected").siblings().removeClass("selected")
@@ -162,28 +377,28 @@ $(function() {
 		$(".list-details-header .list-nav-ul li").removeClass("touch")
 		$(".list-nav-pushul .list-nav-pushli").height("0")
 		$(".list-details-Mask").removeClass("show")
-		
+
 		//点击 X 删除当前tags
-		$(".demand-condition-wrapper li i").on("tap",function() {
+		$(".demand-condition-wrapper li i").on("tap", function() {
 			$(this).parent().remove()
 			$(".demand-condition-wrapper li i").dynamic()
 			$('.averagePrice ul li:first-child').addClass("selected").siblings().removeClass("selected")
 			$('.averagePrice ul li:first-child').attr("data-select", "true").siblings().removeAttr("data-select")
-			
+
 		})
 	})
 
 	//输入价格点击确定
 	var min_p, max_p
 	$('.averagePrice .averagePrice-footer .determine').on("tap", function() {
-		
+
 		$('.averagePrice_tags').remove()
 		min_p = parseInt($('#minprice').val())
 		max_p = parseInt($('#maxprice').val())
 
 		if(!$('#minprice').val() == '' && !$('#maxprice').val() == '' && min_p <= max_p) {
-			
-			$('.demand-condition-wrapper').append("<li class='averagePrice_tags'><span>"+min_p+"-"+max_p+"万</span><i></i></li>")
+
+			$('.demand-condition-wrapper').append("<li class='averagePrice_tags'><span>" + min_p + "-" + max_p + "万</span><i></i></li>")
 			$(this).dynamic()
 			$(".list-details-header .list-nav-ul li").removeClass("touch")
 			$(".list-nav-pushul .list-nav-pushli").height("0")
@@ -193,18 +408,16 @@ $(function() {
 			$('#minprice').val("")
 			$('#maxprice').val("")
 		}
-		
+
 		//点击 X 删除当前tags
-		$(".demand-condition-wrapper li i").on("tap",function() {
+		$(".demand-condition-wrapper li i").on("tap", function() {
 			$(this).parent().remove()
 			$(".demand-condition-wrapper li i").dynamic()
 			$('.averagePrice ul li:first-child').addClass("selected").siblings().removeClass("selected")
 			$('.averagePrice ul li:first-child').attr("data-select", "true").siblings().removeAttr("data-select")
-			
+
 		})
 	})
-
-
 
 //筛选户型多选
 	$('.houseType ul li:first-child').addClass("selected")
@@ -240,45 +453,41 @@ $(function() {
 	})
 
 	//点击确定
-	var houseType_len,houseType_this,houseType_txt,houseType_val
-	
+	var houseType_len, houseType_this, houseType_txt, houseType_val
+
 	$('.houseType .houseType-footer .determine').on("tap", function() {
-		
+
 		$('.houseType_tags').remove()
-		houseType_len=$('.houseType .houseType-body-ul li').length
-		
+		houseType_len = $('.houseType .houseType-body-ul li').length
+
 		//循环第三联动级选中的需求后添加到需求滚动框中
-		for(var i=0;i<houseType_len;i++){
-			if($('.houseType .houseType-body-ul li').eq(i).hasClass("selected")){
-				
-				houseType_txt=$('.houseType .houseType-body-ul li').eq(i).text()
-				
-				if(i==0){
-					houseType_txt=""
-				}
-				else{
+		for(var i = 0; i < houseType_len; i++) {
+			if($('.houseType .houseType-body-ul li').eq(i).hasClass("selected")) {
+
+				houseType_txt = $('.houseType .houseType-body-ul li').eq(i).text()
+
+				if(i == 0) {
+					houseType_txt = ""
+				} else {
 					$('.demand-condition-wrapper').append("<li class='houseType_tags'><span>" + houseType_txt + "</span><i></i></li>")
 				}
 				$(this).dynamic()
 			}
 		}
-		
+
 		//收起
 		$(".list-details-header .list-nav-ul li").removeClass("touch")
 		$(".list-nav-pushul .list-nav-pushli").height("0")
 		$(".list-details-Mask").removeClass("show")
 		$(this).dynamic()
-		
+
 		//点击 X 删除当前tags
-		$(".demand-condition-wrapper li i").on("tap",function() {
+		$(".demand-condition-wrapper li i").on("tap", function() {
 			$(this).parent().remove()
 			$(this).dynamic()
 		})
-		
+
 	})
-
-
-
 
 //筛选更多 多选
 	$('.list-nav-pushli.more ul').on("tap", "li", function() {
@@ -298,39 +507,37 @@ $(function() {
 	})
 
 	//点击确定
-	var more_len,more_this,more_txt,more_val
-	
+	var more_len, more_this, more_txt, more_val
+
 	$('.list-nav-pushli.more .more-footer .determine').on("tap", function() {
-		
+
 		$('.more_tags').remove()
-		more_len=$('.list-nav-pushli.more li').length
-		
+		more_len = $('.list-nav-pushli.more li').length
+
 		//循环第三联动级选中的需求后添加到需求滚动框中
-		for(var i=0;i<more_len;i++){
-			if($('.list-nav-pushli.more li').eq(i).hasClass("selected")){
-				
-				more_txt=$('.list-nav-pushli.more li').eq(i).text()
-				
+		for(var i = 0; i < more_len; i++) {
+			if($('.list-nav-pushli.more li').eq(i).hasClass("selected")) {
+
+				more_txt = $('.list-nav-pushli.more li').eq(i).text()
+
 				$('.demand-condition-wrapper').append("<li class='more_tags'><span>" + more_txt + "</span><i></i></li>")
-				
+
 				$(this).dynamic()
 			}
 		}
-		
+
 		//收起
 		$(".list-details-header .list-nav-ul li").removeClass("touch")
 		$(".list-nav-pushul .list-nav-pushli").height("0")
 		$(".list-details-Mask").removeClass("show")
 		$(this).dynamic()
-		
+
 		//点击 X 删除当前tags
-		$(".demand-condition-wrapper li i").on("tap",function() {
+		$(".demand-condition-wrapper li i").on("tap", function() {
 			$(this).parent().remove()
 			$(this).dynamic()
 		})
 	})
-
-
 
 //筛选排序 单选
 	$(".screen .screen-body-ul").on("tap", "li", function() {
@@ -340,7 +547,6 @@ $(function() {
 		$(".list-nav-pushul .list-nav-pushli").height("0")
 		$(".list-details-Mask").removeClass("show")
 	})
-
 
 
 //楼盘页面  头部导航点击效果
@@ -359,7 +565,6 @@ $(function() {
 			$(".list-details-container .list-nav-litxt").removeClass("touch")
 		}
 	})
-
 
 
 //筛选主要功能
@@ -399,11 +604,11 @@ $(function() {
 		$('.region-body-box div ul').html('')
 		fillData();
 		fillData(0);
-		municipalityS.scrollToElement(".municipality-li:first-child",0)
-		averagePriceS.scrollToElement(".averagePrice-body-ul li:first-child",0)
-		houseTypeS.scrollToElement(".houseType-body-ul li:first-child",0)
-		moreS.scrollToElement(".more-body-wrapper .open-time",0)
-		
+		municipalityS.scrollToElement(".municipality-li:first-child", 0)
+		averagePriceS.scrollToElement(".averagePrice-body-ul li:first-child", 0)
+		houseTypeS.scrollToElement(".houseType-body-ul li:first-child", 0)
+		moreS.scrollToElement(".more-body-wrapper .open-time", 0)
+
 		$(".list-nav-pushli.more ul li").removeClass("selected")
 		$(".list-nav-pushli.more ul li").removeAttr("data-select")
 		$('.regionlist ul li:first-child').addClass("selected")
@@ -413,15 +618,11 @@ $(function() {
 		$(this).dynamic()
 	})
 
-	
-
-//删除单个需求，刷新demand-condition-wrapper盒子的宽度
-	$(".demand-condition-wrapper li i").on("tap",function() {
+	//删除单个需求，刷新demand-condition-wrapper盒子的宽度
+	$(".demand-condition-wrapper li i").on("tap", function() {
 		$(this).parent().remove()
 		$(".demand-condition-wrapper li i").dynamic()
 	})
-
-
 
 	//资讯评论
 	var userh = 0;
@@ -454,8 +655,7 @@ $(function() {
 		}
 	})
 
-
-//楼盘页面 头部需求栏目水平滚动栏
+	//楼盘页面 头部需求栏目水平滚动栏
 	//遍历当前以后的需求
 	var s = 0;
 	var demandh = $(".demand-condition-wrapper").height()
@@ -464,7 +664,7 @@ $(function() {
 		var liw = $(".demand-condition-wrapper li").eq(i).width() + 12
 		s = s + liw
 	}
-	
+
 	if($(".demand-condition-wrapper li").length <= 3) {
 		$(".demand-condition-wrapper").width("100%")
 	} else if($(".demand-condition-wrapper li").length > 3) {
@@ -609,54 +809,7 @@ $(function() {
 		}
 
 	});
-	
-	
-	
-	
-//楼盘页面--楼盘详情 相册弹框
-	var 	pushheader_nav_ulh=$('.pushheader-nav-ul').height()
 
-	$('.property-album-pushheader .album-btn span').on("tap",function(){
-		var thisIndex=$(this).index()
-		$(this).addClass("selected").siblings().removeClass("selected")
-		if(thisIndex==0){
-			$('.pushheader-nav').height(pushheader_nav_ulh)
-			$('.property-album-pushsection .picture-wrapper').css("display","block").siblings().css("display","none")
-		}
-		else{
-			$('.pushheader-nav').height("0")
-			$('.property-album-pushsection .video-wrapper').css("display","block").siblings().css("display","none")
-		}
-		
-	})
-	
-	var album_nav_w=$('.pushheader-nav-ul li').width()
-	var album_nav_len=$('.pushheader-nav-ul li').length
-	$('.pushheader-nav-ul').width(album_nav_w*album_nav_len+5)
-	
-	$('.picture-wrapper .picture-wrapper-nav').eq(0).addClass("selected")
-	$('.pushheader-nav-ul li').on("tap",function(){
-		
-		var this_index=$(this).index()
-		$(this).addClass("selected").siblings().removeClass("selected")
-		$('.picture-wrapper .picture-wrapper-nav').eq(this_index).addClass("selected").siblings().removeClass("selected")
-	})
-	
-	
-	
-	
-	
-	
-	
-	var pushheader_navS = new IScroll('.pushheader-nav', {
-		scrollbars: false,
-		scrollX: true,
-		scrollY: false,
-	})
-	
-	
-	
-	
 	//楼盘页面--楼盘详情 头部点击 收藏成功、取消收藏弹框代码
 	var Suctime = null;
 	var canceltime = null;
