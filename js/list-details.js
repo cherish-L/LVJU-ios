@@ -3,18 +3,18 @@ $(function() {
 //楼盘页面--楼盘详情 相册弹框
 	$('.picture-detail-push').fadeOut(0)
 	//相册弹框---相册详图弹框
-	$('.property-album-pushsection .album-pic-items li').on("click",function(){
+	$('.property-album-pushsection .album-pic-items li').on("tap",function(){
 		setTimeout(function(){
 			$('.picture-detail-push').fadeIn(100)
 		},100)
 	})
 	
-	$('.picture-detail-pushsection').on("click",function(){
+	$('.picture-detail-pushsection').on("tap",function(){
 		setTimeout(function(){
 			$('.picture-detail-push').fadeOut(100)
 		},100)
 	})
-	alert("0")
+	alert("123")
 
 	var pushheader_nav_ulh = $('.pushheader-nav-ul').height()//相册导航水平滚动wrapper的高度
 

@@ -2710,7 +2710,7 @@ li {
   background: #000000;
   overflow: hidden;
   margin: 0.32rem 0.24rem;
-  box-shadow: 2px 2px 3px 0 #999999;
+  box-shadow: 0.08rem 0.08rem 0.12rem 0 #999999;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2749,7 +2749,7 @@ li {
   overflow: hidden;
   border-radius: 0.08rem;
   margin: 0 0 1.2rem;
-  box-shadow: 1px 1px 3px 0 #999999;
+  box-shadow: 0.08rem 0.08rem 0.12rem 0 #999999;
   display: flex;
   justify-content: center;
   align-items: center;
