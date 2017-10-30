@@ -14,7 +14,7 @@ $(function() {
 			$('.picture-detail-push').fadeOut(100)
 		},100)
 	})
-	
+	alert("0")
 
 	var pushheader_nav_ulh = $('.pushheader-nav-ul').height()//相册导航水平滚动wrapper的高度
 

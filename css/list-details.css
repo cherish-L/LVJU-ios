@@ -2710,6 +2710,7 @@ li {
   background: #000000;
   overflow: hidden;
   margin: 0.32rem 0.24rem;
+  box-shadow: 2px 2px 3px 0 #999999;
   display: flex;
   justify-content: center;
   align-items: center;
