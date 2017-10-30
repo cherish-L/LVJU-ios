@@ -2546,9 +2546,7 @@ li {
 .list-details-container .list-details-push .property-album-push .property-album-pushheader {
   width: 100%;
   background: #f6f6f6;
-  box-shadow: 0 1px 0 0 #CCCCCC;
-  -webkit-box-shadow: 0 1px 0 0 #CCCCCC;
-  z-index: 2;
+  border-bottom: 1px solid #CCCCCC;
 }
 
 .list-details-container .list-details-push .property-album-push .property-album-pushheader .signal_bar {
