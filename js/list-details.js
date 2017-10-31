@@ -10,7 +10,7 @@ $(function() {
 		},100)
 	})
 	
-	var moves;
+	var moves; //用来确定是否触发 touchmove 事件
 	$('.picture-detail-pushsection').on("touchstart",function(e){
 		startX = e.touches[0].pageX;
 		startY = e.touches[0].pageY;
@@ -38,12 +38,10 @@ $(function() {
 			},100)
 		}
 	})
-	alert("123456789")
 	
 	
-	
-	
-	
+		
+//相册主要功能
 	var pushheader_nav_ulh = $('.pushheader-nav-ul').height()//相册导航水平滚动wrapper的高度
 
 	var pic_wrapS = new IScroll('.property-album-pushsection .picture-wrapper', { // iscroll 设置 picture-wrapper 的上下边界回弹的滚动
@@ -216,12 +214,20 @@ $(function() {
 	
 	//主4.swiper滑动联动title 的变化 
 		//swiper获取当前滑动的页数  判断到达n页面后头部标题类别的切换
-	var p_realIndex;
+	var p_realIndex,time_loading,angle_loading
 	
 	$(".picture-detail-pushsection .detail-swiper-wrapper").bind("touchend", function() {
 		var album_s_p=0;
 		var album_s_n=0;
 		p_realIndex = picture_d.realIndex + 1
+		
+		
+		
+		time_loading=setInterval(function() {
+			angle_loading += 5
+			$('.picture-detail-pushsection .detail-swiper-ul li').eq(picture_d.realIndex).find('i').css("display","block")
+			$('.picture-detail-pushsection .detail-swiper-ul li').eq(picture_d.realIndex).find('i').css("transform", "rotate(" + angle_loading + "deg)");
+		}, 20)
 		
 		//循环  i 与 i-1 之前张数相加之和之间的范围好判断p_realIndex在第$(".picture-detail-pushheader .picture-detail-title li").eq(i)个出现，判断当i=0的时候也就是  $('.picture-wrapper .album-pic-items').eq(i-1).find("li").length的值为0  
 		for(var i = 0; i < items_len+1; i++) {
