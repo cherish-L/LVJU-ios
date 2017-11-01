@@ -2577,7 +2577,7 @@ $sc:25;
                                         margin: auto;
                                         background: url(../img/loading.png) center center no-repeat;
                                         background-size: 24/$sc+rem 24/$sc+rem;
-                                        z-index: 20;
+                                        z-index: 5;
                                     }
                                 }
                                 .detail-swiper-txt{
@@ -2608,7 +2608,55 @@ $sc:25;
                 }
             }
             //<!-------- 楼盘页面 楼盘详情 相册弹框 实景视频播放-------->
-            
+            .video-detail-push{
+                width: 100%;
+                height: 100%;
+                background: #000000;
+                z-index: 10;
+                opacity: 1;
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: flex;
+                display: -webkit-flex;
+                flex-direction: column;
+                .video-detail-pushheader {
+                    width: 100%;
+                    z-index: 10;
+                    .signal_bar {
+                        width: 100%;
+                        height: 20/$sc+rem;
+                    }
+                    .title_bar {
+                        width: 100%;
+                        height: 44/$sc+rem;
+                        line-height: 44/$sc+rem;
+                        position: relative;
+                        .title_txt {
+                            font-size: 18/$sc+rem;
+                            color: #FFFFFF;
+                            letter-spacing: 0;
+                            text-align: center;
+                            font-weight: 300;
+                            font-size: 18/$sc+rem;
+                        }
+                        .return {
+                            display: block;
+                            height: 36/$sc+rem;
+                            width: 22/$sc+rem;
+                            background: url(../img/returnleft_video.png) center center no-repeat;
+                            background-size: 22/$sc+rem 22/$sc+rem;
+                            position: absolute;
+                            top: 3/$sc+rem;
+                            left: 16/$sc+rem;
+                        }
+                    }
+                }
+                
+                
+                
+                
+            }
         }
         //<!-------- 楼盘页面 楼盘详情 楼盘位置弹框 -------->
         .house-position-push {

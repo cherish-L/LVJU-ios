@@ -214,20 +214,12 @@ $(function() {
 	
 	//主4.swiper滑动联动title 的变化 
 		//swiper获取当前滑动的页数  判断到达n页面后头部标题类别的切换
-	var p_realIndex,time_loading,angle_loading
+	var p_realIndex
 	
 	$(".picture-detail-pushsection .detail-swiper-wrapper").bind("touchend", function() {
 		var album_s_p=0;
 		var album_s_n=0;
 		p_realIndex = picture_d.realIndex + 1
-		
-		
-		
-		time_loading=setInterval(function() {
-			angle_loading += 5
-			$('.picture-detail-pushsection .detail-swiper-ul li').eq(picture_d.realIndex).find('i').css("display","block")
-			$('.picture-detail-pushsection .detail-swiper-ul li').eq(picture_d.realIndex).find('i').css("transform", "rotate(" + angle_loading + "deg)");
-		}, 20)
 		
 		//循环  i 与 i-1 之前张数相加之和之间的范围好判断p_realIndex在第$(".picture-detail-pushheader .picture-detail-title li").eq(i)个出现，判断当i=0的时候也就是  $('.picture-wrapper .album-pic-items').eq(i-1).find("li").length的值为0  
 		for(var i = 0; i < items_len+1; i++) {
