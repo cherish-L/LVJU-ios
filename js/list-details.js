@@ -4,6 +4,7 @@ $(function() {
 	var startX,startY,moveX,moveY
 	$('.picture-detail-push').fadeOut(0)
 	//相册弹框---相册详图弹框
+	
 	$('.property-album-pushsection .album-pic-items li').on("tap",function(){
 		setTimeout(function(){
 			$('.picture-detail-push').fadeIn(100)
