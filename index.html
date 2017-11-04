@@ -7,10 +7,14 @@
 		<meta http-equiv="Cache-Control" content="no-cache" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title>楼盘列表和详情</title>
+		
 		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/list-details.css" />
 		<link rel="stylesheet" type="text/css" href="plugins/animate.min.css" />
+		<link rel="stylesheet" type="text/css" href="plugins/pinchzoom.min.css" />
+		
 		<script type="text/javascript" src="plugins/zepto.min.js"></script>
+		<script type="text/javascript" src="plugins/pinchzoom.min.js"></script>
 		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>
 		<script src="plugins/swiper-3.4.2.min.js"></script>
 		<script type="text/javascript" src="vue/vue.js"></script>
@@ -19,6 +23,14 @@
 		<script>
 			//适配
 			document.documentElement.style.fontSize = innerWidth / 15 + "px";
+			$(function() {
+				
+				$('div.detail-swiper-box').each(function() {
+					new RTP.PinchZoom($(this), {});
+				})
+				
+				
+			})
 		</script>
 	</head>
 
@@ -561,7 +573,6 @@
 					<header class="property-album-pushheader">
 						<div class="signal_bar"></div>
 						<div class="title_bar">
-							<a class="return" href="javascript:;"></a>
 							<div class="album-btn">
 								<span class="album-pic selected">楼盘相册</span>
 								<span class="album-video">实景视频</span>
@@ -815,6 +826,7 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/album3.png"/><i></i></div>
@@ -822,6 +834,7 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/map.png"/><i></i></div>
@@ -829,6 +842,7 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/massage-subject3.png"/><i></i></div>
@@ -836,6 +850,7 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/style.png" class="swiper-lazy"/><i></i></div>
@@ -843,6 +858,7 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/timg.png"/><i></i></div>
@@ -850,13 +866,15 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
-										<div class="detail-swiper-box"><img src="plugins/iscroll-master/demos/carousel/gaugin.jpg"/><i></i></div>
+										<div class="detail-swiper-box"><img src="img/timg.png"/><i></i></div>
 										<div class="detail-swiper-txt">
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/banner_lunbo.png"/><i></i></div>
@@ -864,6 +882,7 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/album3.png"/><i></i></div>
@@ -871,6 +890,7 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/map.png"/><i></i></div>
@@ -878,6 +898,7 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/massage-subject3.png"/><i></i></div>
@@ -885,6 +906,7 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/style.png"/><i></i></div>
@@ -892,6 +914,7 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/timg.png" class="swiper-lazy"/><i></i></div>
@@ -899,13 +922,15 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
-										<div class="detail-swiper-box"><img src="plugins/iscroll-master/demos/carousel/gaugin.jpg"/><i></i></div>
+										<div class="detail-swiper-box"><img src="img/timg.png"/><i></i></div>
 										<div class="detail-swiper-txt">
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/banner_lunbo.png"/><i></i></div>
@@ -913,6 +938,7 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/album3.png"/><i></i></div>
@@ -920,6 +946,7 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/map.png"/><i></i></div>
@@ -927,6 +954,7 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/massage-subject3.png"/><i></i></div>
@@ -934,6 +962,7 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/style.png"/><i></i></div>
@@ -941,6 +970,7 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/timg.png"/><i></i></div>
@@ -948,13 +978,15 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
-										<div class="detail-swiper-box"><img src="plugins/iscroll-master/demos/carousel/gaugin.jpg"/><i></i></div>
+										<div class="detail-swiper-box"><img src="img/timg.png"/><i></i></div>
 										<div class="detail-swiper-txt">
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/banner_lunbo.png"/><i></i></div>
@@ -962,6 +994,7 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/album3.png"/><i></i></div>
@@ -969,6 +1002,7 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/map.png"/><i></i></div>
@@ -976,6 +1010,7 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/massage-subject3.png"/><i></i></div>
@@ -983,6 +1018,7 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/style.png"/><i></i></div>
@@ -990,6 +1026,7 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/timg.png"/><i></i></div>
@@ -997,27 +1034,15 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
-										<div class="detail-swiper-box"><img src="plugins/iscroll-master/demos/carousel/gaugin.jpg"/><i></i></div>
+										<div class="detail-swiper-box"><img src="img/style.png"/><i></i></div>
 										<div class="detail-swiper-txt">
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
-									</li>
-									<li class="detail-swiper-li swiper-slide">
-										<div class="detail-swiper-box"><img src="img/timg.png"/><i></i></div>
-										<div class="detail-swiper-txt">
-											<span>B1户型</span>
-											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
-										</div>
-									</li>
-									<li class="detail-swiper-li swiper-slide">
-										<div class="detail-swiper-box"><img src="plugins/iscroll-master/demos/carousel/gaugin.jpg"/><i></i></div>
-										<div class="detail-swiper-txt">
-											<span>B1户型</span>
-											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
-										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/timg.png"/><i></i></div>
@@ -1025,27 +1050,15 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
-										<div class="detail-swiper-box"><img src="plugins/iscroll-master/demos/carousel/gaugin.jpg"/><i></i></div>
+										<div class="detail-swiper-box"><img src="img/style.png"/><i></i></div>
 										<div class="detail-swiper-txt">
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
-									</li>
-									<li class="detail-swiper-li swiper-slide">
-										<div class="detail-swiper-box"><img src="img/timg.png"/><i></i></div>
-										<div class="detail-swiper-txt">
-											<span>B1户型</span>
-											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
-										</div>
-									</li>
-									<li class="detail-swiper-li swiper-slide">
-										<div class="detail-swiper-box"><img src="plugins/iscroll-master/demos/carousel/gaugin.jpg"/><i></i></div>
-										<div class="detail-swiper-txt">
-											<span>B1户型</span>
-											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
-										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/timg.png"/><i></i></div>
@@ -1053,27 +1066,15 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
-										<div class="detail-swiper-box"><img src="plugins/iscroll-master/demos/carousel/gaugin.jpg"/><i></i></div>
+										<div class="detail-swiper-box"><img src="img/style.png"/><i></i></div>
 										<div class="detail-swiper-txt">
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
-									</li>
-									<li class="detail-swiper-li swiper-slide">
-										<div class="detail-swiper-box"><img src="img/timg.png"/><i></i></div>
-										<div class="detail-swiper-txt">
-											<span>B1户型</span>
-											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
-										</div>
-									</li>
-									<li class="detail-swiper-li swiper-slide">
-										<div class="detail-swiper-box"><img src="plugins/iscroll-master/demos/carousel/gaugin.jpg"/><i></i></div>
-										<div class="detail-swiper-txt">
-											<span>B1户型</span>
-											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
-										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/timg.png"/><i></i></div>
@@ -1081,27 +1082,15 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
-										<div class="detail-swiper-box"><img src="plugins/iscroll-master/demos/carousel/gaugin.jpg"/><i></i></div>
+										<div class="detail-swiper-box"><img src="img/style.png"/><i></i></div>
 										<div class="detail-swiper-txt">
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
-									</li>
-									<li class="detail-swiper-li swiper-slide">
-										<div class="detail-swiper-box"><img src="img/timg.png"/><i></i></div>
-										<div class="detail-swiper-txt">
-											<span>B1户型</span>
-											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
-										</div>
-									</li>
-									<li class="detail-swiper-li swiper-slide">
-										<div class="detail-swiper-box"><img src="plugins/iscroll-master/demos/carousel/gaugin.jpg"/><i></i></div>
-										<div class="detail-swiper-txt">
-											<span>B1户型</span>
-											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
-										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/timg.png"/><i></i></div>
@@ -1109,27 +1098,15 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
-										<div class="detail-swiper-box"><img src="plugins/iscroll-master/demos/carousel/gaugin.jpg"/><i></i></div>
+										<div class="detail-swiper-box"><img src="img/style.png"/><i></i></div>
 										<div class="detail-swiper-txt">
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
-									</li>
-									<li class="detail-swiper-li swiper-slide">
-										<div class="detail-swiper-box"><img src="img/timg.png"/><i></i></div>
-										<div class="detail-swiper-txt">
-											<span>B1户型</span>
-											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
-										</div>
-									</li>
-									<li class="detail-swiper-li swiper-slide">
-										<div class="detail-swiper-box"><img src="plugins/iscroll-master/demos/carousel/gaugin.jpg"/><i></i></div>
-										<div class="detail-swiper-txt">
-											<span>B1户型</span>
-											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
-										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/timg.png"/><i></i></div>
@@ -1137,20 +1114,15 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
-										<div class="detail-swiper-box"><img src="plugins/iscroll-master/demos/carousel/gaugin.jpg"/><i></i></div>
+										<div class="detail-swiper-box"><img src="img/style.png"/><i></i></div>
 										<div class="detail-swiper-txt">
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
-									</li>
-									<li class="detail-swiper-li swiper-slide">
-										<div class="detail-swiper-box"><img src="img/timg.png"/><i></i></div>
-										<div class="detail-swiper-txt">
-											<span>B1户型</span>
-											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
-										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/timg.png"/><i></i></div>
@@ -1158,6 +1130,15 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/style.png"/><i></i></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/timg.png"/><i></i></div>
@@ -1165,6 +1146,15 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/style.png"/><i></i></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/timg.png"/><i></i></div>
@@ -1172,6 +1162,15 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/style.png"/><i></i></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/timg.png"/><i></i></div>
@@ -1179,6 +1178,15 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/style.png"/><i></i></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/timg.png"/><i></i></div>
@@ -1186,6 +1194,15 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/style.png"/><i></i></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/timg.png"/><i></i></div>
@@ -1193,6 +1210,7 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 									<li class="detail-swiper-li swiper-slide">
 										<div class="detail-swiper-box"><img src="img/timg.png"/><i></i></div>
@@ -1200,6 +1218,55 @@
 											<span>B1户型</span>
 											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
 										</div>
+										<a class="return" href="javascript:;"></a>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/timg.png"/><i></i></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+										<a class="return" href="javascript:;"></a>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/timg.png"/><i></i></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+										<a class="return" href="javascript:;"></a>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/timg.png"/><i></i></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+										<a class="return" href="javascript:;"></a>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/timg.png"/><i></i></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+										<a class="return" href="javascript:;"></a>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/timg.png"/><i></i></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+										<a class="return" href="javascript:;"></a>
+									</li>
+									<li class="detail-swiper-li swiper-slide">
+										<div class="detail-swiper-box"><img src="img/timg.png"/><i></i></div>
+										<div class="detail-swiper-txt">
+											<span>B1户型</span>
+											<span>1房2厅1厨1卫 57.38㎡样板间：客厅 </span>
+										</div>
+										<a class="return" href="javascript:;"></a>
 									</li>
 								</ul>
 							</div>
@@ -1213,6 +1280,7 @@
 								<a class="return" href="javascript:;"></a>
 							</div>
 						</header>
+						
 						
 					</div>
 				</div>

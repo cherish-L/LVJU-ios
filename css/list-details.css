@@ -2561,17 +2561,6 @@ li {
   position: relative;
 }
 
-.list-details-container .list-details-push .property-album-push .property-album-pushheader .title_bar .return {
-  display: block;
-  height: 1.44rem;
-  width: 0.88rem;
-  background: url(../img/returnleft.png) center center no-repeat;
-  background-size: 0.88rem 0.88rem;
-  position: absolute;
-  top: 0.12rem;
-  left: 0.64rem;
-}
-
 .list-details-container .list-details-push .property-album-push .property-album-pushheader .title_bar .album-btn {
   width: 100%;
   height: 100%;
@@ -2840,6 +2829,17 @@ li {
   flex-direction: row;
 }
 
+.list-details-container .list-details-push .property-album-push .picture-detail-push .picture-detail-pushheader .title_bar .return {
+  display: block;
+  height: 1.44rem;
+  width: 0.88rem;
+  background: url(../img/returnleft.png) center center no-repeat;
+  background-size: 0.88rem 0.88rem;
+  position: absolute;
+  top: 0.12rem;
+  left: 0.64rem;
+}
+
 .list-details-container .list-details-push .property-album-push .picture-detail-push .picture-detail-pushheader .title_bar .pre_btn {
   display: block;
   width: 1.76rem;
@@ -2881,6 +2881,7 @@ li {
 .list-details-container .list-details-push .property-album-push .picture-detail-push .picture-detail-pushsection .detail-swiper-wrapper {
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
 .list-details-container .list-details-push .property-album-push .picture-detail-push .picture-detail-pushsection .detail-swiper-wrapper .detail-swiper-ul {
@@ -2895,7 +2896,11 @@ li {
   position: relative;
 }
 
-.list-details-container .list-details-push .property-album-push .picture-detail-push .picture-detail-pushsection .detail-swiper-wrapper .detail-swiper-ul .detail-swiper-li .detail-swiper-box {
+.list-details-container .list-details-push .property-album-push .picture-detail-push .picture-detail-pushsection .detail-swiper-wrapper .detail-swiper-ul .detail-swiper-li .pinch-zoom-container {
+  height: 100% !important;
+}
+
+.list-details-container .list-details-push .property-album-push .picture-detail-push .picture-detail-pushsection .detail-swiper-wrapper .detail-swiper-ul .detail-swiper-li .pinch-zoom-container .detail-swiper-box {
   width: 100%;
   height: 100%;
   position: relative;
@@ -2904,12 +2909,12 @@ li {
   align-items: center;
 }
 
-.list-details-container .list-details-push .property-album-push .picture-detail-push .picture-detail-pushsection .detail-swiper-wrapper .detail-swiper-ul .detail-swiper-li .detail-swiper-box img {
+.list-details-container .list-details-push .property-album-push .picture-detail-push .picture-detail-pushsection .detail-swiper-wrapper .detail-swiper-ul .detail-swiper-li .pinch-zoom-container .detail-swiper-box img {
   width: 100%;
   z-index: 10;
 }
 
-.list-details-container .list-details-push .property-album-push .picture-detail-push .picture-detail-pushsection .detail-swiper-wrapper .detail-swiper-ul .detail-swiper-li .detail-swiper-box i {
+.list-details-container .list-details-push .property-album-push .picture-detail-push .picture-detail-pushsection .detail-swiper-wrapper .detail-swiper-ul .detail-swiper-li .pinch-zoom-container .detail-swiper-box i {
   display: none;
   width: 0.96rem;
   height: 0.96rem;
@@ -2936,6 +2941,7 @@ li {
 
 .list-details-container .list-details-push .property-album-push .picture-detail-push .picture-detail-pushsection .detail-swiper-wrapper .detail-swiper-ul .detail-swiper-li .detail-swiper-txt span:first-child {
   display: block;
+  text-align: center;
   font-size: 0.64rem;
   line-height: 0.88rem;
   color: #FFFFFF;
@@ -2943,18 +2949,31 @@ li {
 
 .list-details-container .list-details-push .property-album-push .picture-detail-push .picture-detail-pushsection .detail-swiper-wrapper .detail-swiper-ul .detail-swiper-li .detail-swiper-txt span:last-child {
   display: block;
+  text-align: center;
   margin-top: 0.16rem;
   font-size: 0.56rem;
   line-height: 0.8rem;
   color: #CCCCCC;
 }
 
+.list-details-container .list-details-push .property-album-push .picture-detail-push .picture-detail-pushsection .detail-swiper-wrapper .detail-swiper-ul .detail-swiper-li .return {
+  display: block;
+  height: 1.44rem;
+  width: 0.88rem;
+  background: url(../img/returnleft_video.png) center center no-repeat;
+  background-size: 0.88rem 0.88rem;
+  position: absolute;
+  bottom: 0.48rem;
+  left: 0.64rem;
+  z-index: 10;
+}
+
 .list-details-container .list-details-push .property-album-push .video-detail-push {
   width: 100%;
   height: 100%;
   background: #000000;
-  z-index: 10;
-  opacity: 1;
+  z-index: -1;
+  opacity: 0;
   position: absolute;
   top: 0;
   left: 0;
