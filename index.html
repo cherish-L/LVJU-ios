@@ -1363,29 +1363,29 @@
 								//点击拖拽进度
 								var timeDrag = false;
 
-								$('.progressBarTime').mousedown(function(e) {
+								$('.timeBtn').mousedown(function(e) {
 									timeDrag = true;
 									updatebar(e.pageX);
 									video[0].pause()
 									$('#btnPlay').removeClass('suspend')
 									
 								});
-								alert("错错错，是我的错")
-									$(document).mousemove(function(e) {
-										if(timeDrag) {
-											updatebar(e.pageX);
-										}
+								
+								$(document).mousemove(function(e) {
+									if(timeDrag) {
+										updatebar(e.pageX);
+									}
 	
-									});
+								});
 	
-									$(document).mouseup(function(e) {
-										if(timeDrag){
-											timeDrag=false
-											updatebar(e.pageX);
-											video[0].play()
-											$('#btnPlay').addClass('suspend')
-										}
-									});
+								$(document).mouseup(function(e) {
+									if(timeDrag){
+										timeDrag=false
+										updatebar(e.pageX);
+										video[0].play()
+										$('#btnPlay').addClass('suspend')
+									}
+								});
 
 								var updatebar = function(x) {
 									var progress = $('.progressBar');
