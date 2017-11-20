@@ -1286,7 +1286,7 @@
 							<section class="video-detail-pushsection">
 								<div class="video-pushsection-wrapper">
 									<div class="video-jax-box">
-										<video id="my-video" class="video-js" preload="auto" poster="img/m.png" data-setup="{}"  autobuffer autoplay="autoplay" playsinline -webkit-playsinline webkit-playsinline>
+										<video id="my-video" class="video-js" preload="auto" poster="img/m.png" autobuffer playsinline -webkit-playsinline webkit-playsinline>
 											<source src="http://jq22com.qiniudn.com/jq22-sp.mp4" type="video/mp4">
 										</video>
 									</div>
@@ -1305,6 +1305,7 @@
 
 										<!--进度条-->
 										<div class="progressBarTime">
+											<div class="progressBarclick"></div>
 											<div class="progressBar">
 												<div class="timeBar">
 													<div class="timeBtn"></div>
@@ -1321,7 +1322,7 @@
 							</section>
 							<script>
 								var video = $('#my-video');
-								alert("000")
+
 								//播放暂停
 								$('#btnPlay').on('click', function() {
 									if(video[0].paused) {
@@ -1348,6 +1349,7 @@
 									$('.currentTime .current').text(m + ':' + s);
 								});
 
+
 								//进度条
 								video.on('timeupdate', function() {
 									var currentPos = parseInt(video[0].currentTime);
@@ -1357,32 +1359,40 @@
 									$('.timeBar').css('width', percentage + '%');
 								});
 
+
+
 								//点击进度
-								$('.progressBar').mousedown(function(e) {
+								$('.progressBarclick').mousedown(function(e) {
 									updatebar(e.pageX);
 								});
 
-								//点击拖拽进度
-								var timeDrag = false;
-								
-//								
-//								$('.timeBtn').mousedown(function(e) {
-//									timeDrag = true;
-//									updatebar(e.pageX);
-//									
-//								});
-//
-//								$(document).mousemove(function(e) {
-//									if(timeDrag){
-//										updatebar(e.pageX);
-//									}
-//									
-//								});
-//
-//								$(document).mouseup(function(e) {
-//									updatebar(e.pageX);
-//								});
 
+
+								//点击拖拽进度
+								var timeDrag = 0;
+
+								$('.timeBtn').mousedown(function(e) {
+									timeDrag = 1;
+									updatebar(e.pageX);
+									video[0].pause()
+									$('#btnPlay').removeClass('suspend')
+									
+									$(document).mousemove(function(e) {
+										if(timeDrag==1) {
+											timeDrag = 0;
+											updatebar(e.pageX);
+										}
+	
+									});
+	
+									$(document).mouseup(function(e) {
+										if(timeDrag==1) {
+											updatebar(e.pageX);
+											video[0].play()
+											$('#btnPlay').addClass('suspend')
+										}
+									});
+								});
 
 
 								var updatebar = function(x) {
@@ -1405,7 +1415,6 @@
 									video[0].currentTime = maxduration * percentage / 100;
 								};
 
-
 								//视频长度时间
 								video.on('loadedmetadata', function() {
 									var d_Time = parseInt(video[0].duration)
@@ -1419,8 +1428,8 @@
 
 									$('.durationTime .duration').text(m + ':' + s);
 								});
-								
 							</script>
+
 						</div>
 					</div>
 				</div>

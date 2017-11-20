@@ -2729,7 +2729,7 @@ $sc:25;
                                 }
                                 .currentTime{
                                     width: 60/$sc+rem;
-                                    height: 100%;
+                                    height: 18/$sc+rem;
                                     display: flex;
                                     justify-content: center;
                                     align-items: center;
@@ -2742,9 +2742,17 @@ $sc:25;
                                      flex: 1;
                                      height: 18/$sc+rem;
                                      border-radius: 200/$sc+rem;
+                                     position: relative;
                                      display: flex;
                                      justify-content: center;
                                      align-items: center;
+                                     .progressBarclick{
+                                         width: 100%;
+                                         height: 100%;
+                                         position: absolute;
+                                         top: 0;
+                                         left: 0;
+                                     }
                                     .progressBar{
                                         width: 100%;
                                          height:2/$sc+rem;
@@ -2760,16 +2768,16 @@ $sc:25;
                                                  height: 16/$sc+rem;
                                                  background: #FFFFFF;
                                                  border-radius: 50%;
-                                                position: absolute;
-                                                top: -7/$sc+rem;
-                                                right: -8/$sc+rem;
+                                                 position: absolute;
+                                                 top: -7/$sc+rem;
+                                                 right: -8/$sc+rem;
                                              }
                                          }
                                     }
                                 }
                                 .durationTime{
                                     width: 60/$sc+rem;
-                                    height: 100%;
+                                    height: 18/$sc+rem;
                                     display: flex;
                                     justify-content: center;
                                     align-items: center;
