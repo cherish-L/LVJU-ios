@@ -3116,10 +3116,14 @@ li {
 
 .list-details-container .list-details-push .property-album-push .video-detail-push .video-detail-pushwrapper .video-detail-pushsection .video-controler .video-controler-wrapper .progressBarTime .progressBarclick {
   width: 100%;
-  height: 100%;
+  height: 40%;
+  background: red;
   position: absolute;
   top: 0;
   left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
 }
 
 .list-details-container .list-details-push .property-album-push .video-detail-push .video-detail-pushwrapper .video-detail-pushsection .video-controler .video-controler-wrapper .progressBarTime .progressBar {

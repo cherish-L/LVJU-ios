@@ -1305,7 +1305,6 @@
 
 										<!--进度条-->
 										<div class="progressBarTime">
-											<div class="progressBarclick"></div>
 											<div class="progressBar">
 												<div class="timeBar">
 													<div class="timeBtn"></div>
@@ -1352,8 +1351,8 @@
 
 								//进度条
 								video.on('timeupdate', function() {
-									var currentPos = parseInt(video[0].currentTime);
-									var maxduration = parseInt(video[0].duration);
+									var currentPos = video[0].currentTime;
+									var maxduration = video[0].duration;
 									var percentage = 100 * currentPos / maxduration;
 
 									$('.timeBar').css('width', percentage + '%');
@@ -1361,45 +1360,37 @@
 
 
 
-								//点击进度
-								$('.progressBarclick').mousedown(function(e) {
-									updatebar(e.pageX);
-								});
-
-
-
 								//点击拖拽进度
-								var timeDrag = 0;
+								var timeDrag = false;
 
-								$('.timeBtn').mousedown(function(e) {
-									timeDrag = 1;
+								$('.progressBarTime').mousedown(function(e) {
+									timeDrag = true;
 									updatebar(e.pageX);
 									video[0].pause()
 									$('#btnPlay').removeClass('suspend')
 									
+								});
+
 									$(document).mousemove(function(e) {
-										if(timeDrag==1) {
-											timeDrag = 0;
+										if(timeDrag) {
 											updatebar(e.pageX);
 										}
 	
 									});
 	
 									$(document).mouseup(function(e) {
-										if(timeDrag==1) {
+										if(timeDrag){
+											timeDrag=false
 											updatebar(e.pageX);
 											video[0].play()
 											$('#btnPlay').addClass('suspend')
 										}
 									});
-								});
-
 
 								var updatebar = function(x) {
 									var progress = $('.progressBar');
 									var maxduration = parseInt(video[0].duration);
 									var positions = parseInt(x - progress.offset().left);
-									var positions_new = positions - ($('.timeBtn').width() / 2)
 
 									var percentage = 100 * positions / progress.width();
 
