@@ -261,6 +261,15 @@ $(function() {
 
 
 
+
+
+	
+
+
+
+
+
+
 //底部点击切换页面
 	$(".list-details-footer .footer-nav-li").on("tap", function() {
 		$(this).addClass("select").siblings().removeClass("select")
