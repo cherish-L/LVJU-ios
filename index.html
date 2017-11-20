@@ -1286,7 +1286,7 @@
 							<section class="video-detail-pushsection">
 								<div class="video-pushsection-wrapper">
 									<div class="video-jax-box">
-										<video id="my-video" class="video-js" autoplay preload="auto" poster="img/m.png" data-setup="{}">
+										<video id="my-video" class="video-js" preload="auto" poster="img/m.png" data-setup="{}"  autobuffer autoplay="autoplay" playsinline -webkit-playsinline webkit-playsinline>
 											<source src="http://jq22com.qiniudn.com/jq22-sp.mp4" type="video/mp4">
 										</video>
 									</div>
@@ -1365,23 +1365,23 @@
 								//点击拖拽进度
 								var timeDrag = false;
 								
-								
-								$('.timeBtn').mousedown(function(e) {
-									timeDrag = true;
-									updatebar(e.pageX);
-									
-								});
-
-								$(document).mousemove(function(e) {
-									if(timeDrag){
-										updatebar(e.pageX);
-									}
-									
-								});
-
-								$(document).mouseup(function(e) {
-									updatebar(e.pageX);
-								});
+//								
+//								$('.timeBtn').mousedown(function(e) {
+//									timeDrag = true;
+//									updatebar(e.pageX);
+//									
+//								});
+//
+//								$(document).mousemove(function(e) {
+//									if(timeDrag){
+//										updatebar(e.pageX);
+//									}
+//									
+//								});
+//
+//								$(document).mouseup(function(e) {
+//									updatebar(e.pageX);
+//								});
 
 
 
