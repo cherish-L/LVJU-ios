@@ -2756,12 +2756,14 @@ $sc:25;
                                          bottom: 0;
                                          right: 0;
                                          margin: auto;
+                                         z-index: 10;
                                      }
                                     .progressBar{
                                          width: 100%;
                                          height:2/$sc+rem;
                                          background: #9B9B9B;
                                          border-radius: 200/$sc+rem;
+                                         z-index: 20;
                                          .timeBar{
                                             width: 0;
                                             height: 100%;

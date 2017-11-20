@@ -3124,6 +3124,7 @@ li {
   bottom: 0;
   right: 0;
   margin: auto;
+  z-index: 10;
 }
 
 .list-details-container .list-details-push .property-album-push .video-detail-push .video-detail-pushwrapper .video-detail-pushsection .video-controler .video-controler-wrapper .progressBarTime .progressBar {
@@ -3131,6 +3132,7 @@ li {
   height: 0.08rem;
   background: #9B9B9B;
   border-radius: 8rem;
+  z-index: 20;
 }
 
 .list-details-container .list-details-push .property-album-push .video-detail-push .video-detail-pushwrapper .video-detail-pushsection .video-controler .video-controler-wrapper .progressBarTime .progressBar .timeBar {
