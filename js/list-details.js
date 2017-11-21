@@ -13,7 +13,7 @@ $(function() {
 		
 	})
 
-
+	alert("000")
 //楼盘页面--楼盘详情 相册弹框
 	var startX,startY,moveX,moveY
 	$('.picture-detail-push').fadeOut(0)
