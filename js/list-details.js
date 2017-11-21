@@ -334,8 +334,6 @@ $(function() {
 		
 		if(timeDrag) {
 			updatebar(e.touches[0].pageX);
-			video[0].play()
-			$('#btnPlay').addClass('suspend')
 		}
 									
 	})
