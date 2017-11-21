@@ -10,7 +10,7 @@
         var _defaults = {
             className:'select', //当前选中点击元素的class类名
             clickScrollTime:300, //点击后滑动时间
-            duibiScreenWidth:0.4, //单位以rem为准，默认为0.4rem
+            duibiScreenWidth:1, //单位以rem为准，默认为0.4rem
             scrollerWidth:3, //单位以px为准，默认为3,[仅用于特殊情况：外层宽度因为小数点造成的不精准情况]
             defaultSelect:0, //初始选中第n个，默认第0个
             fingerClick:0, //目标第0或1个选项触发,必须每一项长度一致，方可用此项
