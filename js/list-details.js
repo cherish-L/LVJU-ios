@@ -1,8 +1,23 @@
 $(function() {
+//相册实景视频弹框
+	$('.img_video_push').on("tap",function(){
+		
+		$('.property-album-push').addClass("show")
+		
+	})
+	
+		
+	$('.property-album-pushheader .return').on("tap",function(){
+		
+		$('.property-album-push').removeClass("show")
+		
+	})
+
 
 //楼盘页面--楼盘详情 相册弹框
 	var startX,startY,moveX,moveY
 	$('.picture-detail-push').fadeOut(0)
+	$('.video-detail-push').fadeOut(0)
 	//相册弹框---相册详图弹框
 	
 	$('.property-album-pushsection .album-pic-items li').on("tap",function(){
@@ -12,11 +27,12 @@ $(function() {
 	})
 	
 	
-	$('.picture-detail-pushsection .detail-swiper-li .return').on("tap",function(){
+	$('.picture-detail-pushsection .detail-swiper-li .return_pic').on("tap",function(){
 		setTimeout(function(){
 			$('.picture-detail-push').fadeOut(100)
 		},100)
 	})
+	
 	
 //	var moves; //用来确定是否触发 touchmove 事件
 //	$('.picture-detail-pushsection').on("touchstart",function(e){
@@ -320,7 +336,6 @@ $(function() {
 		$('#btnPlay').removeClass('suspend')
 									
 	})
-	
 	$(document).on("touchend", function(e) {
 		
 		if(timeDrag){
@@ -330,7 +345,6 @@ $(function() {
 		}
 									
 	})
-	
 	$(document).on("touchmove", function(e) {
 		
 		e.preventDefault();
@@ -339,6 +353,39 @@ $(function() {
 		}
 									
 	})
+
+	
+	
+	//实景视频弹框
+	$('.video-wrapper-scroll .video-wrapper-whole li').on("tap",function(){
+		$('.timeBar').css('width', '0%');
+		video[0].currentTime = 0;
+		setTimeout(function(){
+			$('.video-detail-push').fadeIn(100)
+		},100)
+		
+		setTimeout(function(){
+			video[0].play()
+			$('#btnPlay').addClass('suspend')
+		},1000)
+		
+	})
+	
+	
+	$('.video-detail-pushheader .return_vid').on("tap",function(){
+		
+		setTimeout(function(){
+			$('.video-detail-push').fadeOut(100)
+		},100)
+		
+		setTimeout(function(){
+			video[0].pause()
+			$('#btnPlay').removeClass('suspend')
+		},1000)
+		
+		
+	})
+	
 	
 	
 	var updatebar = function(x) {
@@ -358,12 +405,6 @@ $(function() {
 		$('.timeBar').css('width', percentage + '%');
 		video[0].currentTime = maxduration * percentage / 100;
 	};
-
-	
-
-
-
-
 
 
 //底部点击切换页面

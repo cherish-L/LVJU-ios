@@ -1201,7 +1201,7 @@ $sc:25;
         background: #f4f4f4;
         position: fixed;
         top: 0;
-        transform: translateX(0/$sc+rem);
+        transform: translateX(380/$sc+rem);
         z-index: 40;
         display: flex;
         display: -webkit-flex;
@@ -2242,12 +2242,13 @@ $sc:25;
         .property-album-push {
             width: 100%;
             height: 100%;
-            transition: all .3s;
+            transition: all .2s;
             background: #f4f4f4;
             position: absolute;
             top: 0;
             transform: translateX(0/$sc+rem);
-            z-index: 20;
+            opacity: 0;
+            z-index: -1;
             display: flex;
             display: -webkit-flex;
             flex-direction: column;
@@ -2264,6 +2265,16 @@ $sc:25;
                     height: 44/$sc+rem;
                     line-height: 44/$sc+rem;
                     position: relative;
+                    .return {
+                         display: block;
+                         height: 36/$sc+rem;
+                         width: 22/$sc+rem;
+                         background: url(../img/returnleft.png) center center no-repeat;
+                         background-size: 22/$sc+rem 22/$sc+rem;
+                         position: absolute;
+                         top: 3/$sc+rem;
+                         left: 16/$sc+rem;
+                    }
                     .album-btn{
                         width: 100%;
                         height: 100%;
@@ -2608,7 +2619,7 @@ $sc:25;
                                         color: #CCCCCC;
                                     }
                                 }
-                                .return {
+                                .return_pic {
                                     display: block;
                                     height: 36/$sc+rem;
                                     width: 22/$sc+rem;
@@ -2630,7 +2641,7 @@ $sc:25;
                 height: 100%;
                 background: #000000;
                 z-index: 10;//10
-                opacity: 1;
+                opacity: 0;
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -2664,7 +2675,7 @@ $sc:25;
                                 font-weight: 300;
                                 font-size: 18/$sc+rem;
                             }
-                            .return {
+                            .return_vid {
                                 display: block;
                                 height: 36/$sc+rem;
                                 width: 22/$sc+rem;
@@ -2797,6 +2808,10 @@ $sc:25;
                     }
                 }
             }
+        }
+        .property-album-push.show{
+            opacity: 1;
+            z-index: 20;
         }
         //<!-------- 楼盘页面 楼盘详情 楼盘位置弹框 -------->
         .house-position-push {

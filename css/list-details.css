@@ -1343,7 +1343,7 @@ li {
   background: #f4f4f4;
   position: fixed;
   top: 0;
-  transform: translateX(0rem);
+  transform: translateX(15.2rem);
   z-index: 40;
   display: flex;
   display: -webkit-flex;
@@ -2532,12 +2532,13 @@ li {
 .list-details-container .list-details-push .property-album-push {
   width: 100%;
   height: 100%;
-  transition: all .3s;
+  transition: all .2s;
   background: #f4f4f4;
   position: absolute;
   top: 0;
   transform: translateX(0rem);
-  z-index: 20;
+  opacity: 0;
+  z-index: -1;
   display: flex;
   display: -webkit-flex;
   flex-direction: column;
@@ -2559,6 +2560,17 @@ li {
   height: 1.76rem;
   line-height: 1.76rem;
   position: relative;
+}
+
+.list-details-container .list-details-push .property-album-push .property-album-pushheader .title_bar .return {
+  display: block;
+  height: 1.44rem;
+  width: 0.88rem;
+  background: url(../img/returnleft.png) center center no-repeat;
+  background-size: 0.88rem 0.88rem;
+  position: absolute;
+  top: 0.12rem;
+  left: 0.64rem;
 }
 
 .list-details-container .list-details-push .property-album-push .property-album-pushheader .title_bar .album-btn {
@@ -2956,7 +2968,7 @@ li {
   color: #CCCCCC;
 }
 
-.list-details-container .list-details-push .property-album-push .picture-detail-push .picture-detail-pushsection .detail-swiper-wrapper .detail-swiper-ul .detail-swiper-li .return {
+.list-details-container .list-details-push .property-album-push .picture-detail-push .picture-detail-pushsection .detail-swiper-wrapper .detail-swiper-ul .detail-swiper-li .return_pic {
   display: block;
   height: 1.44rem;
   width: 0.88rem;
@@ -2973,7 +2985,7 @@ li {
   height: 100%;
   background: #000000;
   z-index: 10;
-  opacity: 1;
+  opacity: 0;
   position: absolute;
   top: 0;
   left: 0;
@@ -3017,7 +3029,7 @@ li {
   font-size: 0.72rem;
 }
 
-.list-details-container .list-details-push .property-album-push .video-detail-push .video-detail-pushwrapper .video-detail-pushheader .title_bar .return {
+.list-details-container .list-details-push .property-album-push .video-detail-push .video-detail-pushwrapper .video-detail-pushheader .title_bar .return_vid {
   display: block;
   height: 1.44rem;
   width: 0.88rem;
@@ -3163,6 +3175,11 @@ li {
 .list-details-container .list-details-push .property-album-push .video-detail-push .video-detail-pushwrapper .video-detail-pushsection .video-controler .video-controler-wrapper .durationTime .duration {
   font-size: 0.48rem;
   color: #FFFFFF;
+}
+
+.list-details-container .list-details-push .property-album-push.show {
+  opacity: 1;
+  z-index: 20;
 }
 
 .list-details-container .list-details-push .house-position-push {
