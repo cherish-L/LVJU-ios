@@ -1319,7 +1319,7 @@
 									</div>
 								</div>
 							</section>
-							<script>
+							<!--<script>
 								var video = $('#my-video');
 
 								//播放暂停
@@ -1363,74 +1363,29 @@
 								//点击拖拽进度
 								var timeDrag = false;
 
-//								$('.progressBarTime').mousedown(function(e) {
-//									timeDrag = true;
-//									updatebar(e.pageX);
-//									video[0].pause()
-//									$('#btnPlay').removeClass('suspend')
-//									
-//								});
-//	
-//								$(document).mouseup(function(e) {
-//									if(timeDrag){
-//										timeDrag=false
-//										updatebar(e.pageX);
-//										video[0].play()
-//										$('#btnPlay').addClass('suspend')
-//									}
-//								});
-//								
-//								$(document).mousemove(function(e) {
-//									if(timeDrag) {
-//										updatebar(e.pageX);
-//									}
-//	
-//								});
-								
-								
-								    $('.progressBarTime').addEventListener("touchstart",function(){
-								    	
-								    		timeDrag = true;
-								    		updatebar(event.targetTouches[0].pageX);
-								    		video[0].pause()
-										$('#btnPlay').removeClass('suspend')
-										
-									}, false);
-									 
-									 
-									$(document).addEventListener("touchmove",function() {
-										
-									    event.preventDefault();//阻止触摸时浏览器的缩放、滚动条滚动
-									    if(timeDrag) {
-											updatebar(event.targetTouches[0].pageX);
-										}
-									    
-									}, false);
-									 
+								$('.progressBarTime').mousedown(function(e) {
+									timeDrag = true;
+									updatebar(e.pageX);
+									video[0].pause()
+									$('#btnPlay').removeClass('suspend')
 									
-									$(document).addEventListener("touchend",function() {
-										
-									    if(timeDrag){
-											timeDrag=false
-											updatebar(event.targetTouches[0].pageX);
-											video[0].play()
-											$('#btnPlay').addClass('suspend')
-										}
-									    
-									}, false);
-									
+								});
+	
+								$(document).mouseup(function(e) {
+									if(timeDrag){
+										timeDrag=false
+										updatebar(e.pageX);
+										video[0].play()
+										$('#btnPlay').addClass('suspend')
+									}
+								});
 								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
+								$(document).mousemove(function(e) {
+									if(timeDrag) {
+										updatebar(e.pageX);
+									}
+	
+								});
 								
 								
 								
@@ -1466,7 +1421,7 @@
 
 									$('.durationTime .duration').text(m + ':' + s);
 								});
-							</script>
+							</script>-->
 
 						</div>
 					</div>

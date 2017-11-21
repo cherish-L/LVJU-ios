@@ -254,9 +254,110 @@ $(function() {
 		}
 	})
 
+	
+//视频
+	//播放暂停
+	var video = $('#my-video');
+	$('#btnPlay').on('tap', function() {
+		if(video[0].paused) {
+			video[0].play();
+			$('#btnPlay').addClass('suspend')
+		} else {
+			video[0].pause();
+			$('#btnPlay').removeClass('suspend')
+		}
+		return false;
+	})
+	
+	//视频播放时间
+	video.on('timeupdate', function() {
+		var c_Time = parseInt(video[0].currentTime)
 
+		var m = parseInt(c_Time % 3600 / 60);	
+		if(m < 10) {
+			m = "0" + m;
+		}
+		var s = parseInt(c_Time % 60);
+		s < 10 && (s = "0" + s);
 
+		$('.currentTime .current').text(m + ':' + s);
+	});
+	
+	//视频长度时间
+	video.on('loadedmetadata', function() {
+		var d_Time = parseInt(video[0].duration)
 
+		var m = parseInt(d_Time % 3600 / 60);
+		if(m < 10) {
+			m = "0" + m;
+		}
+		var s = parseInt(d_Time % 60);
+		s < 10 && (s = "0" + s);
+
+		$('.durationTime .duration').text(m + ':' + s);
+	});
+	
+	//进度条
+	video.on('timeupdate', function() {
+		var currentPos = video[0].currentTime;
+		var maxduration = video[0].duration;
+		var percentage = 100 * currentPos / maxduration;
+
+		$('.timeBar').css('width', percentage + '%');
+	});
+	
+	
+	
+	//点击跳转进度
+	var timeDrag = false;
+	
+	$(".progressBarTime").on("touchstart", function(e) {
+		
+		timeDrag = true;
+		updatebar(e.touches[0].pageX);
+		video[0].pause()
+		$('#btnPlay').removeClass('suspend')
+									
+	})
+	
+	$(document).on("touchend", function(e) {
+		
+		if(timeDrag){
+			timeDrag=false;
+			video[0].play()
+			$('#btnPlay').addClass('suspend')
+		}
+									
+	})
+	
+	$(document).on("touchmove", function(e) {
+		
+		if(timeDrag) {
+			updatebar(e.touches[0].pageX);
+			video[0].play()
+			$('#btnPlay').addClass('suspend')
+		}
+									
+	})
+	
+	
+	var updatebar = function(x) {
+		var progress = $('.progressBar');
+		var maxduration = parseInt(video[0].duration);
+		var positions = parseInt(x - progress.offset().left);
+		var percentage = 100 * positions / progress.width();
+		
+		//Check within range
+		if(percentage > 100) {
+			percentage = 100;
+		}
+		if(percentage < 0) {
+			percentage = 0;
+		}
+		
+		$('.timeBar').css('width', percentage + '%');
+		video[0].currentTime = maxduration * percentage / 100;
+	};
 
 	
 
