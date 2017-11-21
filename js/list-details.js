@@ -951,8 +951,9 @@ $(function() {
 
 	//楼盘页面--楼盘详情 主力户型左右滑动列表宽度
 	var lilen = $(".houseStyle-content-ul li").length
-	var liw = $(".houseStyle-content-ul li").width() + 16
-	$(".houseStyle-content-ul").width(lilen * liw+4)
+	var liw = $(".houseStyle-content-ul li").width()
+	
+	$(".houseStyle-content-ul").width(lilen * liw + lilen*liw / 7.5)
 	$(".houseStyle-title .num").text('（' + lilen + '）')
 
 	var houseStyleS = new IScroll('.houseStyle-content', {
