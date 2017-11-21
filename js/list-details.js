@@ -313,6 +313,7 @@ $(function() {
 	
 	$(".progressBarTime").on("touchstart", function(e) {
 		
+		e.preventDefault();
 		timeDrag = true;
 		updatebar(e.touches[0].pageX);
 		video[0].pause()
@@ -332,6 +333,7 @@ $(function() {
 	
 	$(document).on("touchmove", function(e) {
 		
+		e.preventDefault();
 		if(timeDrag) {
 			updatebar(e.touches[0].pageX);
 		}
