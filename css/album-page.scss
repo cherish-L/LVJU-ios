@@ -124,6 +124,7 @@ $sc:20;
                             position: relative;
                             .pinch-zoom-container{
                                 height: 100%!important;
+                                width: 100%!important;
                                 .li_box{
                                     width: 100%;
                                     height: 42%;
@@ -330,26 +331,30 @@ $sc:20;
                             width: 100%;
                             height: 100%;
                             position: relative;
-                            .li_box{
-                                width: 100%;
-                                height: 100%;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                img{
+                            .pinch-zoom-container{
+                                height: 100%!important;
+                                width: 100%!important;
+                                .li_box{
+                                    width: 100%;
                                     height: 100%;
-                                }
-                                .startUp-btn{
-                                    width: 54/$sc+rem;
-                                    height: 54/$sc+rem;
-                                    background: url(../img/play.png) center center no-repeat;
-                                    background-size: 50/$sc+rem 50/$sc+rem;
-                                    position: absolute;
-                                    top: 0;
-                                    bottom: 0;
-                                    left: 0;
-                                    right: 0;
-                                    margin: auto;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    img{
+                                        height: 100%;
+                                    }
+                                    .startUp-btn{
+                                        width: 54/$sc+rem;
+                                        height: 54/$sc+rem;
+                                        background: url(../img/play.png) center center no-repeat;
+                                        background-size: 50/$sc+rem 50/$sc+rem;
+                                        position: absolute;
+                                        top: 0;
+                                        bottom: 0;
+                                        left: 0;
+                                        right: 0;
+                                        margin: auto;
+                                    }
                                 }
                             }
                         }
