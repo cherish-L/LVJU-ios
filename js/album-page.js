@@ -26,7 +26,6 @@ $(function() {
 		var _index = mySwiper.realIndex + 1
 		$(".section-wrapper .top-txt-vertical .current-page").text(_index + '/' + img_box_num)
 		$(".section-wrapper .top-txt-transverse .current-page").text(_index + '/' + img_box_num)
-		
 		//循环  i 与 i-1 之前张数相加之和   判断当i=0的时候也就是  _this_nav.eq(i - 1)的值为0
 		for(var i = 0; i < _this_nav_len; i++) {
 			var p_txt = _this_nav.eq(i - 1).find("._this_num-txt").text()

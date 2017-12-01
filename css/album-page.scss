@@ -112,6 +112,7 @@ $sc:20;
                 .img-box {
                     width: 100%;
                     height: 100%;
+                    position: relative;
                     background: #333333;
                     .img-box-ul{
                         width: 100%;
@@ -148,6 +149,28 @@ $sc:20;
                                         right: 0;
                                         margin: auto;
                                     }
+                                }
+                            }
+                            .img-name{
+                                height: 16/$sc+rem;
+                                position: absolute;
+                                bottom: 5/$sc+rem;
+                                left: 0;
+                                right: 0;
+                                margin: auto ;
+                                z-index: 9999;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                span{
+                                    display: inline-block;
+                                    height: 16/$sc+rem;
+                                    line-height: 16/$sc+rem;
+                                    background: #000000;
+                                    border-radius: 4/$sc+rem;
+                                    padding: 0 5/$sc+rem;
+                                    font-size: 10/$sc+rem;
+                                    color: #ffffff;
                                 }
                             }
                         }
@@ -322,6 +345,7 @@ $sc:20;
                     width: 100%;
                     height: 100%;
                     background: #333333;
+                    position: relative;
                     .img-box-ul{
                         width: 100%;
                         height: 100%;
