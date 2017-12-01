@@ -8,13 +8,20 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
 		<title>南国夏威夷城</title>
 		<link rel="stylesheet" type="text/css" href="plugins/swiper-3.4.2.min.css" />
+		<link rel="stylesheet" type="text/css" href="plugins/pinchzoom.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/album-page.css">
 		<script type="text/javascript" src="plugins/zepto.min.js"></script>
 		<script type="text/javascript" src="plugins/iscroll-probe.js"></script>
 		<script type="text/javascript" src="plugins/vue.js"></script>
+		<script type="text/javascript" src="plugins/pinchzoom.min.js"></script>
 		<script>
 			//适配
 			document.documentElement.style.fontSize = innerWidth / 16 + "px";
+			
+			$('.img-box-li .li_box').each(function() {
+				new RTP.PinchZoom($(this), {});
+			})
+			
 		</script>
 	</head>
 
