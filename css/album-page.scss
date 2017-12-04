@@ -124,13 +124,14 @@ $sc:20;
                             height: 100%;
                             position: relative;
                             .pinch-zoom-container{
-                                height: 100%!important;
-                                width: 100%!important;
-                                .li_box{
-                                    width: 100%;
+                                    width: 100%!important;
                                     height: 42%;
+                                    overflow:  initial!important;
                                     position: absolute;
                                     top: 25%;
+                                .li_box{
+                                    height: 100%!important;
+                                    width: 100%!important;
                                     display: flex;
                                     justify-content: center;
                                     align-items: center;

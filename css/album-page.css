@@ -130,14 +130,15 @@ li {
     position: relative;
   }
   .album-page .album-page-section .section-wrapper .img-box .img-box-ul li .pinch-zoom-container {
-    height: 100% !important;
     width: 100% !important;
-  }
-  .album-page .album-page-section .section-wrapper .img-box .img-box-ul li .pinch-zoom-container .li_box {
-    width: 100%;
     height: 42%;
+    overflow: initial !important;
     position: absolute;
     top: 25%;
+  }
+  .album-page .album-page-section .section-wrapper .img-box .img-box-ul li .pinch-zoom-container .li_box {
+    height: 100% !important;
+    width: 100% !important;
     display: flex;
     justify-content: center;
     align-items: center;
