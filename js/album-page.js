@@ -1,6 +1,6 @@
 $(function() {
 	
-	
+	alert('0')
 //Swiper滑动判断导航选择
 	//相册标题显示起始页数
 	var img_box_num = $(".img-box-ul li").length
