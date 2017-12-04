@@ -992,6 +992,7 @@ $(function() {
 			$(".list-details-pushheader").css("background-color", "rgba(246, 246, 246,0.0)")
 			$(".list-details-pushheader").css("box-shadow", "0 1px 0 0 rgba(204,204,204,0.0)")
 			$(".title_txt").css("color", "rgba(57, 64, 67,0.0)")
+			
 		}
 
 	});
@@ -1020,6 +1021,7 @@ $(function() {
 			$(".collection-cancel").css("display", "block")
 			$(".collection-cancel").css("opacity", "1")
 			canceltime = setTimeout(function() {
+				
 				$(".collection-cancel").fadeOut(300)
 			}, 1700)
 		}
